@@ -3,5 +3,5 @@ public class Sample
 {
 string a = "";
 a = "Chanaka";
-int id = 10;
+int id = 10000;
 }
