@@ -1,0 +1,5 @@
+F:\synergy\synergyrms\synergyrmsWeb\TEST\TEST\bin\TEST.dll
+F:\synergy\synergyrms\synergyrmsWeb\TEST\TEST\bin\TEST.pdb
+F:\synergy\synergyrms\synergyrmsWeb\TEST\TEST\obj\Debug\ResolveAssemblyReference.cache
+F:\synergy\synergyrms\synergyrmsWeb\TEST\TEST\obj\Debug\TEST.dll
+F:\synergy\synergyrms\synergyrmsWeb\TEST\TEST\obj\Debug\TEST.pdb
