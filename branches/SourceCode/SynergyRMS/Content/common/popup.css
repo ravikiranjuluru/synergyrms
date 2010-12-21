@@ -1,0 +1,75 @@
+﻿div.formContainer {
+    font-size: x-small;            
+    background-color: #FFFFFF;
+    padding: 0px; 
+}
+
+div.formContainerPopup {            
+    background-color: #454545;            
+    padding: 0px 10px 0px 10px; 
+}
+
+div.formHead {
+    font-size: small;
+    background-color: #E9E9E9;
+    border-top: solid 1px #FFFFFF;
+    color: #999999;
+    padding-left: 0px;
+}
+
+div.formHeadPopup {
+    font-size: small;
+    font-weight: bold;
+    color: #CECECE;
+    padding: 0px;
+}
+
+div.formBody {
+    background-color: #FFFFFF;
+    padding: 10px 10px 0px 10px;  
+    overflow: hidden;          
+}
+
+div.formBodyPopup {
+    background-color: #FFFFFF;
+    padding: 20px 10px 20px 10px;  
+    position: relative;
+    overflow: auto;
+}
+
+div.formFoot {
+    background-color: #ECECED;
+    color: #666666;
+    border-bottom: solid 1px #999999;
+    padding: 8px 10px 8px 10px;
+    margin: 0px 10px 10px 10px;
+}
+
+div.formFootPopup {
+    background-color: #454545;
+    color: #CECECE;
+    padding: 8px 0px 8px 0px;
+}
+
+div.formFoot input[type=button] {
+    font-size: x-small;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+    background-image:url(images/silver.png);
+    border: 1px solid #666666;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 0px 3px 0px 3px;
+    height: 20px;
+}
+
+
+div.formFootPopup input[type=button], .buttonPopup {
+    font-size: x-small;
+    background: transparent;
+    color: #CECECE;
+    border: solid 1px #CECECE;		    
+    padding: 1px 3px 1px 3px;
+    cursor: pointer;
+}
