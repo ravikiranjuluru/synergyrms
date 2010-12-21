@@ -1,0 +1,351 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22423983-FCF4-4A00-B8F4-986A98866FBB}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SynergyRMS</RootNamespace>
+    <AssemblyName>SynergyRMS</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft ASP.NET\ASP.NET MVC 2\\Assemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\ResourceController.cs" />
+    <Compile Include="Controllers\TimesheetsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\AeroWindow.css" />
+    <Content Include="Content\common\Grid.css" />
+    <Content Include="Content\common\popup.css" />
+    <Content Include="Content\common\ScrollableTable.css" />
+    <Content Include="Content\common\sitenavigation.css" />
+    <Content Include="Content\common\SkinStyle.css" />
+    <Content Include="Content\common\styles.css" />
+    <Content Include="Content\common\toolbar.css" />
+    <Content Include="Content\common\WebResorce.css" />
+    <Content Include="Content\iFrameContent\StartmenuContent.html" />
+    <Content Include="Content\images\common\addAssignment.gif" />
+    <Content Include="Content\images\common\ag_app_header.png" />
+    <Content Include="Content\images\common\arrowdown_grey.gif" />
+    <Content Include="Content\images\common\arrowleft_grey.gif" />
+    <Content Include="Content\images\common\arrowleft_white.gif" />
+    <Content Include="Content\images\common\arrowright_grey.gif" />
+    <Content Include="Content\images\common\arrowright_white.gif" />
+    <Content Include="Content\images\common\atlanticglobal.png" />
+    <Content Include="Content\images\common\Backgrounds.gif" />
+    <Content Include="Content\images\common\bl.gif" />
+    <Content Include="Content\images\common\blog.gif" />
+    <Content Include="Content\images\common\br.gif" />
+    <Content Include="Content\images\common\Button.gif" />
+    <Content Include="Content\images\common\call_back_48.gif" />
+    <Content Include="Content\images\common\collapseTasks.gif" />
+    <Content Include="Content\images\common\complete.gif" />
+    <Content Include="Content\images\common\contact_details_48.gif" />
+    <Content Include="Content\images\common\cross.gif" />
+    <Content Include="Content\images\common\cross_collapse.gif" />
+    <Content Include="Content\images\common\currentperiod.gif" />
+    <Content Include="Content\images\common\delete.gif" />
+    <Content Include="Content\images\common\deleteAssignment.gif" />
+    <Content Include="Content\images\common\dot_bottom.gif" />
+    <Content Include="Content\images\common\dot_left.gif" />
+    <Content Include="Content\images\common\dot_right.gif" />
+    <Content Include="Content\images\common\dot_top.gif" />
+    <Content Include="Content\images\common\email_48.gif" />
+    <Content Include="Content\images\common\expandTasks.gif" />
+    <Content Include="Content\images\common\FastPanel1.gif" />
+    <Content Include="Content\images\common\favicon.ico" />
+    <Content Include="Content\images\common\forum.gif" />
+    <Content Include="Content\images\common\Gantt.gif" />
+    <Content Include="Content\images\common\gradient.png" />
+    <Content Include="Content\images\common\greenbutton_Left.png" />
+    <Content Include="Content\images\common\greenbutton_Middle.png" />
+    <Content Include="Content\images\common\greenbutton_Right.png" />
+    <Content Include="Content\images\common\hr.gif" />
+    <Content Include="Content\images\common\line_darkgrey.gif" />
+    <Content Include="Content\images\common\line_grey.gif" />
+    <Content Include="Content\images\common\loginbackground.png" />
+    <Content Include="Content\images\common\login_box_bottom.png" />
+    <Content Include="Content\images\common\login_box_middle.png" />
+    <Content Include="Content\images\common\login_box_top.png" />
+    <Content Include="Content\images\common\login_gradient.png" />
+    <Content Include="Content\images\common\logo.png" />
+    <Content Include="Content\images\common\manage_billing.gif" />
+    <Content Include="Content\images\common\manage_expenses.gif" />
+    <Content Include="Content\images\common\manage_projects.gif" />
+    <Content Include="Content\images\common\manage_resources.gif" />
+    <Content Include="Content\images\common\manage_timesheets.gif" />
+    <Content Include="Content\images\common\meniitem_mapassignments.gif" />
+    <Content Include="Content\images\common\menuitem_addrow.gif" />
+    <Content Include="Content\images\common\menuitem_checkin.gif" />
+    <Content Include="Content\images\common\menuitem_delete.gif" />
+    <Content Include="Content\images\common\menuitem_dropdown_inactive.gif" />
+    <Content Include="Content\images\common\menuitem_import.gif" />
+    <Content Include="Content\images\common\menuitem_indent.gif" />
+    <Content Include="Content\images\common\menuitem_insertrowabove.gif" />
+    <Content Include="Content\images\common\menuitem_insertrowbelow.gif" />
+    <Content Include="Content\images\common\menuitem_mapassignments.gif" />
+    <Content Include="Content\images\common\menuitem_mspexport.gif" />
+    <Content Include="Content\images\common\menuitem_mspimport.gif" />
+    <Content Include="Content\images\common\menuitem_outdent.gif" />
+    <Content Include="Content\images\common\menuitem_print.gif" />
+    <Content Include="Content\images\common\menuitem_printpreview.gif" />
+    <Content Include="Content\images\common\menuitem_rollback.gif" />
+    <Content Include="Content\images\common\menuitem_save.gif" />
+    <Content Include="Content\images\common\menuitem_selected.gif" />
+    <Content Include="Content\images\common\menuitem_windowconfig.gif" />
+    <Content Include="Content\images\common\menuitem_zoomin.gif" />
+    <Content Include="Content\images\common\menuitem_zoomout.gif" />
+    <Content Include="Content\images\common\movie.png" />
+    <Content Include="Content\images\common\myprojects.gif" />
+    <Content Include="Content\images\common\navstrip_configuration.gif" />
+    <Content Include="Content\images\common\navstrip_search.gif" />
+    <Content Include="Content\images\common\Panel.gif" />
+    <Content Include="Content\images\common\pick.gif" />
+    <Content Include="Content\images\common\refresh.gif" />
+    <Content Include="Content\images\common\resourcecentre.gif" />
+    <Content Include="Content\images\common\silver.png" />
+    <Content Include="Content\images\common\sitenavigation_menuarrow.gif" />
+    <Content Include="Content\images\common\sitenavigation_tabmenuarrow.gif" />
+    <Content Include="Content\images\common\space.gif" />
+    <Content Include="Content\images\common\tl.gif" />
+    <Content Include="Content\images\common\Toolbar.gif" />
+    <Content Include="Content\images\common\tr.gif" />
+    <Content Include="Content\images\common\tutorials_32.gif" />
+    <Content Include="Content\images\common\tutorials_48.gif" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclickedmouseout_bg.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclickedmouseout_bottom.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclickedmouseout_middle.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclickedmouseout_top.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclicked_bg.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclicked_bottom.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclicked_middle.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclicked_top.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseover_bg.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseover_bottom.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseover_middle.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseover_top.png" />
+    <Content Include="Content\images\ExternalLink.gif" />
+    <Content Include="Content\images\icon\bing.png" />
+    <Content Include="Content\images\icon\book.png" />
+    <Content Include="Content\images\icon\default.png" />
+    <Content Include="Content\images\icon\facebook.png" />
+    <Content Include="Content\images\icon\favicon.ico" />
+    <Content Include="Content\images\icon\firefox.png" />
+    <Content Include="Content\images\icon\google.png" />
+    <Content Include="Content\images\icon\help.png" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\Startmenu\minimizeWindows.png" />
+    <Content Include="Content\images\Startmenu\newWindow.png" />
+    <Content Include="Content\images\Startmenu\restoreWindows.png" />
+    <Content Include="Content\images\Startmenu\StartMenuBG.png" />
+    <Content Include="Content\images\Startmenu\StartmenuItemBG.gif" />
+    <Content Include="Content\images\Startmenu\taskbar-bg.png" />
+    <Content Include="Content\images\Startmenu\Taskbar_01.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_02.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_04.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_05.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_06.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_08.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_09.jpg" />
+    <Content Include="Content\images\Startmenu\WindowGrid.png" />
+    <Content Include="Content\images\Startmenu\WindowOverlap.png" />
+    <Content Include="Content\images\Taskbar\StartButtonIcon.png" />
+    <Content Include="Content\images\Taskbar\taskbar-bg.png" />
+    <Content Include="Content\images\Taskbar\TaskbarItem.png" />
+    <Content Include="Content\images\Taskbar\TaskbarItemActive.png" />
+    <Content Include="Content\images\Taskbar\TaskbarItemActiveHover.png" />
+    <Content Include="Content\images\Taskbar\TaskbarItemHover.png" />
+    <Content Include="Content\images\Taskbar\TaskbarItemShowDesktop.png" />
+    <Content Include="Content\images\Taskbar\TaskbarPoints.png" />
+    <Content Include="Content\images\win7-desktop-bg.jpg" />
+    <Content Include="Content\images\win7-desktop-green-bg.jpg" />
+    <Content Include="Content\images\WindowsAeroStyle\active\bl.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\bm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\br.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\lines.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\lm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\mm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\rm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\tl.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\tm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\tr.png" />
+    <Content Include="Content\images\WindowsAeroStyle\btn-close.png" />
+    <Content Include="Content\images\WindowsAeroStyle\btn-max.png" />
+    <Content Include="Content\images\WindowsAeroStyle\btn-min.png" />
+    <Content Include="Content\images\WindowsAeroStyle\btn-reg.png" />
+    <Content Include="Content\images\WindowsAeroStyle\empty.gif" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\bl.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\bm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\br.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\lines.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\lm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\mm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\rm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\tl.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\tm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\tr.png" />
+    <Content Include="Content\images\WindowsAeroStyle\left.png" />
+    <Content Include="Content\images\WindowsAeroStyle\right.png" />
+    <Content Include="Content\images\WindowsAeroStyle\spacer.png" />
+    <Content Include="Content\jquery-ui-1.8.6.custom.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\common\com_dateinput.js" />
+    <Content Include="Scripts\common\com_menulist.js" />
+    <Content Include="Scripts\common\com_pickbox.js" />
+    <Content Include="Scripts\common\com_popupwindow.js" />
+    <Content Include="Scripts\common\com_sitenavigation.js" />
+    <Content Include="Scripts\common\com_tabstripheader.js" />
+    <Content Include="Scripts\common\dsh_dashboard.master.js" />
+    <Content Include="Scripts\common\GridE.js" />
+    <Content Include="Scripts\common\ProjectDashboard.js" />
+    <Content Include="Scripts\common\WebResorce.js" />
+    <Content Include="Scripts\common\xbLibrary.js" />
+    <Content Include="Scripts\common\xbOptionList.js" />
+    <Content Include="Scripts\common\xbScrollableTable.js" />
+    <Content Include="Scripts\common\xbSplitter.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-AeroWindow.js" />
+    <Content Include="Scripts\jquery-ui-1.8.1.custom.min.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.easing.compatibility.js" />
+    <Content Include="Scripts\oyos-Lightbox-Handler.js" />
+    <Content Include="Scripts\Soyos-Lightbox-Handler.js" />
+    <Content Include="Web.config" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.min-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.min-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Master.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Login.aspx" />
+    <Content Include="Views\Dashboard\Index.aspx" />
+    <Content Include="Views\Home\Home.aspx" />
+    <Content Include="Views\Project\Docs.aspx" />
+    <Content Include="Views\Project\EditProject.aspx" />
+    <Content Include="Views\Project\Index.aspx" />
+    <Content Include="Views\Project\NewProject.aspx" />
+    <Content Include="Views\Report\Index.aspx" />
+    <Content Include="Views\Resource\Department.aspx" />
+    <Content Include="Views\Resource\Index.aspx" />
+    <Content Include="Views\Resource\Role.aspx" />
+    <Content Include="Views\Resource\ViewTeam.aspx" />
+    <Content Include="Views\Shared\MasterDashboard.Master" />
+    <Content Include="Views\Timesheets\Index.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1595</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

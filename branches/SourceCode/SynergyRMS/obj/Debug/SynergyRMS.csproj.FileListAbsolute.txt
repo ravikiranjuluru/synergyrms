@@ -1,0 +1,5 @@
+F:\MSc\Semester 3\CS\Project\Development\SourceCode\SynergyRMS\bin\SynergyRMS.dll
+F:\MSc\Semester 3\CS\Project\Development\SourceCode\SynergyRMS\bin\SynergyRMS.pdb
+F:\MSc\Semester 3\CS\Project\Development\SourceCode\SynergyRMS\obj\Debug\ResolveAssemblyReference.cache
+F:\MSc\Semester 3\CS\Project\Development\SourceCode\SynergyRMS\obj\Debug\SynergyRMS.dll
+F:\MSc\Semester 3\CS\Project\Development\SourceCode\SynergyRMS\obj\Debug\SynergyRMS.pdb
