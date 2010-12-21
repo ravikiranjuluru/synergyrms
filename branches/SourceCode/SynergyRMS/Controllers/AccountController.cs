@@ -36,6 +36,11 @@ namespace SynergyRMS.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            return View("Login");
+        }
+        
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
