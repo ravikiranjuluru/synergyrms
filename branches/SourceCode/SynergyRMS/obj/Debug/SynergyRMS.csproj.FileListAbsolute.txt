@@ -1,0 +1,5 @@
+E:\Testing\Msc\Synergy\SynergyRMS\SynergyRMS\bin\SynergyRMS.dll
+E:\Testing\Msc\Synergy\SynergyRMS\SynergyRMS\bin\SynergyRMS.pdb
+E:\Testing\Msc\Synergy\SynergyRMS\SynergyRMS\obj\Debug\ResolveAssemblyReference.cache
+E:\Testing\Msc\Synergy\SynergyRMS\SynergyRMS\obj\Debug\SynergyRMS.dll
+E:\Testing\Msc\Synergy\SynergyRMS\SynergyRMS\obj\Debug\SynergyRMS.pdb
