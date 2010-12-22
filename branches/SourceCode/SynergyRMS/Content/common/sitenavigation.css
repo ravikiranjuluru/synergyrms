@@ -115,12 +115,12 @@
     }
     
     html>/**/body table.agnav_defaultmenu td.level1:hover .arrow { 
-    	background: #D6D3D6 url(../../Content/images/common//sitenavigation_menuarrow.gif) no-repeat right -26px;
+    	background: #D6D3D6 url(../../Content/images/common/sitenavigation_menuarrow.gif) no-repeat right -26px;
         *background-position: right -29px;    
     }
     
     table.agnav_defaultmenu td.level1.hover .arrow { 
-    	background: #D6D3D6 url(../../Content/images/common//sitenavigation_menuarrow.gif) no-repeat right -26px;
+    	background: #D6D3D6 url(../../Content/images/common/sitenavigation_menuarrow.gif) no-repeat right -26px;
         *background-position: right -29px;    
     }
     
@@ -188,7 +188,7 @@
         width: 16px;
         height: 24px;
         *height: 22px;
-    	background: transparent url(../../Content/images/common//arrowleft_white.gif) no-repeat center center;
+    	background: transparent url(../../Content/images/common/arrowleft_white.gif) no-repeat center center;
     }
     
     table.agnav_default .scrollright {
@@ -196,7 +196,7 @@
         width: 16px;
         height: 24px;
         *height: 22px;
-    	background: transparent url(../../Content/images/common//arrowright_white.gif) no-repeat center center;
+    	background: transparent url(../../Content/images/common/arrowright_white.gif) no-repeat center center;
     }
     
     table.agnav_default .scrollenabled {
@@ -248,7 +248,7 @@
     
     table.agnav_default td.level1 .arrow {
         padding-right: 23px;
-        background: #4096EE url(../../Content/images/common//sitenavigation_tabmenuarrow.gif) no-repeat right 4px;
+        background: #4096EE url(../../Content/images/common/sitenavigation_tabmenuarrow.gif) no-repeat right 4px;
         *background-position: right 0px;
     }
     
@@ -258,7 +258,7 @@
     }
     
     table.agnav_default td.selected .arrow {
-        background: #E9E9E9 url(../../Content/images/common//sitenavigation_tabmenuarrow.gif) no-repeat right -26px;
+        background: #E9E9E9 url(../../Content/images/common/sitenavigation_tabmenuarrow.gif) no-repeat right -26px;
         *background-position: right -30px;
     }    
     
@@ -326,14 +326,14 @@
     }
     
     table.agnav_default td.level1 .slide .flat .scrollleft {
-    	background: transparent url(../../Content/images/common//arrowleft_grey.gif) no-repeat 7px 9px;
+    	background: transparent url(../../Content/images/common/arrowleft_grey.gif) no-repeat 7px 9px;
         width: 20px;
         height: 20px;
         display: block;
     }
     
     table.agnav_default td.level1 .slide .flat .scrollright {
-    	background: transparent url(../../Content/images/common//arrowright_grey.gif) no-repeat 8px 9px;
+    	background: transparent url(../../Content/images/common/arrowright_grey.gif) no-repeat 8px 9px;
         width: 20px;
         height: 20px;
         display: block;
@@ -389,12 +389,12 @@
     }
     
     html>/**/body table.agnav_default td.level1:hover .arrow {
-    	background: #D6D3D6 url(../../Content/images/common//sitenavigation_tabmenuarrow.gif) no-repeat right -56px;  
+    	background: #D6D3D6 url(../../Content/images/common/sitenavigation_tabmenuarrow.gif) no-repeat right -56px;  
     	*background-position: right -60px;
     }
     
     table.agnav_default td.level1.hover .arrow {
-    	background: #D6D3D6 url(../../Content/images/common//sitenavigation_tabmenuarrow.gif) no-repeat right -56px;  
+    	background: #D6D3D6 url(../../Content/images/common/sitenavigation_tabmenuarrow.gif) no-repeat right -56px;  
     	*background-position: right -60px;
     }
     
