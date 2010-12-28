@@ -1,0 +1,48 @@
+﻿/* Version History
+
+NF1 18/08/2008
+	New, New version of dashboard created
+
+*/
+
+.toolTip {
+    visibility: hidden; 
+    position: absolute; 
+    top: 0;  
+    left: 0; 
+    z-index: 2;
+}       
+
+.resCalendarAssignment {
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	font-size: xx-small;
+	color: #666666;
+	background-color: #FFFFFF;
+	border-left: 1px solid #D4D0C8;
+	border-bottom: 1px solid #D4D0C8;
+	border-top: 1px solid #D4D0C8;
+	border-right: 1px solid #D4D0C8;
+	padding: 3px;
+	width:100%;
+}
+
+.calendarTableRow {
+	font-size: x-small;
+	color: #000000;
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding: 4px 5px 4px 5px;
+	border-bottom: 1px solid #DBDBDB;
+	border-right: 1px solid #DBDBDB;
+}
+
+.calendarTableRowStart {
+	font-size: x-small;
+	color: #000000;
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding: 4px 5px 4px 5px;
+	border-bottom: 1px solid #DBDBDB;
+	border-left: 1px solid #DBDBDB;
+	border-right: 1px solid #DBDBDB;
+}
