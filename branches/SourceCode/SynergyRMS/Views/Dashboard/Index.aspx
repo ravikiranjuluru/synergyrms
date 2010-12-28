@@ -361,7 +361,7 @@
                                                                                         </td>
                                                                                         <td>
                                                                                             <a id="ctl10_link_ViewResource" title="Click here to View an Existing Resources"
-                                                                                                href="../Resource/Index">View an Existing Resource</a>
+                                                                                                href="../Resource/View">View an Existing Resource</a>
                                                                                         </td>
                                                                                     </tr>
 
@@ -371,7 +371,7 @@
                                                                                                 <img src="../../Content/images/common/cross.gif" id="ctl10_img_ViewSchedule" title="Click for more information"/>
                                                                                         </td>
                                                                                         <td>
-                                                                                            <a id="ctl10_link_ViewSchedule" title="Click here to View Resources Schedules" href="../Resource/Index">
+                                                                                            <a id="ctl10_link_ViewSchedule" title="Click here to View Resources Schedules" href="../Resource/Schedule">
                                                                                                 View Resource Schedules</a>
                                                                                         </td>
                                                                                     </tr>
