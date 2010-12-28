@@ -14,13 +14,15 @@ namespace SynergyRMS.Controllers
             ViewData["Message"] = "Welcome to ASP.NET MVC!";
 
             return View("Home");
+            
         }
 
         public ActionResult Home()
         {
             ViewData["Message"] = "Welcome to ASP.NET MVC!";
 
-            return View("Home");
+            //return View("Home");
+            return View("Login", "Account");
         }
 
         public ActionResult About()
