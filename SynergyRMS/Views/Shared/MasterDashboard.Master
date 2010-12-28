@@ -45,6 +45,10 @@
     <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/popup.css" type="text/css"/>
    <%-- <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.8.6.custom.css" type="text/css" media="screen" />--%>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.7.2.custom.css" type="text/css" media="screen" />
+    
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Controls.css" type="text/css" media="screen" />
+ <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Editor.css" type="text/css" media="screen" />
+   <%--<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/EditorContentArea.css" type="text/css" media="screen" />--%>
 </head>
 <body scroll="no">
 
@@ -129,7 +133,7 @@
 
 
               //openPage('/ags_gettingstarted.aspx?Code=GETTINGSTARTED');
-              //openPage('/Dashboard');
+              //openPage('/Account/Login');
 
               if (document.getElementById('snTabbedUI')) {
                   window.siteNavigation.doResize(document.getElementById('snTabbedUI'));
