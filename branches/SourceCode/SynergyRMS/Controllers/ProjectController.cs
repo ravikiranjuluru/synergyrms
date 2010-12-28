@@ -26,5 +26,15 @@ namespace SynergyRMS.Controllers
         {
             return View("Docs");
         }
+
+        public ActionResult DocUpload()
+        {
+            return View("DocUpload");
+        }
+       
+        public ActionResult FileUpload()
+        {
+            return View("FileUpload");
+        }
     }
 }
