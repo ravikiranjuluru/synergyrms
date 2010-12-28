@@ -44,55 +44,7 @@
                                                             onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','PLANNING')" nowrap="nowrap">
                                                             Planning
                                                         </td>
-                                                        <td class="tabSpace">
-                                                            <img src="../../Content/images/common/space.gif" id="ctl00_phTabstripHeader_tabMain_imgTabSpace1" width="1"
-                                                                height="1">
-                                                        </td>
-                                                        <td class="tabOff" onmouseover="this.className='tabOn';" onmouseout="this.className='tabOff';"
-                                                            onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','CHARGES')" nowrap="nowrap">
-                                                            Charges
-                                                        </td>
-                                                        <td class="tabSpace">
-                                                            <img src="../../Content/images/common/space.gif" id="ctl00_phTabstripHeader_tabMain_imgTabSpace2" width="1"
-                                                                height="1">
-                                                        </td>
-                                                        <td class="tabOff" onmouseover="this.className='tabOn';" onmouseout="this.className='tabOff';"
-                                                            onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','INFORMATION')" nowrap="nowrap">
-                                                            Information
-                                                        </td>
-                                                        <td class="tabSpace">
-                                                            <img src="../../Content/images/common/space.gif" id="ctl00_phTabstripHeader_tabMain_imgTabSpace3" width="1"
-                                                                height="1">
-                                                        </td>
-                                                        <td class="tabOff" onmouseover="this.className='tabOn';" onmouseout="this.className='tabOff';"
-                                                            onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','SKILLS')" nowrap="nowrap">
-                                                            Skills
-                                                        </td>
-                                                        <td class="tabSpace">
-                                                            <img src="../../Content/images/common/space.gif" id="ctl00_phTabstripHeader_tabMain_imgTabSpace4" width="1"
-                                                                height="1">
-                                                        </td>
-                                                        <td class="tabOff" onmouseover="this.className='tabOn';" onmouseout="this.className='tabOff';"
-                                                            onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','RESTRICTIONS')" nowrap="nowrap">
-                                                            Restrictions
-                                                        </td>
-                                                        <td class="tabSpace">
-                                                            <img src="../../Content/images/common/space.gif" id="ctl00_phTabstripHeader_tabMain_imgTabSpace5" width="1"
-                                                                height="1">
-                                                        </td>
-                                                        <td class="tabOff" onmouseover="this.className='tabOn';" onmouseout="this.className='tabOff';"
-                                                            onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','SECURITY GROUPS')" nowrap="nowrap">
-                                                            Security Groups
-                                                        </td>
-                                                        <td class="tabSpace">
-                                                            <img src="../../Content/images/common/space.gif" id="ctl00_phTabstripHeader_tabMain_imgTabSpace6" width="1"
-                                                                height="1">
-                                                        </td>
-                                                        <td class="tabOff" onmouseover="this.className='tabOn';" onmouseout="this.className='tabOff';"
-                                                            onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','INTERESTED RESOURCES')"
-                                                            nowrap="nowrap">
-                                                            Interested Resources
-                                                        </td>
+                                                       
                                                         <td class="tabTail" align="left" valign="middle" width="100%" nowrap="nowrap">
                                                             &nbsp;
                                                         </td>
@@ -193,14 +145,10 @@
                                                         <input name="ctl00$phFormContent$pbxClient$txtValue" id="ctl00_phFormContent_pbxClient_txtValue"
                                                             class="textBox" onkeydown="com_pickbox_onKeyDown(event, this, 'ctl00_phFormContent_pbxClient_lnkSelect', 'ctl00_phFormContent_pbxClient_lnkRefresh', true);"
                                                             type="text">
-                                                        <a id="ctl00_phFormContent_pbxClient_lnkSelect" title="Select" href="javascript:__doPostBack('ctl00$phFormContent$pbxClient$lnkSelect','')">
-                                                            <img src="../../Content/images/common/pick.gif" alt="Select" border="0"></a> <a id="ctl00_phFormContent_pbxClient_lnkRefresh"
-                                                                title="Refresh" href="javascript:__doPostBack('ctl00$phFormContent$pbxClient$lnkRefresh','')">
-                                                                <img src="../../Content/images/common/refresh.gif" alt="Refresh" border="0"></a>
+                                                      
                                                         <div id="ctl00_phFormContent_pbxClient_divDescription" style="display: inline;">
                                                         </div>
-                                                        <input name="ctl00$phFormContent$pbxClient$hdnDescription" id="ctl00_phFormContent_pbxClient_hdnDescription"
-                                                            type="hidden">
+                                                     
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -211,14 +159,10 @@
                                                         <input name="ctl00$phFormContent$pbxLocale$txtValue" id="ctl00_phFormContent_pbxLocale_txtValue"
                                                             class="textBox" onkeydown="com_pickbox_onKeyDown(event, this, 'ctl00_phFormContent_pbxLocale_lnkSelect', 'ctl00_phFormContent_pbxLocale_lnkRefresh', true);"
                                                             type="text">
-                                                        <a id="ctl00_phFormContent_pbxLocale_lnkSelect" title="Select" href="javascript:__doPostBack('ctl00$phFormContent$pbxLocale$lnkSelect','')">
-                                                            <img src="../../Content/images/common/pick.gif" alt="Select" border="0"></a> <a id="ctl00_phFormContent_pbxLocale_lnkRefresh"
-                                                                title="Refresh" href="javascript:__doPostBack('ctl00$phFormContent$pbxLocale$lnkRefresh','')">
-                                                                <img src="../../Content/images/common/refresh.gif" alt="Refresh" border="0"></a>
+                                                       
                                                         <div id="ctl00_phFormContent_pbxLocale_divDescription" style="display: inline;">
                                                         </div>
-                                                        <input name="ctl00$phFormContent$pbxLocale$hdnDescription" id="ctl00_phFormContent_pbxLocale_hdnDescription"
-                                                            type="hidden">
+                                                       
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -240,14 +184,10 @@
                                                         <input name="ctl00$phFormContent$pbxLocation$txtValue" id="ctl00_phFormContent_pbxLocation_txtValue"
                                                             class="textBox" onkeydown="com_pickbox_onKeyDown(event, this, 'ctl00_phFormContent_pbxLocation_lnkSelect', 'ctl00_phFormContent_pbxLocation_lnkRefresh', true);"
                                                             type="text">
-                                                        <a id="ctl00_phFormContent_pbxLocation_lnkSelect" title="Select" href="javascript:__doPostBack('ctl00$phFormContent$pbxLocation$lnkSelect','')">
-                                                            <img src="../../Content/images/common/pick.gif" alt="Select" border="0"></a> <a id="ctl00_phFormContent_pbxLocation_lnkRefresh"
-                                                                title="Refresh" href="javascript:__doPostBack('ctl00$phFormContent$pbxLocation$lnkRefresh','')">
-                                                                <img src="../../Content/images/common/refresh.gif" alt="Refresh" border="0"></a>
+                                                        
                                                         <div id="ctl00_phFormContent_pbxLocation_divDescription" style="display: inline;">
                                                         </div>
-                                                        <input name="ctl00$phFormContent$pbxLocation$hdnDescription" id="ctl00_phFormContent_pbxLocation_hdnDescription"
-                                                            type="hidden">
+                                                       
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -258,14 +198,10 @@
                                                         <input name="ctl00$phFormContent$pbxProjectManager$txtValue" id="ctl00_phFormContent_pbxProjectManager_txtValue"
                                                             class="textBox" onkeydown="com_pickbox_onKeyDown(event, this, 'ctl00_phFormContent_pbxProjectManager_lnkSelect', 'ctl00_phFormContent_pbxProjectManager_lnkRefresh', true);"
                                                             type="text">
-                                                        <a id="ctl00_phFormContent_pbxProjectManager_lnkSelect" title="Select" href="javascript:__doPostBack('ctl00$phFormContent$pbxProjectManager$lnkSelect','')">
-                                                            <img src="../../Content/images/common/pick.gif" alt="Select" border="0"></a> <a id="ctl00_phFormContent_pbxProjectManager_lnkRefresh"
-                                                                title="Refresh" href="javascript:__doPostBack('ctl00$phFormContent$pbxProjectManager$lnkRefresh','')">
-                                                                <img src="../../Content/images/common/refresh.gif" alt="Refresh" border="0"></a>
+                                                      
                                                         <div id="ctl00_phFormContent_pbxProjectManager_divDescription" style="display: inline;">
                                                         </div>
-                                                        <input name="ctl00$phFormContent$pbxProjectManager$hdnDescription" id="ctl00_phFormContent_pbxProjectManager_hdnDescription"
-                                                            type="hidden">
+                                                       
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -276,14 +212,10 @@
                                                         <input name="ctl00$phFormContent$pbxProjectSponsor$txtValue" id="ctl00_phFormContent_pbxProjectSponsor_txtValue"
                                                             class="textBox" onkeydown="com_pickbox_onKeyDown(event, this, 'ctl00_phFormContent_pbxProjectSponsor_lnkSelect', 'ctl00_phFormContent_pbxProjectSponsor_lnkRefresh', true);"
                                                             type="text">
-                                                        <a id="ctl00_phFormContent_pbxProjectSponsor_lnkSelect" title="Select" href="javascript:__doPostBack('ctl00$phFormContent$pbxProjectSponsor$lnkSelect','')">
-                                                            <img src="../../Content/images/common/pick.gif" alt="Select" border="0"></a> <a id="ctl00_phFormContent_pbxProjectSponsor_lnkRefresh"
-                                                                title="Refresh" href="javascript:__doPostBack('ctl00$phFormContent$pbxProjectSponsor$lnkRefresh','')">
-                                                                <img src="../../Content/images/common/refresh.gif" alt="Refresh" border="0"></a>
+                                                       
                                                         <div id="ctl00_phFormContent_pbxProjectSponsor_divDescription" style="display: inline;">
                                                         </div>
-                                                        <input name="ctl00$phFormContent$pbxProjectSponsor$hdnDescription" id="ctl00_phFormContent_pbxProjectSponsor_hdnDescription"
-                                                            type="hidden">
+                                                       
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -372,14 +304,7 @@
                                                         <img src="../../Content/images/common/pick.gif" id="ctl00_phFormContent_dteStartDate_imgSelect" style="vertical-align: middle;
                                                             cursor: pointer;" alt="Select" title="Select" onclick="com_dateinput_showDatePick('/common/com_calendar.aspx?CalendarMode=','ctl00_phFormContent_dteStartDate','ctl00_phFormContent_dteStartDate_cmbDayUS','ctl00_phFormContent_dteStartDate_cmbMonth','ctl00_phFormContent_dteStartDate_txtYear');"
                                                             border="0">
-                                                        <input name="ctl00$phFormContent$dteStartDate$hdnDate" id="ctl00_phFormContent_dteStartDate_hdnDate"
-                                                            class="textBox" type="hidden">
-                                                        <img src="../../Content/images/common/currentperiod.gif" id="ctl00_phFormContent_dteStartDate_imgToday"
-                                                            style="vertical-align: middle; cursor: pointer;" alt="Today" onclick="com_dateinput_today('ctl00_phFormContent_dteStartDate_cmbDayUS','ctl00_phFormContent_dteStartDate_cmbMonth','ctl00_phFormContent_dteStartDate_txtYear');"
-                                                            title="Today" border="0">
-                                                        <img src="../../Content/images/common/delete.gif" id="ctl00_phFormContent_dteStartDate_imgClearDate"
-                                                            style="vertical-align: middle; cursor: pointer;" alt="Clear" title="Clear" onclick="com_dateinput_clearDate('ctl00_phFormContent_dteStartDate_cmbDayUS','ctl00_phFormContent_dteStartDate_cmbMonth','ctl00_phFormContent_dteStartDate_txtYear');"
-                                                            border="0">
+                                                      
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -440,28 +365,12 @@
                                                         </select>
                                                         <input name="ctl00$phFormContent$dteEndDate$txtYear" id="ctl00_phFormContent_dteEndDate_txtYear"
                                                             class="textBox" size="6" maxlength="4" type="text">
-                                                        <img src="../../Content/images/common/pick.gif" id="ctl00_phFormContent_dteEndDate_imgSelect" style="vertical-align: middle;
-                                                            cursor: pointer;" alt="Select" title="Select" onclick="com_dateinput_showDatePick('/common/com_calendar.aspx?CalendarMode=','ctl00_phFormContent_dteEndDate','ctl00_phFormContent_dteEndDate_cmbDayUS','ctl00_phFormContent_dteEndDate_cmbMonth','ctl00_phFormContent_dteEndDate_txtYear');"
-                                                            border="0">
-                                                        <input name="ctl00$phFormContent$dteEndDate$hdnDate" id="ctl00_phFormContent_dteEndDate_hdnDate"
-                                                            class="textBox" type="hidden">
-                                                        <img src="../../Content/images/common/currentperiod.gif" id="ctl00_phFormContent_dteEndDate_imgToday"
-                                                            style="vertical-align: middle; cursor: pointer;" alt="Today" onclick="com_dateinput_today('ctl00_phFormContent_dteEndDate_cmbDayUS','ctl00_phFormContent_dteEndDate_cmbMonth','ctl00_phFormContent_dteEndDate_txtYear');"
-                                                            title="Today" border="0">
-                                                        <img src="../../Content/images/common/delete.gif" id="ctl00_phFormContent_dteEndDate_imgClearDate"
-                                                            style="vertical-align: middle; cursor: pointer;" alt="Clear" title="Clear" onclick="com_dateinput_clearDate('ctl00_phFormContent_dteEndDate_cmbDayUS','ctl00_phFormContent_dteEndDate_cmbMonth','ctl00_phFormContent_dteEndDate_txtYear');"
+                                                       <img src="../../Content/images/common/pick.gif" id="Img1" style="vertical-align: middle;
+                                                            cursor: pointer;" alt="Select" title="Select" onclick="com_dateinput_showDatePick('/common/com_calendar.aspx?CalendarMode=','ctl00_phFormContent_dteStartDate','ctl00_phFormContent_dteStartDate_cmbDayUS','ctl00_phFormContent_dteStartDate_cmbMonth','ctl00_phFormContent_dteStartDate_txtYear');"
                                                             border="0">
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td class="formDetailDark" align="right" valign="middle">
-                                                        Restrict Timesheet/Expense Entry to these dates:
-                                                    </td>
-                                                    <td class="formDetail" align="left" valign="top">
-                                                        <input name="ctl00$phFormContent$chkRestrictTimeExpenseDates" id="ctl00_phFormContent_chkRestrictTimeExpenseDates"
-                                                            class="checkBox" type="checkbox">
-                                                    </td>
-                                                </tr>
+                                              
                                                 <tr>
                                                     <td class="formDetailDarkNoPadding" height="5">
                                                         <img src="../../Content/images/common/space.gif" id="ctl00_phFormContent_ucFormFooter_img1" width="180"
@@ -488,14 +397,9 @@
                                                 <tr>
                                                     <td align="left">
                                                         <input name="ctl00$phFormButtonBar$btnSave" id="ctl00_phFormButtonBar_btnSave" class="button"
-                                                            value="Save" type="submit">
-                                                        <input name="ctl00$phFormButtonBar$btnSaveAndClose" id="ctl00_phFormButtonBar_btnSaveAndClose"
-                                                            class="button" value="Save and Close" type="submit">
-                                                        <img src="../../Content/images/common/line_darkgrey.gif" id="ctl00_phFormButtonBar_ucSaveDivider_imgDivider"
-                                                            style="padding-left: 2px; padding-right: 2px; border: medium none; vertical-align: middle;"
-                                                            width="1" height="12">
+                                                            value="Save" type="submit">                                                       
                                                         <input name="ctl00$phFormButtonBar$btnClose" id="ctl00_phFormButtonBar_btnClose"
-                                                            class="button" value="Close" type="submit">
+                                                            class="button" value="Cancel" type="submit">
                                                     </td>
                                                 </tr>
                                             </tbody>
