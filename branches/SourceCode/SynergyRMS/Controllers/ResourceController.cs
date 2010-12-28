@@ -28,5 +28,18 @@ namespace SynergyRMS.Controllers
             return View("Role");
         }
 
+        public ActionResult InterestProjects()
+        {
+            return View("IndexInterestProjects");
+        }
+        public ActionResult AddRole()
+        {
+            return View("IndexRole");
+        }
+        public ActionResult AddSkill()
+        {
+            return View("IndexSkills");
+        }
+
     }
 }
