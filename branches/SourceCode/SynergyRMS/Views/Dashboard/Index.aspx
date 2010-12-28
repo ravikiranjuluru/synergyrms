@@ -195,18 +195,7 @@
                                                                                                 Upload Documents</a>
                                                                                         </td>
                                                                                     </tr>
-                                                                                    <tr id="ctl02_linkrow_CommunicateProgress5">
-                                                                                        <td padding-left="6px" width="5%">
-                                                                                           
-                                                                                                <img src="../../Content/images/common/cross.gif" id="ctl02_img_CommunicateProgress5"
-                                                                                                    title="Click for more information"/>
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            <a id="ctl02_link_CommunicateProgress5" title="Click here to Communicate with Team Members"
-                                                                                                href="../Resource/ViewTeam">Communicate
-                                                                                                with Team Members</a>
-                                                                                        </td>
-                                                                                    </tr>
+                                                                                  
                                                                                     <tr id="ctl02_linkrow_ProjectStatus2">
                                                                                         <td padding-left="6px" width="5%">
                                                                                            
