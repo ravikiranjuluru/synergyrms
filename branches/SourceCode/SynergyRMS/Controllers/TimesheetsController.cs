@@ -16,5 +16,10 @@ namespace SynergyRMS.Controllers
             return View();
         }
 
+        public ActionResult Approve()
+        {
+            return View("Approve");
+        }
+
     }
 }
