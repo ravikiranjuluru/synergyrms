@@ -40,13 +40,21 @@ namespace SynergyRMS.Controllers
         {
             return View("IndexSkills");
         }
-        public ActionResult View()
+        public ActionResult Resources()
         {
             return View("ViewResources");
         }
         public ActionResult Schedule()
         {
             return View("Schedule");
+        }
+        public ActionResult Calendar()
+        {
+            return View("ScheduleCalendar");
+        }
+        public ActionResult Utilisation()
+        {
+            return View("ScheduleUtilisation");
         }
 
     }
