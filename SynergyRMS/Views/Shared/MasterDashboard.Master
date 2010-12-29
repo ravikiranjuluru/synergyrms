@@ -50,6 +50,7 @@
  <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Editor.css" type="text/css"/>
  <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/CalendarElement.css" type="text/css"/>
  <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SchedulingElement.css" type="text/css"/>
+ <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/directentrygrid.css" type="text/css"/>
   
 </head>
 <body scroll="no">
