@@ -93,8 +93,15 @@
                                        
                                         <td>
                                             
-                                         <a href="DocUpload"><input type="submit" value="Add Project Document"  class="button"></a>
+                                         
                                         </td>
+                                    </tr>
+                                        <tr id="trMenuIcons">
+                                       
+                                        <td>
+                                            
+                                         
+                                            &nbsp;</td>
                                     </tr>
                                 </tbody></table>
                         
@@ -109,7 +116,7 @@
                             <tbody><tr onmouseout="this.cells(0).style.backgroundColor='#DDDDDD';this.cells(1).style.backgroundColor='#FFFFFF';" onmouseover="this.cells(0).style.backgroundColor='#ECECED';this.cells(1).style.backgroundColor='#ECECED';">
                                 <td valign="middle" align="center" onclick="__doPostBack('ctl00$hdrElement_PR4$mnuMenus','&lt;argument&gt;&lt;menu&gt;ADDACTION           :DOCUMENT&lt;/menu&gt;&lt;item&gt;ADDACTION           :DOCUMENT&lt;/item&gt;&lt;/argument&gt;')" style="white-space: nowrap; width: 20px; height: 20px; padding: 2px; cursor: pointer; background-color: rgb(221, 221, 221); color: rgb(102, 102, 102);">
                                       
-                                        <img height="16" width="16" alt="" src="/images/space.gif">
+                                        <img height="16" width="16" alt="" src="/images/space.gif"
                                     
                                 </td>
                                 <td onclick="__doPostBack('ctl00$hdrElement_PR4$mnuMenus','&lt;argument&gt;&lt;menu&gt;ADDACTION           :DOCUMENT&lt;/menu&gt;&lt;item&gt;ADDACTION           :DOCUMENT&lt;/item&gt;&lt;/argument&gt;')" style="white-space: nowrap; cursor: pointer; background-color: rgb(255, 255, 255); color: rgb(102, 102, 102);" class="popupMenuItem">
@@ -203,9 +210,23 @@
             <tr>
                 <td align="left" style="padding: 5px;">
             
-                
+                <a href="DocUpload"><input type="submit" value="Add Project Document"  class="button"></a>
                 
                 </td>
+            
+                
+                <td>&nbsp;</td>
+            </tr>
+        
+        
+        
+        
+            <tr>
+                <td align="left" style="padding: 5px;">
+            
+                
+                
+                    &nbsp;</td>
             
                 
                 <td>&nbsp;</td>
