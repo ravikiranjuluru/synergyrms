@@ -511,21 +511,11 @@
                                                                                                     title="Click for more information">
                                                                                         </td>
                                                                                         <td>
-                                                                                            <a id="ctl06_link_ApproveTimesheets" title="Click here to Approve Timesheets" href="../Timesheets/Index">
+                                                                                            <a id="ctl06_link_ApproveTimesheets" title="Click here to Approve Timesheets" href="../Timesheets/Approve">
                                                                                                 Approve Timesheets</a>
                                                                                         </td>
                                                                                     </tr>
-                                                                                    <tr id="ctl06_linkrow_AddActivity">
-                                                                                        <td padding-left="6px" width="5%">
-                                                                                           
-                                                                                                <img src="../../Content/images/common/cross.gif" id="ctl06_img_AddActivity" title="Click for more information">
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            <a id="ctl06_link_AddActivity" title="Click here to Add a New Type of Time Recording Activity"
-                                                                                                href="../Timesheets/Index">Add a New Type of Time
-                                                                                                Recording Activity</a>
-                                                                                        </td>
-                                                                                    </tr>
+                                                                                    
                                                                                 </tbody>
                                                                             </table>
                                                                         </td>
