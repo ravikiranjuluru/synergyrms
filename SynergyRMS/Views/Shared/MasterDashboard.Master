@@ -34,12 +34,10 @@
         }
     </style>
 
-<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/WebResorce.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/WebResorce.css" type="text/css"/>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SkinStyle.css" type="text/css"/>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/styles.css" type="text/css"/>
-    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/sitenavigation.css" type="text/css"/>
-    <link rel="stylesheet" href="../../Content/common/sitenavigation.css" type="text/css"/>
-    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/styles.css" type="text/css" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/sitenavigation.css" type="text/css"/>   
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/ScrollableTable.css" type="text/css" />
     <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/Grid.css" type="text/css"/>
     <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/popup.css" type="text/css"/>
@@ -47,10 +45,10 @@
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.7.2.custom.css" type="text/css" media="screen" />
     
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Controls.css" type="text/css"/>
- <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Editor.css" type="text/css"/>
- <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/CalendarElement.css" type="text/css"/>
- <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SchedulingElement.css" type="text/css"/>
- <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/directentrygrid.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Editor.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/CalendarElement.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SchedulingElement.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/directentrygrid.css" type="text/css"/>
   
 </head>
 <body scroll="no">
@@ -498,20 +496,17 @@
 
                                                 <td id="DASHBOARD-MYWORK" class="item level1" onmouseenter="this.className += ' hover';"
                                                     onmouseleave="this.className = this.className.replace(' hover', '');">
-                                                    <a class="link " href="/dashboard/custom/MyWorkDashboard/MyWorkDashboard.aspx?Code=MYWORK&_ClearUPState=True"
-                                                         onclick="siteNavigation.doSelectItem(getParentNode(this));"><span
+                                                    <a class="link " href="../MyWork"><span
                                                             class="text ">My Work</span> </a>
                                                 </td>
                                                 <td id="DASHBOARD-PROJECT" class="item level1" onmouseenter="this.className += ' hover';"
                                                     onmouseleave="this.className = this.className.replace(' hover', '');">
-                                                    <a class="link " href="/dashboard/custom/ProjectDashboard/ProjectDashboard.aspx?Code=PROJECT&_ClearUPState=True"
-                                                         onclick="siteNavigation.doSelectItem(getParentNode(this));"><span
+                                                    <a class="link " href="../Project/EditProject"><span
                                                             class="text ">Project</span> </a>
                                                 </td>
                                                 <td id="DASHBOARD-SCHEDULING" class="item level1" onmouseenter="this.className += ' hover';"
                                                     onmouseleave="this.className = this.className.replace(' hover', '');">
-                                                    <a class="link " href="/dashboard/custom/SchedulingDashboard/SchedulingDashboard.aspx?Code=SCHEDULING&_ClearUPState=True"
-                                                         onclick="siteNavigation.doSelectItem(getParentNode(this));"><span
+                                                    <a class="link " href="../Resource/Schedule"><span
                                                             class="text ">Scheduling</span> </a>
                                                 </td>
                                                 <td id="TIMESHEET" class="item level1" onmouseenter="this.className += ' hover';"
@@ -523,15 +518,13 @@
                                                         <table border="0" cellpadding="0" cellspacing="1">
                                                             <tr>
                                                                 <td class="item level2">
-                                                                    <a class="link" href="/timesheet/ts_directentry.aspx?_ClearUPState=True" 
-                                                                        onclick="siteNavigation.doSelectItem(getParentNode(this));"><span class="text">Timesheet
+                                                                    <a class="link" href="../Timesheets/"><span class="text">Timesheet
                                                                             Entry</span> </a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td class="item level2">
-                                                                    <a class="link" href="/timesheet/ts_approvals.aspx?_ClearUPState=True" 
-                                                                        onclick="siteNavigation.doSelectItem(getParentNode(this));"><span class="text">Approval</span>
+                                                                    <a class="link" href="../Timesheets/Approve"><span class="text">Approval</span>
                                                                     </a>
                                                                 </td>
                                                             </tr>
