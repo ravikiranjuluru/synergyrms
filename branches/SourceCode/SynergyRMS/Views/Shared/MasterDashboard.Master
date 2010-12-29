@@ -170,7 +170,7 @@
         }
         .style1
         {
-            height: 110px;
+            /*height: 110px;*/
         }
     </style>
     
