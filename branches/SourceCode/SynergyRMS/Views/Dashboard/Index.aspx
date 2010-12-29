@@ -361,7 +361,7 @@
                                                                                         </td>
                                                                                         <td>
                                                                                             <a id="ctl10_link_ViewResource" title="Click here to View an Existing Resources"
-                                                                                                href="../Resource/View">View an Existing Resource</a>
+                                                                                                href="../Resource/Resources">View an Existing Resource</a>
                                                                                         </td>
                                                                                     </tr>
 
