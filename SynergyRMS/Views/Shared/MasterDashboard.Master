@@ -174,7 +174,7 @@
     
     
    <%--popup script--%>
-    <%--<script type="text/javascript">
+  <%-- <script type="text/javascript">
          $(function() {
              $('a').click(function(e) {
                  e.preventDefault();
@@ -198,6 +198,30 @@
          });
         
 	</script>--%>
+	<script type="text/javascript">
+         $(function() {
+         $('#popup').click(function(e) {
+                 e.preventDefault();
+                 var $this = $(this);
+                 var horizontalPadding = 30;
+                 var verticalPadding = 30;
+                 $('<iframe id="externalSite" class="externalSite" src="' + this.href + '" />').dialog({
+                     title: ($this.attr('title')) ? $this.attr('title') : 'Page Title Goes here',
+                     autoOpen: true,
+                     width: 800,
+                     height: 500,
+                     modal: true,
+                     resizable: true,
+                     autoResize: true,
+                     overlay: {
+                         opacity: 0.5,
+                         background: "black"
+                     }
+                 }).width(800 - horizontalPadding).height(500 - verticalPadding);
+             });
+         });
+        
+	</script>
     <form name="frmMain" method="post" action="ags_main.aspx" id="frmMain">
    
 
@@ -233,7 +257,12 @@
                 <table class="layout_header_util" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td align="right" valign="middle" style="white-space: nowrap;">
-                            <a href="#" onclick="lnkMyAccount_onClick();" style="text-decoration: none;">My Account</a>
+                             <%--<a href="#" onclick="lnkMyAccount_onClick();" style="text-decoration: none;" id="popup">
+                               Login
+                                 </a>--%>
+                                 <%--  <a href="#" style="text-decoration: none;" id="popup">--%>
+                                    <% Html.RenderPartial("LogOnUserControl"); %>
+                                <%-- </a>--%>
                         </td>
                         <td align="left" valign="middle" style="white-space: nowrap;">
                             &nbsp;&nbsp;|
@@ -441,9 +470,8 @@
                             |&nbsp;&nbsp;
                         </td>
                         <td align="right" valign="middle" style="white-space: nowrap; padding-right: 18px;">
-                                <a href="#" id="A1"  style="text-decoration: none;" onclick="lnkLogin_onClick();">
-                                LogIn</a>
-                                
+                                <%--<a href="#" id="A1"  style="text-decoration: none;" onclick="lnkLogin_onClick();">
+                                LogIn</a>--%>
                         </td>
                       
                     </tr>
