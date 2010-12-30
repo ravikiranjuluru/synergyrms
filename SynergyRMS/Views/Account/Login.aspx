@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@ Page Language="C#" 
+Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -95,6 +96,7 @@
             position: absolute;
             background-color: Transparent;
             top: 0px;
+            
             right: 0px;
             width: 377px;
             height: auto;
@@ -171,85 +173,121 @@
 
     <table width="400">
     <tr align="center" valign="top">
-    <td align="center"><div class="content">
-            <!-- Left Hand Column -->
-            <div class="pageLeftColumn">
-                <!-- Login Box -->
-                <div class="BoxTop">
+        <td align="center">
+            <div class="content">
+                <!-- Left Hand Column -->
+                <div class="pageLeftColumn">
+                    <!-- Login Box -->
+                    <div class="BoxTop">
+                    </div>
+                    <div class="BoxMiddle">
+                        <div style="padding-right: 30px;">
+                            <div class="boxTitle">
+                                Login
+                            </div>
+                            <div>
+                                <p>
+                                    Please enter your username and password.
+                                    <%= Html.ActionLink("Click Here", "Register", "Account")%>
+                                    if you don't have an account.
+                                </p>
+                                <% using (Html.BeginForm())
+                                   { %>
+                                <%= Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.") %>
+                                <%-- <div>
+            <fieldset>
+                <legend>Account Information</legend>
+                
+                <div class="editor-label">
+                    <%= Html.LabelFor(m => m.UserName) %>
                 </div>
-                <div class="BoxMiddle">
-                    <div style="padding-right: 30px;">
-                        <div class="boxTitle">
-                            login
-                        </div>
-                        <div>
-                            <table class="logintable">
-                                <tr>
-                                    <td class="normalCell">
-                                        &nbsp;
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="Username">
-                                        User ID:
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="normalCell">
-                                        <input name="txtUserID" type="text" id="txtUserID" class="textBox" size="54" style="height: 15px;"
-                                            tabindex="1" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="Username">
-                                        Password:
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="normalCell">
-                                        <input name="txtPassword" type="password" id="txtPassword" class="textBox" size="54"
-                                            style="height: 15px;" tabindex="2" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="normalCell">
-                                        <table border="0">
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: right;" class="normalCell">
-                                        <a href="#" id="lnkForgotPassword" tabindex="7" style="text-decoration: underline;
-                                            color: #2D6E9A;">Forgotten your password?</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="normalCell">
-                                        <!-- Sign In Button -->
-                                        <table cellpadding="0" cellspacing="0">
-                                            <tr>
-                                                <td class="greenButton_Left">
-                                                </td>
-                                                <td>
-                                                    <input name="btnLogin" type="submit" id="btnLogin" tabindex="6" alt="Sign In" class="greenButton"
-                                                        value="Sign In" />
-                                                </td>
-                                                <td class="greenButton_Right">
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+                <div class="editor-field">
+                    <%= Html.TextBoxFor(m => m.UserName) %>
+                    <%= Html.ValidationMessageFor(m => m.UserName) %>
+                </div>
+                
+                <div class="editor-label">
+                    <%= Html.LabelFor(m => m.Password) %>
+                </div>
+                <div class="editor-field">
+                    <%= Html.PasswordFor(m => m.Password) %>
+                    <%= Html.ValidationMessageFor(m => m.Password) %>
+                </div>
+                
+               <div class="editor-label">
+                    <%= Html.CheckBoxFor(m => m.RememberMe) %>
+                    <%= Html.LabelFor(m => m.RememberMe) %>
+                </div>
+                
+                <p>
+                    <input type="submit" value="Log On" />
+                </p>
+            </fieldset>
+        </div>--%>
+                                
+                                <table class="logintable">
+                                    <tr>
+                                        <td class="normalCell">
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="Username">
+                                            User ID:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="normalCell">
+                                            <%= Html.TextBoxFor(m => m.UserName) %>
+                                            <%= Html.ValidationMessageFor(m => m.UserName) %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="Username">
+                                            Password:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="normalCell">
+                                            <%= Html.PasswordFor(m => m.Password) %>
+                                            <%= Html.ValidationMessageFor(m => m.Password) %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="normalCell">
+                                            <table border="0">
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="normalCell">
+                                            <!-- Sign In Button -->
+                                            <table cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="greenButton_Left">
+                                                    </td>
+                                                    <td>
+                                                        <input name="btnLogin" type="submit" id="btnLogin" tabindex="6" alt="Sign In" class="greenButton"
+                                                            value="Sign In" />
+                                                    </td>
+                                                    <td class="greenButton_Right">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <% } %>
+                            </div>
                     </div>
                 </div>
                 <div class="BoxBottom">
                 </div>
             </div>
             </div>
-   
-    </td></tr>
+        </td>
+    </tr>
     </table>
   
 </body>
