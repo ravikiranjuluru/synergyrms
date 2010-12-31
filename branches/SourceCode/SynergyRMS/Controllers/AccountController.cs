@@ -42,21 +42,24 @@ namespace SynergyRMS.Controllers
         }
         
         [HttpPost]
-        public ActionResult LogOn(LogOnModel model, string returnUrl)
+        public ActionResult Login(LogOnModel model, string returnUrl)
         {
+            bool success = false;
             if (ModelState.IsValid)
             {
                 if (MembershipService.ValidateUser(model.UserName, model.Password))
                 {
                     FormsService.SignIn(model.UserName, model.RememberMe);
-                    if (!String.IsNullOrEmpty(returnUrl))
-                    {
-                        return Redirect(returnUrl);
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
+                    success = true;
+                    //if (!String.IsNullOrEmpty(returnUrl))
+                    //{
+                    //    return Redirect(returnUrl);
+                    //}
+                    //else
+                    //{
+                    //    return RedirectToAction("Index", "Home");
+                    //}
+                    ModelState.AddModelError("", "Login OK.");
                 }
                 else
                 {
@@ -92,6 +95,7 @@ namespace SynergyRMS.Controllers
         [HttpPost]
         public ActionResult Register(RegisterModel model)
         {
+            bool success = false;
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
@@ -100,7 +104,8 @@ namespace SynergyRMS.Controllers
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "Home");
+                    //return RedirectToAction("Index", "Home");
+                    success = true;
                 }
                 else
                 {
@@ -108,8 +113,10 @@ namespace SynergyRMS.Controllers
                 }
             }
 
-            // If we got this far, something failed, redisplay form
-            ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
+            if (!success)
+            {
+                ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
+            }
             return View(model);
         }
 
