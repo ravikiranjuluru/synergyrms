@@ -3,27 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
         Dashboard </h2>
-    <div>
-        <input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
-        <input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" type="hidden">
-        <input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE3NDk4MzM1MDUPZBYCAgUPZBYEAgEPDxYCHglQYWdlVGl0bGVlZGQCAw9kFgJmDxYCHgdWaXNpYmxlaGRkSW5A0WtBtr4dBEgggUZFHofEreI="
-            type="hidden">
-    </div>
-    <script type="text/javascript">
-    //<![CDATA[
-        var theForm = document.forms['frmMain'];
-        if (!theForm) {
-            theForm = document.frmMain;
-        }
-        function __doPostBack(eventTarget, eventArgument) {
-            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-                theForm.__EVENTTARGET.value = eventTarget;
-                theForm.__EVENTARGUMENT.value = eventArgument;
-                theForm.submit();
-            }
-        }
-    //]]>
-    </script>
+               
+   
+   
     
     <div>
         <input name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWOwKx9urUAgKyhK/mDgLSnJ+eAwLeiK/4AgKypoCGCwKlgMPzAgLlwIu9DwKw1sLbBAL3iPrPDgKJkNV4Ary6jqMKAp2A68sLAu3A4zwC8Z2V8AwC8sGm7wcC4JrcrQUCubemxwoCkYO3/g0C2bSQ7A4C043e6AwCgNzmkgoC96ng8QYCif/trQEC/+jOtQECoLWlsQMC+oChuAQCspfD4Q4C8cHUxAQC/sfz8AsCnqOCywwClefHOALnj9rQBAK905GpBQKE9KSyCwKj9NPrDwKrt7SNDAKWr+b5BwLm09e8AwKhzNDFDAK0rJM6Asb+vdoLAtP0/e0DAufb1zkCgKCTjwYCts6f6wQChY2mwA4Cs5eAsAMCxOPuywECydKUhAQCtMq73QUCscq79woCzpX60QICneq40w8C89yChg0CqMH59QMCw6OBpQgC7JeZ2AwCjLPj1AYC4c2mlQ+OlJXA2OsbNtKm8lv7cK6t8BGhag=="
@@ -910,4 +892,7 @@
             </div>
         </div>
     </div>
+    
+  
+    
 </asp:Content>
