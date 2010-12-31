@@ -20,6 +20,7 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
 	<script src="<%= ResolveUrl("~") %>Scripts/jquery.blockUI.js" type="text/javascript"></script>
 	
 	
+	
 	<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/WebResorce.css" type="text/css"/>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SkinStyle.css" type="text/css"/>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/styles.css" type="text/css"/>
@@ -27,10 +28,17 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/ScrollableTable.css" type="text/css" />
     <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/Grid.css" type="text/css"/>
     <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/popup.css" type="text/css"/>
-   <%-- <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.8.6.custom.css" type="text/css" media="screen" />--%>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.7.2.custom.css" type="text/css" media="screen" />
+    
+    
+    
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Controls.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Editor.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/CalendarElement.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SchedulingElement.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/directentrygrid.css" type="text/css"/>
 </head>
-<body>
+<body >
     <style type="text/css">
         /* Normal Login Screen Styles */
         
@@ -217,6 +225,9 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
          });
         
 	</script>
+	
+	
+
 
     <table width="400">
     <tr align="center" valign="top">
@@ -241,39 +252,11 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
                                     <%--<%= Html.ActionLink("Click Here", "Register", "Account")%>--%>
                                     if you don't have an account.
                                 </p>
-                                <% using (Html.BeginForm())
+                                <% using (Html.BeginForm("Login", "Account"))
+                                       
                                    { %>
+                                   
                                 <%= Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.") %>
-                                <%-- <div>
-            <fieldset>
-                <legend>Account Information</legend>
-                
-                <div class="editor-label">
-                    <%= Html.LabelFor(m => m.UserName) %>
-                </div>
-                <div class="editor-field">
-                    <%= Html.TextBoxFor(m => m.UserName) %>
-                    <%= Html.ValidationMessageFor(m => m.UserName) %>
-                </div>
-                
-                <div class="editor-label">
-                    <%= Html.LabelFor(m => m.Password) %>
-                </div>
-                <div class="editor-field">
-                    <%= Html.PasswordFor(m => m.Password) %>
-                    <%= Html.ValidationMessageFor(m => m.Password) %>
-                </div>
-                
-               <div class="editor-label">
-                    <%= Html.CheckBoxFor(m => m.RememberMe) %>
-                    <%= Html.LabelFor(m => m.RememberMe) %>
-                </div>
-                
-                <p>
-                    <input type="submit" value="Log On" />
-                </p>
-            </fieldset>
-        </div>--%>
                                 
                                 <table class="logintable">
                                     <tr>
@@ -314,14 +297,23 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
                                             <!-- Sign In Button -->
                                             <table cellpadding="0" cellspacing="0">
                                                 <tr>
-                                                    <td class="greenButton_Left">
-                                                    </td>
+                                                    <td class="greenButton_Left"></td>
                                                     <td>
                                                         <input name="btnLogin" type="submit" id="btnLogin" tabindex="6" alt="Sign In" class="greenButton"
                                                             value="Sign In" />
                                                     </td>
-                                                    <td class="greenButton_Right">
+                                                    <td class="greenButton_Right">                                                   
                                                     </td>
+                                                    
+                                                    <td class="greenButton_Left"></td>
+                                                    <td>
+                                                        <input type="button" id="Submit1" class="greenButton"
+                                                            value="Close" onclick="javascript:window.close();" />
+                                                    </td>
+                                                    <td class="greenButton_Right">                                                   
+                                                    </td>
+                                                    
+                                                    
                                                 </tr>
                                             </table>
                                         </td>
@@ -339,6 +331,14 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
         </td>
     </tr>
     </table>
+    <span class="ui-icon ui-icon-closethick" unselectable="on" style="-moz-user-select: none;">close 2</span>
+    
+    <script type="text/javascript">
+        function goToHome() {
+            window.close();
+            alert('close');
+        }
+    </script>
   
 </body>
 </html>
