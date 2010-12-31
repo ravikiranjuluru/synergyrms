@@ -230,34 +230,11 @@
 </script>
 
     <script type="text/javascript">
-	  function  LoadPage(){
-	   
-	    
-	
-//	            $('#divmain').block({
-//	                message: '<h1>You must login to access the full functionalities of this site</h1>',
-//	                css: { border: '3px solid #a00' }
-
-//	            });
-	          AECWinPopup.open('/Account/Login', 750, 600, popupCallback, '', false);
-	    
-//	    var horizontalPadding = 30;
-//	    var verticalPadding = 30;
-//	    $('<iframe id="externalSite" class="externalSite" src="/Account/Login" />').dialog({
-//	        title:'Page Title Goes here',
-//	        autoOpen: true,
-//	        width: 800,
-//	        height: 500,
-//	        modal: true,
-//	        resizable: true,
-//	        autoResize: true,
-//	        overlay: {
-//	            opacity: 0.5,
-//	            background: "black"
-//	        }
-//	    }).width(800 - horizontalPadding).height(500 - verticalPadding);
-	    }
+        function LoadPage() {
+            AECWinPopup.open('/Account/Login', 750, 600, popupCallback, '', false);
+        }
     </script>
+    
     <form name="frmMain" method="post" action="ags_main.aspx" id="frmMain">
    
 
