@@ -73,9 +73,9 @@
             text-align: left;
             width: 409px;
             height: 307px;
-            top: 35px;
+            top: 9px;
             margin: 0px auto;
-            left: 38px;
+            left: 6px;
         }
         
         .error
@@ -105,10 +105,10 @@
         {
             position: relative;
             background-color: transparent;
-            width: 396px;
-            height: 266px;
-            top: 9px;
-            left: 5px;
+            width: 379px;
+            height: 260px;
+            top: 0px;
+            left: 22px;
         }
         
         .pageRightColumn
@@ -192,30 +192,7 @@
     </style>
 
 
-<script type="text/javascript">
-         $(function() {
-         $('#popup').click(function(e) {
-                 e.preventDefault();
-                 var $this = $(this);
-                 var horizontalPadding = 30;
-                 var verticalPadding = 30;
-                 $('<iframe id="externalSite" class="externalSite" src="' + this.href + '" />').dialog({
-                     title: ($this.attr('title')) ? $this.attr('title') : 'Page Title Goes here',
-                     autoOpen: true,
-                     width: 800,
-                     height: 500,
-                     modal: true,
-                     resizable: true,
-                     autoResize: true,
-                     overlay: {
-                         opacity: 0.5,
-                         background: "black"
-                     }
-                 }).width(800 - horizontalPadding).height(500 - verticalPadding);
-             });
-         });
-        
-	</script>
+
 
     <table width="400">
     <tr align="center" valign="top">

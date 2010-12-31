@@ -8,6 +8,27 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
     <title></title>
     <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/popup.css" />
     <link id="lnkStyle" rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/styles.css" />
+
+
+    <script src="<%= ResolveUrl("~") %>Scripts/common/WebResorce.js" type="text/javascript"></script>
+    <script src="<%= ResolveUrl("~") %>Scripts/common/xbLibrary.js" type="text/javascript"></script>
+    <script src="<%= ResolveUrl("~") %>Scripts/common/com_popupwindow.js" type="text/javascript"></script>
+    <script src="<%= ResolveUrl("~") %>Scripts/common/com_sitenavigation.js" type="text/javascript"></script>
+    <script src="<%= ResolveUrl("~") %>Scripts/common/jquery-1.4.1.min.js" type="text/javascript"></script>
+	<script src="<%= ResolveUrl("~") %>Scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
+	<script src="<%= ResolveUrl("~") %>Scripts/jquery-ui-1.7.2.custom.min.js" type="text/javascript"></script>
+	<script src="<%= ResolveUrl("~") %>Scripts/jquery.blockUI.js" type="text/javascript"></script>
+	
+	
+	<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/WebResorce.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SkinStyle.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/styles.css" type="text/css"/>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/sitenavigation.css" type="text/css"/>   
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/ScrollableTable.css" type="text/css" />
+    <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/Grid.css" type="text/css"/>
+    <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/popup.css" type="text/css"/>
+   <%-- <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.8.6.custom.css" type="text/css" media="screen" />--%>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.7.2.custom.css" type="text/css" media="screen" />
 </head>
 <body>
     <style type="text/css">
@@ -171,6 +192,32 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
         }
     </style>
 
+
+<script type="text/javascript">
+         $(function() {
+         $('#popup').click(function(e) {
+                 e.preventDefault();
+                 var $this = $(this);
+                 var horizontalPadding = 30;
+                 var verticalPadding = 30;
+                 $('<iframe id="externalSite" class="externalSite" src="' + this.href + '" />').dialog({
+                     title: ($this.attr('title')) ? $this.attr('title') : 'Page Title Goes here',
+                     autoOpen: true,
+                     width: 480,
+                     height: 580,
+                     modal: true,
+                     resizable: true,
+                     autoResize: true,
+                     overlay: {
+                         opacity: 0.5,
+                         background: "black"
+                     }
+                 }).width(800 - horizontalPadding).height(500 - verticalPadding);
+             });
+         });
+        
+	</script>
+
     <table width="400">
     <tr align="center" valign="top">
         <td align="center">
@@ -188,7 +235,10 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
                             <div>
                                 <p>
                                     Please enter your username and password.
-                                    <%= Html.ActionLink("Click Here", "Register", "Account")%>
+                                   <a href="/Account/Register" id="popup" style="text-decoration: none;">
+                                   [Register]</a>                                   
+                                 
+                                    <%--<%= Html.ActionLink("Click Here", "Register", "Account")%>--%>
                                     if you don't have an account.
                                 </p>
                                 <% using (Html.BeginForm())
