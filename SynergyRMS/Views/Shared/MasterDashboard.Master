@@ -96,9 +96,9 @@
           function radMenu_onItemClick(sender, args) {
               if (args.Item.Items.length == 0) {
                   if (args.Item.LinkElement) {
-                      if (args.Item.LinkElement.target == 'mainFrame' && args.Item.LinkElement.href.length > 0) {
-                          WebForm_DoCallback('__Page', args.Item.LinkElement.href, callbackHandler, null, null, true);
-                      }
+//                      if (args.Item.LinkElement.target == 'mainFrame' && args.Item.LinkElement.href.length > 0) {
+//                          WebForm_DoCallback('__Page', args.Item.LinkElement.href, callbackHandler, null, null, true);
+//                      }
                   }
                   sender.Close();
               }
@@ -130,7 +130,7 @@
               if (document.getElementById("divTabStrip")) {
                   document.getElementById("divTabStrip").style.width = document.documentElement.clientWidth - getAbsoluteLeft(getParentNode(document.getElementById("divTabStrip"))) + 'px';
               }
-              document.getElementById('mainFrame').style.height = Math.max(100, document.documentElement.clientHeight - document.getElementById('mainFrame').offsetTop) + 'px';
+              //document.getElementById('mainFrame').style.height = Math.max(100, document.documentElement.clientHeight - document.getElementById('mainFrame').offsetTop) + 'px';
           }
 
   
@@ -1483,13 +1483,9 @@
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
     </div>
-          <iframe id="mainFrame" name="mainFrame" frameborder="0">
+       <%--   <iframe id="mainFrame" name="mainFrame" frameborder="0" visible="false">
         </iframe>
-    <%--<script type="text/javascript">
-        //<![CDATA[
-        siteNavigation.initialise('snMySettings'); siteNavigation.initialise('snHelp'); siteNavigation.initialise('snTabbedUI');
-        WebForm_InitCallback(); //]]>
-    </script>--%>
+   --%>
 
     </form>
 
