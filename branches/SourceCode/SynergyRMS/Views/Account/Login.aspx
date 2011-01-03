@@ -80,8 +80,8 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
             background-color: transparent;
             position: relative;
             text-align: left;
-            width: 409px;
-            height: 307px;
+            width: 1036px;
+            height: 604px;
             top: 35px;
             margin: 0px auto;
             left: 38px;
@@ -116,8 +116,8 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
             background-color: transparent;
             width: 396px;
             height: 266px;
-            top: 9px;
-            left: 5px;
+            top: 99px;
+            left: 444px;
         }
         
         .pageRightColumn
@@ -246,7 +246,7 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
                             <div>
                                 <p>
                                     Please enter your username and password.
-                                   <a href="/Account/Register" id="popup" style="text-decoration: none;">
+                                   <a href="/Account/Register" id="popup" style="text-decoration: none;" title="Register">
                                    [Register]</a>                                   
                                  
                                     <%--<%= Html.ActionLink("Click Here", "Register", "Account")%>--%>
@@ -305,15 +305,7 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
                                                     <td class="greenButton_Right">                                                   
                                                     </td>
                                                     
-                                                    <td class="greenButton_Left"></td>
-                                                    <td>
-                                                        <input type="button" id="Submit1" class="greenButton"
-                                                            value="Close" onclick="javascript:window.close();" />
-                                                    </td>
-                                                    <td class="greenButton_Right">                                                   
-                                                    </td>
-                                                    
-                                                    
+                                                   
                                                 </tr>
                                             </table>
                                         </td>
@@ -331,14 +323,7 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
         </td>
     </tr>
     </table>
-    <span class="ui-icon ui-icon-closethick" unselectable="on" style="-moz-user-select: none;">close 2</span>
-    
-    <script type="text/javascript">
-        function goToHome() {
-            window.close();
-            alert('close');
-        }
-    </script>
+  
   
 </body>
 </html>
