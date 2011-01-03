@@ -59,7 +59,8 @@ namespace SynergyRMS.Controllers
                     //{
                     //    return RedirectToAction("Index", "Home");
                     //}
-                    ModelState.AddModelError("", "Login OK.");
+                    return RedirectToAction("Index", "Dashboard");
+                    
                 }
                 else
                 {
@@ -79,7 +80,8 @@ namespace SynergyRMS.Controllers
         {
             FormsService.SignOut();
 
-            return RedirectToAction("Index", "Home");
+           // return RedirectToAction("Index", "Home");
+            return View("Login");
         }
 
         // **************************************
