@@ -56,7 +56,7 @@
 
 
     <div id="WindowContent-google">
-      <iframe src="../Dashboard/Index" width="100%" height="100%" style="border: 0px;" frameborder="0"></iframe>
+      <iframe src="../Account/Login" width="100%" height="100%" style="border: 0px;" frameborder="0"></iframe>
     </div>
 
     <asp:ContentPlaceHolder ID="MainContent" runat="server">
