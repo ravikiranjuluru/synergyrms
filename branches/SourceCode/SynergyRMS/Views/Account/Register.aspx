@@ -206,7 +206,7 @@
                     <div class="BoxMiddle">
                         <div style="padding-right: 30px;">
                             <div class="boxTitle">
-                                Register
+                               
                             </div>
                             <div>
                                   <p>
