@@ -79,7 +79,11 @@
               AECWinPopup.open('/Account/Login', 409, 307, popupCallback, '', false);
           }
           function lnkRegister_onClick() {
-              AECWinPopup.open('/Account/Register', 450, 350, popupCallback, '', false);             
+              AECWinPopup.open('/Account/Register', 450, 350, popupCallback, '', false);
+          }
+
+          function lnkpwdChange_onClick() {
+              AECWinPopup.open('/Account/ChangePassword', 500, 480, popupCallback, '', false);
           }
           
           function popupCallback(context, returnValue) {
@@ -255,20 +259,15 @@
                 <table class="layout_header_util" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td align="right" valign="middle" style="white-space: nowrap;">
-                             <%--<a href="#" onclick="lnkMyAccount_onClick();" style="text-decoration: none;" id="popup">
-                               Login
-                                 </a>--%>
-                                 <%--  <a href="#" style="text-decoration: none;" id="popup">--%>
-                                    <% Html.RenderPartial("LogOnUserControl"); %>
-                                <%-- </a>--%>
+                           
+                                <span class="text">     <% Html.RenderPartial("LogOnUserControl"); %></span>
+                               
                         </td>
                         <td align="left" valign="middle" style="white-space: nowrap;">
                             &nbsp;&nbsp;|
                         </td>
-                        <td>
-<%--                 <input value="Block" id="blockButton">
-                <input  value="Block with Message" id="blockButton2">
-                <input  value="Unblock" id="unblockButton"></td>>--%>
+
+
                         
                         <td align="right" valign="middle" style="white-space: nowrap;">
 
@@ -362,12 +361,12 @@
                                                 <tr>
                                                     <td id="SETTINGS" class="item level1" onmouseenter="this.className += ' hover';"
                                                         onmouseleave="this.className = this.className.replace(' hover', '');">
-                                                        <a class="link arrow" href="#"><span class="text ">My Settings</span> </a>
+                                                        <a class="link arrow" href="#"><span class="text ">My Account</span> </a>
                                                         <div class="slide">
                                                             <table border="0" cellpadding="0" cellspacing="1">
                                                                 <tr>
                                                                     <td class="item level2">
-                                                                        <a class="link" href="#" onclick="lnkMyAccount_onClick();">
+                                                                        <a class="link" onclick="lnkpwdChange_onClick();" title="Change Password">
                                                                             <span class="text">Change Password</span> </a>
                                                                     </td>
                                                                 </tr>
@@ -378,16 +377,10 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td class="item level2">
-                                                                        <a class="link" href="#" onclick="siteNavigation.doShowPopup('/admin/adm_mydefaults.aspx?_ClearUPState=True');">
-                                                                            <span class="text">My Defaults</span> </a>
+                                                                        <a class="link" href="/Account/LogOff">
+                                                                            <span class="text">Log Off</span> </a>
                                                                     </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td class="item level2">
-                                                                        <a class="link" href="#" onclick="siteNavigation.doShowPopup('/admin/adm_myrestrictions.aspx?Mode=Project&_ClearUPState=True');">
-                                                                            <span class="text">My Projects</span> </a>
-                                                                    </td>
-                                                                </tr>
+                                                                </tr>                                                              
                                                             </table>
                                                         </div>
                                                     </td>
