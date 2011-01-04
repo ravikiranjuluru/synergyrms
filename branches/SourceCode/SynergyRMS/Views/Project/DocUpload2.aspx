@@ -549,9 +549,7 @@ window["X9ctl00_phFormContent_txtDetails_radEditFormattedText"], [], window["X1c
     <table width="100%" cellspacing="0" cellpadding="0" border="0">
         <tbody><tr>
             <td align="left">
-                <input type="submit" value="Save" class="button" id="ctl00_phFormButtonBar_btnSave" name="ctl00$phFormButtonBar$btnSave">
-                    <input type="submit" value="Save and Close" class="button" id="ctl00_phFormButtonBar_btnSaveAndClose" name="ctl00$phFormButtonBar$btnSaveAndClose">
-                <input type="submit" value="Close" class="button" id="ctl00_phFormButtonBar_btnClose" name="ctl00$phFormButtonBar$btnClose">    
+                <input type="submit" value="Save" class="button" id="ctl00_phFormButtonBar_btnSave" name="ctl00$phFormButtonBar$btnSave"&n&nbsp;&nbsp;    
 
             
             </td>
