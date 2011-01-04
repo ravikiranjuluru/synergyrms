@@ -3,23 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-        <form id="aspnetForm" onsubmit="javascript:return WebForm_OnSubmit();" action="dashboard/custom/SchedulingDashboard/SchedulingDashboard.aspx?ReturnTrail=%26%257e%252fags_gettingstarted.aspx%26Getting%2bStarted&amp;Continue="
-        method="post" name="aspnetForm">
+        <form id="aspnetForm" onsubmit="" action="" method="post" name="aspnetForm">
        
 
 
-       <%-- <script type="text/javascript" src="/scripts/xbScrollableTable.js"></script>
-        <script type="text/javascript" src="/scripts/xbLibrary.js"></script>
-        <script type="text/javascript" src="/dashboard/dsh_dashboard.master.js"></script>
-        <script type="text/javascript" src="/scripts/xbLibrary.js"></script>
-        <script type="text/javascript" src="/common/controls/com_popupwindow.js"></script>
-        <script type="text/javascript" src="/common/controls/com_menulist.js"></script>
-        <script type="text/javascript" src="/scripts/xbLibrary.js"></script>
-        <script type="text/javascript" src="/common/controls/com_tabstripheader.js"></script>
-        <script type="text/javascript" src="/dashboard/custom/SchedulingDashboard/SchedulingElement.js"></script>
-        <script type="text/javascript" src="/scripts/xbSplitter.js"></script>
-        <script type="text/javascript" src="/common/script/com_selectall.js"></script>--%>
-
+      
         <script type="text/javascript">
 //&lt;![CDATA[
 function SchedulingElement_onSubmit()
@@ -253,18 +241,9 @@ function SchedulingElement_splitAssignment(assignmentKey)
             //]]&gt;
 </script>
 
-        <div>
-            <input type="hidden" value="/wEWGQKamaONCwL/mqDiCgKIoMaBCALnkJj9AgKQiqimDAKiwKHvAwLHpZPkDQKj0au8CgKw0o48Aqndy6oNAufZ88QBAqDctt0HAoicxo0HAtvt2+kKAv+a/8YFAuKljKsKAvzwgPkBAqWPyUACtvC15QkC/5e5hQ4CqKbJxAIC2KLZqwkC0rf33gUC98z1kgoC5YmC7QaJ/QDXolkL97/zN4AVtU3xU6qbjw=="
-                id="__EVENTVALIDATION" name="__EVENTVALIDATION">
-        </div>
 
-        <script type="text/javascript">
 
-            if (window.top.siteNavigation_selectTab) {
-                window.top.siteNavigation.doSelectItem('DASHBOARD-SCHEDULING');
-            }
-        
-    </script>
+
 
         <script type="text/javascript">
             
@@ -512,7 +491,7 @@ function SchedulingElement_splitAssignment(assignmentKey)
                                                             <tbody>
                                                                 <tr>
                                                                     <td align="left" class="pageTitle">
-                                                                        Schedule</td>
+                                                                        Project Schedule</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -999,248 +978,25 @@ function SchedulingElement_splitAssignment(assignmentKey)
                                                     <div style="padding-left: 10px; padding-right: 10px;" id="divHeader">
                                                         <table width="100%" cellspacing="0" cellpadding="0" border="0">
                                                             <thead>
-                                                                <tr>
-                                                                    <td align="left">
-                                                                        <table width="100px" cellspacing="0" cellpadding="0" border="0" style="">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td align="left" style="white-space: nowrap;">
-                                                                                        <table style="width: 100%;">
-                                                                                            <tbody>
-                                                                                                <tr>
-                                                                                                    <td align="left" style="white-space: nowrap; border: medium none; width: 100%;">
-                                                                                                        <table>
-                                                                                                            <tbody>
-                                                                                                                <tr>
-                                                                                                                    <td align="left" style="white-space: nowrap;">
-                                                                                                                        Resource List:&nbsp;
-                                                                                                                        <select onchange="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager','CBOLIST_CLICK')"
-                                                                                                                            class="comboBox" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_ucResourceListManager_cboList"
-                                                                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$cboList">
-                                                                                                                            <option value="All" selected="selected">All</option>
-                                                                                                                        </select>
-                                                                                                                    </td>
-                                                                                                                    <td align="left">
-                                                                                                                        <table cellspacing="0" cellpadding="0" style="border: 0px none; padding: 0px; margin: 0px;">
-                                                                                                                            <tbody>
-                                                                                                                                <tr>
-                                                                                                                                    <td onmouseout="com_menulist_menuOnMouseOut(this, '');" onmouseover="com_menulist_menuOnMouseOver(this, 'transparent', 'transparent');"
-                                                                                                                                        id="ctl00_dshElement_Scheduling_aecElementControlScheduling_ucResourceListManager_mnuListActions_tblMenu0"
-                                                                                                                                        style="white-space: nowrap; cursor: pointer; color: rgb(102, 102, 102);">
-                                                                                                                                        <table cellspacing="0" cellpadding="0" border="0">
-                                                                                                                                            <tbody>
-                                                                                                                                                <tr onmouseout="getFirstChild(getChildNode(this, 1)).src = '../../Content/images/icon/vistabuttongrey_dropdown.gif';"
-                                                                                                                                                    onmouseover="getFirstChild(getChildNode(this, 1)).src = '../../Content/images/icon/vistabuttongrey_dropdown_mouseover.gif';"
-                                                                                                                                                    id="tr1">
-                                                                                                                                                    <td valign="middle" align="center" onclick="com_menulist_showPopup(event, getParentNode(getParentNode(getParentNode(getParentNode(this)))), 'ctl00_dshElement_Scheduling_aecElementControlScheduling_ucResourceListManager_mnuListActions_tblMenu0_divPopup', 'right', 'transparent', '#F9F9F9', '#666666');"
-                                                                                                                                                        style="padding-left: 10px; white-space: nowrap; padding-right: 9px; background-image: url(&quot;../../Content/images/icon/vistabuttongrey.gif&quot;);
-                                                                                                                                                        background-repeat: no-repeat; background-position: left center; height: 22px;">
-                                                                                                                                                        Actions
-                                                                                                                                                    </td>
-                                                                                                                                                    <td onclick="com_menulist_showPopup(event, getParentNode(getParentNode(getParentNode(getParentNode(this)))), 'ctl00_dshElement_Scheduling_aecElementControlScheduling_ucResourceListManager_mnuListActions_tblMenu0_divPopup', 'right', 'transparent', '#F9F9F9', '#666666');">
-                                                                                                                                                        <img style="vertical-align: middle;" alt="" src="../../Content/images/icon/vistabuttongrey_dropdown_mouseover.gif">
-                                                                                                                                                    </td>
-                                                                                                                                                </tr>
-                                                                                                                                            </tbody>
-                                                                                                                                        </table>
-                                                                                                                                    </td>
-                                                                                                                                </tr>
-                                                                                                                            </tbody>
-                                                                                                                        </table>
-                                                                                                                        <div onmouseout="com_menulist_popupOnMouseOut();" onmouseover="com_menulist_popupOnMouseOver();"
-                                                                                                                            style="visibility: hidden; position: absolute; background-color: rgb(255, 255, 255);
-                                                                                                                            border: 1px solid rgb(102, 102, 102); z-index: 1001;" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_ucResourceListManager_mnuListActions_tblMenu0_divPopup">
-                                                                                                                            <table style="width: 220px; background-color: rgb(249, 249, 249); color: rgb(102, 102, 102);
-                                                                                                                                border: medium none; border-collapse: collapse; padding: 0px; margin: 0px; text-align: left;">
-                                                                                                                                <tbody>
-                                                                                                                                    <tr onmouseout="this.cells(0).style.backgroundColor='#DDDDDD';this.cells(1).style.backgroundColor='#F9F9F9';"
-                                                                                                                                        onmouseover="this.cells(0).style.backgroundColor='#ECECED';this.cells(1).style.backgroundColor='#ECECED';">
-                                                                                                                                        <td valign="middle" align="center" onclick="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$mnuListActions','&lt;argument&gt;&lt;menu&gt;ACTIONSMENU&lt;/menu&gt;&lt;item&gt;CREATELIST&lt;/item&gt;&lt;/argument&gt;')"
-                                                                                                                                            style="white-space: nowrap; width: 20px; height: 20px; padding: 2px; cursor: pointer;
-                                                                                                                                            background-color: rgb(221, 221, 221); color: rgb(102, 102, 102);">
-                                                                                                                                            <img height="16" width="16" alt="" src="../../Content/images/common/space.gif">
-                                                                                                                                        </td>
-                                                                                                                                        <td onclick="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$mnuListActions','&lt;argument&gt;&lt;menu&gt;ACTIONSMENU&lt;/menu&gt;&lt;item&gt;CREATELIST&lt;/item&gt;&lt;/argument&gt;')"
-                                                                                                                                            style="white-space: nowrap; cursor: pointer; background-color: rgb(249, 249, 249);
-                                                                                                                                            color: rgb(102, 102, 102);" class="popupMenuItem">
-                                                                                                                                            Create Empty List...
-                                                                                                                                        </td>
-                                                                                                                                    </tr>
-                                                                                                                                    <tr onmouseout="this.cells(0).style.backgroundColor='#DDDDDD';this.cells(1).style.backgroundColor='#F9F9F9';"
-                                                                                                                                        onmouseover="this.cells(0).style.backgroundColor='#ECECED';this.cells(1).style.backgroundColor='#ECECED';">
-                                                                                                                                        <td valign="middle" align="center" onclick="javascript:com_listmanagement_showListNameEntry('/common/com_inputbox.aspx?MaxLength=70&amp;PageTitle=Enter List Name','ctl00_dshElement_Scheduling_aecElementControlScheduling_ucResourceListManager');"
-                                                                                                                                            style="white-space: nowrap; width: 20px; height: 20px; padding: 2px; cursor: pointer;
-                                                                                                                                            background-color: rgb(221, 221, 221); color: rgb(102, 102, 102);">
-                                                                                                                                            <img height="16" width="16" alt="" src="../../Content/images/common/space.gif">
-                                                                                                                                        </td>
-                                                                                                                                        <td onclick="javascript:com_listmanagement_showListNameEntry('/common/com_inputbox.aspx?MaxLength=70&amp;PageTitle=Enter List Name','ctl00_dshElement_Scheduling_aecElementControlScheduling_ucResourceListManager');"
-                                                                                                                                            style="white-space: nowrap; cursor: pointer; background-color: rgb(249, 249, 249);
-                                                                                                                                            color: rgb(102, 102, 102);" class="popupMenuItem">
-                                                                                                                                            Save As...
-                                                                                                                                        </td>
-                                                                                                                                    </tr>
-                                                                                                                                    <tr onmouseout="this.cells(0).style.backgroundColor='#DDDDDD';this.cells(1).style.backgroundColor='#F9F9F9';"
-                                                                                                                                        onmouseover="this.cells(0).style.backgroundColor='#ECECED';this.cells(1).style.backgroundColor='#ECECED';">
-                                                                                                                                        <td valign="middle" align="center" onclick="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$mnuListActions','&lt;argument&gt;&lt;menu&gt;ACTIONSMENU&lt;/menu&gt;&lt;item&gt;DELETELIST&lt;/item&gt;&lt;/argument&gt;')"
-                                                                                                                                            style="white-space: nowrap; width: 20px; height: 20px; padding: 2px; cursor: pointer;
-                                                                                                                                            background-color: rgb(221, 221, 221); color: rgb(102, 102, 102);">
-                                                                                                                                            <img height="16" width="16" alt="" src="../../Content/images/common/space.gif">
-                                                                                                                                        </td>
-                                                                                                                                        <td onclick="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$mnuListActions','&lt;argument&gt;&lt;menu&gt;ACTIONSMENU&lt;/menu&gt;&lt;item&gt;DELETELIST&lt;/item&gt;&lt;/argument&gt;')"
-                                                                                                                                            style="white-space: nowrap; cursor: pointer; background-color: rgb(249, 249, 249);
-                                                                                                                                            color: rgb(102, 102, 102);" class="popupMenuItem">
-                                                                                                                                            Delete...
-                                                                                                                                        </td>
-                                                                                                                                    </tr>
-                                                                                                                                    <tr>
-                                                                                                                                        <td style="background-color: rgb(221, 221, 221); color: rgb(102, 102, 102);" class="popupMenuItemDivider">
-                                                                                                                                            <img height="1" width="1" alt="" src="../../Content/images/common/space.gif">
-                                                                                                                                        </td>
-                                                                                                                                        <td style="background-color: rgb(249, 249, 249);" class="popupMenuItemDivider">
-                                                                                                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
-                                                                                                                                        </td>
-                                                                                                                                    </tr>
-                                                                                                                                    <tr onmouseout="this.cells(0).style.backgroundColor='#DDDDDD';this.cells(1).style.backgroundColor='#F9F9F9';"
-                                                                                                                                        onmouseover="this.cells(0).style.backgroundColor='#ECECED';this.cells(1).style.backgroundColor='#ECECED';">
-                                                                                                                                        <td valign="middle" align="center" onclick="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$mnuListActions','&lt;argument&gt;&lt;menu&gt;ACTIONSMENU&lt;/menu&gt;&lt;item&gt;SHOWLISTCONTENTS&lt;/item&gt;&lt;/argument&gt;')"
-                                                                                                                                            style="white-space: nowrap; width: 20px; height: 20px; padding: 2px; cursor: pointer;
-                                                                                                                                            background-color: rgb(221, 221, 221); color: rgb(102, 102, 102);">
-                                                                                                                                            <img height="16" width="16" alt="" src="../../Content/images/common/space.gif">
-                                                                                                                                        </td>
-                                                                                                                                        <td onclick="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$mnuListActions','&lt;argument&gt;&lt;menu&gt;ACTIONSMENU&lt;/menu&gt;&lt;item&gt;SHOWLISTCONTENTS&lt;/item&gt;&lt;/argument&gt;')"
-                                                                                                                                            style="white-space: nowrap; cursor: pointer; background-color: rgb(249, 249, 249);
-                                                                                                                                            color: rgb(102, 102, 102);" class="popupMenuItem">
-                                                                                                                                            Show List Contents
-                                                                                                                                        </td>
-                                                                                                                                    </tr>
-                                                                                                                                    <tr>
-                                                                                                                                        <td style="background-color: rgb(221, 221, 221); color: rgb(102, 102, 102);" class="popupMenuItemDivider">
-                                                                                                                                            <img height="1" width="1" alt="" src="../../Content/images/common/space.gif">
-                                                                                                                                        </td>
-                                                                                                                                        <td style="background-color: rgb(249, 249, 249);" class="popupMenuItemDivider">
-                                                                                                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
-                                                                                                                                        </td>
-                                                                                                                                    </tr>
-                                                                                                                                    <tr onmouseout="this.cells(0).style.backgroundColor='#DDDDDD';this.cells(1).style.backgroundColor='#F9F9F9';"
-                                                                                                                                        onmouseover="this.cells(0).style.backgroundColor='#ECECED';this.cells(1).style.backgroundColor='#ECECED';">
-                                                                                                                                        <td valign="middle" align="center" onclick="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$mnuListActions','&lt;argument&gt;&lt;menu&gt;ACTIONSMENU&lt;/menu&gt;&lt;item&gt;_USER_AddResources&lt;/item&gt;&lt;/argument&gt;')"
-                                                                                                                                            style="white-space: nowrap; width: 20px; height: 20px; padding: 2px; cursor: pointer;
-                                                                                                                                            background-color: rgb(221, 221, 221); color: rgb(102, 102, 102);">
-                                                                                                                                            <img height="16" width="16" alt="" src="../../Content/images/common/space.gif">
-                                                                                                                                        </td>
-                                                                                                                                        <td onclick="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$mnuListActions','&lt;argument&gt;&lt;menu&gt;ACTIONSMENU&lt;/menu&gt;&lt;item&gt;_USER_AddResources&lt;/item&gt;&lt;/argument&gt;')"
-                                                                                                                                            style="white-space: nowrap; cursor: pointer; background-color: rgb(249, 249, 249);
-                                                                                                                                            color: rgb(102, 102, 102);" class="popupMenuItem">
-                                                                                                                                            Add Resources...
-                                                                                                                                        </td>
-                                                                                                                                    </tr>
-                                                                                                                                    <tr onmouseout="this.cells(0).style.backgroundColor='#DDDDDD';this.cells(1).style.backgroundColor='#F9F9F9';"
-                                                                                                                                        onmouseover="this.cells(0).style.backgroundColor='#ECECED';this.cells(1).style.backgroundColor='#ECECED';">
-                                                                                                                                        <td valign="middle" align="center" onclick="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$mnuListActions','&lt;argument&gt;&lt;menu&gt;ACTIONSMENU&lt;/menu&gt;&lt;item&gt;_USER_AddRoles&lt;/item&gt;&lt;/argument&gt;')"
-                                                                                                                                            style="white-space: nowrap; width: 20px; height: 20px; padding: 2px; cursor: pointer;
-                                                                                                                                            background-color: rgb(221, 221, 221); color: rgb(102, 102, 102);">
-                                                                                                                                            <img height="16" width="16" alt="" src="../../Content/images/common/space.gif">
-                                                                                                                                        </td>
-                                                                                                                                        <td onclick="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$mnuListActions','&lt;argument&gt;&lt;menu&gt;ACTIONSMENU&lt;/menu&gt;&lt;item&gt;_USER_AddRoles&lt;/item&gt;&lt;/argument&gt;')"
-                                                                                                                                            style="white-space: nowrap; cursor: pointer; background-color: rgb(249, 249, 249);
-                                                                                                                                            color: rgb(102, 102, 102);" class="popupMenuItem">
-                                                                                                                                            Add Roles...
-                                                                                                                                        </td>
-                                                                                                                                    </tr>
-                                                                                                                                </tbody>
-                                                                                                                            </table>
-                                                                                                                        </div>
-                                                                                                                    </td>
-                                                                                                                </tr>
-                                                                                                            </tbody>
-                                                                                                        </table>
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                        <input type="hidden" value="False" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_ucResourceListManager_hdnPostBack"
-                                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$hdnPostBack">
-                                                                                        <input type="hidden" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_ucResourceListManager_hdnAction"
-                                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$hdnAction">
-                                                                                        <input type="hidden" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_ucResourceListManager_hdnParameter"
-                                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$ucResourceListManager$hdnParameter">
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                    <td align="left" style="white-space: nowrap; padding-left: 10px;">
-                                                                        Project:
-                                                                    </td>
-                                                                    <td align="left" style="white-space: nowrap; padding-left: 3px; width: 100%;">
-                                                                        <input type="text" onkeydown="com_pickbox_onKeyDown(event, this, 'ctl00_dshElement_Scheduling_aecElementControlScheduling_pbxProject_lnkSelect', 'ctl00_dshElement_Scheduling_aecElementControlScheduling_pbxProject_lnkRefresh', true);"
-                                                                            title="" maxlength="20" class="textBox" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_pbxProject_txtValue"
-                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$pbxProject$txtValue">&nbsp;&nbsp;
-                                                                        <input type="hidden" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_pbxProject_hdnDescription"
-                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$pbxProject$hdnDescription">
-                                                                    </td>
-                                                                    <td align="right">
-                                                                        <table cellspacing="0" cellpadding="0" border="0">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td valign="middle" align="left" style="white-space: nowrap; padding-left: 10px;">
-                                                                                        <input type="image" title="Go to Current Week" alt="Go to Current Week" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_imgGoToCurrentPeriod"
-                                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$imgGoToCurrentPeriod"
-                                                                                            src="../../Content/images/icon/currentperiod.gif">
-                                                                                    </td>
-                                                                                    <td valign="middle" align="left" style="white-space: nowrap; padding-left: 10px;">
-                                                                                        <input type="image" title="Go Back a Week" alt="Go Back a Week" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_imgBack"
-                                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$imgBack" src="../../Content/images/icon/chevron_left.gif">
-                                                                                    </td>
-                                                                                    <td valign="middle" align="left" style="white-space: nowrap; padding-left: 5px;">
-                                                                                        <a id="ctl00_dshElement_Scheduling_aecElementControlScheduling_ucFromDate_lnkPickDate"
-                                                                                            href="javascript:com_dateinput_showHyperlinkDatePick('/common/com_calendar.aspx?CalendarMode=',com_dateinput_setHyperlinkDateCallback_ctl00_dshElement_Scheduling_aecElementControlScheduling_ucFromDate,'40525');">
-                                                                                            12/13/2010/a>
-                                                                                            <input type="hidden" class="textBox" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_ucFromDate_hdnDate"
-                                                                                                name="ctl00$dshElement_Scheduling$aecElementControlScheduling$ucFromDate$hdnDate">
-                                                                                    </td>
-                                                                                    <td valign="middle" align="left" style="white-space: nowrap; padding-left: 5px;">
-                                                                                        <input type="image" title="Go Forward a Week" alt="Go Forward a Week" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_imgForward"
-                                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$imgForward" src="../../Content/images/icon/chevron_right.gif">
-                                                                                    </td>
-                                                                                    <td valign="middle" align="left" style="white-space: nowrap; padding-left: 10px;">
-                                                                                        Period:
-                                                                                    </td>
-                                                                                    <td valign="middle" align="left" style="white-space: nowrap; padding-left: 3px;">
-                                                                                        <select onchange="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling','')"
-                                                                                            class="comboBox" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_lstPeriods"
-                                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$lstPeriods">
-                                                                                            <option value="1">1</option>
-                                                                                            <option value="2">2</option>
-                                                                                            <option value="3">3</option>
-                                                                                            <option value="4">4</option>
-                                                                                            <option value="5">5</option>
-                                                                                            <option value="6">6</option>
-                                                                                            <option value="7">7</option>
-                                                                                            <option value="8" selected="selected">8</option>
-                                                                                        </select>
-                                                                                    </td>
-                                                                                    <td valign="middle" align="left" style="white-space: nowrap; padding-left: 3px;">
-                                                                                        Weeks
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
+                                                                
                                                                 <tr>
                                                                     <td align="left" style="padding-left: 5px;" colspan="3">
                                                                         <table cellspacing="0" cellpadding="0" border="0">
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td valign="middle" align="left" style="white-space: nowrap;" class="small">
-                                                                                        Show Summary Rows for Expanded Resources:
+                                                                                        Project:
+                                                       <select name="ctl00$phFormContent$cboProjectLevel" id="project"
+                                                            class="comboBox">
+                                                            <option value="Select">Select</option>
+                                                            <option value="Project1" selected="selected">Project 1</option>
+                                                            <option value="Project2">Project 2</option>
+                                                            <option value="Project3">Project 3</option>
+                                                        </select>
                                                                                     </td>
                                                                                     <td valign="middle" align="left" style="white-space: nowrap; padding-left: 5px;"
                                                                                         class="small">
-                                                                                        <input type="checkbox" checked="checked" onclick="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling','')"
-                                                                                            class="checkBox" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_chkShowSummaryRowsForExpandedResources"
-                                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$chkShowSummaryRowsForExpandedResources">
+                                                                                        
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
