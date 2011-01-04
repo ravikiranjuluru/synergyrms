@@ -315,7 +315,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                         <label for="code">Code:</label>Code:
+                                                         <label for="code">Code</label>Code:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="middle">
                                                    
@@ -327,7 +327,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="description">Description:</label>Description:
+                                                        <label for="description">Description</label>Description:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="middle">
                                                         <input name="txtDescription" id="description"
@@ -336,7 +336,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="active">Active:</label>Active:
+                                                        <label for="active"></label>Active:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="middle">
                                                         <input name="ctl00$phFormContent$chkActive" id="active" class="checkBox"
@@ -353,7 +353,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="client">Client:</label>Client:
+                                                        <label for="client">Client</label>Client:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <input name="ctl00$phFormContent$pbxClient$txtValue" id="client"
@@ -365,7 +365,7 @@
                                                
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="projectLevel">Project Level:</label>Project Level:
+                                                        <label for="projectLevel"></label>Project Level:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <select name="ctl00$phFormContent$cboProjectLevel" id="projectLevel"
@@ -379,7 +379,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="location">Location:</label>Location:
+                                                        <label for="location">Location</label>Location:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <input name="ctl00$phFormContent$pbxLocation$txtValue" id="location"
@@ -390,7 +390,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="projectManger">Project Manager:</label>Project Manager:
+                                                        <label for="projectManger">Project Manager</label>Project Manager:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <input name="ctl00$phFormContent$pbxProjectManager$txtValue" id="projectManger"
@@ -401,7 +401,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                       <label for="projectSponser">Project Sponsor:</label>Project Sponsor:
+                                                       <label for="projectSponser">Project Sponsor</label>Project Sponsor:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <input name="ctl00$phFormContent$pbxProjectSponsor$txtValue" id="projectSponser"
@@ -429,7 +429,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="projectstartdate">Start Date:</label>Start Date:
+                                                        <label for="projectstartdate">Start Date</label>Start Date:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">                                                 
                                                         <input name="ctl00$phFormContent$dteStartDate$txtYear" id="projectstartdate"
@@ -440,7 +440,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                       <label for="projectenddate">End Date:</label> End Date:
+                                                       <label for="projectenddate">End Date</label> End Date:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                       
