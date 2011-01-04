@@ -44,13 +44,13 @@ namespace SynergyRMS.Controllers
         [HttpPost]
         public ActionResult Login(LogOnModel model, string returnUrl)
         {
-            bool success = false;
+           
             if (ModelState.IsValid)
             {
                 if (MembershipService.ValidateUser(model.UserName, model.Password))
                 {
                     FormsService.SignIn(model.UserName, model.RememberMe);
-                    success = true;
+                    
 
                     //Roles.CreateRole("Admin");
                     //Roles.CreateRole("User");
@@ -148,7 +148,7 @@ namespace SynergyRMS.Controllers
             {
                 if (MembershipService.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword))
                 {
-                    return RedirectToAction("ChangePasswordSuccess");
+                    ModelState.AddModelError("", "Your password has been changed successfully.");
                 }
                 else
                 {
