@@ -36,5 +36,9 @@ namespace SynergyRMS.Controllers
         {
             return View("FileUpload");
         }
+        public ActionResult Task()
+        {
+            return View("NewTask");
+        }
     }
 }
