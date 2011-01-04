@@ -245,37 +245,37 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="tabSpace">
-                                                                <img height="1" width="5" id="ctl00_phTabstripHeader_tabMain_imgTabSpace" src="/images/space.gif">
+                                                                <img height="1" width="5" id="ctl00_phTabstripHeader_tabMain_imgTabSpace" src="../../Content/images/common/space.gif">
                                                             </td>
                                                             <td nowrap="nowrap" class="tabSelected">
                                                                 General Info
                                                             </td>
                                                             <td class="tabSpace">
-                                                                <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace0" src="/images/space.gif">
+                                                                <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace0" src="../../Content/images/common/space.gif">
                                                             </td>
                                                             <td class="tabSpace">
-                                                                <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace2" src="/images/space.gif">
+                                                                <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace2" src="../../Content/images/common/space.gif">
                                                             </td>
                                                             <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','ROLES')"
                                                                 onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
                                                                 <a href="AddRole">Roles</a>
                                                             </td>
                                                             <td class="tabSpace">
-                                                                <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace3" src="/images/space.gif">
+                                                                <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace3" src="../../Content/images/common/space.gif">
                                                             </td>
                                                             <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','SKILLS')"
                                                                 onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
                                                                 <a href="AddSkill">Skills</a>
                                                             </td>
                                                             <td class="tabSpace">
-                                                                <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace5" src="/images/space.gif">
+                                                                <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace5" src="../../Content/images/common/space.gif">
                                                             </td>
                                                             <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','INTERESTED PROJECTS')"
                                                                 onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
                                                                 <a href="InterestProjects">Interested Projects</a>
                                                             </td>
                                                             <td class="tabSpace">
-                                                                <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace7" src="/images/space.gif">
+                                                                <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace7" src="../../Content/images/common/space.gif">
                                                             </td>
                                                             <td nowrap="nowrap" width="100%" valign="middle" align="left" class="tabTail">
                                                                 &nbsp;
@@ -315,64 +315,62 @@
                                                 <tbody>
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
-                                                            <img height="1" width="180" id="ctl00_phFormContent_ucFormHeader_img1" src="../images/space.gif">
+                                                            <img height="1" width="180" id="ctl00_phFormContent_ucFormHeader_img1" src="..../../Content/images/common/space.gif">
                                                         </td>
                                                         <td height="5" width="100%" colspan="2" class="formDetailNoPadding">
-                                                            <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="../images/space.gif">
+                                                            <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="..../../Content/images/common/space.gif">
                                                         </td>
                                                     </tr>
-                                                     <tr>
-                                                    <td class="formDetailDark" align="right" valign="middle">
-                                                         <label for="code">Code</label>Code:
-                                                    </td>
-                                                    <td class="formDetail" align="left" valign="middle">
-                                                   
-                                                        <input name="txtCode" id="code" class="textBox"
-                                                            size="20" maxlength="20" type="text">
-                                                            
-
-                                                    </td>
-                                                </tr>
-                                                     <tr>
-                                                    <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="description">Description</label>Description:
-                                                    </td>
-                                                    <td class="formDetail" align="left" valign="middle">
-                                                        <input name="txtDescription" id="description"
-                                                            class="textBox" size="70" maxlength="70" type="text">
-                                                    </td>
-                                                </tr>
-                                                   <tr>
+                                                    <tr>
+                                                        <td class="formDetailDark" align="right" valign="middle">
+                                                            <label for="code">
+                                                                Code</label>Code:
+                                                        </td>
+                                                        <td class="formDetail" align="left" valign="middle">
+                                                            <input name="txtCode" id="code" class="textBox" size="20" maxlength="20" type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="formDetailDark" align="right" valign="middle">
+                                                            <label for="description">
+                                                                Description</label>Description:
+                                                        </td>
+                                                        <td class="formDetail" align="left" valign="middle">
+                                                            <input name="txtDescription" id="description" class="textBox" size="70" maxlength="70"
+                                                                type="text">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                             <label for="resourceType"></label>Resource Type:
+                                                            <label for="resourceType">
+                                                            </label>
+                                                            Resource Type:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
-                                                            <select class="comboBox" 
-                                                             id="resourceType"
-                                                                name="ctl00$phFormContent$cboResourceType">
+                                                            <select class="comboBox" id="resourceType" name="ctl00$phFormContent$cboResourceType">
                                                                 <option value="1">Employee</option>
                                                                 <option value="2">Contractor</option>
                                                                 <option value="4" selected="selected">Role</option>
                                                             </select>
                                                         </td>
                                                     </tr>
-                                                   <tr>
+                                                    <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="active"></label>Active:
+                                                            <label for="active">
+                                                            </label>
+                                                            Active:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
-                                                            <input type="checkbox" checked="checked" class="checkBox" 
-                                                            id="active"
-                                                                name="ctl00$phFormContent$chkActive">
+                                                            <input type="checkbox" checked="checked" class="checkBox" id="active" name="ctl00$phFormContent$chkActive">
                                                         </td>
                                                     </tr>
                                                    
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDarkHR">
-                                                            <img height="1" width="100%" alt="" src="/images/hr.gif">
+                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
                                                         <td valign="middle" align="left" colspan="1" class="formDetailHR">
-                                                            <img height="1" width="100%" alt="" src="/images/hr.gif">
+                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -426,32 +424,31 @@
                                                     </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDarkHR">
-                                                            <img height="1" width="100%" alt="" src="/images/hr.gif">
+                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
                                                         <td valign="middle" align="left" colspan="1" class="formDetailHR">
-                                                            <img height="1" width="100%" alt="" src="/images/hr.gif">
+                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
                                                     </tr>
                                                    
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDarkHR">
-                                                            <img height="1" width="100%" alt="" src="/images/hr.gif">
+                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
                                                         <td valign="middle" align="left" colspan="1" class="formDetailHR">
-                                                            <img height="1" width="100%" alt="" src="/images/hr.gif">
+                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
                                                     </tr>
                                                     <tr id="ctl00_phFormContent_ucCustomFields_trCustom25">
                                                         <td valign="middle" align="right" style="padding-top: 4px; padding-bottom: 4px;"
                                                             class="formDetailDark" id="ctl00_phFormContent_ucCustomFields_tdCustomLabel25">
-                                                            <img align="middle" title="Attach a Photograph of your Resources" alt="Attach a Photograph of your Resources"
-                                                                src="/images/info.gif">
+                                                            
                                                             Photograph:
                                                         </td>
                                                         <td valign="middle" colspan="1" style="padding-top: 4px; padding-bottom: 4px;" class="formDetail"
                                                             id="ctl00_phFormContent_ucCustomFields_tdCustomControl25">
                                                             <a id="ctl00_phFormContent_ucCustomFields_cfCustom25_lnkUploadDocument"
-                                                             href="">
+                                                             href="#">
                                                                 [Upload File]</a>
                                                             
                                                             &nbsp;
@@ -459,10 +456,10 @@
                                                     </tr>
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
-                                                            <img height="1" width="180" id="ctl00_phFormContent_ucFormFooter_img1" src="../images/space.gif">
+                                                            <img height="1" width="180" id="ctl00_phFormContent_ucFormFooter_img1" src="../../Content/images/common/space.gif">
                                                         </td>
                                                         <td height="5" width="100%" colspan="2" class="formDetailNoPadding">
-                                                            <img height="1" id="ctl00_phFormContent_ucFormFooter_img2" src="../images/space.gif">
+                                                            <img height="1" id="ctl00_phFormContent_ucFormFooter_img2" src="../../Content/images/common/space.gif">
                                                         </td>
                                                     </tr>
                                                 </tbody>
