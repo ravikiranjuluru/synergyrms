@@ -11,14 +11,32 @@
             <div style="overflow: hidden;" id="ctl00_ucTabStrip_divTabContainer">
                 
                 <table cellspacing="0" cellpadding="0" border="0" id="ctl00_ucTabStrip_tabStrip">
-	<tbody><tr>
-	</tr>
+	<tbody>
 	<tr>
-		<td class="dashboardTabSpace"><img height="1" width="5" id="ctl00_ucTabStrip_imgTabSpace" src="/images/space.gif"></td>
-		<td class="dashboardTabSpace"><img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace3" src="/images/space.gif"></td>
-		<td nowrap="nowrap" class="dashboardTabSelected">Documents</td>
-		<td class="dashboardTabSpace"><img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace4" src="/images/space.gif"></td>
-		<td nowrap="nowrap" width="100%" valign="middle" align="left" class="dashboardTabTail">&nbsp;</td>
+	  
+                                                  <td class="dashboardTabSpace">
+                                            <img src="../../Content/images/common/space.gif" id="Img1"
+                                                width="1" height="1">
+                                        </td>
+                                        <td class="dashboardTabOff" nowrap="nowrap">
+                                            <a href="../Project/EditProject">Tasks</a>
+                                        </td>
+                                        <td class="dashboardTabSpace">
+                                            <img src="../../Content/images/common/space.gif" id="Img2"
+                                                width="1" height="1">
+                                        </td>
+            <td class="dashboardTabSpace">
+                <img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace3" src="/images/space.gif">
+            </td>
+            <td nowrap="nowrap" class="dashboardTabSelected">
+                Documents
+            </td>
+            <td class="dashboardTabSpace">
+                <img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace4" src="/images/space.gif">
+            </td>
+            <td nowrap="nowrap" width="100%" valign="middle" align="left" class="dashboardTabTail">
+                &nbsp;
+            </td>
 	</tr>
 </tbody></table>
                 
@@ -154,10 +172,16 @@
         
             <td align="left" style="padding: 5px;">
             
-            Resource
-                                    : <input type="text" onkeydown="com_pickbox_onKeyDown(event, this, 'ctl00_dshElement_PR4_aecElementControlPR4_pbxFilter1Resource_lnkSelect', 'ctl00_dshElement_PR4_aecElementControlPR4_pbxFilter1Resource_lnkRefresh', true);" class="textBox" id="ctl00_dshElement_PR4_aecElementControlPR4_pbxFilter1Resource_txtValue" name="ctl00$dshElement_PR4$aecElementControlPR4$pbxFilter1Resource$txtValue"> 
-    <a href="javascript:__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4$pbxFilter1Resource$lnkSelect','')" title="Select" id="ctl00_dshElement_PR4_aecElementControlPR4_pbxFilter1Resource_lnkSelect"><img border="0" alt="Select" src="/images/pick.gif"></a>
-        <a href="javascript:__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4$pbxFilter1Resource$lnkRefresh','')" title="Refresh" id="ctl00_dshElement_PR4_aecElementControlPR4_pbxFilter1Resource_lnkRefresh"><img border="0" alt="Refresh" src="/images/refresh.gif"></a>
+            Project
+                                    :
+                                      <select name="ctl00$phFormContent$cboProjectLevel" id="project"
+                                                            class="comboBox">
+                                                            <option value="Select">Select</option>
+                                                            <option value="Project1" selected="selected">Project 1</option>
+                                                            <option value="Project2">Project 2</option>
+                                                            <option value="Project3">Project 3</option>
+                                                        </select>
+ 
         <div style="display: inline;" id="ctl00_dshElement_PR4_aecElementControlPR4_pbxFilter1Resource_divDescription">
             </div>
 <input type="hidden" id="ctl00_dshElement_PR4_aecElementControlPR4_pbxFilter1Resource_hdnDescription" name="ctl00$dshElement_PR4$aecElementControlPR4$pbxFilter1Resource$hdnDescription">
@@ -187,17 +211,7 @@
 					<option value="Folow-on Action/Recommendatio">Folow-on Action/Recommendatio</option>
 				</select>
             
-                <img width="20px" alt="" src="/images/blank.gif">
-                
-            Date Logged
-                                
-                                
-                                : <a href="javascript: lnkFromDate_onClick('',3);" id="lnkFilter3FromDate">[Select]</a> 
-                                        To 
-			                        <a href="javascript: lnkToDate_onClick('',3);" id="lnkFilter3ToDate">[Select]</a>  
-                                        
-                
-                <img width="20px" alt="" src="/images/blank.gif">
+             
                 
                     
         
@@ -210,10 +224,9 @@
             <tr>
                 <td align="left" style="padding: 5px;">
             
-                <a href="DocUpload"><input type="submit" value="Add Project Document"  class="button"></a>
-                
+               
+                <input type="button" value="Add Project Document"  class="button" onclick="lnkDocUpload_onClick();" />
                 </td>
-            
                 
                 <td>&nbsp;</td>
             </tr>
@@ -251,7 +264,7 @@
                                     <td valign="middle" style="white-space: nowrap; text-align: left;" class="dashboardTable">
                                     
                                          
-                                            <a href="javascript:__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4','SORTCOL:ANReference')">Reference</a>
+                                            <a href="javascript:__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4','SORTCOL:ANReference')">Reference)">Reference</a>
                                             
                                         
                                     </td>
