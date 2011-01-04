@@ -89,7 +89,7 @@ function confirmDelete(code) {
         <tbody>
             <tr>
                 <td valign="middle" align="left">
-                    Getting Started -&gt; Resource Search
+                    Resource Search
                 </td>
             </tr>
         </tbody>
@@ -104,27 +104,7 @@ function confirmDelete(code) {
                             <tbody>
                                 <tr>
                                     <td valign="middle" align="left" style="white-space: nowrap; padding: 4px 8px;">
-                                        <table border="0" style="padding: 2px;">
-                                            <tbody>
-                                                <tr>
-                                                    <td valign="middle" align="left" style="white-space: nowrap;">
-                                                        <select onkeypress="ctl00_phSearchBar_ucSearch_onKeyPress(event);" onchange="com_search_cmbFilterList_onChange(this, true, 'ctl00$phSearchBar$ucSearch', 'The current filter has not been saved.\n\nDo you want to continue?');"
-                                                            id="ctl00_phSearchBar_ucSearch_cmbFilterList" name="ctl00_phSearchBar_ucSearch$cmbFilterList"
-                                                            class="comboBox">
-                                                            <option selected="selected" value="4">Active Resources Filter - [Global] </option>
-                                                            <option value="5">Resource Templates Filter - [Global] </option>
-                                                        </select>
-                                                        <span class="small"><a href="javascript:__doPostBack('ctl00$phSearchBar$ucSearch$lnkEditFilter','')"
-                                                            onkeypress="return true;" id="ctl00_phSearchBar_ucSearch_lnkEditFilter">Edit Filter</a>
-                                                            | <a href="javascript:__doPostBack('ctl00$phSearchBar$ucSearch$lnkDeleteFilter','')"
-                                                                onclick="return confirm('Are you sure you want to delete this filter?');" onkeypress="return true;"
-                                                                id="ctl00_phSearchBar_ucSearch_lnkDeleteFilter">Delete Filter</a> | <a href="javascript:__doPostBack('ctl00$phSearchBar$ucSearch$lnkNewFilter','')"
-                                                                    onkeypress="return true;" id="ctl00_phSearchBar_ucSearch_lnkNewFilter">New Filter</a>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
@@ -142,53 +122,13 @@ function confirmDelete(code) {
                                                         Resource Description:
                                                     </td>
                                                     <td valign="middle" align="left" style="white-space: nowrap;">
-                                                        <select id="ctl00_phSearchBar_ucSearch_cmbOperator0" name="ctl00$phSearchBar$ucSearch$cmbOperator0"
-                                                            class="comboBox">
-                                                            <!--
-						                    			
-						                    -->
-                                                            <option value="0">Contains</option>
-                                                            <!--
-						                    			
-						                    -->
-                                                            <option selected="selected" value="1">Begins With</option>
-                                                            <!--
-						                    			
-						                    -->
-                                                            <option value="2">=</option>
-                                                            <!--
-						                    			
-						                    -->
-                                                            <option value="3">&lt;&gt;</option>
-                                                            <!--
-						                    			
-						                    -->
-                                                            <option value="4">&lt;</option>
-                                                            <!--
-						                    			
-						                    -->
-                                                            <option value="5">&lt;=</option>
-                                                            <!--
-						                    			
-						                    -->
-                                                            <option value="6">&gt;</option>
-                                                            <!--
-						                    			
-						                    -->
-                                                            <option value="7">&gt;=</option>
-                                                            <!--
-						                    			
-						                    -->
-                                                            <!--
-						                    			
-						                    -->
-                                                        </select>
-                                                        <input type="text" onkeypress="ctl00_phSearchBar_ucSearch_onKeyPress(event);" maxlength="70"
-                                                            size="20" value="" id="ctl00_phSearchBar_ucSearch_txtValue0" name="ctl00$phSearchBar$ucSearch$txtValue0"
+                                                        <label for="search">Enter Search entry here</label>
+                                                        <input type="text" 
+                                                            size="20" value="" id="search" name="ctl00$phSearchBar$ucSearch$txtValue0"
                                                             class="textBox">
                                                         &nbsp;
                                                         <input type="submit" class="button" id="ctl00_phSearchBar_ucSearch_btnSearch2" value="Search"
-                                                            name="ctl00$phSearchBar$ucSearch$btnSearch2">
+                                                            name="ctl00$phSearchBar$ucSearch$btnSearch2" />
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -218,22 +158,20 @@ function confirmDelete(code) {
                                                         <tbody>
                                                             <tr>
                                                                 <td valign="middle" align="left">
-                                                                    <a href="javascript:__doPostBack('ctl00$phOperationsBar$lnkAdd','')" id="ctl00_phOperationsBar_lnkAdd">
+                                                                    <a href="#">
                                                                         Add a new Resource</a>
                                                                 </td>
                                                                 <td align="left" style="width: 16px;">
                                                                     &nbsp;
                                                                 </td>
                                                                 <td valign="middle" align="left">
-                                                                    <a href="javascript:__doPostBack('ctl00$phOperationsBar$lnkCreateDataTemplate','')"
-                                                                        id="ctl00_phOperationsBar_lnkCreateDataTemplate">Create Data Template</a>
+                                                                   <a href="#"> Refresh</a>
                                                                 </td>
                                                                 <td valign="middle" align="left" style="width: 16px;">
                                                                     &nbsp;
                                                                 </td>
                                                                 <td valign="middle" align="left">
-                                                                    <a href="javascript:__doPostBack('ctl00$phOperationsBar$lnkImportData','')" id="ctl00_phOperationsBar_lnkImportData">
-                                                                        Import Data</a>
+                                                                    
                                                                 </td>
                                                                 <td valign="middle" align="left" style="width: 16px;">
                                                                     &nbsp;
@@ -247,8 +185,7 @@ function confirmDelete(code) {
                                                         <tbody>
                                                             <tr>
                                                                 <td>
-                                                                    <a href="javascript:__doPostBack('ctl00$phOperationsBar$lnkReturnToPreviousPage','')"
-                                                                        id="ctl00_phOperationsBar_lnkReturnToPreviousPage">Return to Getting Started</a>
+                                                                    
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -322,7 +259,7 @@ function confirmDelete(code) {
                                                 </td>
                                                 <td valign="middle" align="left" class="tableRow">
                                                     <a title="Click to open this Resource for viewing / editing" 
-                                                        href="#">Alan Barnacle </a>
+                                                        href="#">User 2 </a>
                                                 </td>
                                                 <td valign="middle" align="left" class="tableRow">
                                                     <span title="">Employee</span>
@@ -341,7 +278,7 @@ function confirmDelete(code) {
                                                 </td>
 
                                                 <td valign="middle" align="center" class="tableRow">
-                                                    <a title="Click to delete this Resource" onclick="if (confirmDelete('RES1')) { __doPostBack('__Page','DELETE:RES1'); }"
+                                                    <a title="Click to delete this Resource" 
                                                         href="#">
                                                         <img alt="Click to delete this Resource" src="../../Content/images/icon/deleteitem.gif">
                                                     </a>
@@ -354,7 +291,7 @@ function confirmDelete(code) {
                                                 </td>
                                                 <td valign="middle" align="left" class="tableRowDark">
                                                     <a title="Click to open this Resource for viewing / editing" onclick="__doPostBack('__Page','OPEN:RES2')"
-                                                        href="#">Janet J Bailey </a>
+                                                        href="#">User 1</a>
                                                 </td>
                                                 <td valign="middle" align="left" class="tableRowDark">
                                                     <span title="">Employee</span>
@@ -386,7 +323,7 @@ function confirmDelete(code) {
                                                 </td>
                                                 <td valign="middle" align="left" class="tableRow">
                                                     <a title="Click to open this Resource for viewing / editing" onclick="__doPostBack('__Page','OPEN:RES3')"
-                                                        href="#">John Smith </a>
+                                                        href="#">User 1 </a>
                                                 </td>
                                                 <td valign="middle" align="left" class="tableRow">
                                                     <span title="">Employee</span>
@@ -418,7 +355,7 @@ function confirmDelete(code) {
                                                 </td>
                                                 <td valign="middle" align="left" class="tableRowDark">
                                                     <a title="Click to open this Resource for viewing / editing" onclick="__doPostBack('__Page','OPEN:RES4')"
-                                                        href="#">Bernard Timms </a>
+                                                        href="#">User 5</a>
                                                 </td>
                                                 <td valign="middle" align="left" class="tableRowDark">
                                                     <span title="">Employee</span>
