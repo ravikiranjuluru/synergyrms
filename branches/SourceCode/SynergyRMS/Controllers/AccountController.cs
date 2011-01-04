@@ -51,6 +51,12 @@ namespace SynergyRMS.Controllers
                 {
                     FormsService.SignIn(model.UserName, model.RememberMe);
                     success = true;
+
+                    //Roles.CreateRole("Admin");
+                    //Roles.CreateRole("User");
+                    
+                    //Roles.AddUserToRole(model.UserName, "User");
+
                     //if (!String.IsNullOrEmpty(returnUrl))
                     //{
                     //    return Redirect(returnUrl);
@@ -107,7 +113,8 @@ namespace SynergyRMS.Controllers
                 {
                     FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
                     //return RedirectToAction("Index", "Home");
-                    success = true;
+                    Roles.AddUserToRole(model.UserName, "User");
+                    ModelState.AddModelError("", "Account Creation Success.");
                 }
                 else
                 {
