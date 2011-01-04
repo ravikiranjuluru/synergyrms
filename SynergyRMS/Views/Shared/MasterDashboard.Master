@@ -90,7 +90,7 @@
           }
 
           function openPage(pageUrl) {
-              window.frames['mainFrame'].location.href = pageUrl;
+              //window.frames['mainFrame'].location.href = pageUrl;
           }
 
           function radMenu_onItemClick(sender, args) {
