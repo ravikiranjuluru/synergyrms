@@ -256,7 +256,7 @@
                     <tr>
                         <td align="right" valign="middle" style="white-space: nowrap;">
                            
-                                <span class="text">     <% Html.RenderPartial("LogOnUserControl"); %></span>
+                                <span class="text"><% Html.RenderPartial("LogOnUserControl"); %></span>
                                
                         </td>
                         <td align="left" valign="middle" style="white-space: nowrap;">
