@@ -321,7 +321,7 @@
                                                    
                                                         <input name="txtCode" id="code" class="textBox"
                                                             size="20" maxlength="20" type="text">
-                                                            <div type="text" id="datepicker">date</div>
+                                                           
 
                                                     </td>
                                                 </tr>
