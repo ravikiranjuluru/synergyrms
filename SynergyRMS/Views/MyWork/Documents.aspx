@@ -57,8 +57,7 @@
             <div style="overflow: hidden;" id="ctl00_ucTabStrip_divTabContainer">
                 
                 <table cellspacing="0" cellpadding="0" border="0" id="ctl00_ucTabStrip_tabStrip">
-	<tbody><tr>
-	</tr>
+	<tbody>
 	
     <tr>
         <td class="dashboardTabSpace">
@@ -214,20 +213,9 @@
             <td align="left" style="padding: 5px;">
             
             Project
-                                    : <input type="text" onkeydown="com_pickbox_onKeyDown(event, this, 'ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_lnkSelect', 'ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_lnkRefresh', true);" class="textBox" id="ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_txtValue" name="ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2$pbxFilter1Project$txtValue"> 
-    <a href="javascript:__doPostBack('ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2$pbxFilter1Project$lnkSelect','')" title="Select" id="ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_lnkSelect"><img border="0" alt="Select" src="../../Content/images/common/pick.gif"></a>
-        <a href="javascript:__doPostBack('ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2$pbxFilter1Project$lnkRefresh','')" title="Refresh" id="ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_lnkRefresh"><img border="0" alt="Refresh" src="../../Content/images/common/refresh.gif"></a>
+                                    : <input type="text" onkeydown="com_pickbox_onKeyDown(event, this, 'ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_lnkSelect', 'ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_lnkRefresh', true);" class="textBox" id="ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_txtValue" name="ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2$pbxFilter1Project$txtValue">&nbsp;&nbsp;
         <div style="display: inline;" id="ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_divDescription">
             </div>
-<input type="hidden" id="ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_hdnDescription" name="ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2$pbxFilter1Project$hdnDescription">
-                
-                <img width="20px" alt="" src="../../Content/images/common/blank.gif">
-                
-            Date Logged
-                                
-                                : <a href="javascript: lnkFromDate_onClick('',2);" id="lnkFilter2FromDate">[Select]</a> 
-                                        To 
-			                        <a href="javascript: lnkToDate_onClick('',2);" id="lnkFilter2ToDate">[Select]</a>  
                                         
             
                 <img width="20px" alt="" src="../../Content/images/common/blank.gif">
@@ -370,7 +358,7 @@
                                             
                                                 <td valign="middle" onclick="javascript:__doPostBack('ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2','SETCURRENTACTION:1')" style="white-space: nowrap; text-align: left;" class="dashboardTable">
                                                     
-                                                    Alan Barnacle
+                                                    Chanaka
                                                     
                                                 </td>    
                                             
@@ -388,7 +376,7 @@
                                             
                                                 <td valign="middle" onclick="javascript:__doPostBack('ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2','SETCURRENTACTION:1')" style="text-align: left;" class="dashboardTable">
                                                     
-                                                    <a title="Click to View Document" href="javascript:showDocumentInfo('/',1);">2009-05-16_Project_Kickoff_Template.ppt</a>
+                                                    <a title="Click to View Document" href="javascript:showDocumentInfo('/',1);">2010-12-28_Project_Kickoff_Template.ppt</a>
                                                     
                                                 </td>    
                                             

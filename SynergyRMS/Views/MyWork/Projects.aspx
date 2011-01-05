@@ -162,9 +162,13 @@
                                 <tbody><tr>
                                     <td align="left" style="white-space: nowrap;">
                                         Project List&nbsp; 
-                                        <select onchange="__doPostBack('ctl00$dshElement_MyProjects$aecElementControlMyProjects$ucProjectListManager','CBOLIST_CLICK')" class="comboBox" id="ctl00_dshElement_MyProjects_aecElementControlMyProjects_ucProjectListManager_cboList" name="ctl00$dshElement_MyProjects$aecElementControlMyProjects$ucProjectListManager$cboList">
-					<option value="All" selected="selected">All</option>
-				</select>
+                                         <select name="ctl00$phFormContent$cboProjectLevel" id="project"
+                                                            class="comboBox">
+                                                            <option value="Select">Select</option>
+                                                            <option value="Project1" selected="selected">Project 1</option>
+                                                            <option value="Project2">Project 2</option>
+                                                            <option value="Project3">Project 3</option>
+                                                        </select>
                                     </td>
                                     
                                     
@@ -326,9 +330,10 @@
 				</tr>
 				</thead><tbody id="ctl00_dshElement_MyProjects_aecElementControlMyProjects_ctlTbody"><tr>
 					<td valign="bottom" align="left" style="white-space: nowrap;" class="tableRow">PROJECT1</td>
-					<td valign="top" align="left" style="white-space: nowrap;" class="tableRow">Demonstration Project</td>
-					<td valign="top" align="left" style="white-space: nowrap;" class="tableRow">Alan Barnacle</td>
-					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow"><a title="Click to View Incomplete Tasks" href="javascript:MyProjects_GoToDashboard('PROJECT1','Tasks');">9 </a><a title="Click to View Incomplete Overdue Tasks" href="javascript:MyProjects_GoToProjectReview('PROJECT1');">(6)</a></td>
+					<td valign="top" align="left" style="white-space: nowrap;" classDemonstration Project</td>
+					<td valign="top" align="left" style="white-space: nowrap;" class="tableRow">My 
+                        Manager</td>
+					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow"><a title="Click to View Incomplete Tasks" href="javascript:MyProjects_GoToDashboard('PROJECT1','Tasks');">9 Tasks');">9 </a><a title="Click to View Incomplete Overdue Tasks" href="javascript:MyProjects_GoToProjectReview('PROJECT1');">(6)</a></td>
 					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow"><a title="Click to View Open Risks" href="javascript:MyProjects_GoToDashboard_RisksIssues('PROJECT1','Risks','Open','Risks');">0 </a></td>
 					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow"><a title="Click to View Open Mitigation Plan Items" href="javascript:MyProjects_GoToDashboard_RisksIssues('PROJECT1','Risks','Open','RiskActions');">0 </a></td>
 					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow"><a title="Click to View Open Issues" href="javascript:MyProjects_GoToDashboard_RisksIssues('PROJECT1','Issues','Open','Risks');">0 </a></td>

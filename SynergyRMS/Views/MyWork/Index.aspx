@@ -57,8 +57,7 @@
             <div style="overflow: hidden;" id="ctl00_ucTabStrip_divTabContainer">
                 
                 <table cellspacing="0" cellpadding="0" border="0" id="ctl00_ucTabStrip_tabStrip">
-	<tbody><tr>
-	</tr>
+	<tbody>
 	
     <tr>
         <td class="dashboardTabSpace">
@@ -190,9 +189,7 @@
                                 
                                         
                                             <td align="right" style="white-space: nowrap; padding-left: 5px;" class="dashboardElementHeaderTitle">
-                                                <img height="15" width="15" onclick="__doPostBack('ctl00$hdrElement_MySummary','COLLAPSE')" title="Minimize" alt="Minimize" id="ctl00_hdrElement_MySummary_imgCollapse" src="../../Content/images/icon/minimize.gif"> 
-                                                <img height="15" width="15" title="Maximize" alt="Maximize" id="ctl00_hdrElement_MySummary_imgExpand" src="../../Content/images/icon/maximize_disabled.gif"> 
-                                            </td>
+                                                 </td>
                                         
                                     </tr>
                                 </tbody></table>
@@ -242,25 +239,26 @@
 						<td class="dashboardElementSectionTitle">Timesheets</td>
 					</tr>
 					<tr>
-						<td><a title="Click to view" href="javascript:MySummaryElement_viewTimesheets();">You have entered 0 Hours this week</a></td>
+						<td><a title="Click to view" href="#">You have entered 
+                            4 Hours this week</a></td>
 					</tr>
 					<tr>
-						<td>&nbsp;</td>
+						<td class="style4"></td>
 					</tr>
 					<tr>
 						<td class="dashboardElementSectionTitle">Submissions</td>
 					</tr>
 					<tr>
-						<td><a title="Click to view" href="javascript:MySummaryElement_viewOutstandingClaims();">You have 0 Outstanding Submissions for $0.00</a></td>
+						<td></td>
 					</tr>
 					<tr>
-						<td><a title="Click to view" href="javascript:MySummaryElement_viewPaidClaims();">You have 0 Paid Submissions for $0.00</a></td>
+						<td></td>
 					</tr>
 					<tr>
-						<td><a title="Click to view" href="javascript:MySummaryElement_viewRejectedClaims();">You have 0 Rejected Submissions for $0.00</a></td>
+						<td></td>
 					</tr>
 					<tr>
-						<td><a title="Click to view" href="javascript:MySummaryElement_viewRefusedClaims();">You have 0 Refused Submissions for $0.00</a></td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
@@ -275,7 +273,7 @@
 						<td class="dashboardElementSectionTitle">In Progress</td>
 					</tr>
 					<tr>
-						<td>You have no in progress items</td>
+						<td>You have 2 in progress items</td>
 					</tr>
 				</tbody></table>
 				
@@ -284,10 +282,10 @@
                                 <td valign="top" align="left">
                                     <table id="ctl00_dshElement_MySummary_aecElementControlMySummary_tblCol3">
 					<tbody><tr>
-						<td class="dashboardElementSectionTitle">Overdue</td>
+						<td class="dashboardElementSectionTitle">&nbsp;</td>
 					</tr>
 					<tr>
-						<td>You have no overdue items</td>
+						<td>&nbsp;</td>
 					</tr>
 				</tbody></table>
 				
@@ -436,6 +434,11 @@
 	            width: 100%;
             }
             
+            .style4
+            {
+                height: 23px;
+            }
+            
         </style>
     <input type="hidden" value="0" id="ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_hdnScrollTop" name="ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$hdnScrollTop"><input type="hidden" value="0" id="ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_hdnScrollLeft" name="ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$hdnScrollLeft">
 
@@ -522,14 +525,17 @@
                                     <tbody><tr>
                                     
                                         <td align="left" style="white-space: nowrap;">
-                                        Resource:
+                                        Project:
                                         </td>                                
 
                                         <td align="left" style="white-space: nowrap; padding-left: 3px;">
-                                        <input type="text" onkeydown="com_pickbox_onKeyDown(event, this, 'ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_pbxResource_lnkSelect', 'ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_pbxResource_lnkRefresh', true);" title="Alan Barnacle" value="RES1" maxlength="20" class="textBox" id="ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_pbxResource_txtValue" name="ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$pbxResource$txtValue"> 
-    <a href="javascript:__doPostBack('ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$pbxResource$lnkSelect','')" title="Select" id="ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_pbxResource_lnkSelect"><img border="0" alt="Select" src="../../Content/images/icon/pick.gif"></a>
-        <a href="javascript:__doPostBack('ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$pbxResource$lnkRefresh','')" title="Refresh" id="ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_pbxResource_lnkRefresh"><img border="0" alt="Refresh" src="../../Content/images/icon/refresh.gif"></a>
-        <input type="hidden" id="ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_pbxResource_hdnDescription" name="ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$pbxResource$hdnDescription">
+                                         <select name="ctl00$phFormContent$cboProjectLevel" id="project"
+                                                            class="comboBox">
+                                                            <option value="Select">Select</option>
+                                                            <option value="Project1" selected="selected">Project 1</option>
+                                                            <option value="Project2">Project 2</option>
+                                                            <option value="Project3">Project 3</option>
+                                                        </select>
                                         </td>
 
                                     
@@ -541,8 +547,6 @@
                                         <select onchange="__doPostBack('ctl00$dshElement_PlannedWork$aecElementControlPlannedWork','')" class="comboBox" id="ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_lstShowType" name="ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$lstShowType">
 					<option value="All:" selected="selected">All</option>
 					<option value="Assignments:">Assignments</option>
-					<option value="RiskActions:">Mitigation Plan Items</option>
-					<option value="IssueActions:">Resolution Plan Items</option>
 					<option value="CRMActions:DOCUMENT">Project Document</option>
 					<option value="CRMActions:PROJECT_UPDATE">Project Status Update</option>
 					<option value="CRMActions:TO DO">To Do Action</option>
@@ -567,29 +571,15 @@
     <table cellspacing="0" cellpadding="0" border="0">
         <tbody><tr>
             <td valign="middle" align="left">
-                <a title="Assignment" assignment="" alt="" onclick="__doPostBack('ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$ucAddButton','doPostback');" class="text" id="ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_ucAddButton_text">Add</a>
+                
             </td>
             <td valign="middle" align="left">
-                <a onclick="splitButton.doShowMenu(document.getElementById('ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_ucAddButton_menu'));" onmousedown="cancelBubble(event);" class="arrow" id="ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_ucAddButton_arrow">&nbsp;</a>
+                
             </td>
         </tr>
     </tbody></table>                
     
-    <ul onmousedown="cancelBubble(event);" id="ctl00_dshElement_PlannedWork_aecElementControlPlannedWork_ucAddButton_menu">
-        
-            <li title="Assignment" onclick="splitButton.doSelectMenuItem(this); __doPostBack('ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$ucAddButton','doPostback');" value="Assignments:"><a>Assignment</a></li>
-        
-            <li title="Mitigation Plan Item" onclick="splitButton.doSelectMenuItem(this); __doPostBack('ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$ucAddButton','doPostback');" value="RiskActions:"><a>Mitigation Plan Item</a></li>
-        
-            <li title="Resolution Plan Item" onclick="splitButton.doSelectMenuItem(this); __doPostBack('ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$ucAddButton','doPostback');" value="IssueActions:"><a>Resolution Plan Item</a></li>
-        
-            <li title="Project Document" onclick="splitButton.doSelectMenuItem(this); __doPostBack('ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$ucAddButton','doPostback');" value="CRMActions:DOCUMENT"><a>Project Document</a></li>
-        
-            <li title="Project Status Update" onclick="splitButton.doSelectMenuItem(this); __doPostBack('ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$ucAddButton','doPostback');" value="CRMActions:PROJECT_UPDATE"><a>Project Status Update</a></li>
-        
-            <li title="To Do Action" onclick="splitButton.doSelectMenuItem(this); __doPostBack('ctl00$dshElement_PlannedWork$aecElementControlPlannedWork$ucAddButton','doPostback');" value="CRMActions:TO DO"><a>To Do Action</a></li>
-        
-    </ul>
+    
 </div>
                                             </td>
                                     
