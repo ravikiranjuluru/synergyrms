@@ -416,7 +416,7 @@
                                                                                         <td class="toolbaritem_off" 
                                                                                             align="center" valign="middle">
                                                                                             <img src="../../Content/images/common/menuitem_rollback.gif" id="ctl00_dshElement_Task_aecElementControlTask_ucProjectPlan_imgRollback"
-                                                                                                onclick="Rollback();" style="vertical-align: middle; cursor: pointer;" alt="Rollback"
+                                                                                                onclick="#" style="vertical-align: middle; cursor: pointer;" alt="Rollback"
                                                                                                 title="Refresh after add new task">
                                                                                         </td>
 
