@@ -984,8 +984,7 @@ function SchedulingElement_splitAssignment(assignmentKey)
                                                                         <table cellspacing="0" cellpadding="0" border="0">
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td valign="middle" align="left" style="white-space: nowrap;" class="small">
-                                                                                        Project:
+                                                                                    <td valign="middle" align="left" style="white-space: nowrap;" class="smalProject:
                                                        <select name="ctl00$phFormContent$cboProjectLevel" id="project"
                                                             class="comboBox">
                                                             <option value="Select">Select</option>
@@ -1007,22 +1006,14 @@ function SchedulingElement_splitAssignment(assignmentKey)
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td valign="middle" align="left" style="white-space: nowrap;" class="small">
-                                                                                        Colour Scheme:
-                                                                                    </td>
+                                                                                        &nbsp;</td>
                                                                                     <td valign="middle" align="left" style="white-space: nowrap; padding-left: 5px;"
                                                                                         class="small">
-                                                                                        <select onchange="__doPostBack('ctl00$dshElement_Scheduling$aecElementControlScheduling','')"
-                                                                                            class="comboBox" id="ctl00_dshElement_Scheduling_aecElementControlScheduling_lstColourScheme"
-                                                                                            name="ctl00$dshElement_Scheduling$aecElementControlScheduling$lstColourScheme">
-                                                                                            <option value="AssignmentStatus" selected="selected">Assignment Status</option>
-                                                                                            <option value="Chargeability">Chargeability</option>
-                                                                                        </select>
-                                                                                    </td>
+                                                                                        &nbsp;</td>
                                                                                     <td valign="middle" align="left" style="white-space: nowrap; padding-left: 5px;"
                                                                                         onmouseout="javascript:SchedulingElement_hidePopup('divColourKey', 100);" onmouseover="javascript:SchedulingElement_displayColourPopup(event, 'tdColourKey', 'divColourKey');"
                                                                                         id="tdColourKey">
-                                                                                        <img alt="" src="../../Content/images/icon/colour_key.gif">
-                                                                                    </td>
+                                                                                        &nbsp;</td>
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>
@@ -1057,6 +1048,7 @@ function SchedulingElement_splitAssignment(assignmentKey)
                                                                                     </td>
                                                                                     <td style="width: 278px; height: 36px;">
                                                                                         Resource / Project
+                                                                                    Project
                                                                                     </td>
                                                                                     <td style="white-space: nowrap; width: 20px;">
                                                                                     </td>
