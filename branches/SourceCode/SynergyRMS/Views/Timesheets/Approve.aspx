@@ -81,6 +81,8 @@
                                         Resource List&nbsp; 
                                         <select onchange="__doPostBack('ctl00$phOperationsBar$ucResourceListManager','CBOLIST_CLICK')" class="comboBox" id="ctl00_phOperationsBar_ucResourceListManager_cboList" name="ctl00$phOperationsBar$ucResourceListManager$cboList">
 	<option value="All" selected="selected">All</option>
+	<option value="All" selected="selected">Managers</option>
+	<option value="All" selected="selected">Deverlopers</option>
 </select>
                                     </td>
                                     
@@ -95,9 +97,7 @@
                     
                                 <table cellspacing="0" cellpadding="0" border="0">
                                     <tbody><tr onmouseout="getFirstChild(getChildNode(this, 1)).src = '../../Content/images/icon/vistabuttongrey_dropdown.gif';" onmouseover="getFirstChild(getChildNode(this, 1)).src = '/images/vistabuttongrey_dropdown_mouseover.gif';" id="trMenuIcons">
-                                        <td valign="middle" align="center" onclick="com_menulist_showPopup(event, getParentNode(getParentNode(getParentNode(getParentNode(this)))), 'ctl00_phOperationsBar_ucResourceListManager_mnuListActions_tblMenu0_divPopup', 'right', 'transparent', '#F9F9F9', '#666666');" style="padding-left: 10px; white-space: nowrap; padding-right: 9px; background-image: url(&quot;/images/vistabuttongrey.gif&quot;); background-repeat: no-repeat; background-position: left center; height: 22px;">
-                                            Actions
-                                        </td>
+                                       
                                         
                                             <td onclick="com_menulist_showPopup(event, getParentNode(getParentNode(getParentNode(getParentNode(this)))), 'ctl00_phOperationsBar_ucResourceListManager_mnuListActions_tblMenu0_divPopup', 'right', 'transparent', '#F9F9F9', '#666666');">
                                                 <img style="vertical-align: middle;" alt="" src="../../Content/images/icon/vistabuttongrey_dropdown.gif">                
@@ -206,8 +206,7 @@
                                 Approval Status: <select onchange="__doPostBack('__Page','lstApprovalStatus_Change')" class="comboBox" id="ctl00_phOperationsBar_lstApprovalStatus" name="ctl00$phOperationsBar$lstApprovalStatus">
 	<option value="2" selected="selected">Unapproved</option>
 	<option value="3">Disapproved</option>
-	<option value="1">Approved</option>
-	<option value="4">Zero Hours</option>
+	<option value="1">Approved</option>	
 	<option value="5">Incomplete</option>
 	<option value="6">All</option>
 </select>
@@ -219,17 +218,20 @@
                     <table cellspacing="0" cellpadding="0" border="0">
                         <tbody><tr>
                             <td valign="middle" align="left" style="white-space: nowrap; padding-left: 10px;">
-                                <input type="image" title="Go Back a Week" alt="Go Back a Week" id="ctl00_phOperationsBar_imgBack" name="ctl00$phOperationsBar$imgBack" src="../../Content/images/icon/chevron_left.gif">
+                                <input type="image" title="Go Back a Week" alt="Go Back a Week" id="ctl00_phOperationsBar_imgBack" 
+                                name="ctl00$phOperationsBar$imgBack" src="../../Content/images/icon/chevron_left.gif">
                             </td>
                             <td valign="middle" align="left" style="white-space: nowrap; padding-left: 5px;">
                                 
-<a id="ctl00_phOperationsBar_ucStartPeriodDate_lnkPickDate" href="javascript:com_dateinput_showHyperlinkDatePick('/common/com_calendar.aspx?CalendarMode=',com_dateinput_setHyperlinkDateCallback_ctl00_phOperationsBar_ucStartPeriodDate,'40469');">10/18/2010</a>
+<a id="ctl00_phOperationsBar_ucStartPeriodDate_lnkPickDate" href="#">10/18/2010</a>
         <input type="hidden" class="textBox" id="ctl00_phOperationsBar_ucStartPeriodDate_hdnDate" name="ctl00$phOperationsBar$ucStartPeriodDate$hdnDate">
     
     
                             </td>
                             <td valign="middle" align="left" style="white-space: nowrap; padding-left: 5px;">                                            
-                                <input type="image" title="Go Forward a Week" alt="Go Forward a Week" id="ctl00_phOperationsBar_imgForward" name="ctl00$phOperationsBar$imgForward" src="../../Content/images/icon/chevron_right.gif">
+                                <input type="image" title="Go Forward a Week" alt="Go Forward a Week" 
+                                id="ctl00_phOperationsBar_imgForward" name="ctl00$phOperationsBar$imgForward" 
+                                src="../../Content/images/icon/chevron_right.gif">
                             </td>
                             <td style="white-space: nowrap; text-align: right; padding-right: 10px;">
                                 <img width="10px" alt="" style="border-width: 0px;" src="../../Content/images/common/space.gif">
@@ -257,10 +259,7 @@
                             </td>
                                  
                             
-                                <td>
-                                    <a href="javascript:__doPostBack('ctl00$phOperationsBar$lnkReturnToPreviousPage','')" id="ctl00_phOperationsBar_lnkReturnToPreviousPage">
-                                        Return to Getting Started</a>
-                                </td>
+                                
                             
                         </tr>
                     </tbody></table>
