@@ -47,11 +47,11 @@
                                       </a>
                                   </td>
                                   <td id="Td2" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
-                                      <a class="link " href="../Resource/Schedule"><span class="text ">Resources</span>
+                                      <a class="link " href="../Resource"><span class="text ">Resources</span>
                                       </a>
                                   </td>
                                   <td id="Td3" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
-                                      <a class="link " href="../Resource/Schedule"><span class="text ">Time Sheets</span>
+                                      <a class="link " href="../Timesheets"><span class="text ">Time Sheets</span>
                                       </a>
                                   </td>
                                   <%}
