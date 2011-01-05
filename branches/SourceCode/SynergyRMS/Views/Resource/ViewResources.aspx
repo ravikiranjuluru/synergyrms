@@ -4,7 +4,7 @@
     <form id="aspnetForm" action="#" method="post" name="aspnetForm">
    
 
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
         //&lt;![CDATA[
         var theForm = document.forms['aspnetForm'];
         if (!theForm) {
@@ -18,62 +18,58 @@
             }
         }
         //]]&gt;
-</script>
-<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/styles.css" type="text/css"/>
+</script>--%>
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/styles.css" type="text/css"/>
     <script type="text/javascript" src="/common/script/com_selectall.js"></script>
-
     <script type="text/javascript" src="/common/controls/com_search.js"></script>
+    <script type="text/javascript" src="/common/controls/com_menulist.js"></script>
+    <script type="text/javascript" src="/scripts/xbLibrary.js"></script>
 
     <script type="text/javascript">
         //&lt;![CDATA[
-        function ctl00_phSearchBar_ucSearch_onKeyPress(e) { e = e || window.event; if (e.keyCode == 13) { __doPostBack('ctl00$phSearchBar$ucSearch', 'SEARCH') } } //]]&gt;
+       // function ctl00_phSearchBar_ucSearch_onKeyPress(e) { e = e || window.event; if (e.keyCode == 13) { __doPostBack('ctl00$phSearchBar$ucSearch', 'SEARCH') } } //]]&gt;
 </script>
 
-    <script type="text/javascript" src="/common/controls/com_menulist.js"></script>
 
-    <script type="text/javascript" src="/scripts/xbLibrary.js"></script>
 
-    <div>
-        <input type="hidden" value="/wEWCQLK28rVAQLQ7tLZAQLcgb7fDQKLnpiKDQLd7JWZDQLO6tr5AgKJtObqDgK13ZCaDAKM0f/KAl2HKQWbkbAFFqKsDnwnf5BBaqql"
-            id="__EVENTVALIDATION" name="__EVENTVALIDATION">
-    </div>
+   
 
     <script type="text/javascript">
         
-            var aecWebForm = document.getElementById('aspnetForm');
-            var m_blnIsWebFormLoaded = false;
-            var m_blnIsWebFormSubmitting = false;            
-            var fnFormSubmit = null;
+//            var aecWebForm = document.getElementById('aspnetForm');
+//            var m_blnIsWebFormLoaded = false;
+//            var m_blnIsWebFormSubmitting = false;            
+//            var fnFormSubmit = null;
             
             
-            //Cater for the Web Form already having an onSubmit method call
-            if (aecWebForm.onsubmit) {
-                fnFormSubmit = aecWebForm.onsubmit;
-            }
+//            //Cater for the Web Form already having an onSubmit method call
+//            if (aecWebForm.onsubmit) {
+//                fnFormSubmit = aecWebForm.onsubmit;
+//            }
 
 
-            aecWebForm.onsubmit = function() {
+            //aecWebForm.onsubmit = function() {
 
-                if (m_blnIsWebFormLoaded == true &amp;&amp; m_blnIsWebFormSubmitting == false) {
-                    if (fnFormSubmit &amp;&amp; (fnFormSubmit.call() == false)) {
-                        return false;
-                    } else {
-                        m_blnIsWebFormSubmitting = true;
-                        return true;
-                    }
-                } else {
-                    return false;
-                }
-            }            
+                //                if (m_blnIsWebFormLoaded == true &amp;&amp; m_blnIsWebFormSubmitting == false) {
+                //                    if (fnFormSubmit &amp;&amp; (fnFormSubmit.call() == false)) {
+                //                        return false;
+                //                    } else {
+                //                        m_blnIsWebFormSubmitting = true;
+                //                        return true;
+                //                    }
+                //                } else {
+                //                    return false;
+                //                }
+            //}    
         
         </script>
 
     <script type="text/javascript">
-&lt;!--
 
-    if (window.top.siteNavigation_selectTab) {
-        window.top.siteNavigation_selectTab('ADMIN');
-    }
+
+//    if (window.top.siteNavigation_selectTab) {
+//        window.top.siteNavigation_selectTab('ADMIN');
+//    }
 
 function confirmDelete(code) {
     
@@ -82,7 +78,7 @@ function confirmDelete(code) {
     return confirm(strMsg);
 
 }
-//--&gt;
+
 </script>
 
     <table width="100%" cellspacing="0" cellpadding="0" border="0" class="pageTitle">
@@ -104,7 +100,6 @@ function confirmDelete(code) {
                             <tbody>
                                 <tr>
                                     <td valign="middle" align="left" style="white-space: nowrap; padding: 4px 8px;">
-                                        
                                     </td>
                                 </tr>
                                 <tr>
@@ -122,9 +117,9 @@ function confirmDelete(code) {
                                                         Resource Description:
                                                     </td>
                                                     <td valign="middle" align="left" style="white-space: nowrap;">
-                                                        <label for="search">Enter Search entry here</label>
-                                                        <input type="text" 
-                                                            size="20" value="" id="search" name="ctl00$phSearchBar$ucSearch$txtValue0"
+                                                        <label for="search">
+                                                            Enter Search entry here</label>
+                                                        <input type="text" size="20" value="" id="search" name="ctl00$phSearchBar$ucSearch$txtValue0"
                                                             class="textBox">
                                                         &nbsp;
                                                         <input type="submit" class="button" id="ctl00_phSearchBar_ucSearch_btnSearch2" value="Search"
@@ -158,20 +153,18 @@ function confirmDelete(code) {
                                                         <tbody>
                                                             <tr>
                                                                 <td valign="middle" align="left">
-                                                                    <a href="#">
-                                                                        Add a new Resource</a>
+                                                                    <a href="#">Add a new Resource</a>
                                                                 </td>
                                                                 <td align="left" style="width: 16px;">
                                                                     &nbsp;
                                                                 </td>
                                                                 <td valign="middle" align="left">
-                                                                   <a href="#"> Refresh</a>
+                                                                    <a href="#">Refresh</a>
                                                                 </td>
                                                                 <td valign="middle" align="left" style="width: 16px;">
                                                                     &nbsp;
                                                                 </td>
                                                                 <td valign="middle" align="left">
-                                                                    
                                                                 </td>
                                                                 <td valign="middle" align="left" style="width: 16px;">
                                                                     &nbsp;
@@ -185,7 +178,6 @@ function confirmDelete(code) {
                                                         <tbody>
                                                             <tr>
                                                                 <td>
-                                                                    
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -254,12 +246,10 @@ function confirmDelete(code) {
                                         <tbody>
                                             <tr>
                                                 <td valign="middle" align="left" class="tableRow">
-                                                    <a title="Click to open this Resource for viewing / editing" 
-                                                        href="#">RES1 </a>
+                                                    <a title="Click to open this Resource for viewing / editing" href="#">RES1 </a>
                                                 </td>
                                                 <td valign="middle" align="left" class="tableRow">
-                                                    <a title="Click to open this Resource for viewing / editing" 
-                                                        href="#">User 2 </a>
+                                                    <a title="Click to open this Resource for viewing / editing" href="#">User 2 </a>
                                                 </td>
                                                 <td valign="middle" align="left" class="tableRow">
                                                     <span title="">Employee</span>
@@ -271,15 +261,12 @@ function confirmDelete(code) {
                                                     <span title="">PROJECTMANAGER</span>
                                                 </td>
                                                 <td valign="middle" align="center" class="tableRow">
-                                                    <a title="Click to open this Resource for viewing / editing" 
-                                                        href="#">
+                                                    <a title="Click to open this Resource for viewing / editing" href="#">
                                                         <img alt="Click to open this Resource for viewing / editing" src="../../Content/images/icon/openitem.gif">
                                                     </a>
                                                 </td>
-
                                                 <td valign="middle" align="center" class="tableRow">
-                                                    <a title="Click to delete this Resource" 
-                                                        href="#">
+                                                    <a title="Click to delete this Resource" href="#">
                                                         <img alt="Click to delete this Resource" src="../../Content/images/icon/deleteitem.gif">
                                                     </a>
                                                 </td>
@@ -308,7 +295,6 @@ function confirmDelete(code) {
                                                         <img alt="Click to open this Resource for viewing / editing" src="../../Content/images/icon/openitem.gif">
                                                     </a>
                                                 </td>
-                                        
                                                 <td valign="middle" align="center" class="tableRowDark">
                                                     <a title="Click to delete this Resource" onclick="if (confirmDelete('RES2')) { __doPostBack('__Page','DELETE:RES2'); }"
                                                         href="#">
@@ -340,7 +326,6 @@ function confirmDelete(code) {
                                                         <img alt="Click to open this Resource for viewing / editing" src="../../Content/images/icon/openitem.gif">
                                                     </a>
                                                 </td>
-                                
                                                 <td valign="middle" align="center" class="tableRow">
                                                     <a title="Click to delete this Resource" onclick="if (confirmDelete('RES3')) { __doPostBack('__Page','DELETE:RES3'); }"
                                                         href="#">
@@ -372,7 +357,6 @@ function confirmDelete(code) {
                                                         <img alt="Click to open this Resource for viewing / editing" src="../../Content/images/icon/openitem.gif">
                                                     </a>
                                                 </td>
-
                                                 <td valign="middle" align="center" class="tableRowDark">
                                                     <a title="Click to delete this Resource" onclick="if (confirmDelete('RES4')) { __doPostBack('__Page','DELETE:RES4'); }"
                                                         href="#">
@@ -391,10 +375,10 @@ function confirmDelete(code) {
         </tbody>
     </table>
 
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
         //&lt;![CDATA[
         m_blnIsWebFormLoaded = true; com_menulist_registerHandler(); //]]&gt;
-</script>
+</script>--%>
 
     </form>
 
