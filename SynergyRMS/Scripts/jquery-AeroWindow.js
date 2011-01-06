@@ -51,8 +51,8 @@
         WindowClosable:                   true,          /* true, false */
         LoadiFrameContentLater:           true,          /* true, false */
         WindowDraggable:                  true,          /* true, false */
-        WindowAnimationSpeed:             500,
-        WindowAnimation:                  'easeOutCubic',
+        WindowAnimationSpeed:             1500,             /*changed500*/
+        WindowAnimation: 'easeOutBounce',                    /*easeOutCubic*/
         WindowElementID:                  this.id,
         // Special Aero Style Settings ----------------------------------------
         WindowTransparentAnimationSpeed:  300,
@@ -1359,7 +1359,18 @@ $('#Start-Menu').load('../../Content/iFrameContent/StartmenuContent.html', funct
     });
     $('#StartmenuItem_CreateNewWindowAndIcon').click(function (e) {
       GenerateNewWindowLightbox(null, null, true, e);
-    });
+  });
+
+
+      $('#StartmenuItem_CreateNewWindowLogin').click(function(e) {
+          GenerateNewWindowLightbox("/Account/Login", "Synergy HRM", false, e);
+      });
+
+      $('#StartmenuItem_CreateNewWindowDashboard').click(function(e) {
+          GenerateNewWindowLightbox("/Dashboard/Index", "Synergy HRM", false, e);
+      });
+
+
     $('#SearchBox').submit(function(e) {
       GenerateNewWindowLightbox('http://www.google.com/cse?cx=partner-pub-7201128898371258%3Asth57t3rplw&ie=ISO-8859-1&q='+this.q.value, 'Google Web Search', false, e);      
       $('#Start-Menu').css({visibility: 'hidden'});
