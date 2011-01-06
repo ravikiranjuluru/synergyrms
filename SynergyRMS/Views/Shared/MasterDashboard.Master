@@ -141,7 +141,7 @@
               window_onResize();
 
               //openPage('/ags_gettingstarted.aspx?Code=GETTINGSTARTED');
-              openPage('/Account/Login');
+              //openPage('/Account/Login');
 
               if (document.getElementById('snTabbedUI')) {
                   window.siteNavigation.doResize(document.getElementById('snTabbedUI'));
