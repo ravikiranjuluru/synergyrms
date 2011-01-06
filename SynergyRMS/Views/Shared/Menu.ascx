@@ -54,12 +54,24 @@
                                       <a class="link " href="../Timesheets"><span class="text ">Time Sheets</span>
                                       </a>
                                   </td>
+                                    
+                                  <td id="Td6" class="item level1" >  
+                                  &nbsp;&nbsp;&nbsp;   
+                                  &nbsp;&nbsp;&nbsp; 
+                                                                  
+                                  </td>                                  
+                                  
                                   <%}
                               else
                               {%>
                                   <td id="DASHBOARD-MYWORK" class="item level1" onmouseenter="this.className += ' hover';"
                                       onmouseleave="this.className = this.className.replace(' hover', '');">
                                       <a class="link " href="../MyWork"><span class="text ">My Work</span> </a>
+                                  </td>
+                                  <td id="Td4" class="item level1" >  
+                                  &nbsp;&nbsp;&nbsp;   
+                                  &nbsp;&nbsp;&nbsp; 
+                                                                
                                   </td>
                                   <%} %>
                               </tr>

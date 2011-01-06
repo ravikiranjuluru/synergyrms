@@ -2,6 +2,18 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+<div id="masterpage_divHead" class="formHead">
+        <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tbody>
+                <tr>
+                    <td align="left" valign="middle">
+                        Project Documents
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
 
         <div style="padding: 0px;">
             
@@ -18,6 +30,10 @@
                                             <img src="../../Content/images/common/space.gif" id="Img1"
                                                 width="1" height="1">
                                         </td>
+                                        <td class="dashboardTabSpace">
+                                            <img src="../../Content/images/common/space.gif" id="ctl00_ucTabStrip_imgTabSpace"
+                                                width="5" height="1">
+                                        </td>
                                         <td class="dashboardTabOff" nowrap="nowrap">
                                             <a href="../Project/EditProject">Tasks</a>
                                         </td>
@@ -26,13 +42,13 @@
                                                 width="1" height="1">
                                         </td>
             <td class="dashboardTabSpace">
-                <img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace3" src="/images/space.gif">
+                <img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace3" src="../../Content/images/common/space.gif">
             </td>
             <td nowrap="nowrap" class="dashboardTabSelected">
                 Documents
             </td>
             <td class="dashboardTabSpace">
-                <img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace4" src="/images/space.gif">
+                <img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace4" src="../../Content/images/common/space.gif">
             </td>
             <td nowrap="nowrap" width="100%" valign="middle" align="left" class="dashboardTabTail">
                 &nbsp;
@@ -65,8 +81,7 @@
 	    </tr>
 	
         </tbody></table>
-    
-            <table width="100%" cellspacing="0" cellpadding="0" border="0" style="padding: 3px; border-top: 1px solid rgb(153, 153, 153); border-collapse: collapse;" id="ctl00_tblMain">
+     <table width="100%" cellspacing="0" cellpadding="0" border="0" style="padding: 3px; border-top: 1px solid rgb(153, 153, 153); border-collapse: collapse;" id="ctl00_tblMain">
 	<tbody><tr>
 		<td width="100%" valign="top" align="left" style="border: medium none; margin: 0px; border-collapse: collapse;"><table width="100%" cellspacing="0" cellpadding="0" border="0" style="border: medium none; border-collapse: collapse; margin: 0px; padding: 0px;">
 			<tbody><tr>
@@ -134,7 +149,7 @@
                             <tbody><tr onmouseout="this.cells(0).style.backgroundColor='#DDDDDD';this.cells(1).style.backgroundColor='#FFFFFF';" onmouseover="this.cells(0).style.backgroundColor='#ECECED';this.cells(1).style.backgroundColor='#ECECED';">
                                 <td valign="middle" align="center" onclick="__doPostBack('ctl00$hdrElement_PR4$mnuMenus','&lt;argument&gt;&lt;menu&gt;ADDACTION           :DOCUMENT&lt;/menu&gt;&lt;item&gt;ADDACTION           :DOCUMENT&lt;/item&gt;&lt;/argument&gt;')" style="white-space: nowrap; width: 20px; height: 20px; padding: 2px; cursor: pointer; background-color: rgb(221, 221, 221); color: rgb(102, 102, 102);">
                                       
-                                        <img height="16" width="16" alt="" src="/images/space.gif"
+                                        <img height="16" width="16" alt="" src="../../Content/images/common/space.gif"
                                     
                                 </td>
                                 <td onclick="__doPostBack('ctl00$hdrElement_PR4$mnuMenus','&lt;argument&gt;&lt;menu&gt;ADDACTION           :DOCUMENT&lt;/menu&gt;&lt;item&gt;ADDACTION           :DOCUMENT&lt;/item&gt;&lt;/argument&gt;')" style="white-space: nowrap; cursor: pointer; background-color: rgb(255, 255, 255); color: rgb(102, 102, 102);" class="popupMenuItem">
@@ -167,7 +182,7 @@
 
 
 
-    <table width="100%">
+    <table style="width: 68%">
         <tbody><tr>
         
             <td align="left" style="padding: 5px;">
@@ -250,7 +265,8 @@
         
     </tbody></table>
 
-    <table cellspacing="0" cellpadding="0" border="0" style="white-space: nowrap; width: 100%; padding: 0pt;" class="dashboardTable">
+    <table cellspacing="0" cellpadding="0" border="0" 
+        style="white-space: nowrap; width: 99%; padding: 0pt;" class="dashboardTable">
         <thead>
             <tr>
                 <td valign="middle" style="white-space: nowrap;" class="dashboardTable">
@@ -337,17 +353,14 @@
                             
                             <td valign="middle" align="left" onclick="javascript:__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4','SETCURRENTACTION:1')" style="width: 8px;" class="dashboardTableRowStart">
                                 
-                                    <img alt="" src="/images/space.gif">
+                                    <img alt="" src="../../Content/images/common/space.gif"
                                 
                             </td>
                         
                             <td valign="middle" align="center" onclick="javascript:__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4','SETCURRENTACTION:1')" style="width: 8px;" class="dashboardTableRowNoBorder"> 					
                                 
                                 
-                                            <img alt="Completed" src="/images/complete.gif"> 
-                                            
-                                
-                            </td>                        
+                                            &nbsp;</td>                        
                         
                             
                                                 <td valign="middle" onclick="javascript:__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4','SETCURRENTACTION:1')" style="white-space: nowrap; text-align: left;" class="dashboardTable">
@@ -393,15 +406,13 @@
                                                 </td>    
                                                  
                                 <td valign="middle" onclick="javascript:__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4','SETCURRENTACTION:1:OPENACTION:1')" style="width: 5px;" class="dasboardTable">
-                                    <img onmouseover="javascript:this.style.cursor='hand';" onclick="javascript:__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4','SETCURRENTACTION:1:OPENACTION:1')" title="Open Record" alt="" src="/images/openitem.gif" id="imgOpenAction">
+                                    <img  title="Open Record" alt="" src="../../Content/images/icon/openitem.gif" id="imgOpenAction">
                                 </td>
                                               
-                                <td valign="middle" onclick="javascript:__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4','SETCURRENTACTION:1:CLONEACTION:1')" style="width: 5px;" class="dasboardTable">
-                                    <img onmouseover="javascript:this.style.cursor='hand';" onclick="javascript:__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4','SETCURRENTACTION:1:CLONEACTION:1')" title="Clone Record" alt="" src="/images/cloneitem.gif" id="imgCloneAction">      
-                                </td>
+                                
                                               
 						        <td valign="middle" onclick="if (confirm('Are you sure you want to delete this Action?')) {__doPostBack('ctl00$dshElement_PR4$aecElementControlPR4','IMG_DELETEACTION_ONCLICK:1');}" style="width: 5px;" class="dasboardTable">
-						            <img onmouseover="javascript:this.style.cursor='hand';" title="Delete Record" alt="" src="/images/deleteitem.gif" id="imgDeleteAction">
+						            <img onmouseover="javascript:this.style.cursor='hand';" title="Delete Record" alt="" src="../../Content/images/icon/deleteitem.gif" id="imgDeleteAction">
 						        </td>					
 					                                
                         
@@ -421,6 +432,7 @@
 		</td>
 	</tr>
 </tbody></table>
+           
 
         </div>
         
