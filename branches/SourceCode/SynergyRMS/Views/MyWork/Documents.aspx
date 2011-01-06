@@ -157,9 +157,7 @@
                                     <tbody><tr id="trMenuIcons">
                                        
                                         <td>
-                                            <input type="submit" value="Add Project Document" onclick="__doPostBack('ctl00$hdrElement_ActionViewPos2$mnuMenus','&lt;argument&gt;&lt;menu&gt;ADDACTION           :DOCUMENT&lt;/menu&gt;&lt;item&gt;ADDACTION           :DOCUMENT&lt;/item&gt;&lt;/argument&gt;');" class="button">
-                                        
-                                        </td>
+                                            &nbsp;</td>
                                     </tr>
                                 </tbody></table>
                         
@@ -213,7 +211,16 @@
             <td align="left" style="padding: 5px;">
             
             Project
-                                    : <input type="text" onkeydown="com_pickbox_onKeyDown(event, this, 'ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_lnkSelect', 'ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_lnkRefresh', true);" class="textBox" id="ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_txtValue" name="ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2$pbxFilter1Project$txtValue">&nbsp;&nbsp;
+                                    : 
+                                    
+                                  <select name="ctl00$phFormContent$cboProjectLevel" id="project"
+                                                            class="comboBox">
+                                                            <option value="Select">Select</option>
+                                                            <option value="Project1" selected="selected">Project 1</option>
+                                                            <option value="Project2">Project 2</option>
+                                                            <option value="Project3">Project 3</option>
+                                                        </select>   
+                                  &nbsp;&nbsp;
         <div style="display: inline;" id="ctl00_dshElement_ActionViewPos2_aecElementControlActionViewPos2_pbxFilter1Project_divDescription">
             </div>
                                         
@@ -222,7 +229,7 @@
                 
                     
         
-            </td>
+                                            <input type="button" value="Add Project Document"  class="button" onclick="lnkDocUpload_onClick();" /></td>
             <td>&nbsp;</td>
         </tr>
         
@@ -232,7 +239,9 @@
                 <td align="left" style="padding: 5px;">
             
                 
-                
+                <img src="../../Content/images/common/menuitem_rollback.gif" id="ctl00_dshElement_Task_aecElementControlTask_ucProjectPlan_imgRollback"
+                                                                                                onclick="#" style="vertical-align: middle; cursor: pointer;" alt="Rollback"
+                                                                                                title="Refresh after add new task">
                 </td>
             
                 
@@ -386,16 +395,16 @@
                                                     
                                                 </td>    
                                                  
-                                <td valign="middle" onclick="javascript:__doPostBack('ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2','SETCURRENTACTION:1:OPENACTION:1')" style="width: 5px;" class="dasboardTable">
-                                    <img onmouseover="javascript:this.style.cursor='hand';" onclick="javascript:__doPostBack('ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2','SETCURRENTACTION:1:OPENACTION:1')" title="Open Record" alt="" src="../../Content/images/icon/openitem.gif" id="imgOpenAction">
+                                <td valign="middle"  style="width: 5px;" class="dasboardTable">
+                                    <img  title="Open Record" alt="" src="../../Content/images/icon/openitem.gif" id="imgOpenAction">
                                 </td>
                                               
-                                <td valign="middle" onclick="javascript:__doPostBack('ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2','SETCURRENTACTION:1:CLONEACTION:1')" style="width: 5px;" class="dasboardTable">
-                                    <img onmouseover="javascript:this.style.cursor='hand';" onclick="javascript:__doPostBack('ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2','SETCURRENTACTION:1:CLONEACTION:1')" title="Clone Record" alt="" src="../../Content/images/icon/cloneitem.gif" id="imgCloneAction">      
+                                <td valign="middle"  style="width: 5px;" class="dasboardTable">
+                                    
                                 </td>
                                               
 						        <td valign="middle" onclick="if (confirm('Are you sure you want to delete this Action?')) {__doPostBack('ctl00$dshElement_ActionViewPos2$aecElementControlActionViewPos2','IMG_DELETEACTION_ONCLICK:1');}" style="width: 5px;" class="dasboardTable">
-						            <img onmouseover="javascript:this.style.cursor='hand';" title="Delete Record" alt="" src="../../Content/images/icon/deleteitem.gif" id="imgDeleteAction">
+						            <img  title="Delete Record" alt="" src="../../Content/images/icon/deleteitem.gif" id="imgDeleteAction">
 						        </td>					
 					                                
                         
