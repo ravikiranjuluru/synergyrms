@@ -8,9 +8,8 @@ namespace SynergyRMS.Controllers
 {
     public class DashboardController: Controller
     {
-        //
-        // GET: /DashboardController.cs/
 
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Index()
         {
             return View();
