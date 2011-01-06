@@ -55,10 +55,14 @@
   
 
 
-    <div id="WindowContent-google">
+    <div id="WindowContent-Login">
       <iframe src="../Account/Login" width="100%" height="100%" style="border: 0px;" frameborder="0"></iframe>
     </div>
 
+      <div id="WindowContent-Dashboard">
+          <iframe src="../Dashboard/Index" width="100%" height="100%" style="border: 0px;" frameborder="0">
+          </iframe>
+      </div>
     <asp:ContentPlaceHolder ID="MainContent" runat="server">
         
     </asp:ContentPlaceHolder>
@@ -72,7 +76,17 @@
        var ShowTaskbar = true;
 
        // Windows Configuration ------------------------------------------------
-       $('#WindowContent-google').AeroWindow({
+       $('#WindowContent-Login').AeroWindow({
+           WindowTitle: 'SynergyRMS Home',
+           WindowDesktopIconFile: '../../Content/images/icon/default.png',
+           WindowPositionTop: 'center',
+           WindowPositionLeft: 'center',
+           WindowStatus: 'window',
+           WindowOuterWidth: 900,
+           WindowOuterHeight: 500
+
+       });
+       $('#WindowContent-Dashboard').AeroWindow({
            WindowTitle: 'SynergyRMS Home',
            WindowDesktopIconFile: '../../Content/images/icon/default.png',
            WindowPositionTop: 'center',
