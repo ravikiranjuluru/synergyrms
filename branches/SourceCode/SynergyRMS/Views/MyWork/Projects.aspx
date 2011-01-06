@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" Inherits="System.Web.Mvc.ViewPage" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -57,8 +57,7 @@
             <div style="overflow: hidden;" id="ctl00_ucTabStrip_divTabContainer">
                 
                 <table cellspacing="0" cellpadding="0" border="0" id="ctl00_ucTabStrip_tabStrip">
-	<tbody><tr>
-	</tr>
+	<tbody>
 	
     <tr>
         <td class="dashboardTabSpace">
@@ -183,12 +182,10 @@
                                 <table cellspacing="0" cellpadding="0" border="0">
                                     <tbody><tr onmouseout="getFirstChild(getChildNode(this, 1)).src = '../../Content/images/icon/vistabuttongrey_dropdown.gif';" onmouseover="getFirstChild(getChildNode(this, 1)).src = '../../Content/images/icon/vistabuttongrey_dropdown_mouseover.gif';" id="trMenuIcons">
                                         <td valign="middle" align="center" onclick="com_menulist_showPopup(event, getParentNode(getParentNode(getParentNode(getParentNode(this)))), 'ctl00_dshElement_MyProjects_aecElementControlMyProjects_ucProjectListManager_mnuListActions_tblMenu0_divPopup', 'right', 'transparent', '#F9F9F9', '#666666');" style="padding-left: 10px; white-space: nowrap; padding-right: 9px; background-image: url(&quot;../../Content/images/icon/vistabuttongrey.gif&quot;); background-repeat: no-repeat; background-position: left center; height: 22px;">
-                                            Actions
-                                        </td>
+                                            &nbsp;</td>
                                         
                                             <td onclick="com_menulist_showPopup(event, getParentNode(getParentNode(getParentNode(getParentNode(this)))), 'ctl00_dshElement_MyProjects_aecElementControlMyProjects_ucProjectListManager_mnuListActions_tblMenu0_divPopup', 'right', 'transparent', '#F9F9F9', '#666666');">
-                                                <img style="vertical-align: middle;" alt="" src="../../Content/images/icon/vistabuttongrey_dropdown.gif">                
-                                            </td>
+                                                &nbsp;</td>
                                         
                                     </tr>
                                 </tbody></table>
@@ -322,8 +319,10 @@
 					<td valign="middle" align="left" style="white-space: nowrap;" class="tableColumnTitle">Description</td>
 					<td valign="middle" align="left" style="white-space: nowrap;" class="tableColumnTitle">Manager</td>
 					<td valign="middle" align="left" style="white-space: nowrap;" class="tableColumnTitle">Tasks</td>
-					<td valign="middle" align="left" style="white-space: nowrap;" class="tableColumnTitle">Risks</td>
-					<td valign="middle" align="left" style="white-space: nowrap;" class="tableColumnTitle">Mitigation Plan Items</td>
+					<td valign="middle" align="left" style="white-space: nowrap;" class="tableColumnTitle">
+                        &nbsp;</td>
+					<td valign="middle" align="left" style="white-space: nowrap;" class="tableColumnTitle">
+                        &nbsp;</td>
 					<td valign="middle" align="left" style="white-space: nowrap;" class="tableColumnTitle">Issues</td>
 					<td valign="middle" align="left" style="white-space: nowrap;" class="tableColumnTitle">Issue Actions</td>
 					<td valign="middle" align="left" style="white-space: nowrap;" class="tableColumnTitle">&nbsp;</td>
@@ -333,9 +332,11 @@
 					<td valign="top" align="left" style="white-space: nowrap;" classDemonstration Project</td>
 					<td valign="top" align="left" style="white-space: nowrap;" class="tableRow">My 
                         Manager</td>
-					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow"><a title="Click to View Incomplete Tasks" href="javascript:MyProjects_GoToDashboard('PROJECT1','Tasks');">9 Tasks');">9 </a><a title="Click to View Incomplete Overdue Tasks" href="javascript:MyProjects_GoToProjectReview('PROJECT1');">(6)</a></td>
-					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow"><a title="Click to View Open Risks" href="javascript:MyProjects_GoToDashboard_RisksIssues('PROJECT1','Risks','Open','Risks');">0 </a></td>
-					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow"><a title="Click to View Open Mitigation Plan Items" href="javascript:MyProjects_GoToDashboard_RisksIssues('PROJECT1','Risks','Open','RiskActions');">0 </a></td>
+					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow">
+                        <a title="Click to View Incomplete Tasks" href="javascript:MyProjects_GoToDashboard('PROJECT1','Tasks');">9 </a><a title="Click to View Incomplete Overdue Tasks" href="javascript:MyProjects_GoToProjectReview('PROJECT1');">(6)</a></td>
+					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow">&nbsp;</td>
+					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow">
+                        <a title="Click to View Open Mitigation Plan Items" href="javascript:MyProjects_GoToDashboard_RisksIssues('PROJECT1','Risks','Open','RiskActions');">&nbsp;</a></td>
 					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow"><a title="Click to View Open Issues" href="javascript:MyProjects_GoToDashboard_RisksIssues('PROJECT1','Issues','Open','Risks');">0 </a></td>
 					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow"><a title="Click to View Open Issue Actions" href="javascript:MyProjects_GoToDashboard_RisksIssues('PROJECT1','Issues','Open','RiskActions');">0 </a></td>
 					<td valign="top" align="center" style="white-space: nowrap;" class="tableRow"><a title="View Project" href="javascript:MyProjects_SelectProject('PROJECT1');">View</a></td>
