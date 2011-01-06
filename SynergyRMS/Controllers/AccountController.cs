@@ -50,7 +50,7 @@ namespace SynergyRMS.Controllers
                 if (MembershipService.ValidateUser(model.UserName, model.Password))
                 {
                     FormsService.SignIn(model.UserName, model.RememberMe);
-                    
+                    FormsAuthentication.SetAuthCookie(model.UserName, false); 
 
                     //Roles.CreateRole("Admin");
                     //Roles.CreateRole("User");
