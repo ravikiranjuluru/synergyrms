@@ -29,9 +29,14 @@
                                     <table cellspacing="0" cellpadding="0" border="0" id="ctl00_phTabstripHeader_tabMain_tabStrip">
                                         <tbody>
                                             <tr>
-                                                <td class="tabSpace">
-                                                    <img height="1" width="5" id="ctl00_phTabstripHeader_tabMain_imgTabSpace" src="/images/space.gif">
-                                                </td>
+                                                 <td class="tabSpace">
+                                                                <img height="1" width="1" id="Img1" src="../../Content/images/common/space.gif">
+                                                            </td>
+                                                            <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','ROLES')"
+                                                                onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
+                                                                <a href="Register">Account Info</a>
+                                                            </td>                                                           
+                                                           
                                                 <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','GENERAL')"
                                                     onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
                                                     <a href="Index">General Info</a>
