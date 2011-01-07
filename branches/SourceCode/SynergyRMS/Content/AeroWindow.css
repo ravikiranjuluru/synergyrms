@@ -528,6 +528,12 @@ DEMO CONTENT
   background: url(../../Content/images/Startmenu/newWindow.png) no-repeat 2px 2px; 
 }
 
+#StartmenuItem_CreateNewWindowLogin span, #StartmenuItem_CreateNewWindowAndIconLogin span {
+  background: url(../../Content/images/Startmenu/newWindow.png) no-repeat 2px 2px; 
+}
+#StartmenuItem_CreateNewWindowDashboard span, #StartmenuItem_CreateNewWindowAndIconLogin span {
+  background: url(../../Content/images/Startmenu/newWindow.png) no-repeat 2px 2px; 
+}
 
 
 
