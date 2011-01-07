@@ -21,6 +21,7 @@
                 <tr>
                     <td>
                         <div class="formBody" id="masterpage_divBody">
+                        
                             <table cellspacing="0" cellpadding="0" class="" style="border: medium none; width: 100%;"
                                 id="tabTablectl00_phTabstripHeader_tabMain">
                                 <tbody>
@@ -33,8 +34,13 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="tabSpace">
-                                                                <img height="1" width="5" id="ctl00_phTabstripHeader_tabMain_imgTabSpace" src="../../Content/images/common/space.gif">
+                                                                <img height="1" width="1" id="Img1" src="../../Content/images/common/space.gif">
                                                             </td>
+                                                            <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','ROLES')"
+                                                                onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
+                                                                <a href="Register">Account Info</a>
+                                                            </td>                                                           
+                                                            
                                                             <td nowrap="nowrap" class="tabSelected">
                                                                 General Info
                                                             </td>
@@ -94,6 +100,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                           
                             <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
                                 id="masterPage_tblFormContentRoot">
                                 <tbody>
@@ -180,6 +187,18 @@
                                                                 name="ctl00$phFormContent$pbxLocation$txtValue">
                                                         </td>
                                                     </tr>
+                                                    
+                                                     <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="fullname">Full Name</label>Full Name:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="text" maxlength="70" size="70" class="textBox" 
+                                                            id="fullname"
+                                                                name="ctl00$phFormContent$txtPrimaryEmail">
+                                                        </td>
+                                                    </tr>
+                                                    
 
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
