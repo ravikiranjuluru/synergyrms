@@ -56,6 +56,10 @@ namespace SynergyRMS.Controllers
         {
             return View("ScheduleUtilisation");
         }
+        public ActionResult Register()
+        {
+            return View("User");
+        }
 
     }
 }
