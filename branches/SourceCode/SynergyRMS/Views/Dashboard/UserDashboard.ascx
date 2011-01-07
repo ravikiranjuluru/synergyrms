@@ -248,7 +248,7 @@
                                                                                         <img src="../../Content/images/common/cross.gif" id="Img8" title="Click for more information" />
                                                                                     </td>
                                                                                     <td>
-                                                                                        <a id="A4" title="Click here to Add a New Role" href="../Resource/Role">Add a New Role</a>
+                                                                                        <a id="A4" title="Click here to Add a New Role" href="../Resource/Role">Add a New Role</a> 
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr id="Tr5">
