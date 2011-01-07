@@ -236,6 +236,7 @@
                                             <%= Html.ValidationMessageFor(m => m.UserName) %>
                                         </td>
                                     </tr>
+                                    
                                     <tr>
                                         <td class="Username">
                                              <%= Html.LabelFor(m => m.Email) %>
