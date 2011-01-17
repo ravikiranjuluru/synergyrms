@@ -31,8 +31,6 @@
                                                 <table cellspacing="0" cellpadding="0" border="0" id="ctl00_phTabstripHeader_tabMain_tabStrip">
                                                     <tbody>
                                                         <tr>
-                                                        </tr>
-                                                        <tr>
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="Img1" src="../../Content/images/common/space.gif">
                                                             </td>
@@ -110,53 +108,9 @@
                                                 <tbody>
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
-                                                            <img height="1" width="180" id="ctl00_phFormContent_ucFormHeader_img1" src="..../../Content/images/common/space.gif">
-                                                        </td>
-                                                        <td height="5" width="100%" colspan="2" class="formDetailNoPadding">
+                                                            &nbsp;</td>
+                                                        <td height="5" width="100%" class="formDetailNoPadding">
                                                             <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="..../../Content/images/common/space.gif">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="formDetailDark" align="right" valign="middle">
-                                                            <label for="code">
-                                                                Code</label>Code:
-                                                        </td>
-                                                        <td class="formDetail" align="left" valign="middle">
-                                                            <input name="txtCode" id="code" class="textBox" size="20" maxlength="20" type="text">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="formDetailDark" align="right" valign="middle">
-                                                            <label for="description">
-                                                                Description</label>Description:
-                                                        </td>
-                                                        <td class="formDetail" align="left" valign="middle">
-                                                            <input name="txtDescription" id="description" class="textBox" size="70" maxlength="70"
-                                                                type="text">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="resourceType">
-                                                            </label>
-                                                            Resource Type:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <select class="comboBox" id="resourceType" name="ctl00$phFormContent$cboResourceType">
-                                                                <option value="1">Employee</option>
-                                                                <option value="2">Contractor</option>
-                                                                <option value="4" selected="selected">Role</option>
-                                                            </select>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="active">
-                                                            </label>
-                                                            Active:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <input type="checkbox" checked="checked" class="checkBox" id="active" name="ctl00$phFormContent$chkActive">
                                                         </td>
                                                     </tr>
                                                    
@@ -168,46 +122,38 @@
                                                             <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    
+                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                             <label for="department">Department</label>Department:
+                                                            <label for="txtfirstname">First Name</label>First Name:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
-                                                           <input type="text" checked="checked" class="textBox" 
-                                                            id="department"
-                                                                name="ctl00$phFormContent$chkActive">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="location">Location</label>Location:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <input type="text"  class="textBox" id="location"
-                                                                name="ctl00$phFormContent$pbxLocation$txtValue">
+                                                            <input type="text" maxlength="70" size="70" class="textBox" 
+                                                            id="txtfirstname"
+                                                                name="txtfirstname">
                                                         </td>
                                                     </tr>
                                                     
                                                      <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="fullname">Full Name</label>Full Name:
+                                                            <label for="txtlastname">Last Name</label>Last Name:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
                                                             <input type="text" maxlength="70" size="70" class="textBox" 
-                                                            id="fullname"
-                                                                name="ctl00$phFormContent$txtPrimaryEmail">
+                                                            id="txtlastname"
+                                                                name="txtlastname">
                                                         </td>
                                                     </tr>
                                                     
 
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="primryemail">Primary Email Address</label>Primary Email Address:
+                                                            <label for="txtemail">Email Address</label>Email Address:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
                                                             <input type="text" maxlength="70" size="70" class="textBox" 
-                                                            id="primryemail"
-                                                                name="ctl00$phFormContent$txtPrimaryEmail">
+                                                            id="txtemail"
+                                                                name="txtemail">
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -217,7 +163,7 @@
                                                         <td valign="middle" align="left" class="formDetail">
                                                             <input type="text" maxlength="30" size="30" class="textBox"
                                                              id="telephone"
-                                                                name="ctl00$phFormContent$txtTelephone">
+                                                                name="telephone">
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -226,26 +172,12 @@
                                                         </td>
                                                         <td valign="top" align="left" class="formDetail">
                                                             <textarea rows="2" cols="62" class="textArea" 
-                                                            id="notes" name="ctl00$phFormContent$txtNotes"></textarea>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDarkHR">
-                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
-                                                        </td>
-                                                        <td valign="middle" align="left" colspan="1" class="formDetailHR">
-                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
+                                                            id="notes" name="notes"></textarea>
                                                         </td>
                                                     </tr>
                                                    
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDarkHR">
-                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
-                                                        </td>
-                                                        <td valign="middle" align="left" colspan="1" class="formDetailHR">
-                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
-                                                        </td>
-                                                    </tr>
+                                                   
+                                                    
                                                     <tr id="ctl00_phFormContent_ucCustomFields_trCustom25">
                                                         <td valign="middle" align="right" style="padding-top: 4px; padding-bottom: 4px;"
                                                             class="formDetailDark" id="ctl00_phFormContent_ucCustomFields_tdCustomLabel25">
@@ -265,7 +197,7 @@
                                                         <td height="5" class="formDetailDarkNoPadding">
                                                             <img height="1" width="180" id="ctl00_phFormContent_ucFormFooter_img1" src="../../Content/images/common/space.gif">
                                                         </td>
-                                                        <td height="5" width="100%" colspan="2" class="formDetailNoPadding">
+                                                        <td height="5" width="100%" class="formDetailNoPadding">
                                                             <img height="1" id="ctl00_phFormContent_ucFormFooter_img2" src="../../Content/images/common/space.gif">
                                                         </td>
                                                     </tr>
