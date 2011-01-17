@@ -1,0 +1,389 @@
+﻿/**
+ * The default CSS for Spook.
+ */
+/*__________________________________________________________  page overrides  */
+html, body {
+	height: 100%; /*IE6 (at least) will struggle without this*/
+}
+
+/*_________________________________________________________  general classes  */
+.SpookHide,
+#SpookWrap .SpookHide {
+	display: none !important;
+}
+#SpookWrap .SpookAutoScroll {
+  height: 100%;
+  width: 100%;
+	overflow: auto;
+}
+
+.SpookPreAppend {
+	position: absolute;
+	top: -9000px;
+	left: -9000px;
+	visibility: hidden;
+	width: auto;
+	height: auto;
+  z-index: -1;
+}
+
+/*____________________________________________________________________  skin  */
+.SpookSkinTB,
+.SpookSkinCorner {
+	display: none;
+}
+
+/*___________________________________________________________  wrapper, mask  */
+#SpookWrap,
+#SpookMask {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#SpookWrap {
+  text-align: left;
+  display: none;
+	visibility: hidden;
+  z-index: 99999;
+  position: fixed;
+}
+#SpookMask {
+	position: absolute;
+}
+
+/*_______________________________________________________  no fixed position  */
+.SpookNoFixedPos,
+.SpookNoFixedPos body {
+	overflow: hidden;
+}
+.SpookNoFixedPos #SpookWrap {
+	position: absolute;
+}
+
+/*_____________________________________________________________________  box  */
+#SpookBox {
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  padding-top: 22px; /* not less than #SpookTbar height */
+  padding-bottom: 20px; /* not less than #SpookBbar height */
+}
+
+/*____________________________________________________________________  body  */
+#SpookBody {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #999999;
+	z-index: 30;
+}
+#SpookBodyWrap {
+	position: relative;
+	height: 100%;
+}
+#SpookBodyInner {
+  position: relative;
+  height: 100%;
+  z-index: 10;
+}
+
+/*_________________________________________________________________  loading  */
+#SpookLoad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+	z-index: 20;
+}
+#SpookBody,
+#SpookLoad {
+  background-color: #060606; /* should match loading image background color */
+}
+#SpookLoad div {
+	position: absolute;
+	width: 100%;
+  text-align: center;
+	top: 30%;
+	left: 0;
+  margin-top: -4px;
+	line-height: 1.1em;
+}
+#SpookLoad a {
+	color: #ffffff;
+	cursor: pointer;
+	padding-right: 50px;
+	background: transparent url(resources/loading.gif) no-repeat 100% 3px;
+}
+
+/*_______________________________________________________  top & bottom bars  */
+#SpookTbar,
+#SpookBbar {
+  position: absolute;
+  margin: 0; /* important! */
+  padding: 0; /* important! */
+  border: 0 none;
+  overflow: hidden;
+  width: 100%;
+	left: 0;
+}
+#SpookTbar {
+	top: 0;
+  height: 22px; /* don't exceed #SpookBox top padding */
+	z-index: 20;
+}
+#SpookBbar {
+	bottom: 0;
+  height: 20px; /* don't exceed #SpookBox bottom padding */
+	z-index: 10;
+}
+#SpookTbarInner,
+#SpookBbarInner {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 140%;
+}
+#SpookBbarClear {
+	clear: both;
+}
+.SpookHideBars #SpookTbar,
+.SpookHideBars #SpookBbar {
+	visibility: hidden;
+}
+
+/*___________________________________________________________________  title  */
+#SpookTitle {
+  position: relative;
+  padding-top: 5px;
+  font-family: 'Lucida Grande', Tahoma, sans-serif;
+  line-height: 120%;
+  color: #fff;
+}
+
+/*_____________________________________________________________________  nav  */
+.SpookClickNav,
+.SpookNavSpacer {
+  display: block;
+  float: right;
+  position: relative;
+  z-index: 10;
+  height: 16px;
+  width: 16px;
+  margin: 2px 0 0 3px;
+  cursor: pointer;
+  background-color: transparent;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+.SpookNavSpacer {
+	visibility: hidden;
+	width: 3px;
+}
+#SpookTbar .SpookClickNav,
+#SpookTbar .SpookNavSpacer {
+	margin-top: 3px;
+}
+#SpookClick-close {
+  background-image: url(resources/close.png);
+  margin-left: 8px;
+}
+#SpookClick-next {
+  background-image: url(resources/next.png);
+}
+#SpookClick-previous {
+  background-image: url(resources/previous.png);
+}
+#SpookClick-play {
+  background-image: url(resources/play.png);
+}
+#SpookClick-pause {
+  background-image: url(resources/pause.png);
+}
+#SpookClick-first {
+  background-image: url(resources/first.png);
+}
+#SpookClick-last {
+  background-image: url(resources/last.png);
+}
+#SpookClick-browse {
+  background-image: url(resources/browse.png);
+}
+
+/*_________________________________________________________________  counter  */
+#SpookCounter {
+  font-size: 12px;
+}
+#SpookCounterInner {
+	float: left;
+	padding-top: 2px;
+}
+#SpookCounterInner a,
+#SpookCounterInner a:link,
+#SpookCounterInner a:visited,
+#SpookCounterInner a:hover,
+#SpookCounterInner a:active {
+	font-weight: normal;
+  margin: 0 4px 0 0;
+  padding: 0 1px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+}
+#SpookCounterInner a:hover {
+  text-decoration: underline;
+}
+#SpookCounterInner a.SpookCounterCurrent {
+  color: #ff9900;
+}
+#SpookCounter .SpookClickNav {
+	float: left;
+	margin-left: 0;
+	margin-right: 4px;
+}
+.SpookHideBars #SpookCounter .SpookClickNav.SpookHide {
+	display: block !important;
+	width: 0 !important;
+	margin-right: 1px !important;
+}
+
+/*_________________________________________________________________  caption  */
+#SpookCaption,
+#SpookCaptionHide {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+#SpookCaption {
+	height: 0;
+	overflow: hidden;
+	z-index: 15;
+}
+#SpookCaptionHide {
+	height: auto;
+	visibility: hidden;
+	z-index: 5;
+}
+.SpookCaptionInner {
+	position: relative;
+	height: 100%;
+	background: #cccccc none;
+	color: #000000;
+	font-size: 12px;
+	line-height: 120%;
+	padding: 2px 6px 4px;
+	text-align: center;
+}
+#SpookClick-caption {
+	margin-right: 6px;
+	background-image: url(resources/caption.png);
+}
+.SpookCaptionsAtTop #SpookCaption,
+.SpookCaptionsAtTop #SpookCaptionHide {
+	bottom: auto;
+	top: 0;
+}
+.SpookCaptionsOff #SpookCaption,
+.SpookCaptionsOff #SpookCaptionHide,
+.SpookCaptionsOff #SpookClick-caption {
+	display: none;
+}
+
+/*________________________________________________________________  messages  */
+#SpookMessage {
+  text-align: center;
+}
+#SpookMessage img {
+	border: 0 none;
+}
+#SpookMessageText {
+  font-family: 'Lucida Grande', Tahoma, sans-serif;
+  font-size: 18px;
+	padding: 20px 10px 30px 10px;
+  color: #ff9900;
+}
+#SpookMessagePlugins {
+	font-size: 66px;
+}
+#SpookMessagePlugins a,
+#SpookMessagePlugins span {
+	vertical-align: middle;
+}
+#SpookMessage .SpookMessageAnd {
+	font-size: 36px;
+	color: #009900;
+	padding: 0 4px;
+}
+#SpookMessage .SpookMessageOr {
+	font-size: 36px;
+	color: #9999ff;
+	padding: 0 24px;
+}
+
+/*_________________________________________________________________  content  */
+object#SpookContent {
+	display: block;
+	outline: none;
+}
+img#SpookContent {
+	position: absolute;
+}
+#SpookDragLayer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	cursor: move;
+	visibility: hidden;
+	background-color: #ffffff;
+	z-index: 50;
+}
+.SpookScrollLayer {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+#SpookContentScroll {
+	position: relative;
+}
+
+/*_________________________________________________________  implode closure  */
+.SpookImplode #SpookContent {
+	visibility: hidden !important;
+}
+.SpookImplode #SpookLoad {
+	visibility: hidden;
+}
+.SpookImplode #SpookCaption,
+.SpookImplode #SpookCaptionHide {
+	display: none;
+}
+
+/*_____________________________________________________________  IE6 fix pngs */
+#SpookWrap.SpookFixedPNG #SpookBox .SpookAlphaPNG {
+	background-image: none;
+}
+
+/*___________________________________________________________________  debug  */
+#SpookDebug {
+	position: absolute;
+	z-index: 20000;
+	top: 0;
+	left: 0;
+	width: 200px;
+	padding: 10px;
+	margin: 0;
+	border: 0 none;
+	background-color: #ffffff;
+	color: #000000;
+	font-size: 12px;
+	line-height: 1.25em;
+}
