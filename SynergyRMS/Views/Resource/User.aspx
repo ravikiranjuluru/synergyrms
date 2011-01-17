@@ -103,8 +103,11 @@
                                 </tbody>
                             </table>
                             
+                          
+                            
+                            
                             <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
-                                id="masterPage_tblFormContentRoot">
+                                id="Table2">
                                 <tbody>
                                     <tr>
                                         <td class="form">
@@ -112,63 +115,67 @@
                                                 <tbody>
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
-                                                            <img height="1" width="180" id="ctl00_phFormContent_ucFormHeader_img1" src="../images/space.gif">
-                                                        </td>
-                                                        <td height="5" width="100%" colspan="2" class="formDetailNoPadding">
-                                                            <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="../images/space.gif">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="code">User Name</label>User Name:
-                                                             
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <input type="text" maxlength="20" size="20" class="textBox" 
-                                                            id="code"
-                                                                name="ctl00$phFormContent$txtCode">
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="description">Email</label>Email:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <input type="text" maxlength="70" size="70" class="textBox" 
-                                                            id="description"
-                                                                name="ctl00$phFormContent$txtDescription">
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                             <label for="resourceType"></label>Password:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                             <input type="password" class="textBox" 
-                                                            id="Checkbox1" name="ctl00$phFormContent$chkActive">
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="active"></label>Confirm Password:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <input type="password" class="textBox" 
-                                                            id="Password1" name="ctl00$phFormContent$chkActive">
+                                                            &nbsp;</td>
+                                                        <td height="5" width="100%" class="formDetailNoPadding">
+                                                            <img height="1" id="Img4" src="..../../Content/images/common/space.gif">
                                                         </td>
                                                     </tr>
                                                    
-                                                  
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDarkHR">
+                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
+                                                        </td>
+                                                        <td valign="middle" align="left" colspan="1" class="formDetailHR">
+                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                     <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txtusername">User Name</label>User Name:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="text" maxlength="70" size="70" class="textBox" 
+                                                            id="txtusername"
+                                                                name="txtusername">
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                     <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txtemail">Email</label>Email:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="text" maxlength="70" size="70" class="textBox" 
+                                                            id="txtemail"
+                                                                name="txtemail">
+                                                        </td>
+                                                    </tr>
+                                                    
+
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txtpwd"></label>Password:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="password" maxlength="30" size="30" class="textBox" id="txtpwd" name="txtpwd">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                             <label for="txtpwdconfirm"></label>Confirm Password:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="password" maxlength="30" size="30" class="textBox" id="txtpwdconfirm"
+                                                                name="txtpwdconfirm">
+                                                        </td>
+                                                    </tr>
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
-                                                            <img height="1" width="180" id="ctl00_phFormContent_ucFormFooter_img1" src="../images/space.gif">
+                                                            <img height="1" width="180" id="Img5" src="../../Content/images/common/space.gif">
                                                         </td>
-                                                        <td height="5" width="100%" colspan="2" class="formDetailNoPadding">
-                                                            <img height="1" id="ctl00_phFormContent_ucFormFooter_img2" src="../images/space.gif">
+                                                        <td height="5" width="100%" class="formDetailNoPadding">
+                                                            <img height="1" id="Img6" src="../../Content/images/common/space.gif">
                                                         </td>
                                                     </tr>
                                                 </tbody>
