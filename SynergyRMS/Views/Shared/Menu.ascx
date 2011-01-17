@@ -1,26 +1,26 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
   <div id="divTabStrip" style="overflow: hidden;">
 
-<%var isAdmin = false;
-      isAdmin = HttpContext.Current.User.IsInRole("Admin");  
-         %>
-         
-                    <script type="text/javascript">
+      <%var isAdmin = false;
+        isAdmin = HttpContext.Current.User.IsInRole("Admin");  
+      %>
 
-                        function siteNavigation_selectTab(item) {
+      <script type="text/javascript">
 
-                            if (item) {
-                                if (typeof item == 'string') {
-                                    item = document.getElementById(item);
-                                }
+          function siteNavigation_selectTab(item) {
 
-                                if (item) {
-                                    siteNavigation.doSelectItem(item, true);
-                                }
-                            }
-                        }   
+              if (item) {
+                  if (typeof item == 'string') {
+                      item = document.getElementById(item);
+                  }
 
-                    </script>
+                  if (item) {
+                      siteNavigation.doSelectItem(item, true);
+                  }
+              }
+          }   
+
+      </script>
 
       <div id="divmenu">
           <table id="snTabbedUI" class="agnav_default" border="0" cellpadding="0" cellspacing="0">
@@ -44,23 +44,22 @@
                                   <td id="DASHBOARD-SCHEDULING" class="item level1" onmouseenter="this.className += ' hover';"
                                       onmouseleave="this.className = this.className.replace(' hover', '');">
                                       <a class="link " href="../Resource/Schedule"><span class="text ">Scheduling</span>
+                                      
+                                    
+                                      
+                                      
+                                      
                                       </a>
                                   </td>
                                   <td id="Td2" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
-                                      <a class="link " href="../Resource"><span class="text ">Resources</span>
-                                      </a>
+                                      <a class="link " href="../Resource"><span class="text ">Resources</span> </a>
                                   </td>
                                   <td id="Td3" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
-                                      <a class="link " href="../Timesheets"><span class="text ">Time Sheets</span>
-                                      </a>
+                                      <a class="link " href="../Timesheets"><span class="text ">Time Sheets</span> </a>
                                   </td>
-                                    
-                                  <td id="Td6" class="item level1" >  
-                                  &nbsp;&nbsp;&nbsp;   
-                                  &nbsp;&nbsp;&nbsp; 
-                                                                  
-                                  </td>                                  
-                                  
+                                  <td id="Td6" class="item level1">
+                                      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                  </td>
                                   <%}
                               else
                               {%>
@@ -68,12 +67,24 @@
                                       onmouseleave="this.className = this.className.replace(' hover', '');">
                                       <a class="link " href="../MyWork"><span class="text ">My Work</span> </a>
                                   </td>
-                                  <td id="Td4" class="item level1" >  
-                                  &nbsp;&nbsp;&nbsp;   
-                                  &nbsp;&nbsp;&nbsp; 
-                                                                
+                                  <td id="Td4" class="item level1">
+                                      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                   </td>
                                   <%} %>
+                              </tr>
+                              
+                              <tr>
+                              <td>
+                              <div id="menuDoc">
+						<a href="#"><img src="../../Content/images/Macdoc/Addressbook.png" alt="" /></a>
+						<a href="#"><img src="../../Content/images/Macdoc/DVD-Player.png" alt="" /></a>
+						<a href="#"><img src="../../Content/images/Macdoc/eMail.png" alt="" /></a>
+						<a href="#"><img src="../../Content/images/Macdoc/Instant_Messaging.png" alt="" /></a>
+						<a href="#"><img src="../../Content/images/Macdoc/Safari.png" alt="" /></a>
+						<a href="#"><img src="../../Content/images/Macdoc/Terminal.png" alt="" /></a>
+
+					</div>
+                              </td>
                               </tr>
                           </table>
                       </div>
@@ -83,4 +94,4 @@
               </tr>
           </table>
       </div>
-                </div>
+</div>

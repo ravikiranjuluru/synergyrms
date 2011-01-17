@@ -340,6 +340,15 @@
     <Content Include="Content\images\popup\ui-icons_888888_256x240.png" />
     <Content Include="Content\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="Content\jquery-ui-1.7.2.custom.css" />
+    <Content Include="Content\images\Macdoc\Addressbook.png" />
+    <Content Include="Content\images\Macdoc\DVD-Player.png" />
+    <Content Include="Content\images\Macdoc\eMail.png" />
+    <Content Include="Content\images\Macdoc\Instant_Messaging.png" />
+    <Content Include="Content\images\Macdoc\Safari.png" />
+    <Content Include="Content\images\Macdoc\Terminal.png" />
+    <Content Include="Content\Macdoc\spook.css" />
+    <Content Include="Content\Macdoc\spookSkin.css" />
+    <Content Include="Content\Macdoc\macdoc.css" />
     <Content Include="Content\theme\ui.accordion.css" />
     <Content Include="Content\theme\ui.all.css" />
     <Content Include="Content\theme\ui.base.css" />
@@ -355,6 +364,10 @@
     <Content Include="Scripts\jquery-1.3.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.7.2.custom.min.js" />
     <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\Macdoc\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\Macdoc\jquery.jqDock.min.js" />
+    <Content Include="Scripts\Macdoc\macdoc.js" />
+    <Content Include="Scripts\Macdoc\spook.js" />
     <Content Include="Views\Account\ChangePassword.aspx" />
     <Content Include="Views\Account\Login.aspx" />
     <Content Include="Views\Account\Register.aspx" />
