@@ -395,11 +395,13 @@
     <Content Include="Views\Resource\Schedule.aspx" />
     <Content Include="Views\Resource\ScheduleCalendar.aspx" />
     <Content Include="Views\Resource\ScheduleUtilisation.aspx" />
+    <Content Include="Views\Resource\Test.aspx" />
     <Content Include="Views\Resource\User.aspx" />
     <Content Include="Views\Resource\ViewResources.aspx" />
     <Content Include="Views\Resource\ViewTeam.aspx" />
     <Content Include="Views\Shared\MasterDashboard.Master" />
     <Content Include="Views\Shared\Menu.ascx" />
+    <Content Include="Views\Shared\menubackup.txt" />
     <Content Include="Views\Timesheets\Approve.aspx" />
     <Content Include="Views\Timesheets\Index.aspx" />
   </ItemGroup>
