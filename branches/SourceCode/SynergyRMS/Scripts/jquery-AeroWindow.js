@@ -51,8 +51,8 @@
         WindowClosable:                   true,          /* true, false */
         LoadiFrameContentLater:           true,          /* true, false */
         WindowDraggable:                  true,          /* true, false */
-        WindowAnimationSpeed:             1500,             /*changed500*/
-        WindowAnimation: 'easeOutBounce',                    /*easeOutCubic*/
+        WindowAnimationSpeed:             500,             /*changed500*/
+        WindowAnimation: 'easeOutCubic',                    /*easeOutCubic*/
         WindowElementID:                  this.id,
         // Special Aero Style Settings ----------------------------------------
         WindowTransparentAnimationSpeed:  300,
