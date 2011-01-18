@@ -58,7 +58,8 @@ namespace SynergyRMS.Controllers
         }
         public ActionResult Register()
         {
-            return View("User");
+            //return View("User");
+            return View("Test");
         }
 
     }
