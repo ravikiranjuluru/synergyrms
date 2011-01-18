@@ -35,14 +35,11 @@
                                                      <td class="tabSpace">
                                                                 <img height="1" width="1" id="Img1" src="../../Content/images/common/space.gif">
                                                             </td>
-                                                            <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','ROLES')"
-                                                                onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                                <a href="Register">Account Info</a>
-                                                            </td>                                                           
+                                                                                                                     
                                                            
                                                     <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','GENERAL')"
                                                         onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                        <a href="Index">General Info</a>
+                                                        <a href="/Resource/Index">General Info</a>
                                                     </td>
                                                     <td class="tabSpace">
                                                         <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace0" src="/images/space.gif">
@@ -55,14 +52,14 @@
                                                     </td>
                                                     <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','SKILLS')"
                                                         onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                        <a href="AddSkill">Skills</a>
+                                                        <a href="/Resource/AddSkill">Skills</a>
                                                     </td>
                                                     <td class="tabSpace">
                                                         <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace4" src="/images/space.gif">
                                                     </td>
                                                     <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','INTERESTED PROJECTS')"
                                                         onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                        <a href="InterestProjects">Interested Projects</a>
+                                                        <a href="/Resource/InterestProjects">Interested Projects</a>
                                                     </td>
                                                     <td class="tabSpace">
                                                         <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace7" src="/images/space.gif">
@@ -109,7 +106,7 @@
                                                 <td height="5" class="formDetailDarkNoPadding">
                                                     <img height="1" width="180" id="ctl00_phFormContent_ucFormHeader_img1" src="../../Content/images/common/space.gif">
                                                 </td>
-                                                <td height="5" width="100%" colspan="2" class="formDetailNoPadding">
+                                                <td height="5" width="100%" class="formDetailNoPadding">
                                                     <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="../../Content/images/common/space.gif">
                                                 </td>
                                             </tr>
@@ -145,47 +142,9 @@
                                                                 <option value="2">Contractor</option>
                                                                 <option value="4" selected="selected">Role</option>
                                                             </select>
-                                                        </td>
+                                                                                    <input type="button" value="Add Roles" class="button" id="btnAddRoles"
+                                                                                        name="btnAddRoles" ></td>
                                                     </tr>
-                                            <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="active"></label>Active:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <input type="checkbox" checked="checked" class="checkBox" 
-                                                            id="active"
-                                                                name="ctl00$phFormContent$chkActive">
-                                                        </td>
-                                                    </tr>
-                                            
-                                            <tr>
-                                                <td valign="middle" align="right" class="formDetailDarkHR">
-                                                    <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
-                                                </td>
-                                                <td valign="middle" align="left" colspan="1" class="formDetailHR">
-                                                    <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td valign="middle" align="right" class="formDetailDark">
-                                                    <label for="primryrole">Primary Role</label>Primary Role:
-                                                </td>
-                                                <td valign="middle" align="left" class="formDetail">
-                                                    <input type="text"  class="textBox" 
-                                                    id="primryrole"
-                                                        name="ctl00$phFormContent$pbxPrimaryRole$txtValue">
-                                                    
-                                                    
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td valign="middle" align="right" class="formDetailDarkHR">
-                                                    <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
-                                                </td>
-                                                <td valign="middle" align="left" colspan="1" class="formDetailHR">
-                                                    <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
-                                                </td>
-                                            </tr>
                                             <tr>
                                                 <td valign="top" align="right" class="formDetailDark">
                                                     Roles:
@@ -199,14 +158,12 @@
                                                                         <tbody>
                                                                             <tr>
                                                                                 <td align="left" style="width: 20%;" class="formTableColumnTitle">
-                                                                                    Code
-                                                                                </td>
-                                                                                <td align="left" class="style3">
+                                                                                    Role</td>
+                                                                                <td align="left" class="style3" style="width: 159px">
                                                                                     Description
                                                                                 </td>
                                                                                 <td align="left"  class="formTableColumnTitle">
-                                                                                    Ratio(%)
-                                                                                </td>
+                                                                                    Set permission</td>
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
@@ -222,10 +179,7 @@
                                                                         <tbody>
                                                                             <tr>
                                                                                 <td align="left">
-                                                                                    <input type="button" value="Add Roles" class="button" id="btnAddRoles"
-                                                                                        name="btnAddRoles" >
-                                                                                   
-                                                                                </td>
+                                                                                    &nbsp;</td>
                                                                                 <td>
                                                                                     &nbsp;
                                                                                 </td>
@@ -241,11 +195,72 @@
                                                     </table>
                                                 </td>
                                             </tr>
+                                            
+                                                  <tr>
+                                                        <td valign="top" align="right" class="formDetailDark">
+                                                            <label for="notes">
+                                                            </label>
+                                                            Select Permission:
+                                                        </td>
+                                                        <td valign="top" align="left" class="formDetail">
+                                                           <table style="width: 100%">
+                                                                <tr>
+                                                                    <td style="width: 165px">
+                                                                        Add Project</td>
+                                                                    <td>
+                                                                       <input type="checkbox" checked="checked" class="checkBox" 
+                                                            id="Checkbox7" name="ctl00$phFormContent$chkActive"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 165px">
+                                                                        Edit Project</td>
+                                                                    <td>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" 
+                                                            id="Checkbox8" name="ctl00$phFormContent$chkActive"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 165px">
+                                                                        Delete Project</td>
+                                                                    <td>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" 
+                                                            id="Checkbox9" name="ctl00$phFormContent$chkActive"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 165px">
+                                                                          Add new Task</td>
+                                                                    <td>
+                                                                         <input type="checkbox" checked="checked" class="checkBox" 
+                                                            id="Checkbox10" name="ctl00$phFormContent$chkActive"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 165px">
+                                                                        Edit Task</td>
+                                                                    <td>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" 
+                                                            id="Checkbox11" name="ctl00$phFormContent$chkActive"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 165px">
+                                                                        Delete Task</td>
+                                                                    <td>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" 
+                                                            id="Checkbox12" name="ctl00$phFormContent$chkActive"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 165px">
+                                                                        Assign to a Project</td>
+                                                                    <td>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" 
+                                                            id="Checkbox13" name="ctl00$phFormContent$chkActive"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
                                             <tr>
                                                 <td height="5" class="formDetailDarkNoPadding">
                                                     <img height="1" width="180" id="ctl00_phFormContent_ucFormFooter_img1" src="../../Content/images/common/space.gif">
                                                 </td>
-                                                <td height="5" width="100%" colspan="2" class="formDetailNoPadding">
+                                                <td height="5" width="100%" class="formDetailNoPadding">
                                                     <img height="1" id="ctl00_phFormContent_ucFormFooter_img2" src="../../Content/images/common/space.gif">
                                                 </td>
                                             </tr>
