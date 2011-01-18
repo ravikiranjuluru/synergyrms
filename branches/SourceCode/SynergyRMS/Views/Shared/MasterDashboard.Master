@@ -588,7 +588,7 @@
         <tr>
             <td align="right" style="width: 100%;">
             <!-- main menu goes here-->
-            <%Html.RenderPartial("Menu"); %>
+          <%Html.RenderPartial("Menu"); %>
             </td>
         </tr>
     </table>
@@ -596,6 +596,7 @@
  
     <div id="divmain">
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
+         <%Html.RenderPartial("Menu"); %>
         </asp:ContentPlaceHolder>
     </div>
        <%--   <iframe id="mainFrame" name="mainFrame" frameborder="0" visible="false">
