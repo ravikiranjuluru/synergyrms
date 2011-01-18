@@ -50,17 +50,17 @@
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SchedulingElement.css" type="text/css"/>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/directentrygrid.css" type="text/css"/>
   
-  <!-- mac doc menu-->  
-  <link rel="Stylesheet" type="text/css"  href="../../Content/macdoc/macdoc.css" />
-    <link rel="Stylesheet" type="text/css"  href="../../Content/macdoc/spook.css" />
-    <link rel="Stylesheet" type="text/css"  href="../../Content/macdoc/spookSkin.css" />
 
-    <script type="text/javascript" src="../../Scripts/Macdoc/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="../../Scripts/Macdoc/spook.js"></script>
-    <script type="text/javascript" src="../../Scripts/Macdoc/jquery.jqDock.min.js"></script>
-    <script type="text/javascript" src="../../Scripts/Macdoc/macdoc.js"></script>
+  
+  <!-- usage for calendar control-->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+   <!-- end -->
+   
+   
 
-  <!-- end mac doc menu-->  
+  
   
 </head>
 <body scroll="no" >
@@ -78,11 +78,7 @@
 	<script src="<%= ResolveUrl("~") %>Scripts/jquery.blockUI.js" type="text/javascript"></script>
 
 	
-	<!-- usage for calendar control-->
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-   <!-- end -->
+	
    
 
 
@@ -491,26 +487,7 @@
 <!-- end text box popups-->
 
 
-<!-- mac doc menu-->
-<script type="text/javascript">
-    var opts =
-    // horizontal Dock with images expanding downwards in the vertical axis...
-  {align: 'top'
-  // set the maximum minor axis (vertical) image dimension to 48px
-  , size: 48
-  // add labels..
-  , labels: true
-  // swap the GIF extension for PNG extension for the larger image...
-  , source: function(i) { return this.src.replace(/gif$/, 'png'); }
-};
 
-
-    jQuery(document).ready(function($) {
-        // Apply jqDock with no options...
-    $('#menuDoc').jqDock(opts);
-    });
-</script>
-<!-- end mac doc menu-->
     
     <form name="frmMain" method="post" action="ags_main.aspx" id="frmMain">
    
@@ -587,11 +564,14 @@
                                                                         <a class="link" href="/Account/LogOff">
                                                                             <span class="text">Log Off</span> </a>
                                                                     </td>
-                                                                </tr>                                                              
+                                                                </tr>    
+                                                                                                                          
                                                             </table>
                                                         </div>
                                                     </td>
                                                 </tr>
+                                                
+                                                
                                             </table>
                                         </div>
                                     </td>
@@ -608,7 +588,7 @@
         <tr>
             <td align="right" style="width: 100%;">
             <!-- main menu goes here-->
-              <%Html.RenderPartial("Menu"); %>
+            <%Html.RenderPartial("Menu"); %>
             </td>
         </tr>
     </table>
