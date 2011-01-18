@@ -372,14 +372,14 @@
                 <tr>
                     <td style="border: medium none; margin: 0px; border-collapse: collapse;" align="left"
                         valign="top" width="100%">
-                        <table style="border: medium none; border-collapse: collapse; margin: 0px; padding: 0px;"
-                            border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <table style="border-style: none; border-color: inherit; border-width: medium; border-collapse: collapse; margin: 0px; padding: 0px; height: 268px; width: 96%;"
+                            border="0" cellpadding="0" cellspacing="0">
                             <tbody>
                                 <tr>
                                     <td style="padding: 2px; width: 100%;" colspan="1" rowspan="1" align="left" valign="top">
                                         <div id="ctl00_dsh_dashboard_divElementTask" style="padding: 0px; overflow: auto;
                                             border-width: medium 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(236, 236, 237) rgb(236, 236, 237);
-                                            height: 263px; width: 1400px;">
+                                            height: 263px; width: 800px;">
 
 
 

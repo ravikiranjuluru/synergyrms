@@ -284,11 +284,12 @@ html, body {
 	margin-right: 6px;
 	background-image: url(resources/caption.png);
 }
+/*
 .SpookCaptionsAtTop #SpookCaption,
 .SpookCaptionsAtTop #SpookCaptionHide {
 	bottom: auto;
 	top: 0;
-}
+}*/
 .SpookCaptionsOff #SpookCaption,
 .SpookCaptionsOff #SpookCaptionHide,
 .SpookCaptionsOff #SpookClick-caption {

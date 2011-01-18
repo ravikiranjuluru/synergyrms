@@ -52,11 +52,7 @@
   
 
   
-  <!-- usage for calendar control-->
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-   <!-- end -->
+  
    
    
 
@@ -79,7 +75,11 @@
 
 	
 	
-   
+   <!-- usage for calendar control-->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+   <!-- end -->
 
 
 
@@ -596,7 +596,7 @@
  
     <div id="divmain">
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
-         <%Html.RenderPartial("Menu"); %>
+        
         </asp:ContentPlaceHolder>
     </div>
        <%--   <iframe id="mainFrame" name="mainFrame" frameborder="0" visible="false">

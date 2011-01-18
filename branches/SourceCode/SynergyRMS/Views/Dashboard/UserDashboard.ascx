@@ -256,7 +256,7 @@
                                                                                         <img src="../../Content/images/common/cross.gif" id="Img9" title="Click for more information" />
                                                                                     </td>
                                                                                     <td>
-                                                                                        <a id="A5" title="Click here to Add a New Resource" href="../Resource/Register">Add a New
+                                                                                        <a id="A5" title="Click here to Add a New Resource" href="../Resource">Add a New
                                                                                             Resource</a>
                                                                                     </td>
                                                                                 </tr>

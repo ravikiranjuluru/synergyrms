@@ -35,21 +35,18 @@
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="Img1" src="../../Content/images/common/space.gif">
                                                             </td>
-                                                            <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','ROLES')"
-                                                                onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                                <a href="Register">Account Info</a>
-                                                            </td>                                                           
+                                                                                                                     
                                                            
                                                             <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','GENERAL')"
                                                                 onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                                <a href="Index">General Info</a>
+                                                                <a href="/Resource/Index">General Info</a>
                                                             </td>
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace0" src="/images/space.gif">
                                                             </td>
                                                             <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','ROLES')"
                                                                 onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                                <a href="AddRole">Roles</a>
+                                                                <a href="/Resource/AddRole">Roles</a>
                                                             </td>
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace3" src="/images/space.gif">
@@ -59,7 +56,7 @@
                                                             </td>
                                                             <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','INTERESTED PROJECTS')"
                                                                 onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                                <a href="InterestProjects">Interested Projects</a>
+                                                                <a href="/Resource/InterestProjects">Interested Projects</a>
                                                             </td>
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace7" src="/images/space.gif">
