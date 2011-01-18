@@ -10,6 +10,7 @@
                         <td valign="middle" align="left">
                             Add New Role
                         </td>
+                       
                     </tr>
                 </tbody>
             </table>
@@ -41,7 +42,7 @@
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace0" src="/images/space.gif">
                                                             </td>
                                                             <td nowrap="nowrap" width="100%" valign="middle" align="left" class="tabTail">
-                                                                &nbsp;
+                                                                &nbsp; 
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -195,6 +196,7 @@
                                                             <input type="button" value="Save" class="button" id="ctl00_phFormButtonBar_btnSave"
                                                                 name="ctl00$phFormButtonBar$btnSave">&nbsp;
                                                         </td>
+                                                       
                                                     </tr>
                                                 </tbody>
                                             </table>
