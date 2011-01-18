@@ -35,9 +35,10 @@
 <script type="text/javascript">
     var opts =
     // horizontal Dock with images expanding downwards in the vertical axis...
-  {align: 'top'
+    //top/middle/bottom 
+  {align: 'middle'
   // set the maximum minor axis (vertical) image dimension to 48px
-  , size: 48
+  , size: 25    //48
   // add labels..
   , labels: true
   // swap the GIF extension for PNG extension for the larger image...
