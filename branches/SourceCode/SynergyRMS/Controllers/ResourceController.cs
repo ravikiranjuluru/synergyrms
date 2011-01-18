@@ -56,10 +56,12 @@ namespace SynergyRMS.Controllers
         {
             return View("ScheduleUtilisation");
         }
-        public ActionResult Register()
+       
+
+        public ActionResult Permission()
         {
-            //return View("User");
-            return View("Test");
+            return View("RolePermission");
+            
         }
 
     }

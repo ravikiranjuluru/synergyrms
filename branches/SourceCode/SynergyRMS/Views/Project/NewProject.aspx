@@ -13,19 +13,16 @@
             </tbody>
         </table>
     </div>
-    
 
-	
+    <script>
+        $(document).ready(function() {
+            $("#projectstartdate").datepicker();
+        });
+        $(document).ready(function() {
+            $("#projectenddate").datepicker();
+        });
 
-  <script>
-      $(document).ready(function() {
-          $("#projectstartdate").datepicker();
-      });
-      $(document).ready(function() {
-          $("#projectenddate").datepicker();
-      });
-
-  </script>
+    </script>
 
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tbody>
@@ -109,16 +106,24 @@
                                                    
                                                         <input name="txtCode" id="code" class="textBox"
                                                             size="20" maxlength="20" type="text">
-                                                           
-
+                                                    </td>
+                                                </tr>
+                                                 <tr>
+                                                    <td class="formDetailDark" align="right" valign="middle">
+                                                         <label for="txtprojectname">Please Enter Project name</label>Project Name:
+                                                    </td>
+                                                    <td class="formDetail" align="left" valign="middle">
+                                                   
+                                                        <input name="txtprojectname" id="txtprojectname" class="textBox"
+                                                           type="text" style="width: 253px">
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="description">Description</label>Description:
+                                                        <label for="txtDescription">Description</label>Description:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="middle">
-                                                        <input name="txtDescription" id="description"
+                                                        <input name="txtDescription" id="txtDescription"
                                                             class="textBox" size="70" maxlength="70" type="text">
                                                     </td>
                                                 </tr>
@@ -131,21 +136,14 @@
                                                             checked="checked" type="checkbox">
                                                     </td>
                                                 </tr>                                               
-                                                <tr>
-                                                    <td class="formDetailDarkHR" align="right" valign="middle">
-                                                        <img src="../../Content/images/common/hr.gif" alt="" width="100%" height="1">
-                                                    </td>
-                                                    <td class="formDetailHR" colspan="1" align="left" valign="middle">
-                                                        <img src="../../Content/images/common/hr.gif" alt="" width="100%" height="1">
-                                                    </td>
-                                                </tr>
+                                                
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
                                                         <label for="client">Client</label>Client:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <input name="ctl00$phFormContent$pbxClient$txtValue" id="client"
-                                                            class="textBox" type="text">
+                                                            class="textBox" type="text" style="width: 253px">
                                                         <div id="ctl00_phFormContent_pbxClient_divDescription" style="display: inline;">
                                                         </div>
                                                     </td>
@@ -171,7 +169,7 @@
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <input name="ctl00$phFormContent$pbxLocation$txtValue" id="location"
-                                                            class="textBox" type="text">
+                                                            class="textBox" type="text" style="width: 253px">
                                                         <div id="ctl00_phFormContent_pbxLocation_divDescription" style="display: inline;">
                                                         </div>
                                                     </td>
@@ -182,7 +180,7 @@
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <input name="ctl00$phFormContent$pbxProjectManager$txtValue" id="projectManger"
-                                                            class="textBox" type="text">
+                                                            class="textBox" type="text" style="width: 253px">
                                                         <div id="ctl00_phFormContent_pbxProjectManager_divDescription" style="display: inline;">
                                                         </div>
                                                     </td>
@@ -193,34 +191,18 @@
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <input name="ctl00$phFormContent$pbxProjectSponsor$txtValue" id="projectSponser"
-                                                            class="textBox" type="text">
+                                                            class="textBox" type="text" style="width: 253px">
                                                         <div id="ctl00_phFormContent_pbxProjectSponsor_divDescription" style="display: inline;">
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td class="formDetailDarkHR" align="right" valign="middle">
-                                                        <img src="../../Content/images/common/hr.gif" alt="" width="100%" height="1">
-                                                    </td>
-                                                    <td class="formDetailHR" colspan="1" align="left" valign="middle">
-                                                        <img src="../../Content/images/common/hr.gif" alt="" width="100%" height="1">
-                                                    </td>
-                                                </tr>
-                                                
-                                                <tr>
-                                                    <td class="formDetailDarkHR" align="right" valign="middle">
-                                                        <img src="../../Content/images/common/hr.gif" alt="" width="100%" height="1">
-                                                    </td>
-                                                    <td class="formDetailHR" colspan="1" align="left" valign="middle">
-                                                        <img src="../../Content/images/common/hr.gif" alt="" width="100%" height="1">
-                                                    </td>
-                                                </tr>
+                                               
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
                                                         <label for="projectstartdate">Start Date</label>Start Date:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">                                                 
-                                                        <input name="ctl00$phFormContent$dteStartDate$txtYear" id="projectstartdate"
+                                                        <input name="projectstartdate" id="projectstartdate"
                                                             class="textBox" size="15" maxlength="4" type="text">
                                                         <img src="../../Content/images/common/pick.gif" id="ctl00_phFormContent_dteStartDate_imgSelect"
                                                             style="vertical-align: middle; cursor: pointer;" alt="Select" title="Select" border="0">
@@ -232,7 +214,7 @@
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                       
-                                                        <input name="ctl00$phFormContent$dteEndDate$txtYear" id="projectenddate"
+                                                        <input name="projectenddate" id="projectenddate"
                                                             class="textBox" size="15" maxlength="4" type="text">
                                                         <img src="../../Content/images/common/pick.gif" id="Img1" style="vertical-align: middle;
                                                             cursor: pointer;" alt="Select" title="Select" border="0">

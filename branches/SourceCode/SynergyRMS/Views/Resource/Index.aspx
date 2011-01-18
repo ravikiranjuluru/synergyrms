@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" 
+Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -34,10 +35,7 @@
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="Img1" src="../../Content/images/common/space.gif">
                                                             </td>
-                                                            <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','ROLES')"
-                                                                onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                                <a href="Register">Account Info</a>
-                                                            </td>                                                           
+                                                                                                                     
                                                             
                                                             <td nowrap="nowrap" class="tabSelected">
                                                                 General Info
@@ -50,21 +48,21 @@
                                                             </td>
                                                             <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','ROLES')"
                                                                 onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                                <a href="AddRole">Roles</a>
+                                                                <a href="/Resource/AddRole">Roles</a>
                                                             </td>
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace3" src="../../Content/images/common/space.gif">
                                                             </td>
                                                             <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','SKILLS')"
                                                                 onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                                <a href="AddSkill">Skills</a>
+                                                                <a href="/Resource/AddSkill">Skills</a>
                                                             </td>
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace5" src="../../Content/images/common/space.gif">
                                                             </td>
                                                             <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','INTERESTED PROJECTS')"
                                                                 onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                                <a href="InterestProjects">Interested Projects</a>
+                                                                <a href="/Resource/InterestProjects">Interested Projects</a>
                                                             </td>
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace7" src="../../Content/images/common/space.gif">
@@ -164,6 +162,36 @@
                                                             <input type="text" maxlength="30" size="30" class="textBox"
                                                              id="telephone"
                                                                 name="telephone">
+                                                        </td>
+                                                    </tr>
+                                                                                                         <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txtusername">User Name</label>User Name:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="text" maxlength="70" size="70" class="textBox" 
+                                                            id="txtusername"
+                                                                name="txtusername">
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                   
+
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txtpwd"></label>Password:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="password" maxlength="30" size="30" class="textBox" id="txtpwd" name="txtpwd">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                             <label for="txtpwdconfirm"></label>Confirm Password:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="password" maxlength="30" size="30" class="textBox" id="txtpwdconfirm"
+                                                                name="txtpwdconfirm">
                                                         </td>
                                                     </tr>
                                                     <tr>
