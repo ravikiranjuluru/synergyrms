@@ -326,6 +326,10 @@
     <Content Include="Content\images\icon\removeitem.gif" />
     <Content Include="Content\images\icon\search.gif" />
     <Content Include="Content\images\icon\vistabuttongrey_dropdown_mouseover.gif" />
+    <Content Include="Content\images\messages\error.png" />
+    <Content Include="Content\images\messages\Info.png" />
+    <Content Include="Content\images\messages\success.png" />
+    <Content Include="Content\images\messages\warning.png" />
     <Content Include="Content\images\popup\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\images\popup\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\images\popup\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -377,6 +381,7 @@
     <Content Include="Views\MyWork\Documents.aspx" />
     <Content Include="Views\MyWork\Index.aspx" />
     <Content Include="Views\MyWork\Projects.aspx" />
+    <Content Include="Views\Project\AssignTask.aspx" />
     <Content Include="Views\Project\Docs.aspx" />
     <Content Include="Views\Project\DocUpload.aspx" />
     <Content Include="Views\Project\DocUpload2.aspx" />
@@ -404,6 +409,12 @@
     <Content Include="Views\Shared\menubackup.txt" />
     <Content Include="Views\Timesheets\Approve.aspx" />
     <Content Include="Views\Timesheets\Index.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceLayer\ServiceLayer.csproj">
+      <Project>{BADC8C77-4632-44D5-83BB-AAFE2DFA6C30}</Project>
+      <Name>ServiceLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

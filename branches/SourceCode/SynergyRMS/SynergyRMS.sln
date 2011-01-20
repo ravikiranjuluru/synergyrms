@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynergyRMS", "SynergyRMS.csproj", "{22423983-FCF4-4A00-B8F4-986A98866FBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "..\ServiceLayer\ServiceLayer.csproj", "{BADC8C77-4632-44D5-83BB-AAFE2DFA6C30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "..\BusinessLayer\DataLayer.csproj", "{18C9D87E-41ED-437F-8647-B934135959D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{22423983-FCF4-4A00-B8F4-986A98866FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22423983-FCF4-4A00-B8F4-986A98866FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22423983-FCF4-4A00-B8F4-986A98866FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BADC8C77-4632-44D5-83BB-AAFE2DFA6C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BADC8C77-4632-44D5-83BB-AAFE2DFA6C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BADC8C77-4632-44D5-83BB-AAFE2DFA6C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BADC8C77-4632-44D5-83BB-AAFE2DFA6C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18C9D87E-41ED-437F-8647-B934135959D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18C9D87E-41ED-437F-8647-B934135959D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18C9D87E-41ED-437F-8647-B934135959D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18C9D87E-41ED-437F-8647-B934135959D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
