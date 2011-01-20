@@ -32,7 +32,47 @@
         {
             background-color: #BDCCFF !important;
         }
+        
+        /*------ messages styles ------*/
+        .info-msg, .success-msg, .warning-msg, .error-msg, .validation-msg
+        {
+            border: 2px solid;
+            margin: 6px 0px;
+            padding: 10px 10px 10px 40px;
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            font-size: 16px;
+        }
+        .info-msg
+        {
+            color: #00529B;
+            background-color: #fff;
+            background-image: url('../../Content/images/messages/info.png');
+        }
+        .success-msg
+        {
+            color: #006606;
+            background-color: #fff;
+            background-image: url('../../Content/images/messages/success.png');
+        }
+        .warning-msg
+        {
+            color: #b79947;
+            background-color: #fff;
+            background-image: url('../../Content/images/messages/warning.png');
+        }
+        .error-msg
+        {
+            color: #CD0000;
+            background-color: #fff;
+            background-image: url('../../Content/images/messages/error.png');
+        }
     </style>
+
+
+    
+    
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Site.css" type="text/css"/>
 
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/WebResorce.css" type="text/css"/>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SkinStyle.css" type="text/css"/>
@@ -109,6 +149,9 @@
 
           function lnkNewTask_onClick() {
               AECWinPopup.open('/Project/Task', 600, 350, popupCallback, '', false);
+          }
+          function lnkAssignTask_onClick() {
+              AECWinPopup.open('/Project/Assign', 600, 350, popupCallback, '', false);
           }
 
           function lnkDocUpload_onClick() {
@@ -390,6 +433,7 @@
      });
 	
 	</script>
+	
  <style>	
 		.compactlabel-wrapper {
 			display: inline-block;
@@ -489,7 +533,7 @@
 
 
     
-    <form name="frmMain" method="post" action="ags_main.aspx" id="frmMain">
+ <%--   <form name="frmMain" method="post" action="ags_main.aspx" id="frmMain">--%>
    
 
     
@@ -603,7 +647,7 @@
         </iframe>
    --%>
 
-    </form>
+   <%-- </form>--%>
 
 </body>
 </html>

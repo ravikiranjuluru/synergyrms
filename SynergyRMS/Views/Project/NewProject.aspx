@@ -38,8 +38,6 @@
                                             <table id="ctl00_phTabstripHeader_tabMain_tabStrip" border="0" cellpadding="0" cellspacing="0">
                                                 <tbody>
                                                     <tr>
-                                                    </tr>
-                                                    <tr>
                                                         <td class="tabSpace">
                                                             <img src="../../Content/images/common/space.gif" id="ctl00_phTabstripHeader_tabMain_imgTabSpace"
                                                                 width="5" height="1">
@@ -81,6 +79,9 @@
                                 </tr>
                             </tbody>
                         </table>
+                        
+                     <% using (Html.BeginForm("NewProject", "Project"))
+                        { %>
                         <table id="masterPage_tblFormContentRoot" style="border-collapse: collapse;" border="0"
                             cellpadding="0" cellspacing="0" width="100%">
                             <tbody>
@@ -96,6 +97,25 @@
                                                     <td class="formDetailNoPadding" colspan="2" width="100%" height="5">
                                                         <img src="../../Content/images/common/space.gif" id="ctl00_phFormContent_ucFormHeader_img2"
                                                             height="1">
+                                                            
+                                                        <% if ((ViewData["status"]) != null)
+                                                           {
+                                                               var status = ViewData["status"].ToString();
+                                                               var msg = ViewData["msg"].ToString();
+                                                        %>
+                                                        <% if (status == "Success")
+                                                           { %>
+                                                        <div id="msgsuccess" class="success-msg">
+                                                            <%= msg%></div>
+                                                        <%} %>
+                                                        <% if (status == "Error")
+                                                           { %>
+                                                        <div id="msgerror" class="error-msg">
+                                                            <%= msg%></div>
+                                                        <%} %>
+                                                        <%} %>
+                                                            
+                                                            
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -246,10 +266,10 @@
                                             <tbody>
                                                 <tr>
                                                     <td align="left">
-                                                        <input name="ctl00$phFormButtonBar$btnSave" id="ctl00_phFormButtonBar_btnSave" class="button"
+                                                        <input name="btnSave" id="btnSave" class="button"
                                                             value="Save" type="submit">
-                                                        <input name="ctl00$phFormButtonBar$btnClose" id="ctl00_phFormButtonBar_btnClose"
-                                                            class="button" value="Cancel" type="reset">
+                                                        <input name="btnClear" id="btnClear"
+                                                            class="button" value="Clear" type="reset">
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -259,7 +279,7 @@
                             </tbody>
                         </table>
                     </div>
-                    
+                    <%} %>
                     
                     <div style="padding-left: 10px; padding-right: 10px;"></div>
                 </td>
