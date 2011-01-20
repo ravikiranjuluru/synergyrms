@@ -3,6 +3,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <form id="form1" runat="server">
+
 <div id="masterpage_divHead" class="formHead">
         <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tbody>
@@ -82,6 +84,7 @@
                                                         </tbody>
                                                     </table>
                                                 </td>
+                                                
   <td style="padding-right: 0px;" align="right" valign="middle">
                                                     <table border="0px" cellpadding="0" cellspacing="1">
                                                         <tbody>
@@ -107,6 +110,45 @@
                                     </table>
                                 </td>
                             </tr>
+                            <tr><td>
+                            
+                            
+                            
+                            
+                                            <asp:GridView ID="GridView1" runat="server" 
+                                    AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" 
+                                                BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" 
+                                                GridLines="Vertical">
+                                                <Columns>
+                                                    <asp:BoundField DataField="Project 1" HeaderText="Project Name" />
+                                                    <asp:BoundField DataField="Date" HeaderText="Start Date" />
+                                                    <asp:BoundField DataField="Date" HeaderText="End Date" />
+                                                    <asp:BoundField DataField="Project Manager" HeaderText="Project Manager" />
+                                                    <asp:BoundField DataField="Active" HeaderText="Status" />
+                                                    <asp:TemplateField>
+                                                       
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="Label2" runat="server" Text="Edit" ></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField>
+                                                       
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="Label1" runat="server" Text="Delete"></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                                <FooterStyle BackColor="#CCCCCC" />
+                                                <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                                                <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                                                <AlternatingRowStyle BackColor="#CCCCCC" />
+                                            </asp:GridView>
+                            
+                            
+                            
+                            
+                            </td></tr>
                         </tbody>
                     </table>
                     <!-- Place Content That you want to appear between the Toolbar and the Tab Strip Here  -->
@@ -261,7 +303,6 @@
             </div>
         </div>
     </div>
-    <form name="aspnetForm" method="post" action="" id="aspnetForm">
 
 
    
@@ -311,6 +352,10 @@
                         <div id="ctl00_ucTabStrip_divTabContainer" style="overflow: hidden;">
                             <table id="ctl00_ucTabStrip_tabStrip" border="0" cellpadding="0" cellspacing="0">
                                 <tbody>
+                                    <tr>
+                                        <td class="dashboardTabSpace">
+                                            &nbsp;</td>
+                                    </tr>
                                     <tr>
                                         <td class="dashboardTabSpace">
                                             <img src="../../Content/images/common/space.gif" id="ctl00_ucTabStrip_imgTabSpace"
@@ -461,9 +506,10 @@
                                                                                         </td>
                                                                                         <td class="toolbaritem_off" 
                                                                                             align="center" valign="middle">
-                                                                                            &nbsp;<img src="../../Content/images/common/addAssignment.gif" id="ctl00_dshElement_Task_aecElementControlTask_ucProjectPlan_imgAddAssignment"
-                                                                                                onclick="setTimeout(function(){addAssignment();},100)" style="vertical-align: middle;
-                                                                                                cursor: pointer;" alt="Add Assignment" title="Add Assignment"></td>
+                                                                                            &nbsp;<img src="../../Content/images/common/addAssignment.gif"
+                                                                                             id="ctl00_dshElement_Task_aecElementControlTask_ucProjectPlan_imgAddAssignment"
+                                                                                                 style="vertical-align: middle;
+                                                                                                cursor: pointer;" alt="Add Assignment" title="Add Assignment" onclick="lnkAssignTask_onClick();"></td>
                                                                                         <td class="toolbaritem_off" 
                                                                                             align="center" valign="middle">
                                                                                             &nbsp;</td>
@@ -3527,7 +3573,6 @@
         WebForm_InitCallback(); //]]>
     </script>
 
-    </form>
     <div style="position: absolute; left: 3px; top: 95px; width: 1400px; height: 397px;
         display: none;" class="GODisabled">
         &nbsp;
@@ -3566,4 +3611,5 @@
         padding: 0px; width: 495px;">
         Assignment
     </div>
+    </form>
 </asp:Content>

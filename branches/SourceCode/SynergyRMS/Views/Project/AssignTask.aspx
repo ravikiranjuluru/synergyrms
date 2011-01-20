@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
      <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/popup.css" />
     <link id="lnkStyle" rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/styles.css" />
@@ -88,10 +88,10 @@
                                                     <tr>
                                                         <td align="left" width="50%" valign="middle" style="white-space: nowrap;">
                                                             &nbsp;
-                                                            <b>&nbsp;Task </b>
-                                                        </td>
+                                                            <b>&nbsp;User</b></td>
                                                         <td align="left" width="50%" valign="middle" style="white-space: nowrap;">
-                                                            <b>User</b></td>
+                                                            <b>Task </b>
+                                                        </td>
                                                         <td align="center" valign="middle" style="white-space: nowrap;">
                                                            &nbsp;
                                                         </td>
@@ -113,7 +113,14 @@
                                                         
                                                             <tr>
                                                                 <td align="left" valign="middle" style="white-space: nowrap; padding: 0px 5px;">
-                                                                    <input id="Text1" type="text" value="Enter Task here"/></td>
+                                                    
+<select class="comboBox" id="ucFromDate_cmbMonth1" name="ucFromDate$cmbMonth1">
+	<option value="0">Task 1</option>
+	<option value="1">Task 1</option>
+	<option value="2">Task 2</option>
+	<option value="3">Task 3</option>
+	<option value="4">Task 4</option>
+</select></td>
                                                                 <td align="left" valign="middle" style="white-space: nowrap; padding: 0px 0px 0px 5px;">
                                                     
 <select class="comboBox" id="ucFromDate_cmbMonth0" name="ucFromDate$cmbMonth0">

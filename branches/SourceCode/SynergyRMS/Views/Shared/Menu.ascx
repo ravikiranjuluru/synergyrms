@@ -70,43 +70,31 @@
                                       <a class="link " href="../Dashboard/Index"><span class="text ">Home</span> </a>
                                   </td>
                                   <%if (isAdmin)
-                              { %>
+                                    { %>
                                   <td id="DASHBOARD-PROJECT" class="item level1" onmouseenter="this.className += ' hover';"
                                       onmouseleave="this.className = this.className.replace(' hover', '');">
-                                      <a class="link " href="../Project/EditProject"><span class="text ">Project</span>
-                                      </a>
+                                      <a class="link " href="../Project/EditProject"><span class="text ">Project</span></a>
                                   </td>
-                                  <td id="DASHBOARD-SCHEDULING" class="item level1" onmouseenter="this.className += ' hover';"
+                                  <td id="Td2" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
+                                      <a class="link " href="../Resource"><span class="text ">Resources</span> </a>
+                                  </td>
+                                  <td id="Td6" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
+                                      <a class="link " href="../Resource/Schedule"><span class="text ">Scheduling</span></a>
+                                  </td>
+                                  <td id="Td6" class="item level1">
+                                      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                  </td>
+                                  <%}
+                                    else
+                                    {%>
+                                  <td id="DASHBOARD-MYWORK" class="item level1" onmouseenter="this.className += ' hover';"
                                       onmouseleave="this.className = this.className.replace(' hover', '');">
-                                      <a class="link " href="../Resource/Schedule"><span class="text ">Scheduling</span>
-                                      
-                                    
-                                      
-                                      
-                                      
-                                      
-                                    </a>
-                                </td>
-                                <td id="Td2" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
-                                    <a class="link " href="../Resource"><span class="text ">Resources</span> </a>
-                                </td>
-                                <td id="Td3" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
-                                    <a class="link " href="../Timesheets"><span class="text ">Time Sheets</span> </a>
-                                </td>
-                                <td id="Td6" class="item level1">
-                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                </td>
-                                <%}
-                              else
-                              {%>
-                                <td id="DASHBOARD-MYWORK" class="item level1" onmouseenter="this.className += ' hover';"
-                                    onmouseleave="this.className = this.className.replace(' hover', '');">
-                                    <a class="link " href="../MyWork"><span class="text ">My Work</span> </a>
-                                </td>
-                                <td id="Td4" class="item level1">
-                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                </td>
-                                <%} %>
+                                      <a class="link " href="../MyWork"><span class="text ">My Work</span> </a>
+                                  </td>
+                                  <td id="Td4" class="item level1">
+                                      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                  </td>
+                                  <%} %>
                             
                                <%-- <td>
                                     <div id="menuDoc">

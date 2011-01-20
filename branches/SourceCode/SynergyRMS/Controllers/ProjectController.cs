@@ -3,19 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ServiceLayer;
 
 namespace SynergyRMS.Controllers
 {
     public class ProjectController : Controller
     {
+        public ServiceProject objProject;
         public ActionResult Index()
         {
             return View();
         }
+
+
+        #region project
         public ActionResult NewProject()
         {
             return View("NewProject");
         }
+        [HttpPost]
+        public ActionResult NewProject(FormCollection form)
+        {
+            try
+            {
+                bool status = true;
+                //status = objProject.SaveOrUpdate(form["projectname"].ToString(), form["projectdesc"].ToString());
+                if (status)
+                {
+                    ViewData["status"] = "Success";
+                    ViewData["msg"] = "New Project Successfully Created.";
+                }
+                else
+                {
+                    ViewData["status"] = "Error";
+                    ViewData["msg"] = "Error in Project Creation.";
+                }
+            }
+            catch
+            {
+            }
+            return View("NewProject");
+        }
+        #endregion project
+
 
         public ActionResult EditProject()
         {
@@ -39,6 +69,10 @@ namespace SynergyRMS.Controllers
         public ActionResult Task()
         {
             return View("NewTask");
+        }
+        public ActionResult Assign()
+        {
+            return View("AssignTask");
         }
     }
 }
