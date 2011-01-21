@@ -641,10 +641,16 @@
         
         //Build Taskbar -------------------------------------------------------
         if ($('#Taskbar').length == 0) {
-          $('body').append('<div id="Taskbar"></div>');
-          $('#Taskbar').append('<div style="float: left;" id="Start-Menu-Button">&nbsp;</div>');          
-          $('#Taskbar').append('<div id="TaskbarPoints">&nbsp;</div>');          
-          $('body').append('<div id="Start-Menu">&nbsp;</div>');          
+          $('body').append('<div id="Taskbar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
+'Main Menu Display here</div>');
+          $('#Taskbar').append('<div style="float: left;" id="Start-Menu-Button">&nbsp;</div>');
+          $('#Taskbar').append('<div id="TaskbarPoints">&nbsp;</div>');
+          $('body').append('<div id="Start-Menu">&nbsp;</div>');
           $('#Taskbar').append('<div title="Show Desktop" id="TaskbarShowDesktop"></div>');          
           //---------------------------------------------------------------------------
           //Load ajax Contents --------------------------------------------------------

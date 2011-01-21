@@ -74,6 +74,8 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <% using (Html.BeginForm("Role", "Resource"))
+                               { %>
                             <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
                                 id="masterPage_tblFormContentRoot">
                                 <tbody>
@@ -88,7 +90,24 @@
                                                             <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="..../../Content/images/common/space.gif">
                                                         </td>
                                                     </tr>
-                                                   
+                                                     <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                           View Roles
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail" style="width: 211px">
+                                                           <select name="ctl00$phFormContent$cboProjectLevel" id="projectLevel"
+                                                            class="comboBox">
+                                                            <option selected="selected" value="Select">Select</option>
+                                                            <option value="Top">Role 1</option>
+                                                            <option value="Medium">Role 2</option>
+                                                            <option value="Low">Role 3</option>
+                                                        </select>
+                                                        &nbsp;&nbsp;
+                                                        <input type="submit" value="View" class="button" id="View"
+                                                                name="btnView"/>
+                                                        </td>
+                                                        
+                                                    </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDarkHR">
                                                             <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
@@ -97,24 +116,47 @@
                                                             <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
                                                     </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            &nbsp;
+                                                        </td>
+                                                        <td valign="middle" align="left" style="width: 211px">
+                                                            <% if ((ViewData["status"]) != null)
+                                                           {
+                                                               var status = ViewData["status"].ToString();
+                                                               var msg = ViewData["msg"].ToString();
+                                                        %>
+                                                        <% if (status == "Success")
+                                                           { %>
+                                                        <div id="msgsuccess" class="success-msg">
+                                                            <%= msg%></div>
+                                                        <%} %>
+                                                        <% if (status == "Error")
+                                                           { %>
+                                                        <div id="msgerror" class="error-msg">
+                                                            <%= msg%></div>
+                                                        <%} %>
+                                                        <%} %>
+                                                        </td>
+                                                    </tr>
                                                     
                                                      <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="txtrole">Please Enter Role name here</label>Role Name:
+                                                            <label for="txtRole">Please Enter Role name here</label>Role Name:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
                                                             <input type="text" maxlength="70" size="70" class="textBox" 
-                                                            id="txtrole" name="txtrole">
+                                                            id="txtRole" name="txtRole" style="width: 185px">
                                                         </td>
                                                     </tr>
                                                     
                                                     <tr>
                                                         <td valign="top" align="right" class="formDetailDark">
-                                                           <label for="notes"></label> Notes:
+                                                           <label for="txtNote"></label> Notes:
                                                         </td>
                                                         <td valign="top" align="left" class="formDetail">
                                                             <textarea rows="2" cols="62" class="textArea" 
-                                                            id="notes" name="notes"></textarea>
+                                                            id="txtNote" name="txtNote"></textarea>
                                                         </td>
                                                     </tr>
                                                    
@@ -144,8 +186,9 @@
                                                 <tbody>
                                                     <tr>
                                                         <td align="left">
-                                                            <input type="button" value="Save" class="button" id="ctl00_phFormButtonBar_btnSave"
-                                                                name="ctl00$phFormButtonBar$btnSave">&nbsp;
+                                                            <input type="submit" value="Save" class="button" 
+                                                            id="btnSave"
+                                                                name="btnSave">&nbsp;
                                                         </td>
                                                        
                                                     </tr>
@@ -156,6 +199,8 @@
                                 </tbody>
                             </table>
                         </div>
+                        
+                        <%} %>
                         <div style="padding-left: 10px; padding-right: 10px;">
                         </div>
                     </td>
