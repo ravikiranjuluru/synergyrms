@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+       <form id="form1" runat="server">
+
        <div class="formContainer" id="masterpage_divMain">
         <div class="formHead" id="masterpage_divHead">
             <table width="100%" cellspacing="0" cellpadding="0" border="0" class="pageTitle">
@@ -79,7 +81,8 @@
                                     </tr>
                                 </tbody>
                             </table>
-                          
+                                                  <% using (Html.BeginForm("Permission", "Resource"))
+                                                     { %>
                             
                              <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
                                 id="masterPage_tblFormContentRoot">
@@ -95,7 +98,47 @@
                                                             <img height="1" id="Img2" src="..../../Content/images/common/space.gif">
                                                         </td>
                                                     </tr>
-                                                   
+                                                   <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            &nbsp;
+                                                        </td>
+                                                        <td valign="middle" align="left" style="width: 211px">
+                                                            <% if ((ViewData["status"]) != null)
+                                                               {
+                                                                   var status = ViewData["status"].ToString();
+                                                                   var msg = ViewData["msg"].ToString();
+                                                        %>
+                                                        <% if (status == "Success")
+                                                           { %>
+                                                        <div id="msgsuccess" class="success-msg">
+                                                            <%= msg%></div>
+                                                        <%} %>
+                                                        <% if (status == "Error")
+                                                           { %>
+                                                        <div id="msgerror" class="error-msg">
+                                                            <%= msg%></div>
+                                                        <%} %>
+                                                        <%} %>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                           View Permissions
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail" style="width: 211px">
+                                                           <select name="ctl00$phFormContent$cboProjectLevel" id="projectLevel"
+                                                            class="comboBox">
+                                                            <option selected="selected" value="Select">Select</option>
+                                                            <option value="Top">Role 1</option>
+                                                            <option value="Medium">Role 2</option>
+                                                            <option value="Low">Role 3</option>
+                                                        </select>
+                                                        &nbsp;&nbsp;
+                                                        <input type="submit" value="View" class="button" id="View"
+                                                                name="btnView"/>
+                                                        </td>
+                                                        
+                                                    </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDarkHR">
                                                             <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
@@ -129,6 +172,20 @@
                                                             id="Textarea1" name="notes"></textarea>
                                                         </td>
                                                     </tr>
+                                                    <tr>
+                                                                    <td valign="top" align="right" class="formDetailDark">
+                                                                          </td>
+                                                                    <td>
+                                                                         <asp:CheckBoxList ID="CheckBoxListPermission" runat="server">
+                                                                             <asp:ListItem>Add Project</asp:ListItem>
+                                                                             <asp:ListItem>Edit Project</asp:ListItem>
+                                                                             <asp:ListItem>Delete Project</asp:ListItem>
+                                                                             <asp:ListItem>Add Task</asp:ListItem>
+                                                                             <asp:ListItem>Edit Task</asp:ListItem>
+                                                                             <asp:ListItem>Delete task</asp:ListItem>
+                                                                         </asp:CheckBoxList>
+                                                                    </td>
+                                                                </tr>
                                                    
                                                     <tr>
                                                         <td valign="top" align="right" class="formDetailDark">
@@ -159,12 +216,14 @@
                                                                         <input type="checkbox" checked="checked" class="checkBox" 
                                                             id="Checkbox9" name="ctl00$phFormContent$chkActive"></td>
                                                                 </tr>
+                                                                
                                                                 <tr>
                                                                     <td style="width: 165px">
                                                                           Add new Task</td>
                                                                     <td>
                                                                          <input type="checkbox" checked="checked" class="checkBox" 
-                                                            id="Checkbox10" name="ctl00$phFormContent$chkActive"></td>
+                                                            id="Checkbox10" name="ctl00$phFormContent$chkActive">
+                                                                    </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="width: 165px">
@@ -218,8 +277,9 @@
                                                 <tbody>
                                                     <tr>
                                                         <td align="left">
-                                                            <input type="button" value="Save" class="button" id="ctl00_phFormButtonBar_btnSave"
-                                                                name="ctl00$phFormButtonBar$btnSave">&nbsp;
+                                                            <input type="submit" value="Save" class="button" 
+                                                            id="btnSave"
+                                                                name="btnSave">&nbsp;
                                                         </td>
                                                        
                                                     </tr>
@@ -230,6 +290,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        <%} %>
                         <div style="padding-left: 10px; padding-right: 10px;">
                         </div>
                     </td>
@@ -237,5 +298,7 @@
             </tbody>
         </table>
     </div>
+
+       </form>
 
 </asp:Content>

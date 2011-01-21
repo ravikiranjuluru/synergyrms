@@ -97,7 +97,13 @@
                                                     <td class="formDetailNoPadding" colspan="2" width="100%" height="5">
                                                         <img src="../../Content/images/common/space.gif" id="ctl00_phFormContent_ucFormHeader_img2"
                                                             height="1">
-                                                            
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td valign="middle" align="right" class="formDetailDark">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td valign="middle" align="left">
                                                         <% if ((ViewData["status"]) != null)
                                                            {
                                                                var status = ViewData["status"].ToString();
@@ -114,8 +120,6 @@
                                                             <%= msg%></div>
                                                         <%} %>
                                                         <%} %>
-                                                            
-                                                            
                                                     </td>
                                                 </tr>
                                                 <tr>
