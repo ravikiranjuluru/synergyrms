@@ -96,7 +96,8 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                     </tr>
                                 </tbody>
                             </table>
-                           
+                           <% using (Html.BeginForm("NewUser", "Resource"))
+                              { %>
                             <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
                                 id="masterPage_tblFormContentRoot">
                                 <tbody>
@@ -111,7 +112,29 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                             <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="..../../Content/images/common/space.gif">
                                                         </td>
                                                     </tr>
-                                                   
+                                                   <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            &nbsp;
+                                                        </td>
+                                                        <td valign="middle" align="left" style="width: 211px">
+                                                            <% if ((ViewData["status"]) != null)
+                                                               {
+                                                                   var status = ViewData["status"].ToString();
+                                                                   var msg = ViewData["msg"].ToString();
+                                                        %>
+                                                        <% if (status == "Success")
+                                                           { %>
+                                                        <div id="msgsuccess" class="success-msg">
+                                                            <%= msg%></div>
+                                                        <%} %>
+                                                        <% if (status == "Error")
+                                                           { %>
+                                                        <div id="msgerror" class="error-msg">
+                                                            <%= msg%></div>
+                                                        <%} %>
+                                                        <%} %>
+                                                        </td>
+                                                    </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDarkHR">
                                                             <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
@@ -245,8 +268,9 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                 <tbody>
                                                     <tr>
                                                         <td align="left">
-                                                            <input type="button" value="Save" class="button" id="ctl00_phFormButtonBar_btnSave"
-                                                                name="ctl00$phFormButtonBar$btnSave">
+                                                            <input type="submit" value="Save" class="button" 
+                                                            id="btnSave"
+                                                                name="btnSave">
                                                            
                                                         </td>
                                                     </tr>
@@ -257,6 +281,7 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                 </tbody>
                             </table>
                         </div>
+                        <%} %>
                         <div style="padding-left: 10px; padding-right: 10px;">
                         </div>
                     </td>

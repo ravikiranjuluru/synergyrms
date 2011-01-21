@@ -69,6 +69,8 @@
                                     </tr>
                                 </tbody>
                             </table>
+                         <% using (Html.BeginForm("Department", "Resource"))
+                            { %>
                             <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
                                 id="masterPage_tblFormContentRoot">
                                 <tbody>
@@ -76,6 +78,24 @@
                                         <td class="form">
                                             <table class="formContent">
                                                 <tbody>
+                                                <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                           View Department
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail" style="width: 211px">
+                                                           <select name="ctl00$phFormContent$cboProjectLevel" id="projectLevel"
+                                                            class="comboBox">
+                                                            <option selected="selected" value="Select">Select</option>
+                                                            <option value="Top">Department 1</option>
+                                                            <option value="Medium">Department 2</option>
+                                                            <option value="Low">Department 3</option>
+                                                        </select>
+                                                        &nbsp;&nbsp;
+                                                        <input type="submit" value="View" class="button" id="View"
+                                                                name="btnView"/>
+                                                        </td>
+                                                        
+                                                    </tr>
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
                                                             <img height="1" width="180" id="ctl00_phFormContent_ucFormHeader_img1" src="../../Content/images/common/space.gif">
@@ -86,66 +106,74 @@
                                                     </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="code">Code:</label> Code:
+                                                            &nbsp;
                                                         </td>
-                                                        <td valign="middle" align="left" class="formDetail">
+                                                        <td valign="middle" align="left" style="width: 211px">
+                                                            <% if ((ViewData["status"]) != null)
+                                                           {
+                                                               var status = ViewData["status"].ToString();
+                                                               var msg = ViewData["msg"].ToString();
+                                                        %>
+                                                        <% if (status == "Success")
+                                                           { %>
+                                                        <div id="msgsuccess" class="success-msg">
+                                                            <%= msg%></div>
+                                                        <%} %>
+                                                        <% if (status == "Error")
+                                                           { %>
+                                                        <div id="msgerror" class="error-msg">
+                                                            <%= msg%></div>
+                                                        <%} %>
+                                                        <%} %>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txtDeptCode">Code:</label> Code:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail" style="width: 211px">
                                                             <input type="text" maxlength="20" size="20" class="textBox" 
-                                                            id="code"
-                                                                name="ctl00$phFormContent$txtCode">
+                                                            id="txtDeptCode" name="txtDeptCode">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                             <label for="description">Description</label>Description:
+                                                            <label for="txtDeptName">Name:</label> Name:
                                                         </td>
-                                                        <td valign="middle" align="left" class="formDetail">
+                                                        <td valign="middle" align="left" class="formDetail" style="width: 211px">
+                                                            <input type="text" maxlength="20" size="20" class="textBox" 
+                                                            id="txtDeptName"
+                                                                name="txtDeptName">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                             <label for="txtDeptDesc">Description</label>Description:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail" style="width: 211px">
                                                             <input type="text" maxlength="70" size="70" class="textBox" 
-                                                            id="description"
-                                                                name="ctl00$phFormContent$txtDescription">
+                                                            id="txtDeptDesc" name="txtDeptDesc">
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                             <label for="active"></label>Active:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <input type="checkbox" checked="checked" class="checkBox" 
-                                                            id="active"
-                                                                name="ctl00$phFormContent$chkActive">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDarkHR">
-                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
-                                                        </td>
-                                                        <td valign="middle" align="left" colspan="1" class="formDetailHR">
-                                                            <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="parent">Parent</label>Parent:
-                                                        </td>
-                                                        <td valign="top" align="left" class="formDetail">
-                                                            <input type="text" checked="checked" class="textBox" id="parent" name="ctl00$phFormContent$chkActive">
-                                                        </td>
-                                                    </tr>
+                                                    
+                                                   
+                                                    
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
                                                              <label for="manager">Manager</label>Manager:
                                                         </td>
-                                                        <td valign="top" align="left" class="formDetail">
+                                                        <td valign="top" align="left" class="formDetail" style="width: 211px">
                                                             <input type="text" checked="checked" class="textBox" id="manager" name="ctl00$phFormContent$chkActive">
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <%--<tr>
                                                         <td valign="middle" align="right" class="formDetailDarkHR">
                                                             <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
                                                         <td valign="middle" align="left" colspan="1" class="formDetailHR">
                                                             <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
-                                                    </tr>
+                                                    </tr>--%>
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
                                                             <img height="1" width="180" id="ctl00_phFormContent_ucFormFooter_img1" src="../../Content/images/common/space.gif">
@@ -170,8 +198,8 @@
                                                 <tbody>
                                                     <tr>
                                                         <td align="left">
-                                                            <input type="button" value="Save" class="button" id="ctl00_phFormButtonBar_btnSave"
-                                                                name="ctl00$phFormButtonBar$btnSave">&nbsp;&nbsp;
+                                                            <input type="submit" value="Save" class="button" id="btnSave"
+                                                                name="btnSave"/>&nbsp;&nbsp;
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -181,6 +209,8 @@
                                 </tbody>
                             </table>
                         </div>
+                        
+                        <%} %>
                         <div style="padding-left: 10px; padding-right: 10px;">
                         </div>
                     </td>
