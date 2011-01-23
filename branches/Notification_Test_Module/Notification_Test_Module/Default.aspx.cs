@@ -1,7 +1,10 @@
 ﻿using System;
-using System.Net;
-using System.Net.Mail;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Net.Mail;
+using System.Net;
+using System.Collections;
 
 namespace Notification_Test_Module
 {
@@ -9,41 +12,16 @@ namespace Notification_Test_Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 465);//209.85.227.109
+            MailManager mM = new MailManager("Assigned to a New  Project", "You've been Assigned to a new project");
 
-            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtpClient.UseDefaultCredentials = false;
-            smtpClient.EnableSsl = true;
+            ArrayList toAddresses = new ArrayList();
 
-            NetworkCredential info = new NetworkCredential("virath.liyanage@gmail.com", "Password");// Type your Email and the password
-            smtpClient.Credentials = info;
+            toAddresses.Add("Virath.Liyanage@Gmail.com");
+            toAddresses.Add("jeevantha@gmail.com");
+            toAddresses.Add("chanakawee@gmail.com");
+            toAddresses.Add("gayan.w@sliit.lk");
 
-            MailMessage mail = new MailMessage();
-
-            mail.From = new MailAddress("virath.liyanage@gmail.com", "Resource Management System");
-            mail.To.Add(new MailAddress("jeevantha@gmail.com"));
-            mail.To.Add(new MailAddress("gayanpw@gmail.com"));
-            mail.CC.Add(new MailAddress("virath.liyanage@gmail.com"));
-
-            StringBuilder mailBody = new StringBuilder();
-
-            mailBody.Append("<html>");
-            mailBody.Append("<head>");
-            mailBody.Append("<title>Resource Management System - Notification (Project Assignment)</title>");
-            mailBody.Append("</head>");
-            mailBody.Append("<body>");
-            mailBody.Append("<span>");
-            mailBody.Append("Dear User, </br><h3>You have been assign to a project.</h3></br>Please note this is an auto genarated email.");
-            mailBody.Append("</span>");
-            mailBody.Append("</body>");
-            mailBody.Append("</html>");
-
-            mail.Subject = "Resource Management System - Mail Notification";
-            mail.IsBodyHtml = true;
-            mail.Body = mailBody.ToString();
-
-            //The error is No connection could be made because the target machine actively refused it 209.85.227.109:25
-            smtpClient.Send(mail);
+            mM.SendMail(toAddresses);
         }
     }
 }
