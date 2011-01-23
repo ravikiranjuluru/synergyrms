@@ -3,8 +3,8 @@ C:\Documents and Settings\virath.liyanage\My Documents\Visual Studio 2008\Projec
 C:\Documents and Settings\virath.liyanage\My Documents\Visual Studio 2008\Projects\Notification_Test_Module\Notification_Test_Module\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\virath.liyanage\My Documents\Visual Studio 2008\Projects\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.dll
 C:\Documents and Settings\virath.liyanage\My Documents\Visual Studio 2008\Projects\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.pdb
-D:\SynergyRMS\Notification_Test_Module\Notification_Test_Module\bin\Notification_Test_Module.dll
-D:\SynergyRMS\Notification_Test_Module\Notification_Test_Module\bin\Notification_Test_Module.pdb
-D:\SynergyRMS\Notification_Test_Module\Notification_Test_Module\obj\Debug\ResolveAssemblyReference.cache
-D:\SynergyRMS\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.dll
-D:\SynergyRMS\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.pdb
+D:\Net Team\Notification_Test_Module\Notification_Test_Module\Notification_Test_Module\bin\Notification_Test_Module.dll
+D:\Net Team\Notification_Test_Module\Notification_Test_Module\Notification_Test_Module\bin\Notification_Test_Module.pdb
+D:\Net Team\Notification_Test_Module\Notification_Test_Module\Notification_Test_Module\obj\Debug\ResolveAssemblyReference.cache
+D:\Net Team\Notification_Test_Module\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.dll
+D:\Net Team\Notification_Test_Module\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.pdb
