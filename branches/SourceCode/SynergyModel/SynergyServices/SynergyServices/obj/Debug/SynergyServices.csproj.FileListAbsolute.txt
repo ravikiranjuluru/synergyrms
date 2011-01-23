@@ -1,0 +1,6 @@
+E:\EAD\CS\SynergyModel\SynergyServices\SynergyServices\bin\Debug\SynergyServices.dll.config
+E:\EAD\CS\SynergyModel\SynergyServices\SynergyServices\bin\Debug\SynergyServices.dll
+E:\EAD\CS\SynergyModel\SynergyServices\SynergyServices\bin\Debug\SynergyServices.pdb
+E:\EAD\CS\SynergyModel\SynergyServices\SynergyServices\obj\Debug\ResolveAssemblyReference.cache
+E:\EAD\CS\SynergyModel\SynergyServices\SynergyServices\obj\Debug\SynergyServices.dll
+E:\EAD\CS\SynergyModel\SynergyServices\SynergyServices\obj\Debug\SynergyServices.pdb

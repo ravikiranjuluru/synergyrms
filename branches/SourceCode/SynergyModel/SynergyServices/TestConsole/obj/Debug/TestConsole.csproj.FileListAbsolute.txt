@@ -1,0 +1,8 @@
+E:\EAD\CS\SynergyModel\SynergyServices\TestConsole\obj\Debug\ResolveAssemblyReference.cache
+E:\EAD\CS\SynergyModel\SynergyServices\TestConsole\bin\Debug\TestConsole.exe
+E:\EAD\CS\SynergyModel\SynergyServices\TestConsole\bin\Debug\TestConsole.pdb
+E:\EAD\CS\SynergyModel\SynergyServices\TestConsole\bin\Debug\SynergyServices.dll
+E:\EAD\CS\SynergyModel\SynergyServices\TestConsole\bin\Debug\SynergyServices.pdb
+E:\EAD\CS\SynergyModel\SynergyServices\TestConsole\obj\Debug\TestConsole.exe
+E:\EAD\CS\SynergyModel\SynergyServices\TestConsole\obj\Debug\TestConsole.pdb
+E:\EAD\CS\SynergyModel\SynergyServices\TestConsole\bin\Debug\TestConsole.exe.config
