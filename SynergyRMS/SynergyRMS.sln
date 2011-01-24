@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynergyRMS", "SynergyRMS.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "..\ServiceLayer\ServiceLayer.csproj", "{BADC8C77-4632-44D5-83BB-AAFE2DFA6C30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "..\BusinessLayer\DataLayer.csproj", "{18C9D87E-41ED-437F-8647-B934135959D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "..\DataLayer\DataLayer.csproj", "{18C9D87E-41ED-437F-8647-B934135959D2}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution

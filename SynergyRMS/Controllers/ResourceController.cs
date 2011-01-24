@@ -104,7 +104,9 @@ namespace SynergyRMS.Controllers
             ViewData["EditRole"] = rolename;
             return View("Role");
         }
+        #endregion Role
 
+        #region permission
         public ActionResult Permission()
         {
             string[] allroles = Roles.GetAllRoles();
@@ -141,10 +143,38 @@ namespace SynergyRMS.Controllers
                         }
                     }
                 }
+                ViewData["PermissionList"] = loadPermissionForRole(selectedRole);
                 ViewData["RoleList"] = new SelectList(roleList);
                 ViewData["EditRole"] = selectedRole;
             }
             return View("RolePermission");
+        }
+
+        public bool[] loadPermissionForRole(string role)
+        {
+            bool[] arrpermission = new bool[7];
+            if (role == "User")
+            {
+                arrpermission[0] = true; //project - add
+                arrpermission[1] = false; //project - edit
+                arrpermission[2] = false; //project - delete
+                arrpermission[3] = true; //task - add
+                arrpermission[4] = false; //task - edit
+                arrpermission[5] = false; //task - delete
+                arrpermission[6] = true; //assign to task
+            }
+            else if (role == "Admin")
+            {
+                arrpermission[0] = false; //project - add
+                arrpermission[1] = true; //project - edit
+                arrpermission[2] = true; //project - delete
+                arrpermission[3] = false; //task - add
+                arrpermission[4] = true; //task - edit
+                arrpermission[5] = true; //task - delete
+                arrpermission[6] = true; //assign to task
+            }
+
+            return arrpermission;
         }
         [HttpPost]
         public ActionResult SetPermission(FormCollection form)
@@ -153,26 +183,64 @@ namespace SynergyRMS.Controllers
             {
                 bool status = true;
                 //CheckBoxList boc = (CheckBoxList)form["CheckBoxListPermission"];
-                //status = objRole.AddPermissionToRole(role,perimission[]);             
-                if (status)
-                {
-                    ViewData["status"] = "Success";
-                    ViewData["msg"] = "New Role Permission Successfully Assigned.";
-                }
-                else
-                {
-                    ViewData["status"] = "Error";
-                    ViewData["msg"] = "Error in Role Permission Assign.";
-                }
+                //status = objRole.AddPermissionToRole(role,perimission[]);   
+                //string editRole = form["hndeditRole"].ToString();
+                string note = form["txtNote"].ToString();
+                string[] arrPermission;
+                string ProAdd = "", ProEdit = "", ProDel = "";
+                string TaskAdd = "", TaskEdit = "", TaskDel = "";
+                string AssignToPro = "";
+
+                ProAdd = form["chkProAdd"] != null ? "Check":"Uncheck";
+                ProEdit = form["chkProEdit"] != null ? "Check" : "Uncheck";
+                ProDel = form["chkProDelete"] != null ? "Check" : "Uncheck";
+                TaskAdd = form["chkTaskAdd"] != null ? "Check" : "Uncheck";
+                TaskEdit = form["chkTaskEdit"] != null ? "Check" : "Uncheck";
+                TaskDel = form["chkTaskDelete"] != null ? "Check" : "Uncheck";
+                AssignToPro = form["chkAssgnPro"] != null ? "Check" : "Uncheck";
+
+                    if (status)
+                    {
+                        ViewData["status"] = "Success";
+                        ViewData["msg"] = "New Role Permission Successfully Assigned.";
+                        string[] allroles = Roles.GetAllRoles();
+
+                        string selectedRole = "Admin";//form["hndeditRole"].ToString();
+
+                    if (allroles.Length > 0)
+                    {
+                        List<string> roleList = new List<string>();
+                        roleList.Add(selectedRole);
+                        foreach (string role in allroles)
+                        {
+                            if (role != null)
+                            {
+                                if (role != selectedRole)
+                                {
+                                    roleList.Add(role.ToString());
+                                }
+                            }
+                        }
+                        ViewData["PermissionList"] = loadPermissionForRole(selectedRole);
+                        ViewData["RoleList"] = new SelectList(roleList);
+                        ViewData["EditRole"] = selectedRole;
+                    }
+
+                    }
+                    else
+                    {
+                        ViewData["status"] = "Error";
+                        ViewData["msg"] = "Error in Role Permission Assign.";
+                    }
             }
             catch
             {
             }           
             return View("RolePermission");
         }
+        #endregion permission
 
 
-        #endregion Role
 
 
         #region User

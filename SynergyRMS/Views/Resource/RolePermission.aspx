@@ -131,18 +131,26 @@
                                                                { %>
                                                             <%=Html.DropDownList("ddRoles", (SelectList)ViewData["RoleList"], new { @class = "comboBox" })%>
                                                             &nbsp;&nbsp;
-                                                             <input type="text" maxlength="70" size="70" class="textBox" id="Text2" name="txtRole"
-                                                                style="width: 185px"/>
+                                                              <input type="submit" value="View" class="button" 
+                                                            id="btnView" name="btnView">
                                                            
                                                             
                                                             <%} %>
                                                         </td>
                                                         
                                                     </tr>
-                                                    
-                                                    
-              <% using (Html.BeginForm("Permission", "Resource"))
-                                                     { %>
+                    
+                    <% using (Html.BeginForm("SetPermission", "Resource"))
+                     { 
+                           if (ViewData["EditRole"] != null )
+                       {
+                           var rolename = ViewData["editRole"].ToString();
+                           bool[] permissionList = new bool[7];
+                           if (ViewData["PermissionList"] != null)
+                           {
+                               permissionList = (bool[])ViewData["PermissionList"];
+                           }
+                    %>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDarkHR">
                                                             <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
@@ -151,50 +159,29 @@
                                                             <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
                                                     </tr>
-                                                    
-                                                     <tr>
+                                                    <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="txtrole"></label>Role Name:
+                                                            <label for="txtrole">
+                                                            </label>
+                                                            Role Name:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
-                                                           <% if (ViewData["EditRole"] != null)
-                                                               {
-                                                                   var rolename = ViewData["editRole"].ToString();
-                                                                   %>
-                                                            <input type="text" maxlength="70" size="70" class="textBox" id="txtRole" name="txtRole"
-                                                                style="width: 185px" value="<%=rolename %>"  disabled="disabled"/>
-                                                            <%}
-                                                               else
-                                                               { %>
-                                                            <input type="text" maxlength="70" size="70" class="textBox" id="Text1" name="txtRole"
-                                                                style="width: 185px" disabled="disabled" value="Please select role"/>
-                                                            <%} %>
+                                                            <input type="text" maxlength="70" size="70" class="textBox" 
+                                                                id="txtEditRole" name="txtEditRole"
+                                                                style="width: 185px" value="<%= rolename %>" disabled="disabled" />
+                                                                <input type="hidden" id="hndeditRole" value="test" />
                                                         </td>
                                                     </tr>
-                                                    
                                                     <tr>
                                                         <td valign="top" align="right" class="formDetailDark">
-                                                           <label for="notes"></label> Notes:
+                                                            <label for="notes">
+                                                            </label>
+                                                            Notes:
                                                         </td>
                                                         <td valign="top" align="left" class="formDetail">
-                                                            <textarea rows="2" cols="62" class="textArea" 
-                                                            id="Textarea1" name="notes"></textarea>
+                                                            <textarea rows="2" cols="62" class="textArea" id="txtNote" name="txtNote"></textarea>
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                                    <td valign="top" align="right" class="formDetailDark">
-                                                                          </td>
-                                                                    <td>
-                                                                         <%--<asp:CheckBoxList ID="CheckBoxListPermission" runat="server">
-                                                                             <asp:ListItem>Add Project</asp:ListItem>
-                                                                             <asp:ListItem>Edit Project</asp:ListItem>
-                                                                             <asp:ListItem>Delete Project</asp:ListItem>
-                                                                             <asp:ListItem>Add Task</asp:ListItem>
-                                                                             <asp:ListItem>Edit Task</asp:ListItem>
-                                                                             <asp:ListItem>Delete task</asp:ListItem>
-                                                                         </asp:CheckBoxList>--%>
-                                                                    </td>
-                                                                </tr>
                                                    
                                                     <tr>
                                                         <td valign="top" align="right" class="formDetailDark">
@@ -203,63 +190,116 @@
                                                             Select Permission:
                                                         </td>
                                                         <td valign="top" align="left" class="formDetail">
-                                                           <table style="width: 100%">
+                                                            <table style="width: 100%">
                                                                 <tr>
                                                                     <td style="width: 165px">
-                                                                        Add Project</td>
+                                                                        Add Project
+                                                                    </td>
                                                                     <td>
-                                                                       <input type="checkbox" checked="checked" class="checkBox" 
-                                                            id="Checkbox7" name="ctl00$phFormContent$chkActive"></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td style="width: 165px">
-                                                                        Edit Project</td>
-                                                                    <td>
-                                                                        <input type="checkbox" checked="checked" class="checkBox" 
-                                                            id="Checkbox8" name="ctl00$phFormContent$chkActive"></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td style="width: 165px">
-                                                                        Delete Project</td>
-                                                                    <td>
-                                                                        <input type="checkbox" checked="checked" class="checkBox" 
-                                                            id="Checkbox9" name="ctl00$phFormContent$chkActive"></td>
-                                                                </tr>
-                                                                
-                                                                <tr>
-                                                                    <td style="width: 165px">
-                                                                          Add new Task</td>
-                                                                    <td>
-                                                                         <input type="checkbox" checked="checked" class="checkBox" 
-                                                            id="Checkbox10" name="ctl00$phFormContent$chkActive">
+                                                                        <%if (permissionList[0])
+                                                                          { %>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkProAdd" name="chkProAdd">
+                                                                        <%}
+                                                                          else
+                                                                          { %>
+                                                                        <input type="checkbox" class="checkBox" id="chkProAdd" name="chkProAdd">
+                                                                        <%} %>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="width: 165px">
-                                                                        Edit Task</td>
+                                                                        Edit Project
+                                                                    </td>
                                                                     <td>
-                                                                        <input type="checkbox" checked="checked" class="checkBox" 
-                                                            id="Checkbox11" name="ctl00$phFormContent$chkActive"></td>
+                                                                        <%if (permissionList[1])
+                                                                          { %>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkProEdit" name="chkProEdit">
+                                                                        <%}
+                                                                          else
+                                                                          { %>
+                                                                        <input type="checkbox" class="checkBox" id="chkProEdit" name="chkProEdit">
+                                                                        <%} %>
+                                                                    </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="width: 165px">
-                                                                        Delete Task</td>
+                                                                        Delete Project
+                                                                    </td>
                                                                     <td>
-                                                                        <input type="checkbox" checked="checked" class="checkBox" 
-                                                            id="Checkbox12" name="ctl00$phFormContent$chkActive"></td>
+                                                                        <%if (permissionList[2])
+                                                                          { %>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkProDelete" name="chkProDelete">
+                                                                        <%}
+                                                                          else
+                                                                          { %>
+                                                                        <input type="checkbox" class="checkBox" id="chkProDelete" name="chkProDelete">
+                                                                        <%} %>
+                                                                    </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="width: 165px">
-                                                                        Assign to a Project</td>
+                                                                        Add new Task
+                                                                    </td>
                                                                     <td>
-                                                                        <input type="checkbox" checked="checked" class="checkBox" 
-                                                            id="Checkbox13" name="ctl00$phFormContent$chkActive"></td>
+                                                                        <%if (permissionList[3])
+                                                                          { %>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkTaskAdd" name="chkTaskAdd">
+                                                                        <%}
+                                                                          else
+                                                                          { %>
+                                                                        <input type="checkbox" class="checkBox" id="chkTaskAdd" name="chkTaskAdd">
+                                                                        <%} %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 165px">
+                                                                        Edit Task
+                                                                    </td>
+                                                                    <td>
+                                                                        <%if (permissionList[4])
+                                                                          { %>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkTaskEdit" name="chkTaskEdit">
+                                                                        <%}
+                                                                          else
+                                                                          { %>
+                                                                        <input type="checkbox" class="checkBox" id="chkTaskEdit" name="chkTaskEdit">
+                                                                        <%} %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 165px">
+                                                                        Delete Task
+                                                                    </td>
+                                                                    <td>
+                                                                        <%if (permissionList[5])
+                                                                          { %>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkTaskDelete" name="chkTaskDelete">
+                                                                        <%}
+                                                                          else
+                                                                          { %>
+                                                                        <input type="checkbox" class="checkBox" id="chkTaskDelete" name="chkAssgnPro">
+                                                                        <%} %>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width: 165px">
+                                                                        Assign to a Project
+                                                                    </td>
+                                                                    <td>
+                                                                        <%if (permissionList[6])
+                                                                          { %>
+                                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkAssgnPro" name="chkAssgnPro">
+                                                                        <%}
+                                                                          else
+                                                                          { %>
+                                                                        <input type="checkbox" class="checkBox" id="chkAssgnPro" name="chkAssgnPro">
+                                                                        <%} %>
+                                                                    </td>
                                                                 </tr>
                                                             </table>
                                                         </td>
                                                     </tr>
-                                                   
-                                                     
+                   
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
                                                             <img height="1" width="180" id="Img3" src="../../Content/images/common/space.gif">
@@ -273,9 +313,7 @@
                                         </td>
                                     </tr>
                                 </tbody>
-                            </table>
-                            
-                            
+                             </table>
                         </div>
                         <div class="formFoot" id="masterpage_divFoot">
                             <table width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -286,11 +324,8 @@
                                                 <tbody>
                                                     <tr>
                                                         <td align="left">
-                                                            <input type="submit" value="Save" class="button" 
-                                                            id="btnSave"
-                                                                name="btnSave">&nbsp;
+                                                            <input type="submit" value="Save" class="button" id="btnSave" name="btnSave">&nbsp;
                                                         </td>
-                                                       
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -299,6 +334,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        <%} %>
                         <%} %>
                         <div style="padding-left: 10px; padding-right: 10px;">
                         </div>
