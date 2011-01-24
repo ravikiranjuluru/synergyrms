@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" Inherits="System.Web.Mvc.ViewPage" %>
+<%@ Import Namespace="Microsoft.Web.Mvc"%>
+<%@ Import Namespace="SynergyRMS.Controllers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-       <form id="form1" runat="server">
+  
 
        <div class="formContainer" id="masterpage_divMain">
         <div class="formHead" id="masterpage_divHead">
@@ -81,8 +83,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                                                  <% using (Html.BeginForm("Permission", "Resource"))
-                                                     { %>
+                                                 
                             
                              <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
                                 id="masterPage_tblFormContentRoot">
@@ -126,19 +127,22 @@
                                                            View Permissions
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail" style="width: 211px">
-                                                           <select name="ctl00$phFormContent$cboProjectLevel" id="projectLevel"
-                                                            class="comboBox">
-                                                            <option selected="selected" value="Select">Select</option>
-                                                            <option value="Top">Role 1</option>
-                                                            <option value="Medium">Role 2</option>
-                                                            <option value="Low">Role 3</option>
-                                                        </select>
-                                                        &nbsp;&nbsp;
-                                                        <input type="submit" value="View" class="button" id="View"
-                                                                name="btnView"/>
+                                                            <% using (Html.BeginForm("LoadPermission", "Resource"))
+                                                               { %>
+                                                            <%=Html.DropDownList("ddRoles", (SelectList)ViewData["RoleList"], new { @class = "comboBox" })%>
+                                                            &nbsp;&nbsp;
+                                                             <input type="text" maxlength="70" size="70" class="textBox" id="Text2" name="txtRole"
+                                                                style="width: 185px"/>
+                                                           
+                                                            
+                                                            <%} %>
                                                         </td>
                                                         
                                                     </tr>
+                                                    
+                                                    
+              <% using (Html.BeginForm("Permission", "Resource"))
+                                                     { %>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDarkHR">
                                                             <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
@@ -153,13 +157,18 @@
                                                             <label for="txtrole"></label>Role Name:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
-                                                            <select class="comboBox" 
-                                                             id="Select1"
-                                                                name="ctl00$phFormContent$cboResourceType">
-                                                                <option value="1">Employee</option>
-                                                                <option value="2">Contractor</option>
-                                                                <option value="4" selected="selected">Role</option>
-                                                            </select>
+                                                           <% if (ViewData["EditRole"] != null)
+                                                               {
+                                                                   var rolename = ViewData["editRole"].ToString();
+                                                                   %>
+                                                            <input type="text" maxlength="70" size="70" class="textBox" id="txtRole" name="txtRole"
+                                                                style="width: 185px" value="<%=rolename %>"  disabled="disabled"/>
+                                                            <%}
+                                                               else
+                                                               { %>
+                                                            <input type="text" maxlength="70" size="70" class="textBox" id="Text1" name="txtRole"
+                                                                style="width: 185px" disabled="disabled" value="Please select role"/>
+                                                            <%} %>
                                                         </td>
                                                     </tr>
                                                     
@@ -176,14 +185,14 @@
                                                                     <td valign="top" align="right" class="formDetailDark">
                                                                           </td>
                                                                     <td>
-                                                                         <asp:CheckBoxList ID="CheckBoxListPermission" runat="server">
+                                                                         <%--<asp:CheckBoxList ID="CheckBoxListPermission" runat="server">
                                                                              <asp:ListItem>Add Project</asp:ListItem>
                                                                              <asp:ListItem>Edit Project</asp:ListItem>
                                                                              <asp:ListItem>Delete Project</asp:ListItem>
                                                                              <asp:ListItem>Add Task</asp:ListItem>
                                                                              <asp:ListItem>Edit Task</asp:ListItem>
                                                                              <asp:ListItem>Delete task</asp:ListItem>
-                                                                         </asp:CheckBoxList>
+                                                                         </asp:CheckBoxList>--%>
                                                                     </td>
                                                                 </tr>
                                                    
@@ -299,6 +308,6 @@
         </table>
     </div>
 
-       </form>
+
 
 </asp:Content>

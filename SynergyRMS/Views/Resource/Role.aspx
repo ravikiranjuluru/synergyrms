@@ -1,4 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" 
+Inherits="System.Web.Mvc.ViewPage" %>
+<%@ Import Namespace="SynergyRMS.Controllers" %>
+<%@ Import Namespace="Microsoft.Web.Mvc"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -90,21 +93,54 @@
                                                             <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="..../../Content/images/common/space.gif">
                                                         </td>
                                                     </tr>
-                                                     <tr>
+                                                    <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
                                                            View Roles
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail" style="width: 211px">
-                                                           <select name="ctl00$phFormContent$cboProjectLevel" id="projectLevel"
-                                                            class="comboBox">
-                                                            <option selected="selected" value="Select">Select</option>
-                                                            <option value="Top">Role 1</option>
-                                                            <option value="Medium">Role 2</option>
-                                                            <option value="Low">Role 3</option>
-                                                        </select>
-                                                        &nbsp;&nbsp;
-                                                        <input type="submit" value="View" class="button" id="View"
-                                                                name="btnView"/>
+                                                        
+                                                        <%if (ViewData["roleList"] != null)
+                                                          { %>
+                                                            <table id="tblRoles">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th id="rolename" width="219" align="left" height="30">
+                                                                            <a href="#">Role Name</a> <a href="#">
+                                                                                <img src="../../Content/images/icon/Sort-Icon.gif" alt="Sort by Role Name" width="7"
+                                                                                    height="10" border="0" title="Sort by Role Name" /></a>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <%
+                                                           
+
+                                                            foreach (SelectListItem role in (SelectList)ViewData["roleList"])
+                                                            {
+                                                                           
+                                                                    %>
+                                                                    <tr>
+                                                                        <td headers="mgrname" class="oddrow-mdl" align="left" height="25">
+                                                                            <strong>
+                                                                                <%= role.Text%></strong>
+                                                                        </td>
+                                                                        <td headers="edit" class="evnrow-mdl" align="left">
+                                                                            <a href="#"><strong>
+                                                                               
+                                                                               <%--* <%= Html.ActionLink<ResourceController>(c => c.EditRole(role.Text), "Edit", "")%>--%>
+                                                                              <%-- <%=Html.ActionLink("Edit", "EditRole", "Resource", new { id = role.Text })%>--%>
+                                                                            </strong></a>
+                                                                        </td>
+                                                                        <%--<td headers="Delete" class="evnrow-mdl" align="left">
+                                                                            <a href="#"><strong>
+                                                                                <%=Html.ActionLink<ResourceController>(c => c.Delete(role.Text), "Delete", new { onclick = "return deleteConfirm();" })%>
+                                                                            </strong></a>
+                                                                        </td>--%>
+                                                                    </tr>
+                                                                    <%} %>
+                                                                </tbody>
+                                                            </table>
+                                                        <%} %>
                                                         </td>
                                                         
                                                     </tr>
@@ -145,8 +181,18 @@
                                                             <label for="txtRole">Please Enter Role name here</label>Role Name:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
-                                                            <input type="text" maxlength="70" size="70" class="textBox" 
-                                                            id="txtRole" name="txtRole" style="width: 185px">
+                                                            <% if (ViewData["editRole"] != null)
+                                                               {
+                                                                   var rolename = ViewData["EditRole"].ToString();
+                                                                   %>
+                                                            <input type="text" maxlength="70" size="70" class="textBox" id="txtRole" name="txtRole"
+                                                                style="width: 185px" value="<%=rolename %>"  />
+                                                            <%}
+                                                               else
+                                                               { %>
+                                                            <input type="text" maxlength="70" size="70" class="textBox" id="txtRole" name="txtRole"
+                                                                style="width: 185px"/>
+                                                            <%} %>
                                                         </td>
                                                     </tr>
                                                     
@@ -208,5 +254,48 @@
             </tbody>
         </table>
     </div>
+    
+    
+     <script type="text/javascript">
+//        $(document).ready(function () {
+//        $('#tblRoles').dataTable({
+//                "bFilter": false,
+//                "bInfo": true,
+//                "bRetrieve": true,
+//                'bLengthChange': true, //no of records per page from dropdown select                
+//                "sPaginationType": 'full_numbers', //two_button //full_numbers
+//                "bJQueryUI": true,
+//                'sDom': '<"top"lp>t<"clear"><"bottom"ip><"clear">'
+//            });
+//        });
+
+        $(document).ready(function() {
+        $('#tblRoles').dataTable({
+                "bPaginate": true,
+                "bLengthChange": true,
+                "bFilter": true,
+                "bSort": true,
+                "bInfo": true,
+                "bAutoWidth": true,
+                "sPaginationType": 'full_numbers',
+                //"bJQueryUI": true,
+                'sDom': '<"top"lfp>t<"clear"><"bottom"ip><"clear">'
+            });
+        });
+
+        function deleteConfirm() {
+            if (confirm("Are you sure you want to delete this Role?")) {                
+                $('#msgsuccess').hide();
+                $('#msgerror').hide();
+                return true;
+            }
+            else {              
+                $('#msgsuccess').hide();
+                $('#msgerror').hide();
+                return false;
+            }
+        }
+
+    </script>
 
 </asp:Content>

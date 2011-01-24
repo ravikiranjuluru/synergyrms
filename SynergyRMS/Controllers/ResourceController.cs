@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using System.Web.UI.WebControls;
+using System.Web.Profile;
 
 namespace SynergyRMS.Controllers
 {
@@ -51,12 +52,23 @@ namespace SynergyRMS.Controllers
         #region Role
         public ActionResult Role()
         {
+            string[] allroles = Roles.GetAllRoles();
+           
+            if (allroles.Length > 0)
+            {
+                List<string> roleList = new List<string>();                
+                foreach (string role in allroles)
+                    if (role != null)
+                        roleList.Add(role.ToString());
+                ViewData["RoleList"] = new SelectList(roleList);
+            }
+           
             return View("Role");
         }
         [HttpPost]
         public ActionResult Role(FormCollection form)
         {
-            try
+           try
             {
                 bool status = true;
                 //Roles.CreateRole(form["txtRole"].ToString());                
@@ -77,13 +89,65 @@ namespace SynergyRMS.Controllers
             return View("Role");
         }
 
+        public ActionResult EditRole(string rolename)
+        {
+            string[] allroles = Roles.GetAllRoles();
+
+            if (allroles.Length > 0)
+            {
+                List<string> roleList = new List<string>();
+                foreach (string role in allroles)
+                    if (role != null)
+                        roleList.Add(role.ToString());
+                ViewData["roleList"] = new SelectList(roleList);
+            }
+            ViewData["EditRole"] = rolename;
+            return View("Role");
+        }
 
         public ActionResult Permission()
         {
+            string[] allroles = Roles.GetAllRoles();
+
+            if (allroles.Length > 0)
+            {
+                List<string> roleList = new List<string>();
+                foreach (string role in allroles)
+                    if (role != null)
+                        roleList.Add(role.ToString());
+                ViewData["RoleList"] = new SelectList(roleList);
+            }
+            return View("RolePermission");
+        }
+      
+        [HttpPost]
+        public ActionResult LoadPermission(FormCollection form)
+        {
+            string[] allroles = Roles.GetAllRoles();
+
+            string selectedRole = form["ddRoles"].ToString();
+
+            if (allroles.Length > 0)
+            {
+                List<string> roleList = new List<string>();
+                roleList.Add(selectedRole);
+                foreach (string role in allroles)
+                {
+                    if (role != null)
+                    {
+                        if (role != selectedRole)
+                        {
+                            roleList.Add(role.ToString());
+                        }
+                    }
+                }
+                ViewData["RoleList"] = new SelectList(roleList);
+                ViewData["EditRole"] = selectedRole;
+            }
             return View("RolePermission");
         }
         [HttpPost]
-        public ActionResult Permission(FormCollection form)
+        public ActionResult SetPermission(FormCollection form)
         {
             try
             {
@@ -122,20 +186,20 @@ namespace SynergyRMS.Controllers
             {
                 bool status = true;
 
-                MembershipCreateStatus userStatus;                
-                Membership.CreateUser(form["txtUsername"].ToString(), form["txtPassword"].ToString(),
-                    form["txtEmail"].ToString(), "", "", true, out userStatus);
-                
-                          
-                if (status)
+                MembershipCreateStatus createStatus;                
+                var newuser = Membership.CreateUser(form["txtUsername"].ToString(), form["txtPassword"].ToString(),
+                    form["txtEmail"].ToString(), "", "", true, out createStatus);
+
+
+                if (createStatus == MembershipCreateStatus.Success)
                 {
-                    ////Roles.AddUserToRole(form["txtUsername"].ToString(), "Role");
-                    ////Profile userprofile = new Profile();
-                    ////userprofile.instialze(form["txtUsername"].ToString());
-                    ////userprofile.setprofilevalue(form["txtFirstName"].ToString());
-                    ////userprofile.setprofilevalue(form["txtLastName"].ToString());
-                    ////userprofile.setprofilevalue(form["txtPhone"].ToString());
-                    ////userprofile.SaveUpdate();
+                    Roles.AddUserToRole(newuser.UserName, "User");
+                    var profile = ProfileBase.Create(newuser.UserName);
+                    profile.SetPropertyValue("FirstName", form["txtFirstName"].ToString());
+                    profile.SetPropertyValue("LastName", form["txtLastName"].ToString());
+                    profile.SetPropertyValue("Phone", form["txtPhone"].ToString());                   
+                    profile.Save();
+
 
                     ViewData["status"] = "Success";
                     ViewData["msg"] = "New User Successfully Created.";
@@ -143,8 +207,12 @@ namespace SynergyRMS.Controllers
                 else
                 {
                     ViewData["status"] = "Error";
-                    ViewData["msg"] = "Error in User Creation.";
+                    ViewData["msg"] = createStatus.ToString();
+                    //ViewData["msg"] = "Error in User Creation.";
                 }
+
+                          
+               
             }
             catch (MembershipCreateUserException ex)
             {
@@ -162,7 +230,7 @@ namespace SynergyRMS.Controllers
             return View("IndexRole");
         }
         [HttpPost]
-        public ActionResult AddRole()
+        public ActionResult AddRole(FormCollection form)
         {
             try
             {

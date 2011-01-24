@@ -50,6 +50,14 @@ namespace SynergyRMS.Controllers
 
         public ActionResult EditProject()
         {
+            //IList<FeedbackSector> sector = _serviceUtil.GetFeedbackSectorsAll();
+            //List<string> sectorList = new List<string>();
+            //sectorList.Add("Not Applicable");
+            //foreach (FeedbackSector s in sector)
+            //    if (s != null)
+            //        sectorList.Add(s.Sector);
+            //ViewData["SectorList"] = new SelectList(sectorList);
+
             return View("EditProject");
         }
 
