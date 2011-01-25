@@ -139,6 +139,14 @@
                                                         </td>
                                                         
                                                     </tr>
+                                                    <tr>
+                                                        <td height="5" class="formDetailDarkNoPadding">
+                                                            <img height="1" width="180" id="Img5" src="../../Content/images/common/space.gif">
+                                                        </td>
+                                                        <td height="5" width="100%" class="formDetailNoPadding">
+                                                            <img height="1" id="Img6" src="../../Content/images/common/space.gif">
+                                                        </td>
+                                                    </tr>
                     
                     <% using (Html.BeginForm("SetPermission", "Resource"))
                      { 
@@ -297,6 +305,14 @@
                                                                     </td>
                                                                 </tr>
                                                             </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            &nbsp;&nbsp;&nbsp;
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;
                                                         </td>
                                                     </tr>
                    

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" 
+<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" 
 Inherits="System.Web.Mvc.ViewPage" %>
 <%@ Import Namespace="SynergyRMS.Controllers" %>
 <%@ Import Namespace="Microsoft.Web.Mvc"%>
@@ -101,13 +101,16 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                         
                                                         <%if (ViewData["roleList"] != null)
                                                           { %>
-                                                            <table id="tblRoles">
+                                                            <table id="tblRoles" class="table">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th id="rolename" width="219" align="left" height="30">
-                                                                            <a href="#">Role Name</a> <a href="#">
-                                                                                <img src="../../Content/images/icon/Sort-Icon.gif" alt="Sort by Role Name" width="7"
-                                                                                    height="10" border="0" title="Sort by Role Name" /></a>
+                                                                        <th id="rolename" class="tableColumnTitle" width="219" align="left" height="30" >
+                                                                           <strong> Role Name</strong>
+                                                                            <a href="#">
+                                                                                <img src="../../Content/images/icon/Sort-Icon.gif" width="7"
+                                                        height="10" border="0" class="pdn-tp"
+                                                                                alt="Sort by Role Name" border="0" title="Sort by Role Name" 
+                                                                                /></a>
                                                                         </th>
                                                                     </tr>
                                                                 </thead>
@@ -120,11 +123,11 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                                            
                                                                     %>
                                                                     <tr>
-                                                                        <td headers="mgrname" class="oddrow-mdl" align="left" height="25">
+                                                                        <td headers="rolename" class="tableRowDark" align="left" height="25">
                                                                             <strong>
                                                                                 <%= role.Text%></strong>
                                                                         </td>
-                                                                        <td headers="edit" class="evnrow-mdl" align="left">
+                                                                        <td headers="edit"  align="left">
                                                                             <a href="#"><strong>
                                                                                
                                                                                <%--* <%= Html.ActionLink<ResourceController>(c => c.EditRole(role.Text), "Edit", "")%>--%>

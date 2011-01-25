@@ -43,7 +43,7 @@
                 <table height="35" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tbody><tr>
                         <td align="left" valign="middle">
-	                        Add new task to resource.
+	                        Add new task to Project.
                         </td>
                     </tr>
                 </tbody></table>
@@ -113,10 +113,11 @@
                                                         
                                                             <tr>
                                                                 <td align="left" valign="middle" style="white-space: nowrap; padding: 0px 5px;">
-                                                                    <input id="Text1" type="text" value="Enter Task here"/></td>
+                                                                    <input id="Text1" type="text" value="Enter Task here" class="textBox"/></td>
                                                                 <td align="left" valign="middle" style="white-space: nowrap; padding: 0px 0px 0px 5px;">
                                                     
 <select class="comboBox" id="ucFromDate_cmbMonth0" name="ucFromDate$cmbMonth0">
+	<option value="0">Select User</option>
 	<option value="0">User 1</option>
 	<option value="1">User 1</option>
 	<option value="2">User 2</option>
