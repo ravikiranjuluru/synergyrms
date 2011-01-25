@@ -43,7 +43,7 @@
                 <table height="35" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tbody><tr>
                         <td align="left" valign="middle">
-	                        Add new task to resource.
+	                        Assign Project Task to User.
                         </td>
                     </tr>
                 </tbody></table>
@@ -115,6 +115,7 @@
                                                                 <td align="left" valign="middle" style="white-space: nowrap; padding: 0px 5px;">
                                                     
 <select class="comboBox" id="ucFromDate_cmbMonth1" name="ucFromDate$cmbMonth1">
+    <option value="0">Select Task</option>
 	<option value="0">Task 1</option>
 	<option value="1">Task 1</option>
 	<option value="2">Task 2</option>
@@ -124,6 +125,7 @@
                                                                 <td align="left" valign="middle" style="white-space: nowrap; padding: 0px 0px 0px 5px;">
                                                     
 <select class="comboBox" id="ucFromDate_cmbMonth0" name="ucFromDate$cmbMonth0">
+	<option value="0">Select User</option>
 	<option value="0">User 1</option>
 	<option value="1">User 1</option>
 	<option value="2">User 2</option>

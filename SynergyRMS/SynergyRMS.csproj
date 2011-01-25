@@ -331,6 +331,8 @@
     <Content Include="Content\images\icon\removeitem.gif" />
     <Content Include="Content\images\icon\search.gif" />
     <Content Include="Content\images\icon\Sort-Icon.gif" />
+    <Content Include="Content\images\icon\Tbl-Bg-Grid.gif" />
+    <Content Include="Content\images\icon\Tbl-Bttm-Bg-Grid.gif" />
     <Content Include="Content\images\icon\vistabuttongrey_dropdown_mouseover.gif" />
     <Content Include="Content\images\messages\error.png" />
     <Content Include="Content\images\messages\Info.png" />

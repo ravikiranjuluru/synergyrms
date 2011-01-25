@@ -1545,3 +1545,11 @@ dashboardTableNoBorder
 }
 
 
+.dtl-tbl { width: 100%; }
+.dtl-tbl .hdn { background: url(../../Content/images/icon/Tbl-Bg-Grid.gif) repeat-x #007bb4; height: 30px; font: bold 10px Verdana, Arial, Tahoma; color:#fff; text-align:left; padding: 0 3px; }
+.dtl-tbl .hdn a, .dtl-tbl .hdn a:hover { font: bold 10px Verdana, Arial, Tahoma; color:#fff; text-decoration: underline; }
+.pdn-tp { padding-top:0px; text-align:left; vertical-align:middle; }
+.dtl-tbl .oddrow { background-color: #f5f8fa; font: 10px Verdana, Arial, Tahoma; color:#000; vertical-align:top; padding-left:3px; padding-top:7px; padding-bottom:7px; padding-right:3px; text-align: left; }
+.dtl-tbl .evnrow { background-color: #fff; font: 10px Verdana, Arial, Tahoma; color:#000; vertical-align:top; padding-left:3px; padding-top:7px; padding-bottom:7px; padding-right:3px; text-align: left; }
+.dtl-tbl .oddrow-mdl { background-color: #f5f8fa; font: 10px Verdana, Arial, Tahoma; color:#000; vertical-align:middle; padding-left:3px; padding-right:3px; }
+.dtl-tbl .evnrow-mdl { background-color: #fff; font: 10px Verdana, Arial, Tahoma; color:#000; vertical-align:middle; padding-left:3px; padding-right:3px; }
