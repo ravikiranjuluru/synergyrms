@@ -71,7 +71,7 @@ namespace SynergyRMS.Controllers
            try
             {
                 bool status = true;
-                //Roles.CreateRole(form["txtRole"].ToString());                
+                Roles.CreateRole(form["txtRole"].ToString());                
                 if (status)
                 {
                     ViewData["status"] = "Success";

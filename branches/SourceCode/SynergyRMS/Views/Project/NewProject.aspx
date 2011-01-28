@@ -156,7 +156,7 @@
                                                         <label for="active"></label>Active:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="middle">
-                                                        <input name="ctl00$phFormContent$chkActive" id="active" class="checkBox"
+                                                        <input name="chkactive" id="chkactive" class="checkBox"
                                                             checked="checked" type="checkbox">
                                                     </td>
                                                 </tr>                                               
@@ -228,7 +228,7 @@
                                                     <td class="formDetail" align="left" valign="top">                                                 
                                                         <input name="projectstartdate" id="projectstartdate"
                                                             class="textBox" size="15" maxlength="4" type="text">
-                                                        <img src="../../Content/images/common/pick.gif" id="ctl00_phFormContent_dteStartDate_imgSelect"
+                                                        <img src="../../Content/images/common/pick.gif" id="calstartdate"
                                                             style="vertical-align: middle; cursor: pointer;" alt="Select" title="Select" border="0">
                                                     </td>
                                                 </tr>
@@ -240,7 +240,7 @@
                                                       
                                                         <input name="projectenddate" id="projectenddate"
                                                             class="textBox" size="15" maxlength="4" type="text">
-                                                        <img src="../../Content/images/common/pick.gif" id="Img1" style="vertical-align: middle;
+                                                        <img src="../../Content/images/common/pick.gif" id="calenddate" style="vertical-align: middle;
                                                             cursor: pointer;" alt="Select" title="Select" border="0">
                                                     </td>
                                                 </tr>

@@ -38,7 +38,7 @@ namespace SynergyRMS.Controllers
 
 
             SynergyService.SaveProject(pmProjects);
-
+            
 
             return View("NewProject");
         }
@@ -47,11 +47,25 @@ namespace SynergyRMS.Controllers
         {
             try
             {
+                string code = form["txtCode"].ToString();
+                string pname = form["txtprojectname"].ToString();
+                string pdesc = form["txtDescription"].ToString();
+                string formstatus = form["chkactive"].ToString();
+               // string edate = form["calstartdate"].ToString();
+               // string sdate = form["calenddate"].ToString();
                 /*-------------------Save Project ------------------*/
                 PM_Projects pmProjects = new PM_Projects();
-                pmProjects.ProjectCode = "PM005";
-                pmProjects.Status = 1;
-                pmProjects.ProjectName = "testProject5";
+                pmProjects.ProjectCode = code;
+                if (formstatus == "On")
+                {
+                    pmProjects.Status = 1;
+                }
+                else
+                {
+                    pmProjects.Status = 0;
+                }
+              //  pmProjects.Status = 1;
+                pmProjects.ProjectName = pname;
                 pmProjects.ProjectStartDate = DateTime.Today;
                 pmProjects.ProjectEndDate = DateTime.Today.AddDays(200);
 
