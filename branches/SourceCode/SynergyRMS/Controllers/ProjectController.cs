@@ -56,7 +56,7 @@ namespace SynergyRMS.Controllers
                 /*-------------------Save Project ------------------*/
                 PM_Projects pmProjects = new PM_Projects();
                 pmProjects.ProjectCode = code;
-                if (formstatus == "On")
+                if (formstatus == "on")
                 {
                     pmProjects.Status = 1;
                 }
