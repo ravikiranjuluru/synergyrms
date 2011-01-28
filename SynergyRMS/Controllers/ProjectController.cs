@@ -23,9 +23,9 @@ namespace SynergyRMS.Controllers
 
             /*-------------------Save Project ------------------*/
             PM_Projects pmProjects = new PM_Projects();
-            pmProjects.ProjectCode = "PM005";
+            pmProjects.ProjectCode = "PM005-4";
             pmProjects.Status = 1;
-            pmProjects.ProjectName = "testProject5";
+            pmProjects.ProjectName = "testProject6";
             pmProjects.ProjectStartDate = DateTime.Today;
             pmProjects.ProjectEndDate = DateTime.Today.AddDays(200);
 
