@@ -5,26 +5,37 @@ using System.Text;
 
 namespace SynergyServices
 {
+    /// <summary>
+    /// SynergyService
+    /// </summary>
     public class SynergyService
     {
         private static SynergyRMSEntities _synergyRMSEntities = null;
 
         #region Utility Methods
 
+        /// <summary>
+        /// Gets the synegy RMS instance.
+        /// </summary>
+        /// <returns></returns>
         private static SynergyRMSEntities GetSynegyRMSInstance()
         {
             if (_synergyRMSEntities == null)
             {
                 _synergyRMSEntities = new SynergyRMSEntities();
-            } return _synergyRMSEntities;
+            } 
+            
+            return _synergyRMSEntities;
         }
         
         #endregion
-
        
-        #region Projects Methods
-        
+        #region Projects Methods     
        
+        /// <summary>
+        /// Saves the project.
+        /// </summary>
+        /// <param name="project">The project.</param>
         public static void SaveProject(PM_Projects project)
         {
             try
@@ -38,25 +49,30 @@ namespace SynergyServices
             }
         }
 
-
+        /// <summary>
+        /// Gets the projects.
+        /// </summary>
+        /// <param name="project">The project.</param>
+        /// <returns></returns>
         public static List<PM_Projects> GetProjects(PM_Projects project)
         {
-
             try
             {
                return  GetSynegyRMSInstance().PM_Projects.ToList();
             }
-
             catch (Exception)
             {
                 throw;
             }
-
         }
 
+        /// <summary>
+        /// Gets the project by project id.
+        /// </summary>
+        /// <param name="projectId">The project id.</param>
+        /// <returns></returns>
         public static PM_Projects GetProjectbyProjectId(int projectId)
         {
-
             try
             {
                 PM_Projects selectedproject = null;
@@ -80,11 +96,12 @@ namespace SynergyServices
             }
         }
 
-
-
+        /// <summary>
+        /// Updates the project.
+        /// </summary>
+        /// <param name="project">The project.</param>
         public static void UpdateProject(PM_Projects project)
-        { 
-          
+        {     
             try
             {
                 int rowsAffected = GetSynegyRMSInstance().SaveChanges();
@@ -93,13 +110,14 @@ namespace SynergyServices
             {
                 throw;
             }
-
         }
 
-
+        /// <summary>
+        /// Saves the project skills.
+        /// </summary>
+        /// <param name="skillList">The skill list.</param>
         public static void SaveProjectSkills(List<PM_ProjectSkills> skillList)
         {
-
             try
             {
                 foreach (PM_ProjectSkills skill in skillList)
@@ -117,12 +135,14 @@ namespace SynergyServices
             }
         }
 
-
+        /// <summary>
+        /// Saves the project risks.
+        /// </summary>
+        /// <param name="risk">The risk.</param>
         public static void SaveProjectRisks(PM_ProjectRisks risk)
         {
             try
-
-             {
+            {
                 GetSynegyRMSInstance().AddToPM_ProjectRisks(risk);
                 GetSynegyRMSInstance().SaveChanges();
             }
@@ -130,23 +150,19 @@ namespace SynergyServices
             {
                 throw;
             }
-
         }
-
-
-
-        
-
-
 
         #endregion
 
         #region Project Types Methods
 
-
+        /// <summary>
+        /// Gets the project type by id.
+        /// </summary>
+        /// <param name="typeId">The type id.</param>
+        /// <returns></returns>
         public static PM_Types GetProjectTypebyId(int typeId)
         {
-
             try
             {
                 PM_Types selectedType = null;
@@ -168,14 +184,15 @@ namespace SynergyServices
             catch (Exception)
             {
                 throw;
-
             }
-
         }
 
+        /// <summary>
+        /// Gets all types.
+        /// </summary>
+        /// <returns></returns>
         public static List<PM_Types> GetAllTypes()
         {
-
             try
             {
                 return GetSynegyRMSInstance().PM_Types.ToList();
@@ -184,11 +201,12 @@ namespace SynergyServices
             {
                 throw;
             }
-
-
         }
 
-
+        /// <summary>
+        /// Saves the type.
+        /// </summary>
+        /// <param name="type">The type.</param>
         public static void SaveType(PM_Types type)
         {
             try
@@ -207,13 +225,11 @@ namespace SynergyServices
             try
             {
                 int rowsAffected = GetSynegyRMSInstance().SaveChanges();
-
             }
             catch (Exception)
             {
                 throw;
             }
-
         }
 
         #endregion
@@ -295,10 +311,8 @@ namespace SynergyServices
 
         #region User Skills Methods
 
-
         public static void SaveUserSkills(List<UM_UserSkills> skillList)
         {
-
             try
             {
                 foreach (UM_UserSkills skill in skillList)
@@ -318,6 +332,52 @@ namespace SynergyServices
 
         #endregion
 
+
+        #region Project Resources
+        
+        public static void SaveProjectResources(PM_ProjectResources projectResources)
+        {
+            try
+            {             
+                GetSynegyRMSInstance().AddToPM_ProjectResources(projectResources);
+                GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static List<PM_ProjectResources> GetAllProjectResoucesByProjectId(int projectId)
+        {
+            try
+            {
+               //PM_Projects project= GetProjectbyProjectId(projectId);
+                List <PM_ProjectResources>  ResList= null;
+
+                IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                   where p.PM_Projects.ProjectId== projectId
+                                   select p;
+
+                ResList= projectQuery.ToList();
+
+                foreach (PM_ProjectResources objResources in ResList)
+                {
+                    objResources.PM_ProjectsReference.Load();
+                    objResources.PM_ProjectRolesReference.Load();
+                    objResources.UM_UsersReference.Load();
+                    //int aa = single1.T_User.UserId;
+                }
+
+                return ResList;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        #endregion
 
 
 
