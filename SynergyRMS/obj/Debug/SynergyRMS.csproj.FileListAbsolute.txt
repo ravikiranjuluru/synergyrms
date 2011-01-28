@@ -3,3 +3,9 @@ F:\MSc\Semester 3\CS\Project\Development\SourceCode\SynergyRMS\bin\SynergyRMS.pd
 F:\MSc\Semester 3\CS\Project\Development\SourceCode\SynergyRMS\obj\Debug\ResolveAssemblyReference.cache
 F:\MSc\Semester 3\CS\Project\Development\SourceCode\SynergyRMS\obj\Debug\SynergyRMS.dll
 F:\MSc\Semester 3\CS\Project\Development\SourceCode\SynergyRMS\obj\Debug\SynergyRMS.pdb
+E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\obj\Debug\ResolveAssemblyReference.cache
+E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\obj\Debug\SynergyRMS.dll
+E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\obj\Debug\SynergyRMS.pdb
+E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\bin\SynergyRMS.dll.config
+E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\bin\SynergyRMS.dll
+E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\bin\SynergyRMS.pdb
