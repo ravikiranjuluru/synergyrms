@@ -441,7 +441,26 @@ namespace SynergyRMS.Models
         #endregion
 
         #region User Methods
-        
+
+        public static void SaveUser(aspnet_Users user)
+        {
+            try
+            {
+                GetSynegyRMSInstance().AddToaspnet_Users(user);
+                GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+
+
+
+
+
         #endregion
 
 
