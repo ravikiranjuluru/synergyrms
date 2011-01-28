@@ -20,6 +20,26 @@ namespace SynergyRMS.Controllers
         #region project
         public ActionResult NewProject()
         {
+
+            /*-------------------Save Project ------------------*/
+            PM_Projects pmProjects = new PM_Projects();
+            pmProjects.ProjectCode = "PM005";
+            pmProjects.Status = 1;
+            pmProjects.ProjectName = "testProject5";
+            pmProjects.ProjectStartDate = DateTime.Today;
+            pmProjects.ProjectEndDate = DateTime.Today.AddDays(200);
+
+
+            List<PM_Types> typeList = SynergyService.GetAllTypes();
+
+
+            PM_Types selectedType = typeList[1];
+            pmProjects.PM_Types = selectedType;
+
+
+            SynergyService.SaveProject(pmProjects);
+
+
             return View("NewProject");
         }
         [HttpPost]
@@ -106,6 +126,12 @@ namespace SynergyRMS.Controllers
         }
 
 
+
+        public ActionResult SaveProjectResources()
+        {
+
+            return View("EditProject");
+        }
 
 
         public ActionResult Docs()
