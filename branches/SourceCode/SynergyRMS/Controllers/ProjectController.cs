@@ -106,7 +106,7 @@ namespace SynergyRMS.Controllers
 
             selectedproject.ProjectCode = "PM005-3";
             selectedproject.Status = 1;
-            selectedproject.ProjectName = "testProject5";
+            selectedproject.ProjectName = "testProject5.1";
             selectedproject.ProjectStartDate = DateTime.Today;
             selectedproject.ProjectEndDate = DateTime.Today.AddDays(150);
 
