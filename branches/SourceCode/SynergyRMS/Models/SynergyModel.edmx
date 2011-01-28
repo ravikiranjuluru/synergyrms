@@ -2169,7 +2169,7 @@
         <EntityTypeShape EntityType="SynergyRMSModel.PM_Constraints" Width="1.5" PointX="6" PointY="2" Height="1.4279589843749998" IsExpanded="true" />
         <EntityTypeShape EntityType="SynergyRMSModel.PM_ProjectActingRole" Width="1.5" PointX="5.25" PointY="8" Height="1.4279589843749996" IsExpanded="true" />
         <EntityTypeShape EntityType="SynergyRMSModel.PM_ProjectDocs" Width="1.5" PointX="5.25" PointY="11.125" Height="1.5923063151041674" IsExpanded="true" />
-        <EntityTypeShape EntityType="SynergyRMSModel.PM_ProjectResources" Width="2.375" PointX="8.25" PointY="7.75" Height="1.9210009765624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SynergyRMSModel.PM_ProjectResources" Width="1.5" PointX="8.25" PointY="7.75" Height="1.9210009765624996" IsExpanded="true" />
         <EntityTypeShape EntityType="SynergyRMSModel.PM_ProjectRisks" Width="1.5" PointX="5.25" PointY="13.375" Height="1.5923063151041674" IsExpanded="true" />
         <EntityTypeShape EntityType="SynergyRMSModel.PM_ProjectRoles" Width="1.5" PointX="3" PointY="11.875" Height="1.5923063151041674" IsExpanded="true" />
         <EntityTypeShape EntityType="SynergyRMSModel.PM_Projects" Width="1.5" PointX="3" PointY="7.125" Height="3.0714322916666674" IsExpanded="true" />
@@ -2242,32 +2242,33 @@
           <ConnectorPoint PointX="4.5" PointY="7.8882377460937505" />
           <ConnectorPoint PointX="4.75" PointY="7.8882377460937505" />
           <ConnectorPoint PointX="4.75" PointY="11.898077078776041" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="11.898077078776041" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="11.898077078776041" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="11.898077078776039" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="11.898077078776041" />
           <ConnectorPoint PointX="5.25" PointY="11.898077078776041" /></AssociationConnector>
         <AssociationConnector Association="SynergyRMSModel.FK_PM_ProjectResources_PM_ProjectRoles" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="13.2764794921875" />
-          <ConnectorPoint PointX="4.541666666666667" PointY="13.2764794921875" />
-          <ConnectorPoint PointX="4.708333333333333" PointY="13.2764794921875" />
-          <ConnectorPoint PointX="6.9713529166666666" PointY="13.2764794921875" />
-          <ConnectorPoint PointX="7.1380195833333326" PointY="13.2764794921875" />
-          <ConnectorPoint PointX="7.2760441666666669" PointY="13.2764794921875" />
-          <ConnectorPoint PointX="7.4427108333333329" PointY="13.2764794921875" />
-          <ConnectorPoint PointX="10.21875" PointY="13.2764794921875" />
-          <ConnectorPoint PointX="10.21875" PointY="9.6710009765625" />
-          </AssociationConnector>
+          <ConnectorPoint PointX="4.5" PointY="13.100481736328126" />
+          <ConnectorPoint PointX="4.541666666666667" PointY="13.100481736328126" />
+          <ConnectorPoint PointX="4.708333333333333" PointY="13.100481736328126" />
+          <ConnectorPoint PointX="5" PointY="13.100481736328126" />
+          <ConnectorPoint PointX="5" PointY="10.0460009765625" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="10.0460009765625" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="10.0460009765625" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="10.0460009765625" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="10.0460009765625" />
+          <ConnectorPoint PointX="9" PointY="10.0460009765625" />
+          <ConnectorPoint PointX="9" PointY="9.6710009765625" /></AssociationConnector>
         <AssociationConnector Association="SynergyRMSModel.FK_PM_ProjectResources_PM_Projects" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="9.58072998046875" />
           <ConnectorPoint PointX="4.541666666666667" PointY="9.5807299804687478" />
           <ConnectorPoint PointX="4.958333333333333" PointY="9.58072998046875" />
-          <ConnectorPoint PointX="6.9713529166666666" PointY="9.58072998046875" />
-          <ConnectorPoint PointX="7.1380195833333326" PointY="9.58072998046875" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="9.58072998046875" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="9.58072998046875" />
           <ConnectorPoint PointX="7.791666666666667" PointY="9.58072998046875" />
           <ConnectorPoint PointX="7.958333333333333" PointY="9.58072998046875" />
           <ConnectorPoint PointX="8.25" PointY="9.58072998046875" /></AssociationConnector>
         <AssociationConnector Association="SynergyRMSModel.FK_PM_ProjectResources_UM_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.05468625" PointY="16.375" />
-          <ConnectorPoint PointX="7.05468625" PointY="7.84375" />
+          <ConnectorPoint PointX="7.15625" PointY="16.375" />
+          <ConnectorPoint PointX="7.15625" PointY="7.84375" />
           <ConnectorPoint PointX="7.791666666666667" PointY="7.8437499999999991" />
           <ConnectorPoint PointX="7.958333333333333" PointY="7.84375" />
           <ConnectorPoint PointX="8.25" PointY="7.84375" /></AssociationConnector>
@@ -2301,8 +2302,8 @@
           <ConnectorPoint PointX="4.1249994999999995" PointY="5.4673063151041674" />
           <ConnectorPoint PointX="4.1249994999999995" PointY="6.875" />
           <ConnectorPoint PointX="7.875" PointY="6.875" />
-          <ConnectorPoint PointX="7.875" PointY="12.333189324869792" />
-          <ConnectorPoint PointX="8.25" PointY="12.333189324869792" /></AssociationConnector>
+          <ConnectorPoint PointX="7.875" PointY="12.4639794921875" />
+          <ConnectorPoint PointX="8.25" PointY="12.4639794921875" /></AssociationConnector>
         <AssociationConnector Association="SynergyRMSModel.FK_UM_RoleScreenFunctions_UM_Roles" ManuallyRouted="false">
           <ConnectorPoint PointX="7.5" PointY="23.707021484375" />
           <ConnectorPoint PointX="8.25" PointY="23.707021484375" /></AssociationConnector>

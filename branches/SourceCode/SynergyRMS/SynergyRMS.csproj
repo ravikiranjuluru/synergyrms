@@ -80,8 +80,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\SynergyModel.Designer.cs" />
-    <Compile Include="Models\SynergyModel1.Designer.cs">
+    <Compile Include="Models\SynergyModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SynergyModel.edmx</DependentUpon>
@@ -430,9 +429,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\App.Config" />
+  </ItemGroup>
+  <ItemGroup>
     <EntityDeploy Include="Models\SynergyModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SynergyModel1.Designer.cs</LastGenOutput>
+      <LastGenOutput>SynergyModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
