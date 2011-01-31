@@ -14,6 +14,7 @@
         </table>
     </div>
 
+
     <script>
         $(document).ready(function() {
             $("#projectstartdate").datepicker();
@@ -225,7 +226,7 @@
                                                     <td class="formDetailDark" align="right" valign="middle">
                                                         <label for="projectstartdate">Start Date</label>Start Date:
                                                     </td>
-                                                    <td class="formDetail" align="left" valign="top">                                                 
+                                                    <td class="formDetail" align="left" valign="top">  
                                                         <input name="projectstartdate" id="projectstartdate"
                                                             class="textBox" size="15" maxlength="4" type="text">
                                                         <img src="../../Content/images/common/pick.gif" id="calstartdate"
@@ -273,7 +274,7 @@
                                                         <input name="btnSave" id="btnSave" class="button"
                                                             value="Save" type="submit">
                                                         <input name="btnClear" id="btnClear"
-                                                            class="button" value="Clear" type="reset">
+                                                            class="button" value="Clear" type="button" onclick="javascript:history.go(-1)">
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -291,4 +292,10 @@
             
         </tbody>
     </table>
+    
+    <script>
+        function GoBack() {
+            window.location(history - 1);
+        }
+    </script>
 </asp:Content>
