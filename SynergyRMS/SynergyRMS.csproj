@@ -31,7 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.ComponentModel.DataAnnotations">
@@ -51,7 +54,8 @@
     </Reference>
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>C:\Program Files\Microsoft ASP.NET\ASP.NET MVC 2\\Assemblies\System.Web.Mvc.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Data\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -70,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\GridViewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MyWorkController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
@@ -428,16 +433,55 @@
     <Content Include="Views\Timesheets\Index.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Microsoft.Web.Mvc.dll" />
+    <Content Include="Content\Datatable\demo_page.css" />
+    <Content Include="Content\Datatable\demo_table.css" />
+    <Content Include="GridView\Gantt\GanttBasicDBData.aspx" />
+    <Content Include="GridView\Gantt\GanttBasicDBUpload.aspx" />
+    <Content Include="GridView\Gantt\GanttBasicDef.xml" />
+    <Content Include="GridView\Grid\Defaults.xml" />
+    <Content Include="GridView\Grid\Ding.wav" />
+    <Content Include="GridView\Grid\Drag.cur" />
+    <Content Include="GridView\Grid\GridE.js" />
+    <Content Include="GridView\Grid\GridEOnDemand.js" />
+    <Content Include="GridView\Grid\Help.html" />
+    <Content Include="GridView\Grid\Modern\Backgrounds.gif" />
+    <Content Include="GridView\Grid\Modern\BackgroundsRight.gif" />
+    <Content Include="GridView\Grid\Modern\Button.gif" />
+    <Content Include="GridView\Grid\Modern\ButtonSpace.gif" />
+    <Content Include="GridView\Grid\Modern\FastPanel1.gif" />
+    <Content Include="GridView\Grid\Modern\FastPanel2.gif" />
+    <Content Include="GridView\Grid\Modern\Filter.gif" />
+    <Content Include="GridView\Grid\Modern\Gantt.gif" />
+    <Content Include="GridView\Grid\Modern\Grid.css" />
+    <Content Include="GridView\Grid\Modern\Menu.gif" />
+    <Content Include="GridView\Grid\Modern\Panel.gif" />
+    <Content Include="GridView\Grid\Modern\Sort.gif" />
+    <Content Include="GridView\Grid\Modern\Toolbar.gif" />
+    <Content Include="GridView\Grid\Modern\Toolbar.png" />
+    <Content Include="GridView\Grid\Modern\Tree.gif" />
+    <Content Include="GridView\Grid\Modern\TreeN.gif" />
+    <Content Include="GridView\Grid\NoDrag.cur" />
+    <Content Include="GridView\Grid\Text.xml" />
+    <Content Include="GridView\Styles\Box2.gif" />
+    <Content Include="GridView\Styles\Examples.css" />
+    <Content Include="GridView\Styles\Info.txt" />
+    <Content Include="GridView\Styles\Page.png" />
     <Content Include="Models\App.Config" />
+    <Content Include="Scripts\Datatable\jquery.dataTables.js" />
+    <Content Include="Scripts\Datatable\jquery.js" />
+    <Content Include="Views\GridView\Gantt.aspx" />
+    <Content Include="Views\GridView\Load.ascx" />
+    <Content Include="Views\GridView\Styles\Box2.gif" />
+    <Content Include="Views\GridView\Styles\Examples.css" />
+    <Content Include="Views\GridView\Styles\Info.txt" />
+    <Content Include="Views\GridView\Styles\Page.png" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\SynergyModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SynergyModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
