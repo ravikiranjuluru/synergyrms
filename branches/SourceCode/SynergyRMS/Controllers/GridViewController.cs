@@ -13,7 +13,8 @@ namespace SynergyRMS.Controllers
 
         public ActionResult Index()
         {
-            return View("ProjectSchedule");
+            //return View("ProjectSchedule");
+            return View("Gantt");
         }
 
     }
