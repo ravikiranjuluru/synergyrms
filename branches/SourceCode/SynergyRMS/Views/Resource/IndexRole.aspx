@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
     Inherits="System.Web.Mvc.ViewPage" %>
+    
+<%@ Import Namespace="SynergyRMS.Controllers" %>
+<%@ Import Namespace="Microsoft.Web.Mvc"%>
+
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="formContainer" id="masterpage_divMain">
@@ -14,9 +19,7 @@
                 </tbody>
             </table>
         </div>
-        
-        <% using (Html.BeginForm("AddRole", "Resource"))
-           { %>
+      
         <table width="100%" cellspacing="0" cellpadding="0" border="0">
             <tbody>
                 <tr>
@@ -95,7 +98,6 @@
                             <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
                                 id="masterPage_tblFormContentRoot">
                                 <tbody>
-                                    
                                     <tr>
                                         <td height="5" class="formDetailDarkNoPadding">
                                             <img height="1" width="180" id="ctl00_phFormContent_ucFormHeader_img1" src="../../Content/images/common/space.gif">
@@ -109,17 +111,76 @@
                                             Select User
                                         </td>
                                         <td valign="middle" align="left" class="formDetail" style="width: 211px">
-                                            <select name="ctl00$phFormContent$cboProjectLevel" id="projectLevel" 
-                                                class="comboBox" style="width: 85px">
-                                                <option selected="selected" value="Select">Select</option>
-                                                <option value="Top">User 1</option>
-                                                <option value="Medium">User 2</option>
-                                                <option value="Low">User 3</option>
-                                            </select>
-                                            <input type="submit" value="View" class="button" id="View" name="btnView" 
-                                                style="width: 85px; margin-left: 0px" />
+                                            <%if (ViewData["UserList"] != null)
+                                              { %>
+                                            <table id="Table1" class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th id="rolename" class="tableColumnTitle" width="219" align="left" height="30">
+                                                            <strong>First Name</strong> <a href="#">
+                                                                <img src="../../Content/images/icon/Sort-Icon.gif" width="7" height="10" border="0"
+                                                                    class="pdn-tp" alt="Sort by Role Name" border="0" title="Sort by Role Name" /></a>
+                                                        </th>
+                                                        <th id="Th1" class="tableColumnTitle" width="219" align="left" height="30">
+                                                            <strong>Last Name</strong> <a href="#">
+                                                                <img src="../../Content/images/icon/Sort-Icon.gif" width="7" height="10" border="0"
+                                                                    class="pdn-tp" alt="Sort by Role Name" border="0" title="Sort by Role Name" /></a>
+                                                        </th>
+                                                        <th id="Th2" class="tableColumnTitle" width="100" align="left" height="30">
+                                                           
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <%  foreach (MembershipUser user in (MembershipUserCollection)ViewData["Userlist"])
+                                                        {
+                                                            ProfileCommon Userprofile = Profile.GetProfile(user.UserName);
+                                                            string keyid = user.ProviderUserKey.ToString();        
+                                                    %>
+                                                    <tr>
+                                                        <td headers="ufname" class="tableRowDark" align="left" height="25">
+                                                            <strong>
+                                                                <%= Userprofile.FirstName%></strong>
+                                                        </td>
+                                                        <td headers="ufname" class="tableRowDark" align="left" height="25">
+                                                            <strong>
+                                                                <%= Userprofile.LastName%></strong>
+                                                        </td>
+                                                        <td headers="edit" align="left">
+                                                            <a href="#"><strong>
+                                                               <%--<%=Html.ActionLink("Edit", "EditUserRole", "ResourceController", new { @id = user.ProviderUserKey.ToString() }, "")%> --%>
+                                                               <%--<%=Html.ActionLink<ResourceController>(c => c.EditUserRole(user.ProviderUserKey.ToString()), "Edit",null)%>--%>
+                                                               <%= Html.ActionLink("Edit", "EditUserRole", "Resource")%>
+                                                               
+                                                            </strong></a>
+                                                        </td>
+                                                        <%--<td headers="Delete" class="evnrow-mdl" align="left">
+                                                            <a href="#"><strong>
+                                                                <%=Html.ActionLink<ResourceController>(c => c.Delete(user.ProviderUserKey.ToString()), "Delete", new { onclick = "return deleteConfirm();" })%>
+                                                            
+                                                            </strong></a>
+                                                        </td>--%>
+                                                    </tr>
+                                                    <%} %>
+                                                </tbody>
+                                            </table>
+                                            <%} %>
                                         </td>
                                     </tr>
+     <% using (Html.BeginForm("AddRole", "Resource"))
+           { %>
+            <%if (ViewData["EditUser"] != null)
+      {
+          var editUsername = ViewData["EditUser"].ToString();
+          bool[] permissionList = new bool[7];
+          if (ViewData["PermissionList"] != null)
+          {
+              permissionList = (bool[])ViewData["PermissionList"];
+          }
+         %>
+      
+                                              
+                         
                                     <tr>
                                         <td valign="middle" align="right" class="formDetailDark">
                                             <label for="resourceType">
@@ -127,14 +188,14 @@
                                             Resource Type:
                                         </td>
                                         <td valign="middle" align="left" class="formDetail">
-                                            <select class="comboBox" id="resourceType" 
-                                                name="ctl00$phFormContent$cboResourceType" style="width: 85px">
+                                            <select class="comboBox" id="resourceType" name="ctl00$phFormContent$cboResourceType"
+                                                style="width: 85px">
                                                 <option value="1">Employee</option>
                                                 <option value="2">Contractor</option>
                                                 <option value="4" selected="selected">Role</option>
                                             </select>
-                                            <input type="button" value="Add Roles" class="button" id="btnAddRoles" 
-                                                name="btnAddRoles" style="width: 85px">
+                                            <input type="button" value="Add Roles" class="button" id="btnAddRoles" name="btnAddRoles"
+                                                style="width: 85px">
                                         </td>
                                     </tr>
                                     <tr>
@@ -152,7 +213,7 @@
                                                                         <td align="left" style="width: 20%;" class="formTableColumnTitle">
                                                                             Role
                                                                         </td>
-                                                                        <td align="left" class="formTableColumnTitle" style="width: 159px"> 
+                                                                        <td align="left" class="formTableColumnTitle" style="width: 159px">
                                                                             Description
                                                                         </td>
                                                                         <td align="left" class="formTableColumnTitle">
@@ -163,17 +224,17 @@
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td align="left" style="width: 20%;" >
+                                                                        <td align="left" style="width: 20%;">
                                                                             Developer
                                                                         </td>
                                                                         <td align="left" style="width: 159px">
                                                                             This is basic permission developer role
                                                                         </td>
-                                                                        <td align="left" >
-                                                                           <a href="#">Edit</a>
+                                                                        <td align="left">
+                                                                            <a href="#">Edit</a>
                                                                         </td>
-                                                                        <td align="left" >
-                                                                           <a href="#">Delete</a>
+                                                                        <td align="left">
+                                                                            <a href="#">Delete</a>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -220,7 +281,14 @@
                                                         Add Project
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" checked="checked" class="checkBox" id="Checkbox7" name="ctl00$phFormContent$chkActive">
+                                                        <%if (permissionList[0])
+                                                          { %>
+                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkProAdd" name="chkProAdd">
+                                                        <%}
+                                                          else
+                                                          { %>
+                                                        <input type="checkbox" class="checkBox" id="chkProAdd" name="chkProAdd">
+                                                        <%} %>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -228,7 +296,14 @@
                                                         Edit Project
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" checked="checked" class="checkBox" id="Checkbox8" name="ctl00$phFormContent$chkActive">
+                                                        <%if (permissionList[1])
+                                                          { %>
+                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkProEdit" name="chkProEdit">
+                                                        <%}
+                                                          else
+                                                          { %>
+                                                        <input type="checkbox" class="checkBox" id="chkProEdit" name="chkProEdit">
+                                                        <%} %>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -236,7 +311,14 @@
                                                         Delete Project
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" checked="checked" class="checkBox" id="Checkbox9" name="ctl00$phFormContent$chkActive">
+                                                        <%if (permissionList[2])
+                                                          { %>
+                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkProDelete" name="chkProDelete">
+                                                        <%}
+                                                          else
+                                                          { %>
+                                                        <input type="checkbox" class="checkBox" id="chkProDelete" name="chkProDelete">
+                                                        <%} %>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -244,7 +326,14 @@
                                                         Add new Task
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" checked="checked" class="checkBox" id="Checkbox10" name="ctl00$phFormContent$chkActive">
+                                                        <%if (permissionList[3])
+                                                          { %>
+                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkTaskAdd" name="chkTaskAdd">
+                                                        <%}
+                                                          else
+                                                          { %>
+                                                        <input type="checkbox" class="checkBox" id="chkTaskAdd" name="chkTaskAdd">
+                                                        <%} %>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -252,7 +341,14 @@
                                                         Edit Task
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" checked="checked" class="checkBox" id="Checkbox11" name="ctl00$phFormContent$chkActive">
+                                                        <%if (permissionList[4])
+                                                          { %>
+                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkTaskEdit" name="chkTaskEdit">
+                                                        <%}
+                                                          else
+                                                          { %>
+                                                        <input type="checkbox" class="checkBox" id="chkTaskEdit" name="chkTaskEdit">
+                                                        <%} %>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -260,7 +356,14 @@
                                                         Delete Task
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" checked="checked" class="checkBox" id="Checkbox12" name="ctl00$phFormContent$chkActive">
+                                                        <%if (permissionList[5])
+                                                          { %>
+                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkTaskDelete" name="chkTaskDelete">
+                                                        <%}
+                                                          else
+                                                          { %>
+                                                        <input type="checkbox" class="checkBox" id="chkTaskDelete" name="chkAssgnPro">
+                                                        <%} %>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -268,7 +371,14 @@
                                                         Assign to a Project
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" checked="checked" class="checkBox" id="Checkbox13" name="ctl00$phFormContent$chkActive">
+                                                        <%if (permissionList[6])
+                                                          { %>
+                                                        <input type="checkbox" checked="checked" class="checkBox" id="chkAssgnPro" name="chkAssgnPro">
+                                                        <%}
+                                                          else
+                                                          { %>
+                                                        <input type="checkbox" class="checkBox" id="chkAssgnPro" name="chkAssgnPro">
+                                                        <%} %>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -284,9 +394,8 @@
                                     </tr>
                                 </tbody>
                             </table>
-                    </div>
+                        </div>
                     </td>
-                    
                 </tr>
             </tbody>
         </table>
@@ -300,8 +409,7 @@
                             <tbody>
                                 <tr>
                                     <td align="left">
-                                        <input type="submit" value="Save" class="button" 
-                                        id="btnSave" name="btnSave">&nbsp;
+                                        <input type="submit" value="Save" class="button" id="btnSave" name="btnSave">&nbsp;
                                     </td>
                                 </tr>
                             </tbody>
@@ -311,9 +419,24 @@
             </tbody>
         </table>
     </div>
+     <%} %>
     
     <%} %>
     <div style="padding-left: 10px; padding-right: 10px;">
     </div>
-    </td> </tr> </tbody> </table> </div>
+    <%-- </td> </tr> </tbody> </table> </div>--%>
+    <script>
+        function deleteConfirm() {
+            if (confirm("Are you sure you want to delete this Manager?")) {
+                $('#msgsuccess').hide();
+                $('#msgerror').hide();
+                return true;
+            }
+            else {
+                $('#msgsuccess').hide();
+                $('#msgerror').hide();
+                return false;
+            }
+        }
+    </script>
 </asp:Content>
