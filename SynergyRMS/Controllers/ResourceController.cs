@@ -295,8 +295,115 @@ namespace SynergyRMS.Controllers
         
         public ActionResult AddRole()
         {
+            try
+            {
+                string[] arryUser = Roles.GetUsersInRole("User");
+                MembershipUserCollection userlist = new MembershipUserCollection();
+
+                foreach (var user in arryUser)
+                {
+                    MembershipUser u = Membership.GetUser(user);
+                    if (u != null)
+                        userlist.Add(u);
+                }
+                ViewData["Userlist"] = userlist;
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            return View("IndexRole", ViewData["Userlist"]);
+        }
+
+        
+        public ActionResult EditUserRole()//(string i)
+        {
+            try
+            {
+                string[] arryUser = Roles.GetUsersInRole("User");
+                MembershipUserCollection userlist = new MembershipUserCollection();
+
+                foreach (var user in arryUser)
+                {
+                    MembershipUser u = Membership.GetUser(user);
+                    if (u != null)
+                        userlist.Add(u);
+                }
+                ViewData["Userlist"] = userlist;
+
+                //if (i != null)
+                //{
+                    //var edituser = Membership.GetUser(new Guid(i));
+                var edituser = Membership.GetUser("user");
+                    if (edituser != null)
+                    {
+                        var name = edituser.UserName;
+                        ViewData["EditUser"] = name;
+                        ViewData["PermissionList"] = GetUserRolePermissions(edituser.UserName);
+                       
+                    }
+                //}
+               
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
+
             return View("IndexRole");
         }
+        //public ActionResult EditUserRole(string i)
+        //{
+        //    try
+        //    {
+        //        string[] arryUser = Roles.GetUsersInRole("User");
+        //        MembershipUserCollection userlist = new MembershipUserCollection();
+
+        //        foreach (var user in arryUser)
+        //        {
+        //            MembershipUser u = Membership.GetUser(user);
+        //            if (u != null)
+        //                userlist.Add(u);
+        //        }
+        //        ViewData["Userlist"] = userlist;
+
+        //        //if (i != null)
+        //        //{
+        //        //var edituser = Membership.GetUser(new Guid(i));
+        //        var edituser = Membership.GetUser("user");
+        //        if (edituser != null)
+        //        {
+        //            var name = edituser.UserName;
+        //            ViewData["EditUser"] = name;
+        //            ViewData["PermissionList"] = GetUserRolePermissions(edituser.UserName);
+
+        //        }
+        //        //}
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return RedirectToAction("Index", "Dashboard");
+        //    }
+
+        //    return View("IndexRole");
+        //}
+        public bool[] GetUserRolePermissions(string username)
+        {
+            bool[] arrpermission = new bool[7];
+            
+                arrpermission[0] = true; //project - add
+                arrpermission[1] = false; //project - edit
+                arrpermission[2] = false; //project - delete
+                arrpermission[3] = true; //task - add
+                arrpermission[4] = false; //task - edit
+                arrpermission[5] = false; //task - delete
+                arrpermission[6] = true; //assign to task
+
+            return arrpermission;
+        }
+
         [HttpPost]
         public ActionResult AddRole(FormCollection form)
         {
