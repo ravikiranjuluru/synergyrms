@@ -439,6 +439,9 @@
     <Content Include="GridView\Gantt\GanttBasicDBData.aspx" />
     <Content Include="GridView\Gantt\GanttBasicDBUpload.aspx" />
     <Content Include="GridView\Gantt\GanttBasicDef.xml" />
+    <Content Include="GridView\Gantt\GridData.aspx" />
+    <Content Include="GridView\Gantt\GridLayout.aspx" />
+    <Content Include="GridView\Gantt\GridUpload.aspx" />
     <Content Include="GridView\Grid\Defaults.xml" />
     <Content Include="GridView\Grid\Ding.wav" />
     <Content Include="GridView\Grid\Drag.cur" />
