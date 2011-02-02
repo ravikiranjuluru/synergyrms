@@ -17,5 +17,10 @@ namespace SynergyRMS.Controllers
             return View("Gantt");
         }
 
+        public ActionResult Schedule()
+        {
+            return View("ResourceSchedule");
+        }
+
     }
 }

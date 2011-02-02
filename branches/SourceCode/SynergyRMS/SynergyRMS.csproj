@@ -436,6 +436,8 @@
     <Content Include="App_Data\Microsoft.Web.Mvc.dll" />
     <Content Include="Content\Datatable\demo_page.css" />
     <Content Include="Content\Datatable\demo_table.css" />
+    <Content Include="GridView\Framework\Export.aspx" />
+    <Content Include="GridView\Framework\TreeGridFramework.aspx" />
     <Content Include="GridView\Gantt\GanttBasicDBData.aspx" />
     <Content Include="GridView\Gantt\GanttBasicDBUpload.aspx" />
     <Content Include="GridView\Gantt\GanttBasicDef.xml" />
@@ -475,6 +477,8 @@
     <Content Include="Scripts\Datatable\jquery.js" />
     <Content Include="Views\GridView\Gantt.aspx" />
     <Content Include="Views\GridView\Load.ascx" />
+    <Content Include="Views\GridView\LoadSchedule.ascx" />
+    <Content Include="Views\GridView\ResourceSchedule.aspx" />
     <Content Include="Views\GridView\Styles\Box2.gif" />
     <Content Include="Views\GridView\Styles\Examples.css" />
     <Content Include="Views\GridView\Styles\Info.txt" />
@@ -485,6 +489,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SynergyModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GridView\GanttTree\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
