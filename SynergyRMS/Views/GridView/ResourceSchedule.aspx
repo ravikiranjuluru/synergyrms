@@ -320,12 +320,12 @@ background-color: ; /* #FDD800 for design only */
                                                         <tbody>
                                                             <tr>
                                                                 <td style="white-space: nowrap;" align="left">
-                                                                    Project:
+                                                                    User:
                                                                     <select name="ctl00$phFormContent$cboProjectLevel" id="Select1" class="comboBox">
                                                                         <option value="Select" selected="selected">Select</option>
-                                                                        <option value="Project1" >Project 1</option>
-                                                                        <option value="Project2">Project 2</option>
-                                                                        <option value="Project3">Project 3</option>
+                                                                        <option value="Project1" >User 1</option>
+                                                                        <option value="Project2">User 2</option>
+                                                                        <option value="Project3">User 3</option>
                                                                     </select>
                                                                     <%--<%=Html.DropDownList("feedbackcategory", (SelectList)ViewData["SectorList"], new { @class = "frmInputElements" })%>--%>
                                                                 </td>
