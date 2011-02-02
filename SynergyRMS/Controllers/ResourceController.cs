@@ -445,7 +445,7 @@ namespace SynergyRMS.Controllers
         }
         public ActionResult Schedule()
         {
-            return View("Schedule");
+            return View("ResourceSchedule");
         }
         public ActionResult Calendar()
         {

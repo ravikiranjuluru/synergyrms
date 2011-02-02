@@ -71,7 +71,7 @@
           <%if (isAdmin)
             { %>
         <tr>
-            <td>           
+            <td>
                 <!-- --------------------------------------------------------- -->
             <%-- <div class="outer">
                     <div class="boxtitle">
@@ -390,7 +390,7 @@
                                                                                         <img src="../../Content/images/common/cross.gif" id="Img11" title="Click for more information" />
                                                                                     </td>
                                                                                     <td>
-                                                                                        <a id="A7" title="Click here to View Resources Schedules" href="../Resource/Schedule">
+                                                                                        <a id="A7" title="Click here to View Resources Schedules" href="../GridView/Schedule">
                                                                                             View Resource Schedules</a>
                                                                                     </td>
                                                                                 </tr>
