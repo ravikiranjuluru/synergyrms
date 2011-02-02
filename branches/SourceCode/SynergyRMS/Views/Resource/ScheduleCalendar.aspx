@@ -67,7 +67,7 @@
         </td>
         <td nowrap="nowrap" onclick="__doPostBack('ctl00$ucTabStrip','Scheduling')" onmouseout="this.className='dashboardTabOff';"
             onmouseover="this.className='dashboardTabOn';" class="dashboardTabOff">
-            <a href="Schedule">Scheduling</a>
+            <a href="../GridView/Schedule">Scheduling</a>
         </td>
         <td class="dashboardTabSpace">
             <img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace0" src="../../Content/images/common/space.gif">
