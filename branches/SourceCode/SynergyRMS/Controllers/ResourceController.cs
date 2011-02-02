@@ -449,7 +449,7 @@ namespace SynergyRMS.Controllers
         }
         public ActionResult Calendar()
         {
-            return View("ScheduleCalendar");
+            return View("ScheduleCalendar2");
         }
         public ActionResult Utilisation()
         {

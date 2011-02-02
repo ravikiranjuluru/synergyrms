@@ -1,7 +1,24 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <!-- Some CSS for our example. (Not required for calendar plugin. Used for example.)-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>ScheduleCalendar2</title>
+    <!-- Calandar View usage -->
+<link rel="stylesheet" type="text/css" href="../../Content/calndarview/frontierCalendar/jquery-frontier-cal-1.3.2.css" />
+<link rel="stylesheet" type="text/css" href="../../Content/calndarview/colorpicker/colorpicker.css" />
+<link rel="stylesheet" type="text/css" href="../../Content/calndarview/jquery-ui/smoothness/jquery-ui-1.8.1.custom.css" />
+<script type="text/javascript" src="../../Scripts/calndarview/jquery-core/jquery-1.4.2-ie-fix.min.js"></script>
+<script type="text/javascript" src="../../Scripts/calndarview/jquery-ui/smoothness/jquery-ui-1.8.1.custom.min.js"></script>
+<script type="text/javascript" src="../../Scripts/calndarview/colorpicker/colorpicker.js"></script>
+<script type="text/javascript" src="../../Scripts/calndarview/jquery-qtip/jquery.qtip-1.0.js"></script>
+<script type="text/javascript" src="../../Scripts/calndarview/lib/jshashtable-2.1.js"></script>
+<script type="text/javascript" src="../../Scripts/calndarview/frontierCalendar/jquery-frontier-cal-1.3.2.min.js"></script>
+
+</head>
+<body>
+        <!-- Some CSS for our example. (Not required for calendar plugin. Used for example.)-->
 <style type="text/css" media="screen">
 /*
 Default font-size on the default ThemeRoller theme is set in ems, and with a value that when combined 
@@ -526,29 +543,11 @@ $(document).ready(function(){
 });
 </script>
 
-<h1 style="font-size: 30px; font-weight: bold;">jQuery Frontier Calendar</h1>
-
 <div id="tabs">
-	<ul>
-		<li><a href="#tabs-1">Introduction</a></li>
-		<li><a href="#tabs-2">Example</a></li>
-		<li><a href="#tabs-3">Documentation</a></li>
-	</ul>
 	
 	<div id="tabs-2">
 
 		<div id="example" style="margin: auto; width:80%;">
-		
-		<br>
-		
-		<div class="shadow" style="border: 1px solid #aaaaaa; padding: 3px;">
-			<b>
-			Click the calendar to add some agenda items.
-			<br><br>
-			Please note that Chrome prevents AJAX calls from reading local files on disk so the iCal example will not work. Try in Firefox, Safari, Opera, or IE.
-			For Chrome it should work when the iCal file is hosted online from your domain.
-			</b>
-		</div>
 		
 		<br><br>
 
@@ -559,9 +558,7 @@ $(document).ready(function(){
 			Date: <input type="text" id="dateSelect" size="20"/>
 			&nbsp;&nbsp;&nbsp;
 			<button id="BtnDeleteAll">Delete All</button>
-			<button id="BtnICalTest">iCal Test</button>
-			<input type="text" id="iCalSource" size="30" value="extra/fifa-world-cup-2010.ics"/>
-		</div>
+			&nbsp;</div>
 
 		<br>
 
@@ -713,5 +710,5 @@ $(document).ready(function(){
 </div><!-- end tabs -->
 
 <p>&nbsp;</p>
-
-</asp:Content>
+</body>
+</html>
