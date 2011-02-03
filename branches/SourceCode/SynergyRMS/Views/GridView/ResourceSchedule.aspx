@@ -12,23 +12,12 @@
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/sitenavigation.css" type="text/css"/>   
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/ScrollableTable.css" type="text/css" />
     <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/Grid.css" type="text/css"/>
-<style type="text/css">
 
-body {
-margin: 0;
-padding: 0;
-font-family: Verdana, Arial, sans-serif;
-font-size: 0.8em;
-text-align: center;
-color: #000000;
-background-color: ; /* #FDD800 for design only */
-}
-</style>
 
 </head>
 <body>
 
-    <script type="text/javascript">
+ <script type="text/javascript">
 
 
         function ags_main_doShowPopup(url) {
@@ -130,7 +119,8 @@ background-color: ; /* #FDD800 for design only */
             /*height: 110px;*/
         }
     </style>
-<table class="layout_header" border="0" cellpadding="0" cellspacing="0" width="100%">
+  
+ <table class="layout_header" border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td align="left" valign="middle" rowspan="2" style="padding-bottom: 5px;">
                 <table border="0" cellspacing="0" cellpadding="0">
@@ -229,7 +219,8 @@ background-color: ; /* #FDD800 for design only */
             </td>
         </tr>
     </table>
-    <div id="masterpage_divHead" class="formHead">
+ 
+ <div id="masterpage_divHead" class="formHead">
         <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tbody>
                 <tr>
@@ -240,161 +231,164 @@ background-color: ; /* #FDD800 for design only */
             </tbody>
         </table>
     </div>
-    <table cellspacing="0" cellpadding="0" class="dashboardTabStrip" style="border: medium none;
-                width: 100%;" id="tabTablectl00_ucTabStrip">
-                <tbody>
-                    <tr>
-                        <td align="left" id="ctl00_ucTabStrip_tdStretch">
-                            <div style="overflow: hidden;" id="ctl00_ucTabStrip_divTabContainer">
-                                <table cellspacing="0" cellpadding="0" border="0" id="ctl00_ucTabStrip_tabStrip">
-                                    <tbody>
-                                        <tr>
-                                        </tr>
-                                        <tr>
-                                            <td class="dashboardTabSpace">
-                                                <img height="1" width="5" id="ctl00_ucTabStrip_imgTabSpace" src="../../Content/images/common/space.gif">
-                                            </td>
-                                            <td nowrap="nowrap" class="dashboardTabSelected">
-                                                Scheduling
-                                            </td>
-                                            <td class="dashboardTabSpace">
-                                                <img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace0" src="../../Content/images/common/space.gif">
-                                            </td>
-                                            <td nowrap="nowrap" onclick="__doPostBack('ctl00$ucTabStrip','Calendar')" onmouseout="this.className='dashboardTabOff';"
-                                                onmouseover="this.className='dashboardTabOn';" class="dashboardTabOff">
-                                                <a href="../Resource/Calendar">Calendar</a>
-                                            </td>
-                                            <td class="dashboardTabSpace">
-                                                <img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace1" src="../../Content/images/common/space.gif">
-                                            </td>
-                                            <td nowrap="nowrap" onclick="__doPostBack('ctl00$ucTabStrip','Utilisation')" onmouseout="this.className='dashboardTabOff';"
-                                                onmouseover="this.className='dashboardTabOn';" class="dashboardTabOff">
-                                                <a href="../Resource/Utilisation">Utilisation</a>
-                                            </td>
-                                            <td class="dashboardTabSpace">
-                                                <img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace3" src="../../Content/images/common/space.gif">
-                                            </td>
-                                            <td nowrap="nowrap" width="100%" valign="middle" align="left" class="dashboardTabTail">
-                                                &nbsp;
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <table height="5" width="100%" cellspacing="0" cellpadding="0" border="0" class="dashboardTabStripBase">
+  
+  
+
+ 
+ <div style="padding: 0px;">
+        <table cellspacing="0" cellpadding="0" class="dashboardTabStrip" style="border: medium none;
+            width: 100%;" id="Table1">
+            <tbody>
+                <tr>
+                    <td align="left" id="Td3">
+                        <div style="overflow: hidden;" id="Div1">
+                            <table cellspacing="0" cellpadding="0" border="0" id="Table2">
                                 <tbody>
                                     <tr>
-                                        <td valign="middle" align="left" id="Td1" class="tabScrollEnabled">
-                                            <img align="middle" style="display: none;" id="Img1" src="../../Content/images/common/arrowleft_grey.gif">
+                                    </tr>
+                                    <tr>
+                                        <td class="dashboardTabSpace">
+                                            <img height="1" width="5" id="Img3" src="../../Content/images/common/space.gif">
                                         </td>
-                                        <td width="100%">
+                                         <td nowrap="nowrap" class="dashboardTabSelected">
+                                                Scheduling
+                                            </td>
+                                        <td class="dashboardTabSpace">
+                                            <img height="1" width="1" id="Img4" src="../../Content/images/common/space.gif">
                                         </td>
-                                        <td valign="middle" align="right" id="Td2" class="tabScrollEnabled">
-                                            <img align="middle" style="display: none;" id="Img2" src="../../Content/images/common/arrowright_grey.gif">
+                                        <td nowrap="nowrap" onclick="__doPostBack('ctl00$ucTabStrip','Calendar')" onmouseout="this.className='dashboardTabOff';"
+                                            onmouseover="this.className='dashboardTabOn';" class="dashboardTabOff">
+                                            <a href="../Resource/Calendar">Calendar</a>
+                                            
+                                        </td>
+                                        <td class="dashboardTabSpace">
+                                            <img height="1" width="1" id="ctl00_ucTabStrip_imgTabSpace2" src="../../Content/images/common/space.gif">
+                                        </td>
+                                        <td nowrap="nowrap" onclick="__doPostBack('ctl00$ucTabStrip','Utilisation')" onmouseout="this.className='dashboardTabOff';"
+                                            onmouseover="this.className='dashboardTabOn';" class="dashboardTabOff">
+                                            <a href="../Resource/Utilisation">Utilisation</a>
+                                        </td>
+                                        <td nowrap="nowrap" width="100%" valign="middle" align="left" class="dashboardTabTail">
+                                            &nbsp;
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tbody>
-            <tr>
-                <td>
-                    <table class="dashboardOperationsBarOuter" cellpadding="0" cellspacing="0" width="100%">
-                        <tbody>
-                            <tr>
-                                <td class="dashboardOperationsBar">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                        <tbody>
-                                            <tr>
-                                                <td align="left" valign="middle">
-                                                    <!-- Toolbar Content Goes Here -->
-                                                    <table border="0">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td style="white-space: nowrap;" align="left">
-                                                                    User:
-                                                                    <select name="ctl00$phFormContent$cboProjectLevel" id="Select1" class="comboBox">
-                                                                        <option value="Select" selected="selected">Select</option>
-                                                                        <option value="Project1" >User 1</option>
-                                                                        <option value="Project2">User 2</option>
-                                                                        <option value="Project3">User 3</option>
-                                                                    </select>
-                                                                    <%--<%=Html.DropDownList("feedbackcategory", (SelectList)ViewData["SectorList"], new { @class = "frmInputElements" })%>--%>
-                                                                </td>
-                                                                <td align="left">
-                                                                    <input type="submit" value="View" class="button" id="btnView" name="btnView">
-                                                                </td>
-                                                              
-                                                                <td>
-                                                                    &nbsp;
-                                                                </td>
-                                                                <td>
-                                                                    &nbsp;
-                                                                </td>
-                                                                <td>
-                                                                    &nbsp;
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                                <td style="padding-right: 0px;" align="right" valign="middle">
-                                                    <table border="0px" cellpadding="0" cellspacing="1">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td style="white-space: nowrap;" align="right" valign="middle">
-                                                                </td>
-                                                                <td class="" style="padding: 0px; white-space: nowrap;" align="right" valign="middle">
-                                                                    &nbsp;
-                                                                </td>
-                                                                <td class="" style="padding-left: 2px; padding-right: 4px;" align="right" valign="middle">
-                                                                    &nbsp;
-                                                                </td>
-                                                                <td class="" style="padding-right: 10px;" align="right" valign="middle">
-                                                                    &nbsp;
-                                                                </td>
-                                                                <td class="" style="white-space: nowrap;" align="right" valign="middle">
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                            </tr>
-                             <tr>
-                    <td>
-                       
+                        </div>
                     </td>
                 </tr>
                 <tr>
-                                <td>&nbsp;
-                               
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!-- Place Content That you want to appear between the Toolbar and the Tab Strip Here  -->
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    <td>
+                        <table height="5" width="100%" cellspacing="0" cellpadding="0" border="0" class="dashboardTabStripBase">
+                            <tbody>
+                                <tr>
+                                    <td valign="middle" align="left" id="btnScrollLeft" class="tabScrollEnabled">
+                                        <img align="middle" style="display: none;" id="ctl00_ucTabStrip_imgScrollLeft" src="../../Content/images/icon/arrowleft_grey.gif">
+                                    </td>
+                                    <td width="100%">
+                                    </td>
+                                    <td valign="middle" align="right" id="btnScrollRight" class="tabScrollEnabled">
+                                        <img align="middle" style="display: none;" id="ctl00_ucTabStrip_imgScrollRight" src="../../Content/images/icon/arrowright_grey.gif">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <table class="dashboardOperationsBarOuter" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td class="dashboardOperationsBar">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="left" valign="middle">
+                                                        <!-- Toolbar Content Goes Here -->
+                                                        <table border="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="white-space: nowrap;" align="left">
+                                                                        User:
+                                                                        <select name="ctl00$phFormContent$cboProjectLevel" id="Select2" class="comboBox">
+                                                                            <option value="Select" selected="selected">Select</option>
+                                                                            <option value="Project1">User 1</option>
+                                                                            <option value="Project2">User 2</option>
+                                                                            <option value="Project3">User 3</option>
+                                                                        </select>
+                                                                        <%--<%=Html.DropDownList("feedbackcategory", (SelectList)ViewData["SectorList"], new { @class = "frmInputElements" })%>--%>
+                                                                    </td>
+                                                                    <td align="left">
+                                                                        <input type="submit" value="View" class="button" id="Submit1" name="btnView">
+                                                                    </td>
+                                                                    <td>
+                                                                        &nbsp;
+                                                                    </td>
+                                                                    <td>
+                                                                        &nbsp;
+                                                                    </td>
+                                                                    <td>
+                                                                        &nbsp;
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                    <td style="padding-right: 0px;" align="right" valign="middle">
+                                                        <table border="0px" cellpadding="0" cellspacing="1">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="white-space: nowrap;" align="right" valign="middle">
+                                                                    </td>
+                                                                    <td class="" style="padding: 0px; white-space: nowrap;" align="right" valign="middle">
+                                                                        &nbsp;
+                                                                    </td>
+                                                                    <td class="" style="padding-left: 2px; padding-right: 4px;" align="right" valign="middle">
+                                                                        &nbsp;
+                                                                    </td>
+                                                                    <td class="" style="padding-right: 10px;" align="right" valign="middle">
+                                                                        &nbsp;
+                                                                    </td>
+                                                                    <td class="" style="white-space: nowrap;" align="right" valign="middle">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Place Content That you want to appear between the Toolbar and the Tab Strip Here  -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <%--<%Html.RenderPartial("LoadSchedule"); %>--%>
+    </div>
     <p style="text-align:justify">
-    <%Html.RenderPartial("LoadSchedule"); %>
+<%Html.RenderPartial("LoadSchedule"); %>
     </p>
     
                 

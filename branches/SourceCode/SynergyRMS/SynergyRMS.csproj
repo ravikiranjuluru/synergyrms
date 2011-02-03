@@ -80,6 +80,7 @@
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ResourceController.cs" />
+    <Compile Include="Controllers\RouteRegistrar.cs" />
     <Compile Include="Controllers\TimesheetsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -421,7 +422,6 @@
     <Content Include="Views\Resource\Role.aspx" />
     <Content Include="Views\Resource\RolePermission.aspx" />
     <Content Include="Views\Resource\Schedule.aspx" />
-    <Content Include="Views\Resource\ScheduleCalendar.aspx" />
     <Content Include="Views\Resource\ScheduleUtilisation.aspx" />
     <Content Include="Views\Resource\Test.aspx" />
     <Content Include="Views\Resource\ViewResources.aspx" />
@@ -561,8 +561,10 @@
     <Content Include="Views\GridView\Styles\Examples.css" />
     <Content Include="Views\GridView\Styles\Info.txt" />
     <Content Include="Views\GridView\Styles\Page.png" />
-    <Content Include="Views\Resource\ScheduleCalandarTextbackup.txt" />
-    <Content Include="Views\Resource\ScheduleCalendar2.aspx" />
+    <Content Include="Views\Resource\AssignRoles.aspx" />
+    <Content Include="Views\Resource\AssignRolesPermissions.aspx" />
+    <Content Include="Views\Resource\EditUser.aspx" />
+    <Content Include="Views\Resource\ScheduleCalendar.aspx" />
     <Content Include="Views\Resource\ScheduleCalendarControl.ascx" />
   </ItemGroup>
   <ItemGroup>

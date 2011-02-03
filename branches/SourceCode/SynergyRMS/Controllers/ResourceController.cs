@@ -428,6 +428,81 @@ namespace SynergyRMS.Controllers
             }           
             return View("IndexRole");
         }
+
+        public ActionResult EditUser()
+        {
+            try
+            {
+                string userkey = Request.QueryString["id"].ToString();
+
+                if (userkey != null)
+                {
+                    MembershipUser edituser = Membership.GetUser(new Guid(userkey));
+
+                    if (edituser != null)
+                    {
+                        //var name = edituser.UserName;
+                        ViewData["EditUser"] = edituser;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("AddRole", "Resource");
+            }
+            return View("EditUser");
+        }
+
+        public ActionResult AssignRoles()
+        {
+            try
+            {
+                string userkey = Request.QueryString["id"].ToString();
+
+                if (userkey != null)
+                {
+                    MembershipUser edituser = Membership.GetUser(new Guid(userkey));
+                    
+                    if (edituser != null)
+                    {
+                        //var name = edituser.UserName;
+                        ViewData["EditUser"] = edituser;
+                        ViewData["PermissionList"] = GetUserRolePermissions(edituser.UserName);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("AddRole", "Resource");
+            }
+            return View("AssignRoles");
+        }
+
+        public ActionResult AssignRolesEditPermission()
+        {
+            try
+            {
+                string userkey = Request.QueryString["id"].ToString();
+                string role = Request.QueryString["role"].ToString();
+                var edituser = Membership.GetUser(new Guid(userkey));
+
+                if (edituser != null)
+                {
+                    var name = edituser.UserName;
+                    ViewData["EditUser"] = edituser;
+                    ViewData["EditRole"] = edituser;
+                    ViewData["PermissionList"] = GetUserRolePermissions(edituser.UserName);
+                }
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("AssignRoles", "Resource");
+            }
+            return View("AssignRolesPermissions");
+        }
+
         public ActionResult AddSkill()
         {
             return View("IndexSkills");
@@ -449,7 +524,7 @@ namespace SynergyRMS.Controllers
         }
         public ActionResult Calendar()
         {
-            return View("ScheduleCalendar2");
+            return View("ScheduleCalendar");
         }
         public ActionResult Utilisation()
         {
