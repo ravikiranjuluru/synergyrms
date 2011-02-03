@@ -60,16 +60,29 @@ Conn.Close();
  //System.Data.OleDb.OleDbDataReader R = Cmd.ExecuteReader();
  Cmd.CommandText = "SELECT * FROM GanttBasic ORDER BY id";
  System.Data.SqlClient.SqlDataReader R = Cmd.ExecuteReader();
- Response.Write("<Grid><Body><B>");
+ Response.Write("<Grid><Cfg id=\"GanttBasic\"/><Cfg NumberId=\"1\" IdChars=\"0123456789\"/>"+
+     "<LeftCols>"+
+     "<C Name=\"id\" Width=\"20\" Type=\"Int\"/>"+
+      "<C Name=\"T\" Width=\"100\" Type=\"Text\"/>"+
+      "<C Name=\"U\" Width=\"100\" Type=\"Text\"/>"+
+      "<C Name=\"UL\" Width=\"60\" Type=\"Enum\" Enum=\"|User 1|User 2|User 3|User 4|User 5\"/>" +
+      "<C Name=\"S\" Width=\"60\" Type=\"Date\" Format=\"MMM dd\"/>"+
+      "<C Name=\"E\" Width=\"60\" Type=\"Date\" Format=\"MMM dd\"/>"+ 
+      "<C Name=\"C\" Width=\"50\" Type=\"Int\" Format=\"##\\%;;0\\%\"/>"+
+     "</LeftCols>");
+                                         
+ Response.Write("<Body><B>");
+ //Response.Write("<Grid><Body><B>");                                         
  while (R.Read())
- {    
+ {
      Response.Write("<I id='" + R["id"].ToString() + "'"
         + " T='" + R["T"].ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
         + " U='" + R["U"].ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
+        + " UL='" + R["UL"].ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
         + " S='" + R["S"].ToString() + "'"
         + " E='" + R["E"].ToString() + "'"
         + " C='" + R["C"].ToString() + "'"
-        + " D='" + R["D"].ToString() + "'"
+        //+ " D='" + R["D"].ToString() + "'"
         + "/>");
  }
  Response.Write("</B></Body></Grid>");

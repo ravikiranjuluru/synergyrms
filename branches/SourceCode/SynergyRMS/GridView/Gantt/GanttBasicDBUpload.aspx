@@ -40,14 +40,14 @@ try
          if (I.GetAttribute("Deleted") == "1") SQL = "DELETE FROM GanttBasic WHERE id=" + id;
          else if(I.GetAttribute("Added")=="1")
          {
-            SQL = "INSERT INTO GanttBasic(id,T,S,E,C,D) VALUES("
+            SQL = "INSERT INTO GanttBasic(id,T,U,UL,S,E,C) VALUES("
                + id + ","
                + "'" + I.GetAttribute("T").Replace("'","''") + "',"
                + "'" + I.GetAttribute("U").Replace("'", "''") + "',"
+               + "'" + I.GetAttribute("UL").Replace("'", "''") + "',"
                + "'" + I.GetAttribute("S") + "',"
                + "'" + I.GetAttribute("E") + "',"
-               + (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C")) + ","
-               + "'" + I.GetAttribute("D") + "')";
+               + (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C"))+ "')";
          }
          else if (I.GetAttribute("Changed") == "1")
          {
@@ -61,6 +61,7 @@ try
                   string val = A.Value;
                   if(name=="T") SQL += name + " = '" + val.Replace("'","''") + "',";
                   else if (name == "U") SQL += name + " = '" + val.Replace("'", "''") + "',";
+                  else if (name == "UL") SQL += name + " = '" + val.Replace("'", "''") + "',";
                   else if (name == "C") SQL += name + " = " + val + ",";
                   else if (name == "S" || name == "E" || name == "D") SQL += name + " = '" + val + "',";
                }

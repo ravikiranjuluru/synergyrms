@@ -6,7 +6,9 @@ Inherits="System.Web.Mvc.ViewUserControl" %>
 
 
 <div style="width: 100%; height: 520px;">
-    <bdo debug="0" layout_url="Gantt/GanttBasicDef.xml" data_url="Gantt/GanttBasicDBData.aspx"
+    <%--<bdo debug="1" layout_url="Gantt/GanttBasicDef.xml" data_url="Gantt/GanttBasicDBData.aspx"
+        upload_url="Gantt/GanttBasicDBUpload.aspx"></bdo>--%>
+        <bdo debug="0" layout_url="Gantt/GanttBasicDef.xml" data_url="Gantt/GanttBasicDBData.aspx"
         upload_url="Gantt/GanttBasicDBUpload.aspx"></bdo>
        
 </div>
