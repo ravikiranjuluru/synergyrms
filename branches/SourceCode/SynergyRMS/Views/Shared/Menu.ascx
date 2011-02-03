@@ -33,7 +33,7 @@
     <script type="text/javascript" src="../../Scripts/Macdoc/macdoc.js"></script>--%>
   <!-- end mac doc menu-->  
    <!-- mac doc menu-->
-<script type="text/javascript">
+<%--<script type="text/javascript">
     var opts =
     // horizontal Dock with images expanding downwards in the vertical axis...
     //top/middle/bottom 
@@ -50,7 +50,7 @@
         // Apply jqDock with no options...
         $('#menuDoc').jqDock(opts);
     });
-</script>
+</script>--%>
 <!-- end mac doc menu-->
       
    

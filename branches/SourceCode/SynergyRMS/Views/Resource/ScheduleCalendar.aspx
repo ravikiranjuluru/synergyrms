@@ -229,6 +229,7 @@
             </td>
         </tr>
     </table>
+  
   <div id="masterpage_divHead" class="formHead">
         <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tbody>
@@ -241,7 +242,7 @@
         </table>
     </div>
    
-       <div style="padding: 0px;">
+  <div style="padding: 0px;">
         <table cellspacing="0" cellpadding="0" class="dashboardTabStrip" style="border: medium none;
             width: 100%;" id="Table1">
             <tbody>
