@@ -7,6 +7,14 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<script type="text/javascript">
+    function lnkAssignRole_onClick(userkey) {
+        AECWinPopup.open('AssignRoles?id=' + userkey, 800, 800, popupCallback, '', false);
+    }
+    function lnkEditUser_onClick(userkey) {
+        AECWinPopup.open('EditUser?id=' + userkey, 600,300, popupCallback, '', false);
+    }
+</script>
     <div class="formContainer" id="masterpage_divMain">
         <div class="formHead" id="masterpage_divHead">
             <table width="100%" cellspacing="0" cellpadding="0" border="0" class="pageTitle">
@@ -116,19 +124,23 @@
                                             <table id="Table1" class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th id="rolename" class="tableColumnTitle" width="219" align="left" height="30">
+                                                    <th id="uname" class="tableColumnTitle" width="219" align="left" height="30">
+                                                            <strong>User Name</strong> <a href="#">
+                                                                <img src="../../Content/images/icon/Sort-Icon.gif" width="7" height="10" border="0"
+                                                                    class="pdn-tp" alt="Sort by Role Name" border="0" title="Sort by Role Name" /></a>
+                                                        </th>
+                                                        <th id="fname" class="tableColumnTitle" width="219" align="left" height="30">
                                                             <strong>First Name</strong> <a href="#">
                                                                 <img src="../../Content/images/icon/Sort-Icon.gif" width="7" height="10" border="0"
                                                                     class="pdn-tp" alt="Sort by Role Name" border="0" title="Sort by Role Name" /></a>
                                                         </th>
-                                                        <th id="Th1" class="tableColumnTitle" width="219" align="left" height="30">
+                                                        <th id="lname" class="tableColumnTitle" width="219" align="left" height="30">
                                                             <strong>Last Name</strong> <a href="#">
                                                                 <img src="../../Content/images/icon/Sort-Icon.gif" width="7" height="10" border="0"
                                                                     class="pdn-tp" alt="Sort by Role Name" border="0" title="Sort by Role Name" /></a>
                                                         </th>
-                                                        <th id="Th2" class="tableColumnTitle" width="100" align="left" height="30">
-                                                           
-                                                        </th>
+                                                        <th id="editUser" class="tableColumnTitle" width="100" align="left" height="30">  </th>
+                                                        <th id="editRole" class="tableColumnTitle" width="100" align="left" height="30">  </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -138,22 +150,33 @@
                                                             string keyid = user.ProviderUserKey.ToString();        
                                                     %>
                                                     <tr>
-                                                        <td headers="ufname" class="tableRowDark" align="left" height="25">
+                                                        <td headers="uname" class="tableRowDark" align="left" height="25">
+                                                            <strong>
+                                                                <%= user.UserName%></strong>
+                                                        </td>
+                                                        <td headers="fname" class="tableRowDark" align="left" height="25">
                                                             <strong>
                                                                 <%= Userprofile.FirstName%></strong>
                                                         </td>
-                                                        <td headers="ufname" class="tableRowDark" align="left" height="25">
+                                                        <td headers="fname" class="tableRowDark" align="left" height="25">
                                                             <strong>
                                                                 <%= Userprofile.LastName%></strong>
                                                         </td>
-                                                        <td headers="edit" align="left">
+                                                        <td headers="editUser" align="left">                                                            
+                                                             <a class="link" href="#" onclick="lnkEditUser_onClick('<%= user.ProviderUserKey.ToString()%>');" title="Edit User Roles">
+                                                             <strong><span class="text">Edit User</span></strong> </a>
+                                                        </td>
+                                                        <td headers="editRole" align="left">
                                                             <a href="#"><strong>
                                                                <%--<%=Html.ActionLink("Edit", "EditUserRole", "ResourceController", new { @id = user.ProviderUserKey.ToString() }, "")%> --%>
                                                                <%--<%=Html.ActionLink<ResourceController>(c => c.EditUserRole(user.ProviderUserKey.ToString()), "Edit",null)%>--%>
-                                                               <%= Html.ActionLink("Edit", "EditUserRole", "Resource")%>
-                                                               
+                                                               <%--<%= Html.ActionLink("Edit", "EditUserRole", "Resource")%>--%>                                                              
                                                             </strong></a>
+                                                             <a class="link" href="#" onclick="lnkAssignRole_onClick('<%= user.ProviderUserKey.ToString()%>');" title="Edit User Roles">
+                                                                            <strong><span class="text">Edit Roles</span></strong> </a>
                                                         </td>
+                                                        
+                                                        
                                                         <%--<td headers="Delete" class="evnrow-mdl" align="left">
                                                             <a href="#"><strong>
                                                                 <%=Html.ActionLink<ResourceController>(c => c.Delete(user.ProviderUserKey.ToString()), "Delete", new { onclick = "return deleteConfirm();" })%>

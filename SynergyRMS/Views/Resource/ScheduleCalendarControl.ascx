@@ -1,26 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" 
 Inherits="System.Web.Mvc.ViewUserControl" %>
 
-    <!-- Some CSS for our example. (Not required for calendar plugin. Used for example.)-->
-<style type="text/css" media="screen">
-/*
-Default font-size on the default ThemeRoller theme is set in ems, and with a value that when combined 
-with body { font-size: 62.5%; } will align pixels with ems, so 11px=1.1em, 14px=1.4em. If setting the 
-body font-size to 62.5% isn't an option, or not one you want, you can set the font-size in ThemeRoller 
-to 1em or set it to px.
-http://osdir.com/ml/jquery-ui/2009-04/msg00071.html
-*/
-body { font-size: 62.5%; }
-.shadow {
-	-moz-box-shadow: 3px 3px 4px #aaaaaa;
-	-webkit-box-shadow: 3px 3px 4px #aaaaaa;
-	box-shadow: 3px 3px 4px #aaaaaa;
-	/* For IE 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aaaaaa')";
-	/* For IE 5.5 - 7 */
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aaaaaa');
-}
-</style>
+
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -526,29 +507,13 @@ body { font-size: 62.5%; }
     });
 </script>
 
-<h1 style="font-size: 30px; font-weight: bold;">jQuery Frontier Calendar</h1>
-
 <div id="tabs">
-	<ul>
-		<li><a href="#tabs-1">Introduction</a></li>
-		<li><a href="#tabs-2">Example</a></li>
-		<li><a href="#tabs-3">Documentation</a></li>
-	</ul>
 	
 	<div id="tabs-2">
 
 		<div id="example" style="margin: auto; width:80%;">
 		
 		<br>
-		
-		<div class="shadow" style="border: 1px solid #aaaaaa; padding: 3px;">
-			<b>
-			Click the calendar to add some agenda items.
-			<br><br>
-			Please note that Chrome prevents AJAX calls from reading local files on disk so the iCal example will not work. Try in Firefox, Safari, Opera, or IE.
-			For Chrome it should work when the iCal file is hosted online from your domain.
-			</b>
-		</div>
 		
 		<br><br>
 
@@ -558,10 +523,8 @@ body { font-size: 62.5%; }
 			&nbsp;&nbsp;&nbsp;
 			Date: <input type="text" id="dateSelect" size="20"/>
 			&nbsp;&nbsp;&nbsp;
-			<button id="BtnDeleteAll">Delete All</button>
-			<button id="BtnICalTest">iCal Test</button>
-			<input type="text" id="iCalSource" size="30" value="extra/fifa-world-cup-2010.ics"/>
-		</div>
+			<button id="BtnDeleteAll" visible="false">Delete All</button>
+			&nbsp;</div>
 
 		<br>
 
@@ -698,6 +661,8 @@ body { font-size: 62.5%; }
 			</fieldset>
 			</form>
 		</div>
+		<!-- END Add event modal form -->
+		
 		
 		<div id="display-event-form" title="View Agenda Item">
 			
@@ -705,7 +670,9 @@ body { font-size: 62.5%; }
 
 		<p>&nbsp;</p>
 
-	</div><!-- end example tab -->
+	</div>
+	
+	<!-- end example tab -->
 
 
 
