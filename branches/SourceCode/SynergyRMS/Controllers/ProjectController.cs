@@ -21,16 +21,35 @@ namespace SynergyRMS.Controllers
         public ActionResult NewProject()
         {
             //string[] allProTypes = new string[2] { ("Type 1"), ("Type 2") };
-           List <PM_Types> allProTypes = SynergyService.GetAllTypes();
-            
-            if (allProTypes.Count > 0)
-            {
-                List<string> TypeList = new List<string>();
-                foreach (PM_Types type in allProTypes)
-                    if (type != null)
-                        TypeList.Add(type.TypeName);
-                ViewData["ProTypes"] = new SelectList(TypeList);
-            }
+            //if (allProTypes.Length > 0)
+            //{
+            //    List<string> TypeList = new List<string>();
+            //    foreach (string type in allProTypes)
+            //        if (type != null)
+            //            TypeList.Add(type.ToString());
+            //    ViewData["ProTypes"] = new SelectList(TypeList);
+            //}
+
+            //Dim list As New List(Of SelectListItem)
+    //list.Add(New c  With {.Value = 1, .Text = "Test1"})
+    //list.Add(New SelectListItem With {.Value = 2, .Text = "Test2"})
+    //ViewData("CategoryList") = list
+
+            List<PM_Types> allProTypes = SynergyService.GetAllTypes();
+            SelectList list = new SelectList(allProTypes,"TypeId","TypeName");
+        
+            ViewData["ProTypes"] = list;
+
+            //List<PM_Types> allProTypes = SynergyService.GetAllTypes();
+
+            //if (allProTypes.Count > 0)
+            //{
+            //    List<string> TypeList = new List<string>();
+              //  foreach (PM_Types type in allProTypes)
+            //        if (type != null)
+              //         TypeList.Add(type.TypeId);
+            //    ViewData["ProTypes"] = new SelectList(TypeList);
+            //}
             return View("NewProject");
         }
         [HttpPost]
@@ -38,32 +57,26 @@ namespace SynergyRMS.Controllers
         {
             try
             {
-                string proType = form["ddProTypes"].ToString();
-              //  string code = form["txtCode"].ToString();
-              //  string pname = form["txtprojectname"].ToString();
-              //  string pdesc = form["txtDescription"].ToString();
-              //  string formstatus = form["chkactive"].ToString();
-              // // string edate = form["calstartdate"].ToString();
-              // // string sdate = form["calenddate"].ToString();
-              //  /*-------------------Save Project ------------------*/
-              //  PM_Projects pmProjects = new PM_Projects();
-              //  pmProjects.ProjectCode = code;
-              //  if (formstatus == "on")
-              //  {
-              //      pmProjects.Status = 1;
-              //  }
-              //  else
-              //  {
-              //      pmProjects.Status = 0;
-              //  }
-              ////  pmProjects.Status = 1;
-              //  pmProjects.ProjectName = pname;
-              //  pmProjects.ProjectStartDate = DateTime.Today;
-              //  pmProjects.ProjectEndDate = DateTime.Today.AddDays(200);
-              //  List<PM_Types> typeList = SynergyService.GetAllTypes();
-              //  PM_Types selectedType = typeList[1];
-              //  pmProjects.PM_Types = selectedType;
-              //  SynergyService.SaveProject(pmProjects);
+               
+
+                string code = form["txtCode"].ToString();
+                string pname = form["txtprojectname"].ToString();
+                string pdesc = form["txtDescription"].ToString();
+                string proType = form["ddProTypes"].ToString();               
+                DateTime sdate  = Convert.ToDateTime(form["calstartdate"]);
+                DateTime edate = Convert.ToDateTime(form["calenddate"]);
+                /*-------------------Save Project ------------------*/
+                PM_Projects pmProjects = new PM_Projects();
+                pmProjects.ProjectCode = code;                
+                pmProjects.ProjectName = pname;
+                pmProjects.ProjectStartDate = sdate;
+                pmProjects.ProjectEndDate = sdate;
+
+                List<PM_Types> typeList = SynergyService.GetAllTypes();
+                PM_Types selectedType = typeList[1];
+                pmProjects.PM_Types.TypeId =Convert.ToInt32(proType);
+
+                SynergyService.SaveProject(pmProjects);
                 
                  
 
@@ -82,6 +95,8 @@ namespace SynergyRMS.Controllers
             }
             catch
             {
+                ViewData["status"] = "Error";
+                ViewData["msg"] = "Error in Project Creation.";
             }
             return View("NewProject");
         }
