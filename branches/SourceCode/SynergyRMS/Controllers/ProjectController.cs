@@ -61,7 +61,7 @@ namespace SynergyRMS.Controllers
                 Project.PM_Status = SynergyService.GetProjectStatusById(1);
                 Project.PM_Types = SynergyService.GetProjectTypebyId(Convert.ToInt32(form["ddProTypes"].ToString()));               
                 SynergyService.SaveProject(Project);
-
+                
                 if (Project.ProjectId>0)
                 {
                     ViewData["status"] = "Success";
