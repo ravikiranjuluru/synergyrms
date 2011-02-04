@@ -647,7 +647,7 @@
 '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
 '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
 '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-'Main Menu Display here</div>');
+'Main Menu</div>');
           $('#Taskbar').append('<div style="float: left;" id="Start-Menu-Button">&nbsp;</div>');
           $('#Taskbar').append('<div id="TaskbarPoints">&nbsp;</div>');
           $('body').append('<div id="Start-Menu">&nbsp;</div>');
