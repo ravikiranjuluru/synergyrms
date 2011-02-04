@@ -48,7 +48,7 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                             </td>
                                                             <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','ROLES')"
                                                                 onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                                <a href="/Resource/AddRole">Roles</a>
+                                                                <a href="/Resource/AddRole">Edit Users</a>
                                                             </td>
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace3" src="../../Content/images/common/space.gif">
