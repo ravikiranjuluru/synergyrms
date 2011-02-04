@@ -8,3 +8,8 @@ D:\Net Team\Notification_Test_Module\Notification_Test_Module\Notification_Test_
 D:\Net Team\Notification_Test_Module\Notification_Test_Module\Notification_Test_Module\obj\Debug\ResolveAssemblyReference.cache
 D:\Net Team\Notification_Test_Module\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.dll
 D:\Net Team\Notification_Test_Module\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.pdb
+F:\synergy\synergyrms\Notification_Test_Module\Notification_Test_Module\bin\Notification_Test_Module.dll
+F:\synergy\synergyrms\Notification_Test_Module\Notification_Test_Module\bin\Notification_Test_Module.pdb
+F:\synergy\synergyrms\Notification_Test_Module\Notification_Test_Module\obj\Debug\ResolveAssemblyReference.cache
+F:\synergy\synergyrms\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.dll
+F:\synergy\synergyrms\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.pdb
