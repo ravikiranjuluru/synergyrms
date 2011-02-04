@@ -6,7 +6,8 @@
 <head runat="server">
     <title>Edit User Info</title>
     <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/popup.css" />
-    <link id="lnkStyle" rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/styles.css" />
+    <link id="lnkStyle" rel="stylesheet" 
+    href="<%= ResolveUrl("~") %>Content/common/styles.css" />
     
 </head>
 <body>

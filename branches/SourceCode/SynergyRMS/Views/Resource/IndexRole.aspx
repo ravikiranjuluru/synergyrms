@@ -9,11 +9,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <script type="text/javascript">
     function lnkAssignRole_onClick(userkey) {
-        AECWinPopup.open('AssignRoles?id=' + userkey, 800, 800, popupCallback, '', false);
+        AECWinPopup.open('AssignRoles?id=' + userkey, 300, 300, popupCallback, '', false);
     }
     function lnkEditUser_onClick(userkey) {
         AECWinPopup.open('EditUser?id=' + userkey, 600,300, popupCallback, '', false);
     }
+    
 </script>
     <div class="formContainer" id="masterpage_divMain">
         <div class="formHead" id="masterpage_divHead">
@@ -21,7 +22,7 @@
                 <tbody>
                     <tr>
                         <td valign="middle" align="left">
-                            Add Resource to Role
+                            Edit User
                         </td>
                     </tr>
                 </tbody>
@@ -113,6 +114,15 @@
                                         <td height="5" width="100%" class="formDetailNoPadding">
                                             <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="../../Content/images/common/space.gif">
                                         </td>
+                                    </tr>
+                                    <tr>
+                                    <td valign="middle" align="right" class="formDetailDark">
+                                            Select User
+                                        </td>
+                                    <td valign="middle" align="left" class="formDetail" style="width: 211px">
+                                        <a href="#" onclick="window.location.reload()">
+                                            <img alt="" title="Click to Refresh User List" src="../../Content/images/icon/removeitem.gif"></a>
+                                    </td>
                                     </tr>
                                     <tr>
                                         <td valign="middle" align="right" class="formDetailDark">
