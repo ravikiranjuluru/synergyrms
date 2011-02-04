@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="synergydbadminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+      <Schema Namespace="synergydbadminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityContainer Name="synergydbadminModelStoreContainer">
           <EntitySet Name="aspnet_Applications" EntityType="synergydbadminModel.Store.aspnet_Applications" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="aspnet_Membership" EntityType="synergydbadminModel.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
@@ -950,7 +950,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="synergydbadminModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
@@ -982,6 +983,8 @@
           <EntitySet Name="PM_Types" EntityType="synergydbadminModel.PM_Types" />
           <EntitySet Name="TableData" EntityType="synergydbadminModel.TableData" />
           <EntitySet Name="UM_Designation" EntityType="synergydbadminModel.UM_Designation" />
+          <EntitySet Name="UM_Permission" EntityType="synergydbadminModel.UM_Permission" />
+          <EntitySet Name="UM_RolePermission" EntityType="synergydbadminModel.UM_RolePermission" />
           <EntitySet Name="UM_Roles" EntityType="synergydbadminModel.UM_Roles" />
           <EntitySet Name="UM_RoleScreenFunctions" EntityType="synergydbadminModel.UM_RoleScreenFunctions" />
           <EntitySet Name="UM_ScreenFunctions" EntityType="synergydbadminModel.UM_ScreenFunctions" />
@@ -1025,6 +1028,10 @@
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
           </AssociationSet>
+          <AssociationSet Name="FK_UM_RolePermission_aspnet_Roles" Association="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" />
+          </AssociationSet>
           <AssociationSet Name="FK_PM_Tasks_PM_Constraints" Association="synergydbadminModel.FK_PM_Tasks_PM_Constraints">
             <End Role="PM_Constraints" EntitySet="PM_Constraints" />
             <End Role="PM_Tasks" EntitySet="PM_Tasks" />
@@ -1053,6 +1060,10 @@
             <End Role="PM_Projects" EntitySet="PM_Projects" />
             <End Role="PM_ProjectRisks" EntitySet="PM_ProjectRisks" />
           </AssociationSet>
+          <AssociationSet Name="FK_PM_Projects_PM_Status" Association="synergydbadminModel.FK_PM_Projects_PM_Status">
+            <End Role="PM_Status" EntitySet="PM_Status" />
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+          </AssociationSet>
           <AssociationSet Name="FK_PM_Projects_PM_Types" Association="synergydbadminModel.FK_PM_Projects_PM_Types">
             <End Role="PM_Types" EntitySet="PM_Types" />
             <End Role="PM_Projects" EntitySet="PM_Projects" />
@@ -1072,6 +1083,10 @@
           <AssociationSet Name="FK_UM_UserSkills_PM_Skills" Association="synergydbadminModel.FK_UM_UserSkills_PM_Skills">
             <End Role="PM_Skills" EntitySet="PM_Skills" />
             <End Role="UserSkills" EntitySet="UserSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_RolePermission_UM_Permission" Association="synergydbadminModel.FK_UM_RolePermission_UM_Permission">
+            <End Role="UM_Permission" EntitySet="UM_Permission" />
+            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" />
           </AssociationSet>
           <AssociationSet Name="FK_UM_RoleScreenFunctions_UM_Roles" Association="synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles">
             <End Role="UM_Roles" EntitySet="UM_Roles" />
@@ -1093,17 +1108,7 @@
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
           </AssociationSet>
-          <EntitySet Name="UM_Permission" EntityType="synergydbadminModel.UM_Permission" />
-          <EntitySet Name="UM_RolePermission" EntityType="synergydbadminModel.UM_RolePermission" />
-          <AssociationSet Name="FK_UM_RolePermission_aspnet_Roles" Association="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles">
-            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
-            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" /></AssociationSet>
-          <AssociationSet Name="FK_UM_RolePermission_UM_Permission" Association="synergydbadminModel.FK_UM_RolePermission_UM_Permission">
-            <End Role="UM_Permission" EntitySet="UM_Permission" />
-            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" /></AssociationSet>
-          <AssociationSet Name="FK_PM_Projects_PM_Status" Association="synergydbadminModel.FK_PM_Projects_PM_Status">
-            <End Role="PM_Status" EntitySet="PM_Status" />
-            <End Role="PM_Projects" EntitySet="PM_Projects" /></AssociationSet></EntityContainer>
+        </EntityContainer>
         <EntityType Name="aspnet_Applications">
           <Key>
             <PropertyRef Name="ApplicationId" />
@@ -1194,8 +1199,9 @@
           <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="aspnet_Applications" Relationship="synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="UM_RolePermission" Relationship="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" FromRole="aspnet_Roles" ToRole="UM_RolePermission" />
           <NavigationProperty Name="aspnet_Users" Relationship="synergydbadminModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
-          <NavigationProperty Name="UM_RolePermission" Relationship="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" FromRole="aspnet_Roles" ToRole="UM_RolePermission" /></EntityType>
+        </EntityType>
         <EntityType Name="aspnet_SchemaVersions">
           <Key>
             <PropertyRef Name="Feature" />
@@ -1317,16 +1323,16 @@
           <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="ProjectStartDate" Type="DateTime" Nullable="false" />
           <Property Name="ProjectEndDate" Type="DateTime" Nullable="false" />
-          <Property Name="Status" Type="Int32" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="PM_ProjectActingRole" Relationship="synergydbadminModel.FK_PM_ActingRole_PM_Projects" FromRole="PM_Projects" ToRole="PM_ProjectActingRole" />
           <NavigationProperty Name="PM_ProjectDocs" Relationship="synergydbadminModel.FK_PM_ProjectDocs_PM_Projects" FromRole="PM_Projects" ToRole="PM_ProjectDocs" />
           <NavigationProperty Name="PM_ProjectResources" Relationship="synergydbadminModel.FK_PM_ProjectResources_PM_Projects" FromRole="PM_Projects" ToRole="PM_ProjectResources" />
           <NavigationProperty Name="PM_ProjectRisks" Relationship="synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks" FromRole="PM_Projects" ToRole="PM_ProjectRisks" />
+          <NavigationProperty Name="PM_Status" Relationship="synergydbadminModel.FK_PM_Projects_PM_Status" FromRole="PM_Projects" ToRole="PM_Status" />
           <NavigationProperty Name="PM_Types" Relationship="synergydbadminModel.FK_PM_Projects_PM_Types" FromRole="PM_Projects" ToRole="PM_Types" />
           <NavigationProperty Name="PM_ProjectSkills" Relationship="synergydbadminModel.FK_PM_ProjectSkills_PM_Projects" FromRole="PM_Projects" ToRole="PM_ProjectSkills" />
           <NavigationProperty Name="PM_Tasks" Relationship="synergydbadminModel.FK_PM_Tasks_PM_Tasks" FromRole="PM_Projects" ToRole="PM_Tasks" />
-          <NavigationProperty Name="PM_Status" Relationship="synergydbadminModel.FK_PM_Projects_PM_Status" FromRole="PM_Projects" ToRole="PM_Status" /></EntityType>
+        </EntityType>
         <EntityType Name="PM_ProjectSkills">
           <Key>
             <PropertyRef Name="ProjectSkillId" />
@@ -1351,7 +1357,8 @@
           <Property Name="StatusId" Type="Int32" Nullable="false" />
           <Property Name="StatusCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="StatusName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="PM_Projects" Relationship="synergydbadminModel.FK_PM_Projects_PM_Status" FromRole="PM_Status" ToRole="PM_Projects" /></EntityType>
+          <NavigationProperty Name="PM_Projects" Relationship="synergydbadminModel.FK_PM_Projects_PM_Status" FromRole="PM_Status" ToRole="PM_Projects" />
+        </EntityType>
         <EntityType Name="PM_TaskPrecissiord">
           <Key>
             <PropertyRef Name="TaskPrecissiorId" />
@@ -1412,6 +1419,22 @@
           <Property Name="Designation" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UM_Permission">
+          <Key>
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="PermissionId" Type="Int32" Nullable="false" />
+          <Property Name="Permission" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UM_RolePermission" Relationship="synergydbadminModel.FK_UM_RolePermission_UM_Permission" FromRole="UM_Permission" ToRole="UM_RolePermission" />
+        </EntityType>
+        <EntityType Name="UM_RolePermission">
+          <Key>
+            <PropertyRef Name="RolePermissionId" />
+          </Key>
+          <Property Name="RolePermissionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" FromRole="UM_RolePermission" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="UM_Permission" Relationship="synergydbadminModel.FK_UM_RolePermission_UM_Permission" FromRole="UM_RolePermission" ToRole="UM_Permission" />
         </EntityType>
         <EntityType Name="UM_Roles">
           <Key>
@@ -1572,6 +1595,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UM_RolePermission_aspnet_Roles">
+          <End Role="aspnet_Roles" Type="synergydbadminModel.aspnet_Roles" Multiplicity="0..1" />
+          <End Role="UM_RolePermission" Type="synergydbadminModel.UM_RolePermission" Multiplicity="*" />
+        </Association>
         <Association Name="FK_PM_Tasks_PM_Constraints">
           <End Role="PM_Constraints" Type="synergydbadminModel.PM_Constraints" Multiplicity="1" />
           <End Role="PM_Tasks" Type="synergydbadminModel.PM_Tasks" Multiplicity="*" />
@@ -1600,6 +1627,10 @@
           <End Role="PM_Projects" Type="synergydbadminModel.PM_Projects" Multiplicity="1" />
           <End Role="PM_ProjectRisks" Type="synergydbadminModel.PM_ProjectRisks" Multiplicity="*" />
         </Association>
+        <Association Name="FK_PM_Projects_PM_Status">
+          <End Role="PM_Status" Type="synergydbadminModel.PM_Status" Multiplicity="1" />
+          <End Role="PM_Projects" Type="synergydbadminModel.PM_Projects" Multiplicity="*" />
+        </Association>
         <Association Name="FK_PM_Projects_PM_Types">
           <End Role="PM_Types" Type="synergydbadminModel.PM_Types" Multiplicity="1" />
           <End Role="PM_Projects" Type="synergydbadminModel.PM_Projects" Multiplicity="*" />
@@ -1619,6 +1650,10 @@
         <Association Name="FK_UM_UserSkills_PM_Skills">
           <End Role="PM_Skills" Type="synergydbadminModel.PM_Skills" Multiplicity="0..1" />
           <End Role="UserSkills" Type="synergydbadminModel.UserSkills" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_UM_RolePermission_UM_Permission">
+          <End Role="UM_Permission" Type="synergydbadminModel.UM_Permission" Multiplicity="0..1" />
+          <End Role="UM_RolePermission" Type="synergydbadminModel.UM_RolePermission" Multiplicity="*" />
         </Association>
         <Association Name="FK_UM_RoleScreenFunctions_UM_Roles">
           <End Role="UM_Roles" Type="synergydbadminModel.UM_Roles" Multiplicity="1" />
@@ -1640,27 +1675,7 @@
           <End Role="aspnet_Roles" Type="synergydbadminModel.aspnet_Roles" Multiplicity="*" />
           <End Role="aspnet_Users" Type="synergydbadminModel.aspnet_Users" Multiplicity="*" />
         </Association>
-        <EntityType Name="UM_Permission">
-          <Key>
-            <PropertyRef Name="PermissionId" /></Key>
-          <Property Name="PermissionId" Type="Int32" Nullable="false" />
-          <Property Name="Permission" Type="String" Nullable="true" />
-          <NavigationProperty Name="UM_RolePermission" Relationship="synergydbadminModel.FK_UM_RolePermission_UM_Permission" FromRole="UM_Permission" ToRole="UM_RolePermission" /></EntityType>
-        <EntityType Name="UM_RolePermission">
-          <Key>
-            <PropertyRef Name="RolePermissionId" /></Key>
-          <Property Name="RolePermissionId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="aspnet_Roles" Relationship="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" FromRole="UM_RolePermission" ToRole="aspnet_Roles" />
-          <NavigationProperty Name="UM_Permission" Relationship="synergydbadminModel.FK_UM_RolePermission_UM_Permission" FromRole="UM_RolePermission" ToRole="UM_Permission" /></EntityType>
-        <Association Name="FK_UM_RolePermission_aspnet_Roles">
-          <End Type="synergydbadminModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="0..1" />
-          <End Type="synergydbadminModel.UM_RolePermission" Role="UM_RolePermission" Multiplicity="*" /></Association>
-        <Association Name="FK_UM_RolePermission_UM_Permission">
-          <End Type="synergydbadminModel.UM_Permission" Role="UM_Permission" Multiplicity="0..1" />
-          <End Type="synergydbadminModel.UM_RolePermission" Role="UM_RolePermission" Multiplicity="*" /></Association>
-        <Association Name="FK_PM_Projects_PM_Status">
-          <End Type="synergydbadminModel.PM_Status" Role="PM_Status" Multiplicity="1" />
-          <End Type="synergydbadminModel.PM_Projects" Role="PM_Projects" Multiplicity="*" /></Association></Schema>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1865,7 +1880,6 @@
                 <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
                 <ScalarProperty Name="ProjectStartDate" ColumnName="ProjectStartDate" />
                 <ScalarProperty Name="ProjectEndDate" ColumnName="ProjectEndDate" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1955,6 +1969,21 @@
                 <ScalarProperty Name="Designation" ColumnName="Designation" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_Permission">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_Permission)">
+              <MappingFragment StoreEntitySet="UM_Permission">
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+                <ScalarProperty Name="Permission" ColumnName="Permission" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_RolePermission">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_RolePermission)">
+              <MappingFragment StoreEntitySet="UM_RolePermission">
+                <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2129,6 +2158,15 @@
               <ScalarProperty Name="UserId" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UM_RolePermission_aspnet_Roles" TypeName="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" StoreEntitySet="UM_RolePermission">
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="UM_RolePermission">
+              <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" />
+            </EndProperty>
+            <Condition ColumnName="RoleId" IsNull="false" />
+          </AssociationSetMapping>
           <AssociationSetMapping Name="FK_PM_Tasks_PM_Constraints" TypeName="synergydbadminModel.FK_PM_Tasks_PM_Constraints" StoreEntitySet="PM_Tasks">
             <EndProperty Name="PM_Constraints">
               <ScalarProperty Name="ConstraintId" ColumnName="ConstraintId" />
@@ -2186,6 +2224,14 @@
               <ScalarProperty Name="RiskId" ColumnName="RiskId" />
             </EndProperty>
           </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_Projects_PM_Status" TypeName="synergydbadminModel.FK_PM_Projects_PM_Status" StoreEntitySet="PM_Projects">
+            <EndProperty Name="PM_Status">
+              <ScalarProperty Name="StatusId" ColumnName="Status" />
+            </EndProperty>
+            <EndProperty Name="PM_Projects">
+              <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+            </EndProperty>
+          </AssociationSetMapping>
           <AssociationSetMapping Name="FK_PM_Projects_PM_Types" TypeName="synergydbadminModel.FK_PM_Projects_PM_Types" StoreEntitySet="PM_Projects">
             <EndProperty Name="PM_Types">
               <ScalarProperty Name="TypeId" ColumnName="ProjectTypeId" />
@@ -2229,6 +2275,15 @@
             </EndProperty>
             <Condition ColumnName="SkillId" IsNull="false" />
           </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UM_RolePermission_UM_Permission" TypeName="synergydbadminModel.FK_UM_RolePermission_UM_Permission" StoreEntitySet="UM_RolePermission">
+            <EndProperty Name="UM_Permission">
+              <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+            </EndProperty>
+            <EndProperty Name="UM_RolePermission">
+              <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" />
+            </EndProperty>
+            <Condition ColumnName="PermissionId" IsNull="false" />
+          </AssociationSetMapping>
           <AssociationSetMapping Name="FK_UM_RoleScreenFunctions_UM_Roles" TypeName="synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles" StoreEntitySet="UM_RoleScreenFunctions">
             <EndProperty Name="UM_Roles">
               <ScalarProperty Name="RoleId" ColumnName="RoleId" />
@@ -2269,32 +2324,7 @@
               <ScalarProperty Name="UserId" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="UM_Permission">
-            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_Permission)">
-              <MappingFragment StoreEntitySet="UM_Permission">
-                <ScalarProperty Name="Permission" ColumnName="Permission" />
-                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="UM_RolePermission">
-            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_RolePermission)">
-              <MappingFragment StoreEntitySet="UM_RolePermission">
-                <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <AssociationSetMapping Name="FK_UM_RolePermission_aspnet_Roles" TypeName="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" StoreEntitySet="UM_RolePermission">
-            <EndProperty Name="UM_RolePermission">
-              <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" /></EndProperty>
-            <EndProperty Name="aspnet_Roles">
-              <ScalarProperty Name="RoleId" ColumnName="RoleId" /></EndProperty>
-            <Condition ColumnName="RoleId" IsNull="false" /></AssociationSetMapping>
-          <AssociationSetMapping Name="FK_UM_RolePermission_UM_Permission" TypeName="synergydbadminModel.FK_UM_RolePermission_UM_Permission" StoreEntitySet="UM_RolePermission">
-            <EndProperty Name="UM_RolePermission">
-              <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" /></EndProperty>
-            <EndProperty Name="UM_Permission">
-              <ScalarProperty Name="PermissionId" ColumnName="PermissionId" /></EndProperty>
-            <Condition ColumnName="PermissionId" IsNull="false" /></AssociationSetMapping>
-          <AssociationSetMapping Name="FK_PM_Projects_PM_Status" TypeName="synergydbadminModel.FK_PM_Projects_PM_Status" StoreEntitySet="PM_Projects">
-            <EndProperty Name="PM_Projects">
-              <ScalarProperty Name="ProjectId" ColumnName="ProjectId" /></EndProperty>
-            <EndProperty Name="PM_Status">
-              <ScalarProperty Name="StatusId" ColumnName="Status" /></EndProperty></AssociationSetMapping></EntityContainerMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -2313,15 +2343,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram Name="SynergyModel">
-        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Applications" Width="1.5" PointX="10.75" PointY="7.5" Height="2.5571907552083326" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Membership" Width="1.5" PointX="17.5" PointY="7.625" Height="5.2494108072916665" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Paths" Width="1.5" PointX="13" PointY="6.25" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="15.25" PointY="6.375" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="15.25" PointY="3.25" Height="1.9802864583333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Profile" Width="1.5" PointX="17.5" PointY="14.25" Height="2.1725878906250014" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Roles" Width="1.5" PointX="13" PointY="9.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Applications" Width="1.5" PointX="10.75" PointY="8.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Membership" Width="1.5" PointX="20.5" PointY="7.875" Height="5.2494108072916648" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Paths" Width="1.5" PointX="13" PointY="7.375" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="15.25" PointY="7.625" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="15.25" PointY="4.5" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Profile" Width="1.5" PointX="20.5" PointY="14.625" Height="2.1725878906250014" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Roles" Width="1.5" PointX="13" PointY="10.375" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Users" Width="1.5" PointX="15.25" PointY="9.875" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Users" Width="1.5" PointX="18.25" PointY="9.125" Height="3.1340950520833317" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.aspnet_WebEvent_Events" Width="1.5" PointX="10.75" PointY="0.75" Height="3.9033007812499996" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.GanttBasic" Width="1.5" PointX="2.75" PointY="0.75" Height="2.5571907552083335" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.PM_Constraints" Width="1.5" PointX="6" PointY="2.625" Height="1.5956835937499996" IsExpanded="true" />
@@ -2333,63 +2363,67 @@
         <EntityTypeShape EntityType="synergydbadminModel.PM_Projects" Width="1.5" PointX="3" PointY="7.625" Height="3.7109993489583317" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.PM_ProjectSkills" Width="1.5" PointX="5.25" PointY="5.625" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.PM_Skills" Width="1.5" PointX="3" PointY="4.5" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.PM_Status" Width="1.5" PointX="12.75" PointY="0.75" Height="1.5956835937499998" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.PM_TaskPrecissiord" Width="1.5" PointX="12.75" PointY="13.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_Status" Width="1.5" PointX="0.75" PointY="5.5" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_TaskPrecissiord" Width="1.5" PointX="12.75" PointY="0.75" Height="1.7879850260416672" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.PM_Tasks" Width="1.5" PointX="8.25" PointY="4" Height="2.9417936197916656" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.PM_TimeSheets" Width="1.5" PointX="14.75" PointY="13.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_TimeSheets" Width="1.5" PointX="14.75" PointY="0.75" Height="1.9802864583333333" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.PM_Types" Width="1.5" PointX="0.75" PointY="8.625" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.TableData" Width="1.5" PointX="0.75" PointY="15.75" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.UM_Designation" Width="1.5" PointX="14.75" PointY="0.75" Height="1.7879850260416672" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.UM_Roles" Width="1.5" PointX="7.75" PointY="19.375" Height="2.7494921875000031" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.UM_RoleScreenFunctions" Width="1.5" PointX="10" PointY="19.375" Height="2.749492187499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.UM_ScreenFunctions" Width="1.5" PointX="12.75" PointY="16.75" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.UM_Screens" Width="1.5" PointX="14.75" PointY="16.75" Height="2.5571907552083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.UM_UserRole" Width="1.5" PointX="10" PointY="14.375" Height="2.5571907552083335" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.UM_Users" Width="1.5" PointX="7.75" PointY="13.125" Height="5.2494108072916639" IsExpanded="true" />
-        <EntityTypeShape EntityType="synergydbadminModel.UserSkills" Width="1.5" PointX="10" PointY="11.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_Designation" Width="1.5" PointX="9.75" PointY="15.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_Permission" Width="1.5" PointX="13" PointY="13.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_RolePermission" Width="1.5" PointX="15.25" PointY="10.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_Roles" Width="1.5" PointX="7.75" PointY="13.375" Height="2.7494921875000014" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_RoleScreenFunctions" Width="1.5" PointX="10" PointY="22.375" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_ScreenFunctions" Width="1.5" PointX="15.75" PointY="13.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_Screens" Width="1.5" PointX="16.75" PointY="0.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_UserRole" Width="1.5" PointX="10" PointY="18.375" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_Users" Width="1.5" PointX="7.75" PointY="17.125" Height="5.2494108072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UserSkills" Width="1.5" PointX="10" PointY="12.625" Height="1.5956835937499996" IsExpanded="true" />
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Me__Appli__15502E78" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.25" PointY="8.7737939453125" />
-          <ConnectorPoint PointX="17.041666666666668" PointY="8.773793945312498" />
-          <ConnectorPoint PointX="17.333333333333332" PointY="8.7737939453125" />
-          <ConnectorPoint PointX="17.5" PointY="8.7737939453125" /></AssociationConnector>
+          <ConnectorPoint PointX="12.25" PointY="9.9612939453125" />
+          <ConnectorPoint PointX="18" PointY="9.9612939453125" />
+          <ConnectorPoint PointX="18" PointY="7.625" />
+          <ConnectorPoint PointX="18.916666666666668" PointY="7.6249999999999991" />
+          <ConnectorPoint PointX="19.083333333333332" PointY="7.625" />
+          <ConnectorPoint PointX="21.25" PointY="7.625" />
+          <ConnectorPoint PointX="21.25" PointY="7.875" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.25" PointY="7.9612939453125" />
-          <ConnectorPoint PointX="13" PointY="7.9612939453125" /></AssociationConnector>
+          <ConnectorPoint PointX="12.25" PointY="9.1487939453125" />
+          <ConnectorPoint PointX="13" PointY="9.1487939453125" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.25" PointY="9.5910953776041659" />
-          <ConnectorPoint PointX="13" PointY="9.5910953776041659" /></AssociationConnector>
+          <ConnectorPoint PointX="12.25" PointY="10.841095377604166" />
+          <ConnectorPoint PointX="13" PointY="10.841095377604166" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.90625" PointY="10.057190755208332" />
-          <ConnectorPoint PointX="11.90625" PointY="11.4612939453125" />
-          <ConnectorPoint PointX="15.25" PointY="11.4612939453125" /></AssociationConnector>
+          <ConnectorPoint PointX="12.25" PointY="10.199396972656249" />
+          <ConnectorPoint PointX="18.25" PointY="10.199396972656249" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Me__UserI__164452B1" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.75" PointY="11.374705403645834" />
-          <ConnectorPoint PointX="17.041666666666668" PointY="11.374705403645834" />
-          <ConnectorPoint PointX="17.208333333333332" PointY="11.374705403645834" />
-          <ConnectorPoint PointX="17.5" PointY="11.374705403645834" /></AssociationConnector>
+          <ConnectorPoint PointX="19.75" PointY="10.692047526041666" />
+          <ConnectorPoint PointX="20.5" PointY="10.692047526041666" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362" ManuallyRouted="false">
-          <ConnectorPoint PointX="14.5" PointY="7.2689925130208337" />
-          <ConnectorPoint PointX="15.25" PointY="7.2689925130208337" /></AssociationConnector>
+          <ConnectorPoint PointX="14.5" PointY="8.5189925130208337" />
+          <ConnectorPoint PointX="15.25" PointY="8.5189925130208337" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pe__PathI__5070F446" ManuallyRouted="false">
-          <ConnectorPoint PointX="13.75" PointY="6.25" />
-          <ConnectorPoint PointX="13.75" PointY="4.2401432291666667" />
-          <ConnectorPoint PointX="15.25" PointY="4.2401432291666667" /></AssociationConnector>
+          <ConnectorPoint PointX="13.75" PointY="7.375" />
+          <ConnectorPoint PointX="13.75" PointY="5.4901432291666667" />
+          <ConnectorPoint PointX="15.25" PointY="5.4901432291666667" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pe__UserI__5165187F" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.75" PointY="12.223152227864583" />
-          <ConnectorPoint PointX="17.125" PointY="12.223152227864583" />
-          <ConnectorPoint PointX="17.125" PointY="4.2401432291666667" />
-          <ConnectorPoint PointX="16.75" PointY="4.2401432291666667" /></AssociationConnector>
+          <ConnectorPoint PointX="19" PointY="9.125" />
+          <ConnectorPoint PointX="19" PointY="5.4901432291666667" />
+          <ConnectorPoint PointX="16.75" PointY="5.4901432291666667" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.53125" PointY="13.009095052083332" />
-          <ConnectorPoint PointX="16.53125" PointY="16.107687174479167" />
-          <ConnectorPoint PointX="17.5" PointY="16.107687174479167" /></AssociationConnector>
+          <ConnectorPoint PointX="19" PointY="12.259095052083332" />
+          <ConnectorPoint PointX="19" PointY="15.711293945312502" />
+          <ConnectorPoint PointX="20.5" PointY="15.711293945312502" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.5" PointY="11.547841796875" />
+          <ConnectorPoint PointX="15.25" PointY="11.547841796875" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_Tasks_PM_Constraints" ManuallyRouted="false">
           <ConnectorPoint PointX="7.5" PointY="3.3124995" />
           <ConnectorPoint PointX="9" PointY="3.3124995" />
           <ConnectorPoint PointX="9" PointY="4" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_ActingRole_PM_Projects" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="9.422841796875" />
-          <ConnectorPoint PointX="4.541666666666667" PointY="9.422841796874998" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="9.422841796875" />
           <ConnectorPoint PointX="4.833333333333333" PointY="9.422841796875" />
           <ConnectorPoint PointX="5.25" PointY="9.422841796875" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectActingRole_PM_ProjectRoles" ManuallyRouted="false">
@@ -2416,86 +2450,88 @@
           <ConnectorPoint PointX="9" PointY="10.547587890625" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectResources_PM_Projects" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="10.4153857421875" />
-          <ConnectorPoint PointX="4.541666666666667" PointY="10.415385742187498" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="10.415385742187498" />
           <ConnectorPoint PointX="4.958333333333333" PointY="10.4153857421875" />
           <ConnectorPoint PointX="8.25" PointY="10.4153857421875" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="8.4926688984375" />
-          <ConnectorPoint PointX="4.541666666666667" PointY="8.4926688984375" />
-          <ConnectorPoint PointX="4.708333333333333" PointY="8.4926688984375" />
           <ConnectorPoint PointX="4.75" PointY="8.4926688984375" />
           <ConnectorPoint PointX="4.75" PointY="15.393992513020834" />
           <ConnectorPoint PointX="5.25" PointY="15.393992513020834" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_Projects_PM_Status" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.3939925130208337" />
+          <ConnectorPoint PointX="2.75" PointY="6.3939925130208337" />
+          <ConnectorPoint PointX="2.75" PointY="6.5379850260416674" />
+          <ConnectorPoint PointX="3.2604146666666667" PointY="6.5379850260416665" />
+          <ConnectorPoint PointX="3.4270813333333336" PointY="6.5379850260416674" />
+          <ConnectorPoint PointX="3.75" PointY="6.5379850260416674" />
+          <ConnectorPoint PointX="3.75" PointY="7.625" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_Projects_PM_Types" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="9.422841796875" />
           <ConnectorPoint PointX="3" PointY="9.422841796875" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectSkills_PM_Projects" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.75" PointY="7.625" />
-          <ConnectorPoint PointX="3.75" PointY="6.422841796875" />
-          <ConnectorPoint PointX="4.541666666666667" PointY="6.4228417968749989" />
-          <ConnectorPoint PointX="4.708333333333333" PointY="6.422841796875" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="6.4228417968749989" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="6.422841796875" />
-          <ConnectorPoint PointX="5.25" PointY="6.422841796875" /></AssociationConnector>
-        <AssociationConnector Association="synergydbadminModel.FK_PM_Tasks_PM_Tasks" ManuallyRouted="false">
           <ConnectorPoint PointX="4.156252" PointY="7.625" />
-          <ConnectorPoint PointX="4.156252" PointY="6.7879850260416674" />
-          <ConnectorPoint PointX="4.541666666666667" PointY="6.7879850260416665" />
-          <ConnectorPoint PointX="4.708333333333333" PointY="6.7879850260416674" />
-          <ConnectorPoint PointX="5" PointY="6.7879850260416674" />
+          <ConnectorPoint PointX="4.156252" PointY="6.6674959435096151" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="6.6674959435096142" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="6.6674959435096151" />
+          <ConnectorPoint PointX="5.25" PointY="6.6674959435096151" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_Tasks_PM_Tasks" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.343748" PointY="7.625" />
+          <ConnectorPoint PointX="3.343748" PointY="6.4129850260416674" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="6.4129850260416665" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="6.4129850260416674" />
+          <ConnectorPoint PointX="5" PointY="6.4129850260416674" />
           <ConnectorPoint PointX="5" PointY="4.922841796875" />
           <ConnectorPoint PointX="8.25" PointY="4.922841796875" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectSkills_PM_Skills" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="5.9564925130208337" />
-          <ConnectorPoint PointX="4.541666666666667" PointY="5.9564925130208328" />
-          <ConnectorPoint PointX="4.708333333333333" PointY="5.9564925130208337" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="5.9564925130208328" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="5.9564925130208337" />
           <ConnectorPoint PointX="4.916666666666667" PointY="5.9564925130208328" />
           <ConnectorPoint PointX="5.083333333333333" PointY="5.9564925130208337" />
           <ConnectorPoint PointX="5.25" PointY="5.9564925130208337" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_UM_UserSkills_PM_Skills" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="5.1969942565104166" />
-          <ConnectorPoint PointX="4.625" PointY="5.1969942565104166" />
-          <ConnectorPoint PointX="4.625" PointY="11.25" />
-          <ConnectorPoint PointX="4.666666666666667" PointY="11.249999999999998" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="11.25" />
-          <ConnectorPoint PointX="10.75" PointY="11.25" />
-          <ConnectorPoint PointX="10.75" PointY="11.625" /></AssociationConnector>
+          <ConnectorPoint PointX="4.5" PointY="5.4084146549479168" />
+          <ConnectorPoint PointX="4.75" PointY="5.4084146549479168" />
+          <ConnectorPoint PointX="4.75" PointY="7.47068359375" />
+          <ConnectorPoint PointX="10.5" PointY="7.47068359375" />
+          <ConnectorPoint PointX="10.5" PointY="12.25" />
+          <ConnectorPoint PointX="10.75" PointY="12.25" />
+          <ConnectorPoint PointX="10.75" PointY="12.625" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_UM_RolePermission_UM_Permission" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.5" PointY="14.547841796875" />
+          <ConnectorPoint PointX="14.875" PointY="14.547841796875" />
+          <ConnectorPoint PointX="14.875" PointY="11.978014695312499" />
+          <ConnectorPoint PointX="15.25" PointY="11.978014695312499" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.25" PointY="20.749746093749998" />
-          <ConnectorPoint PointX="10" PointY="20.749746093749998" /></AssociationConnector>
+          <ConnectorPoint PointX="8.5" PointY="16.124492187500003" />
+          <ConnectorPoint PointX="8.5" PointY="16.875" />
+          <ConnectorPoint PointX="9.5" PointY="16.875" />
+          <ConnectorPoint PointX="9.5" PointY="23.749746093749998" />
+          <ConnectorPoint PointX="10" PointY="23.749746093749998" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_UM_UserRole_UM_Roles" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.25" PointY="20.031121046875" />
-          <ConnectorPoint PointX="9.625" PointY="20.031121046875" />
-          <ConnectorPoint PointX="9.625" PointY="15.653595377604164" />
-          <ConnectorPoint PointX="10" PointY="15.653595377604164" /></AssociationConnector>
+          <ConnectorPoint PointX="8.906252" PointY="16.124492187500003" />
+          <ConnectorPoint PointX="8.906252" PointY="16.625" />
+          <ConnectorPoint PointX="9.625" PointY="16.625" />
+          <ConnectorPoint PointX="9.625" PointY="19.653595377604166" />
+          <ConnectorPoint PointX="10" PointY="19.653595377604166" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_UM_UserRole_UM_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.25" PointY="14.951797688802081" />
-          <ConnectorPoint PointX="10" PointY="14.951797688802081" /></AssociationConnector>
+          <ConnectorPoint PointX="9.25" PointY="18.951797688802081" />
+          <ConnectorPoint PointX="9.4166666666666661" PointY="18.951797688802081" />
+          <ConnectorPoint PointX="9.7083333333333339" PointY="18.951797688802081" />
+          <ConnectorPoint PointX="10" PointY="18.951797688802081" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_UM_UserSkills_UM_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="8.5" PointY="13.125" />
-          <ConnectorPoint PointX="8.5" PointY="12.374999500000001" />
-          <ConnectorPoint PointX="10" PointY="12.374999500000001" /></AssociationConnector>
+          <ConnectorPoint PointX="8.1250005" PointY="17.125" />
+          <ConnectorPoint PointX="8.1250005" PointY="16.374492187500003" />
+          <ConnectorPoint PointX="8.4166666666666661" PointY="16.374492187500003" />
+          <ConnectorPoint PointX="8.5833333333333339" PointY="16.374492187500003" />
+          <ConnectorPoint PointX="8.8229186666666664" PointY="16.374492187500003" />
+          <ConnectorPoint PointX="8.9895853333333342" PointY="16.374492187500003" />
+          <ConnectorPoint PointX="9.5" PointY="16.374492187500003" />
+          <ConnectorPoint PointX="9.5" PointY="13.422841796875" />
+          <ConnectorPoint PointX="10" PointY="13.422841796875" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.aspnet_UsersInRoles" ManuallyRouted="false">
-          <ConnectorPoint PointX="14.5" PointY="10.605646972656249" />
-          <ConnectorPoint PointX="15.25" PointY="10.605646972656249" /></AssociationConnector>
-        <EntityTypeShape EntityType="synergydbadminModel.UM_Permission" Width="1.5" PointX="18" PointY="4.5" Height="1.5956835937499996" />
-        <EntityTypeShape EntityType="synergydbadminModel.UM_RolePermission" Width="1.5" PointX="20.25" PointY="9.5" Height="1.5956835937499996" />
-        <AssociationConnector Association="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" >
-          <ConnectorPoint PointX="14.5" PointY="9.8340714863281242" />
-          <ConnectorPoint PointX="15" PointY="9.8340714863281242" />
-          <ConnectorPoint PointX="15" PointY="9.625" />
-          <ConnectorPoint PointX="17.041666666666668" PointY="9.625" />
-          <ConnectorPoint PointX="17.208333333333332" PointY="9.625" />
-          <ConnectorPoint PointX="17.25" PointY="9.625" />
-          <ConnectorPoint PointX="17.25" PointY="7.375" />
-          <ConnectorPoint PointX="20.510414166666667" PointY="7.3749999999999991" />
-          <ConnectorPoint PointX="20.677080833333331" PointY="7.375" />
-          <ConnectorPoint PointX="21" PointY="7.375" />
-          <ConnectorPoint PointX="21" PointY="9.5" /></AssociationConnector>
-        <AssociationConnector Association="synergydbadminModel.FK_UM_RolePermission_UM_Permission" >
-          <ConnectorPoint PointX="19.5" PointY="5.297841796875" />
-          <ConnectorPoint PointX="20.5937475" PointY="5.297841796875" />
-          <ConnectorPoint PointX="20.5937475" PointY="9.5" /></AssociationConnector>
-        <AssociationConnector Association="synergydbadminModel.FK_PM_Projects_PM_Status" /></Diagram></edmx:Diagrams>
+          <ConnectorPoint PointX="14.5" PointY="10.53125" />
+          <ConnectorPoint PointX="18.25" PointY="10.53125" /></AssociationConnector></Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
