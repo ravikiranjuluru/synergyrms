@@ -195,7 +195,7 @@
                                                 <tr>
                                                     <td id="td2" class="BoxTitle" 
                                                         style="background-color: rgb(255, 255, 255); 
-                                                        height: 24px;
+                                                        height: 24px; 
                                                         padding-left: 4px; padding-right: 5px;">                                                   
                                                         Projects
                                                     </td>
@@ -296,7 +296,7 @@
                                                         style="background-color: rgb(255, 255, 255); 
                                                         height: 24px;
                                                         padding-left: 4px; padding-right: 5px;">                                                   
-                                                        Resources
+                                                        User Management
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -323,30 +323,25 @@
                                                                     <td style="padding-left: 10px;">
                                                                         <table id="Table2" style="width: 100%;">
                                                                             <tbody>
-                                                                                <tr id="Tr3">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img7" title="Click for more information">
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A3" title="Click here to Add a New Department" href="../Resource/Department">
-                                                                                            Add a New Department</a>
-                                                                                    </td>
-                                                                                </tr>
+                                                                           
                                                                                 <tr id="Tr4">
                                                                                     <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img8" title="Click for more information" />
+                                                                                        
                                                                                     </td>
                                                                                     <td>
-                                                                                        <a id="A4" title="Click here to Add a New Role" href="../Resource/Role">Add a New Role</a> 
+                                                                                        <a href="../Resource/Role"><img src="../../Content/images/common/role.png" id="Img8" 
+                                                                                            title="Click for more information" />User </a>
+                                                                                        <a id="A4" title="Click here to Add a New Role" href="../Resource/Role">Role</a> 
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr id="Tr5">
                                                                                     <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img9" title="Click for more information" />
+                                                                                        
                                                                                     </td>
                                                                                     <td>
-                                                                                        <a id="A5" title="Click here to Add a New Resource" href="../Resource">Add a New
-                                                                                            Resource</a>
+                                                                                        <a id="A5" title="Click here to Add a New Resource" href="../Resource"><img src="../../Content/images/common/users.jpg" id="Img9" 
+                                                                                            title="Click for more information" />U</a><a 
+                                                                                            href="../Resource">sers</a>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr id="Tr6">
