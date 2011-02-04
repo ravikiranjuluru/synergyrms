@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
-
+using System.Web.Security;
 namespace SynergyRMS.Models
 {
     /// <summary>
@@ -379,7 +379,9 @@ namespace SynergyRMS.Models
         /// <summary>
         /// Saves the user skills.
         /// </summary>
-        /// <param name="skillList">The skill list.</param>
+        /// <param name="projectId">The project id.</param>
+        /// <param name="userId">The user id.</param>
+        /// <returns></returns>
         //public static void SaveUserSkills(List<UM_UserSkills> skillList)
         //{
         //    try
@@ -403,6 +405,18 @@ namespace SynergyRMS.Models
 
         #region Project Resources
 
+        
+        public static bool AssignUsersToProject(int projectId, Guid userId)
+        {
+            PM_Projects project = GetProjectbyProjectId(projectId);
+            PM_ProjectResources resource = new PM_ProjectResources();
+            resource.PM_Projects = project;
+            resource.aspnet_Users = GetUserById(userId);
+            SaveProjectResources(resource);
+
+            return true;
+        }
+
         /// <summary>
         /// Saves the project resources.
         /// </summary>
@@ -418,6 +432,24 @@ namespace SynergyRMS.Models
             {
                 throw;
             }
+        }
+        /// <summary>
+        /// Gets the assigned users by project id.
+        /// </summary>
+        /// <param name="projectId">The project id.</param>
+        /// <returns></returns>
+        public static MembershipUserCollection GetAssignedUsersByProjectId(int projectId)
+        {
+            MembershipUserCollection userList = new MembershipUserCollection();
+            List<PM_ProjectResources> projectResourceList = GetAllProjectResoucesByProjectId(projectId);
+
+            foreach (PM_ProjectResources resource in projectResourceList)
+            {
+                resource.aspnet_UsersReference.Load();
+                userList.Add(Membership.GetUser(resource.aspnet_Users.UserName));
+            }
+          
+            return userList;
         }
 
         /// <summary>
@@ -441,7 +473,7 @@ namespace SynergyRMS.Models
                 foreach (PM_ProjectResources objResources in ResList)
                 {
                     objResources.PM_ProjectsReference.Load();
-                    objResources.PM_ProjectRolesReference.Load();
+                    //objResources.PM_ProjectRolesReference.Load();
                     //objResources.UM_UsersReference.Load();
                     //int aa = single1.T_User.UserId;
                 }
@@ -617,6 +649,20 @@ namespace SynergyRMS.Models
             return role;
         }
 
+        /// <summary>
+        /// Gets the user by id.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns></returns>
+        public static aspnet_Users GetUserById(Guid id)
+        {
+            aspnet_Users user = null;
+            var roleQuery = from p in GetSynegyRMSInstance().aspnet_Users
+                            where p.UserId == id
+                            select p;
+            user = roleQuery.First();
+            return user;
+        }
 
         #endregion
 
