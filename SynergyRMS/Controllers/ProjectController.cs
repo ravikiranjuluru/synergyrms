@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-//using ServiceLayer;
+using System.Web.Security;
 using SynergyRMS.Models;
 using System.Threading;
 using System.Globalization;
@@ -136,7 +136,39 @@ namespace SynergyRMS.Controllers
             return View("EditProjectForm");
         }
 
-        
+        public ActionResult AssignUsersProjectLoad()//*
+        {
+            int proid = Convert.ToInt32(Request.QueryString["id"]);
+            PM_Projects project = SynergyService.GetProjectbyProjectId(proid);
+            ViewData["EditProject"] = project;
+            MembershipUserCollection currentuserList= SynergyService.GetAssignedUsersByProjectId(proid);
+                                                
+            ViewData["CurrentUserList"] = currentuserList;
+            ViewData["Userlist"] = currentuserList;
+            return View("AssignUsers");
+        }
+        public ActionResult AssignUsertoProject(string id, string pid)//*
+        {
+            string userid = id;
+            int projectid = Convert.ToInt32(pid);
+            try
+            {                
+                ViewData["status"] = "Success";
+                ViewData["msg"] = "User Successfully Assigned.";
+            }
+            catch (Exception ee)
+            {
+                ViewData["status"] = "Error";
+                ViewData["msg"] = "Error in User Assigned.";
+            }
+            PM_Projects project = SynergyService.GetProjectbyProjectId(Convert.ToInt32(pid));
+            ViewData["EditProject"] = project;
+            MembershipUserCollection currentuserList = SynergyService.GetAssignedUsersByProjectId(projectid);
+            ViewData["CurrentUserList"] = currentuserList;
+            ViewData["Userlist"] = currentuserList;
+            return View("AssignUsers");
+        }
+
         public ActionResult SaveProjectResources()
         {
 
