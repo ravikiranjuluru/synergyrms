@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections;
 
 namespace SynergyRMS.Models
 {
@@ -472,6 +473,60 @@ namespace SynergyRMS.Models
         }
 
         /// <summary>
+        /// Saves the role permissions.
+        /// </summary>
+        /// <param name="permissionTable">The permission table.</param>
+        /// <param name="roleName">Name of the role.</param>
+        /// <returns></returns>
+        public static bool SaveRolePermissions(Hashtable permissionTable, String roleName)
+        {
+            foreach (string permission in permissionTable.Keys)
+            {
+                if ((bool)permissionTable[permission])
+                {
+                    UM_RolePermission rolePermission = new UM_RolePermission();
+                    rolePermission.aspnet_Roles = GetUserRoleIdByName(roleName);
+                    rolePermission.UM_Permission = SynergyService.GetPermissionByName(permission);
+                    GetSynegyRMSInstance().AddToUM_RolePermission(rolePermission);
+                    GetSynegyRMSInstance().SaveChanges();
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Gets the name of the permissions by role.
+        /// </summary>
+        /// <param name="roleName">Name of the role.</param>
+        /// <returns></returns>
+        public static Hashtable GetPermissionsByRoleName(string roleName)
+        {
+            List<UM_Permission> allPermissions=GetAllPermissions();
+            List<UM_Permission> activePermissions= GetUserpermissionsByRoleId( GetUserRoleIdByName(roleName).RoleId);          
+            
+            Hashtable permissionTable = new Hashtable();
+            foreach (UM_Permission Permission in allPermissions)
+            {
+                UM_Permission result = activePermissions.Find(
+                 delegate(UM_Permission p)
+                 {
+                     return p.PermissionId==Permission.PermissionId;
+                 }
+                 );
+
+                if (result != null)
+                {
+                    permissionTable.Add(Permission.Permission, true);
+                }
+                else
+                {
+                    permissionTable.Add(Permission.Permission, false);
+                }
+            }
+            return permissionTable;
+        }
+        /// <summary>
         /// Gets the userpermissions by role id.
         /// </summary>
         /// <param name="roleId">The role id.</param>
@@ -499,6 +554,18 @@ namespace SynergyRMS.Models
             return permissionList;
         }
 
+        /// <summary>
+        /// Gets the name of the permission by.
+        /// </summary>
+        /// <param name="Permission">The permission.</param>
+        /// <returns></returns>
+        public static UM_Permission GetPermissionByName(string Permission)
+        {
+                IQueryable<UM_Permission> permissionQuery = from p in GetSynegyRMSInstance().UM_Permission
+                                                                where p.Permission == Permission
+                                                                select p;
+                return permissionQuery.First();         
+        }
         /// <summary>
         /// Saves the role permissions.
         /// </summary>
@@ -541,14 +608,14 @@ namespace SynergyRMS.Models
         /// </summary>
         /// <param name="roleName">Name of the role.</param>
         /// <returns></returns>
-        public static Guid GetUserRoleIdByName (string roleName)
+        public static aspnet_Roles GetUserRoleIdByName(string roleName)
         {
             aspnet_Roles role = null;
             var roleQuery = from p in GetSynegyRMSInstance().aspnet_Roles
                             where p.RoleName == roleName
                                      select p;
             role = roleQuery.First();
-            return role.RoleId;
+            return role;
         }
 
 
