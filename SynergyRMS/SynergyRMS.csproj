@@ -566,6 +566,7 @@
     <Content Include="Views\GridView\Styles\Examples.css" />
     <Content Include="Views\GridView\Styles\Info.txt" />
     <Content Include="Views\GridView\Styles\Page.png" />
+    <Content Include="Views\Project\EditProjectForm.aspx" />
     <Content Include="Views\Resource\AssignRoles.aspx" />
     <Content Include="Views\Resource\AssignRolesPermissions.aspx" />
     <Content Include="Views\Resource\EditUser.aspx" />

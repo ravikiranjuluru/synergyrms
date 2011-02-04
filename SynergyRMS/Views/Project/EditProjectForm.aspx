@@ -313,7 +313,7 @@
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <%--<%=Html.DropDownList("ddProTypes", (SelectList)ViewData["ProTypes"], new { @class = "comboBox" })%>--%>
-                                                      <%=Html.DropDownList("ddProTypes", (SelectList)ViewData["ProTypes"], project.PM_Types.TypeName)%>
+                                                      <%=Html.DropDownList("ddProTypes", (SelectList)ViewData["ProTypes"], project.PM_Types.TypeId)%>
                                                     </td>
                                                 </tr>
                                                 <%} %>
@@ -324,7 +324,7 @@
                                                     <td class="formDetail" align="left" valign="top">  
                                                         <input name="projectstartdate" id="projectstartdate"
                                                             class="textBox" size="15" maxlength="4" type="text" 
-                                                            value="<%=String.Format("{0:mm/dd/yyyy}",project.ProjectStartDate)%>">
+                                                            value="<%=project.ProjectStartDate%>">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -334,7 +334,7 @@
                                                     <td class="formDetail" align="left" valign="top">
                                                       
                                                         <input name="projectenddate" id="projectenddate"
-                                                            class="textBox" size="15" maxlength="4" type="text" value="<%=String.Format("{0:mm/dd/yyyy}",project.ProjectEndDate)%>">
+                                                            class="textBox" size="15" maxlength="4" type="text" value="<%=project.ProjectEndDate%>">
                                                     </td>
                                                 </tr>
                                                                

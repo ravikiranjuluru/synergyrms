@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
-    Inherits="System.Web.Mvc.ViewPage<PM_Projects>" %>
+   UICulture="en" Culture="en-US" Inherits="System.Web.Mvc.ViewPage<PM_Projects>" %>
     <%@ Import Namespace="SynergyRMS.Models" %>
   <%--  <%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
     Inherits="System.Web.Mvc.ViewPage" %>--%>
