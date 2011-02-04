@@ -179,7 +179,7 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                     </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                             <label for="telephone">Telephone</label>Telephone:
+                                                             <label for="txtphone">Telephone</label>Telephone:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
                                                             <input type="text" maxlength="30" size="30" class="textBox"
@@ -218,15 +218,6 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                                 name="txtpwdconfirm">
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td valign="top" align="right" class="formDetailDark">
-                                                           <label for="notes"></label> Notes:
-                                                        </td>
-                                                        <td valign="top" align="left" class="formDetail">
-                                                            <textarea rows="2" cols="62" class="textArea" 
-                                                            id="notes" name="notes"></textarea>
-                                                        </td>
-                                                    </tr>
                                                    
                                                    
                                                     
@@ -234,15 +225,10 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                         <td valign="middle" align="right" style="padding-top: 4px; padding-bottom: 4px;"
                                                             class="formDetailDark" id="ctl00_phFormContent_ucCustomFields_tdCustomLabel25">
                                                             
-                                                            Photograph:
+                                                            Role:
                                                         </td>
-                                                        <td valign="middle" colspan="1" style="padding-top: 4px; padding-bottom: 4px;" class="formDetail"
-                                                            id="ctl00_phFormContent_ucCustomFields_tdCustomControl25">
-                                                            <a id="ctl00_phFormContent_ucCustomFields_cfCustom25_lnkUploadDocument"
-                                                             href="#">
-                                                                [Upload File]</a>
-                                                            
-                                                            &nbsp;
+                                                        <td valign="middle" colspan="1" style="padding-top: 4px; padding-bottom: 4px;" class="formDetail">
+                                                            <%=Html.DropDownList("ddRoles", (SelectList)ViewData["RoleList"],new { @class = "comboBox" })%>
                                                         </td>
                                                     </tr>
                                                     <tr>
