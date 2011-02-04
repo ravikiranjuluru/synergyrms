@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 //using ServiceLayer;
 using SynergyRMS.Models;
+using System.Threading;
+using System.Globalization;
 namespace SynergyRMS.Controllers
 {
     public class ProjectController : Controller
@@ -83,39 +85,49 @@ namespace SynergyRMS.Controllers
 
         public ActionResult EditProject()
         {
-            //IList<FeedbackSector> sector = _serviceUtil.GetFeedbackSectorsAll();
-            //List<string> sectorList = new List<string>();
-            //sectorList.Add("Not Applicable");
-            //foreach (FeedbackSector s in sector)
-            //    if (s != null)
-            //        sectorList.Add(s.Sector);
-            //ViewData["SectorList"] = new SelectList(sectorList);
-
-            /*-------------------Update Project ------------------*/
-
-            
-            //PM_Projects selectedproject = SynergyService.GetProjectbyProjectId(5);
-
-
-            //selectedproject.ProjectCode = "PM005-3";
-            //selectedproject.Status = 1;
-            //selectedproject.ProjectName = "testProject5.1";
-            //selectedproject.ProjectStartDate = DateTime.Today;
-            //selectedproject.ProjectEndDate = DateTime.Today.AddDays(150);
-
-
-            //List<PM_Types> typeList = SynergyService.GetAllTypes();
-
-
-            //PM_Types selectedType = typeList[1];
-            //selectedproject.PM_Types = selectedType;
-
-
-            //SynergyService.UpdateProject(selectedproject);
-
-
-
+            ViewData["ProjectList"] = SynergyService.GetAllProjects();
+            ViewData["ProTypes"] = GetProjectTypes();
             return View("EditProject");
+        }
+        public ActionResult EditProjectLoad()
+        {
+            int proid = Convert.ToInt32(Request.QueryString["id"]);
+            PM_Projects project = SynergyService.GetProjectbyProjectId(proid);
+            ViewData["EditProject"] = project;
+            
+            return View("EditProjectForm");
+        }
+        [HttpPost]
+        public ActionResult EditProject(FormCollection form)
+        {
+            try
+            {
+                int editproid = Convert.ToInt32(form["hdnid"].ToString());
+                PM_Projects project = SynergyService.GetProjectbyProjectId(editproid);
+                project.ProjectCode = form["txtCode"].ToString();
+                project.ProjectName = form["txtprojectname"].ToString();
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("de-DE");
+                project.ProjectStartDate = Convert.ToDateTime(form["projectstartdate"]);
+                project.ProjectEndDate = Convert.ToDateTime(form["projectenddate"]);
+                project.PM_Types = SynergyService.GetProjectTypebyId(Convert.ToInt32(form["ddProTypes"].ToString()));
+                if (form["hdnid"] != null)
+                {
+                    project.Status = Convert.ToInt32(form["hdnid"].ToString());
+                }
+
+                SynergyService.UpdateProject(project);
+                ViewData["status"] = "Success";
+                ViewData["msg"] = "Project Successfully Updated.";
+                ViewData["EditProject"] = project;
+            }
+            catch(Exception ee)
+            {
+                ViewData["status"] = "Error";
+                ViewData["msg"] = "Error in Project Update.";
+            }
+
+
+            return View("EditProjectForm");
         }
 
         
