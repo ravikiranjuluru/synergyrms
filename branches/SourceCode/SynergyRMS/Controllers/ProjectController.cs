@@ -95,7 +95,7 @@ namespace SynergyRMS.Controllers
             int proid = Convert.ToInt32(Request.QueryString["id"]);
             PM_Projects project = SynergyService.GetProjectbyProjectId(proid);
             ViewData["EditProject"] = project;
-            
+            ViewData["ProTypes"] = GetProjectTypes();
             return View("EditProjectForm");
         }
         [HttpPost]
@@ -107,15 +107,16 @@ namespace SynergyRMS.Controllers
                 PM_Projects project = SynergyService.GetProjectbyProjectId(editproid);
                 project.ProjectCode = form["txtCode"].ToString();
                 project.ProjectName = form["txtprojectname"].ToString();
-                Thread.CurrentThread.CurrentCulture = new CultureInfo("de-DE");
+                //Thread.CurrentThread.CurrentCulture = new CultureInfo("de-DE");
                 project.ProjectStartDate = Convert.ToDateTime(form["projectstartdate"]);
                 project.ProjectEndDate = Convert.ToDateTime(form["projectenddate"]);
+                project.SynergyService.GetProjectStatusById(1);
                 project.PM_Types = SynergyService.GetProjectTypebyId(Convert.ToInt32(form["ddProTypes"].ToString()));
-                if (form["hdnid"] != null)
+                if (form["chckStatus"] != null)
                 {
-                    project.Status = Convert.ToInt32(form["hdnid"].ToString());
+                    project.Status = Convert.ToInt32(form["chckStatus"].ToString());
                 }
-
+                 
                 SynergyService.UpdateProject(project);
                 ViewData["status"] = "Success";
                 ViewData["msg"] = "Project Successfully Updated.";

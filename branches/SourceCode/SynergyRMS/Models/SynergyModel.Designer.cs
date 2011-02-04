@@ -37,9 +37,10 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "aspnet_UsersInRoles", "aspnet_Roles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Roles), "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Users))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_UM_RolePermission_aspnet_Roles", "aspnet_Roles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.aspnet_Roles), "UM_RolePermission", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UM_RolePermission))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_UM_RolePermission_UM_Permission", "UM_Permission", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.UM_Permission), "UM_RolePermission", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UM_RolePermission))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_Projects_PM_Status", "PM_Status", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Status), "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_Projects))]
 
 // Original file name:
-// Generation date: 2/4/2011 5:07:44 PM
+// Generation date: 2/4/2011 6:32:59 PM
 namespace SynergyRMS.Models
 {
     
@@ -4655,6 +4656,43 @@ namespace SynergyRMS.Models
                 }
             }
         }
+        /// <summary>
+        /// There are no comments for PM_Status in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_Projects_PM_Status", "PM_Status")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public PM_Status PM_Status
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Status>("synergydbadminModel.FK_PM_Projects_PM_Status", "PM_Status").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Status>("synergydbadminModel.FK_PM_Projects_PM_Status", "PM_Status").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for PM_Status in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<PM_Status> PM_StatusReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Status>("synergydbadminModel.FK_PM_Projects_PM_Status", "PM_Status");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Status>("synergydbadminModel.FK_PM_Projects_PM_Status", "PM_Status", value);
+                }
+            }
+        }
     }
     /// <summary>
     /// There are no comments for synergydbadminModel.PM_ProjectSkills in the schema.
@@ -4975,6 +5013,27 @@ namespace SynergyRMS.Models
         private string _StatusName;
         partial void OnStatusNameChanging(string value);
         partial void OnStatusNameChanged();
+        /// <summary>
+        /// There are no comments for PM_Projects in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_Projects_PM_Status", "PM_Projects")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<PM_Projects> PM_Projects
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_Projects>("synergydbadminModel.FK_PM_Projects_PM_Status", "PM_Projects");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_Projects>("synergydbadminModel.FK_PM_Projects_PM_Status", "PM_Projects", value);
+                }
+            }
+        }
     }
     /// <summary>
     /// There are no comments for synergydbadminModel.PM_TaskPrecissiord in the schema.
