@@ -10,7 +10,7 @@ namespace SynergyRMS.Models
     /// </summary>
     public class SynergyService
     {
-        private static synergyrmsEntities _synergyRMSEntities = null;
+        private static synergydbadminEntities _synergyRMSEntities = null;
 
         #region Utility Methods
 
@@ -18,11 +18,11 @@ namespace SynergyRMS.Models
         /// Gets the synegy RMS instance.
         /// </summary>
         /// <returns></returns>
-        private static synergyrmsEntities GetSynegyRMSInstance()
+        private static synergydbadminEntities GetSynegyRMSInstance()
         {
             if (_synergyRMSEntities == null)
             {
-                _synergyRMSEntities = new synergyrmsEntities();
+                _synergyRMSEntities = new synergydbadminEntities();
             } 
             
             return _synergyRMSEntities;
@@ -364,24 +364,24 @@ namespace SynergyRMS.Models
         /// Saves the user skills.
         /// </summary>
         /// <param name="skillList">The skill list.</param>
-        public static void SaveUserSkills(List<UM_UserSkills> skillList)
-        {
-            try
-            {
-                foreach (UM_UserSkills skill in skillList)
-                {
-                    if (skill.UserSkillId == 0)
-                    {
-                        GetSynegyRMSInstance().AddToUM_UserSkills(skill);
-                    }
-                    GetSynegyRMSInstance().SaveChanges();
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        //public static void SaveUserSkills(List<UM_UserSkills> skillList)
+        //{
+        //    try
+        //    {
+        //        foreach (UM_UserSkills skill in skillList)
+        //        {
+        //            if (skill.UserSkillId == 0)
+        //            {
+        //                GetSynegyRMSInstance().AddToUM_UserSkills(skill);
+        //            }
+        //            GetSynegyRMSInstance().SaveChanges();
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //}
 
         #endregion
 
@@ -426,7 +426,7 @@ namespace SynergyRMS.Models
                 {
                     objResources.PM_ProjectsReference.Load();
                     objResources.PM_ProjectRolesReference.Load();
-                    objResources.UM_UsersReference.Load();
+                    //objResources.UM_UsersReference.Load();
                     //int aa = single1.T_User.UserId;
                 }
 

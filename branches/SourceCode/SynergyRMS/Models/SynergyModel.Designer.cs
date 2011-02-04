@@ -9,65 +9,64 @@
 //------------------------------------------------------------------------------
 
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK__aspnet_Me__Appli__75A278F5", "aspnet_Applications", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Applications), "aspnet_Membership", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Membership))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK__aspnet_Pa__Appli__2739D489", "aspnet_Applications", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Applications), "aspnet_Paths", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Paths))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK__aspnet_Ro__Appli__14270015", "aspnet_Applications", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Applications), "aspnet_Roles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Roles))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK__aspnet_Us__Appli__656C112C", "aspnet_Applications", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Applications), "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Users))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK__aspnet_Me__UserI__76969D2E", "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Users), "aspnet_Membership", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.aspnet_Membership))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK__aspnet_Pe__PathI__2CF2ADDF", "aspnet_Paths", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Paths), "aspnet_PersonalizationAllUsers", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.aspnet_PersonalizationAllUsers))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK__aspnet_Pe__PathI__30C33EC3", "aspnet_Paths", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.aspnet_Paths), "aspnet_PersonalizationPerUser", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_PersonalizationPerUser))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK__aspnet_Pe__UserI__31B762FC", "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.aspnet_Users), "aspnet_PersonalizationPerUser", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_PersonalizationPerUser))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK__aspnet_Pr__UserI__0A9D95DB", "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Users), "aspnet_Profile", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.aspnet_Profile))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_Tasks_PM_Constraints", "PM_Constraints", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Constraints), "PM_Tasks", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_Tasks))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_ActingRole_PM_Projects", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Projects), "PM_ProjectActingRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectActingRole))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.PM_ProjectRoles), "PM_ProjectActingRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectActingRole))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_ProjectDocs_PM_Projects", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Projects), "PM_ProjectDocs", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectDocs))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_ProjectRoles), "PM_ProjectResources", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectResources))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_ProjectResources_PM_Projects", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Projects), "PM_ProjectResources", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectResources))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_ProjectResources_UM_Users", "UM_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.UM_Users), "PM_ProjectResources", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectResources))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Projects), "PM_ProjectRisks", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectRisks))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_Projects_PM_Types", "PM_Types", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Types), "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_Projects))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_ProjectSkills_PM_Projects", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Projects), "PM_ProjectSkills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectSkills))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_Tasks_PM_Tasks", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.PM_Projects), "PM_Tasks", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_Tasks))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_PM_ProjectSkills_PM_Skills", "PM_Skills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.PM_Skills), "PM_ProjectSkills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectSkills))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_UM_UserSkills_PM_Skills", "PM_Skills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.PM_Skills), "UM_UserSkills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UM_UserSkills))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.UM_Roles), "UM_RoleScreenFunctions", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UM_RoleScreenFunctions))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_UM_UserRole_UM_Roles", "UM_Roles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.UM_Roles), "UM_UserRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UM_UserRole))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_UM_UserRole_UM_Users", "UM_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.UM_Users), "UM_UserRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UM_UserRole))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "FK_UM_UserSkills_UM_Users", "UM_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.UM_Users), "UM_UserSkills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UM_UserSkills))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergyrmsModel", "aspnet_UsersInRoles", "aspnet_Roles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Roles), "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Users))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK__aspnet_Me__Appli__15502E78", "aspnet_Applications", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Applications), "aspnet_Membership", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Membership))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK__aspnet_Pa__Appli__46E78A0C", "aspnet_Applications", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Applications), "aspnet_Paths", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Paths))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK__aspnet_Ro__Appli__33D4B598", "aspnet_Applications", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Applications), "aspnet_Roles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Roles))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK__aspnet_Us__Appli__0519C6AF", "aspnet_Applications", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Applications), "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Users))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK__aspnet_Me__UserI__164452B1", "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Users), "aspnet_Membership", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.aspnet_Membership))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK__aspnet_Pe__PathI__4CA06362", "aspnet_Paths", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Paths), "aspnet_PersonalizationAllUsers", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.aspnet_PersonalizationAllUsers))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK__aspnet_Pe__PathI__5070F446", "aspnet_Paths", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.aspnet_Paths), "aspnet_PersonalizationPerUser", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_PersonalizationPerUser))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK__aspnet_Pe__UserI__5165187F", "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.aspnet_Users), "aspnet_PersonalizationPerUser", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_PersonalizationPerUser))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK__aspnet_Pr__UserI__2A4B4B5E", "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.aspnet_Users), "aspnet_Profile", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.aspnet_Profile))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_Tasks_PM_Constraints", "PM_Constraints", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Constraints), "PM_Tasks", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_Tasks))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_ActingRole_PM_Projects", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Projects), "PM_ProjectActingRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectActingRole))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.PM_ProjectRoles), "PM_ProjectActingRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectActingRole))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_ProjectDocs_PM_Projects", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Projects), "PM_ProjectDocs", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectDocs))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_ProjectRoles), "PM_ProjectResources", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectResources))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_ProjectResources_PM_Projects", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Projects), "PM_ProjectResources", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectResources))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Projects), "PM_ProjectRisks", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectRisks))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_Projects_PM_Types", "PM_Types", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Types), "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_Projects))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_ProjectSkills_PM_Projects", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Projects), "PM_ProjectSkills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectSkills))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_Tasks_PM_Tasks", "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.PM_Projects), "PM_Tasks", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_Tasks))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_ProjectSkills_PM_Skills", "PM_Skills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.PM_Skills), "PM_ProjectSkills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_ProjectSkills))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_UM_UserSkills_PM_Skills", "PM_Skills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(SynergyRMS.Models.PM_Skills), "UserSkills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UserSkills))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.UM_Roles), "UM_RoleScreenFunctions", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UM_RoleScreenFunctions))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_UM_UserRole_UM_Roles", "UM_Roles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.UM_Roles), "UM_UserRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UM_UserRole))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_UM_UserRole_UM_Users", "UM_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.UM_Users), "UM_UserRole", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UM_UserRole))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_UM_UserSkills_UM_Users", "UM_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.UM_Users), "UserSkills", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.UserSkills))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "aspnet_UsersInRoles", "aspnet_Roles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Roles), "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Users))]
 
 // Original file name:
-// Generation date: 2/4/2011 12:10:55 PM
+// Generation date: 2/4/2011 1:15:07 PM
 namespace SynergyRMS.Models
 {
     
     /// <summary>
-    /// There are no comments for synergyrmsEntities in the schema.
+    /// There are no comments for synergydbadminEntities in the schema.
     /// </summary>
-    public partial class synergyrmsEntities : global::System.Data.Objects.ObjectContext
+    public partial class synergydbadminEntities : global::System.Data.Objects.ObjectContext
     {
         /// <summary>
-        /// Initializes a new synergyrmsEntities object using the connection string found in the 'synergyrmsEntities' section of the application configuration file.
+        /// Initializes a new synergydbadminEntities object using the connection string found in the 'synergydbadminEntities' section of the application configuration file.
         /// </summary>
-        public synergyrmsEntities() : 
-                base("name=synergyrmsEntities", "synergyrmsEntities")
+        public synergydbadminEntities() : 
+                base("name=synergydbadminEntities", "synergydbadminEntities")
         {
             this.OnContextCreated();
         }
         /// <summary>
-        /// Initialize a new synergyrmsEntities object.
+        /// Initialize a new synergydbadminEntities object.
         /// </summary>
-        public synergyrmsEntities(string connectionString) : 
-                base(connectionString, "synergyrmsEntities")
+        public synergydbadminEntities(string connectionString) : 
+                base(connectionString, "synergydbadminEntities")
         {
             this.OnContextCreated();
         }
         /// <summary>
-        /// Initialize a new synergyrmsEntities object.
+        /// Initialize a new synergydbadminEntities object.
         /// </summary>
-        public synergyrmsEntities(global::System.Data.EntityClient.EntityConnection connection) : 
-                base(connection, "synergyrmsEntities")
+        public synergydbadminEntities(global::System.Data.EntityClient.EntityConnection connection) : 
+                base(connection, "synergydbadminEntities")
         {
             this.OnContextCreated();
         }
@@ -222,6 +221,21 @@ namespace SynergyRMS.Models
             }
         }
         private global::System.Data.Objects.ObjectQuery<aspnet_WebEvent_Events> _aspnet_WebEvent_Events;
+        /// <summary>
+        /// There are no comments for GanttBasic in the schema.
+        /// </summary>
+        public global::System.Data.Objects.ObjectQuery<GanttBasic> GanttBasic
+        {
+            get
+            {
+                if ((this._GanttBasic == null))
+                {
+                    this._GanttBasic = base.CreateQuery<GanttBasic>("[GanttBasic]");
+                }
+                return this._GanttBasic;
+            }
+        }
+        private global::System.Data.Objects.ObjectQuery<GanttBasic> _GanttBasic;
         /// <summary>
         /// There are no comments for PM_Constraints in the schema.
         /// </summary>
@@ -433,20 +447,20 @@ namespace SynergyRMS.Models
         }
         private global::System.Data.Objects.ObjectQuery<PM_Types> _PM_Types;
         /// <summary>
-        /// There are no comments for sysdiagrams in the schema.
+        /// There are no comments for TableData in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<sysdiagrams> sysdiagrams
+        public global::System.Data.Objects.ObjectQuery<TableData> TableData
         {
             get
             {
-                if ((this._sysdiagrams == null))
+                if ((this._TableData == null))
                 {
-                    this._sysdiagrams = base.CreateQuery<sysdiagrams>("[sysdiagrams]");
+                    this._TableData = base.CreateQuery<TableData>("[TableData]");
                 }
-                return this._sysdiagrams;
+                return this._TableData;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<sysdiagrams> _sysdiagrams;
+        private global::System.Data.Objects.ObjectQuery<TableData> _TableData;
         /// <summary>
         /// There are no comments for UM_Designation in the schema.
         /// </summary>
@@ -553,50 +567,20 @@ namespace SynergyRMS.Models
         }
         private global::System.Data.Objects.ObjectQuery<UM_Users> _UM_Users;
         /// <summary>
-        /// There are no comments for UM_UserSkills in the schema.
+        /// There are no comments for UserSkills in the schema.
         /// </summary>
-        public global::System.Data.Objects.ObjectQuery<UM_UserSkills> UM_UserSkills
+        public global::System.Data.Objects.ObjectQuery<UserSkills> UserSkills
         {
             get
             {
-                if ((this._UM_UserSkills == null))
+                if ((this._UserSkills == null))
                 {
-                    this._UM_UserSkills = base.CreateQuery<UM_UserSkills>("[UM_UserSkills]");
+                    this._UserSkills = base.CreateQuery<UserSkills>("[UserSkills]");
                 }
-                return this._UM_UserSkills;
+                return this._UserSkills;
             }
         }
-        private global::System.Data.Objects.ObjectQuery<UM_UserSkills> _UM_UserSkills;
-        /// <summary>
-        /// There are no comments for GanttBasic in the schema.
-        /// </summary>
-        public global::System.Data.Objects.ObjectQuery<GanttBasic> GanttBasic
-        {
-            get
-            {
-                if ((this._GanttBasic == null))
-                {
-                    this._GanttBasic = base.CreateQuery<GanttBasic>("[GanttBasic]");
-                }
-                return this._GanttBasic;
-            }
-        }
-        private global::System.Data.Objects.ObjectQuery<GanttBasic> _GanttBasic;
-        /// <summary>
-        /// There are no comments for TableData in the schema.
-        /// </summary>
-        public global::System.Data.Objects.ObjectQuery<TableData> TableData
-        {
-            get
-            {
-                if ((this._TableData == null))
-                {
-                    this._TableData = base.CreateQuery<TableData>("[TableData]");
-                }
-                return this._TableData;
-            }
-        }
-        private global::System.Data.Objects.ObjectQuery<TableData> _TableData;
+        private global::System.Data.Objects.ObjectQuery<UserSkills> _UserSkills;
         /// <summary>
         /// There are no comments for aspnet_Applications in the schema.
         /// </summary>
@@ -666,6 +650,13 @@ namespace SynergyRMS.Models
         public void AddToaspnet_WebEvent_Events(aspnet_WebEvent_Events aspnet_WebEvent_Events)
         {
             base.AddObject("aspnet_WebEvent_Events", aspnet_WebEvent_Events);
+        }
+        /// <summary>
+        /// There are no comments for GanttBasic in the schema.
+        /// </summary>
+        public void AddToGanttBasic(GanttBasic ganttBasic)
+        {
+            base.AddObject("GanttBasic", ganttBasic);
         }
         /// <summary>
         /// There are no comments for PM_Constraints in the schema.
@@ -766,11 +757,11 @@ namespace SynergyRMS.Models
             base.AddObject("PM_Types", pM_Types);
         }
         /// <summary>
-        /// There are no comments for sysdiagrams in the schema.
+        /// There are no comments for TableData in the schema.
         /// </summary>
-        public void AddTosysdiagrams(sysdiagrams sysdiagrams)
+        public void AddToTableData(TableData tableData)
         {
-            base.AddObject("sysdiagrams", sysdiagrams);
+            base.AddObject("TableData", tableData);
         }
         /// <summary>
         /// There are no comments for UM_Designation in the schema.
@@ -822,34 +813,20 @@ namespace SynergyRMS.Models
             base.AddObject("UM_Users", uM_Users);
         }
         /// <summary>
-        /// There are no comments for UM_UserSkills in the schema.
+        /// There are no comments for UserSkills in the schema.
         /// </summary>
-        public void AddToUM_UserSkills(UM_UserSkills uM_UserSkills)
+        public void AddToUserSkills(UserSkills userSkills)
         {
-            base.AddObject("UM_UserSkills", uM_UserSkills);
-        }
-        /// <summary>
-        /// There are no comments for GanttBasic in the schema.
-        /// </summary>
-        public void AddToGanttBasic(GanttBasic ganttBasic)
-        {
-            base.AddObject("GanttBasic", ganttBasic);
-        }
-        /// <summary>
-        /// There are no comments for TableData in the schema.
-        /// </summary>
-        public void AddToTableData(TableData tableData)
-        {
-            base.AddObject("TableData", tableData);
+            base.AddObject("UserSkills", userSkills);
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.aspnet_Applications in the schema.
+    /// There are no comments for synergydbadminModel.aspnet_Applications in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ApplicationId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="aspnet_Applications")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="aspnet_Applications")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class aspnet_Applications : global::System.Data.Objects.DataClasses.EntityObject
@@ -963,7 +940,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for aspnet_Membership in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Me__Appli__75A278F5", "aspnet_Membership")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Me__Appli__15502E78", "aspnet_Membership")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -971,20 +948,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Membership>("synergyrmsModel.FK__aspnet_Me__Appli__75A278F5", "aspnet_Membership");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Membership>("synergydbadminModel.FK__aspnet_Me__Appli__15502E78", "aspnet_Membership");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Membership>("synergyrmsModel.FK__aspnet_Me__Appli__75A278F5", "aspnet_Membership", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Membership>("synergydbadminModel.FK__aspnet_Me__Appli__15502E78", "aspnet_Membership", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_Paths in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Pa__Appli__2739D489", "aspnet_Paths")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Pa__Appli__46E78A0C", "aspnet_Paths")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -992,20 +969,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Paths>("synergyrmsModel.FK__aspnet_Pa__Appli__2739D489", "aspnet_Paths");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Paths>("synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Paths>("synergyrmsModel.FK__aspnet_Pa__Appli__2739D489", "aspnet_Paths", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Paths>("synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C", "aspnet_Paths", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_Roles in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Ro__Appli__14270015", "aspnet_Roles")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Ro__Appli__33D4B598", "aspnet_Roles")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1013,20 +990,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Roles>("synergyrmsModel.FK__aspnet_Ro__Appli__14270015", "aspnet_Roles");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Roles>("synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598", "aspnet_Roles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Roles>("synergyrmsModel.FK__aspnet_Ro__Appli__14270015", "aspnet_Roles", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Roles>("synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598", "aspnet_Roles", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_Users in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Us__Appli__656C112C", "aspnet_Users")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Us__Appli__0519C6AF", "aspnet_Users")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1034,24 +1011,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Users>("synergyrmsModel.FK__aspnet_Us__Appli__656C112C", "aspnet_Users");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Users>("synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Users>("synergyrmsModel.FK__aspnet_Us__Appli__656C112C", "aspnet_Users", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Users>("synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF", "aspnet_Users", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.aspnet_Membership in the schema.
+    /// There are no comments for synergydbadminModel.aspnet_Membership in the schema.
     /// </summary>
     /// <KeyProperties>
     /// UserId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="aspnet_Membership")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="aspnet_Membership")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class aspnet_Membership : global::System.Data.Objects.DataClasses.EntityObject
@@ -1555,7 +1532,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for aspnet_Applications in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Me__Appli__75A278F5", "aspnet_Applications")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Me__Appli__15502E78", "aspnet_Applications")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1563,11 +1540,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Me__Appli__75A278F5", "aspnet_Applications").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Me__Appli__15502E78", "aspnet_Applications").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Me__Appli__75A278F5", "aspnet_Applications").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Me__Appli__15502E78", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -1579,20 +1556,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Me__Appli__75A278F5", "aspnet_Applications");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Me__Appli__15502E78", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Me__Appli__75A278F5", "aspnet_Applications", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Me__Appli__15502E78", "aspnet_Applications", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_Users in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Me__UserI__76969D2E", "aspnet_Users")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Me__UserI__164452B1", "aspnet_Users")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1600,11 +1577,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Me__UserI__76969D2E", "aspnet_Users").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Me__UserI__164452B1", "aspnet_Users").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Me__UserI__76969D2E", "aspnet_Users").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Me__UserI__164452B1", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -1616,24 +1593,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Me__UserI__76969D2E", "aspnet_Users");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Me__UserI__164452B1", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Me__UserI__76969D2E", "aspnet_Users", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Me__UserI__164452B1", "aspnet_Users", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.aspnet_Paths in the schema.
+    /// There are no comments for synergydbadminModel.aspnet_Paths in the schema.
     /// </summary>
     /// <KeyProperties>
     /// PathId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="aspnet_Paths")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="aspnet_Paths")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class aspnet_Paths : global::System.Data.Objects.DataClasses.EntityObject
@@ -1724,7 +1701,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for aspnet_Applications in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Pa__Appli__2739D489", "aspnet_Applications")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Pa__Appli__46E78A0C", "aspnet_Applications")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1732,11 +1709,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Pa__Appli__2739D489", "aspnet_Applications").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C", "aspnet_Applications").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Pa__Appli__2739D489", "aspnet_Applications").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -1748,20 +1725,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Pa__Appli__2739D489", "aspnet_Applications");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Pa__Appli__2739D489", "aspnet_Applications", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C", "aspnet_Applications", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_PersonalizationAllUsers in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Pe__PathI__2CF2ADDF", "aspnet_PersonalizationAllUsers")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Pe__PathI__4CA06362", "aspnet_PersonalizationAllUsers")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1769,11 +1746,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("synergyrmsModel.FK__aspnet_Pe__PathI__2CF2ADDF", "aspnet_PersonalizationAllUsers").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362", "aspnet_PersonalizationAllUsers").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("synergyrmsModel.FK__aspnet_Pe__PathI__2CF2ADDF", "aspnet_PersonalizationAllUsers").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362", "aspnet_PersonalizationAllUsers").Value = value;
             }
         }
         /// <summary>
@@ -1785,20 +1762,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("synergyrmsModel.FK__aspnet_Pe__PathI__2CF2ADDF", "aspnet_PersonalizationAllUsers");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_PersonalizationAllUsers>("synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362", "aspnet_PersonalizationAllUsers");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_PersonalizationAllUsers>("synergyrmsModel.FK__aspnet_Pe__PathI__2CF2ADDF", "aspnet_PersonalizationAllUsers", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_PersonalizationAllUsers>("synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362", "aspnet_PersonalizationAllUsers", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_PersonalizationPerUser in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Pe__PathI__30C33EC3", "aspnet_PersonalizationPerUser")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Pe__PathI__5070F446", "aspnet_PersonalizationPerUser")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1806,24 +1783,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("synergyrmsModel.FK__aspnet_Pe__PathI__30C33EC3", "aspnet_PersonalizationPerUser");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("synergydbadminModel.FK__aspnet_Pe__PathI__5070F446", "aspnet_PersonalizationPerUser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("synergyrmsModel.FK__aspnet_Pe__PathI__30C33EC3", "aspnet_PersonalizationPerUser", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("synergydbadminModel.FK__aspnet_Pe__PathI__5070F446", "aspnet_PersonalizationPerUser", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.aspnet_PersonalizationAllUsers in the schema.
+    /// There are no comments for synergydbadminModel.aspnet_PersonalizationAllUsers in the schema.
     /// </summary>
     /// <KeyProperties>
     /// PathId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="aspnet_PersonalizationAllUsers")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="aspnet_PersonalizationAllUsers")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class aspnet_PersonalizationAllUsers : global::System.Data.Objects.DataClasses.EntityObject
@@ -1914,7 +1891,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for aspnet_Paths in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Pe__PathI__2CF2ADDF", "aspnet_Paths")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Pe__PathI__4CA06362", "aspnet_Paths")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -1922,11 +1899,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergyrmsModel.FK__aspnet_Pe__PathI__2CF2ADDF", "aspnet_Paths").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362", "aspnet_Paths").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergyrmsModel.FK__aspnet_Pe__PathI__2CF2ADDF", "aspnet_Paths").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362", "aspnet_Paths").Value = value;
             }
         }
         /// <summary>
@@ -1938,24 +1915,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergyrmsModel.FK__aspnet_Pe__PathI__2CF2ADDF", "aspnet_Paths");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("synergyrmsModel.FK__aspnet_Pe__PathI__2CF2ADDF", "aspnet_Paths", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362", "aspnet_Paths", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.aspnet_PersonalizationPerUser in the schema.
+    /// There are no comments for synergydbadminModel.aspnet_PersonalizationPerUser in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="aspnet_PersonalizationPerUser")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="aspnet_PersonalizationPerUser")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class aspnet_PersonalizationPerUser : global::System.Data.Objects.DataClasses.EntityObject
@@ -2046,7 +2023,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for aspnet_Paths in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Pe__PathI__30C33EC3", "aspnet_Paths")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Pe__PathI__5070F446", "aspnet_Paths")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2054,11 +2031,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergyrmsModel.FK__aspnet_Pe__PathI__30C33EC3", "aspnet_Paths").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergydbadminModel.FK__aspnet_Pe__PathI__5070F446", "aspnet_Paths").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergyrmsModel.FK__aspnet_Pe__PathI__30C33EC3", "aspnet_Paths").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergydbadminModel.FK__aspnet_Pe__PathI__5070F446", "aspnet_Paths").Value = value;
             }
         }
         /// <summary>
@@ -2070,20 +2047,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergyrmsModel.FK__aspnet_Pe__PathI__30C33EC3", "aspnet_Paths");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Paths>("synergydbadminModel.FK__aspnet_Pe__PathI__5070F446", "aspnet_Paths");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("synergyrmsModel.FK__aspnet_Pe__PathI__30C33EC3", "aspnet_Paths", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Paths>("synergydbadminModel.FK__aspnet_Pe__PathI__5070F446", "aspnet_Paths", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_Users in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Pe__UserI__31B762FC", "aspnet_Users")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Pe__UserI__5165187F", "aspnet_Users")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2091,11 +2068,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Pe__UserI__31B762FC", "aspnet_Users").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Pe__UserI__5165187F", "aspnet_Users").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Pe__UserI__31B762FC", "aspnet_Users").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Pe__UserI__5165187F", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -2107,24 +2084,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Pe__UserI__31B762FC", "aspnet_Users");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Pe__UserI__5165187F", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Pe__UserI__31B762FC", "aspnet_Users", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Pe__UserI__5165187F", "aspnet_Users", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.aspnet_Profile in the schema.
+    /// There are no comments for synergydbadminModel.aspnet_Profile in the schema.
     /// </summary>
     /// <KeyProperties>
     /// UserId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="aspnet_Profile")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="aspnet_Profile")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class aspnet_Profile : global::System.Data.Objects.DataClasses.EntityObject
@@ -2265,7 +2242,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for aspnet_Users in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Pr__UserI__0A9D95DB", "aspnet_Users")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Pr__UserI__2A4B4B5E", "aspnet_Users")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2273,11 +2250,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Pr__UserI__0A9D95DB", "aspnet_Users").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E", "aspnet_Users").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Pr__UserI__0A9D95DB", "aspnet_Users").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E", "aspnet_Users").Value = value;
             }
         }
         /// <summary>
@@ -2289,24 +2266,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Pr__UserI__0A9D95DB", "aspnet_Users");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Users>("synergyrmsModel.FK__aspnet_Pr__UserI__0A9D95DB", "aspnet_Users", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Users>("synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E", "aspnet_Users", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.aspnet_Roles in the schema.
+    /// There are no comments for synergydbadminModel.aspnet_Roles in the schema.
     /// </summary>
     /// <KeyProperties>
     /// RoleId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="aspnet_Roles")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="aspnet_Roles")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class aspnet_Roles : global::System.Data.Objects.DataClasses.EntityObject
@@ -2420,7 +2397,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for aspnet_Applications in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Ro__Appli__14270015", "aspnet_Applications")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Ro__Appli__33D4B598", "aspnet_Applications")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2428,11 +2405,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Ro__Appli__14270015", "aspnet_Applications").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598", "aspnet_Applications").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Ro__Appli__14270015", "aspnet_Applications").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -2444,20 +2421,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Ro__Appli__14270015", "aspnet_Applications");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Ro__Appli__14270015", "aspnet_Applications", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598", "aspnet_Applications", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_Users in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "aspnet_UsersInRoles", "aspnet_Users")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "aspnet_UsersInRoles", "aspnet_Users")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2465,25 +2442,25 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Users>("synergyrmsModel.aspnet_UsersInRoles", "aspnet_Users");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Users>("synergydbadminModel.aspnet_UsersInRoles", "aspnet_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Users>("synergyrmsModel.aspnet_UsersInRoles", "aspnet_Users", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Users>("synergydbadminModel.aspnet_UsersInRoles", "aspnet_Users", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.aspnet_SchemaVersions in the schema.
+    /// There are no comments for synergydbadminModel.aspnet_SchemaVersions in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Feature
     /// CompatibleSchemaVersion
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="aspnet_SchemaVersions")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="aspnet_SchemaVersions")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class aspnet_SchemaVersions : global::System.Data.Objects.DataClasses.EntityObject
@@ -2573,12 +2550,12 @@ namespace SynergyRMS.Models
         partial void OnIsCurrentVersionChanged();
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.aspnet_Users in the schema.
+    /// There are no comments for synergydbadminModel.aspnet_Users in the schema.
     /// </summary>
     /// <KeyProperties>
     /// UserId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="aspnet_Users")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="aspnet_Users")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class aspnet_Users : global::System.Data.Objects.DataClasses.EntityObject
@@ -2742,7 +2719,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for aspnet_Applications in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Us__Appli__656C112C", "aspnet_Applications")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Us__Appli__0519C6AF", "aspnet_Applications")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2750,11 +2727,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Us__Appli__656C112C", "aspnet_Applications").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF", "aspnet_Applications").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Us__Appli__656C112C", "aspnet_Applications").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF", "aspnet_Applications").Value = value;
             }
         }
         /// <summary>
@@ -2766,20 +2743,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Us__Appli__656C112C", "aspnet_Applications");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF", "aspnet_Applications");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("synergyrmsModel.FK__aspnet_Us__Appli__656C112C", "aspnet_Applications", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Applications>("synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF", "aspnet_Applications", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_Membership in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Me__UserI__76969D2E", "aspnet_Membership")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Me__UserI__164452B1", "aspnet_Membership")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2787,11 +2764,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Membership>("synergyrmsModel.FK__aspnet_Me__UserI__76969D2E", "aspnet_Membership").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Membership>("synergydbadminModel.FK__aspnet_Me__UserI__164452B1", "aspnet_Membership").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Membership>("synergyrmsModel.FK__aspnet_Me__UserI__76969D2E", "aspnet_Membership").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Membership>("synergydbadminModel.FK__aspnet_Me__UserI__164452B1", "aspnet_Membership").Value = value;
             }
         }
         /// <summary>
@@ -2803,20 +2780,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Membership>("synergyrmsModel.FK__aspnet_Me__UserI__76969D2E", "aspnet_Membership");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Membership>("synergydbadminModel.FK__aspnet_Me__UserI__164452B1", "aspnet_Membership");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Membership>("synergyrmsModel.FK__aspnet_Me__UserI__76969D2E", "aspnet_Membership", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Membership>("synergydbadminModel.FK__aspnet_Me__UserI__164452B1", "aspnet_Membership", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_PersonalizationPerUser in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Pe__UserI__31B762FC", "aspnet_PersonalizationPerUser")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Pe__UserI__5165187F", "aspnet_PersonalizationPerUser")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2824,20 +2801,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("synergyrmsModel.FK__aspnet_Pe__UserI__31B762FC", "aspnet_PersonalizationPerUser");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_PersonalizationPerUser>("synergydbadminModel.FK__aspnet_Pe__UserI__5165187F", "aspnet_PersonalizationPerUser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("synergyrmsModel.FK__aspnet_Pe__UserI__31B762FC", "aspnet_PersonalizationPerUser", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_PersonalizationPerUser>("synergydbadminModel.FK__aspnet_Pe__UserI__5165187F", "aspnet_PersonalizationPerUser", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_Profile in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK__aspnet_Pr__UserI__0A9D95DB", "aspnet_Profile")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK__aspnet_Pr__UserI__2A4B4B5E", "aspnet_Profile")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2845,11 +2822,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Profile>("synergyrmsModel.FK__aspnet_Pr__UserI__0A9D95DB", "aspnet_Profile").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Profile>("synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E", "aspnet_Profile").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Profile>("synergyrmsModel.FK__aspnet_Pr__UserI__0A9D95DB", "aspnet_Profile").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Profile>("synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E", "aspnet_Profile").Value = value;
             }
         }
         /// <summary>
@@ -2861,20 +2838,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Profile>("synergyrmsModel.FK__aspnet_Pr__UserI__0A9D95DB", "aspnet_Profile");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<aspnet_Profile>("synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E", "aspnet_Profile");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Profile>("synergyrmsModel.FK__aspnet_Pr__UserI__0A9D95DB", "aspnet_Profile", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<aspnet_Profile>("synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E", "aspnet_Profile", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for aspnet_Roles in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "aspnet_UsersInRoles", "aspnet_Roles")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "aspnet_UsersInRoles", "aspnet_Roles")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -2882,24 +2859,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Roles>("synergyrmsModel.aspnet_UsersInRoles", "aspnet_Roles");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<aspnet_Roles>("synergydbadminModel.aspnet_UsersInRoles", "aspnet_Roles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Roles>("synergyrmsModel.aspnet_UsersInRoles", "aspnet_Roles", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<aspnet_Roles>("synergydbadminModel.aspnet_UsersInRoles", "aspnet_Roles", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.aspnet_WebEvent_Events in the schema.
+    /// There are no comments for synergydbadminModel.aspnet_WebEvent_Events in the schema.
     /// </summary>
     /// <KeyProperties>
     /// EventId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="aspnet_WebEvent_Events")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="aspnet_WebEvent_Events")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class aspnet_WebEvent_Events : global::System.Data.Objects.DataClasses.EntityObject
@@ -3277,12 +3254,218 @@ namespace SynergyRMS.Models
         partial void OnDetailsChanged();
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_Constraints in the schema.
+    /// There are no comments for synergydbadminModel.GanttBasic in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// id
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="GanttBasic")]
+    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
+    [global::System.Serializable()]
+    public partial class GanttBasic : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new GanttBasic object.
+        /// </summary>
+        /// <param name="id">Initial value of id.</param>
+        public static GanttBasic CreateGanttBasic(int id)
+        {
+            GanttBasic ganttBasic = new GanttBasic();
+            ganttBasic.id = id;
+            return ganttBasic;
+        }
+        /// <summary>
+        /// There are no comments for Property T in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string T
+        {
+            get
+            {
+                return this._T;
+            }
+            set
+            {
+                this.OnTChanging(value);
+                this.ReportPropertyChanging("T");
+                this._T = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("T");
+                this.OnTChanged();
+            }
+        }
+        private string _T;
+        partial void OnTChanging(string value);
+        partial void OnTChanged();
+        /// <summary>
+        /// There are no comments for Property U in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string U
+        {
+            get
+            {
+                return this._U;
+            }
+            set
+            {
+                this.OnUChanging(value);
+                this.ReportPropertyChanging("U");
+                this._U = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("U");
+                this.OnUChanged();
+            }
+        }
+        private string _U;
+        partial void OnUChanging(string value);
+        partial void OnUChanged();
+        /// <summary>
+        /// There are no comments for Property S in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string S
+        {
+            get
+            {
+                return this._S;
+            }
+            set
+            {
+                this.OnSChanging(value);
+                this.ReportPropertyChanging("S");
+                this._S = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("S");
+                this.OnSChanged();
+            }
+        }
+        private string _S;
+        partial void OnSChanging(string value);
+        partial void OnSChanged();
+        /// <summary>
+        /// There are no comments for Property E in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string E
+        {
+            get
+            {
+                return this._E;
+            }
+            set
+            {
+                this.OnEChanging(value);
+                this.ReportPropertyChanging("E");
+                this._E = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("E");
+                this.OnEChanged();
+            }
+        }
+        private string _E;
+        partial void OnEChanging(string value);
+        partial void OnEChanged();
+        /// <summary>
+        /// There are no comments for Property C in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<int> C
+        {
+            get
+            {
+                return this._C;
+            }
+            set
+            {
+                this.OnCChanging(value);
+                this.ReportPropertyChanging("C");
+                this._C = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("C");
+                this.OnCChanged();
+            }
+        }
+        private global::System.Nullable<int> _C;
+        partial void OnCChanging(global::System.Nullable<int> value);
+        partial void OnCChanged();
+        /// <summary>
+        /// There are no comments for Property D in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string D
+        {
+            get
+            {
+                return this._D;
+            }
+            set
+            {
+                this.OnDChanging(value);
+                this.ReportPropertyChanging("D");
+                this._D = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("D");
+                this.OnDChanged();
+            }
+        }
+        private string _D;
+        partial void OnDChanging(string value);
+        partial void OnDChanged();
+        /// <summary>
+        /// There are no comments for Property id in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int id
+        {
+            get
+            {
+                return this._id;
+            }
+            set
+            {
+                this.OnidChanging(value);
+                this.ReportPropertyChanging("id");
+                this._id = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("id");
+                this.OnidChanged();
+            }
+        }
+        private int _id;
+        partial void OnidChanging(int value);
+        partial void OnidChanged();
+        /// <summary>
+        /// There are no comments for Property UL in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string UL
+        {
+            get
+            {
+                return this._UL;
+            }
+            set
+            {
+                this.OnULChanging(value);
+                this.ReportPropertyChanging("UL");
+                this._UL = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("UL");
+                this.OnULChanged();
+            }
+        }
+        private string _UL;
+        partial void OnULChanging(string value);
+        partial void OnULChanged();
+    }
+    /// <summary>
+    /// There are no comments for synergydbadminModel.PM_Constraints in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ConstraintId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_Constraints")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_Constraints")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_Constraints : global::System.Data.Objects.DataClasses.EntityObject
@@ -3346,7 +3529,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for PM_Tasks in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_Tasks_PM_Constraints", "PM_Tasks")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_Tasks_PM_Constraints", "PM_Tasks")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3354,24 +3537,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_Tasks>("synergyrmsModel.FK_PM_Tasks_PM_Constraints", "PM_Tasks");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_Tasks>("synergydbadminModel.FK_PM_Tasks_PM_Constraints", "PM_Tasks");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_Tasks>("synergyrmsModel.FK_PM_Tasks_PM_Constraints", "PM_Tasks", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_Tasks>("synergydbadminModel.FK_PM_Tasks_PM_Constraints", "PM_Tasks", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_ProjectActingRole in the schema.
+    /// There are no comments for synergydbadminModel.PM_ProjectActingRole in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ProjectActingRoleId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_ProjectActingRole")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_ProjectActingRole")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_ProjectActingRole : global::System.Data.Objects.DataClasses.EntityObject
@@ -3412,7 +3595,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for PM_Projects in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ActingRole_PM_Projects", "PM_Projects")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ActingRole_PM_Projects", "PM_Projects")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3420,11 +3603,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ActingRole_PM_Projects", "PM_Projects").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ActingRole_PM_Projects", "PM_Projects").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ActingRole_PM_Projects", "PM_Projects").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ActingRole_PM_Projects", "PM_Projects").Value = value;
             }
         }
         /// <summary>
@@ -3436,20 +3619,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ActingRole_PM_Projects", "PM_Projects");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ActingRole_PM_Projects", "PM_Projects");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ActingRole_PM_Projects", "PM_Projects", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ActingRole_PM_Projects", "PM_Projects", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PM_ProjectRoles in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3457,11 +3640,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergyrmsModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergydbadminModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergyrmsModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergydbadminModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles").Value = value;
             }
         }
         /// <summary>
@@ -3473,24 +3656,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergyrmsModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergydbadminModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_ProjectRoles>("synergyrmsModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_ProjectRoles>("synergydbadminModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectRoles", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_ProjectDocs in the schema.
+    /// There are no comments for synergydbadminModel.PM_ProjectDocs in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ProjectDocId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_ProjectDocs")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_ProjectDocs")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_ProjectDocs : global::System.Data.Objects.DataClasses.EntityObject
@@ -3577,7 +3760,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for PM_Projects in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectDocs_PM_Projects", "PM_Projects")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectDocs_PM_Projects", "PM_Projects")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3585,11 +3768,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectDocs_PM_Projects", "PM_Projects").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectDocs_PM_Projects", "PM_Projects").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectDocs_PM_Projects", "PM_Projects").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectDocs_PM_Projects", "PM_Projects").Value = value;
             }
         }
         /// <summary>
@@ -3601,24 +3784,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectDocs_PM_Projects", "PM_Projects");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectDocs_PM_Projects", "PM_Projects");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectDocs_PM_Projects", "PM_Projects", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectDocs_PM_Projects", "PM_Projects", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_ProjectResources in the schema.
+    /// There are no comments for synergydbadminModel.PM_ProjectResources in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ProjectResorcesId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_ProjectResources")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_ProjectResources")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_ProjectResources : global::System.Data.Objects.DataClasses.EntityObject
@@ -3627,12 +3810,14 @@ namespace SynergyRMS.Models
         /// Create a new PM_ProjectResources object.
         /// </summary>
         /// <param name="projectResorcesId">Initial value of ProjectResorcesId.</param>
+        /// <param name="userId">Initial value of UserId.</param>
         /// <param name="allocatedStartDate">Initial value of AllocatedStartDate.</param>
         /// <param name="allocatedEndDate">Initial value of AllocatedEndDate.</param>
-        public static PM_ProjectResources CreatePM_ProjectResources(int projectResorcesId, global::System.DateTime allocatedStartDate, global::System.DateTime allocatedEndDate)
+        public static PM_ProjectResources CreatePM_ProjectResources(int projectResorcesId, int userId, global::System.DateTime allocatedStartDate, global::System.DateTime allocatedEndDate)
         {
             PM_ProjectResources pM_ProjectResources = new PM_ProjectResources();
             pM_ProjectResources.ProjectResorcesId = projectResorcesId;
+            pM_ProjectResources.UserId = userId;
             pM_ProjectResources.AllocatedStartDate = allocatedStartDate;
             pM_ProjectResources.AllocatedEndDate = allocatedEndDate;
             return pM_ProjectResources;
@@ -3660,6 +3845,29 @@ namespace SynergyRMS.Models
         private int _ProjectResorcesId;
         partial void OnProjectResorcesIdChanging(int value);
         partial void OnProjectResorcesIdChanged();
+        /// <summary>
+        /// There are no comments for Property UserId in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserId
+        {
+            get
+            {
+                return this._UserId;
+            }
+            set
+            {
+                this.OnUserIdChanging(value);
+                this.ReportPropertyChanging("UserId");
+                this._UserId = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("UserId");
+                this.OnUserIdChanged();
+            }
+        }
+        private int _UserId;
+        partial void OnUserIdChanging(int value);
+        partial void OnUserIdChanged();
         /// <summary>
         /// There are no comments for Property AllocatedStartDate in the schema.
         /// </summary>
@@ -3709,7 +3917,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for PM_ProjectRoles in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3717,11 +3925,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergyrmsModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergydbadminModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergyrmsModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergydbadminModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles").Value = value;
             }
         }
         /// <summary>
@@ -3733,20 +3941,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergyrmsModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_ProjectRoles>("synergydbadminModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_ProjectRoles>("synergyrmsModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_ProjectRoles>("synergydbadminModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectRoles", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PM_Projects in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectResources_PM_Projects", "PM_Projects")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectResources_PM_Projects", "PM_Projects")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3754,11 +3962,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectResources_PM_Projects", "PM_Projects").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectResources_PM_Projects", "PM_Projects").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectResources_PM_Projects", "PM_Projects").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectResources_PM_Projects", "PM_Projects").Value = value;
             }
         }
         /// <summary>
@@ -3770,61 +3978,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectResources_PM_Projects", "PM_Projects");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectResources_PM_Projects", "PM_Projects");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectResources_PM_Projects", "PM_Projects", value);
-                }
-            }
-        }
-        /// <summary>
-        /// There are no comments for UM_Users in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectResources_UM_Users", "UM_Users")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public UM_Users UM_Users
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergyrmsModel.FK_PM_ProjectResources_UM_Users", "UM_Users").Value;
-            }
-            set
-            {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergyrmsModel.FK_PM_ProjectResources_UM_Users", "UM_Users").Value = value;
-            }
-        }
-        /// <summary>
-        /// There are no comments for UM_Users in the schema.
-        /// </summary>
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<UM_Users> UM_UsersReference
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergyrmsModel.FK_PM_ProjectResources_UM_Users", "UM_Users");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<UM_Users>("synergyrmsModel.FK_PM_ProjectResources_UM_Users", "UM_Users", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectResources_PM_Projects", "PM_Projects", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_ProjectRisks in the schema.
+    /// There are no comments for synergydbadminModel.PM_ProjectRisks in the schema.
     /// </summary>
     /// <KeyProperties>
     /// RiskId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_ProjectRisks")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_ProjectRisks")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_ProjectRisks : global::System.Data.Objects.DataClasses.EntityObject
@@ -3915,7 +4086,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for PM_Projects in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -3923,11 +4094,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects").Value = value;
             }
         }
         /// <summary>
@@ -3939,24 +4110,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_Projects", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_ProjectRoles in the schema.
+    /// There are no comments for synergydbadminModel.PM_ProjectRoles in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ProjectRoleId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_ProjectRoles")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_ProjectRoles")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_ProjectRoles : global::System.Data.Objects.DataClasses.EntityObject
@@ -4022,7 +4193,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for PM_ProjectActingRole in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectActingRole")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectActingRole")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4030,20 +4201,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectActingRole>("synergyrmsModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectActingRole");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectActingRole>("synergydbadminModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectActingRole");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectActingRole>("synergyrmsModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectActingRole", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectActingRole>("synergydbadminModel.FK_PM_ProjectActingRole_PM_ProjectRoles", "PM_ProjectActingRole", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PM_ProjectResources in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectResources")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectResources")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4051,24 +4222,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectResources>("synergyrmsModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectResources");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectResources>("synergydbadminModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectResources");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectResources>("synergyrmsModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectResources", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectResources>("synergydbadminModel.FK_PM_ProjectResources_PM_ProjectRoles", "PM_ProjectResources", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_Projects in the schema.
+    /// There are no comments for synergydbadminModel.PM_Projects in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ProjectId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_Projects")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_Projects")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_Projects : global::System.Data.Objects.DataClasses.EntityObject
@@ -4232,9 +4403,32 @@ namespace SynergyRMS.Models
         partial void OnStatusChanging(int value);
         partial void OnStatusChanged();
         /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this.ReportPropertyChanging("Description");
+                this._Description = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("Description");
+                this.OnDescriptionChanged();
+            }
+        }
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
+        /// <summary>
         /// There are no comments for PM_ProjectActingRole in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ActingRole_PM_Projects", "PM_ProjectActingRole")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ActingRole_PM_Projects", "PM_ProjectActingRole")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4242,20 +4436,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectActingRole>("synergyrmsModel.FK_PM_ActingRole_PM_Projects", "PM_ProjectActingRole");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectActingRole>("synergydbadminModel.FK_PM_ActingRole_PM_Projects", "PM_ProjectActingRole");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectActingRole>("synergyrmsModel.FK_PM_ActingRole_PM_Projects", "PM_ProjectActingRole", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectActingRole>("synergydbadminModel.FK_PM_ActingRole_PM_Projects", "PM_ProjectActingRole", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PM_ProjectDocs in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectDocs_PM_Projects", "PM_ProjectDocs")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectDocs_PM_Projects", "PM_ProjectDocs")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4263,20 +4457,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectDocs>("synergyrmsModel.FK_PM_ProjectDocs_PM_Projects", "PM_ProjectDocs");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectDocs>("synergydbadminModel.FK_PM_ProjectDocs_PM_Projects", "PM_ProjectDocs");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectDocs>("synergyrmsModel.FK_PM_ProjectDocs_PM_Projects", "PM_ProjectDocs", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectDocs>("synergydbadminModel.FK_PM_ProjectDocs_PM_Projects", "PM_ProjectDocs", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PM_ProjectResources in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectResources_PM_Projects", "PM_ProjectResources")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectResources_PM_Projects", "PM_ProjectResources")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4284,20 +4478,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectResources>("synergyrmsModel.FK_PM_ProjectResources_PM_Projects", "PM_ProjectResources");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectResources>("synergydbadminModel.FK_PM_ProjectResources_PM_Projects", "PM_ProjectResources");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectResources>("synergyrmsModel.FK_PM_ProjectResources_PM_Projects", "PM_ProjectResources", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectResources>("synergydbadminModel.FK_PM_ProjectResources_PM_Projects", "PM_ProjectResources", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PM_ProjectRisks in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectRisks_PM_ProjectRisks", "PM_ProjectRisks")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectRisks_PM_ProjectRisks", "PM_ProjectRisks")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4305,20 +4499,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectRisks>("synergyrmsModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_ProjectRisks");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectRisks>("synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_ProjectRisks");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectRisks>("synergyrmsModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_ProjectRisks", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectRisks>("synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks", "PM_ProjectRisks", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PM_Types in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_Projects_PM_Types", "PM_Types")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_Projects_PM_Types", "PM_Types")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4326,11 +4520,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Types>("synergyrmsModel.FK_PM_Projects_PM_Types", "PM_Types").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Types>("synergydbadminModel.FK_PM_Projects_PM_Types", "PM_Types").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Types>("synergyrmsModel.FK_PM_Projects_PM_Types", "PM_Types").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Types>("synergydbadminModel.FK_PM_Projects_PM_Types", "PM_Types").Value = value;
             }
         }
         /// <summary>
@@ -4342,20 +4536,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Types>("synergyrmsModel.FK_PM_Projects_PM_Types", "PM_Types");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Types>("synergydbadminModel.FK_PM_Projects_PM_Types", "PM_Types");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Types>("synergyrmsModel.FK_PM_Projects_PM_Types", "PM_Types", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Types>("synergydbadminModel.FK_PM_Projects_PM_Types", "PM_Types", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PM_ProjectSkills in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectSkills_PM_Projects", "PM_ProjectSkills")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectSkills_PM_Projects", "PM_ProjectSkills")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4363,20 +4557,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectSkills>("synergyrmsModel.FK_PM_ProjectSkills_PM_Projects", "PM_ProjectSkills");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectSkills>("synergydbadminModel.FK_PM_ProjectSkills_PM_Projects", "PM_ProjectSkills");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectSkills>("synergyrmsModel.FK_PM_ProjectSkills_PM_Projects", "PM_ProjectSkills", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectSkills>("synergydbadminModel.FK_PM_ProjectSkills_PM_Projects", "PM_ProjectSkills", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PM_Tasks in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_Tasks_PM_Tasks", "PM_Tasks")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_Tasks_PM_Tasks", "PM_Tasks")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4384,24 +4578,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_Tasks>("synergyrmsModel.FK_PM_Tasks_PM_Tasks", "PM_Tasks");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_Tasks>("synergydbadminModel.FK_PM_Tasks_PM_Tasks", "PM_Tasks");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_Tasks>("synergyrmsModel.FK_PM_Tasks_PM_Tasks", "PM_Tasks", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_Tasks>("synergydbadminModel.FK_PM_Tasks_PM_Tasks", "PM_Tasks", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_ProjectSkills in the schema.
+    /// There are no comments for synergydbadminModel.PM_ProjectSkills in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ProjectSkillId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_ProjectSkills")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_ProjectSkills")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_ProjectSkills : global::System.Data.Objects.DataClasses.EntityObject
@@ -4442,7 +4636,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for PM_Projects in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectSkills_PM_Projects", "PM_Projects")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectSkills_PM_Projects", "PM_Projects")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4450,11 +4644,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectSkills_PM_Projects", "PM_Projects").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectSkills_PM_Projects", "PM_Projects").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectSkills_PM_Projects", "PM_Projects").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectSkills_PM_Projects", "PM_Projects").Value = value;
             }
         }
         /// <summary>
@@ -4466,20 +4660,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectSkills_PM_Projects", "PM_Projects");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectSkills_PM_Projects", "PM_Projects");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_ProjectSkills_PM_Projects", "PM_Projects", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_ProjectSkills_PM_Projects", "PM_Projects", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PM_Skills in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectSkills_PM_Skills", "PM_Skills")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectSkills_PM_Skills", "PM_Skills")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4487,11 +4681,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergyrmsModel.FK_PM_ProjectSkills_PM_Skills", "PM_Skills").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergydbadminModel.FK_PM_ProjectSkills_PM_Skills", "PM_Skills").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergyrmsModel.FK_PM_ProjectSkills_PM_Skills", "PM_Skills").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergydbadminModel.FK_PM_ProjectSkills_PM_Skills", "PM_Skills").Value = value;
             }
         }
         /// <summary>
@@ -4503,24 +4697,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergyrmsModel.FK_PM_ProjectSkills_PM_Skills", "PM_Skills");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergydbadminModel.FK_PM_ProjectSkills_PM_Skills", "PM_Skills");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Skills>("synergyrmsModel.FK_PM_ProjectSkills_PM_Skills", "PM_Skills", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Skills>("synergydbadminModel.FK_PM_ProjectSkills_PM_Skills", "PM_Skills", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_Skills in the schema.
+    /// There are no comments for synergydbadminModel.PM_Skills in the schema.
     /// </summary>
     /// <KeyProperties>
     /// SkillsId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_Skills")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_Skills")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_Skills : global::System.Data.Objects.DataClasses.EntityObject
@@ -4584,7 +4778,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for PM_ProjectSkills in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectSkills_PM_Skills", "PM_ProjectSkills")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_ProjectSkills_PM_Skills", "PM_ProjectSkills")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -4592,45 +4786,45 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectSkills>("synergyrmsModel.FK_PM_ProjectSkills_PM_Skills", "PM_ProjectSkills");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectSkills>("synergydbadminModel.FK_PM_ProjectSkills_PM_Skills", "PM_ProjectSkills");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectSkills>("synergyrmsModel.FK_PM_ProjectSkills_PM_Skills", "PM_ProjectSkills", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectSkills>("synergydbadminModel.FK_PM_ProjectSkills_PM_Skills", "PM_ProjectSkills", value);
                 }
             }
         }
         /// <summary>
-        /// There are no comments for UM_UserSkills in the schema.
+        /// There are no comments for UserSkills in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_UM_UserSkills_PM_Skills", "UM_UserSkills")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_UM_UserSkills_PM_Skills", "UserSkills")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<UM_UserSkills> UM_UserSkills
+        public global::System.Data.Objects.DataClasses.EntityCollection<UserSkills> UserSkills
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<UM_UserSkills>("synergyrmsModel.FK_UM_UserSkills_PM_Skills", "UM_UserSkills");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<UserSkills>("synergydbadminModel.FK_UM_UserSkills_PM_Skills", "UserSkills");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<UM_UserSkills>("synergyrmsModel.FK_UM_UserSkills_PM_Skills", "UM_UserSkills", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<UserSkills>("synergydbadminModel.FK_UM_UserSkills_PM_Skills", "UserSkills", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_Status in the schema.
+    /// There are no comments for synergydbadminModel.PM_Status in the schema.
     /// </summary>
     /// <KeyProperties>
     /// StatusId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_Status")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_Status")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_Status : global::System.Data.Objects.DataClasses.EntityObject
@@ -4716,12 +4910,12 @@ namespace SynergyRMS.Models
         partial void OnStatusNameChanged();
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_TaskPrecissiord in the schema.
+    /// There are no comments for synergydbadminModel.PM_TaskPrecissiord in the schema.
     /// </summary>
     /// <KeyProperties>
     /// TaskPrecissiorId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_TaskPrecissiord")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_TaskPrecissiord")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_TaskPrecissiord : global::System.Data.Objects.DataClasses.EntityObject
@@ -4836,12 +5030,12 @@ namespace SynergyRMS.Models
         partial void OnParentTaskIdChanged();
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_Tasks in the schema.
+    /// There are no comments for synergydbadminModel.PM_Tasks in the schema.
     /// </summary>
     /// <KeyProperties>
     /// TaskId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_Tasks")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_Tasks")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_Tasks : global::System.Data.Objects.DataClasses.EntityObject
@@ -5049,7 +5243,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for PM_Constraints in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_Tasks_PM_Constraints", "PM_Constraints")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_Tasks_PM_Constraints", "PM_Constraints")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -5057,11 +5251,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Constraints>("synergyrmsModel.FK_PM_Tasks_PM_Constraints", "PM_Constraints").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Constraints>("synergydbadminModel.FK_PM_Tasks_PM_Constraints", "PM_Constraints").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Constraints>("synergyrmsModel.FK_PM_Tasks_PM_Constraints", "PM_Constraints").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Constraints>("synergydbadminModel.FK_PM_Tasks_PM_Constraints", "PM_Constraints").Value = value;
             }
         }
         /// <summary>
@@ -5073,20 +5267,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Constraints>("synergyrmsModel.FK_PM_Tasks_PM_Constraints", "PM_Constraints");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Constraints>("synergydbadminModel.FK_PM_Tasks_PM_Constraints", "PM_Constraints");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Constraints>("synergyrmsModel.FK_PM_Tasks_PM_Constraints", "PM_Constraints", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Constraints>("synergydbadminModel.FK_PM_Tasks_PM_Constraints", "PM_Constraints", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for PM_Projects in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_Tasks_PM_Tasks", "PM_Projects")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_Tasks_PM_Tasks", "PM_Projects")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -5094,11 +5288,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_Tasks_PM_Tasks", "PM_Projects").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_Tasks_PM_Tasks", "PM_Projects").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_Tasks_PM_Tasks", "PM_Projects").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_Tasks_PM_Tasks", "PM_Projects").Value = value;
             }
         }
         /// <summary>
@@ -5110,24 +5304,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_Tasks_PM_Tasks", "PM_Projects");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_Tasks_PM_Tasks", "PM_Projects");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergyrmsModel.FK_PM_Tasks_PM_Tasks", "PM_Projects", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Projects>("synergydbadminModel.FK_PM_Tasks_PM_Tasks", "PM_Projects", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_TimeSheets in the schema.
+    /// There are no comments for synergydbadminModel.PM_TimeSheets in the schema.
     /// </summary>
     /// <KeyProperties>
     /// TimeSheetId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_TimeSheets")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_TimeSheets")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_TimeSheets : global::System.Data.Objects.DataClasses.EntityObject
@@ -5259,12 +5453,12 @@ namespace SynergyRMS.Models
         partial void OnTimeSpentChanged();
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.PM_Types in the schema.
+    /// There are no comments for synergydbadminModel.PM_Types in the schema.
     /// </summary>
     /// <KeyProperties>
     /// TypeId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="PM_Types")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="PM_Types")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class PM_Types : global::System.Data.Objects.DataClasses.EntityObject
@@ -5328,7 +5522,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for PM_Projects in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_Projects_PM_Types", "PM_Projects")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_PM_Projects_PM_Types", "PM_Projects")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -5336,165 +5530,161 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_Projects>("synergyrmsModel.FK_PM_Projects_PM_Types", "PM_Projects");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_Projects>("synergydbadminModel.FK_PM_Projects_PM_Types", "PM_Projects");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_Projects>("synergyrmsModel.FK_PM_Projects_PM_Types", "PM_Projects", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_Projects>("synergydbadminModel.FK_PM_Projects_PM_Types", "PM_Projects", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.sysdiagrams in the schema.
+    /// There are no comments for synergydbadminModel.TableData in the schema.
     /// </summary>
     /// <KeyProperties>
-    /// diagram_id
+    /// ID
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="sysdiagrams")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="TableData")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class sysdiagrams : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class TableData : global::System.Data.Objects.DataClasses.EntityObject
     {
         /// <summary>
-        /// Create a new sysdiagrams object.
+        /// Create a new TableData object.
         /// </summary>
-        /// <param name="name">Initial value of name.</param>
-        /// <param name="principal_id">Initial value of principal_id.</param>
-        /// <param name="diagram_id">Initial value of diagram_id.</param>
-        public static sysdiagrams Createsysdiagrams(string name, int principal_id, int diagram_id)
+        /// <param name="id">Initial value of ID.</param>
+        public static TableData CreateTableData(int id)
         {
-            sysdiagrams sysdiagrams = new sysdiagrams();
-            sysdiagrams.name = name;
-            sysdiagrams.principal_id = principal_id;
-            sysdiagrams.diagram_id = diagram_id;
-            return sysdiagrams;
+            TableData tableData = new TableData();
+            tableData.ID = id;
+            return tableData;
         }
         /// <summary>
-        /// There are no comments for Property name in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string name
-        {
-            get
-            {
-                return this._name;
-            }
-            set
-            {
-                this.OnnameChanging(value);
-                this.ReportPropertyChanging("name");
-                this._name = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
-                this.ReportPropertyChanged("name");
-                this.OnnameChanged();
-            }
-        }
-        private string _name;
-        partial void OnnameChanging(string value);
-        partial void OnnameChanged();
-        /// <summary>
-        /// There are no comments for Property principal_id in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int principal_id
-        {
-            get
-            {
-                return this._principal_id;
-            }
-            set
-            {
-                this.Onprincipal_idChanging(value);
-                this.ReportPropertyChanging("principal_id");
-                this._principal_id = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("principal_id");
-                this.Onprincipal_idChanged();
-            }
-        }
-        private int _principal_id;
-        partial void Onprincipal_idChanging(int value);
-        partial void Onprincipal_idChanged();
-        /// <summary>
-        /// There are no comments for Property diagram_id in the schema.
+        /// There are no comments for Property ID in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int diagram_id
+        public int ID
         {
             get
             {
-                return this._diagram_id;
+                return this._ID;
             }
             set
             {
-                this.Ondiagram_idChanging(value);
-                this.ReportPropertyChanging("diagram_id");
-                this._diagram_id = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("diagram_id");
-                this.Ondiagram_idChanged();
+                this.OnIDChanging(value);
+                this.ReportPropertyChanging("ID");
+                this._ID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ID");
+                this.OnIDChanged();
             }
         }
-        private int _diagram_id;
-        partial void Ondiagram_idChanging(int value);
-        partial void Ondiagram_idChanged();
+        private int _ID;
+        partial void OnIDChanging(int value);
+        partial void OnIDChanged();
         /// <summary>
-        /// There are no comments for Property version in the schema.
+        /// There are no comments for Property Project in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<int> version
+        public string Project
         {
             get
             {
-                return this._version;
+                return this._Project;
             }
             set
             {
-                this.OnversionChanging(value);
-                this.ReportPropertyChanging("version");
-                this._version = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("version");
-                this.OnversionChanged();
+                this.OnProjectChanging(value);
+                this.ReportPropertyChanging("Project");
+                this._Project = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("Project");
+                this.OnProjectChanged();
             }
         }
-        private global::System.Nullable<int> _version;
-        partial void OnversionChanging(global::System.Nullable<int> value);
-        partial void OnversionChanged();
+        private string _Project;
+        partial void OnProjectChanging(string value);
+        partial void OnProjectChanged();
         /// <summary>
-        /// There are no comments for Property definition in the schema.
+        /// There are no comments for Property Resource in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] definition
+        public string Resource
         {
             get
             {
-                return global::System.Data.Objects.DataClasses.StructuralObject.GetValidValue(this._definition);
+                return this._Resource;
             }
             set
             {
-                this.OndefinitionChanging(value);
-                this.ReportPropertyChanging("definition");
-                this._definition = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("definition");
-                this.OndefinitionChanged();
+                this.OnResourceChanging(value);
+                this.ReportPropertyChanging("Resource");
+                this._Resource = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("Resource");
+                this.OnResourceChanged();
             }
         }
-        private byte[] _definition;
-        partial void OndefinitionChanging(byte[] value);
-        partial void OndefinitionChanged();
+        private string _Resource;
+        partial void OnResourceChanging(string value);
+        partial void OnResourceChanged();
+        /// <summary>
+        /// There are no comments for Property Week in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<int> Week
+        {
+            get
+            {
+                return this._Week;
+            }
+            set
+            {
+                this.OnWeekChanging(value);
+                this.ReportPropertyChanging("Week");
+                this._Week = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("Week");
+                this.OnWeekChanged();
+            }
+        }
+        private global::System.Nullable<int> _Week;
+        partial void OnWeekChanging(global::System.Nullable<int> value);
+        partial void OnWeekChanged();
+        /// <summary>
+        /// There are no comments for Property Hours in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<int> Hours
+        {
+            get
+            {
+                return this._Hours;
+            }
+            set
+            {
+                this.OnHoursChanging(value);
+                this.ReportPropertyChanging("Hours");
+                this._Hours = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("Hours");
+                this.OnHoursChanged();
+            }
+        }
+        private global::System.Nullable<int> _Hours;
+        partial void OnHoursChanging(global::System.Nullable<int> value);
+        partial void OnHoursChanged();
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.UM_Designation in the schema.
+    /// There are no comments for synergydbadminModel.UM_Designation in the schema.
     /// </summary>
     /// <KeyProperties>
     /// DesignationId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="UM_Designation")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="UM_Designation")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class UM_Designation : global::System.Data.Objects.DataClasses.EntityObject
@@ -5607,12 +5797,12 @@ namespace SynergyRMS.Models
         partial void OnIsActiveChanged();
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.UM_Roles in the schema.
+    /// There are no comments for synergydbadminModel.UM_Roles in the schema.
     /// </summary>
     /// <KeyProperties>
     /// RoleId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="UM_Roles")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="UM_Roles")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class UM_Roles : global::System.Data.Objects.DataClasses.EntityObject
@@ -5799,7 +5989,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for UM_RoleScreenFunctions in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_UM_RoleScreenFunctions_UM_Roles", "UM_RoleScreenFunctions")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_UM_RoleScreenFunctions_UM_Roles", "UM_RoleScreenFunctions")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -5807,20 +5997,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<UM_RoleScreenFunctions>("synergyrmsModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_RoleScreenFunctions");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<UM_RoleScreenFunctions>("synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_RoleScreenFunctions");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<UM_RoleScreenFunctions>("synergyrmsModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_RoleScreenFunctions", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<UM_RoleScreenFunctions>("synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_RoleScreenFunctions", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for UM_UserRole in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_UM_UserRole_UM_Roles", "UM_UserRole")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_UM_UserRole_UM_Roles", "UM_UserRole")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -5828,24 +6018,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<UM_UserRole>("synergyrmsModel.FK_UM_UserRole_UM_Roles", "UM_UserRole");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<UM_UserRole>("synergydbadminModel.FK_UM_UserRole_UM_Roles", "UM_UserRole");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<UM_UserRole>("synergyrmsModel.FK_UM_UserRole_UM_Roles", "UM_UserRole", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<UM_UserRole>("synergydbadminModel.FK_UM_UserRole_UM_Roles", "UM_UserRole", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.UM_RoleScreenFunctions in the schema.
+    /// There are no comments for synergydbadminModel.UM_RoleScreenFunctions in the schema.
     /// </summary>
     /// <KeyProperties>
     /// RoleScreenFunctionId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="UM_RoleScreenFunctions")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="UM_RoleScreenFunctions")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class UM_RoleScreenFunctions : global::System.Data.Objects.DataClasses.EntityObject
@@ -6057,7 +6247,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for UM_Roles in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -6065,11 +6255,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergyrmsModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergyrmsModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles").Value = value;
             }
         }
         /// <summary>
@@ -6081,24 +6271,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergyrmsModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<UM_Roles>("synergyrmsModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<UM_Roles>("synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles", "UM_Roles", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.UM_ScreenFunctions in the schema.
+    /// There are no comments for synergydbadminModel.UM_ScreenFunctions in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ScreenFunctionCode
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="UM_ScreenFunctions")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="UM_ScreenFunctions")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class UM_ScreenFunctions : global::System.Data.Objects.DataClasses.EntityObject
@@ -6238,12 +6428,12 @@ namespace SynergyRMS.Models
         partial void OnFunctionorderIDChanged();
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.UM_Screens in the schema.
+    /// There are no comments for synergydbadminModel.UM_Screens in the schema.
     /// </summary>
     /// <KeyProperties>
     /// ScreenId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="UM_Screens")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="UM_Screens")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class UM_Screens : global::System.Data.Objects.DataClasses.EntityObject
@@ -6456,12 +6646,12 @@ namespace SynergyRMS.Models
         partial void OnScreenOrderIdChanged();
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.UM_UserRole in the schema.
+    /// There are no comments for synergydbadminModel.UM_UserRole in the schema.
     /// </summary>
     /// <KeyProperties>
     /// UserRoleId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="UM_UserRole")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="UM_UserRole")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class UM_UserRole : global::System.Data.Objects.DataClasses.EntityObject
@@ -6623,7 +6813,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for UM_Roles in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_UM_UserRole_UM_Roles", "UM_Roles")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_UM_UserRole_UM_Roles", "UM_Roles")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -6631,11 +6821,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergyrmsModel.FK_UM_UserRole_UM_Roles", "UM_Roles").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergydbadminModel.FK_UM_UserRole_UM_Roles", "UM_Roles").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergyrmsModel.FK_UM_UserRole_UM_Roles", "UM_Roles").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergydbadminModel.FK_UM_UserRole_UM_Roles", "UM_Roles").Value = value;
             }
         }
         /// <summary>
@@ -6647,20 +6837,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergyrmsModel.FK_UM_UserRole_UM_Roles", "UM_Roles");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Roles>("synergydbadminModel.FK_UM_UserRole_UM_Roles", "UM_Roles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<UM_Roles>("synergyrmsModel.FK_UM_UserRole_UM_Roles", "UM_Roles", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<UM_Roles>("synergydbadminModel.FK_UM_UserRole_UM_Roles", "UM_Roles", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for UM_Users in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_UM_UserRole_UM_Users", "UM_Users")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_UM_UserRole_UM_Users", "UM_Users")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -6668,11 +6858,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergyrmsModel.FK_UM_UserRole_UM_Users", "UM_Users").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergydbadminModel.FK_UM_UserRole_UM_Users", "UM_Users").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergyrmsModel.FK_UM_UserRole_UM_Users", "UM_Users").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergydbadminModel.FK_UM_UserRole_UM_Users", "UM_Users").Value = value;
             }
         }
         /// <summary>
@@ -6684,24 +6874,24 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergyrmsModel.FK_UM_UserRole_UM_Users", "UM_Users");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergydbadminModel.FK_UM_UserRole_UM_Users", "UM_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<UM_Users>("synergyrmsModel.FK_UM_UserRole_UM_Users", "UM_Users", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<UM_Users>("synergydbadminModel.FK_UM_UserRole_UM_Users", "UM_Users", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.UM_Users in the schema.
+    /// There are no comments for synergydbadminModel.UM_Users in the schema.
     /// </summary>
     /// <KeyProperties>
     /// UserId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="UM_Users")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="UM_Users")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class UM_Users : global::System.Data.Objects.DataClasses.EntityObject
@@ -7191,30 +7381,9 @@ namespace SynergyRMS.Models
         partial void OnDesignationIdChanging(global::System.Nullable<int> value);
         partial void OnDesignationIdChanged();
         /// <summary>
-        /// There are no comments for PM_ProjectResources in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_PM_ProjectResources_UM_Users", "PM_ProjectResources")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<PM_ProjectResources> PM_ProjectResources
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<PM_ProjectResources>("synergyrmsModel.FK_PM_ProjectResources_UM_Users", "PM_ProjectResources");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<PM_ProjectResources>("synergyrmsModel.FK_PM_ProjectResources_UM_Users", "PM_ProjectResources", value);
-                }
-            }
-        }
-        /// <summary>
         /// There are no comments for UM_UserRole in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_UM_UserRole_UM_Users", "UM_UserRole")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_UM_UserRole_UM_Users", "UM_UserRole")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -7222,58 +7391,58 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<UM_UserRole>("synergyrmsModel.FK_UM_UserRole_UM_Users", "UM_UserRole");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<UM_UserRole>("synergydbadminModel.FK_UM_UserRole_UM_Users", "UM_UserRole");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<UM_UserRole>("synergyrmsModel.FK_UM_UserRole_UM_Users", "UM_UserRole", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<UM_UserRole>("synergydbadminModel.FK_UM_UserRole_UM_Users", "UM_UserRole", value);
                 }
             }
         }
         /// <summary>
-        /// There are no comments for UM_UserSkills in the schema.
+        /// There are no comments for UserSkills in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_UM_UserSkills_UM_Users", "UM_UserSkills")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_UM_UserSkills_UM_Users", "UserSkills")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<UM_UserSkills> UM_UserSkills
+        public global::System.Data.Objects.DataClasses.EntityCollection<UserSkills> UserSkills
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<UM_UserSkills>("synergyrmsModel.FK_UM_UserSkills_UM_Users", "UM_UserSkills");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<UserSkills>("synergydbadminModel.FK_UM_UserSkills_UM_Users", "UserSkills");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<UM_UserSkills>("synergyrmsModel.FK_UM_UserSkills_UM_Users", "UM_UserSkills", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<UserSkills>("synergydbadminModel.FK_UM_UserSkills_UM_Users", "UserSkills", value);
                 }
             }
         }
     }
     /// <summary>
-    /// There are no comments for synergyrmsModel.UM_UserSkills in the schema.
+    /// There are no comments for synergydbadminModel.UserSkills in the schema.
     /// </summary>
     /// <KeyProperties>
     /// UserSkillId
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="UM_UserSkills")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergydbadminModel", Name="UserSkills")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
-    public partial class UM_UserSkills : global::System.Data.Objects.DataClasses.EntityObject
+    public partial class UserSkills : global::System.Data.Objects.DataClasses.EntityObject
     {
         /// <summary>
-        /// Create a new UM_UserSkills object.
+        /// Create a new UserSkills object.
         /// </summary>
         /// <param name="userSkillId">Initial value of UserSkillId.</param>
-        public static UM_UserSkills CreateUM_UserSkills(int userSkillId)
+        public static UserSkills CreateUserSkills(int userSkillId)
         {
-            UM_UserSkills uM_UserSkills = new UM_UserSkills();
-            uM_UserSkills.UserSkillId = userSkillId;
-            return uM_UserSkills;
+            UserSkills userSkills = new UserSkills();
+            userSkills.UserSkillId = userSkillId;
+            return userSkills;
         }
         /// <summary>
         /// There are no comments for Property UserSkillId in the schema.
@@ -7301,7 +7470,7 @@ namespace SynergyRMS.Models
         /// <summary>
         /// There are no comments for PM_Skills in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_UM_UserSkills_PM_Skills", "PM_Skills")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_UM_UserSkills_PM_Skills", "PM_Skills")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -7309,11 +7478,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergyrmsModel.FK_UM_UserSkills_PM_Skills", "PM_Skills").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergydbadminModel.FK_UM_UserSkills_PM_Skills", "PM_Skills").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergyrmsModel.FK_UM_UserSkills_PM_Skills", "PM_Skills").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergydbadminModel.FK_UM_UserSkills_PM_Skills", "PM_Skills").Value = value;
             }
         }
         /// <summary>
@@ -7325,20 +7494,20 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergyrmsModel.FK_UM_UserSkills_PM_Skills", "PM_Skills");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<PM_Skills>("synergydbadminModel.FK_UM_UserSkills_PM_Skills", "PM_Skills");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Skills>("synergyrmsModel.FK_UM_UserSkills_PM_Skills", "PM_Skills", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<PM_Skills>("synergydbadminModel.FK_UM_UserSkills_PM_Skills", "PM_Skills", value);
                 }
             }
         }
         /// <summary>
         /// There are no comments for UM_Users in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergyrmsModel", "FK_UM_UserSkills_UM_Users", "UM_Users")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("synergydbadminModel", "FK_UM_UserSkills_UM_Users", "UM_Users")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -7346,11 +7515,11 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergyrmsModel.FK_UM_UserSkills_UM_Users", "UM_Users").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergydbadminModel.FK_UM_UserSkills_UM_Users", "UM_Users").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergyrmsModel.FK_UM_UserSkills_UM_Users", "UM_Users").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergydbadminModel.FK_UM_UserSkills_UM_Users", "UM_Users").Value = value;
             }
         }
         /// <summary>
@@ -7362,358 +7531,15 @@ namespace SynergyRMS.Models
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergyrmsModel.FK_UM_UserSkills_UM_Users", "UM_Users");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<UM_Users>("synergydbadminModel.FK_UM_UserSkills_UM_Users", "UM_Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<UM_Users>("synergyrmsModel.FK_UM_UserSkills_UM_Users", "UM_Users", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<UM_Users>("synergydbadminModel.FK_UM_UserSkills_UM_Users", "UM_Users", value);
                 }
             }
         }
-    }
-    /// <summary>
-    /// There are no comments for synergyrmsModel.GanttBasic in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// id
-    /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="GanttBasic")]
-    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
-    [global::System.Serializable()]
-    public partial class GanttBasic : global::System.Data.Objects.DataClasses.EntityObject
-    {
-        /// <summary>
-        /// Create a new GanttBasic object.
-        /// </summary>
-        /// <param name="id">Initial value of id.</param>
-        public static GanttBasic CreateGanttBasic(int id)
-        {
-            GanttBasic ganttBasic = new GanttBasic();
-            ganttBasic.id = id;
-            return ganttBasic;
-        }
-        /// <summary>
-        /// There are no comments for Property T in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string T
-        {
-            get
-            {
-                return this._T;
-            }
-            set
-            {
-                this.OnTChanging(value);
-                this.ReportPropertyChanging("T");
-                this._T = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("T");
-                this.OnTChanged();
-            }
-        }
-        private string _T;
-        partial void OnTChanging(string value);
-        partial void OnTChanged();
-        /// <summary>
-        /// There are no comments for Property U in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string U
-        {
-            get
-            {
-                return this._U;
-            }
-            set
-            {
-                this.OnUChanging(value);
-                this.ReportPropertyChanging("U");
-                this._U = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("U");
-                this.OnUChanged();
-            }
-        }
-        private string _U;
-        partial void OnUChanging(string value);
-        partial void OnUChanged();
-        /// <summary>
-        /// There are no comments for Property S in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string S
-        {
-            get
-            {
-                return this._S;
-            }
-            set
-            {
-                this.OnSChanging(value);
-                this.ReportPropertyChanging("S");
-                this._S = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("S");
-                this.OnSChanged();
-            }
-        }
-        private string _S;
-        partial void OnSChanging(string value);
-        partial void OnSChanged();
-        /// <summary>
-        /// There are no comments for Property E in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string E
-        {
-            get
-            {
-                return this._E;
-            }
-            set
-            {
-                this.OnEChanging(value);
-                this.ReportPropertyChanging("E");
-                this._E = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("E");
-                this.OnEChanged();
-            }
-        }
-        private string _E;
-        partial void OnEChanging(string value);
-        partial void OnEChanged();
-        /// <summary>
-        /// There are no comments for Property C in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<int> C
-        {
-            get
-            {
-                return this._C;
-            }
-            set
-            {
-                this.OnCChanging(value);
-                this.ReportPropertyChanging("C");
-                this._C = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("C");
-                this.OnCChanged();
-            }
-        }
-        private global::System.Nullable<int> _C;
-        partial void OnCChanging(global::System.Nullable<int> value);
-        partial void OnCChanged();
-        /// <summary>
-        /// There are no comments for Property D in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string D
-        {
-            get
-            {
-                return this._D;
-            }
-            set
-            {
-                this.OnDChanging(value);
-                this.ReportPropertyChanging("D");
-                this._D = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("D");
-                this.OnDChanged();
-            }
-        }
-        private string _D;
-        partial void OnDChanging(string value);
-        partial void OnDChanged();
-        /// <summary>
-        /// There are no comments for Property id in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int id
-        {
-            get
-            {
-                return this._id;
-            }
-            set
-            {
-                this.OnidChanging(value);
-                this.ReportPropertyChanging("id");
-                this._id = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("id");
-                this.OnidChanged();
-            }
-        }
-        private int _id;
-        partial void OnidChanging(int value);
-        partial void OnidChanged();
-        /// <summary>
-        /// There are no comments for Property UL in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string UL
-        {
-            get
-            {
-                return this._UL;
-            }
-            set
-            {
-                this.OnULChanging(value);
-                this.ReportPropertyChanging("UL");
-                this._UL = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("UL");
-                this.OnULChanged();
-            }
-        }
-        private string _UL;
-        partial void OnULChanging(string value);
-        partial void OnULChanged();
-    }
-    /// <summary>
-    /// There are no comments for synergyrmsModel.TableData in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// ID
-    /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="synergyrmsModel", Name="TableData")]
-    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
-    [global::System.Serializable()]
-    public partial class TableData : global::System.Data.Objects.DataClasses.EntityObject
-    {
-        /// <summary>
-        /// Create a new TableData object.
-        /// </summary>
-        /// <param name="id">Initial value of ID.</param>
-        public static TableData CreateTableData(int id)
-        {
-            TableData tableData = new TableData();
-            tableData.ID = id;
-            return tableData;
-        }
-        /// <summary>
-        /// There are no comments for Property ID in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID
-        {
-            get
-            {
-                return this._ID;
-            }
-            set
-            {
-                this.OnIDChanging(value);
-                this.ReportPropertyChanging("ID");
-                this._ID = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("ID");
-                this.OnIDChanged();
-            }
-        }
-        private int _ID;
-        partial void OnIDChanging(int value);
-        partial void OnIDChanged();
-        /// <summary>
-        /// There are no comments for Property Project in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string Project
-        {
-            get
-            {
-                return this._Project;
-            }
-            set
-            {
-                this.OnProjectChanging(value);
-                this.ReportPropertyChanging("Project");
-                this._Project = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("Project");
-                this.OnProjectChanged();
-            }
-        }
-        private string _Project;
-        partial void OnProjectChanging(string value);
-        partial void OnProjectChanged();
-        /// <summary>
-        /// There are no comments for Property Resource in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string Resource
-        {
-            get
-            {
-                return this._Resource;
-            }
-            set
-            {
-                this.OnResourceChanging(value);
-                this.ReportPropertyChanging("Resource");
-                this._Resource = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("Resource");
-                this.OnResourceChanged();
-            }
-        }
-        private string _Resource;
-        partial void OnResourceChanging(string value);
-        partial void OnResourceChanged();
-        /// <summary>
-        /// There are no comments for Property Week in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<int> Week
-        {
-            get
-            {
-                return this._Week;
-            }
-            set
-            {
-                this.OnWeekChanging(value);
-                this.ReportPropertyChanging("Week");
-                this._Week = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("Week");
-                this.OnWeekChanged();
-            }
-        }
-        private global::System.Nullable<int> _Week;
-        partial void OnWeekChanging(global::System.Nullable<int> value);
-        partial void OnWeekChanged();
-        /// <summary>
-        /// There are no comments for Property Hours in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<int> Hours
-        {
-            get
-            {
-                return this._Hours;
-            }
-            set
-            {
-                this.OnHoursChanging(value);
-                this.ReportPropertyChanging("Hours");
-                this._Hours = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("Hours");
-                this.OnHoursChanged();
-            }
-        }
-        private global::System.Nullable<int> _Hours;
-        partial void OnHoursChanging(global::System.Nullable<int> value);
-        partial void OnHoursChanged();
     }
 }
