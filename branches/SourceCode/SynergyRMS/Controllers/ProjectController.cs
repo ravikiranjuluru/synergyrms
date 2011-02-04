@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using SynergyRMS.Models;
 using System.Threading;
 using System.Globalization;
+using System.Collections;
 namespace SynergyRMS.Controllers
 {
     public class ProjectController : Controller
@@ -38,6 +39,7 @@ namespace SynergyRMS.Controllers
         public ActionResult NewProject()
         {
             ViewData["ProTypes"] = GetProjectTypes();
+
             return View("NewProject");
         }
         /// <summary>
@@ -56,6 +58,7 @@ namespace SynergyRMS.Controllers
                 Project.ProjectStartDate = Convert.ToDateTime(form["projectstartdate"]);
                 Project.ProjectEndDate = Convert.ToDateTime(form["projectenddate"]);
                 Project.Description = form["txtDescription"].ToString();
+                Project.PM_Status = SynergyService.GetProjectStatusById(1);
                 Project.PM_Types = SynergyService.GetProjectTypebyId(Convert.ToInt32(form["ddProTypes"].ToString()));               
                 SynergyService.SaveProject(Project);
 
@@ -110,11 +113,12 @@ namespace SynergyRMS.Controllers
                 //Thread.CurrentThread.CurrentCulture = new CultureInfo("de-DE");
                 project.ProjectStartDate = Convert.ToDateTime(form["projectstartdate"]);
                 project.ProjectEndDate = Convert.ToDateTime(form["projectenddate"]);
-                project.SynergyService.GetProjectStatusById(1);
+                
                 project.PM_Types = SynergyService.GetProjectTypebyId(Convert.ToInt32(form["ddProTypes"].ToString()));
                 if (form["chckStatus"] != null)
                 {
-                    project.Status = Convert.ToInt32(form["chckStatus"].ToString());
+                    project.PM_Status = SynergyService.GetProjectStatusById(1);
+                    project.PM_Status.StatusId = Convert.ToInt32(form["chckStatus"].ToString());
                 }
                  
                 SynergyService.UpdateProject(project);
