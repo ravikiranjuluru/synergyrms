@@ -15,7 +15,9 @@
     </div>
 
 
-    <script>
+    <script type="text/javascript">
+
+        
         $(document).ready(function() {
             $("#projectstartdate").datepicker();
         });
@@ -152,76 +154,17 @@
                                                             class="textBox" size="70" maxlength="70" type="text">
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="active"></label>Active:
-                                                    </td>
-                                                    <td class="formDetail" align="left" valign="middle">
-                                                        <input name="chkactive" id="chkactive" class="checkBox"
-                                                            checked="checked" type="checkbox">
-                                                    </td>
-                                                </tr>                                               
                                                 
+                                               <%if (ViewData["ProTypes"]!= null){ %>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="client">Client</label>Client:
+                                                        <label for="projectLevel"></label>Project Type:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
-                                                        <input name="ctl00$phFormContent$pbxClient$txtValue" id="client"
-                                                            class="textBox" type="text" style="width: 253px">
-                                                        <div id="ctl00_phFormContent_pbxClient_divDescription" style="display: inline;">
-                                                        </div>
+                                                        <%=Html.DropDownList("ddProTypes", (SelectList)ViewData["ProTypes"], new { @class = "comboBox" })%>
                                                     </td>
                                                 </tr>
-                                               
-                                                <tr>
-                                                    <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="projectLevel"></label>Project Level:
-                                                    </td>
-                                                    <td class="formDetail" align="left" valign="top">
-                                                        <select name="ctl00$phFormContent$cboProjectLevel" id="projectLevel"
-                                                            class="comboBox">
-                                                            <option selected="selected" value="Select">Select</option>
-                                                            <option value="Top">Top</option>
-                                                            <option value="Medium">Medium</option>
-                                                            <option value="Low">Low</option>
-                                                        </select>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="location">Location</label>Location:
-                                                    </td>
-                                                    <td class="formDetail" align="left" valign="top">
-                                                        <input name="ctl00$phFormContent$pbxLocation$txtValue" id="location"
-                                                            class="textBox" type="text" style="width: 253px">
-                                                        <div id="ctl00_phFormContent_pbxLocation_divDescription" style="display: inline;">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="projectManger">Project Manager</label>Project Manager:
-                                                    </td>
-                                                    <td class="formDetail" align="left" valign="top">
-                                                        <input name="ctl00$phFormContent$pbxProjectManager$txtValue" id="projectManger"
-                                                            class="textBox" type="text" style="width: 253px">
-                                                        <div id="ctl00_phFormContent_pbxProjectManager_divDescription" style="display: inline;">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="formDetailDark" align="right" valign="middle">
-                                                       <label for="projectSponser">Project Sponsor</label>Project Sponsor:
-                                                    </td>
-                                                    <td class="formDetail" align="left" valign="top">
-                                                        <input name="ctl00$phFormContent$pbxProjectSponsor$txtValue" id="projectSponser"
-                                                            class="textBox" type="text" style="width: 253px">
-                                                        <div id="ctl00_phFormContent_pbxProjectSponsor_divDescription" style="display: inline;">
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                               
+                                                <%} %>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
                                                         <label for="projectstartdate">Start Date</label>Start Date:
