@@ -245,7 +245,34 @@
                                                                                             title="Click for more information" />View Projects</a>
                                                                                     </td>
                                                                                 </tr>
-                                                                                 
+                                                                                 <tr id="Tr2">
+                                                                                    <td padding-left="6px" width="5%">
+                                                                                        
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a id="A1" title="Click here to View an Existing Project" href="../GridView/Index">
+                                                                                            <img src="../../Content/images/common/schedule.jpg" id="Img3" 
+                                                                                            title="Click for more information" />Project Schedule</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                
+                                                                              <%--  <tr id="Tr11">
+                                                                                    <td padding-left="6px" width="5%">
+                                                                                        <img src="../../Content/images/common/cross.gif" id="Img16" title="Click for more information" />
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a id="A12" title="Click here to Upload Documents" href="../Project/Docs">Upload Documents</a>
+                                                                                    </td>
+                                                                                </tr>--%>
+                                                                                <%--<tr id="Tr12">
+                                                                                    <td padding-left="6px" width="5%">
+                                                                                        <img src="../../Content/images/common/cross.gif" id="Img17" title="Click for more information" />
+                                                                                    </td>
+                                                                                   <td>
+                                                                                        <a id="A13" title="Click here to Create a Project Status Report" href="../Report/Index">
+                                                                                            Create a Project Status Report</a>
+                                                                                    </td>
+                                                                                </tr>--%>
                                                                                  <tr id="Tr1">
                                                                                     <td padding-left="6px" width="5%">
                                                                                         &nbsp;
