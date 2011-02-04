@@ -123,7 +123,7 @@
                                     </tr>
                                     <tr>
                                         
-                                        <td valign="middle" align="left" >
+                                        <td valign="middle" align="left">
                                           
                                           <%if (ViewData["UserList"] != null)
                                               { %>
