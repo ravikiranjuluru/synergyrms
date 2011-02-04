@@ -9,7 +9,7 @@ Inherits="System.Web.Mvc.ViewPage" %>
                 <tbody>
                     <tr>
                         <td valign="middle" align="left">
-                           Add New Resource
+                           Add New User
                         </td>
                     </tr>
                 </tbody>
@@ -183,8 +183,8 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
                                                             <input type="text" maxlength="30" size="30" class="textBox"
-                                                             id="telephone"
-                                                                name="telephone">
+                                                             id="txtphone"
+                                                                name="txtphone">
                                                         </td>
                                                     </tr>
                                                                                                          <tr>
@@ -205,7 +205,8 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                             <label for="txtpwd"></label>Password:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
-                                                            <input type="password" maxlength="30" size="30" class="textBox" id="txtpwd" name="txtpwd">
+                                                            <input type="password" maxlength="30" size="30" 
+                                                            class="textBox" id="txtpwd" name="txtpwd">
                                                         </td>
                                                     </tr>
                                                     <tr>
