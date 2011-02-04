@@ -80,11 +80,11 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
             background-color: transparent;
             position: relative;
             text-align: left;
-            width: 1036px;
-            height: 604px;
-            top: 35px;
+            width: 454px;
+            height: 345px;
+            top: 7px;
             margin: 0px auto;
-            left: 38px;
+            left: 15px;
         }
         
         .error
@@ -116,8 +116,8 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
             background-color: transparent;
             width: 396px;
             height: 266px;
-            top: 99px;
-            left: 444px;
+            top: 19px;
+            left: 14px;
         }
         
         .pageRightColumn
@@ -212,7 +212,7 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
                      title: ($this.attr('title')) ? $this.attr('title') : 'Page Title Goes here',
                      autoOpen: true,
                      width: 480,
-                     height: 580,
+                     height: 480,
                      modal: true,
                      resizable: true,
                      autoResize: true,
@@ -229,7 +229,7 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
 	
 
 
-    <table width="400">
+    <table width="200" style="height: 403px">
     <tr align="center" valign="top">
         <td align="center">
             <div class="content">
