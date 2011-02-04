@@ -529,10 +529,10 @@ DEMO CONTENT
 }
 
 #StartmenuItem_CreateNewWindowLogin span, #StartmenuItem_CreateNewWindowAndIconLogin span {
-  background: url(../../Content/images/Startmenu/newWindow.png) no-repeat 2px 2px; 
+  background: url(../../Content/images/Startmenu/login.jpg) no-repeat 0px 2px; 
 }
 #StartmenuItem_CreateNewWindowDashboard span, #StartmenuItem_CreateNewWindowAndIconLogin span {
-  background: url(../../Content/images/Startmenu/newWindow.png) no-repeat 2px 2px; 
+  background: url(../../Content/images/Startmenu/Dashboard.png) no-repeat 2px 2px; 
 }
 
 
