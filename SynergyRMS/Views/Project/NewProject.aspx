@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
+﻿<%@ Page Title="" UICulture="en" Culture="en-US"  Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
     Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -231,7 +231,6 @@
                     <div style="padding-left: 10px; padding-right: 10px;"></div>
                 </td>
             </tr>
-            
         </tbody>
     </table>
     

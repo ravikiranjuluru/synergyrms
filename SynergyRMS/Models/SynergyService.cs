@@ -456,7 +456,70 @@ namespace SynergyRMS.Models
 
         }
 
+        /// <summary>
+        /// Gets the userpermissions by role id.
+        /// </summary>
+        /// <param name="roleId">The role id.</param>
+        /// <returns></returns>
+        public static List<UM_Permission> GetUserpermissionsByRoleId(Guid roleId)
+        {
+            List<UM_Permission> permissionList = new List<UM_Permission>();
+            try
+            {
+                List<UM_RolePermission> permissionRoleList = null;              
+                IQueryable<UM_RolePermission> permissionQuery = from p in GetSynegyRMSInstance().UM_RolePermission
+                                                            where p.aspnet_Roles.RoleId == roleId
+                                                               select p;
+                permissionRoleList = permissionQuery.ToList();
+                foreach (UM_RolePermission permissionRole in permissionRoleList)
+                {
+                    permissionRole.UM_PermissionReference.Load();
+                    permissionList.Add(permissionRole.UM_Permission);
+                }
+            }
+            catch (Exception ex)
+            {
 
+            }
+            return permissionList;
+        }
+
+        /// <summary>
+        /// Saves the role permissions.
+        /// </summary>
+        /// <param name="RolePermission">The role permission.</param>
+        public static void SaveRolePermissions(UM_RolePermission RolePermission)
+        {
+            try
+            {
+                GetSynegyRMSInstance().AddToUM_RolePermission(RolePermission);
+                GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Gets all permissions.
+        /// </summary>
+        /// <returns></returns>
+        public static List<UM_Permission> GetAllPermissions()
+        {
+            List<UM_Permission> permissionList = new List<UM_Permission>();
+            try
+            {
+                IQueryable<UM_Permission> permissionQuery = from p in GetSynegyRMSInstance().UM_Permission
+                                                                select p;
+                return  permissionQuery.ToList();               
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return permissionList;
+        }
 
 
 

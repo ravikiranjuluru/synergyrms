@@ -86,6 +86,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\SynergyConstents.cs" />
     <Compile Include="Models\SynergyModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -238,7 +239,7 @@
     <Content Include="Content\images\Taskbar\TaskbarItemHover.png" />
     <Content Include="Content\images\Taskbar\TaskbarItemShowDesktop.png" />
     <Content Include="Content\images\Taskbar\TaskbarPoints.png" />
-    <Content Include="Content\images\win7-desktop-bg.jpg" />
+    <Content Include="Content\images\win7-desktop-bg3.jpg" />
     <Content Include="Content\images\win7-desktop-green-bg.jpg" />
     <Content Include="Content\images\WindowsAeroStyle\active\bl.png" />
     <Content Include="Content\images\WindowsAeroStyle\active\bm.png" />
@@ -498,6 +499,10 @@
     <Content Include="Content\calndarview\jquery-ui\smoothness\jquery-ui-1.8.1.custom.css" />
     <Content Include="Content\Datatable\demo_page.css" />
     <Content Include="Content\Datatable\demo_table.css" />
+    <Content Include="Content\images\common\bar_chart_add.png" />
+    <Content Include="Content\images\common\newproject.png" />
+    <Content Include="Content\images\common\viewproject.png" />
+    <Content Include="Content\images\win7-desktop-bg.jpg" />
     <Content Include="GridView\Framework\Export.aspx" />
     <Content Include="GridView\Framework\TreeGridFramework.aspx" />
     <Content Include="GridView\Gantt\GanttBasicDBData.aspx" />

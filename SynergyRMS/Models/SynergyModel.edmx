@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="synergydbadminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="synergydbadminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityContainer Name="synergydbadminModelStoreContainer">
           <EntitySet Name="aspnet_Applications" EntityType="synergydbadminModel.Store.aspnet_Applications" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="aspnet_Membership" EntityType="synergydbadminModel.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
@@ -53,6 +53,8 @@
       FROM [dbo].[TableData] AS [TableData]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="UM_Designation" EntityType="synergydbadminModel.Store.UM_Designation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UM_Permission" EntityType="synergydbadminModel.Store.UM_Permission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UM_RolePermission" EntityType="synergydbadminModel.Store.UM_RolePermission" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="UM_Roles" EntityType="synergydbadminModel.Store.UM_Roles" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="UM_RoleScreenFunctions" EntityType="synergydbadminModel.Store.UM_RoleScreenFunctions" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="UM_ScreenFunctions" EntityType="synergydbadminModel.Store.UM_ScreenFunctions" store:Type="Tables" Schema="dbo" />
@@ -147,6 +149,14 @@
           <AssociationSet Name="FK_PM_Tasks_PM_Tasks" Association="synergydbadminModel.Store.FK_PM_Tasks_PM_Tasks">
             <End Role="PM_Projects" EntitySet="PM_Projects" />
             <End Role="PM_Tasks" EntitySet="PM_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_RolePermission_aspnet_Roles" Association="synergydbadminModel.Store.FK_UM_RolePermission_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_RolePermission_UM_Permission" Association="synergydbadminModel.Store.FK_UM_RolePermission_UM_Permission">
+            <End Role="UM_Permission" EntitySet="UM_Permission" />
+            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" />
           </AssociationSet>
           <AssociationSet Name="FK_UM_RoleScreenFunctions_UM_Roles" Association="synergydbadminModel.Store.FK_UM_RoleScreenFunctions_UM_Roles">
             <End Role="UM_Roles" EntitySet="UM_Roles" />
@@ -465,6 +475,21 @@
           <Property Name="Designation" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UM_Permission">
+          <Key>
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="PermissionId" Type="int" Nullable="false" />
+          <Property Name="Permission" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UM_RolePermission">
+          <Key>
+            <PropertyRef Name="RolePermissionId" />
+          </Key>
+          <Property Name="RolePermissionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="uniqueidentifier" />
+          <Property Name="PermissionId" Type="int" />
         </EntityType>
         <EntityType Name="UM_Roles">
           <Key>
@@ -825,6 +850,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UM_RolePermission_aspnet_Roles">
+          <End Role="aspnet_Roles" Type="synergydbadminModel.Store.aspnet_Roles" Multiplicity="0..1" />
+          <End Role="UM_RolePermission" Type="synergydbadminModel.Store.UM_RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UM_RolePermission">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UM_RolePermission_UM_Permission">
+          <End Role="UM_Permission" Type="synergydbadminModel.Store.UM_Permission" Multiplicity="0..1" />
+          <End Role="UM_RolePermission" Type="synergydbadminModel.Store.UM_RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UM_Permission">
+              <PropertyRef Name="PermissionId" />
+            </Principal>
+            <Dependent Role="UM_RolePermission">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UM_RoleScreenFunctions_UM_Roles">
           <End Role="UM_Roles" Type="synergydbadminModel.Store.UM_Roles" Multiplicity="1" />
           <End Role="UM_RoleScreenFunctions" Type="synergydbadminModel.Store.UM_RoleScreenFunctions" Multiplicity="*" />
@@ -885,8 +934,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="synergydbadminModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
@@ -1029,7 +1077,14 @@
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="UM_Permission" EntityType="synergydbadminModel.UM_Permission" />
+          <EntitySet Name="UM_RolePermission" EntityType="synergydbadminModel.UM_RolePermission" />
+          <AssociationSet Name="FK_UM_RolePermission_aspnet_Roles" Association="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" /></AssociationSet>
+          <AssociationSet Name="FK_UM_RolePermission_UM_Permission" Association="synergydbadminModel.FK_UM_RolePermission_UM_Permission">
+            <End Role="UM_Permission" EntitySet="UM_Permission" />
+            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" /></AssociationSet></EntityContainer>
         <EntityType Name="aspnet_Applications">
           <Key>
             <PropertyRef Name="ApplicationId" />
@@ -1121,7 +1176,7 @@
           <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="aspnet_Applications" Relationship="synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
           <NavigationProperty Name="aspnet_Users" Relationship="synergydbadminModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
-        </EntityType>
+          <NavigationProperty Name="UM_RolePermission" Relationship="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" FromRole="aspnet_Roles" ToRole="UM_RolePermission" /></EntityType>
         <EntityType Name="aspnet_SchemaVersions">
           <Key>
             <PropertyRef Name="Feature" />
@@ -1566,7 +1621,24 @@
           <End Role="aspnet_Roles" Type="synergydbadminModel.aspnet_Roles" Multiplicity="*" />
           <End Role="aspnet_Users" Type="synergydbadminModel.aspnet_Users" Multiplicity="*" />
         </Association>
-      </Schema>
+        <EntityType Name="UM_Permission">
+          <Key>
+            <PropertyRef Name="PermissionId" /></Key>
+          <Property Name="PermissionId" Type="Int32" Nullable="false" />
+          <Property Name="Permission" Type="String" Nullable="true" />
+          <NavigationProperty Name="UM_RolePermission" Relationship="synergydbadminModel.FK_UM_RolePermission_UM_Permission" FromRole="UM_Permission" ToRole="UM_RolePermission" /></EntityType>
+        <EntityType Name="UM_RolePermission">
+          <Key>
+            <PropertyRef Name="RolePermissionId" /></Key>
+          <Property Name="RolePermissionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" FromRole="UM_RolePermission" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="UM_Permission" Relationship="synergydbadminModel.FK_UM_RolePermission_UM_Permission" FromRole="UM_RolePermission" ToRole="UM_Permission" /></EntityType>
+        <Association Name="FK_UM_RolePermission_aspnet_Roles">
+          <End Type="synergydbadminModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="0..1" />
+          <End Type="synergydbadminModel.UM_RolePermission" Role="UM_RolePermission" Multiplicity="*" /></Association>
+        <Association Name="FK_UM_RolePermission_UM_Permission">
+          <End Type="synergydbadminModel.UM_Permission" Role="UM_Permission" Multiplicity="0..1" />
+          <End Type="synergydbadminModel.UM_RolePermission" Role="UM_RolePermission" Multiplicity="*" /></Association></Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -2175,7 +2247,27 @@
               <ScalarProperty Name="UserId" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="UM_Permission">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_Permission)">
+              <MappingFragment StoreEntitySet="UM_Permission">
+                <ScalarProperty Name="Permission" ColumnName="Permission" />
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UM_RolePermission">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_RolePermission)">
+              <MappingFragment StoreEntitySet="UM_RolePermission">
+                <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_UM_RolePermission_aspnet_Roles" TypeName="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" StoreEntitySet="UM_RolePermission">
+            <EndProperty Name="UM_RolePermission">
+              <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" /></EndProperty>
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" /></EndProperty>
+            <Condition ColumnName="RoleId" IsNull="false" /></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UM_RolePermission_UM_Permission" TypeName="synergydbadminModel.FK_UM_RolePermission_UM_Permission" StoreEntitySet="UM_RolePermission">
+            <EndProperty Name="UM_RolePermission">
+              <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" /></EndProperty>
+            <EndProperty Name="UM_Permission">
+              <ScalarProperty Name="PermissionId" ColumnName="PermissionId" /></EndProperty>
+            <Condition ColumnName="PermissionId" IsNull="false" /></AssociationSetMapping></EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -2230,8 +2322,8 @@
         <EntityTypeShape EntityType="synergydbadminModel.UserSkills" Width="1.5" PointX="10" PointY="11.625" Height="1.5956835937499996" IsExpanded="true" />
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Me__Appli__15502E78" ManuallyRouted="false">
           <ConnectorPoint PointX="12.25" PointY="8.7737939453125" />
-          <ConnectorPoint PointX="17.041666666666668" PointY="8.7737939453125" />
-          <ConnectorPoint PointX="17.208333333333332" PointY="8.7737939453125" />
+          <ConnectorPoint PointX="17.041666666666668" PointY="8.773793945312498" />
+          <ConnectorPoint PointX="17.333333333333332" PointY="8.7737939453125" />
           <ConnectorPoint PointX="17.5" PointY="8.7737939453125" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C" ManuallyRouted="false">
           <ConnectorPoint PointX="12.25" PointY="7.9612939453125" />
@@ -2357,7 +2449,25 @@
           <ConnectorPoint PointX="8.5" PointY="12.374999500000001" />
           <ConnectorPoint PointX="10" PointY="12.374999500000001" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.aspnet_UsersInRoles" ManuallyRouted="false">
-          <ConnectorPoint PointX="14.5" PointY="10.5862939453125" />
-          <ConnectorPoint PointX="15.25" PointY="10.5862939453125" /></AssociationConnector></Diagram></edmx:Diagrams>
+          <ConnectorPoint PointX="14.5" PointY="10.605646972656249" />
+          <ConnectorPoint PointX="15.25" PointY="10.605646972656249" /></AssociationConnector>
+        <EntityTypeShape EntityType="synergydbadminModel.UM_Permission" Width="1.5" PointX="18" PointY="4.5" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_RolePermission" Width="1.5" PointX="20.25" PointY="9.5" Height="1.5956835937499996" />
+        <AssociationConnector Association="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" >
+          <ConnectorPoint PointX="14.5" PointY="9.8340714863281242" />
+          <ConnectorPoint PointX="15" PointY="9.8340714863281242" />
+          <ConnectorPoint PointX="15" PointY="9.625" />
+          <ConnectorPoint PointX="17.041666666666668" PointY="9.625" />
+          <ConnectorPoint PointX="17.208333333333332" PointY="9.625" />
+          <ConnectorPoint PointX="17.25" PointY="9.625" />
+          <ConnectorPoint PointX="17.25" PointY="7.375" />
+          <ConnectorPoint PointX="20.510414166666667" PointY="7.3749999999999991" />
+          <ConnectorPoint PointX="20.677080833333331" PointY="7.375" />
+          <ConnectorPoint PointX="21" PointY="7.375" />
+          <ConnectorPoint PointX="21" PointY="9.5" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_UM_RolePermission_UM_Permission" >
+          <ConnectorPoint PointX="19.5" PointY="5.297841796875" />
+          <ConnectorPoint PointX="20.5937475" PointY="5.297841796875" />
+          <ConnectorPoint PointX="20.5937475" PointY="9.5" /></AssociationConnector></Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
