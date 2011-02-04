@@ -150,8 +150,10 @@
                                                         <label for="txtDescription">Description</label>Description:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="middle">
-                                                        <input name="txtDescription" id="txtDescription"
-                                                            class="textBox" size="70" maxlength="70" type="text">
+                                                      <%--  <input name="txtDescription" id="txtDescription"
+                                                            class="textBox" size="70" maxlength="70" type="text">--%>
+                                                        <textarea id="txtDescription" name="txtDescription" cols="160" rows="10" class="textBox" >
+                                                        </textarea> 
                                                     </td>
                                                 </tr>
                                                 
@@ -172,9 +174,7 @@
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">  
                                                         <input name="projectstartdate" id="projectstartdate"
-                                                            class="textBox" size="15" maxlength="4" type="text">
-                                                        <img src="../../Content/images/common/pick.gif" id="calstartdate"
-                                                            style="vertical-align: middle; cursor: pointer;" alt="Select" title="Select" border="0">
+                                                            class="textBox" size="15" maxlength="4" type="text">&nbsp;
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -184,9 +184,7 @@
                                                     <td class="formDetail" align="left" valign="top">
                                                       
                                                         <input name="projectenddate" id="projectenddate"
-                                                            class="textBox" size="15" maxlength="4" type="text">
-                                                        <img src="../../Content/images/common/pick.gif" id="calenddate" style="vertical-align: middle;
-                                                            cursor: pointer;" alt="Select" title="Select" border="0">
+                                                            class="textBox" size="15" maxlength="4" type="text">&nbsp;
                                                     </td>
                                                 </tr>
                                                 <tr>
