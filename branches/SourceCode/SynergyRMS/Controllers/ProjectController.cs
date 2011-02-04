@@ -9,7 +9,7 @@ namespace SynergyRMS.Controllers
 {
     public class ProjectController : Controller
     {
-        //public ServiceProject objProject;
+        
 
         public ActionResult Index()
         {
@@ -20,20 +20,17 @@ namespace SynergyRMS.Controllers
         #region project
         public ActionResult NewProject()
         {
-
-            /*-------------------Save Project ------------------*/
-            //PM_Projects pmProjects = new PM_Projects();
-            //pmProjects.ProjectCode = "PM005-4";
-            //pmProjects.Status = 1;
-            //pmProjects.ProjectName = "testProject6";
-            //pmProjects.ProjectStartDate = DateTime.Today;
-            //pmProjects.ProjectEndDate = DateTime.Today.AddDays(200);
-            //List<PM_Types> typeList = SynergyService.GetAllTypes();
-            //PM_Types selectedType = typeList[1];
-            //pmProjects.PM_Types = selectedType;
-            //SynergyService.SaveProject(pmProjects);
+            //string[] allProTypes = new string[2] { ("Type 1"), ("Type 2") };
+           List <PM_Types> allProTypes = SynergyService.GetAllTypes();
             
-
+            if (allProTypes.Count > 0)
+            {
+                List<string> TypeList = new List<string>();
+                foreach (PM_Types type in allProTypes)
+                    if (type != null)
+                        TypeList.Add(type.TypeName);
+                ViewData["ProTypes"] = new SelectList(TypeList);
+            }
             return View("NewProject");
         }
         [HttpPost]
@@ -41,6 +38,7 @@ namespace SynergyRMS.Controllers
         {
             try
             {
+                string proType = form["ddProTypes"].ToString();
               //  string code = form["txtCode"].ToString();
               //  string pname = form["txtprojectname"].ToString();
               //  string pdesc = form["txtDescription"].ToString();
