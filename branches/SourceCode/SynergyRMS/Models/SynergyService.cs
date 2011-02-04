@@ -491,7 +491,6 @@ namespace SynergyRMS.Models
                     GetSynegyRMSInstance().SaveChanges();
                 }
             }
-
             return true;
         }
 
