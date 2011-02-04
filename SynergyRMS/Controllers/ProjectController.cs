@@ -17,39 +17,14 @@ namespace SynergyRMS.Controllers
         }
 
 
-        #region project
+        #region Create new project
         public ActionResult NewProject()
         {
-            //string[] allProTypes = new string[2] { ("Type 1"), ("Type 2") };
-            //if (allProTypes.Length > 0)
-            //{
-            //    List<string> TypeList = new List<string>();
-            //    foreach (string type in allProTypes)
-            //        if (type != null)
-            //            TypeList.Add(type.ToString());
-            //    ViewData["ProTypes"] = new SelectList(TypeList);
-            //}
-
-            //Dim list As New List(Of SelectListItem)
-    //list.Add(New c  With {.Value = 1, .Text = "Test1"})
-    //list.Add(New SelectListItem With {.Value = 2, .Text = "Test2"})
-    //ViewData("CategoryList") = list
-
             List<PM_Types> allProTypes = SynergyService.GetAllTypes();
             SelectList list = new SelectList(allProTypes,"TypeId","TypeName");
         
             ViewData["ProTypes"] = list;
 
-            //List<PM_Types> allProTypes = SynergyService.GetAllTypes();
-
-            //if (allProTypes.Count > 0)
-            //{
-            //    List<string> TypeList = new List<string>();
-              //  foreach (PM_Types type in allProTypes)
-            //        if (type != null)
-              //         TypeList.Add(type.TypeId);
-            //    ViewData["ProTypes"] = new SelectList(TypeList);
-            //}
             return View("NewProject");
         }
         [HttpPost]
@@ -98,6 +73,10 @@ namespace SynergyRMS.Controllers
                 ViewData["status"] = "Error";
                 ViewData["msg"] = "Error in Project Creation.";
             }
+            List<PM_Types> allProTypes = SynergyService.GetAllTypes();
+            SelectList list = new SelectList(allProTypes, "TypeId", "TypeName");
+
+            ViewData["ProTypes"] = list;
             return View("NewProject");
         }
         #endregion project
