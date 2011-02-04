@@ -76,6 +76,10 @@
         }
         function popupCallback(context, returnValue) {
         }
+
+        function lnkAssignUsers_onClick(proid) {
+            AECWinPopup.open('AssignUsersProjectLoad?id=' + proid, 550, 750, popupCallback, '', false);
+        }
 </script>
 
     <div id="masterpage_divHead" class="formHead">
@@ -301,8 +305,8 @@ foreach (PM_Projects project in (List<PM_Projects>)ViewData["ProjectList"])
             </td>
             <td headers="Delete" class="evnrow-mdl" align="left" width="2%">
                 <a href="#"><strong>
-                    <%-- Html.ActionLink<UserController>(c => c.Delete(manager.ProviderUserKey.ToString()), "Delete", new { onclick = "return confirm('Are you sure you wish to delete selected manager?');" })--%>
-                    <%-- **<%=Html.ActionLink<UserController>(c => c.Delete(manager.ProviderUserKey.ToString()), "Delete", new { onclick = "return deleteConfirm();" })%>--%>
+                   <a class="link" onclick="lnkAssignUsers_onClick('<%= project.ProjectId%>');"
+                            title="Assign Users to this project" href="#">Assign Users </a>
                 </strong></a>
             </td>
         </tr>
