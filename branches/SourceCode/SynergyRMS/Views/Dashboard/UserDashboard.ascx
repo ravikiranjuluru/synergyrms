@@ -197,7 +197,7 @@
                                                         style="background-color: rgb(255, 255, 255); 
                                                         height: 24px;
                                                         padding-left: 4px; padding-right: 5px;">                                                   
-                                                        Manage Projects
+                                                        Projects
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -226,53 +226,26 @@
                                                                              <tbody>
                                                                                 <tr id="Tr8">
                                                                                     <td padding-left="6px" width="5%">
+                                                                                        <a id="A8" href="javascript:__doPostBack('ctl02$icon_AddProject','')">&nbsp;</a></td>
+                                                                                    <td>
                                                                                         <a id="A8" href="javascript:__doPostBack('ctl02$icon_AddProject','')">
                                                                                             
-                                                                                            <img src="../../Content/images/common/cross.gif" id="Img13" title="Click for more information">
-                                                                                        </a>
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A9" title="Click here to Add a New Project" href="../Project/NewProject">Add
-                                                                                            a New Project</a>
+                                                                                            </a><a id="A9" title="Click here to Add a New Project" href="../Project/NewProject"><img src="../../Content/images/common/newproject.png" id="Img13" 
+                                                                                            title="Click for more information">New Project</a>
                                                                                     </td>
                                                                                 </tr>
                                                                                
                                                                                 <tr id="Tr9">
                                                                                     <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img14" title="Click for more information" />
+                                                                                        
                                                                                     </td>
                                                                                     <td>
                                                                                         <a id="A10" title="Click here to View an Existing Project" href="../Project/EditProject">
-                                                                                            View an Existing Project</a>
+                                                                                            <img src="../../Content/images/common/viewproject.png" id="Img14" 
+                                                                                            title="Click for more information" />View Projects</a>
                                                                                     </td>
                                                                                 </tr>
-                                                                                 <tr id="Tr2">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img3" title="Click for more information" />
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A1" title="Click here to View an Existing Project" href="../GridView/Index">
-                                                                                            Project Schedule</a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                
-                                                                                <tr id="Tr11">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img16" title="Click for more information" />
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A12" title="Click here to Upload Documents" href="../Project/Docs">Upload Documents</a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr id="Tr12">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img17" title="Click for more information" />
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A13" title="Click here to Create a Project Status Report" href="../Report/Index">
-                                                                                            Create a Project Status Report</a>
-                                                                                    </td>
-                                                                                </tr>
+                                                                                 
                                                                                  <tr id="Tr1">
                                                                                     <td padding-left="6px" width="5%">
                                                                                         &nbsp;
@@ -323,7 +296,7 @@
                                                         style="background-color: rgb(255, 255, 255); 
                                                         height: 24px;
                                                         padding-left: 4px; padding-right: 5px;">                                                   
-                                                        Manage Resources
+                                                        Resources
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -540,6 +513,11 @@
                                                 <div class="tr">
                                                     <div class="content">
                                                         <style type="text/css">
+                                                            #Img13
+                                                            {
+                                                                height: 40px;
+                                                                width: 40px;
+                                                            }
                                                             </style>
                                                         <table style="padding-left: 10px; width: 100%;">
                                                             <tbody>
@@ -606,6 +584,111 @@
                 <!-- --------------------------------------------------------- -->
               
                 <!-- --------------------------------------------------------- -->
+                <div class="outer">
+                    <div class="boxtitle">
+                        <table style="background-color: white;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img id="img28" src="../../Content/images/common/manage_projects.gif" alt="" />
+                                    </td>
+                                    <td>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td id="td4" class="boxtitle" style="background-color: rgb(255, 255, 255); height: 24px;
+                                                        padding-left: 4px; padding-right: 5px;">
+                                                        Manage My Projects
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="t">
+                        <div class="b">
+                            <div class="l">
+                                <div class="r">
+                                    <div class="bl">
+                                        <div class="br">
+                                            <div class="tl">
+                                                <div class="tr">
+                                                    <div class="content">
+                                                        <style type="text/css">
+                                                            #Img13
+                                                            {
+                                                                height: 40px;
+                                                                width: 40px;
+                                                            }
+                                                            </style>
+                                                        <table style="padding-left: 10px; width: 100%;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="padding-left: 10px;">
+                                                                        <table id="Table5" style="width: 100%;">
+                                                                            <tbody>                                                                                                                                                        
+                                                                                <tr id="Tr23">
+                                                                                    <td padding-left="6px" width="5%">
+                                                                                        <img src="../../Content/images/common/cross.gif" id="Img29" 
+                                                                                            title="Click for more information" />
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a id="A25" title="Click here to View an Existing Project" 
+                                                                                            href="../Project/EditProject">
+                                                                                            View my Project</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr id="Tr24">
+                                                                                    <td padding-left="6px" width="5%">
+                                                                                        <img src="../../Content/images/common/cross.gif" id="Img30" 
+                                                                                            title="Click for more information" />
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a id="A26" title="Click here to Enter Project Tasks" 
+                                                                                            href="../Project/EditProject">
+                                                                                           View my Project Tasks</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr id="Tr25">
+                                                                                    <td padding-left="6px" width="5%">
+                                                                                        <img src="../../Content/images/common/cross.gif" id="Img31" 
+                                                                                            title="Click for more information" />
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a id="A27" title="Click here to Upload Documents" href="../Project/Docs">View my Documents</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                 <tr id="Tr26">
+                                                                                    <td padding-left="6px" width="5%">
+                                                                                        <img src="../../Content/images/common/cross.gif" id="Img32" 
+                                                                                            title="Click for more information" />
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <a id="A28" title="Click here to View Resources Schedules" 
+                                                                                            href="../Resource/Schedule">
+                                                                                            View My Schedules</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                               
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </td>
         </tr>
          <%} %>

@@ -49,12 +49,13 @@ namespace SynergyRMS.Controllers
         public ActionResult NewProject(FormCollection form)
         {
             try
-            {               
+            {             
                 PM_Projects Project = new PM_Projects();
                 Project.ProjectCode = form["txtCode"].ToString();
                 Project.ProjectName = form["txtprojectname"].ToString();
                 Project.ProjectStartDate = Convert.ToDateTime(form["projectstartdate"]);
                 Project.ProjectEndDate = Convert.ToDateTime(form["projectenddate"]);
+                Project.Description = form["txtDescription"].ToString();
                 Project.PM_Types = SynergyService.GetProjectTypebyId(Convert.ToInt32(form["ddProTypes"].ToString()));               
                 SynergyService.SaveProject(Project);
 
