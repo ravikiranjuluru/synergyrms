@@ -21,9 +21,5 @@ namespace SynergyRMS.Models
         public const string viewUser = "viewUser";
         public const string editUser = "editUser";
         public const string deleteUser = "deleteUser";
-
-
-        
-
     }
 }
