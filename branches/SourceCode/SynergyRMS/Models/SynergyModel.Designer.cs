@@ -40,7 +40,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "FK_PM_Projects_PM_Status", "PM_Status", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SynergyRMS.Models.PM_Status), "PM_Projects", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.PM_Projects))]
 
 // Original file name:
-// Generation date: 2/4/2011 6:32:59 PM
+// Generation date: 2/4/2011 6:37:01 PM
 namespace SynergyRMS.Models
 {
     

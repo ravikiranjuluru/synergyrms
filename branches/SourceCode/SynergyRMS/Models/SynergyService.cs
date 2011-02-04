@@ -536,7 +536,20 @@ namespace SynergyRMS.Models
             return permissionList;
         }
 
-
+        /// <summary>
+        /// Gets the name of the user role id by.
+        /// </summary>
+        /// <param name="roleName">Name of the role.</param>
+        /// <returns></returns>
+        public static Guid GetUserRoleIdByName (string roleName)
+        {
+            aspnet_Roles role = null;
+            var roleQuery = from p in GetSynegyRMSInstance().aspnet_Roles
+                            where p.RoleName == roleName
+                                     select p;
+            role = roleQuery.First();
+            return role.RoleId;
+        }
 
 
         #endregion
