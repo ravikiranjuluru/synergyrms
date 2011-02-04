@@ -10,17 +10,42 @@
     
 </head>
 <body>
-    <% using (Html.BeginForm("NewUser", "Resource"))
+    <% using (Html.BeginForm("EditUser", "Resource"))
        {
            if (ViewData["EditUser"] != null)
            {
                MembershipUser edituser = (MembershipUser)ViewData["EditUser"];
                ProfileCommon Userprofile = Profile.GetProfile(edituser.UserName);
+               string userkey = edituser.ProviderUserKey.ToString();
                 %>
+                <input type="hidden" name="hdnid" value="<%=userkey%>">
     <div class="formBody" id="masterpage_divBody">
         <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
             id="masterPage_tblFormContentRoot">
             <tbody>
+                <tr>
+                    <td valign="middle" align="right" class="formDetailDark">
+                        &nbsp;
+                    </td>
+                    <td valign="middle" align="left" style="width: 211px">
+                        <% if ((ViewData["status"]) != null)
+                           {
+                               var status = ViewData["status"].ToString();
+                               var msg = ViewData["msg"].ToString();
+                        %>
+                        <% if (status == "Success")
+                           { %>
+                        <div id="msgsuccess" class="success-msg">
+                            <%= msg%></div>
+                        <%} %>
+                        <% if (status == "Error")
+                           { %>
+                        <div id="msgerror" class="error-msg">
+                            <%= msg%></div>
+                        <%} %>
+                        <%} %>
+                    </td>
+                </tr>
                 <tr>
                     <td class="form">
                         <table class="formContent">
@@ -48,7 +73,8 @@
                                         Email Address:
                                     </td>
                                     <td valign="middle" align="left" class="formDetail">
-                                        <input type="text" maxlength="70" size="70" class="textBox" id="txtemail" name="txtemail">
+                                        <input type="text" maxlength="70" size="70" class="textBox" 
+                                        id="txtemail" name="txtemail" value="<%=edituser.Email%>">
                                     </td>
                                 </tr>
                                 <tr>
@@ -56,7 +82,8 @@
                                         Telephone:
                                     </td>
                                     <td valign="middle" align="left" class="formDetail">
-                                        <input type="text" maxlength="30" size="30" class="textBox" id="telephone" name="telephone">
+                                        <input type="text" maxlength="30" size="30" class="textBox" id="txtphone" 
+                                        value="<%=Userprofile.Phone%>" name="txtphone">
                                     </td>
                                 </tr>
                                 <tr>
