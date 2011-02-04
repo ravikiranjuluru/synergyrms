@@ -92,7 +92,14 @@
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/directentrygrid.css" type="text/css"/>
   
 
-  
+<!-- Jquery datatable -->
+   <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/Datatable/demo_page.css"
+        type="text/css" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/Datatable/demo_table.css"
+        type="text/css" />
+    <script type="text/javascript" language="javascript" src="<%= ResolveUrl("~") %>Scripts/Datatable/jquery.js"></script>
+    <script type="text/javascript" language="javascript" src="<%= ResolveUrl("~") %>Scripts/Datatable/jquery.dataTables.js"></script>
+<!-- Jquery datatable -->
   
    
    
