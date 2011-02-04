@@ -19,7 +19,8 @@
 	
 	<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/WebResorce.css" type="text/css"/>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SkinStyle.css" type="text/css"/>
-    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/styles.css" type="text/css"/>
+     <link id="Link1" rel="stylesheet" 
+    href="<%= ResolveUrl("~") %>Content/common/styles.css" />
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/sitenavigation.css" type="text/css"/>   
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/ScrollableTable.css" type="text/css" />
     <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/Grid.css" type="text/css"/>
@@ -27,7 +28,7 @@
    <%-- <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.8.6.custom.css" type="text/css" media="screen" />--%>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.7.2.custom.css" type="text/css" media="screen" />
 </head>
-<body>
+<body >
    <script type="text/javascript">
     function lnkAssignRolePermission_onClick(userkey, role) {
         AECWinPopup.open('AssignRolesEditPermission?id=' + userkey + '&role=' + role, 550, 500, popupCallback, '', false);
@@ -222,9 +223,10 @@
                                 <div class="boxTitle">
                                 <% 
                                     MembershipUser edituser = (MembershipUser)ViewData["EditUser"];
-                                    
+                                    string userkey = edituser.ProviderUserKey.ToString();
                                     %>
                                     Assign Roles for user :<%=edituser.UserName%></div>
+                                    
                                 <div>
                                     <p>
                                         Use the form below to Assign user to roles
@@ -245,34 +247,51 @@
                                                                         <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="../../Content/images/common/space.gif">
                                                                     </td>
                                                                 </tr>
-                                                                <% using (Html.BeginForm("AddRole", "Resource"))
+                                                                
+                                                                
+                                                              <tr>
+                                                                    <td valign="middle" align="right" class="style2">
+                                                                       &nbsp;
+                                                                    </td>
+                                                                    <td valign="middle" align="left" style="width: 80%">
+                                                                    <% if ((ViewData["status"]) != null)
+                                                                       {
+                                                                           var status = ViewData["status"].ToString();
+                                                                           var msg = ViewData["msg"].ToString();
+                                                                    %>
+                                                                    <% if (status == "Success")
+                                                                       { %>
+                                                                    <div id="msgsuccess" class="success-msg">
+                                                                        <%= msg%></div>
+                                                                    <%} %>
+                                                                    <% if (status == "Error")
+                                                                       { %>
+                                                                    <div id="msgerror" class="error-msg">
+                                                                        <%= msg%></div>
+                                                                    <%} %>
+                                                                    <%} %>
+                                                                </td>
+                                                                </tr>
+                                                                
+                                                                 <% using (Html.BeginForm("AssignRoletoEditUser", "Resource"))
                                                                    { %>
-                                                                <%if (ViewData["EditUser"] != null)
-                                                                  {
-
-                                                                      bool[] permissionList = new bool[7];
-                                                                      if (ViewData["PermissionList"] != null)
-                                                                      {
-                                                                          permissionList = (bool[])ViewData["PermissionList"];
-                                                                      }
-                                                                %>
+                                                                   <input type="hidden" name="hdnid" value="<%=userkey%>">
                                                                 <tr>
                                                                     <td valign="middle" align="right" class="style2">
-                                                                        <label for="resourceType">
-                                                                        </label>
                                                                         Resource Type:
                                                                     </td>
                                                                     <td valign="middle" align="left" class="formDetail">
-                                                                        <select class="comboBox" id="resourceType" name="ctl00$phFormContent$cboResourceType"
-                                                                            style="width: 85px">
-                                                                            <option value="1">Employee</option>
-                                                                            <option value="2">Contractor</option>
-                                                                            <option value="4" selected="selected">Role</option>
-                                                                        </select>
-                                                                        <input type="button" value="Add Roles" class="button" id="btnAddRoles" name="btnAddRoles"
+                                                                        <%=Html.DropDownList("ddRoles", (SelectList)ViewData["RoleList"],new { @class = "comboBox" })%>
+                                                                        <input type="submit" value="Add Role" class="button" id="btnAddRoles" name="btnAddRoles"
                                                                             style="width: 85px">
                                                                     </td>
                                                                 </tr>
+                                                                 <%} %>
+                                                               
+                                                               
+                                                                   
+                                                                
+                                                                
                                                                 <tr>
                                                                     <td valign="top" align="right" class="style2">
                                                                         Roles:
@@ -282,36 +301,30 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td class="style1">
-                                                                                        <table cellspacing="0" cellpadding="0" style="width: 110%; margin-right: 28px;" 
+                                                                                        <table cellspacing="0" cellpadding="0" style="width: 50%; margin-right: 28px;" 
                                                                                             class="table" id="tblRoles">
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <th align="left" id="role" style="width: 50%;" class="tableColumnTitle">
+                                                                                                    <th align="left" id="role"  class="tableColumnTitle">
                                                                                                         Role
                                                                                                     </th>
-                                                                                                    <th align="left" id="edit" style="width: 20%;" class="tableColumnTitle">
-                                                                                                        &nbsp;
-                                                                                                    </th>
-                                                                                                    <th align="left" id="del" style="width: 20%;" class="tableColumnTitle">
-                                                                                                        &nbsp;</th>
-                                                                                                </tr>
-                                                                                                <tr>
-                                                                                                    <td align="left" style="width: 20%;" class="tableRowDark" headers="role">
-                                                                                                        Developer
-                                                                                                        <% var editrole = "User"; %>
-                                                                                                    </td>
-                                                                                                    <td align="left" headers="edit">
-                                                                                                        <a class="link" onclick="lnkAssignRolePermission_onClick('<%=edituser.ProviderUserKey.ToString()%>','<%=editrole %>');"
-                                                                                                            title="Edit User Roles" href="#">Edit Roles </a>
-                                                                                                       <%-- <%=Html.ActionLink("Edit Permission", "AssignRolesEditPermission", "Resource", new { @id = editname }, null)%>--%>
-                                                                                                    </td>
-                                                                                                    <td align="left" headers="del" >
+                                                                                                    
                                                                                                    
-                                                                                                        <a href="#">Delete</a></td>
-                                                                                                    <td align="left">
-                                                                                                       
-                                                                                                    </td>
                                                                                                 </tr>
+                                                                                                <%if (ViewData["EditUserRolesList"] != null)
+                                                                                                  {
+
+                                                                                                      foreach (string role in (List<string>)ViewData["EditUserRolesList"])
+                                                                                                      {
+                                                                                                %>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="width: 50%;" class="tableRowDark" headers="role">
+                                                                                                        <%= role %>
+                                                                                                    </td>
+                                                                                                    
+                                                                                                </tr>
+                                                                                                <%}
+                                                                                                 }%>
                                                                                             </tbody>
                                                                                         </table>
                                                                                     </td>
@@ -344,7 +357,7 @@
                                                                     </td>
                                                                 </tr>
                                                                 
-                                                               
+                                                             
                                                                 
                                                                 <tr>
                                                                     <td height="5" class="style2">
@@ -361,32 +374,12 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="formFoot" id="masterpage_divFoot">
-                                        <table cellspacing="0" cellpadding="0" border="0" style="width: 104%">
-                                            <tbody>
-                                                <tr>
-                                                    <td valign="middle" align="left">
-                                                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td align="left">
-                                                                        <input type="submit" value="Save" class="button" id="btnSave" name="btnSave">&nbsp;
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <%} %>
-                                    <%} %>
+                                   
+                                   
                                 </div>
                             </div>
                        
-                       <%-- <div class="BoxBottom">
-                        </div>--%>
+                      
                     </div>
                 </div>
             </td>

@@ -4,7 +4,12 @@ Inherits="System.Web.Mvc.ViewPage" %>
 <%@ Import Namespace="Microsoft.Web.Mvc"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+<script type="text/javascript">
+    function lnkRolePermission_onClick(role) {
+        AECWinPopup.open('LoadRolePermission?role=' + role, 550, 500, popupCallback, '', false);
+    }
+     
+</script>
     <div class="formContainer" id="masterpage_divMain">
         <div class="formHead" id="masterpage_divHead">
             <table width="100%" cellspacing="0" cellpadding="0" border="0" class="pageTitle">
@@ -79,7 +84,7 @@ Inherits="System.Web.Mvc.ViewPage" %>
                             </table>
                             <% using (Html.BeginForm("Role", "Resource"))
                                { %>
-                            <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
+                       <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
                                 id="masterPage_tblFormContentRoot">
                                 <tbody>
                                     <tr>
@@ -97,7 +102,7 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                         <td valign="middle" align="right" class="formDetailDark">
                                                            View Roles
                                                         </td>
-                                                        <td valign="middle" align="left" class="formDetail" style="width: 211px">
+                                                        <td valign="middle" align="left" class="formDetailDark" style="width: 211px">
                                                         
                                                         <%if (ViewData["roleList"] != null)
                                                           { %>
@@ -128,11 +133,8 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                                                 <%= role.Text%></strong>
                                                                         </td>
                                                                         <td headers="edit"  align="left">
-                                                                            <a href="#"><strong>
-                                                                               
-                                                                               <%--* <%= Html.ActionLink<ResourceController>(c => c.EditRole(role.Text), "Edit", "")%>--%>
-                                                                              <%-- <%=Html.ActionLink("Edit", "EditRole", "Resource", new { id = role.Text })%>--%>
-                                                                            </strong></a>
+                                                                            <a class="link" onclick="lnkRolePermission_onClick('<%=role.Text%>');"
+                                                                                   title="Edit Roles Permissions" href="#">Edit Permissions </a>
                                                                         </td>
                                                                         <%--<td headers="Delete" class="evnrow-mdl" align="left">
                                                                             <a href="#"><strong>
