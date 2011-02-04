@@ -222,17 +222,17 @@
                                                                         <div class="tr">
                                                                             <div class="content">
                                                                                 <style type="text/css">
-                                                                                    .style4
+                                                                                    .style9
                                                                                     {
-                                                                                        width: 242px;
+                                                                                        width: 10%;
                                                                                     }
-                                                                                    .style5
+                                                                                    .style10
                                                                                     {
-                                                                                        width: 179px;
+                                                                                        width: 17%;
                                                                                     }
-                                                                                    .style6
+                                                                                    .style11
                                                                                     {
-                                                                                        width: 144px;
+                                                                                        width: 15%;
                                                                                     }
                                                                                     </style>
 <table style="padding-left: 10px; width: 100%;">
@@ -243,16 +243,18 @@
 <table id="tblprojects" width="100%" border="0" cellspacing="0" cellpadding="0" class="display">
     <thead>
         <tr>
-            <th id="pcode" width="34%" align="left" height="30">
+            <th id="pcode" align="left" height="30" class="style9">
                 <a href="#">Project Code</a>
             </th>
-            <th id="pname" width="12%" align="left">
+            <th id="pname" align="left" class="style10">
                 <a href="#">Project Name</a>
             </th>
-            <th id="pdesc" width="20%" align="left">
+            <th id="pdtype" align="left" class="style9">
+                <a href="#">Project Type</a></th>                                                                                                            
+            <th id="pdesc" align="left" class="style11">
                 <a href="#">Description</a>
             </th>                                                                                                            
-            <th id="psdate" width="10%" align="left">
+            <th id="psdate" align="left" class="style11">
                 <a href="#">Start Date</a>
             </th>
             <th id="pedate" width="10%" align="left">
@@ -271,20 +273,23 @@ foreach (PM_Projects project in (List<PM_Projects>)ViewData["ProjectList"])
 
         %>
         <tr>
-            <td headers="pcode" class="oddrow-mdl" align="left" height="12" width="34%">
+            <td headers="pcode" class="oddrow-mdl" align="left" height="12" 
+                style="width: 10%">
                <%= project.ProjectCode%>
             </td>
-            <td headers="pname" class="oddrow-mdl" align="left" width="20%">
+            <td headers="pname" class="oddrow-mdl" align="left" style="width: 10%">
                  <%= project.ProjectName%>
             </td>
-            <td headers="pdesc" class="oddrow-mdl" align="left" width="20%">
+            <td headers="pdtype" class="oddrow-mdl" align="left" style="width: 10%">
+                 <%= project.PM_Types.TypeName%></td>
+            <td headers="pdesc" class="oddrow-mdl" align="left" style="width: 22%">
                 <%= project.Description%>
             </td>
-            <td headers="psdate" class="oddrow-mdl" align="left" width="20%">
-                <%= project.ProjectStartDate%>
+            <td headers="psdate" class="oddrow-mdl" align="left" style="width: 15%">
+                <%=String.Format("{0:ddd, MMM d, yyyy}", project.ProjectStartDate.Date)%>
             </td>
-            <td headers="pedate" class="oddrow-mdl" align="left" width="20%">
-                <%= project.ProjectEndDate%>
+            <td headers="pedate" class="oddrow-mdl" align="left" style="width: 15%">
+                <%= String.Format("{0:ddd, MMM d, yyyy}",project.ProjectEndDate.Date)%>
             </td>
             
             <td headers="edit" class="evnrow-mdl" align="left" width="20%">
