@@ -10,7 +10,7 @@ namespace SynergyRMS.Models
     /// </summary>
     public class SynergyService
     {
-        private static SynergyRMSEntities _synergyRMSEntities = null;
+        private static synergyrmsEntities _synergyRMSEntities = null;
 
         #region Utility Methods
 
@@ -18,11 +18,11 @@ namespace SynergyRMS.Models
         /// Gets the synegy RMS instance.
         /// </summary>
         /// <returns></returns>
-        private static SynergyRMSEntities GetSynegyRMSInstance()
+        private static synergyrmsEntities GetSynegyRMSInstance()
         {
             if (_synergyRMSEntities == null)
             {
-                _synergyRMSEntities = new SynergyRMSEntities();
+                _synergyRMSEntities = new synergyrmsEntities();
             } 
             
             return _synergyRMSEntities;
@@ -49,12 +49,12 @@ namespace SynergyRMS.Models
             }
         }
 
+
         /// <summary>
-        /// Gets the projects.
+        /// Gets all projects.
         /// </summary>
-        /// <param name="project">The project.</param>
         /// <returns></returns>
-        public static List<PM_Projects> GetProjects(PM_Projects project)
+        public static List<PM_Projects> GetAllProjects()
         {
             try
             {
@@ -225,7 +225,7 @@ namespace SynergyRMS.Models
             {
                 return GetSynegyRMSInstance().PM_Types.ToList();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw;
             }
