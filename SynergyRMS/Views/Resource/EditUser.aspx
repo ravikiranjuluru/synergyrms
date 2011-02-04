@@ -98,6 +98,14 @@
                                 </tr>
                                 <tr>
                                     <td valign="middle" align="right" class="formDetailDark">
+                                        Role:
+                                    </td>
+                                    <td valign="middle" align="left" class="formDetail">
+                                       <%=Html.DropDownList("ddRoles", (SelectList)ViewData["RoleList"],new { @class = "comboBox" })%> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="right" class="formDetailDark">
                                         <label for="txtpwd">
                                         </label>
                                         Reset Password:
