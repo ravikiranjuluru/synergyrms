@@ -162,7 +162,7 @@
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <%--<%=Html.DropDownList("ddProTypes", (SelectList)ViewData["ProTypes"], new { @class = "comboBox" })%>--%>
-                                                      <%=Html.DropDownList("ddProTypes", (SelectList)ViewData["ProTypes"])%>
+                                                      <%=Html.DropDownList("ddProTypes", (SelectList)ViewData["ProTypes"], new { @class = "comboBox" })%>
                                                     </td>
                                                 </tr>
                                                 <%} %>
