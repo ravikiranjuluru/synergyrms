@@ -1,7 +1,8 @@
-﻿<%--<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
-    Inherits="System.Web.Mvc.ViewPage<Projects>" %>--%>
-    <%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
-    Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
+    Inherits="System.Web.Mvc.ViewPage<PM_Projects>" %>
+    <%@ Import Namespace="SynergyRMS.Models" %>
+  <%--  <%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
+    Inherits="System.Web.Mvc.ViewPage" %>--%>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -68,6 +69,15 @@
             padding-top: 10px;
         }
     </style>
+    
+    <script type="text/javascript">
+        function lnkEditProject_onClick(proid) {
+            AECWinPopup.open('EditProjectLoad?id=' + proid, 550, 500, popupCallback, '', false);
+        }
+        function popupCallback(context, returnValue) {
+        }
+</script>
+
     <div id="masterpage_divHead" class="formHead">
         <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tbody>
@@ -225,657 +235,79 @@
                                                                                         width: 144px;
                                                                                     }
                                                                                     </style>
-                                                                                <table style="padding-left: 10px; width: 100%;">
-                                                                                   
-                                                                                        <tr>
-                                                                                            <td align="left" valign="top">
-                                                                                                Datatable goes here
-                                                                                                <table id="table_id">
-                                                                                                    <thead>
-                                                                                                        <tr>
-                                                                                                            <th class="style4">
-                                                                                                                Column 1
-                                                                                                            </th>
-                                                                                                            <th class="style5">
-                                                                                                                Column 2
-                                                                                                            </th>
-                                                                                                            <th class="style6">
-                                                                                                                etc
-                                                                                                            </th>
-                                                                                                        </tr>
-                                                                                                    </thead>
-                                                                                                    <tbody>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 1 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 1 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 1 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 1 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 1 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 1 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 1 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 1 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 1 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 1 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 1 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 1 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 1 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 1 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 1 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 1 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 1 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 1 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 1 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 1 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 1
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 2
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <tr>
-                                                                                                            <td class="style4">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style5">
-                                                                                                                Row 2 Data 3
-                                                                                                            </td>
-                                                                                                            <td class="style6">
-                                                                                                                etc
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </tbody>
-                                                                                                </table>
-                                                                                                <table id="tblprojects" width="100%" border="0" cellspacing="0" cellpadding="0" class="display">
-                                                                                                    <thead>
-                                                                                                        <tr>
-                                                                                                            <th id="pcode" width="34%" align="left" height="30">
-                                                                                                                <a href="#">Project Code</a>
-                                                                                                            </th>
-                                                                                                            <th id="pname" width="12%" align="left">
-                                                                                                                <a href="#">Project Name</a>
-                                                                                                            </th>
-                                                                                                            <th id="pdesc" width="20%" align="left">
-                                                                                                                <a href="#">Description</a>
-                                                                                                            </th>
-                                                                                                            <th id="pclient" width="20%" align="left">
-                                                                                                                <a href="#">Client</a>
-                                                                                                            </th>
-                                                                                                            <th id="pstatus" width="10%" align="left">
-                                                                                                                <a href="#">Status</a>
-                                                                                                            </th>
-                                                                                                            <th id="pmanager" width="20%" align="left">
-                                                                                                                <a href="#">Project Manager</a>
-                                                                                                            </th>
-                                                                                                            <th id="psdate" width="10%" align="left">
-                                                                                                                <a href="#">Start Date</a>
-                                                                                                            </th>
-                                                                                                            <th id="pedate" width="10%" align="left">
-                                                                                                                <a href="#">End Date</a>
-                                                                                                            </th>
-                                                                                                            <th id="edit" width="2%">
-                                                                                                            </th>
-                                                                                                            <th id="Delete" width="2%">
-                                                                                                            </th>
-                                                                                                        </tr>
-                                                                                                    </thead>
-                                                                                                    <tbody>
-                                                                                                        <%-- <%
-                                                                                    foreach (MembershipUser manager in (MembershipUserCollection)ViewData["Managerlist"])
-                                                                                    {
-                                                                                        ProfileCommon mngrprofile = Profile.GetProfile(manager.UserName);
-                                                                                        string keyid = manager.ProviderUserKey.ToString(); 
-                                                                                %>--%>
-                                                                                                        <tr>
-                                                                                                            <td headers="mgrname" class="oddrow-mdl" align="left" height="25" width="34%">
-                                                                                                                <%--<%= mngrprofile.FullName%>--%>
-                                                                                                            </td>
-                                                                                                            <td headers="email" class="oddrow-mdl" align="left" width="12%">
-                                                                                                                <%-- <%= manager.Email%>--%>
-                                                                                                            </td>
-                                                                                                            <td headers="organization" class="oddrow-mdl" align="left" width="20%">
-                                                                                                                <%-- <%= mngrprofile.Organization%>--%>
-                                                                                                            </td>
-                                                                                                            <td headers="Username" class="oddrow-mdl" align="left" width="20%">
-                                                                                                                <%--<%= manager.UserName%>--%>
-                                                                                                            </td>
-                                                                                                            <td headers="active" class="oddrow-mdl" align="left" width="10%">
-                                                                                                                <%-- <% var status = "Inactive";
-                                                                                           if (manager.IsApproved)
-                                                                                               status = "Active";
-                                                                                        %>
-                                                                                        <%= status%>--%>
-                                                                                                            </td>
-                                                                                                            <td headers="edit" class="evnrow-mdl" align="left" width="2%">
-                                                                                                                <a href="#"><strong>
-                                                                                                                    <%--<%=Html.ActionLink<UserController>(c => c.EditManager(manager.ProviderUserKey.ToString()), "Edit")%>--%>
-                                                                                                                </strong></a>
-                                                                                                            </td>
-                                                                                                            <td headers="Delete" class="evnrow-mdl" align="left" width="2%">
-                                                                                                                <a href="#"><strong>
-                                                                                                                    <%-- Html.ActionLink<UserController>(c => c.Delete(manager.ProviderUserKey.ToString()), "Delete", new { onclick = "return confirm('Are you sure you wish to delete selected manager?');" })--%>
-                                                                                                                    <%-- **<%=Html.ActionLink<UserController>(c => c.Delete(manager.ProviderUserKey.ToString()), "Delete", new { onclick = "return deleteConfirm();" })%>--%>
-                                                                                                                </strong></a>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                        <%--<%} %>--%>
-                                                                                                    </tbody>
-                                                                                                </table>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    
-                                                                                </table>
+<table style="padding-left: 10px; width: 100%;">
+
+<tr>
+<td align="left" valign="top">
+
+<table id="tblprojects" width="100%" border="0" cellspacing="0" cellpadding="0" class="display">
+    <thead>
+        <tr>
+            <th id="pcode" width="34%" align="left" height="30">
+                <a href="#">Project Code</a>
+            </th>
+            <th id="pname" width="12%" align="left">
+                <a href="#">Project Name</a>
+            </th>
+            <th id="pdesc" width="20%" align="left">
+                <a href="#">Description</a>
+            </th>                                                                                                            
+            <th id="psdate" width="10%" align="left">
+                <a href="#">Start Date</a>
+            </th>
+            <th id="pedate" width="10%" align="left">
+                <a href="#">End Date</a>
+            </th>
+            <th id="edit" width="2%">
+            </th>
+            <th id="Delete" width="2%">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <%
+foreach (PM_Projects project in (List<PM_Projects>)ViewData["ProjectList"])
+{
+
+        %>
+        <tr>
+            <td headers="pcode" class="oddrow-mdl" align="left" height="12" width="34%">
+               <%= project.ProjectCode%>
+            </td>
+            <td headers="pname" class="oddrow-mdl" align="left" width="20%">
+                 <%= project.ProjectName%>
+            </td>
+            <td headers="pdesc" class="oddrow-mdl" align="left" width="20%">
+                <%= project.Description%>
+            </td>
+            <td headers="psdate" class="oddrow-mdl" align="left" width="20%">
+                <%= project.ProjectStartDate%>
+            </td>
+            <td headers="pedate" class="oddrow-mdl" align="left" width="20%">
+                <%= project.ProjectEndDate%>
+            </td>
+            
+            <td headers="edit" class="evnrow-mdl" align="left" width="20%">
+                <a href="#"><strong>
+                    <%--<%=Html.ActionLink<UserController>(c => c.EditManager(manager.ProviderUserKey.ToString()), "Edit")%>--%>
+                    <a class="link" onclick="lnkEditProject_onClick('<%= project.ProjectId%>');"
+                            title="Edit User Roles" href="#">Edit Project </a>
+                </strong></a>
+            </td>
+            <td headers="Delete" class="evnrow-mdl" align="left" width="2%">
+                <a href="#"><strong>
+                    <%-- Html.ActionLink<UserController>(c => c.Delete(manager.ProviderUserKey.ToString()), "Delete", new { onclick = "return confirm('Are you sure you wish to delete selected manager?');" })--%>
+                    <%-- **<%=Html.ActionLink<UserController>(c => c.Delete(manager.ProviderUserKey.ToString()), "Delete", new { onclick = "return deleteConfirm();" })%>--%>
+                </strong></a>
+            </td>
+        </tr>
+        <%} %>
+    </tbody>
+</table>
+</td>
+</tr>
+
+</table>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -898,7 +330,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#table_id').dataTable({
+        $('#tblprojects').dataTable({
                         "bPaginate": true,
                         "bLengthChange": true,
                         "bFilter": true,
@@ -906,7 +338,7 @@
                         "bInfo": true,
                         "bAutoWidth": true,              
                     "sPaginationType": 'full_numbers',
-                "bJQueryUI": true,
+                //"bJQueryUI": true,
                 'sDom': '<"top"lf>t<"clear"><"bottom"ip><"clear">'
             });
         });
