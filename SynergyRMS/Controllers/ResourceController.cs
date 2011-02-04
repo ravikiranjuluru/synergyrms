@@ -262,6 +262,7 @@ namespace SynergyRMS.Controllers
         #region User
         public ActionResult Index()//*
         {
+            ViewData["RoleList"] = GetAllRoles();
             return View();
         }
         public ActionResult NewUser(FormCollection form)//*
@@ -277,7 +278,7 @@ namespace SynergyRMS.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    Roles.AddUserToRole(newuser.UserName, "User");
+                    Roles.AddUserToRole(newuser.UserName, form["ddRoles"].ToString());
                     var profile = ProfileBase.Create(newuser.UserName);
                     profile.SetPropertyValue("FirstName", form["txtfirstname"].ToString());
                     profile.SetPropertyValue("LastName", form["txtlastname"].ToString());
@@ -305,7 +306,8 @@ namespace SynergyRMS.Controllers
             }
             catch
             {
-            }           
+            }
+            ViewData["RoleList"] = GetAllRoles();
             return View("Index");
         }
         
@@ -537,6 +539,7 @@ namespace SynergyRMS.Controllers
                     {
                         //var name = edituser.UserName;
                         ViewData["EditUser"] = edituser;
+                        ViewData["RoleList"] = GetAllRoles();
                     }
                 }
 
@@ -563,6 +566,17 @@ namespace SynergyRMS.Controllers
                     if (edituser != null)
                     {
                         var profile = new ProfileBase();
+                        bool isInRole = Roles.IsUserInRole(edituser.UserName, form["ddRoles"].ToString());
+                        if (!isInRole)
+                        {
+                            string[] curntrole = Roles.GetAllRoles();
+                            if (curntrole.Length > 0)
+                            {
+                                Roles.RemoveUserFromRole(edituser.UserName, curntrole[0].ToString());
+                            }
+
+                            Roles.AddUserToRole(edituser.UserName, form["ddRoles"].ToString());
+                        }
                         profile.Initialize(edituser.UserName, true);
                         profile.SetPropertyValue("FirstName", form["txtfirstname"].ToString());
                         profile.SetPropertyValue("LastName", form["txtlastname"].ToString());
@@ -582,6 +596,7 @@ namespace SynergyRMS.Controllers
             {
                 //return RedirectToAction("AddRole", "Resource");
             }
+            ViewData["RoleList"] = GetAllRoles();
             return View("EditUser");
         }
 
