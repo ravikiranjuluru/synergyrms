@@ -429,6 +429,8 @@ namespace SynergyRMS.Controllers
             return View("IndexRole");
         }
 
+
+        //Edit user information in the user list
         public ActionResult EditUser()
         {
             try
@@ -450,6 +452,43 @@ namespace SynergyRMS.Controllers
             catch (Exception ex)
             {
                 return RedirectToAction("AddRole", "Resource");
+            }
+            return View("EditUser");
+        }
+        [HttpPost]
+        public ActionResult EditUser(FormCollection form)
+        {
+            try
+            {
+                string userkey = form["hdnid"].ToString();
+
+                if (userkey != null)
+                {
+                    MembershipUser edituser = Membership.GetUser(new Guid(userkey));
+                    edituser.Email = form["txtemail"].ToString();
+                    
+
+                    if (edituser != null)
+                    {
+                        var profile = new ProfileBase();
+                        profile.Initialize(edituser.UserName, true);
+                        profile.SetPropertyValue("FirstName", form["txtfirstname"].ToString());
+                        profile.SetPropertyValue("LastName", form["txtlastname"].ToString());
+                        profile.SetPropertyValue("Phone", form["txtphone"].ToString());
+                        profile.Save();
+
+                        ViewData["EditUser"] = edituser;
+
+                        Membership.UpdateUser(edituser);
+                        TempData["status"] = "Success";
+                        TempData["msg"] = "User information updated successfully.";
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //return RedirectToAction("AddRole", "Resource");
             }
             return View("EditUser");
         }
