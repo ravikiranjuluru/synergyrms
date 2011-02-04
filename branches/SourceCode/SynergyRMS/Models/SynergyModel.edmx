@@ -130,6 +130,10 @@
             <End Role="PM_Projects" EntitySet="PM_Projects" />
             <End Role="PM_ProjectRisks" EntitySet="PM_ProjectRisks" />
           </AssociationSet>
+          <AssociationSet Name="FK_PM_Projects_PM_Status" Association="synergydbadminModel.Store.FK_PM_Projects_PM_Status">
+            <End Role="PM_Status" EntitySet="PM_Status" />
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+          </AssociationSet>
           <AssociationSet Name="FK_PM_Projects_PM_Types" Association="synergydbadminModel.Store.FK_PM_Projects_PM_Types">
             <End Role="PM_Types" EntitySet="PM_Types" />
             <End Role="PM_Projects" EntitySet="PM_Projects" />
@@ -790,6 +794,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PM_Projects_PM_Status">
+          <End Role="PM_Status" Type="synergydbadminModel.Store.PM_Status" Multiplicity="1" />
+          <End Role="PM_Projects" Type="synergydbadminModel.Store.PM_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="PM_Projects">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_PM_Projects_PM_Types">
           <End Role="PM_Types" Type="synergydbadminModel.Store.PM_Types" Multiplicity="1" />
           <End Role="PM_Projects" Type="synergydbadminModel.Store.PM_Projects" Multiplicity="*" />
@@ -1084,7 +1100,10 @@
             <End Role="UM_RolePermission" EntitySet="UM_RolePermission" /></AssociationSet>
           <AssociationSet Name="FK_UM_RolePermission_UM_Permission" Association="synergydbadminModel.FK_UM_RolePermission_UM_Permission">
             <End Role="UM_Permission" EntitySet="UM_Permission" />
-            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" /></AssociationSet></EntityContainer>
+            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" /></AssociationSet>
+          <AssociationSet Name="FK_PM_Projects_PM_Status" Association="synergydbadminModel.FK_PM_Projects_PM_Status">
+            <End Role="PM_Status" EntitySet="PM_Status" />
+            <End Role="PM_Projects" EntitySet="PM_Projects" /></AssociationSet></EntityContainer>
         <EntityType Name="aspnet_Applications">
           <Key>
             <PropertyRef Name="ApplicationId" />
@@ -1307,7 +1326,7 @@
           <NavigationProperty Name="PM_Types" Relationship="synergydbadminModel.FK_PM_Projects_PM_Types" FromRole="PM_Projects" ToRole="PM_Types" />
           <NavigationProperty Name="PM_ProjectSkills" Relationship="synergydbadminModel.FK_PM_ProjectSkills_PM_Projects" FromRole="PM_Projects" ToRole="PM_ProjectSkills" />
           <NavigationProperty Name="PM_Tasks" Relationship="synergydbadminModel.FK_PM_Tasks_PM_Tasks" FromRole="PM_Projects" ToRole="PM_Tasks" />
-        </EntityType>
+          <NavigationProperty Name="PM_Status" Relationship="synergydbadminModel.FK_PM_Projects_PM_Status" FromRole="PM_Projects" ToRole="PM_Status" /></EntityType>
         <EntityType Name="PM_ProjectSkills">
           <Key>
             <PropertyRef Name="ProjectSkillId" />
@@ -1332,7 +1351,7 @@
           <Property Name="StatusId" Type="Int32" Nullable="false" />
           <Property Name="StatusCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="StatusName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
-        </EntityType>
+          <NavigationProperty Name="PM_Projects" Relationship="synergydbadminModel.FK_PM_Projects_PM_Status" FromRole="PM_Status" ToRole="PM_Projects" /></EntityType>
         <EntityType Name="PM_TaskPrecissiord">
           <Key>
             <PropertyRef Name="TaskPrecissiorId" />
@@ -1638,7 +1657,10 @@
           <End Type="synergydbadminModel.UM_RolePermission" Role="UM_RolePermission" Multiplicity="*" /></Association>
         <Association Name="FK_UM_RolePermission_UM_Permission">
           <End Type="synergydbadminModel.UM_Permission" Role="UM_Permission" Multiplicity="0..1" />
-          <End Type="synergydbadminModel.UM_RolePermission" Role="UM_RolePermission" Multiplicity="*" /></Association></Schema>
+          <End Type="synergydbadminModel.UM_RolePermission" Role="UM_RolePermission" Multiplicity="*" /></Association>
+        <Association Name="FK_PM_Projects_PM_Status">
+          <End Type="synergydbadminModel.PM_Status" Role="PM_Status" Multiplicity="1" />
+          <End Type="synergydbadminModel.PM_Projects" Role="PM_Projects" Multiplicity="*" /></Association></Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -2267,7 +2289,12 @@
               <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" /></EndProperty>
             <EndProperty Name="UM_Permission">
               <ScalarProperty Name="PermissionId" ColumnName="PermissionId" /></EndProperty>
-            <Condition ColumnName="PermissionId" IsNull="false" /></AssociationSetMapping></EntityContainerMapping>
+            <Condition ColumnName="PermissionId" IsNull="false" /></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_Projects_PM_Status" TypeName="synergydbadminModel.FK_PM_Projects_PM_Status" StoreEntitySet="PM_Projects">
+            <EndProperty Name="PM_Projects">
+              <ScalarProperty Name="ProjectId" ColumnName="ProjectId" /></EndProperty>
+            <EndProperty Name="PM_Status">
+              <ScalarProperty Name="StatusId" ColumnName="Status" /></EndProperty></AssociationSetMapping></EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -2468,6 +2495,7 @@
         <AssociationConnector Association="synergydbadminModel.FK_UM_RolePermission_UM_Permission" >
           <ConnectorPoint PointX="19.5" PointY="5.297841796875" />
           <ConnectorPoint PointX="20.5937475" PointY="5.297841796875" />
-          <ConnectorPoint PointX="20.5937475" PointY="9.5" /></AssociationConnector></Diagram></edmx:Diagrams>
+          <ConnectorPoint PointX="20.5937475" PointY="9.5" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_Projects_PM_Status" /></Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

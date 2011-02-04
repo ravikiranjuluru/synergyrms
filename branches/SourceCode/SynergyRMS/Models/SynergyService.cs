@@ -177,6 +177,21 @@ namespace SynergyRMS.Models
             }
         }
 
+        /// <summary>
+        /// Gets the project status by id.
+        /// </summary>
+        /// <param name="statusId">The status id.</param>
+        /// <returns></returns>
+        public static PM_Status GetProjectStatusById(int statusId)
+        {
+            PM_Status projectStatus = null;
+            var projectStatusQuery = from p in GetSynegyRMSInstance().PM_Status
+                                     where p.StatusId == statusId
+                                    select p;
+
+            projectStatus = projectStatusQuery.First();
+            return projectStatus;
+        }
 
 
 
