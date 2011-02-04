@@ -100,7 +100,7 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                     </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                           View Roles
+                                                            View Roles
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetailDark" style="width: 211px">
                                                         
