@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
-
+<%@ Import Namespace="SynergyRMS.Models" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -117,6 +117,17 @@
         .style1
         {
             /*height: 110px;*/
+        }
+         .boxTitle
+        {
+            font-size: 14px;
+            font-family: Myriad Pro, "Lucida Grande" , "Lucida Sans Unicode" ,Trebuchet MS,Arial;
+            line-height: 1.6em;
+            letter-spacing: 0px;
+            font-weight: 700;
+            color: #333333;
+            padding-bottom: 3px;
+            padding-top: 0px;
         }
     </style>
 <table class="layout_header" border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -244,19 +255,13 @@
                                                     <!-- Toolbar Content Goes Here -->
                                                     <table border="0">
                                                         <tbody>
+                                                        
                                                             <tr>
                                                                 <td style="white-space: nowrap;" align="left">
-                                                                    Project:
-                                                                    <select name="ctl00$phFormContent$cboProjectLevel" id="Select1" class="comboBox">
-                                                                        <option value="Select" selected="selected">Select</option>
-                                                                        <option value="Project1" >Project 1</option>
-                                                                        <option value="Project2">Project 2</option>
-                                                                        <option value="Project3">Project 3</option>
-                                                                    </select>
-                                                                    <%--<%=Html.DropDownList("feedbackcategory", (SelectList)ViewData["SectorList"], new { @class = "frmInputElements" })%>--%>
+                                                                   
                                                                 </td>
                                                                 <td align="left">
-                                                                    <input type="submit" value="View" class="button" id="btnView" name="btnView">
+                                                                    
                                                                 </td>
                                                               
                                                                 <td>
@@ -269,6 +274,25 @@
                                                                     &nbsp;
                                                                 </td>
                                                             </tr>
+                                                            <% using (Html.BeginForm("ProjectSchedule", "GridView"))
+                                                               {
+                                                                   if (ViewData["ProjectList"] != null)
+                                                                   { %>
+                                                            <tr>
+                                                                <td class="formDetailDark" align="right" valign="middle">
+                                                                    <label for="projectLevel">
+                                                                    </label>
+                                                                    Project Type:
+                                                                </td>
+                                                                <td class="formDetail" align="left" valign="top">
+                                                                    <%=Html.DropDownList("ddProject", (SelectList)ViewData["ProjectList"], new { @class = "comboBox" })%>
+                                                                </td>
+                                                                <td align="left">
+                                                                    <input type="submit" value="View" class="button" id="btnView" name="btnView">
+                                                                </td>
+                                                            </tr>
+                                                            <%}
+                                                                }%>
                                                         </tbody>
                                                     </table>
                                                 </td>
@@ -324,9 +348,15 @@
                     </td>
                 </tr>
                 <tr>
-                                <td>&nbsp;
-                                </td>
-                            </tr>
+                    <%if (ViewData["ProjectLoad"] != null) {
+                          PM_Projects project = (PM_Projects)ViewData["ProjectLoad"];
+                          ViewData["LoadProject"] = project;
+                      %>
+                    <td class="formDetail">
+                        Loading schedule for project:&nbsp;<%=project.ProjectName %>
+                    </td>
+                </tr>
+                            <%} %>
                         </tbody>
                     </table>
                     <!-- Place Content That you want to appear between the Toolbar and the Tab Strip Here  -->
@@ -335,13 +365,19 @@
         </tbody>
     </table>
 
-      <table width="99%">
-      <tr align="left" valign="top">
-      <td>
-        <%Html.RenderPartial("Load"); %>
-      </td></tr>
-      </table>
-    
+<%
+  
+    if (ViewData["LoadProject"] != null)
+    {
+%>
+    <table width="99%">
+        <tr align="left" valign="top">
+            <td>
+                <%Html.RenderPartial("Load", ViewData["LoadProject"]); %>
+            </td>
+        </tr>
+    </table>
+    <%} %>
       
     
 </body>
