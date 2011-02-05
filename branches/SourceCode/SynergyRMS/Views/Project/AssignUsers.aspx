@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
 <%@ Import Namespace="SynergyRMS.Models" %>
+<%@ Import Namespace="SynergyRMS.Controllers" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -405,7 +406,15 @@
                                             <%= user.Email%>
                                         </td>
                                         <td headers="edit" class="evnrow-mdl" align="left" width="20%">
-                                            <%=Html.ActionLink("Assign to Project", "AssignUsertoProject", "Project", new { @id = user.ProviderUserKey.ToString()+","+project.ProjectId }, null)%> 
+                                        <% 
+                                            var parameters = user.ProviderUserKey.ToString();
+                                            parameters = parameters + "," + project.ProjectId;
+                                             %>
+                                             
+                                             <%=Html.ActionLink("Assign to Project", "AssignUsertoProject", "Project", new { uid = user.ProviderUserKey.ToString(), pid = project.ProjectId }, null)%> 
+                                           <%-- <%=Html.ActionLink("Assign to Project", "AssignUsertoProject", "Project", new { @id = project.ProjectId }, null)%> 
+                                            <%= Html.ActionLink<ProjectController>(c => c.AssignUsertoProject(parameters), "linkText")%>
+--%>
                                         </td>
                                         <td headers="Delete" class="evnrow-mdl" align="left" width="2%">
                                             <a href="#"><strong></strong></a>
