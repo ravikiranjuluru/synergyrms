@@ -84,10 +84,10 @@ Conn.Close();
 //####################################################################################
  int projectid = Convert.ToInt32(Request.QueryString["projectid"]);
                                          
- string ConnString = "Data Source=sg2nwgdshsql003-floater.shr.prod.sin2.secureserver.net;initial catalog=synergydbadmin;user id=synergydbadmin;password=DBadmin123;persist security info=True;packet size=4096";
- System.Data.SqlClient.SqlConnection Conn = new System.Data.SqlClient.SqlConnection(ConnString);
- Conn.Open();
- System.Data.SqlClient.SqlCommand Cmd = Conn.CreateCommand();
+ //string ConnString = "Data Source=sg2nwgdshsql003-floater.shr.prod.sin2.secureserver.net;initial catalog=synergydbadmin;user id=synergydbadmin;password=DBadmin123;persist security info=True;packet size=4096";
+ //System.Data.SqlClient.SqlConnection Conn = new System.Data.SqlClient.SqlConnection(ConnString);
+ //Conn.Open();
+ //System.Data.SqlClient.SqlCommand Cmd = Conn.CreateCommand();
 
  // --- Response initialization ---
  Response.ContentType = "text/xml";
@@ -96,12 +96,12 @@ Conn.Close();
  System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
 
  //// --- Generating data --- 
- Cmd.CommandText = "SELECT * FROM GanttBasic ORDER BY id";
- System.Data.SqlClient.SqlDataReader R = Cmd.ExecuteReader();
+ //Cmd.CommandText = "SELECT * FROM GanttBasic ORDER BY id";
+ //System.Data.SqlClient.SqlDataReader R = Cmd.ExecuteReader();
 
 
  MembershipUserCollection listUser=SynergyService.GetAssignedUsersByProjectId(projectid);
- string arruser = "";
+ string arruser = "|";
  foreach (MembershipUser user in listUser)
     {
         var profile = new ProfileBase();
@@ -109,21 +109,23 @@ Conn.Close();
         string fname = profile.GetPropertyValue("FirstName").ToString();
         string lname = profile.GetPropertyValue("LastName").ToString();
         string name = fname + " " + lname;
-        arruser += name + "|";
+        arruser = arruser.Trim() + name.Trim() + "|";
     }
- string arrrole = "";
+ string arrrole = "|";
  List<PM_ProjectRoles> listRoles = SynergyService.GetAllProjectRoles();
  foreach (PM_ProjectRoles roles in listRoles)
  {
-     arrrole+=roles.RoleName+"|";
+     arrrole = arrrole.Trim()+ roles.RoleName.Trim() + "|";
  }
  
  Response.Write("<Grid><Cfg id=\"GanttBasic\"/><Cfg NumberId=\"1\" IdChars=\"0123456789\"/>" +
  "<LeftCols>" +
  "<C Name=\"id\" Width=\"20\" Type=\"Int\"/>" +
-  "<C Name=\"N\" Width=\"60\" Type=\"Enum\" Enum=" + arruser + "/>" +
-  "<C Name=\"U\" Width=\"100\" Type=\"Text\"/>" +
-  "<C Name=\"R\" Width=\"60\" Type=\"Enum\" Enum="+arrrole+"/>" +
+  //"<C Name=\"N\" Width=\"60\" Type=\"Enum\" Enum=\"|User 1|User 2|User 3|User 4|User 5\"/>" +
+  "<C Name=\"N\" Width=\"60\" Type=\"Enum\" Enum=\""+arruser+"\"/>" +
+  "<C Name=\"U\" Width=\"50\" Type=\"Text\"/>" +
+  //"<C Name=\"R\" Width=\"60\" Type=\"Enum\" Enum=\"|User 1|User 2|User 3|User 4|User 5\"/>" +
+  "<C Name=\"R\" Width=\"60\" Type=\"Enum\" Enum=\""+arrrole+"\"/>" +
   "<C Name=\"C\" Width=\"50\" Type=\"Int\" Format=\"##\\%;;0\\%\"/>" +
   "<C Name=\"S\" Width=\"60\" Type=\"Date\" Format=\"MMM dd\"/>" +
   "<C Name=\"E\" Width=\"60\" Type=\"Date\" Format=\"MMM dd\"/>" +
@@ -160,7 +162,7 @@ Conn.Close();
      DateTime enddate = resource.AllocatedEndDate;
      Response.Write("<I id='" + id + "'"
         + " N='" + name.ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
-        + " U='" + role.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
+        + " U='" + uname.ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
         + " R='" + role.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
         + " C='" + complete.ToString() + "'"
         + " S='" + startdate.ToString() + "'"
