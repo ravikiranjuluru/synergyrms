@@ -24,7 +24,7 @@ Inherits="System.Web.Mvc.ViewUserControl" %>
         string data_url = "Gantt/GanttBasicDBData.aspx?projectid=" + projectid;
         string upload_url = "Gantt/GanttBasicDBUpload.aspx?projectid=" + projectid;
          %>
-        <bdo debug="0" 
+        <bdo debug="1" 
         layout_url="Gantt/GanttBasicDef.xml" 
         data_url=<%= data_url %>
         upload_url=<%= upload_url%>>
