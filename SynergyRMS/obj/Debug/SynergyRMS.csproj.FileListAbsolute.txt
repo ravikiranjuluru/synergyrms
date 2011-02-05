@@ -9,10 +9,10 @@ E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\obj\Debug\SynergyRMS.pdb
 E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\bin\SynergyRMS.dll.config
 E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\bin\SynergyRMS.dll
 E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\bin\SynergyRMS.pdb
+F:\synergy\synergyrms\SourceCode\SynergyRMS\obj\Debug\ResolveAssemblyReference.cache
 F:\synergy\synergyrms\SourceCode\SynergyRMS\bin\SynergyRMS.dll.config
 F:\synergy\synergyrms\SourceCode\SynergyRMS\bin\SynergyRMS.dll
 F:\synergy\synergyrms\SourceCode\SynergyRMS\bin\SynergyRMS.pdb
 F:\synergy\synergyrms\SourceCode\SynergyRMS\bin\Microsoft.Web.Mvc.dll
-F:\synergy\synergyrms\SourceCode\SynergyRMS\obj\Debug\ResolveAssemblyReference.cache
 F:\synergy\synergyrms\SourceCode\SynergyRMS\obj\Debug\SynergyRMS.dll
 F:\synergy\synergyrms\SourceCode\SynergyRMS\obj\Debug\SynergyRMS.pdb

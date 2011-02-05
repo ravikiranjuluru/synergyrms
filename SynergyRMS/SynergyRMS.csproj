@@ -86,6 +86,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\MailManager.cs" />
     <Compile Include="Models\SynergyConstents.cs" />
     <Compile Include="Models\SynergyModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -500,8 +501,16 @@
     <Content Include="Content\Datatable\demo_page.css" />
     <Content Include="Content\Datatable\demo_table.css" />
     <Content Include="Content\images\common\bar_chart_add.png" />
+    <Content Include="Content\images\common\Dashboard.png" />
+    <Content Include="Content\images\common\home.png" />
     <Content Include="Content\images\common\newproject.png" />
+    <Content Include="Content\images\common\Projects.png" />
+    <Content Include="Content\images\common\role.png" />
+    <Content Include="Content\images\common\schedule.jpg" />
+    <Content Include="Content\images\common\users.jpg" />
     <Content Include="Content\images\common\viewproject.png" />
+    <Content Include="Content\images\Startmenu\Dashboard.png" />
+    <Content Include="Content\images\Startmenu\login.jpg" />
     <Content Include="Content\images\win7-desktop-bg.jpg" />
     <Content Include="GridView\Framework\Export.aspx" />
     <Content Include="GridView\Framework\TreeGridFramework.aspx" />
@@ -566,6 +575,7 @@
     <Content Include="Views\GridView\Styles\Examples.css" />
     <Content Include="Views\GridView\Styles\Info.txt" />
     <Content Include="Views\GridView\Styles\Page.png" />
+    <Content Include="Views\Project\AssignUsers.aspx" />
     <Content Include="Views\Project\EditProjectForm.aspx" />
     <Content Include="Views\Resource\AssignRoles.aspx" />
     <Content Include="Views\Resource\AssignRolesPermissions.aspx" />
