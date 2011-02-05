@@ -22,10 +22,10 @@ try
 
    ////string ConnString = "Data Source=CHANAKA\\EXPRESS;initial catalog=master;user id=mysite1;password=mysite1;persist security info=True;packet size=4096";
    ////string ConnString = "Data Source=CHANAKADESKTOP;initial catalog=master;user id=mysite1;password=mysite1;persist security info=True;packet size=4096";
-   //string ConnString = "Data Source=sg2nwgdshsql003-floater.shr.prod.sin2.secureserver.net;initial catalog=synergydbadmin;user id=synergydbadmin;password=DBadmin123;persist security info=True;packet size=4096";
-   //System.Data.SqlClient.SqlConnection Conn = new System.Data.SqlClient.SqlConnection(ConnString);
-   //Conn.Open();
-   //System.Data.SqlClient.SqlCommand Cmd = Conn.CreateCommand();   
+   string ConnString = "Data Source=sg2nwgdshsql003-floater.shr.prod.sin2.secureserver.net;initial catalog=synergydbadmin;user id=synergydbadmin;password=DBadmin123;persist security info=True;packet size=4096";
+   System.Data.SqlClient.SqlConnection Conn = new System.Data.SqlClient.SqlConnection(ConnString);
+   Conn.Open();
+   System.Data.SqlClient.SqlCommand Cmd = Conn.CreateCommand();   
    
    // --- Save data to database ---
    string XML = Request["Data"];
@@ -36,11 +36,12 @@ try
       System.Xml.XmlNodeList Ch = X.GetElementsByTagName("Changes");
        List<PM_ProjectResources> resourceList = new List<PM_ProjectResources>();
 
-        string name = "";;
-                  string uname = "";
-                  string role = "";
-                  DateTime sdate,edate;
-                  string complete;
+                  string name = null;
+                  string uname = null;
+                  string role = null;
+                  string sdate = null;
+                  string edate = null;
+                  string complete = null; 
                       
       if (Ch.Count > 0) foreach (System.Xml.XmlElement I in Ch[0])
           {
@@ -107,13 +108,11 @@ try
 
                               if (nameval == "S")
                               {
-                                  sdate = Convert.ToDateTime(I.GetAttribute("S"));
-                                  edate = DateTime.Now;
-                              }
-                              
+                                  sdate = val.ToString();                                   
+                              }                              
                               if (nameval == "E")
                               {
-                                  edate = Convert.ToDateTime(I.GetAttribute("E")); 
+                                  edate = val.ToString(); 
                               }
                               if (nameval == "C")
                               {
@@ -154,8 +153,8 @@ try
                   PM_ProjectResources resource = new PM_ProjectResources();
         
                   resource.aspnet_Users = SynergyService.GetUserByName(uname);
-                  resource.AllocatedEndDate = edate;
-                  resource.AllocatedStartDate = sdate;
+                  resource.AllocatedEndDate = Convert.ToDateTime(edate);
+                  resource.AllocatedStartDate = Convert.ToDateTime(sdate);
                   resource.PM_ProjectRoles = SynergyService.GetProjectRoleByName(role);
                   resourceList.Add(resource);
                   SynergyService.SaveProjectResources(resource);
