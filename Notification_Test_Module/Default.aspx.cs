@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net.Mail;
-using System.Net;
-using System.Collections;
 
 namespace Notification_Test_Module
 {
@@ -12,9 +7,7 @@ namespace Notification_Test_Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //MailManager mM = new MailManager("Assigned to a New  Project", "You've been Assigned to a new project");
-
-            ArrayList toAddresses = new ArrayList();
+            List<string> toAddresses = new List<string>();
 
             toAddresses.Add("virath.liyanage@gmail.com");
             toAddresses.Add("jeevantha@gmail.com");
@@ -22,8 +15,6 @@ namespace Notification_Test_Module
             toAddresses.Add("gayan.w@sliit.lk");
 
             Notification_Module.MailManager.SendMail(toAddresses,Notification_Module.MailManager.messageFlag.AssignedProject);
-
-            //mM.SendMail(toAddresses);
         }
     }
 }
