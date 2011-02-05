@@ -404,6 +404,17 @@ namespace SynergyRMS.Models
 
         #region Project Resources
 
+        public static PM_ProjectRoles GetProjectRoleByName(string name)
+        {
+            PM_ProjectRoles projectRole = null;
+            var projectRoleQuery = from p in GetSynegyRMSInstance().PM_ProjectRoles
+                                     where p.RoleName== name
+                                     select p;
+
+            projectRole= projectRoleQuery.First();
+            return projectRole;
+        }
+
         public static List<PM_ProjectRoles> GetAllProjectRoles()
         {
             return GetSynegyRMSInstance().PM_ProjectRoles.ToList();
@@ -500,6 +511,18 @@ namespace SynergyRMS.Models
                 throw;
             }
         }
+        public static void SaveProjectResources2(PM_ProjectResources projectResources)
+        {
+            try
+            {
+                GetSynegyRMSInstance().AddToPM_ProjectResources(projectResources);
+                GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         /// <summary>
         /// Gets the assigned users by project id.
         /// </summary>
@@ -559,6 +582,17 @@ namespace SynergyRMS.Models
         #endregion
 
         #region User Methods
+
+        public static aspnet_Users GetUserByName(string name)
+        {
+            aspnet_Users  user = null;
+            var userQuery = from p in GetSynegyRMSInstance().aspnet_Users
+                                     where p.UserName ==name
+                                     select p;
+
+            user= userQuery.First();
+            return user;
+        }
 
         public static void SaveUser(aspnet_Users user)
         {
