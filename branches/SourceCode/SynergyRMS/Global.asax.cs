@@ -19,8 +19,20 @@ namespace SynergyRMS
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Home", action = "Index", id = "" } // Parameter defaults
             );
+            //routes.MapRoute(
+            //    "Defaultid", // Route name
+            //    "{controller}/{action}/{id}", // URL with parameters
+            //    new { controller = "Project", action = "AssignUsertoProject", id = "" } // Parameter defaults
+            //);  
+            
+            //routes.MapRoute(
+            //"Default",
+            //"/Project/AssignUsertoProject/{id}",
+            //new { controller = "Project", action = "AssignUsertoProject" }
+            //);
+          
 
         }
 
