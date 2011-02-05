@@ -102,6 +102,7 @@ Conn.Close();
 
  MembershipUserCollection listUser=SynergyService.GetAssignedUsersByProjectId(projectid);
  string arruser = "|";
+ string arruserusername = "|";
  foreach (MembershipUser user in listUser)
     {
         var profile = new ProfileBase();
@@ -110,6 +111,7 @@ Conn.Close();
         string lname = profile.GetPropertyValue("LastName").ToString();
         string name = fname + " " + lname;
         arruser = arruser.Trim() + name.Trim() + "|";
+        arruserusername = arruserusername.Trim() + user.UserName.Trim() + "|";
     }
  string arrrole = "|";
  List<PM_ProjectRoles> listRoles = SynergyService.GetAllProjectRoles();
@@ -120,11 +122,10 @@ Conn.Close();
  
  Response.Write("<Grid><Cfg id=\"GanttBasic\"/><Cfg NumberId=\"1\" IdChars=\"0123456789\"/>" +
  "<LeftCols>" +
- "<C Name=\"id\" Width=\"20\" Type=\"Int\"/>" +
-  //"<C Name=\"N\" Width=\"60\" Type=\"Enum\" Enum=\"|User 1|User 2|User 3|User 4|User 5\"/>" +
+ "<C Name=\"id\" Width=\"20\" Type=\"Int\"/>" +  
   "<C Name=\"N\" Width=\"60\" Type=\"Enum\" Enum=\""+arruser+"\"/>" +
-  "<C Name=\"U\" Width=\"50\" Type=\"Text\"/>" +
-  //"<C Name=\"R\" Width=\"60\" Type=\"Enum\" Enum=\"|User 1|User 2|User 3|User 4|User 5\"/>" +
+  //"<C Name=\"U\" Width=\"50\" Type=\"Text\"/>" +  
+  "<C Name=\"U\" Width=\"50\" Type=\"Enum\" Enum=\"" + arruserusername + "\"/>" +
   "<C Name=\"R\" Width=\"60\" Type=\"Enum\" Enum=\""+arrrole+"\"/>" +
   "<C Name=\"C\" Width=\"50\" Type=\"Int\" Format=\"##\\%;;0\\%\"/>" +
   "<C Name=\"S\" Width=\"60\" Type=\"Date\" Format=\"MMM dd\"/>" +
