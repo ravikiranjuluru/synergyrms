@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 using System.Web.Security;
+using System.Configuration;
 namespace SynergyRMS.Models
 {
     /// <summary>
@@ -405,6 +406,9 @@ namespace SynergyRMS.Models
 
         #region Project Resources
      
+        //public static List<PM_ProjectResources> GetResources
+
+
         public static bool AssignUsersToProject(int projectId, Guid userId)
         {
             PM_Projects project = GetProjectbyProjectId(projectId);
@@ -413,7 +417,65 @@ namespace SynergyRMS.Models
             resource.aspnet_Users = GetUserById(userId);
             SaveProjectResources(resource);
 
+            
+            if (AllowEmailNotifications())
+            {
+                resource.aspnet_Users.aspnet_MembershipReference.Load();
+            }
+
             return true;
+        }
+        private void SendNotificationWhenAssignedToproject(string email)
+        {
+            try
+            {
+                ArrayList mailList = new ArrayList();
+                MailManager.SendMail(mailList, MailManager.messageFlag.AssignedProject);
+            }
+            catch
+            {
+
+            }
+
+        }
+        private static bool AllowEmailNotifications()
+        {
+            if (ConfigurationSettings.AppSettings["AllowEmailNotification"] == "True")
+            {
+                return true;
+            }
+            return false;
+        }
+        /// <summary>
+        /// Updates the project resources.
+        /// </summary>
+        /// <param name="projectResources">The project resources.</param>
+        public static void UpdateProjectResources(List<PM_ProjectResources> projectResources)
+        {
+            try
+            {
+                PM_Projects project = SynergyService.GetProjectbyProjectId(1);
+                List<PM_ProjectResources>     resourcelist=  project.PM_ProjectResources.ToList();
+
+                foreach (PM_ProjectResources r in resourcelist)
+                {                   
+                    GetSynegyRMSInstance().DeleteObject(r);
+                    GetSynegyRMSInstance().SaveChanges();
+                }
+
+                foreach (PM_ProjectResources resource in projectResources)
+                {
+
+                    GetSynegyRMSInstance().AddToPM_ProjectResources(resource);
+                    GetSynegyRMSInstance().SaveChanges();
+                }
+
+               
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         /// <summary>
@@ -472,7 +534,10 @@ namespace SynergyRMS.Models
                 foreach (PM_ProjectResources objResources in ResList)
                 {
                     objResources.PM_ProjectsReference.Load();
-                    //objResources.PM_ProjectRolesReference.Load();
+                    objResources.aspnet_UsersReference.Load();
+                    objResources.aspnet_Users.aspnet_MembershipReference.Load();
+                    objResources.aspnet_Users.aspnet_ProfileReference.Load();
+                    objResources.PM_ProjectRolesReference.Load();
                     //objResources.UM_UsersReference.Load();
                     //int aa = single1.T_User.UserId;
                 }
