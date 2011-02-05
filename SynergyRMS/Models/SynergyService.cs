@@ -380,8 +380,6 @@ namespace SynergyRMS.Models
         /// <summary>
         /// Saves the user skills.
         /// </summary>
-        /// <param name="projectId">The project id.</param>
-        /// <param name="userId">The user id.</param>
         /// <returns></returns>
         //public static void SaveUserSkills(List<UM_UserSkills> skillList)
         //{
@@ -405,10 +403,18 @@ namespace SynergyRMS.Models
         #endregion
 
         #region Project Resources
-     
-        //public static List<PM_ProjectResources> GetResources
 
+        public static List<PM_ProjectRoles> GetAllProjectRoles()
+        {
+            return GetSynegyRMSInstance().PM_ProjectRoles.ToList();
+        }
 
+        /// <summary>
+        /// Assigns the users to project.
+        /// </summary>
+        /// <param name="projectId">The project id.</param>
+        /// <param name="userId">The user id.</param>
+        /// <returns></returns>
         public static bool AssignUsersToProject(int projectId, Guid userId)
         {
             PM_Projects project = GetProjectbyProjectId(projectId);
