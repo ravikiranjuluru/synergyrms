@@ -431,6 +431,8 @@ namespace SynergyRMS.Models
             PM_Projects project = GetProjectbyProjectId(projectId);
             PM_ProjectResources resource = new PM_ProjectResources();
             resource.PM_Projects = project;
+            resource.AllocatedEndDate = DateTime.Now;
+            resource.AllocatedStartDate = DateTime.Now;
             resource.aspnet_Users = GetUserById(userId);
             SaveProjectResources(resource);
 
@@ -463,6 +465,25 @@ namespace SynergyRMS.Models
             }
             return false;
         }
+
+        /// <summary>
+        /// Gets the resouce by id.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns></returns>
+        public static PM_ProjectResources GetResouceById(int id)
+        {
+            PM_ProjectResources Resouce = null;
+            var ResouceQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
+                            where p.ProjectResorcesId == id
+                            select p;
+
+            Resouce = ResouceQuery.First();
+            return Resouce;
+        }
+
+
+
         /// <summary>
         /// Updates the project resources.
         /// </summary>
@@ -511,6 +532,10 @@ namespace SynergyRMS.Models
                 throw;
             }
         }
+        /// <summary>
+        /// Deletes the project resources.
+        /// </summary>
+        /// <param name="projectResources">The project resources.</param>
         public static void DeleteProjectResources(PM_ProjectResources projectResources)
         {
             try
@@ -523,6 +548,10 @@ namespace SynergyRMS.Models
                 throw;
             }
         }
+        /// <summary>
+        /// Updates the project resources.
+        /// </summary>
+        /// <param name="projectResources">The project resources.</param>
         public static void UpdateProjectResources(PM_ProjectResources projectResources)
         {
             try
