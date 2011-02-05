@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Configuration;
 using System.Net.Mail;
+using System.Net;
 using System.Text;
 
 public class MailManager
@@ -36,11 +37,13 @@ public class MailManager
     {
         SmtpClient smtpClient = new SmtpClient(adminMailServer, adminMailPort);
 
-        smtpClient.Credentials = new System.Net.NetworkCredential(adminMailAddress, adminMailPassword);
-        smtpClient.UseDefaultCredentials = true;
+        NetworkCredential networkCredential = new NetworkCredential(adminMailAddress, adminMailPassword);
+
         smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
         smtpClient.EnableSsl = true;
         smtpClient.UseDefaultCredentials = false;
+        smtpClient.Credentials = networkCredential;
+
         MailMessage mail = new MailMessage();
 
         mail.From = new MailAddress(adminMailAddress, appName);
@@ -53,7 +56,7 @@ public class MailManager
         mail.Subject = appName + " - Mail Notification";
         mail.IsBodyHtml = true;
         mail.Body = MessageModifier();
-       // mail.Priority = MailPriority.High;
+        //mail.Priority = MailPriority.High;
 
         try
         {
