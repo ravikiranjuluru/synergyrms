@@ -404,8 +404,7 @@ namespace SynergyRMS.Models
         #endregion
 
         #region Project Resources
-
-        
+     
         public static bool AssignUsersToProject(int projectId, Guid userId)
         {
             PM_Projects project = GetProjectbyProjectId(projectId);
