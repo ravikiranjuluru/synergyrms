@@ -511,18 +511,7 @@ namespace SynergyRMS.Models
                 throw;
             }
         }
-        public static void SaveProjectResources2(PM_ProjectResources projectResources)
-        {
-            try
-            {
-                GetSynegyRMSInstance().AddToPM_ProjectResources(projectResources);
-                GetSynegyRMSInstance().SaveChanges();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        
         /// <summary>
         /// Gets the assigned users by project id.
         /// </summary>
