@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
-using System.Configuration;
 
 namespace Notification_Module
 {
     public static class MailManager
     {
 
-        public enum messageFlag { AssignedProject, RemoveProject };
+        public enum messageFlag { AssignedProject, RemovedProject };
 
         private const string appName = "Resource Management System";
 
@@ -22,15 +22,6 @@ namespace Notification_Module
         private static string mailTitle = string.Empty;
         private static string mailMessage = string.Empty;
 
-        //public static MailManager()
-        //{
-        //    //string mailTitle, string mailMessage
-        //    //this.mailTitle = mailTitle;
-        //    //this.mailMessage = mailMessage;
-
-
-        //}
-
         private static void SetAdminValues()
         {
             adminMailAddress = ConfigurationSettings.AppSettings["adminMailAddress"].ToString();
@@ -39,7 +30,7 @@ namespace Notification_Module
             adminMailPort = Convert.ToInt16(ConfigurationSettings.AppSettings["adminMailPort"].ToString());
         }
 
-        public static bool SendMail(ArrayList toAdresses, messageFlag flag)
+        public static bool SendMail(List<string> toAdresses, messageFlag flag)
         {
             SetAdminValues();
 
