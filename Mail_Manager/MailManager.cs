@@ -9,7 +9,6 @@ namespace Notification_Module
 {
     public static class MailManager
     {
-
         public enum messageFlag { AssignedProject, RemovedProject };
 
         private const string appName = "Resource Management System";
@@ -55,7 +54,39 @@ namespace Notification_Module
             mail.Subject = appName + " - Mail Notification";
             mail.IsBodyHtml = true;
             mail.Body = MessageModifier(flag);
-            //mail.Priority = MailPriority.High;
+
+            try
+            {
+                smtpClient.Send(mail);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool SendMail(string toAdresses, messageFlag flag)
+        {
+            SetAdminValues();
+
+            SmtpClient smtpClient = new SmtpClient(adminMailServer, adminMailPort);
+
+            NetworkCredential networkCredential = new NetworkCredential(adminMailAddress, adminMailPassword);
+
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.EnableSsl = true;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = networkCredential;
+
+            MailMessage mail = new MailMessage();
+
+            mail.From = new MailAddress(adminMailAddress, appName);
+            mail.To.Add(new MailAddress(toAdresses));
+
+            mail.Subject = appName + " - Mail Notification";
+            mail.IsBodyHtml = true;
+            mail.Body = MessageModifier(flag);
 
             try
             {
