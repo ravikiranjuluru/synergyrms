@@ -123,17 +123,18 @@ try
                   resource.AllocatedStartDate = sdate;
                   resource.PM_ProjectRoles = SynergyService.GetProjectRoleByName(role);
                   resourceList.Add(resource);
-                  
+                  SynergyService.SaveProjectResources(resource);
               }
-              if (SQL != "")
-              {
-                  Cmd.CommandText = SQL;
-                  //Response.Write(SQL);
-                  Cmd.ExecuteNonQuery();
-              }
+              //if (SQL != "")
+              //{
+              //    Cmd.CommandText = SQL;
+              //    //Response.Write(SQL);
+              //    Cmd.ExecuteNonQuery();
+              //}
 
           }
-     
+      
+        
        
        
       //if (Ch.Count > 0) foreach (System.Xml.XmlElement I in Ch[0])
