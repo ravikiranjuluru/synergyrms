@@ -282,7 +282,7 @@
                                                                 <td class="formDetailDark" align="right" valign="middle">
                                                                     <label for="projectLevel">
                                                                     </label>
-                                                                    Project Type:
+                                                                    Projects :
                                                                 </td>
                                                                 <td class="formDetail" align="left" valign="top">
                                                                     <%=Html.DropDownList("ddProject", (SelectList)ViewData["ProjectList"], new { @class = "comboBox" })%>
