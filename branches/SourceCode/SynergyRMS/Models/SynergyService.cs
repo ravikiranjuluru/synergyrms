@@ -511,7 +511,29 @@ namespace SynergyRMS.Models
                 throw;
             }
         }
-        
+        public static void DeleteProjectResources(PM_ProjectResources projectResources)
+        {
+            try
+            {
+                GetSynegyRMSInstance().DeleteObject(projectResources);
+                GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public static void UpdateProjectResources(PM_ProjectResources projectResources)
+        {
+            try
+            {
+                GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         /// <summary>
         /// Gets the assigned users by project id.
         /// </summary>
