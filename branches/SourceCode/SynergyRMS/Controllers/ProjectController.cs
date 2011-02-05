@@ -135,33 +135,67 @@ namespace SynergyRMS.Controllers
 
             return View("EditProjectForm");
         }
+        private MembershipUserCollection GetAllUsers(MembershipUserCollection currentuserList)
+        {
+            MembershipUserCollection userList = Membership.GetAllUsers();
+            MembershipUserCollection alluserList = new MembershipUserCollection();
+            foreach (MembershipUser user in userList)
+            {
+                if (!Roles.IsUserInRole(user.UserName, "Admin"))
+                {
+                    alluserList.Add(user);
+                    
+                }
+            }
+            foreach (MembershipUser user in currentuserList)
+            {
+                alluserList.Remove(user.UserName);
+            }
+            return alluserList;
+        }
+        private MembershipUserCollection GetCurrentUsersOfProject(int proid)
+        {
+            return SynergyService.GetAssignedUsersByProjectId(proid);
+        }
+
 
         public ActionResult AssignUsersProjectLoad()//*
         {
             int proid = Convert.ToInt32(Request.QueryString["id"]);
             PM_Projects project = SynergyService.GetProjectbyProjectId(proid);
             ViewData["EditProject"] = project;
-            MembershipUserCollection currentuserList= SynergyService.GetAssignedUsersByProjectId(proid);
-                                                
+
+            MembershipUserCollection currentuserList = GetCurrentUsersOfProject(proid);
             ViewData["CurrentUserList"] = currentuserList;
-            ViewData["Userlist"] = currentuserList;
+            ViewData["Userlist"] = GetAllUsers(currentuserList);
             return View("AssignUsers");
         }
-        public ActionResult AssignUsertoProject(string id, string pid)//*
+        [HttpPost]
+        public ActionResult AssignUsertoProject(string combinedId)//*
         {
-            string userid = id;
-            int projectid = Convert.ToInt32(pid);
+            char[] charSeparators = new char[] { ',' };
+            string[] response = combinedId.Split(charSeparators);
+            MembershipUser user= Membership.GetUser(new Guid(response[0]));
+            int projectid = Convert.ToInt32(response[1]);
             try
-            {                
-                ViewData["status"] = "Success";
-                ViewData["msg"] = "User Successfully Assigned.";
+            {
+                if (SynergyService.AssignUsersToProject(projectid, new Guid(response[0])))
+                {
+                    ViewData["status"] = "Success";
+                    ViewData["msg"] = "User Successfully Assigned.";
+                }
+                else
+                {
+                    ViewData["status"] = "Error";
+                    ViewData["msg"] = "Error in User Assigned.";
+                }
             }
             catch (Exception ee)
             {
                 ViewData["status"] = "Error";
                 ViewData["msg"] = "Error in User Assigned.";
             }
-            PM_Projects project = SynergyService.GetProjectbyProjectId(Convert.ToInt32(pid));
+            PM_Projects project = SynergyService.GetProjectbyProjectId(Convert.ToInt32(response[1]));
             ViewData["EditProject"] = project;
             MembershipUserCollection currentuserList = SynergyService.GetAssignedUsersByProjectId(projectid);
             ViewData["CurrentUserList"] = currentuserList;

@@ -24,6 +24,8 @@ namespace SynergyRMS.Controllers
                 new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
                 );
 
+           
+
 
         }
     }
