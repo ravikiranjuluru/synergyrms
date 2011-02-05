@@ -25,7 +25,7 @@
          GanttHeader2="d" GanttFormat2="ddddd"
          />
    </Cols>
-   <Header id="ID" N="Name" R="Role" S="Start" E="End" C="Comp&#x0a;lete" G="Gantt" D="Next"/> <!-- Column captions -->
+   <Header id="ID" N="Name" U="UserName" R="Role" S="Start" E="End" C="Comp&#x0a;lete" G="Gantt" D="Next"/> <!-- Column captions -->
 
    <!-- Shows count of incorrect dependencies and on click corrects them -->
    <Toolbar
