@@ -156,8 +156,8 @@ Conn.Close();
      string fname = profile.GetPropertyValue("FirstName").ToString();
      string lname = profile.GetPropertyValue("LastName").ToString();
      string name = fname + " " + lname;
-     
-     string role = resource.PM_ProjectRoles.RoleName;
+
+     string role = resource.PM_ProjectRoles.RoleName == null ? "" : resource.PM_ProjectRoles.RoleName;
      string complete = resource.Effort.ToString() ;
      DateTime startdate = resource.AllocatedStartDate;
      DateTime enddate = resource.AllocatedEndDate;

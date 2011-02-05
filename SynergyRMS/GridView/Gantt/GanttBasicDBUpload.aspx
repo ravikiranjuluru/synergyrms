@@ -54,26 +54,52 @@ try
               {
                   //SQL = "DELETE FROM GanttBasic WHERE id=" + id;
                   isDelete = true;
+                  PM_ProjectResources resource=SynergyService.GetResouceById(Convert.ToInt32(id));
+
+                  SynergyService.DeleteProjectResources(resource);
+                  
               }
               else
                   if (I.GetAttribute("Added") == "1")
                   {
-                      isNew = true;
-                      //    string name = I.GetAttribute("N").ToString();
-                      //    string role = I.GetAttribute("R").ToString();
-                      //    DateTime sdate = DateTime.Now; 
-                      //    if (I.GetAttribute("S") != "")
-                      //    {
-                      //        sdate = Convert.ToDateTime(I.GetAttribute("S"));
-                      //    }
-                      //    DateTime edate = DateTime.Now;
-                      //    if (I.GetAttribute("E") != "")
-                      //    {
-                      //        sdate = Convert.ToDateTime(I.GetAttribute("E"));
-                      //    }
-                      //    string complete = (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C"));
+                      isNew = true;;
+                       name = I.GetAttribute("N").ToString();
+                       role = I.GetAttribute("R").ToString();
+                       sdate = DateTime.Now.ToString();
+                      if (I.GetAttribute("S") != "")
+                      {
+                          sdate = I.GetAttribute("S");
+                      }
+                       edate = DateTime.Now.ToString();
+                      if (I.GetAttribute("E") != "")
+                      {
+                          sdate = I.GetAttribute("E");
+                      }
+                       complete = (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C"));
 
+                       PM_ProjectResources resource = new PM_ProjectResources();
 
+                       if (uname != null)
+                       {
+                           resource.aspnet_Users = SynergyService.GetUserByName(uname);
+                       }
+                       if (edate != null)
+                       {
+                           resource.AllocatedEndDate = Convert.ToDateTime(edate);
+                       }
+                       if (sdate != null)
+                       {
+                           resource.AllocatedStartDate = Convert.ToDateTime(sdate);
+                       }
+                       if (role != null)
+                       {
+                           resource.PM_ProjectRoles = SynergyService.GetProjectRoleByName(role);
+                       }
+                       if (complete != null)
+                       {
+                           resource.Effort = Convert.ToInt32(complete);
+                       }
+                       SynergyService.SaveProjectResources(resource);
                       //    //SQL = "INSERT INTO GanttBasic(id,T,U,UL,S,E,C) VALUES("
                       //    //   + id + ","
                       //    //   + "'" + I.GetAttribute("N").Replace("'", "''") + "',"
@@ -128,6 +154,31 @@ try
                               //else if (name == "S" || name == "E" || name == "D") SQL += name + " = '" + val + "',";
                           }
                       }
+                      PM_ProjectResources resource = SynergyService.GetResouceById(Convert.ToInt32(id));
+
+                      if (uname!=null)
+                      {
+                          resource.aspnet_Users = SynergyService.GetUserByName(uname);
+                      }
+                      if (edate != null)
+                      {
+                          resource.AllocatedEndDate = Convert.ToDateTime(edate);
+                      }
+                      if (sdate != null)
+                      {
+                          resource.AllocatedStartDate = Convert.ToDateTime(sdate);
+                      }
+                      if (role != null)
+                      {
+                          resource.PM_ProjectRoles = SynergyService.GetProjectRoleByName(role);
+                      }
+                      if (complete != null)
+                      {
+                          resource.Effort =Convert.ToInt32(complete);
+                      }
+                      SynergyService.UpdateProjectResources(resource);
+                      
+                      
                       //    SQL = SQL.TrimEnd(",".ToCharArray()); // Last comma away
                       //    SQL += " WHERE id=" + id;
                   }
@@ -150,14 +201,14 @@ try
                   //}
                   //complete = (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C"));
 
-                  PM_ProjectResources resource = new PM_ProjectResources();
+                  //PM_ProjectResources resource = new PM_ProjectResources();
         
-                  resource.aspnet_Users = SynergyService.GetUserByName(uname);
-                  resource.AllocatedEndDate = Convert.ToDateTime(edate);
-                  resource.AllocatedStartDate = Convert.ToDateTime(sdate);
-                  resource.PM_ProjectRoles = SynergyService.GetProjectRoleByName(role);
-                  resourceList.Add(resource);
-                  SynergyService.SaveProjectResources(resource);
+                  //resource.aspnet_Users = SynergyService.GetUserByName(uname);
+                  //resource.AllocatedEndDate = Convert.ToDateTime(edate);
+                  //resource.AllocatedStartDate = Convert.ToDateTime(sdate);
+                  //resource.PM_ProjectRoles = SynergyService.GetProjectRoleByName(role);
+                  //resourceList.Add(resource);
+                  //SynergyService.SaveProjectResources(resource);
               }
               //if (SQL != "")
               //{
