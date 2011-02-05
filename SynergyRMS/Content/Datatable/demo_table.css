@@ -126,11 +126,14 @@ table.display {
 }
 
 table.display thead th {
-	padding: 3px 18px 3px 10px;
+	/*padding: 3px 18px 3px 10px;*/
 	border-bottom: 1px solid black;
 	font-weight: bold;
 	cursor: pointer;
-	* cursor: hand;
+	cursor: hand;
+	background-color: Silver;
+	color:Black;
+
 }
 
 table.display tfoot th {
@@ -241,7 +244,7 @@ tr.even {
 }
 
 .top, .bottom {
-	padding: 10px;
+	/*padding: 10px;*/
 	background-color: #F5F5F5;
 	border: 1px solid #CCCCCC;
 }
@@ -284,10 +287,15 @@ td.details {
 	width: 40%;
 }
 
+/*
 .paging_full_numbers {
 	width: 400px;
 	height: 22px;
 	line-height: 22px;
+}*/
+.paging_full_numbers {	
+	width:40%;
+	height: 22px;
 }
 
 .paging_full_numbers span.paginate_button,
@@ -298,7 +306,7 @@ td.details {
 	padding: 2px 5px;
 	margin: 0 3px;
 	cursor: pointer;
-	*cursor: hand;
+	cursor: hand;
 }
 
 .paging_full_numbers span.paginate_button {
