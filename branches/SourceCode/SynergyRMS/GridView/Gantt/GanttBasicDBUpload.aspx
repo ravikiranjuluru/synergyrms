@@ -6,6 +6,7 @@ void Page_Load(object sender, System.EventArgs e)
 {
 try
 {
+    int projectid = Convert.ToInt32(Request.QueryString["projectid"]);
    // --- Response initialization ---
    Response.ContentType = "text/xml";
    Response.Charset = "utf-8";
