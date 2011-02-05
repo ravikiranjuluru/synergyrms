@@ -8,6 +8,7 @@ using SynergyRMS.Models;
 using System.Threading;
 using System.Globalization;
 using System.Collections;
+
 namespace SynergyRMS.Controllers
 {
     public class ProjectController : Controller
@@ -86,7 +87,7 @@ namespace SynergyRMS.Controllers
         }
         #endregion project
 
-
+        #region EditProject
         public ActionResult EditProject()
         {
             ViewData["ProjectList"] = SynergyService.GetAllProjects();
@@ -170,16 +171,15 @@ namespace SynergyRMS.Controllers
             ViewData["Userlist"] = GetAllUsers(currentuserList);
             return View("AssignUsers");
         }
-        [HttpPost]
-        public ActionResult AssignUsertoProject(string combinedId)//*
+        
+        public ActionResult AssignUsertoProject(string uid,string pid)//*
         {
-            char[] charSeparators = new char[] { ',' };
-            string[] response = combinedId.Split(charSeparators);
-            MembershipUser user= Membership.GetUser(new Guid(response[0]));
-            int projectid = Convert.ToInt32(response[1]);
+            
+            MembershipUser user = Membership.GetUser(new Guid(uid));
+            int projectid = Convert.ToInt32(pid);
             try
             {
-                if (SynergyService.AssignUsersToProject(projectid, new Guid(response[0])))
+                if (SynergyService.AssignUsersToProject(projectid, new Guid(uid)))
                 {
                     ViewData["status"] = "Success";
                     ViewData["msg"] = "User Successfully Assigned.";
@@ -195,21 +195,21 @@ namespace SynergyRMS.Controllers
                 ViewData["status"] = "Error";
                 ViewData["msg"] = "Error in User Assigned.";
             }
-            PM_Projects project = SynergyService.GetProjectbyProjectId(Convert.ToInt32(response[1]));
+            PM_Projects project = SynergyService.GetProjectbyProjectId(projectid);
             ViewData["EditProject"] = project;
             MembershipUserCollection currentuserList = SynergyService.GetAssignedUsersByProjectId(projectid);
             ViewData["CurrentUserList"] = currentuserList;
             ViewData["Userlist"] = currentuserList;
             return View("AssignUsers");
         }
+        #endregion EditProject
 
+        #region unused methods
         public ActionResult SaveProjectResources()
         {
-
             return View("EditProject");
         }
-
-
+        
         public ActionResult Docs()
         {
             return View("Docs");
@@ -234,5 +234,6 @@ namespace SynergyRMS.Controllers
         {
             return View("AssignTask");
         }
+        #endregion unusedmedthods
     }
 }
