@@ -18,3 +18,5 @@ D:\SynergyRMS\Notification_Test_Module\Notification_Test_Module\bin\Notification
 D:\SynergyRMS\Notification_Test_Module\Notification_Test_Module\obj\Debug\ResolveAssemblyReference.cache
 D:\SynergyRMS\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.dll
 D:\SynergyRMS\Notification_Test_Module\Notification_Test_Module\obj\Debug\Notification_Test_Module.pdb
+D:\SynergyRMS\Notification_Test_Module\Notification_Test_Module\bin\Mail_Manager.dll
+D:\SynergyRMS\Notification_Test_Module\Notification_Test_Module\bin\Mail_Manager.pdb

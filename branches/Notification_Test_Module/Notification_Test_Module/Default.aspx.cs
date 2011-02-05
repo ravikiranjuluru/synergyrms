@@ -12,7 +12,7 @@ namespace Notification_Test_Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            MailManager mM = new MailManager("Assigned to a New  Project", "You've been Assigned to a new project");
+            //MailManager mM = new MailManager("Assigned to a New  Project", "You've been Assigned to a new project");
 
             ArrayList toAddresses = new ArrayList();
 
@@ -21,7 +21,9 @@ namespace Notification_Test_Module
             toAddresses.Add("chanakawee@gmail.com");
             toAddresses.Add("gayan.w@sliit.lk");
 
-            mM.SendMail(toAddresses);
+            Notification_Module.MailManager.SendMail(toAddresses,Notification_Module.MailManager.messageFlag.AssignedProject);
+
+            //mM.SendMail(toAddresses);
         }
     }
 }
