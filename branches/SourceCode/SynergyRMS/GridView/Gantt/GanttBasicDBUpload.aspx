@@ -1,4 +1,5 @@
 <%@ Page language="c#" Debug="true"%>
+<%@ Import Namespace ="SynergyRMS.Models" %>
 <script language="c#" runat="server">
 /// Uses new ASP.NET style scripting with event Page_Load, uses OleDbDataReader and OleDbCommand to access database
 // -------------------------------------------------------------------------------------------------------------------------------
@@ -33,51 +34,153 @@ try
       System.Xml.XmlDocument X = new System.Xml.XmlDocument();
       X.LoadXml(HttpUtility.HtmlDecode(XML));
       System.Xml.XmlNodeList Ch = X.GetElementsByTagName("Changes");
-      if (Ch.Count > 0) foreach (System.Xml.XmlElement I in Ch[0])
-      {
-         string SQL = "";
-         string id = I.GetAttribute("id");
+       List<PM_ProjectResources> resourceList = new List<PM_ProjectResources>();
 
-         if (I.GetAttribute("Deleted") == "1") SQL = "DELETE FROM GanttBasic WHERE id=" + id;
-         else if(I.GetAttribute("Added")=="1")
-         {
-            SQL = "INSERT INTO GanttBasic(id,T,U,UL,S,E,C) VALUES("
-               + id + ","
-               + "'" + I.GetAttribute("T").Replace("'","''") + "',"
-               + "'" + I.GetAttribute("U").Replace("'", "''") + "',"
-               + "'" + I.GetAttribute("UL").Replace("'", "''") + "',"
-               + "'" + I.GetAttribute("S") + "',"
-               + "'" + I.GetAttribute("E") + "',"
-               + (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C"))+ "')";
-         }
-         else if (I.GetAttribute("Changed") == "1")
-         {
-            SQL = "UPDATE GanttBasic SET ";
-            for(int idx=0;idx<I.Attributes.Count;idx++)
-            {
-               System.Xml.XmlAttribute A = I.Attributes[idx];
-               if (A!=null)
-               { 
-                  string name = A.Name;
-                  string val = A.Value;
-                  if(name=="T") SQL += name + " = '" + val.Replace("'","''") + "',";
-                  else if (name == "U") SQL += name + " = '" + val.Replace("'", "''") + "',";
-                  else if (name == "UL") SQL += name + " = '" + val.Replace("'", "''") + "',";
-                  else if (name == "C") SQL += name + " = " + val + ",";
-                  else if (name == "S" || name == "E" || name == "D") SQL += name + " = '" + val + "',";
-               }
-            }
-            SQL = SQL.TrimEnd(",".ToCharArray()); // Last comma away
-            SQL += " WHERE id=" + id;
-         }
-         if (SQL != "")
-         {
-            Cmd.CommandText = SQL;
-            //Response.Write(SQL);
-            Cmd.ExecuteNonQuery();  
-         }
+      if (Ch.Count > 0) foreach (System.Xml.XmlElement I in Ch[0])
+          {
+              string SQL = "";
+              string id = I.GetAttribute("id");
+              bool isDelete = false;
+              bool isNew = false;
+              bool isUpdate = false;
+              if (I.GetAttribute("Deleted") == "1")
+              {
+                  //SQL = "DELETE FROM GanttBasic WHERE id=" + id;
+                  isDelete = true;
+              }
+              else
+                  if (I.GetAttribute("Added") == "1")
+                  {
+                      isNew = true;
+                      //    string name = I.GetAttribute("N").ToString();
+                      //    string role = I.GetAttribute("R").ToString();
+                      //    DateTime sdate = DateTime.Now; 
+                      //    if (I.GetAttribute("S") != "")
+                      //    {
+                      //        sdate = Convert.ToDateTime(I.GetAttribute("S"));
+                      //    }
+                      //    DateTime edate = DateTime.Now;
+                      //    if (I.GetAttribute("E") != "")
+                      //    {
+                      //        sdate = Convert.ToDateTime(I.GetAttribute("E"));
+                      //    }
+                      //    string complete = (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C"));
+
+
+                      //    //SQL = "INSERT INTO GanttBasic(id,T,U,UL,S,E,C) VALUES("
+                      //    //   + id + ","
+                      //    //   + "'" + I.GetAttribute("N").Replace("'", "''") + "',"
+                      //    //   + "'" + I.GetAttribute("R").Replace("'", "''") + "',"                     
+                      //    //   + "'" + I.GetAttribute("S") + "',"
+                      //    //   + "'" + I.GetAttribute("E") + "',"
+                      //    //   + (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C")) + "')";
+                  }
+                  else if (I.GetAttribute("Changed") == "1")
+                  {
+                      isUpdate = true;
+                      //    SQL = "UPDATE GanttBasic SET ";
+                      //    for (int idx = 0; idx < I.Attributes.Count; idx++)
+                      //    {
+                      //        System.Xml.XmlAttribute A = I.Attributes[idx];
+                      //        if (A != null)
+                      //        {
+                      //            string name = A.Name;
+                      //            string val = A.Value;
+                      //            if (name == "T") SQL += name + " = '" + val.Replace("'", "''") + "',";
+                      //            else if (name == "U") SQL += name + " = '" + val.Replace("'", "''") + "',";
+                      //            else if (name == "UL") SQL += name + " = '" + val.Replace("'", "''") + "',";
+                      //            else if (name == "C") SQL += name + " = " + val + ",";
+                      //            else if (name == "S" || name == "E" || name == "D") SQL += name + " = '" + val + "',";
+                      //        }
+                      //    }
+                      //    SQL = SQL.TrimEnd(",".ToCharArray()); // Last comma away
+                      //    SQL += " WHERE id=" + id;
+                  }
+              if ((isDelete)||(isNew)||(isUpdate))
+              {
+                  string updateDeleteRecordid = id;
+                  string name = I.GetAttribute("N").ToString();
+                  string uname = I.GetAttribute("U").ToString();
+                  string role = I.GetAttribute("R").ToString();
+                  
+                  
+                  DateTime sdate = DateTime.Now;
+                  if (I.GetAttribute("S") != "")
+                  {
+                      sdate = Convert.ToDateTime(I.GetAttribute("S"));
+                  }
+                  DateTime edate = DateTime.Now;
+                  if (I.GetAttribute("E") != "")
+                  {
+                      sdate = Convert.ToDateTime(I.GetAttribute("E"));
+                  }
+                  string complete = (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C"));
+
+                  PM_ProjectResources resource = new PM_ProjectResources();
+        
+                  resource.aspnet_Users = SynergyService.GetUserByName(uname);
+                  resource.AllocatedEndDate = edate;
+                  resource.AllocatedStartDate = sdate;
+                  resource.PM_ProjectRoles = SynergyService.GetProjectRoleByName(role);
+                  resourceList.Add(resource);
+                  
+              }
+              if (SQL != "")
+              {
+                  Cmd.CommandText = SQL;
+                  //Response.Write(SQL);
+                  Cmd.ExecuteNonQuery();
+              }
+
+          }
+     
+       
+       
+      //if (Ch.Count > 0) foreach (System.Xml.XmlElement I in Ch[0])
+      //{
+      //   string SQL = "";
+      //   string id = I.GetAttribute("id");
+
+      //   if (I.GetAttribute("Deleted") == "1") SQL = "DELETE FROM GanttBasic WHERE id=" + id;
+      //   else if(I.GetAttribute("Added")=="1")
+      //   {
+      //      SQL = "INSERT INTO GanttBasic(id,T,U,UL,S,E,C) VALUES("
+      //         + id + ","
+      //         + "'" + I.GetAttribute("T").Replace("'","''") + "',"
+      //         + "'" + I.GetAttribute("U").Replace("'", "''") + "',"
+      //         + "'" + I.GetAttribute("UL").Replace("'", "''") + "',"
+      //         + "'" + I.GetAttribute("S") + "',"
+      //         + "'" + I.GetAttribute("E") + "',"
+      //         + (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C"))+ "')";
+      //   }
+      //   else if (I.GetAttribute("Changed") == "1")
+      //   {
+      //      SQL = "UPDATE GanttBasic SET ";
+      //      for(int idx=0;idx<I.Attributes.Count;idx++)
+      //      {
+      //         System.Xml.XmlAttribute A = I.Attributes[idx];
+      //         if (A!=null)
+      //         { 
+      //            string name = A.Name;
+      //            string val = A.Value;
+      //            if(name=="T") SQL += name + " = '" + val.Replace("'","''") + "',";
+      //            else if (name == "U") SQL += name + " = '" + val.Replace("'", "''") + "',";
+      //            else if (name == "UL") SQL += name + " = '" + val.Replace("'", "''") + "',";
+      //            else if (name == "C") SQL += name + " = " + val + ",";
+      //            else if (name == "S" || name == "E" || name == "D") SQL += name + " = '" + val + "',";
+      //         }
+      //      }
+      //      SQL = SQL.TrimEnd(",".ToCharArray()); // Last comma away
+      //      SQL += " WHERE id=" + id;
+      //   }
+      //   if (SQL != "")
+      //   {
+      //      Cmd.CommandText = SQL;
+      //      //Response.Write(SQL);
+      //      Cmd.ExecuteNonQuery();  
+      //   }
          
-      }
+      //}
       Response.Write("<Grid><IO Result='0'/></Grid>");
    }
    // ---   

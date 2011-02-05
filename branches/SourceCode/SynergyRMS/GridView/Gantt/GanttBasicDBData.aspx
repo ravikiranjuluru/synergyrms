@@ -98,20 +98,40 @@ Conn.Close();
  //// --- Generating data --- 
  Cmd.CommandText = "SELECT * FROM GanttBasic ORDER BY id";
  System.Data.SqlClient.SqlDataReader R = Cmd.ExecuteReader();
- PM_Projects project = SynergyService.GetProjectbyProjectId(projectid);
+
+
+ MembershipUserCollection listUser=SynergyService.GetAssignedUsersByProjectId(projectid);
+ string arruser = "";
+ foreach (MembershipUser user in listUser)
+    {
+        var profile = new ProfileBase();
+        profile.Initialize(user.UserName, true);
+        string fname = profile.GetPropertyValue("FirstName").ToString();
+        string lname = profile.GetPropertyValue("LastName").ToString();
+        string name = fname + " " + lname;
+        arruser += name + "|";
+    }
+ string arrrole = "";
+ List<PM_ProjectRoles> listRoles = SynergyService.GetAllProjectRoles();
+ foreach (PM_ProjectRoles roles in listRoles)
+ {
+     arrrole+=roles.RoleName+"|";
+ }
+ 
  Response.Write("<Grid><Cfg id=\"GanttBasic\"/><Cfg NumberId=\"1\" IdChars=\"0123456789\"/>" +
  "<LeftCols>" +
  "<C Name=\"id\" Width=\"20\" Type=\"Int\"/>" +
-  "<C Name=\"N\" Width=\"60\" Type=\"Enum\" Enum=\"|User 1|User 2|User 3|User 4|User 5\"/>" +
-  "<C Name=\"R\" Width=\"60\" Type=\"Enum\" Enum=\"|PM|SE|SSE|ATL|TL\"/>" +
+  "<C Name=\"N\" Width=\"60\" Type=\"Enum\" Enum=" + arruser + "/>" +
+  "<C Name=\"U\" Width=\"100\" Type=\"Text\"/>" +
+  "<C Name=\"R\" Width=\"60\" Type=\"Enum\" Enum="+arrrole+"/>" +
   "<C Name=\"C\" Width=\"50\" Type=\"Int\" Format=\"##\\%;;0\\%\"/>" +
   "<C Name=\"S\" Width=\"60\" Type=\"Date\" Format=\"MMM dd\"/>" +
   "<C Name=\"E\" Width=\"60\" Type=\"Date\" Format=\"MMM dd\"/>" +
   
  "</LeftCols>");
  Response.Write("<Body><B>");
- while (R.Read())
- {
+ //while (R.Read())
+ //{
      //Response.Write("<I id='" + R["id"].ToString() + "'"
      //   + " N='" + R["T"].ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
      //   + " R='" + R["U"].ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
@@ -119,23 +139,38 @@ Conn.Close();
      //   + " S='" + R["S"].ToString() + "'"
      //   + " E='" + R["E"].ToString() + "'"
      //   + "/>");
-     string id = "id";
-     string name = "name";
-     string role = "role";
-     string com = "50";
-     DateTime s = DateTime.Now;
-     DateTime e = DateTime.Now;
+ //}
+    
+         
+ List<PM_ProjectResources> listResources = SynergyService.GetAllProjectResoucesByProjectId(projectid);
+ foreach (PM_ProjectResources resource in listResources)
+ {
+     string id = resource.ProjectResorcesId.ToString();
+     
+     string uname = resource.aspnet_Users.UserName;
+     var profile = new ProfileBase();
+     profile.Initialize(uname, true);
+     string fname = profile.GetPropertyValue("FirstName").ToString();
+     string lname = profile.GetPropertyValue("LastName").ToString();
+     string name = fname + " " + lname;
+     
+     string role = resource.PM_ProjectRoles.RoleName;
+     string complete = resource.Effort.ToString() ;
+     DateTime startdate = resource.AllocatedStartDate;
+     DateTime enddate = resource.AllocatedEndDate;
      Response.Write("<I id='" + id + "'"
         + " N='" + name.ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
+        + " U='" + role.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
         + " R='" + role.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
-        + " C='" + com.ToString() + "'"
-        + " S='" + s.ToString() + "'"
-        + " E='" + e.ToString() + "'"
+        + " C='" + complete.ToString() + "'"
+        + " S='" + startdate.ToString() + "'"
+        + " E='" + enddate.ToString() + "'"
         + "/>");
-     
+
  }
  Response.Write("</B></Body></Grid>");
-                         
+    
+                
  //Response.Write("<Grid><Cfg id=\"GanttBasic\"/><Cfg NumberId=\"1\" IdChars=\"0123456789\"/>" +
  //    "<LeftCols>" +
  //    "<C Name=\"id\" Width=\"20\" Type=\"Int\"/>" +
@@ -168,3 +203,4 @@ Conn.Close();
 
 // --------------------------------------------------------------------------
 %>
+
