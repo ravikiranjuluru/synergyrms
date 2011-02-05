@@ -1,0 +1,6 @@
+D:\SynergyRMS\Notification_Module\Mail_Manager\obj\Debug\ResolveAssemblyReference.cache
+D:\SynergyRMS\Notification_Module\Mail_Manager\bin\Debug\Mail_Manager.dll.config
+D:\SynergyRMS\Notification_Module\Mail_Manager\bin\Debug\Mail_Manager.dll
+D:\SynergyRMS\Notification_Module\Mail_Manager\bin\Debug\Mail_Manager.pdb
+D:\SynergyRMS\Notification_Module\Mail_Manager\obj\Debug\Mail_Manager.dll
+D:\SynergyRMS\Notification_Module\Mail_Manager\obj\Debug\Mail_Manager.pdb
