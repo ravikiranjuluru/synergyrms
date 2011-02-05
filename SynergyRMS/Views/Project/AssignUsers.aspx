@@ -405,7 +405,7 @@
                                             <%= user.Email%>
                                         </td>
                                         <td headers="edit" class="evnrow-mdl" align="left" width="20%">
-                                            <%=Html.ActionLink("Assign to Project", "AssignUsertoProject", "Project", new { @id = user.ProviderUserKey.ToString(), @pid = project.ProjectId }, null)%> 
+                                            <%=Html.ActionLink("Assign to Project", "AssignUsertoProject", "Project", new { @id = user.ProviderUserKey.ToString()+","+project.ProjectId }, null)%> 
                                         </td>
                                         <td headers="Delete" class="evnrow-mdl" align="left" width="2%">
                                             <a href="#"><strong></strong></a>
