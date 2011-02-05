@@ -440,11 +440,12 @@ namespace SynergyRMS.Models
             if (AllowEmailNotifications())
             {
                 resource.aspnet_Users.aspnet_MembershipReference.Load();
+                SendNotificationWhenAssignedToproject(resource.aspnet_Users.aspnet_Membership.Email);
             }
 
             return true;
         }
-        private void SendNotificationWhenAssignedToproject(string email)
+        private static void SendNotificationWhenAssignedToproject(string email)
         {
             try
             {
