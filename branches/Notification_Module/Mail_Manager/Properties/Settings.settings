@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Mail_Manager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="adminMailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rms.synergy@gmail.com</Value>
+    </Setting>
+    <Setting Name="adminMailPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Admin@12345</Value>
+    </Setting>
+    <Setting Name="adminMailServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">smtp.gmail.com</Value>
+    </Setting>
+    <Setting Name="adminMailPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">587</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
