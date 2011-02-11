@@ -1,13 +1,14 @@
-﻿  html, body {width:100%; height:100%; margin:0; padding:0; border:0 none;}
-  body {font-family:Arial,Helvetica,sans-serif; font-size:14px; background:#ffffff url(../images/black.gif) repeat-y; color:#000000;}
+﻿  /*html, body {width:100%; height:100%; margin:0; padding:0; border:0 none;}
+ body {font-family:Arial,Helvetica,sans-serif; font-size:14px; background:#ffffff url(../images/black.gif) repeat-y; color:#000000;}
 	h2 {font-size:20px; margin:16px 0;}
 	h3 {font-size:16px; margin:12px 0;}
 	h4 {font-size:13px; margin:9px 0;}
 	table, td, th {font-family:Arial,Helvetica,sans-serif;}
-	td {background-color:#ffffff;}
+	td {background-color:#ffffff;}*/
+		
 	sup {font-size:10px; font-weight:normal; color:#ff0000;}
-  a, a:link, a:visited, a:hover, a:active {color:#0000ff; text-decoration:none;}
-	img, td, th {vertical-align:top;}
+  myMacdocmenu, myMacdocmenu:link, myMacdocmenu:visited, myMacdocmenu:hover, myMacdocmenu:active {color:#0000ff; text-decoration:none;}
+	/*img, td, th {vertical-align:top;}*/
   #page {height:100%;}
   #eop {position:absolute; top:665px; left:0; width:100%; font-size:11px; font-style:italic; overflow:hidden;}
 	#eop label {position:relative; float:left; padding-left:40px;}
@@ -19,20 +20,20 @@
   #buttons {padding-top:8px; padding-left:134px;}
   #pagebuttons ul {list-style-type:none; padding:0; margin:0;}
   #pagebuttons li {float:left; padding:0 0 0 6px; margin:0;}
-  #pagebuttons li a {display:block; border:1px solid #808080; font-size:12px; padding:1px 6px; color:#000000; background-color:#f0f0f0;}
-	#pagebuttons li a:hover {color:#ffffff; background-color:#666666;}
-	#pagebuttons li a.currentpage {color:#999999; cursor:default;}
-	#pagebuttons li a.currentpage:hover {color:#999999; background-color:#f0f0f0;}
+  #pagebuttons li myMacdocmenu {display:block; border:1px solid #808080; font-size:12px; padding:1px 6px; color:#000000; background-color:#f0f0f0;}
+	#pagebuttons li myMacdocmenu:hover {color:#ffffff; background-color:#666666;}
+	#pagebuttons li myMacdocmenu.currentpage {color:#999999; cursor:default;}
+	#pagebuttons li myMacdocmenu.currentpage:hover {color:#999999; background-color:#f0f0f0;}
 /*documentation links/buttons...*/
   #docbuttons {clear:left; padding-top:5px;}
   #docbuttons ul {list-style-type:none; padding:0; margin:0;}
   #docbuttons li {float:left; padding:0 0 0 6px; margin:0px;}
-  #docbuttons li a {display:block; border:1px solid #808080; font-size:12px; padding:1px 6px;}
-	#docbuttons li a.doclink:hover {color:#ffffff; background-color:#9999ff;}
-	#docbuttons li a.docdisabled {color:#999999; background-color:#f0f0f0; text-decoration:line-through; cursor:default;}
+  #docbuttons li myMacdocmenu {display:block; border:1px solid #808080; font-size:12px; padding:1px 6px;}
+	#docbuttons li myMacdocmenu.doclink:hover {color:#ffffff; background-color:#9999ff;}
+	#docbuttons li myMacdocmenu.docdisabled {color:#999999; background-color:#f0f0f0; text-decoration:line-through; cursor:default;}
 /*download link...*/
-  a#goDownload {display:block; float:left; font-size:12px; border:1px solid #ffffff; padding:1px 6px; margin-left:12px;}
-  a#goDownload:hover {border-color:#0000ff;}
+  myMacdocmenu#goDownload {display:block; float:left; font-size:12px; border:1px solid #ffffff; padding:1px 6px; margin-left:12px;}
+  myMacdocmenu#goDownload:hover {border-color:#0000ff;}
 /*controller...*/
 	#controller {position:absolute; top:200px; left:620px; font-size:11px; border:1px solid #000000; background-color:#999999;}
 	#controllerWrap {width:300px; margin:3px 3px 0; background-color:#ffffff;}
@@ -52,14 +53,14 @@
 	#controller .cbuttons {clear:left; text-align:right; padding-top:2px; margin-top:3px; border-top:1px solid #999999;}
 	#controller .cbuttons input {padding:0; width:45px;}
 	#controller .cbuttons input.cdestroy {margin-right:40px; color:#660066; cursor:pointer; width:50px;}
-	#controller a.cmore {display:block; position:relative; float:left; text-align:left; color:#999999; font-size:10px; font-style:italic; line-height:1; outline:0 none;}
-	#controller a.cmore:hover {color:#000000;}
-	#controller a.cmore img {vertical-align:baseline; width:12px; height:6px; background:transparent url(../images/arrows.jpg) no-repeat 0 -6px; border:0 none; outline:0 none;}
-	#controller a.cless img {background-position:0 0;}
-	#controller a.cmore span.cmore {display:inline;}
-	#controller a.cless span.cmore {display:none;}
-	#controller a.cmore span.cless {display:none;}
-	#controller a.cless span.cless {display:inline;}
+	#controller myMacdocmenu.cmore {display:block; position:relative; float:left; text-align:left; color:#999999; font-size:10px; font-style:italic; line-height:1; outline:0 none;}
+	#controller myMacdocmenu.cmore:hover {color:#000000;}
+	#controller myMacdocmenu.cmore img {vertical-align:baseline; width:12px; height:6px; background:transparent url(../images/arrows.jpg) no-repeat 0 -6px; border:0 none; outline:0 none;}
+	#controller myMacdocmenu.cless img {background-position:0 0;}
+	#controller myMacdocmenu.cmore span.cmore {display:inline;}
+	#controller myMacdocmenu.cless span.cmore {display:none;}
+	#controller myMacdocmenu.cmore span.cless {display:none;}
+	#controller myMacdocmenu.cless span.cless {display:inline;}
 	#controller .cdemonstrator {background-color:#e8e8e8; border:1px solid #cccccc;}
 	#controllerPlus {display:none; clear:left; overflow:hidden;}
 	#controllerPlus.chidden label {display:none;}
@@ -76,8 +77,8 @@
 	#controllerHeader {position:absolute; top:-46px; left:0; text-align:center; width:100%; color:#808080; font-style:italic;}
 	#controllerTitle {font-size:12px; font-weight:bold; color:#333333; font-style:normal;}
 	#controllerExpander, #doclink2options {position:relative; float:right; margin-right:2px;}
-	#controllerExpander a {display:block; width:16px; height:16px; float:left; outline:0 none;}
-	#controllerExpander a:hover {background-color:#999999;}
+	#controllerExpander myMacdocmenu {display:block; width:16px; height:16px; float:left; outline:0 none;}
+	#controllerExpander myMacdocmenu:hover {background-color:#999999;}
 	#controllerExpander img {width:100%; height:100%; border:0 none;}
 	#sideBar {position:absolute; top:0; left:0; width:130px; height:665px; background-color:#000000; z-index:10;}
 
@@ -88,29 +89,29 @@
   div.docpage pre {padding:4px; background-color:#ffffff; border:1px solid #999999; font-family:Courier New, Courier, monospace; font-size:11px;}
 	#docAdvSeqPics {float:right; width:690px; height:440px;}
 	#docAdvSeqIndx {float:left;}
-	#docAdvSeqIndx a {display:block; margin: 1px 0; padding:1px 4px;}
-	#docAdvSeqIndx a.docAdvSeqAct {color:#ffffff; background-color:#0000ff;}
+	#docAdvSeqIndx myMacdocmenu {display:block; margin: 1px 0; padding:1px 4px;}
+	#docAdvSeqIndx myMacdocmenu.docAdvSeqAct {color:#ffffff; background-color:#0000ff;}
 	#dockexamples.docpage {padding-top:10px;}
 	#dockexamples .docexample {float:left; margin-right:10px; margin-bottom:10px; width:274px; height:60px;}
-	#dockexamples .docexample a {display:block; font-size:11px; color:#808080; background-color:#ffffff; height:100%;}
+	#dockexamples .docexample myMacdocmenu {display:block; font-size:11px; color:#808080; background-color:#ffffff; height:100%;}
 	#dockexamples .docexample b {display:block; height:100%; border:1px solid #808080; font-weight:normal; font-style:italic; cursor:pointer;}
-	#dockexamples .docexample a .examplesTitle {color:#000000; font-style:normal;}
-	#dockexamples .docexample a:hover {background-color:#eeeeee; color:#3333cc;}
-	#dockexamples .docexample a:hover .examplesTitle {color:#000066;}
+	#dockexamples .docexample myMacdocmenu .examplesTitle {color:#000000; font-style:normal;}
+	#dockexamples .docexample myMacdocmenu:hover {background-color:#eeeeee; color:#3333cc;}
+	#dockexamples .docexample myMacdocmenu:hover .examplesTitle {color:#000066;}
 	#dockexamples .docexample em {float:right; margin-right:2px; color:#ff9900; font-size:10px;}
-	#dockexamples .taghilite a {background-color:#ffff66; color:#6666cc;}
-	#dockexamples .taghilite a:hover {background-color:#ffff00;}
+	#dockexamples .taghilite myMacdocmenu {background-color:#ffff66; color:#6666cc;}
+	#dockexamples .taghilite myMacdocmenu:hover {background-color:#ffff00;}
 	#docexampletags {float:right; width:40%;}
-	#docexampletags table {float:right; width:90%;}
-	#docexampletags a {margin:0 4px; font-size:11px; white-space:nowrap; outline:0 none;}
-	#docexampletags a.taggedon span {background-color:#ffff00;}
+	/*#docexampletags table {float:right; width:90%;}*/
+	#docexampletags myMacdocmenu {margin:0 4px; font-size:11px; white-space:nowrap; outline:0 none;}
+	#docexampletags myMacdocmenu.taggedon span {background-color:#ffff00;}
 	#docexampletags em {color:#999999;}
 	.floatSnapshot img {position:absolute; display:none; border:0 none;}
 /*general...*/
-	a.openExample {font-style:italic; color:#6600ff;}
-	a.scrollInPage {color:#333333;}
-	a.scrollInPage:hover {border-bottom:1px dotted #333333;}
-	a.targetBlank {padding-right:10px; background:transparent url(../images/target_blank.gif) no-repeat 100% 0;}
+	myMacdocmenu.openExample {font-style:italic; color:#6600ff;}
+	myMacdocmenu.scrollInPage {color:#333333;}
+	myMacdocmenu.scrollInPage:hover {border-bottom:1px dotted #333333;}
+	myMacdocmenu.targetBlank {padding-right:10px; background:transparent url(../images/target_blank.gif) no-repeat 100% 0;}
   .hideThis {display:none;}
 	.alignC {text-align:center;}
 	.clearB {clear:both; padding-top:1px;}
