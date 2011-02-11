@@ -1369,11 +1369,11 @@ $('#Start-Menu').load('../../Content/iFrameContent/StartmenuContent.html', funct
 
 
       $('#StartmenuItem_CreateNewWindowLogin').click(function(e) {
-          GenerateNewWindowLightbox("/Account/Login", "Synergy HRM", false, e);
+          GenerateNewWindowLightbox("../Account/Login", "Synergy HRM", false, e);
       });
 
       $('#StartmenuItem_CreateNewWindowDashboard').click(function(e) {
-          GenerateNewWindowLightbox("/Dashboard/Index", "Synergy HRM", false, e);
+          GenerateNewWindowLightbox("../Dashboard/Index", "Synergy HRM", false, e);
       });
 
 
