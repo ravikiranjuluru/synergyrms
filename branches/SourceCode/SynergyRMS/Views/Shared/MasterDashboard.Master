@@ -674,9 +674,9 @@
     </table>
 
  
-    <div id="divmain">
+   <div id="divmain">
    
-   <asp:ContentPlaceHolder ID="Macmenu" runat="server" >
+   <%-- <asp:ContentPlaceHolder ID="Macmenu" runat="server" >
    <div id="menuDoc" style="text-align: right">
 <a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/Addressbook.png" alt="" title="Menu 1" /></a>
 <a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/DVD-Player.png" alt="" title="Menu 1" /></a>
@@ -685,7 +685,7 @@
 <a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/Safari.png" alt="" title="Menu 1" /></a>
 <a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/Terminal.png" alt="" title="Menu 1" /></a>
 </div>
-   </asp:ContentPlaceHolder>
+   </asp:ContentPlaceHolder>--%>
                                                
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         
