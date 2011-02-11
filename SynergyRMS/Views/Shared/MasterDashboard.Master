@@ -102,7 +102,33 @@
 <!-- Jquery datatable -->
   
    
-   
+       <!-- mac doc menu-->
+    <link rel="Stylesheet" type="text/css" href="../../Content/Macdoc/macdoc.css" />
+      <link rel="Stylesheet" type="text/css" href="../../Content/macdoc/spook.css" />
+      <link rel="Stylesheet" type="text/css" href="../../Content/macdoc/spookSkin.css" />
+      <script type="text/javascript" src="../../Scripts/Macdoc/jquery-1.4.2.min.js"></script>
+      <script type="text/javascript" src="../../Scripts/Macdoc/spook.js"></script>
+      <script type="text/javascript" src="../../Scripts/Macdoc/jquery.jqDock.min.js"></script>
+      <script type="text/javascript" src="../../Scripts/Macdoc/macdoc.js"></script>
+  <script type="text/javascript">
+          var opts =
+          // horizontal Dock with images expanding downwards in the vertical axis...
+          //top/middle/bottom
+  {align: 'top'
+  // set the maximum minor axis (vertical) image dimension to 48px
+  , size: 25    //48
+  // add labels..
+  , labels: true
+  // swap the GIF extension for PNG extension for the larger image...
+  , source: function(i) { return this.src.replace(/gif$/, 'png'); }
+};
+
+          jQuery(document).ready(function($) {
+              // Apply jqDock with no options...
+              $('#menuDoc').jqDock(opts);
+          });
+      </script>
+<!-- end mac doc menu-->
 
   
   
@@ -541,7 +567,7 @@
 
 
     
- <%--   <form name="frmMain" method="post" action="ags_main.aspx" id="frmMain">--%>
+
    
 
     
@@ -551,8 +577,7 @@
                 <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td align="left" valign="top" style="white-space: nowrap;">
-                            <%--<img src="<%= ResolveUrl("~") %>Content/images/common/atlanticglobal.png" id="imgHome" alt="Atlantic Global Solution"
-                                style="padding-left: 10px; padding-right: 4px; cursor: pointer;" onclick="openPage('ags_gettingstarted.aspx?Code=GETTINGSTARTED');" />--%>
+                            
                         </td>
                     </tr>
                 </table>
@@ -638,15 +663,31 @@
             </td>
         </tr>
         <tr>
+        
+
+       
             <td align="right" style="width: 100%;">
             <!-- main menu goes here-->
           <%Html.RenderPartial("Menu"); %>
+          
             </td>
         </tr>
     </table>
 
  
     <div id="divmain">
+   
+   <asp:ContentPlaceHolder ID="Macmenu" runat="server" >
+   <div id="menuDoc" style="text-align: right">
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/Addressbook.png" alt="" title="Menu 1" /></a>
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/DVD-Player.png" alt="" title="Menu 1" /></a>
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/eMail.png" alt="" title="Menu 1" /></a>
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/Instant_Messaging.png" alt="" title="Menu 1" /></a>
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/Safari.png" alt="" title="Menu 1" /></a>
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/Terminal.png" alt="" title="Menu 1" /></a>
+</div>
+   </asp:ContentPlaceHolder>
+                                               
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         
         </asp:ContentPlaceHolder>
@@ -655,7 +696,7 @@
         </iframe>
    --%>
 
-   <%-- </form>--%>
+
 
 </body>
 </html>
