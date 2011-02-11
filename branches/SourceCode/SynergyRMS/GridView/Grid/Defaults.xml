@@ -292,9 +292,13 @@
 		/>
 
 	<!-- Bottom toolbar -->
+  <!--Cells="Correct,Save,Reload,Repaint,Print,ExportPDF,Export,Undo,Redo,Add,AddChild,Sort,Calc,ExpandAll,CollapseAll,ZoomIn,ZoomOut,ZoomFit,Columns,Cfg,Help,Debug,StyleTitle,StyleStandard,StyleLight,StyleOffice,StyleModern,StyleBorders,StyleRobust,StylePlain,StyleColors,Empty,Formula,Resize"-->
+  
    <Toolbar id="Toolbar" CanEdit="0" CanFocus="0" CanPrint="0"
-      Cells="Correct,Save,Reload,Repaint,Print,ExportPDF,Export,Undo,Redo,Add,AddChild,Sort,Calc,ExpandAll,CollapseAll,ZoomIn,ZoomOut,ZoomFit,Columns,Cfg,Help,Debug,StyleTitle,StyleStandard,StyleLight,StyleOffice,StyleModern,StyleBorders,StyleRobust,StylePlain,StyleColors,Empty,Formula,Resize"
-      SaveOnEnter="Validate AND Save" SaveVisibleFormula="(Grid.Data.Upload.Url || Grid.Data.Upload.Tag || Grid.Data.Upload.Data) &amp;&amp; !Grid.Detail?1:0"
+     
+     Cells="Save,Reload,Repaint,Print,ExportPDF,Export,Undo,Redo,Add,AddChild,Sort,ExpandAll,CollapseAll,ZoomIn,ZoomOut,ZoomFit,StyleTitle,StyleStandard,StyleLight,StyleOffice,StyleModern,StyleBorders,StyleRobust,StylePlain,StyleColors,Empty,Formula,Resize"
+     
+     SaveOnEnter="Validate AND Save" SaveVisibleFormula="(Grid.Data.Upload.Url || Grid.Data.Upload.Tag || Grid.Data.Upload.Data) &amp;&amp; !Grid.Detail?1:0"
       ReloadOnEnter="Reload" ReloadVisibleFormula="!Grid.Detail"
       RepaintOnEnter="Repaint" RepaintVisibleFormula="Grid.Paging&amp;&amp;Grid.AllPages"
       PrintOnEnter="Print"
@@ -340,7 +344,7 @@
       EmptyRelWidth="1" EmptyNoColor="1"
       FormulaWidth="-2" FormulaNoColor="1" FormulaCanFocus="0" FormulaType="Html" FormulaWrap="0"
       ResizeWidth="7" ResizeType="Html" ResizeVisibleFormula="!!Grid.ResizingMain"
-      Styles="1" Tag="" Visible="1"
+      Styles="0" Tag="" Visible="1"
       />
 
    <!-- Configuration menu -->
