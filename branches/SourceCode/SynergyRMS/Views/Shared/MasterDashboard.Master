@@ -103,7 +103,7 @@
   
    
        <!-- mac doc menu-->
-    <link rel="Stylesheet" type="text/css" href="../../Content/Macdoc/macdoc.css" />
+<%--    <link rel="Stylesheet" type="text/css" href="../../Content/Macdoc/macdoc.css" />
       <link rel="Stylesheet" type="text/css" href="../../Content/macdoc/spook.css" />
       <link rel="Stylesheet" type="text/css" href="../../Content/macdoc/spookSkin.css" />
       <script type="text/javascript" src="../../Scripts/Macdoc/jquery-1.4.2.min.js"></script>
@@ -122,12 +122,11 @@
   // swap the GIF extension for PNG extension for the larger image...
   , source: function(i) { return this.src.replace(/gif$/, 'png'); }
 };
-
           jQuery(document).ready(function($) {
               // Apply jqDock with no options...
               $('#menuDoc').jqDock(opts);
           });
-      </script>
+      </script>--%>
 <!-- end mac doc menu-->
 
   
