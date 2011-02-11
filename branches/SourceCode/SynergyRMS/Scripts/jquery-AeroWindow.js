@@ -57,9 +57,9 @@
         // Special Aero Style Settings ----------------------------------------
         WindowTransparentAnimationSpeed:  300,
         WindowBorderWidth:                22,            /* do not change */
-        WindowBorderHeight:               62,            /* do not change */
+        WindowBorderHeight: 20,            /* 62do not change */
         WindowBorderMouseCursorSpacing:   25,            /* do not change */
-        TaskbarHeight:                    40            /* do not change */
+        TaskbarHeight: 40            /*40 do not change */
       }, options || {});
 
       /*-----------------------------------------------------------------------
@@ -641,13 +641,35 @@
         
         //Build Taskbar -------------------------------------------------------
         if ($('#Taskbar').length == 0) {
+
+
+
           $('body').append('<div id="Taskbar">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
 '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
 '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
 '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
 '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
 '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
-'Main Menu</div>');
+'Main Menu' +
+
+
+
+/*'<div id="menuDoc">'+
+'<a href="#"><img src="../../Content/images/taskbar/StartButtonIcon.png" alt="" title="Menu 1" /></a>'+
+'<a href="#"><img src="../../Content/images/taskbar/StartButtonIcon.png" alt="" title="Menu 1" /></a>'+
+'<a href="#"><img src="../../Content/images/taskbar/StartButtonIcon.png" alt="" title="Menu 1" /></a>'+
+'<a href="#"><img src="../../Content/images/taskbar/StartButtonIcon.png" alt="" title="Menu 1" /></a>'+
+'<a href="#"><img src="../../Content/images/taskbar/StartButtonIcon.png" alt="" title="Menu 1" /></a>'+
+'<a href="#"><img src="../../Content/images/taskbar/StartButtonIcon.png" alt="" title="Menu 1" /></a>'+
+'</div>' +*/
+
+
+
+
+'</div>');
+
+
+
           $('#Taskbar').append('<div style="float: left;" id="Start-Menu-Button">&nbsp;</div>');
           $('#Taskbar').append('<div id="TaskbarPoints">&nbsp;</div>');
           $('body').append('<div id="Start-Menu">&nbsp;</div>');
