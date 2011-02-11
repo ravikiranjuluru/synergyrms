@@ -366,6 +366,7 @@
                                                                 <tr>
                                                                     <td align="left">
                                                                         <input type="submit" value="Save" class="button" id="btnSave" name="btnSave">&nbsp;
+                                                                        <input type="button" value="Close" class="button" id="btnClose" name="btnClose" onclick="closeAECWindow()">&nbsp;
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -386,5 +387,10 @@
         </tr>
     </table>
     <%} %>
+    <script>
+        function ClosePopupWindow() {
+            window.close();
+        }
+    </script>
 </body>
 </html>
