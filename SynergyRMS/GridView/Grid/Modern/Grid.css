@@ -125,8 +125,8 @@
 .GMMergedCellH { padding:0px; padding-right:5px; }
 .GMMergedCellV { padding:0px; padding-bottom:1px; }
 
-.GMWrap0 { white-space:nowrap; }
-.GMWrap1 { white-space:normal; }
+/*.GMWrap0 { white-space:nowrap; }
+.GMWrap1 { white-space:normal; }*/
 .GMAlignLeft { text-align:left; }
 .GMAlignCenter { text-align:center; }
 .GMAlignJustify { text-align:center; }
