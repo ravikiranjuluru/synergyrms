@@ -157,7 +157,11 @@ Conn.Close();
      string lname = profile.GetPropertyValue("LastName").ToString();
      string name = fname + " " + lname;
 
-     string role = resource.PM_ProjectRoles.RoleName == null ? "" : resource.PM_ProjectRoles.RoleName;
+     string role ="";
+     if(resource.PM_ProjectRoles!=null)
+     {
+         role = resource.PM_ProjectRoles.RoleName == null ? "" : resource.PM_ProjectRoles.RoleName;
+     }
      string complete = resource.Effort.ToString() ;
      DateTime startdate = resource.AllocatedStartDate;
      DateTime enddate = resource.AllocatedEndDate;

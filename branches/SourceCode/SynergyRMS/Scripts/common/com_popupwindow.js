@@ -158,7 +158,7 @@ var AECWinPopup = new function() {
         addEvent(document, 'keydown', new keyDownHandler(theWindow));
         //oDocument.body.appendChild(theWindow.Overlay);
 
-        theWindow.Canvas.id = 'divAECWindow_' + new Date().getTime();
+        theWindow.Canvas.id = 'divAECWindow_'+ new Date().getTime();
         theWindow.Canvas.style.backgroundColor = '#FFFFFF';
         theWindow.Canvas.style.border = 'solid 2px #BDDFFF';
         theWindow.Canvas.style.width = theWindow.width + 'px'; // 300 + 'px';

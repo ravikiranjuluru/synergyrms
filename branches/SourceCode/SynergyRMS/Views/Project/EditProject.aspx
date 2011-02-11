@@ -69,18 +69,24 @@
             padding-top: 10px;
         }
     </style>
-    
+
     <script type="text/javascript">
         function lnkEditProject_onClick(proid) {
+            //AECWinPopup.open('EditProjectLoad?id=' + proid, 550, 500, popupCallback, '', false);
             AECWinPopup.open('EditProjectLoad?id=' + proid, 550, 500, popupCallback, '', false);
         }
         function popupCallback(context, returnValue) {
+            alert('popupCallback - context=' + context + ' ,returnValue = ' + returnValue);
         }
 
         function lnkAssignUsers_onClick(proid) {
             AECWinPopup.open('AssignUsersProjectLoad?id=' + proid, 550, 750, popupCallback, '', false);
         }
-</script>
+        function displayClose() {
+            alert('im close');
+
+        }
+    </script>
 
     <div id="masterpage_divHead" class="formHead">
         <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -300,7 +306,7 @@ foreach (PM_Projects project in (List<PM_Projects>)ViewData["ProjectList"])
                 <a href="#"><strong>
                     <%--<%=Html.ActionLink<UserController>(c => c.EditManager(manager.ProviderUserKey.ToString()), "Edit")%>--%>
                     <a class="link" onclick="lnkEditProject_onClick('<%= project.ProjectId%>');"
-                            title="Edit User Roles" href="#">Edit Project </a>
+                            title="Edit User Roles" href="#" >Edit Project </a>
                 </strong></a>
             </td>
             <td headers="Delete" class="evnrow-mdl" align="left" width="2%">
