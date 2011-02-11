@@ -61,16 +61,33 @@
           class="agnav_default" border="0" cellpadding="0" cellspacing="0">
               <tr>
                   <td>
+                 
+
+                           
                   </td>
                   <td>
                       <div>
                           <table border="0" cellpadding="0" cellspacing="0" style="margin-left: auto;">
+             <%--             <tr><td>
+                                                      <div id="menuDoc" style="text-align: right">
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/Addressbook.png" alt="" title="Menu 1" /></a>
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/DVD-Player.png" alt="" title="Menu 1" /></a>
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/eMail.png" alt="" title="Menu 1" /></a>
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/Instant_Messaging.png" alt="" title="Menu 1" /></a>
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/Safari.png" alt="" title="Menu 1" /></a>
+<a href="#" class="myMacdocmenu"><img src="../../Content/images/Macdoc/Terminal.png" alt="" title="Menu 1" /></a>
+</div>
+</td></tr>--%>
                               <tr>
                                   <td id="Td1" class="item level1">
                                       <a class="link " href="../Dashboard/Index"><span class="text ">Home</span> </a>
                                   </td>
                                   <%if (isAdmin)
                                     { %>
+                                    <td class="item level1" >
+                                    
+
+                                    </td>
                                   <td id="DASHBOARD-PROJECT" class="item level1" onmouseenter="this.className += ' hover';"
                                       onmouseleave="this.className = this.className.replace(' hover', '');">
                                       <a class="link " href="../Project/EditProject"><span class="text ">Project</span></a>
@@ -111,8 +128,9 @@
                                         <a href="#">
                                             <img src="../../Content/images/Macdoc/Terminal.png" alt="" title="Menu 1" /></a>
                                     </div>
-                                </td>--%>
-                            </tr>
+                                </td>
+                            </tr>--%>
+                            
                         </table>
                     </div>
                 </td>
