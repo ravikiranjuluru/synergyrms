@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DataLayer;
 
+// This is to extending functionality by providing servics
 namespace ServiceLayer
 {
     public class ServiceProject
