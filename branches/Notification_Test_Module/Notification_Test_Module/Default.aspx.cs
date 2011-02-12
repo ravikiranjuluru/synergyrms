@@ -7,8 +7,13 @@ namespace Notification_Test_Module
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           //sendToList();
-            sendToIndividual();
+            try
+            {
+           sendToList();
+                //sendToIndividual();
+            }
+            catch (Exception ex)
+            { }
         }
 
         void sendToList()
