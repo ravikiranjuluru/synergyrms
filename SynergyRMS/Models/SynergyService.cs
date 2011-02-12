@@ -449,8 +449,8 @@ namespace SynergyRMS.Models
         {
             try
             {
-                ArrayList mailList = new ArrayList();
-                MailManager.SendMail(mailList, MailManager.messageFlag.AssignedProject);
+                //List<string> mailList = new List<string>();
+                MailManager.SendMail(email, MailManager.messageFlag.AssignedProject);
             }
             catch
             {
@@ -458,6 +458,7 @@ namespace SynergyRMS.Models
             }
 
         }
+
         private static bool AllowEmailNotifications()
         {
             if (ConfigurationSettings.AppSettings["AllowEmailNotification"] == "True")
@@ -482,8 +483,6 @@ namespace SynergyRMS.Models
             Resouce = ResouceQuery.First();
             return Resouce;
         }
-
-
 
         /// <summary>
         /// Updates the project resources.
@@ -533,6 +532,7 @@ namespace SynergyRMS.Models
                 throw;
             }
         }
+
         /// <summary>
         /// Deletes the project resources.
         /// </summary>
@@ -549,6 +549,7 @@ namespace SynergyRMS.Models
                 throw;
             }
         }
+
         /// <summary>
         /// Updates the project resources.
         /// </summary>
@@ -564,6 +565,7 @@ namespace SynergyRMS.Models
                 throw;
             }
         }
+
         /// <summary>
         /// Gets the assigned users by project id.
         /// </summary>

@@ -19,3 +19,12 @@ E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\obj\Debug\RdlCompile.cache
 E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\obj\Debug\RdlCompile.compiled
 E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\obj\Debug\SynergyRMS.dll
 E:\EAD\CS\RMS\branches\SourceCode\SynergyRMS\obj\Debug\SynergyRMS.pdb
+D:\NewSynergyRMS\obj\Debug\ResolveAssemblyReference.cache
+D:\NewSynergyRMS\obj\Debug\RdlCompile.cache
+D:\NewSynergyRMS\obj\Debug\RdlCompile.compiled
+D:\NewSynergyRMS\obj\Debug\SynergyRMS.dll
+D:\NewSynergyRMS\bin\SynergyRMS.dll.config
+D:\NewSynergyRMS\bin\SynergyRMS.dll
+D:\NewSynergyRMS\bin\SynergyRMS.pdb
+D:\NewSynergyRMS\bin\Microsoft.Web.Mvc.dll
+D:\NewSynergyRMS\obj\Debug\SynergyRMS.pdb
