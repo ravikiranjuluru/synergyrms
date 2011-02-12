@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Configuration;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
-using System.Configuration;
-using System.Collections;
+
 namespace SynergyRMS.Models
 {
     public static class MailManager
     {
-
-        public enum messageFlag { AssignedProject, RemoveProject };
+        public enum messageFlag { AssignedProject, RemovedProject };
 
         private const string appName = "Resource Management System";
 
@@ -24,24 +21,15 @@ namespace SynergyRMS.Models
         private static string mailTitle = string.Empty;
         private static string mailMessage = string.Empty;
 
-        //public static MailManager()
-        //{
-        //    //string mailTitle, string mailMessage
-        //    //this.mailTitle = mailTitle;
-        //    //this.mailMessage = mailMessage;
-
-
-        //}
-
         private static void SetAdminValues()
         {
-            adminMailAddress = ConfigurationSettings.AppSettings["adminMailAddress"].ToString();
-            adminMailPassword = ConfigurationSettings.AppSettings["adminMailPassword"].ToString();
-            adminMailServer = ConfigurationSettings.AppSettings["adminMailServer"].ToString();
-            adminMailPort = Convert.ToInt16(ConfigurationSettings.AppSettings["adminMailPort"].ToString());
+            adminMailAddress = ConfigurationManager.AppSettings["adminMailAddress"].ToString();
+            adminMailPassword = ConfigurationManager.AppSettings["adminMailPassword"].ToString();
+            adminMailServer = ConfigurationManager.AppSettings["adminMailServer"].ToString();
+            adminMailPort = Convert.ToInt16(ConfigurationManager.AppSettings["adminMailPort"].ToString());
         }
 
-        public static bool SendMail(ArrayList toAdresses, messageFlag flag)
+        public static bool SendMail(List<string> toAdresses, messageFlag flag)
         {
             SetAdminValues();
 
@@ -66,7 +54,39 @@ namespace SynergyRMS.Models
             mail.Subject = appName + " - Mail Notification";
             mail.IsBodyHtml = true;
             mail.Body = MessageModifier(flag);
-            //mail.Priority = MailPriority.High;
+
+            try
+            {
+                smtpClient.Send(mail);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool SendMail(string toAdresses, messageFlag flag)
+        {
+            SetAdminValues();
+
+            SmtpClient smtpClient = new SmtpClient(adminMailServer, adminMailPort);
+
+            NetworkCredential networkCredential = new NetworkCredential(adminMailAddress, adminMailPassword);
+
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.EnableSsl = true;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = networkCredential;
+
+            MailMessage mail = new MailMessage();
+
+            mail.From = new MailAddress(adminMailAddress, appName);
+            mail.To.Add(new MailAddress(toAdresses));
+
+            mail.Subject = appName + " - Mail Notification";
+            mail.IsBodyHtml = true;
+            mail.Body = MessageModifier(flag);
 
             try
             {
