@@ -2,6 +2,7 @@
     Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <form id="form1" runat="server">
     <div id="masterpage_divHead" class="formHead">
         <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tbody>
@@ -217,6 +218,8 @@
                                                             value="Save" type="submit">
                                                         <input name="btnClear" id="btnClear"
                                                             class="button" value="Clear" type="button" onclick="javascript:history.go(-1)">
+                                                        <asp:HyperLink ID="HyperLink1" runat="server" 
+                                                            NavigateUrl="~/Reports/Project_Resources.aspx">View Report</asp:HyperLink>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -239,4 +242,5 @@
             window.location(history - 1);
         }
     </script>
+    </form>
 </asp:Content>
