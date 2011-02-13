@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Project_Resources.aspx.cs" Inherits="SynergyRMS.Reports.Project_Resources" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewProjectByResources.aspx.cs" Inherits="SynergyRMS.Reports.ViewProjectByResources" %>
 
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 
@@ -16,21 +16,20 @@
             <tr>
                 <td>
                     &nbsp;</td>
-                <td colspan="2">
+                <td>
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
             <tr>
                 <td>
-                    &nbsp;</td>
-                <td>
-                    <asp:Label ID="lblSelect" runat="server" Text="Select Project"></asp:Label>
+                    <asp:Label ID="lblUser" runat="server" Text="Select Resource"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlProjects" runat="server">
-                        <asp:ListItem Value="7">SynergyRMS</asp:ListItem>
-                        <asp:ListItem Value="9">MBanx</asp:ListItem>
+                    <asp:DropDownList ID="ddlUser" runat="server">
+                        <asp:ListItem Value="cea4a648-dfc5-4748-a977-4860386d80c3">Amalka</asp:ListItem>
+                        <asp:ListItem Value="1b93281e-b154-4762-adbf-7cbf6c751ba4">Chandu</asp:ListItem>
+                        <asp:ListItem Value="f0c8fe12-93f5-49d2-b3a1-e0c589cf0c89">Virath</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td>
@@ -40,50 +39,28 @@
                 <td>
                     &nbsp;</td>
                 <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    <asp:Button ID="btnShow" runat="server" onclick="btnShow_Click" 
+                    <asp:Button ID="btnViewReport" runat="server" onclick="btnViewReport_Click" 
                         Text="View Report" />
                 </td>
                 <td>
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
-                <td colspan="2">
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
                 <td colspan="2">
                     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
                         Font-Size="8pt" Height="400px" Width="650px">
-                        <LocalReport ReportPath="Reports\ProjectResources.rdlc">
+                        <LocalReport ReportPath="Reports\ViewProjectByResource.rdlc">
                             <DataSources>
                                 <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" 
-                                    Name="ProjectResources_R_GetProjectResourcesByProjectId" />
+                                    Name="ViewProjectByResource_R_GetProjectsByResourcesId" />
                                 <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" 
-                                    Name="ProjectResources_R_GetProjectByProjectId" />
+                                    Name="ViewProjectByResource_R_GetResourceByResourceId" />
                             </DataSources>
                         </LocalReport>
                     </rsweb:ReportViewer>
-                   <%-- <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
+                  <%--  <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
                         SelectMethod="GetData" 
-                        TypeName="SynergyRMS.ProjectResourcesTableAdapters.R_GetProjectResourcesByProjectIdTableAdapter">
+                        TypeName="SynergyRMS.ViewProjectByResourceTableAdapters.R_GetProjectsByResourcesIdTableAdapter">
                     </asp:ObjectDataSource>--%>
                 </td>
                 <td>
@@ -91,25 +68,34 @@
             </tr>
             <tr>
                 <td>
-                    &nbsp;</td>
-                <td colspan="2">
                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
                         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-                        TypeName="SynergyRMS.Reports.ProjectResourcesTableAdapters.R_GetProjectResourcesByProjectIdTableAdapter">
+                        
+                        TypeName="SynergyRMS.Reports.ViewProjectByResourceTableAdapters.R_GetProjectsByResourcesIdTableAdapter">
                         <SelectParameters>
-                            <asp:ControlParameter ControlID="ddlProjects"  
-                                Name="ProjectId" PropertyName="SelectedValue" Type="Int32" />
-                        </SelectParameters>
-                    </asp:ObjectDataSource>
-                    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
-                        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-                        TypeName="SynergyRMS.Reports.ProjectResourcesTableAdapters.R_GetProjectByProjectIdTableAdapter">
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="ddlProjects" Name="ProjectId" 
-                                PropertyName="SelectedValue" Type="Int32" />
+                            <asp:ControlParameter ControlID="ddlUser" Name="ResourceId" 
+                                PropertyName="SelectedValue" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
+                        OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+                        TypeName="SynergyRMS.Reports.ViewProjectByResourceTableAdapters.R_GetResourceByResourceIdTableAdapter">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="ddlUser" Name="ResourceId" 
+                                PropertyName="SelectedValue" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </td>
+                <td>
+                    &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
