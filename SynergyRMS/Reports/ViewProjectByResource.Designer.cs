@@ -21,18 +21,18 @@ namespace SynergyRMS.Reports {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ProjectResources")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ViewProjectByResource")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ProjectResources : global::System.Data.DataSet {
+    public partial class ViewProjectByResource : global::System.Data.DataSet {
         
-        private R_GetProjectResourcesByProjectIdDataTable tableR_GetProjectResourcesByProjectId;
+        private R_GetProjectsByResourcesIdDataTable tableR_GetProjectsByResourcesId;
         
-        private R_GetProjectByProjectIdDataTable tableR_GetProjectByProjectId;
+        private R_GetResourceByResourceIdDataTable tableR_GetResourceByResourceId;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public ProjectResources() {
+        public ViewProjectByResource() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -42,7 +42,7 @@ namespace SynergyRMS.Reports {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        protected ProjectResources(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ViewProjectByResource(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -55,11 +55,11 @@ namespace SynergyRMS.Reports {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["R_GetProjectResourcesByProjectId"] != null)) {
-                    base.Tables.Add(new R_GetProjectResourcesByProjectIdDataTable(ds.Tables["R_GetProjectResourcesByProjectId"]));
+                if ((ds.Tables["R_GetProjectsByResourcesId"] != null)) {
+                    base.Tables.Add(new R_GetProjectsByResourcesIdDataTable(ds.Tables["R_GetProjectsByResourcesId"]));
                 }
-                if ((ds.Tables["R_GetProjectByProjectId"] != null)) {
-                    base.Tables.Add(new R_GetProjectByProjectIdDataTable(ds.Tables["R_GetProjectByProjectId"]));
+                if ((ds.Tables["R_GetResourceByResourceId"] != null)) {
+                    base.Tables.Add(new R_GetResourceByResourceIdDataTable(ds.Tables["R_GetResourceByResourceId"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -82,18 +82,18 @@ namespace SynergyRMS.Reports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public R_GetProjectResourcesByProjectIdDataTable R_GetProjectResourcesByProjectId {
+        public R_GetProjectsByResourcesIdDataTable R_GetProjectsByResourcesId {
             get {
-                return this.tableR_GetProjectResourcesByProjectId;
+                return this.tableR_GetProjectsByResourcesId;
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public R_GetProjectByProjectIdDataTable R_GetProjectByProjectId {
+        public R_GetResourceByResourceIdDataTable R_GetResourceByResourceId {
             get {
-                return this.tableR_GetProjectByProjectId;
+                return this.tableR_GetResourceByResourceId;
             }
         }
         
@@ -134,7 +134,7 @@ namespace SynergyRMS.Reports {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public override global::System.Data.DataSet Clone() {
-            ProjectResources cln = ((ProjectResources)(base.Clone()));
+            ViewProjectByResource cln = ((ViewProjectByResource)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -156,11 +156,11 @@ namespace SynergyRMS.Reports {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["R_GetProjectResourcesByProjectId"] != null)) {
-                    base.Tables.Add(new R_GetProjectResourcesByProjectIdDataTable(ds.Tables["R_GetProjectResourcesByProjectId"]));
+                if ((ds.Tables["R_GetProjectsByResourcesId"] != null)) {
+                    base.Tables.Add(new R_GetProjectsByResourcesIdDataTable(ds.Tables["R_GetProjectsByResourcesId"]));
                 }
-                if ((ds.Tables["R_GetProjectByProjectId"] != null)) {
-                    base.Tables.Add(new R_GetProjectByProjectIdDataTable(ds.Tables["R_GetProjectByProjectId"]));
+                if ((ds.Tables["R_GetResourceByResourceId"] != null)) {
+                    base.Tables.Add(new R_GetResourceByResourceIdDataTable(ds.Tables["R_GetResourceByResourceId"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -192,40 +192,40 @@ namespace SynergyRMS.Reports {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         internal void InitVars(bool initTable) {
-            this.tableR_GetProjectResourcesByProjectId = ((R_GetProjectResourcesByProjectIdDataTable)(base.Tables["R_GetProjectResourcesByProjectId"]));
+            this.tableR_GetProjectsByResourcesId = ((R_GetProjectsByResourcesIdDataTable)(base.Tables["R_GetProjectsByResourcesId"]));
             if ((initTable == true)) {
-                if ((this.tableR_GetProjectResourcesByProjectId != null)) {
-                    this.tableR_GetProjectResourcesByProjectId.InitVars();
+                if ((this.tableR_GetProjectsByResourcesId != null)) {
+                    this.tableR_GetProjectsByResourcesId.InitVars();
                 }
             }
-            this.tableR_GetProjectByProjectId = ((R_GetProjectByProjectIdDataTable)(base.Tables["R_GetProjectByProjectId"]));
+            this.tableR_GetResourceByResourceId = ((R_GetResourceByResourceIdDataTable)(base.Tables["R_GetResourceByResourceId"]));
             if ((initTable == true)) {
-                if ((this.tableR_GetProjectByProjectId != null)) {
-                    this.tableR_GetProjectByProjectId.InitVars();
+                if ((this.tableR_GetResourceByResourceId != null)) {
+                    this.tableR_GetResourceByResourceId.InitVars();
                 }
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitClass() {
-            this.DataSetName = "ProjectResources";
+            this.DataSetName = "ViewProjectByResource";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ProjectResources.xsd";
+            this.Namespace = "http://tempuri.org/ViewProjectByResource.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableR_GetProjectResourcesByProjectId = new R_GetProjectResourcesByProjectIdDataTable();
-            base.Tables.Add(this.tableR_GetProjectResourcesByProjectId);
-            this.tableR_GetProjectByProjectId = new R_GetProjectByProjectIdDataTable();
-            base.Tables.Add(this.tableR_GetProjectByProjectId);
+            this.tableR_GetProjectsByResourcesId = new R_GetProjectsByResourcesIdDataTable();
+            base.Tables.Add(this.tableR_GetProjectsByResourcesId);
+            this.tableR_GetResourceByResourceId = new R_GetResourceByResourceIdDataTable();
+            base.Tables.Add(this.tableR_GetResourceByResourceId);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private bool ShouldSerializeR_GetProjectResourcesByProjectId() {
+        private bool ShouldSerializeR_GetProjectsByResourcesId() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private bool ShouldSerializeR_GetProjectByProjectId() {
+        private bool ShouldSerializeR_GetResourceByResourceId() {
             return false;
         }
         
@@ -238,7 +238,7 @@ namespace SynergyRMS.Reports {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ProjectResources ds = new ProjectResources();
+            ViewProjectByResource ds = new ViewProjectByResource();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -282,366 +282,9 @@ namespace SynergyRMS.Reports {
             return type;
         }
         
-        public delegate void R_GetProjectResourcesByProjectIdRowChangeEventHandler(object sender, R_GetProjectResourcesByProjectIdRowChangeEvent e);
+        public delegate void R_GetProjectsByResourcesIdRowChangeEventHandler(object sender, R_GetProjectsByResourcesIdRowChangeEvent e);
         
-        public delegate void R_GetProjectByProjectIdRowChangeEventHandler(object sender, R_GetProjectByProjectIdRowChangeEvent e);
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class R_GetProjectResourcesByProjectIdDataTable : global::System.Data.TypedTableBase<R_GetProjectResourcesByProjectIdRow> {
-            
-            private global::System.Data.DataColumn columnProjectId;
-            
-            private global::System.Data.DataColumn columnAllocatedStartDate;
-            
-            private global::System.Data.DataColumn columnAllocatedEndDate;
-            
-            private global::System.Data.DataColumn columnEffort;
-            
-            private global::System.Data.DataColumn columnProjectName;
-            
-            private global::System.Data.DataColumn columnUserId;
-            
-            private global::System.Data.DataColumn columnfirstname;
-            
-            private global::System.Data.DataColumn columnlastname;
-            
-            private global::System.Data.DataColumn columnphone;
-            
-            private global::System.Data.DataColumn columnRoleDescription;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectResourcesByProjectIdDataTable() {
-                this.TableName = "R_GetProjectResourcesByProjectId";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal R_GetProjectResourcesByProjectIdDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected R_GetProjectResourcesByProjectIdDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn ProjectIdColumn {
-                get {
-                    return this.columnProjectId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn AllocatedStartDateColumn {
-                get {
-                    return this.columnAllocatedStartDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn AllocatedEndDateColumn {
-                get {
-                    return this.columnAllocatedEndDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn EffortColumn {
-                get {
-                    return this.columnEffort;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn ProjectNameColumn {
-                get {
-                    return this.columnProjectName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn UserIdColumn {
-                get {
-                    return this.columnUserId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn firstnameColumn {
-                get {
-                    return this.columnfirstname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn lastnameColumn {
-                get {
-                    return this.columnlastname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn phoneColumn {
-                get {
-                    return this.columnphone;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn RoleDescriptionColumn {
-                get {
-                    return this.columnRoleDescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectResourcesByProjectIdRow this[int index] {
-                get {
-                    return ((R_GetProjectResourcesByProjectIdRow)(this.Rows[index]));
-                }
-            }
-            
-            public event R_GetProjectResourcesByProjectIdRowChangeEventHandler R_GetProjectResourcesByProjectIdRowChanging;
-            
-            public event R_GetProjectResourcesByProjectIdRowChangeEventHandler R_GetProjectResourcesByProjectIdRowChanged;
-            
-            public event R_GetProjectResourcesByProjectIdRowChangeEventHandler R_GetProjectResourcesByProjectIdRowDeleting;
-            
-            public event R_GetProjectResourcesByProjectIdRowChangeEventHandler R_GetProjectResourcesByProjectIdRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void AddR_GetProjectResourcesByProjectIdRow(R_GetProjectResourcesByProjectIdRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectResourcesByProjectIdRow AddR_GetProjectResourcesByProjectIdRow(System.DateTime AllocatedStartDate, System.DateTime AllocatedEndDate, int Effort, string ProjectName, System.Guid UserId, string firstname, string lastname, string phone, string RoleDescription) {
-                R_GetProjectResourcesByProjectIdRow rowR_GetProjectResourcesByProjectIdRow = ((R_GetProjectResourcesByProjectIdRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        AllocatedStartDate,
-                        AllocatedEndDate,
-                        Effort,
-                        ProjectName,
-                        UserId,
-                        firstname,
-                        lastname,
-                        phone,
-                        RoleDescription};
-                rowR_GetProjectResourcesByProjectIdRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowR_GetProjectResourcesByProjectIdRow);
-                return rowR_GetProjectResourcesByProjectIdRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public override global::System.Data.DataTable Clone() {
-                R_GetProjectResourcesByProjectIdDataTable cln = ((R_GetProjectResourcesByProjectIdDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new R_GetProjectResourcesByProjectIdDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal void InitVars() {
-                this.columnProjectId = base.Columns["ProjectId"];
-                this.columnAllocatedStartDate = base.Columns["AllocatedStartDate"];
-                this.columnAllocatedEndDate = base.Columns["AllocatedEndDate"];
-                this.columnEffort = base.Columns["Effort"];
-                this.columnProjectName = base.Columns["ProjectName"];
-                this.columnUserId = base.Columns["UserId"];
-                this.columnfirstname = base.Columns["firstname"];
-                this.columnlastname = base.Columns["lastname"];
-                this.columnphone = base.Columns["phone"];
-                this.columnRoleDescription = base.Columns["RoleDescription"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            private void InitClass() {
-                this.columnProjectId = new global::System.Data.DataColumn("ProjectId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProjectId);
-                this.columnAllocatedStartDate = new global::System.Data.DataColumn("AllocatedStartDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAllocatedStartDate);
-                this.columnAllocatedEndDate = new global::System.Data.DataColumn("AllocatedEndDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAllocatedEndDate);
-                this.columnEffort = new global::System.Data.DataColumn("Effort", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEffort);
-                this.columnProjectName = new global::System.Data.DataColumn("ProjectName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProjectName);
-                this.columnUserId = new global::System.Data.DataColumn("UserId", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUserId);
-                this.columnfirstname = new global::System.Data.DataColumn("firstname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfirstname);
-                this.columnlastname = new global::System.Data.DataColumn("lastname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlastname);
-                this.columnphone = new global::System.Data.DataColumn("phone", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnphone);
-                this.columnRoleDescription = new global::System.Data.DataColumn("RoleDescription", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRoleDescription);
-                this.columnProjectId.AutoIncrement = true;
-                this.columnProjectId.AutoIncrementSeed = -1;
-                this.columnProjectId.AutoIncrementStep = -1;
-                this.columnProjectId.AllowDBNull = false;
-                this.columnProjectId.ReadOnly = true;
-                this.columnAllocatedStartDate.AllowDBNull = false;
-                this.columnAllocatedEndDate.AllowDBNull = false;
-                this.columnProjectName.AllowDBNull = false;
-                this.columnProjectName.MaxLength = 50;
-                this.columnUserId.AllowDBNull = false;
-                this.columnfirstname.ReadOnly = true;
-                this.columnfirstname.MaxLength = 200;
-                this.columnlastname.ReadOnly = true;
-                this.columnlastname.MaxLength = 200;
-                this.columnphone.ReadOnly = true;
-                this.columnphone.MaxLength = 200;
-                this.columnRoleDescription.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectResourcesByProjectIdRow NewR_GetProjectResourcesByProjectIdRow() {
-                return ((R_GetProjectResourcesByProjectIdRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new R_GetProjectResourcesByProjectIdRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override global::System.Type GetRowType() {
-                return typeof(R_GetProjectResourcesByProjectIdRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.R_GetProjectResourcesByProjectIdRowChanged != null)) {
-                    this.R_GetProjectResourcesByProjectIdRowChanged(this, new R_GetProjectResourcesByProjectIdRowChangeEvent(((R_GetProjectResourcesByProjectIdRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.R_GetProjectResourcesByProjectIdRowChanging != null)) {
-                    this.R_GetProjectResourcesByProjectIdRowChanging(this, new R_GetProjectResourcesByProjectIdRowChangeEvent(((R_GetProjectResourcesByProjectIdRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.R_GetProjectResourcesByProjectIdRowDeleted != null)) {
-                    this.R_GetProjectResourcesByProjectIdRowDeleted(this, new R_GetProjectResourcesByProjectIdRowChangeEvent(((R_GetProjectResourcesByProjectIdRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.R_GetProjectResourcesByProjectIdRowDeleting != null)) {
-                    this.R_GetProjectResourcesByProjectIdRowDeleting(this, new R_GetProjectResourcesByProjectIdRowChangeEvent(((R_GetProjectResourcesByProjectIdRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void RemoveR_GetProjectResourcesByProjectIdRow(R_GetProjectResourcesByProjectIdRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ProjectResources ds = new ProjectResources();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "R_GetProjectResourcesByProjectIdDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
+        public delegate void R_GetResourceByResourceIdRowChangeEventHandler(object sender, R_GetResourceByResourceIdRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -649,11 +292,9 @@ namespace SynergyRMS.Reports {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class R_GetProjectByProjectIdDataTable : global::System.Data.TypedTableBase<R_GetProjectByProjectIdRow> {
+        public partial class R_GetProjectsByResourcesIdDataTable : global::System.Data.TypedTableBase<R_GetProjectsByResourcesIdRow> {
             
             private global::System.Data.DataColumn columnProjectId;
-            
-            private global::System.Data.DataColumn columnProjectTypeId;
             
             private global::System.Data.DataColumn columnProjectCode;
             
@@ -663,20 +304,26 @@ namespace SynergyRMS.Reports {
             
             private global::System.Data.DataColumn columnProjectEndDate;
             
-            private global::System.Data.DataColumn columnStatus;
+            private global::System.Data.DataColumn columnAllocatedStartDate;
             
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn columnAllocatedEndDate;
+            
+            private global::System.Data.DataColumn columnEffort;
+            
+            private global::System.Data.DataColumn columnRoleName;
+            
+            private global::System.Data.DataColumn columnRoleDescription;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectByProjectIdDataTable() {
-                this.TableName = "R_GetProjectByProjectId";
+            public R_GetProjectsByResourcesIdDataTable() {
+                this.TableName = "R_GetProjectsByResourcesId";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal R_GetProjectByProjectIdDataTable(global::System.Data.DataTable table) {
+            internal R_GetProjectsByResourcesIdDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -692,7 +339,7 @@ namespace SynergyRMS.Reports {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected R_GetProjectByProjectIdDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected R_GetProjectsByResourcesIdDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -701,13 +348,6 @@ namespace SynergyRMS.Reports {
             public global::System.Data.DataColumn ProjectIdColumn {
                 get {
                     return this.columnProjectId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn ProjectTypeIdColumn {
-                get {
-                    return this.columnProjectTypeId;
                 }
             }
             
@@ -740,16 +380,37 @@ namespace SynergyRMS.Reports {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn StatusColumn {
+            public global::System.Data.DataColumn AllocatedStartDateColumn {
                 get {
-                    return this.columnStatus;
+                    return this.columnAllocatedStartDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn AllocatedEndDateColumn {
                 get {
-                    return this.columnDescription;
+                    return this.columnAllocatedEndDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn EffortColumn {
+                get {
+                    return this.columnEffort;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn RoleNameColumn {
+                get {
+                    return this.columnRoleName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn RoleDescriptionColumn {
+                get {
+                    return this.columnRoleDescription;
                 }
             }
             
@@ -762,78 +423,74 @@ namespace SynergyRMS.Reports {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectByProjectIdRow this[int index] {
+            public R_GetProjectsByResourcesIdRow this[int index] {
                 get {
-                    return ((R_GetProjectByProjectIdRow)(this.Rows[index]));
+                    return ((R_GetProjectsByResourcesIdRow)(this.Rows[index]));
                 }
             }
             
-            public event R_GetProjectByProjectIdRowChangeEventHandler R_GetProjectByProjectIdRowChanging;
+            public event R_GetProjectsByResourcesIdRowChangeEventHandler R_GetProjectsByResourcesIdRowChanging;
             
-            public event R_GetProjectByProjectIdRowChangeEventHandler R_GetProjectByProjectIdRowChanged;
+            public event R_GetProjectsByResourcesIdRowChangeEventHandler R_GetProjectsByResourcesIdRowChanged;
             
-            public event R_GetProjectByProjectIdRowChangeEventHandler R_GetProjectByProjectIdRowDeleting;
+            public event R_GetProjectsByResourcesIdRowChangeEventHandler R_GetProjectsByResourcesIdRowDeleting;
             
-            public event R_GetProjectByProjectIdRowChangeEventHandler R_GetProjectByProjectIdRowDeleted;
+            public event R_GetProjectsByResourcesIdRowChangeEventHandler R_GetProjectsByResourcesIdRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void AddR_GetProjectByProjectIdRow(R_GetProjectByProjectIdRow row) {
+            public void AddR_GetProjectsByResourcesIdRow(R_GetProjectsByResourcesIdRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectByProjectIdRow AddR_GetProjectByProjectIdRow(int ProjectTypeId, string ProjectCode, string ProjectName, System.DateTime ProjectStartDate, System.DateTime ProjectEndDate, int Status, string Description) {
-                R_GetProjectByProjectIdRow rowR_GetProjectByProjectIdRow = ((R_GetProjectByProjectIdRow)(this.NewRow()));
+            public R_GetProjectsByResourcesIdRow AddR_GetProjectsByResourcesIdRow(string ProjectCode, string ProjectName, System.DateTime ProjectStartDate, System.DateTime ProjectEndDate, System.DateTime AllocatedStartDate, System.DateTime AllocatedEndDate, int Effort, string RoleName, string RoleDescription) {
+                R_GetProjectsByResourcesIdRow rowR_GetProjectsByResourcesIdRow = ((R_GetProjectsByResourcesIdRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        ProjectTypeId,
                         ProjectCode,
                         ProjectName,
                         ProjectStartDate,
                         ProjectEndDate,
-                        Status,
-                        Description};
-                rowR_GetProjectByProjectIdRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowR_GetProjectByProjectIdRow);
-                return rowR_GetProjectByProjectIdRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectByProjectIdRow FindByProjectId(int ProjectId) {
-                return ((R_GetProjectByProjectIdRow)(this.Rows.Find(new object[] {
-                            ProjectId})));
+                        AllocatedStartDate,
+                        AllocatedEndDate,
+                        Effort,
+                        RoleName,
+                        RoleDescription};
+                rowR_GetProjectsByResourcesIdRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowR_GetProjectsByResourcesIdRow);
+                return rowR_GetProjectsByResourcesIdRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public override global::System.Data.DataTable Clone() {
-                R_GetProjectByProjectIdDataTable cln = ((R_GetProjectByProjectIdDataTable)(base.Clone()));
+                R_GetProjectsByResourcesIdDataTable cln = ((R_GetProjectsByResourcesIdDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new R_GetProjectByProjectIdDataTable();
+                return new R_GetProjectsByResourcesIdDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal void InitVars() {
                 this.columnProjectId = base.Columns["ProjectId"];
-                this.columnProjectTypeId = base.Columns["ProjectTypeId"];
                 this.columnProjectCode = base.Columns["ProjectCode"];
                 this.columnProjectName = base.Columns["ProjectName"];
                 this.columnProjectStartDate = base.Columns["ProjectStartDate"];
                 this.columnProjectEndDate = base.Columns["ProjectEndDate"];
-                this.columnStatus = base.Columns["Status"];
-                this.columnDescription = base.Columns["Description"];
+                this.columnAllocatedStartDate = base.Columns["AllocatedStartDate"];
+                this.columnAllocatedEndDate = base.Columns["AllocatedEndDate"];
+                this.columnEffort = base.Columns["Effort"];
+                this.columnRoleName = base.Columns["RoleName"];
+                this.columnRoleDescription = base.Columns["RoleDescription"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             private void InitClass() {
                 this.columnProjectId = new global::System.Data.DataColumn("ProjectId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProjectId);
-                this.columnProjectTypeId = new global::System.Data.DataColumn("ProjectTypeId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProjectTypeId);
                 this.columnProjectCode = new global::System.Data.DataColumn("ProjectCode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProjectCode);
                 this.columnProjectName = new global::System.Data.DataColumn("ProjectName", typeof(string), null, global::System.Data.MappingType.Element);
@@ -842,78 +499,83 @@ namespace SynergyRMS.Reports {
                 base.Columns.Add(this.columnProjectStartDate);
                 this.columnProjectEndDate = new global::System.Data.DataColumn("ProjectEndDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProjectEndDate);
-                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStatus);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnProjectId}, true));
+                this.columnAllocatedStartDate = new global::System.Data.DataColumn("AllocatedStartDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAllocatedStartDate);
+                this.columnAllocatedEndDate = new global::System.Data.DataColumn("AllocatedEndDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAllocatedEndDate);
+                this.columnEffort = new global::System.Data.DataColumn("Effort", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEffort);
+                this.columnRoleName = new global::System.Data.DataColumn("RoleName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoleName);
+                this.columnRoleDescription = new global::System.Data.DataColumn("RoleDescription", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoleDescription);
                 this.columnProjectId.AutoIncrement = true;
                 this.columnProjectId.AutoIncrementSeed = -1;
                 this.columnProjectId.AutoIncrementStep = -1;
                 this.columnProjectId.AllowDBNull = false;
                 this.columnProjectId.ReadOnly = true;
-                this.columnProjectId.Unique = true;
-                this.columnProjectTypeId.AllowDBNull = false;
                 this.columnProjectCode.AllowDBNull = false;
                 this.columnProjectCode.MaxLength = 10;
                 this.columnProjectName.AllowDBNull = false;
                 this.columnProjectName.MaxLength = 50;
                 this.columnProjectStartDate.AllowDBNull = false;
                 this.columnProjectEndDate.AllowDBNull = false;
-                this.columnStatus.AllowDBNull = false;
-                this.columnDescription.MaxLength = 2147483647;
+                this.columnAllocatedStartDate.AllowDBNull = false;
+                this.columnAllocatedEndDate.AllowDBNull = false;
+                this.columnRoleName.MaxLength = 10;
+                this.columnRoleDescription.AllowDBNull = false;
+                this.columnRoleDescription.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectByProjectIdRow NewR_GetProjectByProjectIdRow() {
-                return ((R_GetProjectByProjectIdRow)(this.NewRow()));
+            public R_GetProjectsByResourcesIdRow NewR_GetProjectsByResourcesIdRow() {
+                return ((R_GetProjectsByResourcesIdRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new R_GetProjectByProjectIdRow(builder);
+                return new R_GetProjectsByResourcesIdRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Type GetRowType() {
-                return typeof(R_GetProjectByProjectIdRow);
+                return typeof(R_GetProjectsByResourcesIdRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.R_GetProjectByProjectIdRowChanged != null)) {
-                    this.R_GetProjectByProjectIdRowChanged(this, new R_GetProjectByProjectIdRowChangeEvent(((R_GetProjectByProjectIdRow)(e.Row)), e.Action));
+                if ((this.R_GetProjectsByResourcesIdRowChanged != null)) {
+                    this.R_GetProjectsByResourcesIdRowChanged(this, new R_GetProjectsByResourcesIdRowChangeEvent(((R_GetProjectsByResourcesIdRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.R_GetProjectByProjectIdRowChanging != null)) {
-                    this.R_GetProjectByProjectIdRowChanging(this, new R_GetProjectByProjectIdRowChangeEvent(((R_GetProjectByProjectIdRow)(e.Row)), e.Action));
+                if ((this.R_GetProjectsByResourcesIdRowChanging != null)) {
+                    this.R_GetProjectsByResourcesIdRowChanging(this, new R_GetProjectsByResourcesIdRowChangeEvent(((R_GetProjectsByResourcesIdRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.R_GetProjectByProjectIdRowDeleted != null)) {
-                    this.R_GetProjectByProjectIdRowDeleted(this, new R_GetProjectByProjectIdRowChangeEvent(((R_GetProjectByProjectIdRow)(e.Row)), e.Action));
+                if ((this.R_GetProjectsByResourcesIdRowDeleted != null)) {
+                    this.R_GetProjectsByResourcesIdRowDeleted(this, new R_GetProjectsByResourcesIdRowChangeEvent(((R_GetProjectsByResourcesIdRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.R_GetProjectByProjectIdRowDeleting != null)) {
-                    this.R_GetProjectByProjectIdRowDeleting(this, new R_GetProjectByProjectIdRowChangeEvent(((R_GetProjectByProjectIdRow)(e.Row)), e.Action));
+                if ((this.R_GetProjectsByResourcesIdRowDeleting != null)) {
+                    this.R_GetProjectsByResourcesIdRowDeleting(this, new R_GetProjectsByResourcesIdRowChangeEvent(((R_GetProjectsByResourcesIdRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void RemoveR_GetProjectByProjectIdRow(R_GetProjectByProjectIdRow row) {
+            public void RemoveR_GetProjectsByResourcesIdRow(R_GetProjectsByResourcesIdRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -921,7 +583,7 @@ namespace SynergyRMS.Reports {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ProjectResources ds = new ProjectResources();
+                ViewProjectByResource ds = new ViewProjectByResource();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -939,7 +601,262 @@ namespace SynergyRMS.Reports {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "R_GetProjectByProjectIdDataTable";
+                attribute2.FixedValue = "R_GetProjectsByResourcesIdDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class R_GetResourceByResourceIdDataTable : global::System.Data.TypedTableBase<R_GetResourceByResourceIdRow> {
+            
+            private global::System.Data.DataColumn columnfirstname;
+            
+            private global::System.Data.DataColumn columnlastname;
+            
+            private global::System.Data.DataColumn columnphone;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public R_GetResourceByResourceIdDataTable() {
+                this.TableName = "R_GetResourceByResourceId";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal R_GetResourceByResourceIdDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected R_GetResourceByResourceIdDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn firstnameColumn {
+                get {
+                    return this.columnfirstname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn lastnameColumn {
+                get {
+                    return this.columnlastname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn phoneColumn {
+                get {
+                    return this.columnphone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public R_GetResourceByResourceIdRow this[int index] {
+                get {
+                    return ((R_GetResourceByResourceIdRow)(this.Rows[index]));
+                }
+            }
+            
+            public event R_GetResourceByResourceIdRowChangeEventHandler R_GetResourceByResourceIdRowChanging;
+            
+            public event R_GetResourceByResourceIdRowChangeEventHandler R_GetResourceByResourceIdRowChanged;
+            
+            public event R_GetResourceByResourceIdRowChangeEventHandler R_GetResourceByResourceIdRowDeleting;
+            
+            public event R_GetResourceByResourceIdRowChangeEventHandler R_GetResourceByResourceIdRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void AddR_GetResourceByResourceIdRow(R_GetResourceByResourceIdRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public R_GetResourceByResourceIdRow AddR_GetResourceByResourceIdRow(string firstname, string lastname, string phone) {
+                R_GetResourceByResourceIdRow rowR_GetResourceByResourceIdRow = ((R_GetResourceByResourceIdRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        firstname,
+                        lastname,
+                        phone};
+                rowR_GetResourceByResourceIdRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowR_GetResourceByResourceIdRow);
+                return rowR_GetResourceByResourceIdRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public override global::System.Data.DataTable Clone() {
+                R_GetResourceByResourceIdDataTable cln = ((R_GetResourceByResourceIdDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new R_GetResourceByResourceIdDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal void InitVars() {
+                this.columnfirstname = base.Columns["firstname"];
+                this.columnlastname = base.Columns["lastname"];
+                this.columnphone = base.Columns["phone"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            private void InitClass() {
+                this.columnfirstname = new global::System.Data.DataColumn("firstname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfirstname);
+                this.columnlastname = new global::System.Data.DataColumn("lastname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlastname);
+                this.columnphone = new global::System.Data.DataColumn("phone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnphone);
+                this.columnfirstname.ReadOnly = true;
+                this.columnfirstname.MaxLength = 200;
+                this.columnlastname.ReadOnly = true;
+                this.columnlastname.MaxLength = 200;
+                this.columnphone.ReadOnly = true;
+                this.columnphone.MaxLength = 200;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public R_GetResourceByResourceIdRow NewR_GetResourceByResourceIdRow() {
+                return ((R_GetResourceByResourceIdRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new R_GetResourceByResourceIdRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override global::System.Type GetRowType() {
+                return typeof(R_GetResourceByResourceIdRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.R_GetResourceByResourceIdRowChanged != null)) {
+                    this.R_GetResourceByResourceIdRowChanged(this, new R_GetResourceByResourceIdRowChangeEvent(((R_GetResourceByResourceIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.R_GetResourceByResourceIdRowChanging != null)) {
+                    this.R_GetResourceByResourceIdRowChanging(this, new R_GetResourceByResourceIdRowChangeEvent(((R_GetResourceByResourceIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.R_GetResourceByResourceIdRowDeleted != null)) {
+                    this.R_GetResourceByResourceIdRowDeleted(this, new R_GetResourceByResourceIdRowChangeEvent(((R_GetResourceByResourceIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.R_GetResourceByResourceIdRowDeleting != null)) {
+                    this.R_GetResourceByResourceIdRowDeleting(this, new R_GetResourceByResourceIdRowChangeEvent(((R_GetResourceByResourceIdRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void RemoveR_GetResourceByResourceIdRow(R_GetResourceByResourceIdRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ViewProjectByResource ds = new ViewProjectByResource();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "R_GetResourceByResourceIdDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -984,43 +901,83 @@ namespace SynergyRMS.Reports {
         ///Represents strongly named DataRow class.
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public partial class R_GetProjectResourcesByProjectIdRow : global::System.Data.DataRow {
+        public partial class R_GetProjectsByResourcesIdRow : global::System.Data.DataRow {
             
-            private R_GetProjectResourcesByProjectIdDataTable tableR_GetProjectResourcesByProjectId;
+            private R_GetProjectsByResourcesIdDataTable tableR_GetProjectsByResourcesId;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal R_GetProjectResourcesByProjectIdRow(global::System.Data.DataRowBuilder rb) : 
+            internal R_GetProjectsByResourcesIdRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableR_GetProjectResourcesByProjectId = ((R_GetProjectResourcesByProjectIdDataTable)(this.Table));
+                this.tableR_GetProjectsByResourcesId = ((R_GetProjectsByResourcesIdDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public int ProjectId {
                 get {
-                    return ((int)(this[this.tableR_GetProjectResourcesByProjectId.ProjectIdColumn]));
+                    return ((int)(this[this.tableR_GetProjectsByResourcesId.ProjectIdColumn]));
                 }
                 set {
-                    this[this.tableR_GetProjectResourcesByProjectId.ProjectIdColumn] = value;
+                    this[this.tableR_GetProjectsByResourcesId.ProjectIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string ProjectCode {
+                get {
+                    return ((string)(this[this.tableR_GetProjectsByResourcesId.ProjectCodeColumn]));
+                }
+                set {
+                    this[this.tableR_GetProjectsByResourcesId.ProjectCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string ProjectName {
+                get {
+                    return ((string)(this[this.tableR_GetProjectsByResourcesId.ProjectNameColumn]));
+                }
+                set {
+                    this[this.tableR_GetProjectsByResourcesId.ProjectNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public System.DateTime ProjectStartDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tableR_GetProjectsByResourcesId.ProjectStartDateColumn]));
+                }
+                set {
+                    this[this.tableR_GetProjectsByResourcesId.ProjectStartDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public System.DateTime ProjectEndDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tableR_GetProjectsByResourcesId.ProjectEndDateColumn]));
+                }
+                set {
+                    this[this.tableR_GetProjectsByResourcesId.ProjectEndDateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public System.DateTime AllocatedStartDate {
                 get {
-                    return ((global::System.DateTime)(this[this.tableR_GetProjectResourcesByProjectId.AllocatedStartDateColumn]));
+                    return ((global::System.DateTime)(this[this.tableR_GetProjectsByResourcesId.AllocatedStartDateColumn]));
                 }
                 set {
-                    this[this.tableR_GetProjectResourcesByProjectId.AllocatedStartDateColumn] = value;
+                    this[this.tableR_GetProjectsByResourcesId.AllocatedStartDateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public System.DateTime AllocatedEndDate {
                 get {
-                    return ((global::System.DateTime)(this[this.tableR_GetProjectResourcesByProjectId.AllocatedEndDateColumn]));
+                    return ((global::System.DateTime)(this[this.tableR_GetProjectsByResourcesId.AllocatedEndDateColumn]));
                 }
                 set {
-                    this[this.tableR_GetProjectResourcesByProjectId.AllocatedEndDateColumn] = value;
+                    this[this.tableR_GetProjectsByResourcesId.AllocatedEndDateColumn] = value;
                 }
             }
             
@@ -1028,150 +985,60 @@ namespace SynergyRMS.Reports {
             public int Effort {
                 get {
                     try {
-                        return ((int)(this[this.tableR_GetProjectResourcesByProjectId.EffortColumn]));
+                        return ((int)(this[this.tableR_GetProjectsByResourcesId.EffortColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Effort\' in table \'R_GetProjectResourcesByProjectId\' is DBNu" +
-                                "ll.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Effort\' in table \'R_GetProjectsByResourcesId\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableR_GetProjectResourcesByProjectId.EffortColumn] = value;
+                    this[this.tableR_GetProjectsByResourcesId.EffortColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string ProjectName {
-                get {
-                    return ((string)(this[this.tableR_GetProjectResourcesByProjectId.ProjectNameColumn]));
-                }
-                set {
-                    this[this.tableR_GetProjectResourcesByProjectId.ProjectNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public System.Guid UserId {
-                get {
-                    return ((global::System.Guid)(this[this.tableR_GetProjectResourcesByProjectId.UserIdColumn]));
-                }
-                set {
-                    this[this.tableR_GetProjectResourcesByProjectId.UserIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string firstname {
+            public string RoleName {
                 get {
                     try {
-                        return ((string)(this[this.tableR_GetProjectResourcesByProjectId.firstnameColumn]));
+                        return ((string)(this[this.tableR_GetProjectsByResourcesId.RoleNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'firstname\' in table \'R_GetProjectResourcesByProjectId\' is D" +
-                                "BNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'RoleName\' in table \'R_GetProjectsByResourcesId\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableR_GetProjectResourcesByProjectId.firstnameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string lastname {
-                get {
-                    try {
-                        return ((string)(this[this.tableR_GetProjectResourcesByProjectId.lastnameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'lastname\' in table \'R_GetProjectResourcesByProjectId\' is DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this.tableR_GetProjectResourcesByProjectId.lastnameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string phone {
-                get {
-                    try {
-                        return ((string)(this[this.tableR_GetProjectResourcesByProjectId.phoneColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'phone\' in table \'R_GetProjectResourcesByProjectId\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableR_GetProjectResourcesByProjectId.phoneColumn] = value;
+                    this[this.tableR_GetProjectsByResourcesId.RoleNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public string RoleDescription {
                 get {
-                    try {
-                        return ((string)(this[this.tableR_GetProjectResourcesByProjectId.RoleDescriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RoleDescription\' in table \'R_GetProjectResourcesByProjectId" +
-                                "\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableR_GetProjectsByResourcesId.RoleDescriptionColumn]));
                 }
                 set {
-                    this[this.tableR_GetProjectResourcesByProjectId.RoleDescriptionColumn] = value;
+                    this[this.tableR_GetProjectsByResourcesId.RoleDescriptionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsEffortNull() {
-                return this.IsNull(this.tableR_GetProjectResourcesByProjectId.EffortColumn);
+                return this.IsNull(this.tableR_GetProjectsByResourcesId.EffortColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetEffortNull() {
-                this[this.tableR_GetProjectResourcesByProjectId.EffortColumn] = global::System.Convert.DBNull;
+                this[this.tableR_GetProjectsByResourcesId.EffortColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsfirstnameNull() {
-                return this.IsNull(this.tableR_GetProjectResourcesByProjectId.firstnameColumn);
+            public bool IsRoleNameNull() {
+                return this.IsNull(this.tableR_GetProjectsByResourcesId.RoleNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetfirstnameNull() {
-                this[this.tableR_GetProjectResourcesByProjectId.firstnameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IslastnameNull() {
-                return this.IsNull(this.tableR_GetProjectResourcesByProjectId.lastnameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetlastnameNull() {
-                this[this.tableR_GetProjectResourcesByProjectId.lastnameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsphoneNull() {
-                return this.IsNull(this.tableR_GetProjectResourcesByProjectId.phoneColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetphoneNull() {
-                this[this.tableR_GetProjectResourcesByProjectId.phoneColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsRoleDescriptionNull() {
-                return this.IsNull(this.tableR_GetProjectResourcesByProjectId.RoleDescriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetRoleDescriptionNull() {
-                this[this.tableR_GetProjectResourcesByProjectId.RoleDescriptionColumn] = global::System.Convert.DBNull;
+            public void SetRoleNameNull() {
+                this[this.tableR_GetProjectsByResourcesId.RoleNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1179,109 +1046,89 @@ namespace SynergyRMS.Reports {
         ///Represents strongly named DataRow class.
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public partial class R_GetProjectByProjectIdRow : global::System.Data.DataRow {
+        public partial class R_GetResourceByResourceIdRow : global::System.Data.DataRow {
             
-            private R_GetProjectByProjectIdDataTable tableR_GetProjectByProjectId;
+            private R_GetResourceByResourceIdDataTable tableR_GetResourceByResourceId;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal R_GetProjectByProjectIdRow(global::System.Data.DataRowBuilder rb) : 
+            internal R_GetResourceByResourceIdRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableR_GetProjectByProjectId = ((R_GetProjectByProjectIdDataTable)(this.Table));
+                this.tableR_GetResourceByResourceId = ((R_GetResourceByResourceIdDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int ProjectId {
-                get {
-                    return ((int)(this[this.tableR_GetProjectByProjectId.ProjectIdColumn]));
-                }
-                set {
-                    this[this.tableR_GetProjectByProjectId.ProjectIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int ProjectTypeId {
-                get {
-                    return ((int)(this[this.tableR_GetProjectByProjectId.ProjectTypeIdColumn]));
-                }
-                set {
-                    this[this.tableR_GetProjectByProjectId.ProjectTypeIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string ProjectCode {
-                get {
-                    return ((string)(this[this.tableR_GetProjectByProjectId.ProjectCodeColumn]));
-                }
-                set {
-                    this[this.tableR_GetProjectByProjectId.ProjectCodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string ProjectName {
-                get {
-                    return ((string)(this[this.tableR_GetProjectByProjectId.ProjectNameColumn]));
-                }
-                set {
-                    this[this.tableR_GetProjectByProjectId.ProjectNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public System.DateTime ProjectStartDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tableR_GetProjectByProjectId.ProjectStartDateColumn]));
-                }
-                set {
-                    this[this.tableR_GetProjectByProjectId.ProjectStartDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public System.DateTime ProjectEndDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tableR_GetProjectByProjectId.ProjectEndDateColumn]));
-                }
-                set {
-                    this[this.tableR_GetProjectByProjectId.ProjectEndDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int Status {
-                get {
-                    return ((int)(this[this.tableR_GetProjectByProjectId.StatusColumn]));
-                }
-                set {
-                    this[this.tableR_GetProjectByProjectId.StatusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string Description {
+            public string firstname {
                 get {
                     try {
-                        return ((string)(this[this.tableR_GetProjectByProjectId.DescriptionColumn]));
+                        return ((string)(this[this.tableR_GetResourceByResourceId.firstnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'R_GetProjectByProjectId\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'firstname\' in table \'R_GetResourceByResourceId\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableR_GetProjectByProjectId.DescriptionColumn] = value;
+                    this[this.tableR_GetResourceByResourceId.firstnameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableR_GetProjectByProjectId.DescriptionColumn);
+            public string lastname {
+                get {
+                    try {
+                        return ((string)(this[this.tableR_GetResourceByResourceId.lastnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'lastname\' in table \'R_GetResourceByResourceId\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableR_GetResourceByResourceId.lastnameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetDescriptionNull() {
-                this[this.tableR_GetProjectByProjectId.DescriptionColumn] = global::System.Convert.DBNull;
+            public string phone {
+                get {
+                    try {
+                        return ((string)(this[this.tableR_GetResourceByResourceId.phoneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'phone\' in table \'R_GetResourceByResourceId\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableR_GetResourceByResourceId.phoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsfirstnameNull() {
+                return this.IsNull(this.tableR_GetResourceByResourceId.firstnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetfirstnameNull() {
+                this[this.tableR_GetResourceByResourceId.firstnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IslastnameNull() {
+                return this.IsNull(this.tableR_GetResourceByResourceId.lastnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetlastnameNull() {
+                this[this.tableR_GetResourceByResourceId.lastnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsphoneNull() {
+                return this.IsNull(this.tableR_GetResourceByResourceId.phoneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetphoneNull() {
+                this[this.tableR_GetResourceByResourceId.phoneColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1289,20 +1136,20 @@ namespace SynergyRMS.Reports {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public class R_GetProjectResourcesByProjectIdRowChangeEvent : global::System.EventArgs {
+        public class R_GetProjectsByResourcesIdRowChangeEvent : global::System.EventArgs {
             
-            private R_GetProjectResourcesByProjectIdRow eventRow;
+            private R_GetProjectsByResourcesIdRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectResourcesByProjectIdRowChangeEvent(R_GetProjectResourcesByProjectIdRow row, global::System.Data.DataRowAction action) {
+            public R_GetProjectsByResourcesIdRowChangeEvent(R_GetProjectsByResourcesIdRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectResourcesByProjectIdRow Row {
+            public R_GetProjectsByResourcesIdRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1320,20 +1167,20 @@ namespace SynergyRMS.Reports {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public class R_GetProjectByProjectIdRowChangeEvent : global::System.EventArgs {
+        public class R_GetResourceByResourceIdRowChangeEvent : global::System.EventArgs {
             
-            private R_GetProjectByProjectIdRow eventRow;
+            private R_GetResourceByResourceIdRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectByProjectIdRowChangeEvent(R_GetProjectByProjectIdRow row, global::System.Data.DataRowAction action) {
+            public R_GetResourceByResourceIdRowChangeEvent(R_GetResourceByResourceIdRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectByProjectIdRow Row {
+            public R_GetResourceByResourceIdRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1348,7 +1195,7 @@ namespace SynergyRMS.Reports {
         }
     }
 }
-namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
+namespace SynergyRMS.Reports.ViewProjectByResourceTableAdapters {
     
     
     /// <summary>
@@ -1361,7 +1208,7 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class R_GetProjectResourcesByProjectIdTableAdapter : global::System.ComponentModel.Component {
+    public partial class R_GetProjectsByResourcesIdTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1374,7 +1221,7 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
         private bool _clearBeforeFill;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public R_GetProjectResourcesByProjectIdTableAdapter() {
+        public R_GetProjectsByResourcesIdTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1465,16 +1312,16 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "R_GetProjectResourcesByProjectId";
+            tableMapping.DataSetTable = "R_GetProjectsByResourcesId";
             tableMapping.ColumnMappings.Add("ProjectId", "ProjectId");
+            tableMapping.ColumnMappings.Add("ProjectCode", "ProjectCode");
+            tableMapping.ColumnMappings.Add("ProjectName", "ProjectName");
+            tableMapping.ColumnMappings.Add("ProjectStartDate", "ProjectStartDate");
+            tableMapping.ColumnMappings.Add("ProjectEndDate", "ProjectEndDate");
             tableMapping.ColumnMappings.Add("AllocatedStartDate", "AllocatedStartDate");
             tableMapping.ColumnMappings.Add("AllocatedEndDate", "AllocatedEndDate");
             tableMapping.ColumnMappings.Add("Effort", "Effort");
-            tableMapping.ColumnMappings.Add("ProjectName", "ProjectName");
-            tableMapping.ColumnMappings.Add("UserId", "UserId");
-            tableMapping.ColumnMappings.Add("firstname", "firstname");
-            tableMapping.ColumnMappings.Add("lastname", "lastname");
-            tableMapping.ColumnMappings.Add("phone", "phone");
+            tableMapping.ColumnMappings.Add("RoleName", "RoleName");
             tableMapping.ColumnMappings.Add("RoleDescription", "RoleDescription");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -1490,22 +1337,22 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.R_GetProjectResourcesByProjectId";
+            this._commandCollection[0].CommandText = "dbo.R_GetProjectsByResourcesId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProjectId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ResourceId", global::System.Data.SqlDbType.NVarChar, 256, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ProjectResources.R_GetProjectResourcesByProjectIdDataTable dataTable, global::System.Nullable<int> ProjectId) {
+        public virtual int Fill(ViewProjectByResource.R_GetProjectsByResourcesIdDataTable dataTable, string ResourceId) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((ProjectId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ProjectId.Value));
+            if ((ResourceId == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ResourceId));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1517,15 +1364,15 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ProjectResources.R_GetProjectResourcesByProjectIdDataTable GetData(global::System.Nullable<int> ProjectId) {
+        public virtual ViewProjectByResource.R_GetProjectsByResourcesIdDataTable GetData(string ResourceId) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((ProjectId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ProjectId.Value));
-            }
-            else {
+            if ((ResourceId == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            ProjectResources.R_GetProjectResourcesByProjectIdDataTable dataTable = new ProjectResources.R_GetProjectResourcesByProjectIdDataTable();
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ResourceId));
+            }
+            ViewProjectByResource.R_GetProjectsByResourcesIdDataTable dataTable = new ViewProjectByResource.R_GetProjectsByResourcesIdDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1541,7 +1388,7 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class R_GetProjectByProjectIdTableAdapter : global::System.ComponentModel.Component {
+    public partial class R_GetResourceByResourceIdTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1554,7 +1401,7 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
         private bool _clearBeforeFill;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public R_GetProjectByProjectIdTableAdapter() {
+        public R_GetResourceByResourceIdTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1645,15 +1492,10 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "R_GetProjectByProjectId";
-            tableMapping.ColumnMappings.Add("ProjectId", "ProjectId");
-            tableMapping.ColumnMappings.Add("ProjectTypeId", "ProjectTypeId");
-            tableMapping.ColumnMappings.Add("ProjectCode", "ProjectCode");
-            tableMapping.ColumnMappings.Add("ProjectName", "ProjectName");
-            tableMapping.ColumnMappings.Add("ProjectStartDate", "ProjectStartDate");
-            tableMapping.ColumnMappings.Add("ProjectEndDate", "ProjectEndDate");
-            tableMapping.ColumnMappings.Add("Status", "Status");
-            tableMapping.ColumnMappings.Add("Description", "Description");
+            tableMapping.DataSetTable = "R_GetResourceByResourceId";
+            tableMapping.ColumnMappings.Add("firstname", "firstname");
+            tableMapping.ColumnMappings.Add("lastname", "lastname");
+            tableMapping.ColumnMappings.Add("phone", "phone");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1668,22 +1510,22 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.R_GetProjectByProjectId";
+            this._commandCollection[0].CommandText = "dbo.R_GetResourceByResourceId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProjectId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ResourceId", global::System.Data.SqlDbType.NVarChar, 256, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ProjectResources.R_GetProjectByProjectIdDataTable dataTable, global::System.Nullable<int> ProjectId) {
+        public virtual int Fill(ViewProjectByResource.R_GetResourceByResourceIdDataTable dataTable, string ResourceId) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((ProjectId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ProjectId.Value));
+            if ((ResourceId == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ResourceId));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1695,15 +1537,15 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ProjectResources.R_GetProjectByProjectIdDataTable GetData(global::System.Nullable<int> ProjectId) {
+        public virtual ViewProjectByResource.R_GetResourceByResourceIdDataTable GetData(string ResourceId) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((ProjectId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ProjectId.Value));
-            }
-            else {
+            if ((ResourceId == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            ProjectResources.R_GetProjectByProjectIdDataTable dataTable = new ProjectResources.R_GetProjectByProjectIdDataTable();
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(ResourceId));
+            }
+            ViewProjectByResource.R_GetResourceByResourceIdDataTable dataTable = new ViewProjectByResource.R_GetResourceByResourceIdDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1773,7 +1615,7 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
         ///Update rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateUpdatedRows(ProjectResources dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ViewProjectByResource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1782,7 +1624,7 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
         ///Insert rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateInsertedRows(ProjectResources dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ViewProjectByResource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1791,7 +1633,7 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
         ///Delete rows in bottom-up order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateDeletedRows(ProjectResources dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ViewProjectByResource dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1823,7 +1665,7 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
         ///Update all changes to the dataset.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public virtual int UpdateAll(ProjectResources dataSet) {
+        public virtual int UpdateAll(ViewProjectByResource dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
