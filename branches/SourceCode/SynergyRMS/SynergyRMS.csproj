@@ -115,6 +115,30 @@
     <Compile Include="Reports\Project_Resources.aspx.designer.cs">
       <DependentUpon>Project_Resources.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ResourceAllocation.aspx.cs">
+      <DependentUpon>ResourceAllocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocation.aspx.designer.cs">
+      <DependentUpon>ResourceAllocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocationds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ViewProjectByResources.aspx.cs">
+      <DependentUpon>ViewProjectByResources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ViewProjectByResources.aspx.designer.cs">
+      <DependentUpon>ViewProjectByResources.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ViewProjectByResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewProjectByResource.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\AeroWindow.css" />
@@ -570,6 +594,8 @@
     <Content Include="GridView\Styles\Page.png" />
     <Content Include="Models\App.Config" />
     <Content Include="Reports\Project_Resources.aspx" />
+    <Content Include="Reports\ResourceAllocation.aspx" />
+    <Content Include="Reports\ViewProjectByResources.aspx" />
     <Content Include="Scripts\calndarview\colorpicker\colorpicker.js" />
     <Content Include="Scripts\calndarview\colorpicker\eye.js" />
     <Content Include="Scripts\calndarview\colorpicker\layout.js" />
@@ -598,6 +624,7 @@
     <Content Include="Views\GridView\Styles\Page.png" />
     <Content Include="Views\Project\AssignUsers.aspx" />
     <Content Include="Views\Project\EditProjectForm.aspx" />
+    <Content Include="Views\Report\Project Resources.aspx" />
     <Content Include="Views\Resource\AssignRoles.aspx" />
     <Content Include="Views\Resource\AssignRolesPermissions.aspx" />
     <Content Include="Views\Resource\EditUser.aspx" />
@@ -612,6 +639,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reports\ProjectResources.rdlc" />
+    <EmbeddedResource Include="Reports\ResourceAllocation.rdlc" />
+    <EmbeddedResource Include="Reports\ViewProjectByResource.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Reports\ProjectResources.xsc">
@@ -624,6 +653,28 @@
     </None>
     <None Include="Reports\ProjectResources.xss">
       <DependentUpon>ProjectResources.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ResourceAllocationds.xsc">
+      <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ResourceAllocationds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResourceAllocationds.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ResourceAllocationds.xss">
+      <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ViewProjectByResource.xsc">
+      <DependentUpon>ViewProjectByResource.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ViewProjectByResource.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ViewProjectByResource.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ViewProjectByResource.xss">
+      <DependentUpon>ViewProjectByResource.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -644,7 +695,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55065</DevelopmentServerPort>
+          <DevelopmentServerPort>1435</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
