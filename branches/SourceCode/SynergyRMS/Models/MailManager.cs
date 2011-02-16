@@ -9,7 +9,7 @@ namespace SynergyRMS.Models
 {
     public static class MailManager
     {
-        public enum messageFlag { AssignedProject, RemovedProject };
+        public enum messageFlag { AssignedProject, RemovedProject, UpdatedProject, ScheduledProject, AccountCreated };
 
         private const string appName = "Resource Management System";
 
@@ -132,6 +132,21 @@ namespace SynergyRMS.Models
             {
                 mailTitle = "Removed from the Project";
                 mailMessage = "You've been Removed from the current Project";
+            }
+            else if (flag == messageFlag.UpdatedProject)
+            {
+                mailTitle = "Project Updated";
+                mailMessage = "The Project details have been updated";
+            }
+            else if (flag == messageFlag.ScheduledProject)
+            {
+                mailTitle = "Project Scheduled";
+                mailMessage = "You've been allocated for a Project(Certain Period)";
+            }
+            else if (flag == messageFlag.AccountCreated)
+            {
+                mailTitle = "Account Created";
+                mailMessage = "Your account has been Created";
             }
             else
             {
