@@ -20,8 +20,9 @@
     <ReportItems>
       <Textbox Name="textbox10">
         <rd:DefaultName>textbox10</rd:DefaultName>
-        <Width>1.75in</Width>
+        <Width>2.375in</Width>
         <Style>
+          <FontSize>14pt</FontSize>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>

@@ -21,7 +21,7 @@
       <Textbox Name="textbox1">
         <rd:DefaultName>textbox1</rd:DefaultName>
         <Top>0.125in</Top>
-        <Width>3.25in</Width>
+        <Width>2.5in</Width>
         <Style>
           <BackgroundColor>WhiteSmoke</BackgroundColor>
           <FontSize>14pt</FontSize>
