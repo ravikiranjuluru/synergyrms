@@ -20,8 +20,7 @@
     <ReportItems>
       <Textbox Name="textbox10">
         <rd:DefaultName>textbox10</rd:DefaultName>
-        <Top>0.25in</Top>
-        <Width>2.75in</Width>
+        <Width>1.75in</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -189,6 +188,7 @@
         <Width>1.125in</Width>
         <Style>
           <Format>dd,MMM yyyy</Format>
+          <TextAlign>Left</TextAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -214,7 +214,7 @@
         <CanGrow>true</CanGrow>
         <Left>0.25in</Left>
         <Height>0.25in</Height>
-        <Value>Project Period</Value>
+        <Value>Project Period :</Value>
       </Textbox>
       <Textbox Name="ProjectCode_1">
         <rd:DefaultName>ProjectCode_1</rd:DefaultName>
@@ -246,7 +246,7 @@
         <CanGrow>true</CanGrow>
         <Left>0.25in</Left>
         <Height>0.25in</Height>
-        <Value>Project Code</Value>
+        <Value>Project Code  :</Value>
       </Textbox>
       <Table Name="table1">
         <ZIndex>2</ZIndex>
@@ -268,6 +268,7 @@
                         <Textbox Name="firstname">
                           <rd:DefaultName>firstname</rd:DefaultName>
                           <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -283,6 +284,7 @@
                         <Textbox Name="textbox7">
                           <rd:DefaultName>textbox7</rd:DefaultName>
                           <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -298,6 +300,7 @@
                         <Textbox Name="textbox13">
                           <rd:DefaultName>textbox13</rd:DefaultName>
                           <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -313,6 +316,7 @@
                         <Textbox Name="textbox14">
                           <rd:DefaultName>textbox14</rd:DefaultName>
                           <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -328,6 +332,7 @@
                         <Textbox Name="textbox22">
                           <rd:DefaultName>textbox22</rd:DefaultName>
                           <Style>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -369,7 +374,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                           <CanGrow>true</CanGrow>
-                          <Value>Project Role</Value>
+                          <Value />
                         </Textbox>
                       </ReportItems>
                     </TableCell>
@@ -384,7 +389,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                           <CanGrow>true</CanGrow>
-                          <Value>From</Value>
+                          <Value />
                         </Textbox>
                       </ReportItems>
                     </TableCell>
@@ -399,7 +404,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                           <CanGrow>true</CanGrow>
-                          <Value>To</Value>
+                          <Value />
                         </Textbox>
                       </ReportItems>
                     </TableCell>
@@ -414,7 +419,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                           <CanGrow>true</CanGrow>
-                          <Value>Effort</Value>
+                          <Value />
                         </Textbox>
                       </ReportItems>
                     </TableCell>
@@ -589,7 +594,7 @@
             </Footer>
           </TableGroup>
         </TableGroups>
-        <Width>6.125in</Width>
+        <Width>5.95455in</Width>
         <Details>
           <TableRows>
             <TableRow>
@@ -599,6 +604,8 @@
                     <Textbox Name="textbox12">
                       <rd:DefaultName>textbox12</rd:DefaultName>
                       <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontSize>8pt</FontSize>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -614,6 +621,9 @@
                     <Textbox Name="RoleDescription">
                       <rd:DefaultName>RoleDescription</rd:DefaultName>
                       <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <TextAlign>Center</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -629,7 +639,10 @@
                     <Textbox Name="AllocatedStartDate_1">
                       <rd:DefaultName>AllocatedStartDate_1</rd:DefaultName>
                       <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontSize>8pt</FontSize>
                         <Format>dd-MMM-yyyy</Format>
+                        <TextAlign>Center</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -645,7 +658,10 @@
                     <Textbox Name="AllocatedEndDate_1">
                       <rd:DefaultName>AllocatedEndDate_1</rd:DefaultName>
                       <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontSize>8pt</FontSize>
                         <Format>dd-MMM-yyyy</Format>
+                        <TextAlign>Center</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -661,8 +677,10 @@
                     <Textbox Name="Effort">
                       <rd:DefaultName>Effort</rd:DefaultName>
                       <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontSize>8pt</FontSize>
                         <Format>P0</Format>
-                        <TextAlign>Right</TextAlign>
+                        <TextAlign>Center</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -687,6 +705,8 @@
                     <Textbox Name="textbox1">
                       <rd:DefaultName>textbox1</rd:DefaultName>
                       <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <TextAlign>Left</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -702,13 +722,15 @@
                     <Textbox Name="textbox6">
                       <rd:DefaultName>textbox6</rd:DefaultName>
                       <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <TextAlign>Center</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value />
+                      <Value>Project Role</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -717,13 +739,15 @@
                     <Textbox Name="textbox2">
                       <rd:DefaultName>textbox2</rd:DefaultName>
                       <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <TextAlign>Center</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value />
+                      <Value>From</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -732,13 +756,15 @@
                     <Textbox Name="textbox3">
                       <rd:DefaultName>textbox3</rd:DefaultName>
                       <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <TextAlign>Center</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value />
+                      <Value>To</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -747,14 +773,15 @@
                     <Textbox Name="textbox18">
                       <rd:DefaultName>textbox18</rd:DefaultName>
                       <Style>
-                        <TextAlign>Right</TextAlign>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <TextAlign>Left</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value />
+                      <Value>Effort</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -768,16 +795,16 @@
             <Width>2.00455in</Width>
           </TableColumn>
           <TableColumn>
-            <Width>2.00455in</Width>
+            <Width>1.625in</Width>
           </TableColumn>
           <TableColumn>
-            <Width>0.66818in</Width>
+            <Width>0.875in</Width>
           </TableColumn>
           <TableColumn>
-            <Width>0.66818in</Width>
+            <Width>0.875in</Width>
           </TableColumn>
           <TableColumn>
-            <Width>0.77955in</Width>
+            <Width>0.575in</Width>
           </TableColumn>
         </TableColumns>
         <Height>1.125in</Height>
@@ -881,7 +908,7 @@
         <CanGrow>true</CanGrow>
         <Left>0.25in</Left>
         <Height>0.25in</Height>
-        <Value>Project Name</Value>
+        <Value>Project Name : </Value>
       </Textbox>
       <Textbox Name="ProjectName_1">
         <rd:DefaultName>ProjectName_1</rd:DefaultName>
