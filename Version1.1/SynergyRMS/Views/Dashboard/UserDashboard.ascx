@@ -268,7 +268,7 @@
                                                                                 <%} %>
                                                                                 
                                                                              <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewProjectReports))
-                                                                                  { %>
+                                                                               { %>
                                                                                 <tr id="Tr12">
                                                                                     <td padding-left="6px" width="5%">
                                                                                         <img src="../../Content/images/common/cross.gif" id="Img17" title="Click for more information" />
@@ -278,7 +278,7 @@
                                                                                             Create a Project Status Report</a>
                                                                                     </td>
                                                                                 </tr>
-                                                                               <%   { %>
+                                                                               <%   } %>
                                                                                  <tr id="Tr1">
                                                                                     <td padding-left="6px" width="5%">
                                                                                         &nbsp;
