@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using System.Web.Profile;
 using SynergyRMS.Models;
 using System.Collections;
+using System.Web.Profile;
 
 namespace SynergyRMS.Controllers
 {
@@ -91,6 +92,10 @@ namespace SynergyRMS.Controllers
                 if(form["addProject"] != null)
                 {
                     tblpermission[SynergyConstents.addProject] = true;
+                }
+                if (form["viewProject"] != null)
+                {
+                    tblpermission[SynergyConstents.viewProject] = true;
                 }
                 if (form["editProject"] != null)
                 {
@@ -447,42 +452,7 @@ namespace SynergyRMS.Controllers
 
             return View("IndexRole");
         }
-        //public ActionResult EditUserRole(string i)
-        //{
-        //    try
-        //    {
-        //        string[] arryUser = Roles.GetUsersInRole("User");
-        //        MembershipUserCollection userlist = new MembershipUserCollection();
-
-        //        foreach (var user in arryUser)
-        //        {
-        //            MembershipUser u = Membership.GetUser(user);
-        //            if (u != null)
-        //                userlist.Add(u);
-        //        }
-        //        ViewData["Userlist"] = userlist;
-
-        //        //if (i != null)
-        //        //{
-        //        //var edituser = Membership.GetUser(new Guid(i));
-        //        var edituser = Membership.GetUser("user");
-        //        if (edituser != null)
-        //        {
-        //            var name = edituser.UserName;
-        //            ViewData["EditUser"] = name;
-        //            ViewData["PermissionList"] = GetUserRolePermissions(edituser.UserName);
-
-        //        }
-        //        //}
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return RedirectToAction("Index", "Dashboard");
-        //    }
-
-        //    return View("IndexRole");
-        //}
+       
         public bool[] GetUserRolePermissions(string username)
         {
             bool[] arrpermission = new bool[7];
@@ -639,6 +609,70 @@ namespace SynergyRMS.Controllers
             return View("AssignRolesPermissions");
         }
 
+        #region Userschedule
+        public ActionResult Schedule()
+        {
+            MembershipUserCollection userList = Membership.GetAllUsers();
+            List<SelectListItem> itemsUser = new List<SelectListItem>();            
+            foreach (MembershipUser user in userList)
+            {
+                if (!Roles.IsUserInRole(user.UserName, "Admin"))
+                {
+
+                    var userprofile = new ProfileBase();
+                    userprofile.Initialize(user.UserName, true);
+                    string fname = userprofile.GetPropertyValue("FirstName").ToString();
+                    string lname = userprofile.GetPropertyValue("LastName").ToString();
+
+                    string userkey = user.ProviderUserKey.ToString();                    
+                    SelectListItem item = new SelectListItem();
+                    item.Text = fname + " " + lname;
+                    item.Value = userkey;
+                    itemsUser.Add(item);
+
+                }
+            }
+            SelectList ddUserlist = new SelectList(itemsUser, "Value", "Text");
+            ViewData["Userlist"] = ddUserlist;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ViewSchedule(FormCollection form)
+        {
+            string viewuserkey = form["ddUsersList"].ToString();
+            MembershipUserCollection userList = Membership.GetAllUsers();            
+            List<SelectListItem> itemsUser = new List<SelectListItem>();
+            string ediusernamedisplay = "";
+            foreach (MembershipUser user in userList)
+            {
+                if (!Roles.IsUserInRole(user.UserName, "Admin"))
+                {
+
+                    var userprofile = new ProfileBase();
+                    userprofile.Initialize(user.UserName, true);
+                    string fname = userprofile.GetPropertyValue("FirstName").ToString();
+                    string lname = userprofile.GetPropertyValue("LastName").ToString();
+
+                    string userkey = user.ProviderUserKey.ToString();
+                    if (viewuserkey == userkey)
+                    {
+                        ediusernamedisplay = fname + " " + lname;
+                    }
+                    SelectListItem item = new SelectListItem();
+                    item.Text = fname+" "+lname;
+                    item.Value = userkey;
+                    itemsUser.Add(item);  
+  
+                }
+            }
+            SelectList ddUserlist = new SelectList(itemsUser, "Value", "Text");
+            ViewData["Userlist"] = ddUserlist;
+            ViewData["ViewUser"] = ediusernamedisplay;
+            ViewData["UserProjectList"] = SynergyService.getUserProjects(viewuserkey);
+            return View("Schedule");
+        }
+        #endregion userschedule
+
         public ActionResult AddSkill()
         {
             return View("IndexSkills");
@@ -650,14 +684,13 @@ namespace SynergyRMS.Controllers
         #endregion User
 
 
+
+
+
         public ActionResult Resources()
         {
             return View("ViewResources");
-        }
-        public ActionResult Schedule()
-        {
-            return View("ResourceSchedule");
-        }
+        }       
         public ActionResult Calendar()
         {
             return View("ScheduleCalendar");
