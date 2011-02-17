@@ -231,7 +231,7 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
                                  <%--  <a href="/Account/Register" id="popup" style="text-decoration: none;" title="Register">
                                    [Register]</a>                                   
                                  
-                                    <%--<%= Html.ActionLink("Click Here", "Register", "Account")%>--%>
+                                    <%= Html.ActionLink("Click Here", "Register", "Account")%>
                                     if you don't have an account.--%>
                                 </p>
                                 <% using (Html.BeginForm("Login", "Account"))
