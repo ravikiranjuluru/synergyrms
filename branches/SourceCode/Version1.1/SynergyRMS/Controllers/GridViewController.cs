@@ -36,18 +36,18 @@ namespace SynergyRMS.Controllers
 
         #endregion ProjectSchedule
 
-        #region UserSchedule
-        public ActionResult Schedule()
-        {
-            //ViewData["ProjectList"] = GetAllProjects();
-            return View("ResourceSchedule");
-        }
-        [HttpPost]
-        public ActionResult Schedule(FormCollection form)
-        {   
-            return View("ResourceSchedule");
-        }
-        #endregion UserSchedule
+        //#region UserSchedule
+        //public ActionResult Schedule()
+        //{
+        //    //ViewData["ProjectList"] = GetAllProjects();
+        //    return View("ResourceSchedule");
+        //}
+        //[HttpPost]
+        //public ActionResult Schedule(FormCollection form)
+        //{   
+        //    return View("ResourceSchedule");
+        //}
+        //#endregion UserSchedule
 
 
     }
