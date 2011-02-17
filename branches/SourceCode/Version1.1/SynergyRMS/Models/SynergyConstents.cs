@@ -8,6 +8,7 @@ namespace SynergyRMS.Models
     public class SynergyConstents
     {
         public const string addProject = "addProject";
+        public const string addProject = "viewProject";
         public const string editProject = "editProject";
         public const string deleteProject = "deleteProject";
 
