@@ -117,7 +117,7 @@
         
 	</script>--%>
 	    
-
+<% var currentusername = HttpContext.Current.User.Identity.Name.ToString();%>
     <div id="masterpage_divHead" class="formHead">
         <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tbody>
@@ -273,23 +273,25 @@ foreach (PM_Projects project in (List<PM_Projects>)ViewData["ProjectList"])
             <td headers="pedate" class="oddrow-mdl" align="left" style="width: 15%">
                 <%= String.Format("{0:ddd, MMM d, yyyy}",project.ProjectEndDate.Date)%>
             </td>
-            
+             <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.editProject))
+               { %>
             <td headers="edit" class="evnrow-mdl" align="left" style="width: 12%">
                 <a href="#"><strong>
                     
                     <a class="link" onclick="lnkEditProject_onClick('<%= project.ProjectId%>');"
-                            title="Edit User Roles" href="#" >Edit Project </a>
-                     <%--<a href="EditProjectLoad?id=<%= project.ProjectId%>" id="popupEditProject" style="text-decoration: none;" title="Edit Project">
-                     Edit Project
-                     </a>--%>
+                            title="Edit User Roles" href="#" >Edit Project </a>                   
                 </strong></a>
             </td>
+            <%} %>
+             <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.assignToProject))
+               { %>
             <td headers="delete" class="evnrow-mdl" align="left" style="width: 15%">
                 <a href="#"><strong>
                    <a class="link" onclick="lnkAssignUsers_onClick('<%= project.ProjectId%>');"
                             title="Assign Users to this project" href="#">Assign Users </a>
                 </strong></a>
             </td>
+            <%} %>
         </tr>
         <%} %>
     </tbody>
