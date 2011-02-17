@@ -124,16 +124,18 @@
                                     <tr>
                                         <td height="5">
                                             Current User list
+                                            &nbsp;
+                                            <a href="#" title="Refresh the Project List" onclick="window.location.reload( true );">
+                                   <img src="../../Content/images/common/menuitem_rollback.gif"   
+                                    alt="Refresh the User List" title="Refresh the User List"/>Refresh
+                                    </a>
                                         </td>
                                        
                                     </tr>
                                     <tr>
                                         <td height="5">
                                             <img height="1" width="180" id="Img3" src="../../Content/images/common/space.gif">
-                                            <a href="#" title="Refresh the Project List" onclick="window.location.reload( true );">
-                                   <img src="../../Content/images/common/menuitem_rollback.gif"   
-                                    alt="Refresh the Project List" title="Refresh the Project List"/>Refresh
-                                    </a>
+                                            
                                         </td>
                                        
                                     </tr>
