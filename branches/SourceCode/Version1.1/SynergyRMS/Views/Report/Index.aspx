@@ -63,7 +63,7 @@
                                                                                 <td>
                                                                                     <a id="A8" href="#"></a>
                                                                                       <%--      <a id="A9" title="Click here to Add a New Project" href="../Project/NewProject"><img src="../../Content/images/common/newproject.png" id="Img13" 
-                                                                                            title="Click for more information">New Project</a>--%><a id="Report" title="Click here to View Report" href="../../Reports/Project_Resources.aspx" ><img src="../../Content/images/common/cross.gif" id="Img18" title="Click for more information" />Project Resources Report</a>
+                                                                                            title="Click for more information">New Project</a>--%><a id="Report" title="Click here to View Report" href="../../Reports/Project_Resources.aspx" target="_blank"><img src="../../Content/images/common/cross.gif" id="Img18" title="Click for more information"  />Project Resources Report</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr id="Tr9">
@@ -93,7 +93,7 @@
                                                                                           <img src="../../Content/images/common/ReportsMain.jpg" id="Img4" 
                                                                                             title="Click for more information" />  Reports</a>
                                                                                     </td>
-                                                                                </tr>--%>
+                                                                                </tr>--%>--%>
                                                                             
                                                                             
                                                                                  <tr id="Tr1">
