@@ -1,0 +1,174 @@
+﻿  /*html, body {width:100%; height:100%; margin:0; padding:0; border:0 none;}
+ body {font-family:Arial,Helvetica,sans-serif; font-size:14px; background:#ffffff url(../images/black.gif) repeat-y; color:#000000;}
+	h2 {font-size:20px; margin:16px 0;}
+	h3 {font-size:16px; margin:12px 0;}
+	h4 {font-size:13px; margin:9px 0;}
+	table, td, th {font-family:Arial,Helvetica,sans-serif;}
+	td {background-color:#ffffff;}*/
+		
+	sup {font-size:10px; font-weight:normal; color:#ff0000;}
+  myMacdocmenu, myMacdocmenu:link, myMacdocmenu:visited, myMacdocmenu:hover, myMacdocmenu:active {color:#0000ff; text-decoration:none;}
+	/*img, td, th {vertical-align:top;}*/
+  #page {height:100%;}
+  #eop {position:absolute; top:665px; left:0; width:100%; font-size:11px; font-style:italic; overflow:hidden;}
+	#eop label {position:relative; float:left; padding-left:40px;}
+	#eop_ua {width:450px;}
+  #pagetitle {margin-top:20px;}
+	#showClicked {position:absolute; top:450px; left:450px; z-index:1; display:none; border:1px solid #cc0000; color:#333333; padding:6px 10px; text-align:center; background-color:#ffcccc; font-style:italic;}
+
+/*page switching buttons...*/
+  #buttons {padding-top:8px; padding-left:134px;}
+  #pagebuttons ul {list-style-type:none; padding:0; margin:0;}
+  #pagebuttons li {float:left; padding:0 0 0 6px; margin:0;}
+  #pagebuttons li myMacdocmenu {display:block; border:1px solid #808080; font-size:12px; padding:1px 6px; color:#000000; background-color:#f0f0f0;}
+	#pagebuttons li myMacdocmenu:hover {color:#ffffff; background-color:#666666;}
+	#pagebuttons li myMacdocmenu.currentpage {color:#999999; cursor:default;}
+	#pagebuttons li myMacdocmenu.currentpage:hover {color:#999999; background-color:#f0f0f0;}
+/*documentation links/buttons...*/
+  #docbuttons {clear:left; padding-top:5px;}
+  #docbuttons ul {list-style-type:none; padding:0; margin:0;}
+  #docbuttons li {float:left; padding:0 0 0 6px; margin:0px;}
+  #docbuttons li myMacdocmenu {display:block; border:1px solid #808080; font-size:12px; padding:1px 6px;}
+	#docbuttons li myMacdocmenu.doclink:hover {color:#ffffff; background-color:#9999ff;}
+	#docbuttons li myMacdocmenu.docdisabled {color:#999999; background-color:#f0f0f0; text-decoration:line-through; cursor:default;}
+/*download link...*/
+  myMacdocmenu#goDownload {display:block; float:left; font-size:12px; border:1px solid #ffffff; padding:1px 6px; margin-left:12px;}
+  myMacdocmenu#goDownload:hover {border-color:#0000ff;}
+/*controller...*/
+	#controller {position:absolute; top:200px; left:620px; font-size:11px; border:1px solid #000000; background-color:#999999;}
+	#controllerWrap {width:300px; margin:3px 3px 0; background-color:#ffffff;}
+	#controller form {padding:2px; margin:0px;}
+	#controller label {white-space:nowrap; padding-right:7px; font-size:11px;}
+	#controller form input {font-size:11px;}
+	#controller label input {position:relative; top:2px;}
+	#controller em {color:#999999;}
+	#controller .cheader {background-color:#cccccc; border-color:#999999; border-style:solid; border-width:1px 1px 0; padding:0 0 3px 5px;}
+	#controller .csettings {padding-bottom:2px;}
+	#controller .coption {clear:left;}
+	#controller .clabel {float:left; width:70px; padding-top:5px;}
+	#controller .cvalues {margin-left:72px; padding-top:3px;}
+	#controller .cradio .cvalues {padding-top:0;}
+	#controller .ccheckbox .cvalues {padding-top:1px;}
+	#controller .ctext .cvalues input {padding:0; border:1px inset #ccccff;}
+	#controller .cbuttons {clear:left; text-align:right; padding-top:2px; margin-top:3px; border-top:1px solid #999999;}
+	#controller .cbuttons input {padding:0; width:45px;}
+	#controller .cbuttons input.cdestroy {margin-right:40px; color:#660066; cursor:pointer; width:50px;}
+	#controller myMacdocmenu.cmore {display:block; position:relative; float:left; text-align:left; color:#999999; font-size:10px; font-style:italic; line-height:1; outline:0 none;}
+	#controller myMacdocmenu.cmore:hover {color:#000000;}
+	#controller myMacdocmenu.cmore img {vertical-align:baseline; width:12px; height:6px; background:transparent url(../images/arrows.jpg) no-repeat 0 -6px; border:0 none; outline:0 none;}
+	#controller myMacdocmenu.cless img {background-position:0 0;}
+	#controller myMacdocmenu.cmore span.cmore {display:inline;}
+	#controller myMacdocmenu.cless span.cmore {display:none;}
+	#controller myMacdocmenu.cmore span.cless {display:none;}
+	#controller myMacdocmenu.cless span.cless {display:inline;}
+	#controller .cdemonstrator {background-color:#e8e8e8; border:1px solid #cccccc;}
+	#controllerPlus {display:none; clear:left; overflow:hidden;}
+	#controllerPlus.chidden label {display:none;}
+	#controllerCmd {width:306px; text-align:center; vertical-align:bottom; padding:1px 0 2px; border:0 none; background-color:#000000; color:#ffffff; font-size:10px;}
+	#controllerEvents {text-align:right; padding-bottom:1px;}
+	#controller form .ceventsTrig {color:#660066; padding:0; width:45px; cursor:pointer;}
+	#controllerEvents .ceventsRecv, #controllerEvents .ceventsRecv div {float:left; position:relative;}
+	#controllerEvents .ceventsRecv img {visibility:hidden; z-index:2;}
+	#controllerEvent_freeze, #controllerEvent_thaw {position:absolute; top:0; left:0;}
+	#controllerAsleep_sleep, #controllerAsleep_freeze {display:none; float:left;}
+	#controller_dockshow {background:transparent url(../images/icon.show.grey.gif) no-repeat 0 0;}
+	#controller_docksleep {background:transparent url(../images/icon.sleep.grey.gif) no-repeat 0 0;}
+	#controller_dockwake {background:transparent url(../images/icon.wake.grey.gif) no-repeat 0 0;}
+	#controllerHeader {position:absolute; top:-46px; left:0; text-align:center; width:100%; color:#808080; font-style:italic;}
+	#controllerTitle {font-size:12px; font-weight:bold; color:#333333; font-style:normal;}
+	#controllerExpander, #doclink2options {position:relative; float:right; margin-right:2px;}
+	#controllerExpander myMacdocmenu {display:block; width:16px; height:16px; float:left; outline:0 none;}
+	#controllerExpander myMacdocmenu:hover {background-color:#999999;}
+	#controllerExpander img {width:100%; height:100%; border:0 none;}
+	#sideBar {position:absolute; top:0; left:0; width:130px; height:665px; background-color:#000000; z-index:10;}
+
+/*documentation content styling...*/
+  div.docpage {color:#333333; font-family:arial; font-size:12px; width:100%;}
+	.SpookPreAppend div.docpage {width:900px;}
+	div.docpagepad {padding:0px 20px 10px 10px;}
+  div.docpage pre {padding:4px; background-color:#ffffff; border:1px solid #999999; font-family:Courier New, Courier, monospace; font-size:11px;}
+	#docAdvSeqPics {float:right; width:690px; height:440px;}
+	#docAdvSeqIndx {float:left;}
+	#docAdvSeqIndx myMacdocmenu {display:block; margin: 1px 0; padding:1px 4px;}
+	#docAdvSeqIndx myMacdocmenu.docAdvSeqAct {color:#ffffff; background-color:#0000ff;}
+	#dockexamples.docpage {padding-top:10px;}
+	#dockexamples .docexample {float:left; margin-right:10px; margin-bottom:10px; width:274px; height:60px;}
+	#dockexamples .docexample myMacdocmenu {display:block; font-size:11px; color:#808080; background-color:#ffffff; height:100%;}
+	#dockexamples .docexample b {display:block; height:100%; border:1px solid #808080; font-weight:normal; font-style:italic; cursor:pointer;}
+	#dockexamples .docexample myMacdocmenu .examplesTitle {color:#000000; font-style:normal;}
+	#dockexamples .docexample myMacdocmenu:hover {background-color:#eeeeee; color:#3333cc;}
+	#dockexamples .docexample myMacdocmenu:hover .examplesTitle {color:#000066;}
+	#dockexamples .docexample em {float:right; margin-right:2px; color:#ff9900; font-size:10px;}
+	#dockexamples .taghilite myMacdocmenu {background-color:#ffff66; color:#6666cc;}
+	#dockexamples .taghilite myMacdocmenu:hover {background-color:#ffff00;}
+	#docexampletags {float:right; width:40%;}
+	/*#docexampletags table {float:right; width:90%;}*/
+	#docexampletags myMacdocmenu {margin:0 4px; font-size:11px; white-space:nowrap; outline:0 none;}
+	#docexampletags myMacdocmenu.taggedon span {background-color:#ffff00;}
+	#docexampletags em {color:#999999;}
+	.floatSnapshot img {position:absolute; display:none; border:0 none;}
+/*general...*/
+	myMacdocmenu.openExample {font-style:italic; color:#6600ff;}
+	myMacdocmenu.scrollInPage {color:#333333;}
+	myMacdocmenu.scrollInPage:hover {border-bottom:1px dotted #333333;}
+	myMacdocmenu.targetBlank {padding-right:10px; background:transparent url(../images/target_blank.gif) no-repeat 100% 0;}
+  .hideThis {display:none;}
+	.alignC {text-align:center;}
+	.clearB {clear:both; padding-top:1px;}
+	.clearL {clear:left; padding-top:1px;}
+	.floatR {float:right;}
+	.info {margin-left:140px;}
+  .edgeInset {padding-left:160px;}
+	.issuesList, .faqsList {padding-left:15px; margin-left:15px;} 
+  .changesList, .optionsList, .advancedList {padding-left:8px; margin-left:8px;}
+  ol ul, ul ul {padding-left:12px; margin-left:12px;}
+  .optionsList ul {padding-top:4px; padding-bottom:4px;}
+  .optionsList li {padding-bottom:9px;}
+  .optionsList li li {padding-bottom:0;}
+	.faqsList li {padding-bottom:9px;}
+  .faqsList ul li {padding-bottom:2px;}
+	.faqsq {font-weight:bold; background:#ffffff url(../images/arrows.jpg) no-repeat right 1px; padding-right:20px; cursor:pointer;}
+	.faqsqall {float:right; z-index:10; text-align:left; font-size:12px; font-weight:bold; background:#ffffff url(../images/arrows.jpg) no-repeat right 1px;; width:50px; cursor:pointer;}
+  .grey {color:#999999;}
+  .dgrey {color:#666666;}
+  .red {color:#cc0000;}
+  .small {font-size:12px;}
+	.nobullets {list-style-type:none;}
+	.tight {margin:0 0 0 8px; padding:0 0 0 8px;}
+  .transformAdd {color:#0000ff;}
+  .transformRemove {color:#ff0000;}
+	.underscore {text-decoration:underline;}
+  .vsmall {font-size:10px;}
+	.w10pc {width:10%;}
+	.w20pc {width:20%;}
+	.w25pc {width:25%;}
+	.w30pc {width:30%;}
+	.w33pc {width:33%;}
+	.w34pc {width:34%;}
+	.w80pc {width:80%;}
+
+/************************
+**  JQDOCK : DEMO CSS  **
+************************/
+  #menu {position:absolute; top:300px; left:130px; visibility:hidden;}
+  #menu img {border:0 none; padding:0; width:48px; height:48px;}
+  /*...purely for better use of the page's space, I'm positioning vertical menus up and over a bit (comparative to horizontal menus)...*/
+	#menu.vertical {top:210px; left:280px;}
+	/*...just for the demonstration of sliding out on docksleep...*/
+	#menu.sleepslide {left:130px;}
+
+/*dock styling...*/
+/*docks (div.jqDock) get absolute position, zero padding and margin, and visible overflow; width and height are calculated*/
+  /*...set a default dock background colour...*/
+	div.jqDockWrap {background-color:transparent;}
+	/*...the controller has a colourise option, for better visual feedback of how the containers react...*/
+	.colourise {border:2px solid #cc0000;}
+	.colourise div.jqDockWrap {background-color:#ff9900; border:2px solid #ffff00;}
+  .colourise div.jqDock {background-color:#ffffff; border:2px solid #0000cc;}
+
+/*label styling...*/
+/*labels (div.jqDockLabel) only get absolute position and zero margin (with top and left being calculated); the rest is up to you*/
+  /*...let's set some defaults...*/
+  div.jqDockLabelText {border:0 none; padding:0 4px; font-weight:bold; font-size:14px; font-style:italic; white-space:nowrap; color:#000000; background-color:transparent;}
+  div.jqDockLabelLink {cursor:pointer;}
+  div.jqDockLabelImage {cursor:default;}
