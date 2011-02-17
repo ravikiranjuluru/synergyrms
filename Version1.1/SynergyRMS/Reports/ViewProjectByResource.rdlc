@@ -2,7 +2,7 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <DataSources>
     <DataSource Name="synergydbadminConnectionString">
-      <rd:DataSourceID>59a37e42-a5f8-426e-99db-8bf220842097</rd:DataSourceID>
+      <rd:DataSourceID>d40e9ae1-e849-4384-866a-17d9e8298a19</rd:DataSourceID>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString />
@@ -18,9 +18,9 @@
   <PageHeader>
     <PrintOnFirstPage>true</PrintOnFirstPage>
     <ReportItems>
-      <Textbox Name="textbox10">
-        <rd:DefaultName>textbox10</rd:DefaultName>
-        <Width>1.75in</Width>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>1.625in</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -28,82 +28,21 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <CanGrow>true</CanGrow>
-        <Left>2.25in</Left>
+        <Left>2.125in</Left>
         <Height>0.25in</Height>
-        <Value>Project Resources Report</Value>
+        <Value>Resource Detail Report</Value>
       </Textbox>
     </ReportItems>
-    <Height>0.875in</Height>
+    <Height>0.5in</Height>
     <PrintOnLastPage>true</PrintOnLastPage>
   </PageHeader>
   <BottomMargin>1in</BottomMargin>
-  <rd:ReportID>d6115f7a-8b37-438b-bbc6-61a097a81ce8</rd:ReportID>
+  <rd:ReportID>03feb520-4bce-4f3b-83ee-0d9da28e7be5</rd:ReportID>
   <DataSets>
-    <DataSet Name="ProjectResources_R_GetProjectResourcesByProjectId">
+    <DataSet Name="ViewProjectByResource_R_GetProjectsByResourcesId">
       <Fields>
         <Field Name="ProjectId">
           <DataField>ProjectId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="AllocatedStartDate">
-          <DataField>AllocatedStartDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="AllocatedEndDate">
-          <DataField>AllocatedEndDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Effort">
-          <DataField>Effort</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ProjectName">
-          <DataField>ProjectName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="UserId">
-          <DataField>UserId</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="firstname">
-          <DataField>firstname</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="lastname">
-          <DataField>lastname</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="phone">
-          <DataField>phone</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="RoleDescription">
-          <DataField>RoleDescription</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>synergydbadminConnectionString</DataSourceName>
-        <CommandType>StoredProcedure</CommandType>
-        <CommandText>dbo.R_GetProjectResourcesByProjectId</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-      <rd:DataSetInfo>
-        <rd:DataSetName>ProjectResources</rd:DataSetName>
-        <rd:TableName>R_GetProjectResourcesByProjectId</rd:TableName>
-        <rd:TableAdapterName>R_GetProjectResourcesByProjectIdTableAdapter</rd:TableAdapterName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="ProjectResources_R_GetProjectByProjectId">
-      <Fields>
-        <Field Name="ProjectId">
-          <DataField>ProjectId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ProjectTypeId">
-          <DataField>ProjectTypeId</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="ProjectCode">
@@ -122,141 +61,114 @@
           <DataField>ProjectEndDate</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Status">
-          <DataField>Status</DataField>
+        <Field Name="AllocatedStartDate">
+          <DataField>AllocatedStartDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="AllocatedEndDate">
+          <DataField>AllocatedEndDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Effort">
+          <DataField>Effort</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
+        <Field Name="RoleName">
+          <DataField>RoleName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RoleDescription">
+          <DataField>RoleDescription</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <Query>
         <DataSourceName>synergydbadminConnectionString</DataSourceName>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>dbo.R_GetProjectByProjectId</CommandText>
+        <CommandText>dbo.R_GetProjectsByResourcesId</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <rd:DataSetInfo>
-        <rd:DataSetName>ProjectResources</rd:DataSetName>
-        <rd:TableName>R_GetProjectByProjectId</rd:TableName>
-        <rd:TableAdapterName>R_GetProjectByProjectIdTableAdapter</rd:TableAdapterName>
+        <rd:DataSetName>ViewProjectByResource</rd:DataSetName>
+        <rd:TableName>R_GetProjectsByResourcesId</rd:TableName>
+        <rd:TableAdapterName>R_GetProjectsByResourcesIdTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="ViewProjectByResource_R_GetResourceByResourceId">
+      <Fields>
+        <Field Name="firstname">
+          <DataField>firstname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="lastname">
+          <DataField>lastname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="phone">
+          <DataField>phone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>synergydbadminConnectionString</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dbo.R_GetResourceByResourceId</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ViewProjectByResource</rd:DataSetName>
+        <rd:TableName>R_GetResourceByResourceId</rd:TableName>
+        <rd:TableAdapterName>R_GetResourceByResourceIdTableAdapter</rd:TableAdapterName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <Width>11.25in</Width>
+  <Width>6.5in</Width>
   <Body>
     <ReportItems>
-      <Textbox Name="textbox33">
-        <rd:DefaultName>textbox33</rd:DefaultName>
-        <Top>0.875in</Top>
-        <Width>0.125in</Width>
+      <Textbox Name="firstname_1">
+        <rd:DefaultName>firstname_1</rd:DefaultName>
+        <Top>0.125in</Top>
+        <Width>2.625in</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
-        <ZIndex>8</ZIndex>
+        <ZIndex>2</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>3.5in</Left>
+        <Left>1.125in</Left>
         <Height>0.25in</Height>
-        <Value>-</Value>
+        <Value>=First(Fields!firstname.Value, "ViewProjectByResource_R_GetResourceByResourceId")+" "+First(Fields!lastname.Value, "ViewProjectByResource_R_GetResourceByResourceId")</Value>
       </Textbox>
-      <Textbox Name="ProjectEndDate">
-        <rd:DefaultName>ProjectEndDate</rd:DefaultName>
-        <Top>0.875in</Top>
-        <Width>1in</Width>
-        <Style>
-          <Format>dd,MMM yyyy</Format>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>7</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>3.75in</Left>
-        <Height>0.25in</Height>
-        <Value>=First(Fields!ProjectEndDate.Value, "ProjectResources_R_GetProjectByProjectId")</Value>
-      </Textbox>
-      <Textbox Name="ProjectStartDate">
-        <rd:DefaultName>ProjectStartDate</rd:DefaultName>
-        <Top>0.875in</Top>
-        <Width>1.125in</Width>
-        <Style>
-          <Format>dd,MMM yyyy</Format>
-          <TextAlign>Left</TextAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>6</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>2.25in</Left>
-        <Height>0.25in</Height>
-        <Value>=First(Fields!ProjectStartDate.Value, "ProjectResources_R_GetProjectByProjectId")</Value>
-      </Textbox>
-      <Textbox Name="textbox32">
-        <rd:DefaultName>textbox32</rd:DefaultName>
-        <Top>0.875in</Top>
-        <Width>1.75in</Width>
+      <Textbox Name="textbox15">
+        <rd:DefaultName>textbox15</rd:DefaultName>
+        <Top>0.125in</Top>
+        <Width>0.75in</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
-        <ZIndex>5</ZIndex>
+        <ZIndex>1</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.25in</Left>
+        <Left>0.125in</Left>
         <Height>0.25in</Height>
-        <Value>Project Period :</Value>
-      </Textbox>
-      <Textbox Name="ProjectCode_1">
-        <rd:DefaultName>ProjectCode_1</rd:DefaultName>
-        <Top>0.5in</Top>
-        <Width>2.375in</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>4</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>2.25in</Left>
-        <Height>0.25in</Height>
-        <Value>=First(Fields!ProjectCode.Value, "ProjectResources_R_GetProjectByProjectId")</Value>
-      </Textbox>
-      <Textbox Name="textbox31">
-        <rd:DefaultName>textbox31</rd:DefaultName>
-        <Top>0.5in</Top>
-        <Width>1.75in</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>3</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>0.25in</Left>
-        <Height>0.25in</Height>
-        <Value>Project Code  :</Value>
+        <Value>Resource :</Value>
       </Textbox>
       <Table Name="table1">
-        <ZIndex>2</ZIndex>
-        <DataSetName>ProjectResources_R_GetProjectResourcesByProjectId</DataSetName>
-        <Top>1.375in</Top>
+        <DataSetName>ViewProjectByResource_R_GetProjectsByResourcesId</DataSetName>
+        <Top>0.625in</Top>
         <TableGroups>
           <TableGroup>
             <Grouping Name="table1_Group1">
               <GroupExpressions>
-                <GroupExpression>=Fields!UserId.Value</GroupExpression>
+                <GroupExpression>=Fields!ProjectId.Value</GroupExpression>
               </GroupExpressions>
             </Grouping>
             <Header>
@@ -265,166 +177,206 @@
                   <TableCells>
                     <TableCell>
                       <ReportItems>
-                        <Textbox Name="firstname">
-                          <rd:DefaultName>firstname</rd:DefaultName>
+                        <Textbox Name="textbox33">
+                          <rd:DefaultName>textbox33</rd:DefaultName>
                           <Style>
-                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BackgroundColor>SkyBlue</BackgroundColor>
+                            <TextAlign>Center</TextAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                           <CanGrow>true</CanGrow>
-                          <Value>=Fields!firstname.Value+" "+Fields!lastname.Value</Value>
+                          <Value>Project Code</Value>
                         </Textbox>
                       </ReportItems>
                     </TableCell>
                     <TableCell>
+                      <ColSpan>2</ColSpan>
                       <ReportItems>
-                        <Textbox Name="textbox7">
-                          <rd:DefaultName>textbox7</rd:DefaultName>
+                        <Textbox Name="textbox34">
+                          <rd:DefaultName>textbox34</rd:DefaultName>
                           <Style>
-                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BackgroundColor>SkyBlue</BackgroundColor>
+                            <TextAlign>Center</TextAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                           <CanGrow>true</CanGrow>
-                          <Value />
+                          <Value>Project Name</Value>
                         </Textbox>
                       </ReportItems>
                     </TableCell>
                     <TableCell>
-                      <ReportItems>
-                        <Textbox Name="textbox13">
-                          <rd:DefaultName>textbox13</rd:DefaultName>
-                          <Style>
-                            <BackgroundColor>LightGrey</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                          <CanGrow>true</CanGrow>
-                          <Value />
-                        </Textbox>
-                      </ReportItems>
-                    </TableCell>
-                    <TableCell>
+                      <ColSpan>2</ColSpan>
                       <ReportItems>
                         <Textbox Name="textbox14">
                           <rd:DefaultName>textbox14</rd:DefaultName>
                           <Style>
-                            <BackgroundColor>LightGrey</BackgroundColor>
+                            <BackgroundColor>SkyBlue</BackgroundColor>
+                            <TextAlign>Center</TextAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                           <CanGrow>true</CanGrow>
-                          <Value />
-                        </Textbox>
-                      </ReportItems>
-                    </TableCell>
-                    <TableCell>
-                      <ReportItems>
-                        <Textbox Name="textbox22">
-                          <rd:DefaultName>textbox22</rd:DefaultName>
-                          <Style>
-                            <BackgroundColor>LightGrey</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                          <CanGrow>true</CanGrow>
-                          <Value />
+                          <Value>Period</Value>
                         </Textbox>
                       </ReportItems>
                     </TableCell>
                   </TableCells>
-                  <Height>0.15625in</Height>
+                  <Height>0.25in</Height>
                 </TableRow>
                 <TableRow>
                   <TableCells>
                     <TableCell>
                       <ReportItems>
-                        <Textbox Name="textbox23">
-                          <rd:DefaultName>textbox23</rd:DefaultName>
+                        <Textbox Name="ProjectCode">
+                          <rd:DefaultName>ProjectCode</rd:DefaultName>
                           <Style>
+                            <BackgroundColor>WhiteSmoke</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                           <CanGrow>true</CanGrow>
-                          <Value />
+                          <Value>=Fields!ProjectCode.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ColSpan>2</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="ProjectName">
+                          <rd:DefaultName>ProjectName</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!ProjectName.Value</Value>
                         </Textbox>
                       </ReportItems>
                     </TableCell>
                     <TableCell>
                       <ReportItems>
-                        <Textbox Name="textbox27">
-                          <rd:DefaultName>textbox27</rd:DefaultName>
+                        <Textbox Name="ProjectStartDate">
+                          <rd:DefaultName>ProjectStartDate</rd:DefaultName>
                           <Style>
+                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <Format>dd,MMM yyyy</Format>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                           <CanGrow>true</CanGrow>
-                          <Value />
+                          <Value>=Fields!ProjectStartDate.Value</Value>
                         </Textbox>
                       </ReportItems>
                     </TableCell>
                     <TableCell>
                       <ReportItems>
-                        <Textbox Name="textbox28">
-                          <rd:DefaultName>textbox28</rd:DefaultName>
+                        <Textbox Name="ProjectEndDate">
+                          <rd:DefaultName>ProjectEndDate</rd:DefaultName>
                           <Style>
+                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <Format>dd,MMM yyyy</Format>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                           <CanGrow>true</CanGrow>
-                          <Value />
-                        </Textbox>
-                      </ReportItems>
-                    </TableCell>
-                    <TableCell>
-                      <ReportItems>
-                        <Textbox Name="textbox29">
-                          <rd:DefaultName>textbox29</rd:DefaultName>
-                          <Style>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                          <CanGrow>true</CanGrow>
-                          <Value />
-                        </Textbox>
-                      </ReportItems>
-                    </TableCell>
-                    <TableCell>
-                      <ReportItems>
-                        <Textbox Name="textbox30">
-                          <rd:DefaultName>textbox30</rd:DefaultName>
-                          <Style>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                          <CanGrow>true</CanGrow>
-                          <Value />
+                          <Value>=Fields!ProjectEndDate.Value</Value>
                         </Textbox>
                       </ReportItems>
                     </TableCell>
                   </TableCells>
-                  <Height>0.1875in</Height>
+                  <Height>0.25in</Height>
+                </TableRow>
+                <TableRow>
+                  <TableCells>
+                    <TableCell>
+                      <ColSpan>2</ColSpan>
+                      <ReportItems>
+                        <Textbox Name="textbox17">
+                          <rd:DefaultName>textbox17</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>DarkGray</BackgroundColor>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Role</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox25">
+                          <rd:DefaultName>textbox25</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>DarkGray</BackgroundColor>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>From</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox26">
+                          <rd:DefaultName>textbox26</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>DarkGray</BackgroundColor>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>To</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox12">
+                          <rd:DefaultName>textbox12</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>DarkGray</BackgroundColor>
+                            <TextAlign>Center</TextAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>Effort</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                  </TableCells>
+                  <Height>0.25in</Height>
                 </TableRow>
               </TableRows>
             </Header>
@@ -434,88 +386,8 @@
                   <TableCells>
                     <TableCell>
                       <ReportItems>
-                        <Textbox Name="textbox4">
-                          <rd:DefaultName>textbox4</rd:DefaultName>
-                          <Style>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                          <CanGrow>true</CanGrow>
-                          <Value />
-                        </Textbox>
-                      </ReportItems>
-                    </TableCell>
-                    <TableCell>
-                      <ReportItems>
                         <Textbox Name="textbox19">
                           <rd:DefaultName>textbox19</rd:DefaultName>
-                          <Style>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                          <CanGrow>true</CanGrow>
-                          <Value />
-                        </Textbox>
-                      </ReportItems>
-                    </TableCell>
-                    <TableCell>
-                      <ReportItems>
-                        <Textbox Name="AllocatedStartDate">
-                          <rd:DefaultName>AllocatedStartDate</rd:DefaultName>
-                          <Style>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                          <CanGrow>true</CanGrow>
-                          <Value />
-                        </Textbox>
-                      </ReportItems>
-                    </TableCell>
-                    <TableCell>
-                      <ReportItems>
-                        <Textbox Name="AllocatedEndDate">
-                          <rd:DefaultName>AllocatedEndDate</rd:DefaultName>
-                          <Style>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                          <CanGrow>true</CanGrow>
-                          <Value />
-                        </Textbox>
-                      </ReportItems>
-                    </TableCell>
-                    <TableCell>
-                      <ReportItems>
-                        <Textbox Name="textbox24">
-                          <rd:DefaultName>textbox24</rd:DefaultName>
-                          <Style>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                          <CanGrow>true</CanGrow>
-                          <Value />
-                        </Textbox>
-                      </ReportItems>
-                    </TableCell>
-                  </TableCells>
-                  <Height>0.15625in</Height>
-                </TableRow>
-                <TableRow>
-                  <TableCells>
-                    <TableCell>
-                      <ReportItems>
-                        <Textbox Name="textbox15">
-                          <rd:DefaultName>textbox15</rd:DefaultName>
                           <Style>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -544,6 +416,36 @@
                     </TableCell>
                     <TableCell>
                       <ReportItems>
+                        <Textbox Name="textbox21">
+                          <rd:DefaultName>textbox21</rd:DefaultName>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox22">
+                          <rd:DefaultName>textbox22</rd:DefaultName>
+                          <Style>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
                         <Textbox Name="textbox16">
                           <rd:DefaultName>textbox16</rd:DefaultName>
                           <Style>
@@ -557,72 +459,25 @@
                         </Textbox>
                       </ReportItems>
                     </TableCell>
-                    <TableCell>
-                      <ReportItems>
-                        <Textbox Name="textbox17">
-                          <rd:DefaultName>textbox17</rd:DefaultName>
-                          <Style>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                          <CanGrow>true</CanGrow>
-                          <Value />
-                        </Textbox>
-                      </ReportItems>
-                    </TableCell>
-                    <TableCell>
-                      <ReportItems>
-                        <Textbox Name="textbox25">
-                          <rd:DefaultName>textbox25</rd:DefaultName>
-                          <Style>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                          <CanGrow>true</CanGrow>
-                          <Value />
-                        </Textbox>
-                      </ReportItems>
-                    </TableCell>
                   </TableCells>
-                  <Height>0.15625in</Height>
+                  <Height>0.25in</Height>
                 </TableRow>
               </TableRows>
             </Footer>
           </TableGroup>
         </TableGroups>
-        <Width>5.95455in</Width>
+        <Width>6.07352in</Width>
         <Details>
           <TableRows>
             <TableRow>
               <TableCells>
                 <TableCell>
-                  <ReportItems>
-                    <Textbox Name="textbox12">
-                      <rd:DefaultName>textbox12</rd:DefaultName>
-                      <Style>
-                        <BackgroundColor>WhiteSmoke</BackgroundColor>
-                        <FontSize>8pt</FontSize>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                      <CanGrow>true</CanGrow>
-                      <Value />
-                    </Textbox>
-                  </ReportItems>
-                </TableCell>
-                <TableCell>
+                  <ColSpan>2</ColSpan>
                   <ReportItems>
                     <Textbox Name="RoleDescription">
                       <rd:DefaultName>RoleDescription</rd:DefaultName>
                       <Style>
                         <BackgroundColor>WhiteSmoke</BackgroundColor>
-                        <FontSize>8pt</FontSize>
                         <TextAlign>Center</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -636,13 +491,11 @@
                 </TableCell>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="AllocatedStartDate_1">
-                      <rd:DefaultName>AllocatedStartDate_1</rd:DefaultName>
+                    <Textbox Name="AllocatedStartDate">
+                      <rd:DefaultName>AllocatedStartDate</rd:DefaultName>
                       <Style>
                         <BackgroundColor>WhiteSmoke</BackgroundColor>
-                        <FontSize>8pt</FontSize>
-                        <Format>dd-MMM-yyyy</Format>
-                        <TextAlign>Center</TextAlign>
+                        <Format>dd,MMM yyyy</Format>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -655,13 +508,11 @@
                 </TableCell>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="AllocatedEndDate_1">
-                      <rd:DefaultName>AllocatedEndDate_1</rd:DefaultName>
+                    <Textbox Name="AllocatedEndDate">
+                      <rd:DefaultName>AllocatedEndDate</rd:DefaultName>
                       <Style>
                         <BackgroundColor>WhiteSmoke</BackgroundColor>
-                        <FontSize>8pt</FontSize>
-                        <Format>dd-MMM-yyyy</Format>
-                        <TextAlign>Center</TextAlign>
+                        <Format>dd,MMM yyyy</Format>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -678,9 +529,7 @@
                       <rd:DefaultName>Effort</rd:DefaultName>
                       <Style>
                         <BackgroundColor>WhiteSmoke</BackgroundColor>
-                        <FontSize>8pt</FontSize>
-                        <Format>P0</Format>
-                        <TextAlign>Center</TextAlign>
+                        <TextAlign>Right</TextAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -692,7 +541,7 @@
                   </ReportItems>
                 </TableCell>
               </TableCells>
-              <Height>0.15625in</Height>
+              <Height>0.20833in</Height>
             </TableRow>
           </TableRows>
         </Details>
@@ -702,120 +551,8 @@
               <TableCells>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="textbox1">
-                      <rd:DefaultName>textbox1</rd:DefaultName>
-                      <Style>
-                        <BackgroundColor>SkyBlue</BackgroundColor>
-                        <TextAlign>Left</TextAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                      <CanGrow>true</CanGrow>
-                      <Value>Resource</Value>
-                    </Textbox>
-                  </ReportItems>
-                </TableCell>
-                <TableCell>
-                  <ReportItems>
-                    <Textbox Name="textbox6">
-                      <rd:DefaultName>textbox6</rd:DefaultName>
-                      <Style>
-                        <BackgroundColor>SkyBlue</BackgroundColor>
-                        <TextAlign>Center</TextAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                      <CanGrow>true</CanGrow>
-                      <Value>Project Role</Value>
-                    </Textbox>
-                  </ReportItems>
-                </TableCell>
-                <TableCell>
-                  <ReportItems>
                     <Textbox Name="textbox2">
                       <rd:DefaultName>textbox2</rd:DefaultName>
-                      <Style>
-                        <BackgroundColor>SkyBlue</BackgroundColor>
-                        <TextAlign>Center</TextAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                      <CanGrow>true</CanGrow>
-                      <Value>From</Value>
-                    </Textbox>
-                  </ReportItems>
-                </TableCell>
-                <TableCell>
-                  <ReportItems>
-                    <Textbox Name="textbox3">
-                      <rd:DefaultName>textbox3</rd:DefaultName>
-                      <Style>
-                        <BackgroundColor>SkyBlue</BackgroundColor>
-                        <TextAlign>Center</TextAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                      <CanGrow>true</CanGrow>
-                      <Value>To</Value>
-                    </Textbox>
-                  </ReportItems>
-                </TableCell>
-                <TableCell>
-                  <ReportItems>
-                    <Textbox Name="textbox18">
-                      <rd:DefaultName>textbox18</rd:DefaultName>
-                      <Style>
-                        <BackgroundColor>SkyBlue</BackgroundColor>
-                        <TextAlign>Left</TextAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                      <CanGrow>true</CanGrow>
-                      <Value>Effort</Value>
-                    </Textbox>
-                  </ReportItems>
-                </TableCell>
-              </TableCells>
-              <Height>0.15625in</Height>
-            </TableRow>
-          </TableRows>
-        </Header>
-        <TableColumns>
-          <TableColumn>
-            <Width>2.00455in</Width>
-          </TableColumn>
-          <TableColumn>
-            <Width>1.625in</Width>
-          </TableColumn>
-          <TableColumn>
-            <Width>0.875in</Width>
-          </TableColumn>
-          <TableColumn>
-            <Width>0.875in</Width>
-          </TableColumn>
-          <TableColumn>
-            <Width>0.575in</Width>
-          </TableColumn>
-        </TableColumns>
-        <Height>1.125in</Height>
-        <Footer>
-          <TableRows>
-            <TableRow>
-              <TableCells>
-                <TableCell>
-                  <ReportItems>
-                    <Textbox Name="textbox8">
-                      <rd:DefaultName>textbox8</rd:DefaultName>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -829,8 +566,95 @@
                 </TableCell>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="textbox21">
-                      <rd:DefaultName>textbox21</rd:DefaultName>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.20833in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.25in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.20588in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.20588in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.20588in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.20588in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>1.62499in</Height>
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <rd:DefaultName>textbox8</rd:DefaultName>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -874,8 +698,23 @@
                 </TableCell>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="textbox26">
-                      <rd:DefaultName>textbox26</rd:DefaultName>
+                    <Textbox Name="textbox13">
+                      <rd:DefaultName>textbox13</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox18">
+                      <rd:DefaultName>textbox18</rd:DefaultName>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -888,45 +727,14 @@
                   </ReportItems>
                 </TableCell>
               </TableCells>
-              <Height>0.15625in</Height>
+              <Height>0.20833in</Height>
             </TableRow>
           </TableRows>
         </Footer>
         <Left>0.125in</Left>
       </Table>
-      <Textbox Name="textbox5">
-        <rd:DefaultName>textbox5</rd:DefaultName>
-        <Top>0.125in</Top>
-        <Width>1.75in</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>1</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>0.25in</Left>
-        <Height>0.25in</Height>
-        <Value>Project Name : </Value>
-      </Textbox>
-      <Textbox Name="ProjectName_1">
-        <rd:DefaultName>ProjectName_1</rd:DefaultName>
-        <Top>0.125in</Top>
-        <Width>2.375in</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <CanGrow>true</CanGrow>
-        <Left>2.25in</Left>
-        <Height>0.25in</Height>
-        <Value>=First(Fields!ProjectName.Value, "ProjectResources_R_GetProjectByProjectId")</Value>
-      </Textbox>
     </ReportItems>
-    <Height>2.625in</Height>
+    <Height>2.5in</Height>
   </Body>
   <Language>en-US</Language>
   <PageFooter>
