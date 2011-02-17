@@ -168,10 +168,6 @@
             padding: 0px;
             display: inline-block;
         }
-       .style1
-       {
-           width: 367px;
-       }
        .style2
        {
       }
@@ -218,12 +214,13 @@
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
-                                                                <td valign="top" align="right" class="style2">
-                                                                      
-                                                                    </td>
-                                                                    <td valign="top" align="left" style="width:80%">
-                                                                       
-                                                                        <% if ((ViewData["status"]) != null)
+                                                                <td valign="middle" align="right" class="formDetailDark">
+                                                                        
+                                                                        </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" align="right" class="style2" colspan="2">
+                                                                         <% if ((ViewData["status"]) != null)
                                                                            {
                                                                                var status = ViewData["status"].ToString();
                                                                                var msg = ViewData["msg"].ToString();
@@ -239,6 +236,19 @@
                                                                             <%= msg%></div>
                                                                         <%} %>
                                                                         <%} %>
+                                                                        
+                                                                        </td>
+                                                                </tr>
+                                                                <tr>
+                                                                     <td valign="middle" align="right" class="formDetailDark">
+                                                                   
+                                                                       
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="middle" align="right" class="formDetailDark">
+                                                                   
+                                                                       
                                                                     </td>
                                                                 </tr>
                                                                 
@@ -254,6 +264,8 @@
                                                                      
                                                                 %>
                                                                  <input type="hidden" name="hdnid" value="<%=editRole%>">                                                               
+                                                                
+                                                                
                                                                 <tr>
                                                                     <td valign="top" align="right" class="style2">
                                                                         <label for="notes">
