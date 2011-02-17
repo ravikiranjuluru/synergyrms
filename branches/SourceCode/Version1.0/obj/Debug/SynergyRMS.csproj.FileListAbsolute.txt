@@ -1,0 +1,7 @@
+D:\synergyrms\SourceCode\Version1.0\bin\SynergyRMS.dll.config
+D:\synergyrms\SourceCode\Version1.0\bin\SynergyRMS.dll
+D:\synergyrms\SourceCode\Version1.0\bin\SynergyRMS.pdb
+D:\synergyrms\SourceCode\Version1.0\bin\Microsoft.Web.Mvc.dll
+D:\synergyrms\SourceCode\Version1.0\obj\Debug\ResolveAssemblyReference.cache
+D:\synergyrms\SourceCode\Version1.0\obj\Debug\SynergyRMS.dll
+D:\synergyrms\SourceCode\Version1.0\obj\Debug\SynergyRMS.pdb
