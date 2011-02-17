@@ -23,9 +23,25 @@
             </tr>
             <tr>
                 <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
                     <asp:Label ID="lblUser" runat="server" Text="Select Resource :" 
                         Font-Bold="True"></asp:Label>
-                </td>
+                &nbsp;</td>
                 <td>
                     <asp:DropDownList ID="ddlUser" runat="server" DataSourceID="ResourceSource" DataTextField="FullName" DataValueField="UserId">
                    
