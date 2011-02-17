@@ -12,6 +12,8 @@ namespace SynergyRMS.Models
         public const string editProject = "editProject";
         public const string deleteProject = "deleteProject";
         public const string viewProjectSchedule = "viewProjectSchedule";//new
+        public const string viewProjectReports = "viewProjectReports";//new
+
 
         public const string addTask = "addTask";
         public const string editTask = "editTask";
