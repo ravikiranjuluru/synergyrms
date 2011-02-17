@@ -219,7 +219,7 @@
                                                         <input name="btnClear" id="btnClear"
                                                             class="button" value="Clear" type="button" onclick="javascript:history.go(-1)">
                                                         <asp:HyperLink ID="HyperLink1" runat="server" 
-                                                            NavigateUrl="~/Reports/Project_Resources.aspx">View Report</asp:HyperLink>
+                                                            NavigateUrl="~/Reports/Project_Resources.aspx" Visible="False">View Report</asp:HyperLink>
                                                     </td>
                                                 </tr>
                                             </tbody>
