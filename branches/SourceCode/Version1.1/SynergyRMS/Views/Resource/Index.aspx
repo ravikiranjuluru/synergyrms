@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" 
 Inherits="System.Web.Mvc.ViewPage" %>
+<%@ Import Namespace="SynergyRMS.Models" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -16,7 +17,7 @@ Inherits="System.Web.Mvc.ViewPage" %>
             </table>
         </div>
         
-   
+   <% var currentusername = HttpContext.Current.User.Identity.Name.ToString();%>
         <table width="100%" cellspacing="0" cellpadding="0" border="0">
             <tbody>
                 <tr>
@@ -43,13 +44,17 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace0" src="../../Content/images/common/space.gif">
                                                             </td>
+                                                            
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace2" src="../../Content/images/common/space.gif">
                                                             </td>
-                                                            <td nowrap="nowrap" onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','ROLES')"
+                                                            <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewUser))
+                                                              { %>
+                                                            <td nowrap="nowrap" 
                                                                 onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
                                                                 <a href="/Resource/AddRole">Edit Users</a>
                                                             </td>
+                                                            <%} %>
                                                             <td class="tabSpace">
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace3" src="../../Content/images/common/space.gif">
                                                             </td>
@@ -96,8 +101,11 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                     </tr>
                                 </tbody>
                             </table>
-                           <% using (Html.BeginForm("NewUser", "Resource"))
+                            
+                            <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addUser))
                               { %>
+                            <% using (Html.BeginForm("NewUser", "Resource"))
+                               { %>
                             <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
                                 id="masterPage_tblFormContentRoot">
                                 <tbody>
@@ -107,12 +115,13 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                 <tbody>
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
-                                                            &nbsp;</td>
+                                                            &nbsp;
+                                                        </td>
                                                         <td height="5" width="100%" class="formDetailNoPadding">
                                                             <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="..../../Content/images/common/space.gif">
                                                         </td>
                                                     </tr>
-                                                   <tr>
+                                                    <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
                                                             &nbsp;
                                                         </td>
@@ -121,18 +130,18 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                                {
                                                                    var status = ViewData["status"].ToString();
                                                                    var msg = ViewData["msg"].ToString();
-                                                        %>
-                                                        <% if (status == "Success")
-                                                           { %>
-                                                        <div id="msgsuccess" class="success-msg">
-                                                            <%= msg%></div>
-                                                        <%} %>
-                                                        <% if (status == "Error")
-                                                           { %>
-                                                        <div id="msgerror" class="error-msg">
-                                                            <%= msg%></div>
-                                                        <%} %>
-                                                        <%} %>
+                                                            %>
+                                                            <% if (status == "Success")
+                                                               { %>
+                                                            <div id="msgsuccess" class="success-msg">
+                                                                <%= msg%></div>
+                                                            <%} %>
+                                                            <% if (status == "Error")
+                                                               { %>
+                                                            <div id="msgerror" class="error-msg">
+                                                                <%= msg%></div>
+                                                            <%} %>
+                                                            <%} %>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -143,92 +152,79 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                             <img height="1" width="100%" alt="" src="../../Content/images/common/hr.gif">
                                                         </td>
                                                     </tr>
-                                                    
-                                                     <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="txtfirstname">First Name</label>First Name:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <input type="text" maxlength="70" size="70" class="textBox" 
-                                                            id="txtfirstname"
-                                                                name="txtfirstname">
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                     <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="txtlastname">Last Name</label>Last Name:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <input type="text" maxlength="70" size="70" class="textBox" 
-                                                            id="txtlastname"
-                                                                name="txtlastname">
-                                                        </td>
-                                                    </tr>
-                                                    
-
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="txtemail">Email Address</label>Email Address:
+                                                            <label for="txtfirstname">
+                                                                First Name</label>First Name:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
-                                                            <input type="text" maxlength="70" size="70" class="textBox" 
-                                                            id="txtemail"
-                                                                name="txtemail">
+                                                            <input type="text" maxlength="70" size="70" class="textBox" id="txtfirstname" name="txtfirstname">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                             <label for="txtphone">Telephone</label>Telephone:
+                                                            <label for="txtlastname">
+                                                                Last Name</label>Last Name:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
-                                                            <input type="text" maxlength="30" size="30" class="textBox"
-                                                             id="txtphone"
-                                                                name="txtphone">
-                                                        </td>
-                                                    </tr>
-                                                                                                         <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="txtusername">User Name</label>User Name:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <input type="text" maxlength="70" size="70" class="textBox" 
-                                                            id="txtusername"
-                                                                name="txtusername">
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                   
-
-                                                    <tr>
-                                                        <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="txtpwd"></label>Password:
-                                                        </td>
-                                                        <td valign="middle" align="left" class="formDetail">
-                                                            <input type="password" maxlength="30" size="30" 
-                                                            class="textBox" id="txtpwd" name="txtpwd">
+                                                            <input type="text" maxlength="70" size="70" class="textBox" id="txtlastname" name="txtlastname">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                             <label for="txtpwdconfirm"></label>Confirm Password:
+                                                            <label for="txtemail">
+                                                                Email Address</label>Email Address:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="text" maxlength="70" size="70" class="textBox" id="txtemail" name="txtemail">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txtphone">
+                                                                Telephone</label>Telephone:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="text" maxlength="30" size="30" class="textBox" id="txtphone" name="txtphone">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txtusername">
+                                                                User Name</label>User Name:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="text" maxlength="70" size="70" class="textBox" id="txtusername" name="txtusername">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txtpwd">
+                                                            </label>
+                                                            Password:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="password" maxlength="30" size="30" class="textBox" id="txtpwd" name="txtpwd">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txtpwdconfirm">
+                                                            </label>
+                                                            Confirm Password:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail">
                                                             <input type="password" maxlength="30" size="30" class="textBox" id="txtpwdconfirm"
                                                                 name="txtpwdconfirm">
                                                         </td>
                                                     </tr>
-                                                   
-                                                   
-                                                    
                                                     <tr id="ctl00_phFormContent_ucCustomFields_trCustom25">
                                                         <td valign="middle" align="right" style="padding-top: 4px; padding-bottom: 4px;"
                                                             class="formDetailDark" id="ctl00_phFormContent_ucCustomFields_tdCustomLabel25">
-                                                            
                                                             Role:
                                                         </td>
                                                         <td valign="middle" colspan="1" style="padding-top: 4px; padding-bottom: 4px;" class="formDetail">
-                                                            <%=Html.DropDownList("ddRoles", (SelectList)ViewData["RoleList"],new { @class = "comboBox" })%>
+                                                            <%=Html.DropDownList("ddRoles", (SelectList)ViewData["RoleList"], new { @class = "comboBox" })%>
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -255,10 +251,7 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                 <tbody>
                                                     <tr>
                                                         <td align="left">
-                                                            <input type="submit" value="Save" class="button" 
-                                                            id="btnSave"
-                                                                name="btnSave">
-                                                           
+                                                            <input type="submit" value="Save" class="button" id="btnSave" name="btnSave">
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -268,6 +261,13 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                 </tbody>
                             </table>
                         </div>
+                        <%} %>
+                        <%}
+                              else
+                              {%>
+                              <div id="Div1" class="warning-msg">
+                              You are not authorized to add new user. Please contact administrator.
+                              </div>
                         <%} %>
                         <div style="padding-left: 10px; padding-right: 10px;">
                         </div>
