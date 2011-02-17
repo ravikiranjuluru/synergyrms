@@ -220,9 +220,7 @@
                                 </tr>
                                 <tr>
                                     <td align="center" valign="top" >
-                                      
-                                      <table id="tblprojects" border="0" cellspacing="0" cellpadding="0" 
-                                            class="display">
+                                        <table id="tblprojects" border="0" cellspacing="0" cellpadding="0" class="display">
     <thead>
         <tr>
             <th id="pcode" align="center"  class="style9" align="center" height="30">
