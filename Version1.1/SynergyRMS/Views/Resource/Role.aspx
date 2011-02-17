@@ -2,6 +2,7 @@
 Inherits="System.Web.Mvc.ViewPage" %>
 <%@ Import Namespace="SynergyRMS.Controllers" %>
 <%@ Import Namespace="Microsoft.Web.Mvc"%>
+<%@ Import Namespace="SynergyRMS.Models" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/Datatable/demo_page.css"
@@ -18,6 +19,8 @@ Inherits="System.Web.Mvc.ViewPage" %>
     }
      
 </script>
+
+<% var currentusername = HttpContext.Current.User.Identity.Name.ToString();%>
     <div class="formContainer" id="masterpage_divMain">
         <div class="formHead" id="masterpage_divHead">
             <table width="100%" cellspacing="0" cellpadding="0" border="0" class="pageTitle">
@@ -58,11 +61,7 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                                 <img height="1" width="1" id="ctl00_phTabstripHeader_tabMain_imgTabSpace0" src="/images/space.gif">
                                                             </td>
                                                            
-                                                            <%--<td nowrap="nowrap" 
-                                                            onclick="__doPostBack('ctl00$phTabstripHeader$tabMain','SKILLS')"
-                                                        onmouseout="this.className='tabOff';" onmouseover="this.className='tabOn';" class="tabOff">
-                                                        <a href="Permission">Permisions</a>
-                                                    </td>--%>
+                                                           
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -107,6 +106,8 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                             <img height="1" id="ctl00_phFormContent_ucFormHeader_img2" src="..../../Content/images/common/space.gif">
                                                         </td>
                                                     </tr>
+                                                    <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addRole))
+                                                      { %>
                                                     <tr>
                                                        
                                                         <td valign="middle" align="right" class="formDetailDark">
@@ -133,6 +134,8 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                                         </td>
                                                        
                                                     </tr>
+                                                    <%} %>
+                                                    
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDarkHR">
                                                             &nbsp;
@@ -191,9 +194,13 @@ Inherits="System.Web.Mvc.ViewPage" %>
                                             <td headers="rname" class="oddrow-mdl" align="left">
                                                 <%= role.Text%>
                                             </td>
+                                            
                                             <td headers="email" class="oddrow-mdl" align="left" >
+                                                <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.editRolePermission))
+                                                  { %>
                                                 <a class="link" onclick="lnkRolePermission_onClick('<%=role.Text%>');" title="Edit Roles Permissions"
                                                     href="#">Edit Permissions </a>
+                                                    <%} %>
                                             </td>
                                         </tr>
                                         <%} %>
