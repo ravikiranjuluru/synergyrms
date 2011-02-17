@@ -368,8 +368,8 @@
                                                                                     </td>
                                                                                 </tr>
                                                                                 <%} %>
-                                                                                <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addUser))
-                                                                                  { %>
+                                                                                <%--<%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addUser))
+                                                                                  { %>--%>
                                                                                 <tr id="Tr5">
                                                                                     <td padding-left="6px" width="5%">
                                                                                         
@@ -379,7 +379,7 @@
                                                                                             title="Click for more information" />Users</a>
                                                                                     </td>
                                                                                 </tr>
-                                                                                <%} %>
+                                                                                <%--<%} %>--%>
                                                                                 <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewUserSchedule))
                                                                                   { %>
                                                                                 <tr id="Tr7">
@@ -387,7 +387,7 @@
                                                                                        
                                                                                     </td>
                                                                                     <td>
-                                                                                        <a id="A7" title="Click here to View Resources Schedules" href="../GridView/Schedule">
+                                                                                        <a id="A7" title="Click here to View Resources Schedules" href="../Resource/Schedule">
                                                                                          <img src="../../Content/images/common/schedule.jpg" id="Img11" title="Click for more information" />
                                                                                             View Resource Schedules</a>
                                                                                     </td>
