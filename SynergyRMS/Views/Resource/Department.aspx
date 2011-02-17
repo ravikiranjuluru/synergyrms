@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master" Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
+    Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="formContainer" id="masterpage_divMain">
         <div class="formHead" id="masterpage_divHead">
             <table width="100%" cellspacing="0" cellpadding="0" border="0" class="pageTitle">
@@ -14,10 +14,6 @@
                 </tbody>
             </table>
         </div>
-        
-
-	
-	
         <table width="100%" cellspacing="0" cellpadding="0" border="0">
             <tbody>
                 <tr>
@@ -69,8 +65,8 @@
                                     </tr>
                                 </tbody>
                             </table>
-                         <% using (Html.BeginForm("Department", "Resource"))
-                            { %>
+                            <% using (Html.BeginForm("Department", "Resource"))
+                               { %>
                             <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
                                 id="masterPage_tblFormContentRoot">
                                 <tbody>
@@ -78,23 +74,20 @@
                                         <td class="form">
                                             <table class="formContent">
                                                 <tbody>
-                                                <tr>
+                                                    <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                           View Department
+                                                            View Department
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail" style="width: 211px">
-                                                           <select name="ctl00$phFormContent$cboProjectLevel" id="projectLevel"
-                                                            class="comboBox">
-                                                            <option selected="selected" value="Select">Select</option>
-                                                            <option value="Top">Department 1</option>
-                                                            <option value="Medium">Department 2</option>
-                                                            <option value="Low">Department 3</option>
-                                                        </select>
-                                                        &nbsp;&nbsp;
-                                                        <input type="submit" value="View" class="button" id="View"
-                                                                name="btnView"/>
+                                                            <select name="ctl00$phFormContent$cboProjectLevel" id="projectLevel" class="comboBox">
+                                                                <option selected="selected" value="Select">Select</option>
+                                                                <option value="Top">Department 1</option>
+                                                                <option value="Medium">Department 2</option>
+                                                                <option value="Low">Department 3</option>
+                                                            </select>
+                                                            &nbsp;&nbsp;
+                                                            <input type="submit" value="View" class="button" id="View" name="btnView" />
                                                         </td>
-                                                        
                                                     </tr>
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
@@ -110,57 +103,56 @@
                                                         </td>
                                                         <td valign="middle" align="left" style="width: 211px">
                                                             <% if ((ViewData["status"]) != null)
-                                                           {
-                                                               var status = ViewData["status"].ToString();
-                                                               var msg = ViewData["msg"].ToString();
-                                                        %>
-                                                        <% if (status == "Success")
-                                                           { %>
-                                                        <div id="msgsuccess" class="success-msg">
-                                                            <%= msg%></div>
-                                                        <%} %>
-                                                        <% if (status == "Error")
-                                                           { %>
-                                                        <div id="msgerror" class="error-msg">
-                                                            <%= msg%></div>
-                                                        <%} %>
-                                                        <%} %>
+                                                               {
+                                                                   var status = ViewData["status"].ToString();
+                                                                   var msg = ViewData["msg"].ToString();
+                                                            %>
+                                                            <% if (status == "Success")
+                                                               { %>
+                                                            <div id="msgsuccess" class="success-msg">
+                                                                <%= msg%></div>
+                                                            <%} %>
+                                                            <% if (status == "Error")
+                                                               { %>
+                                                            <div id="msgerror" class="error-msg">
+                                                                <%= msg%></div>
+                                                            <%} %>
+                                                            <%} %>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="txtDeptCode">Code:</label> Code:
+                                                            <label for="txtDeptCode">
+                                                                Code:</label>
+                                                            Code:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail" style="width: 211px">
-                                                            <input type="text" maxlength="20" size="20" class="textBox" 
-                                                            id="txtDeptCode" name="txtDeptCode">
+                                                            <input type="text" maxlength="20" size="20" class="textBox" id="txtDeptCode" name="txtDeptCode">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                            <label for="txtDeptName">Name:</label> Name:
+                                                            <label for="txtDeptName">
+                                                                Name:</label>
+                                                            Name:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail" style="width: 211px">
-                                                            <input type="text" maxlength="20" size="20" class="textBox" 
-                                                            id="txtDeptName"
-                                                                name="txtDeptName">
+                                                            <input type="text" maxlength="20" size="20" class="textBox" id="txtDeptName" name="txtDeptName">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                             <label for="txtDeptDesc">Description</label>Description:
+                                                            <label for="txtDeptDesc">
+                                                                Description</label>Description:
                                                         </td>
                                                         <td valign="middle" align="left" class="formDetail" style="width: 211px">
-                                                            <input type="text" maxlength="70" size="70" class="textBox" 
-                                                            id="txtDeptDesc" name="txtDeptDesc">
+                                                            <input type="text" maxlength="70" size="70" class="textBox" id="txtDeptDesc" name="txtDeptDesc">
                                                         </td>
                                                     </tr>
-                                                    
-                                                   
-                                                    
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
-                                                             <label for="manager">Manager</label>Manager:
+                                                            <label for="manager">
+                                                                Manager</label>Manager:
                                                         </td>
                                                         <td valign="top" align="left" class="formDetail" style="width: 211px">
                                                             <input type="text" checked="checked" class="textBox" id="manager" name="ctl00$phFormContent$chkActive">
@@ -198,8 +190,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <td align="left">
-                                                            <input type="submit" value="Save" class="button" id="btnSave"
-                                                                name="btnSave"/>&nbsp;&nbsp;
+                                                            <input type="submit" value="Save" class="button" id="btnSave" name="btnSave" onclick="return validateForm()" />&nbsp;&nbsp;
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -209,7 +200,32 @@
                                 </tbody>
                             </table>
                         </div>
-                        
+
+                        <script language="javascript">
+                            function validateForm() {
+                                var a = document.forms[0]["txtDeptCode"].value
+
+                                if (a == null || a == "") {
+                                    alert("Please enter Department Code");
+                                    return false;
+                                }
+
+                                var b = document.forms[0]["txtDeptName"].value
+
+                                if (b == null || b == "") {
+                                    alert("Please enter Department Name");
+                                    return false;
+                                }
+
+                                var c = document.forms[0]["manager"].value
+
+                                if (c == null || c == "") {
+                                    alert("Please enter Manager Name");
+                                    return false;
+                                }
+                            }
+                        </script>
+
                         <%} %>
                         <div style="padding-left: 10px; padding-right: 10px;">
                         </div>
@@ -218,5 +234,4 @@
             </tbody>
         </table>
     </div>
-
 </asp:Content>
