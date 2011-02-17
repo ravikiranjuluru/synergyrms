@@ -809,6 +809,12 @@ namespace SynergyRMS.Models
             return user;
         }
 
+
+        public static bool isUserFunctionAllow(string username, string function)
+        {
+            return true;
+        }
+
         #endregion
 
 
