@@ -8,17 +8,27 @@
 <head runat="server">
     <title></title>
 </head>
+
+    <script type="text/javascript">
+
+        
+        $(document).ready(function() {
+        $("#TextBox1").datepicker();
+        });
+        $(document).ready(function() {
+        $("#projectenddate").datepicker();
+        });
+
+    </script>
 <body>
     <form id="form1" runat="server">
     <div>
-    
-        
-    
         <table style="width:100%;">
             <tr>
                 <td>
                     &nbsp;</td>
                 <td>
+                 
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                 </td>
                 <td>
