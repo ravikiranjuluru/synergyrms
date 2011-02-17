@@ -814,6 +814,10 @@ namespace SynergyRMS.Models
         {
             return true;
         }
+        public static List<PM_Projects> getUserProjects(string userKey)
+        {
+            return GetAllProjects();
+        }
 
         #endregion
 
