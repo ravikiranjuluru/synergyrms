@@ -1,0 +1,2572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="synergydbadminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="synergydbadminModelStoreContainer">
+          <EntitySet Name="aspnet_Applications" EntityType="synergydbadminModel.Store.aspnet_Applications" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Membership" EntityType="synergydbadminModel.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Paths" EntityType="synergydbadminModel.Store.aspnet_Paths" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="synergydbadminModel.Store.aspnet_PersonalizationAllUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="synergydbadminModel.Store.aspnet_PersonalizationPerUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Profile" EntityType="synergydbadminModel.Store.aspnet_Profile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Roles" EntityType="synergydbadminModel.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_SchemaVersions" EntityType="synergydbadminModel.Store.aspnet_SchemaVersions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Users" EntityType="synergydbadminModel.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="synergydbadminModel.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_WebEvent_Events" EntityType="synergydbadminModel.Store.aspnet_WebEvent_Events" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GanttBasic" EntityType="synergydbadminModel.Store.GanttBasic" store:Type="Tables" store:Schema="dbo" store:Name="GanttBasic">
+            <DefiningQuery>SELECT 
+      [GanttBasic].[T] AS [T], 
+      [GanttBasic].[U] AS [U], 
+      [GanttBasic].[S] AS [S], 
+      [GanttBasic].[E] AS [E], 
+      [GanttBasic].[C] AS [C], 
+      [GanttBasic].[D] AS [D], 
+      [GanttBasic].[id] AS [id], 
+      [GanttBasic].[UL] AS [UL]
+      FROM [dbo].[GanttBasic] AS [GanttBasic]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PM_Constraints" EntityType="synergydbadminModel.Store.PM_Constraints" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_ProjectActingRole" EntityType="synergydbadminModel.Store.PM_ProjectActingRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_ProjectDocs" EntityType="synergydbadminModel.Store.PM_ProjectDocs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_ProjectResources" EntityType="synergydbadminModel.Store.PM_ProjectResources" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_ProjectRisks" EntityType="synergydbadminModel.Store.PM_ProjectRisks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_ProjectRoles" EntityType="synergydbadminModel.Store.PM_ProjectRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_Projects" EntityType="synergydbadminModel.Store.PM_Projects" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_ProjectSkills" EntityType="synergydbadminModel.Store.PM_ProjectSkills" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_Skills" EntityType="synergydbadminModel.Store.PM_Skills" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_Status" EntityType="synergydbadminModel.Store.PM_Status" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_TaskPrecissiord" EntityType="synergydbadminModel.Store.PM_TaskPrecissiord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_Tasks" EntityType="synergydbadminModel.Store.PM_Tasks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_TimeSheets" EntityType="synergydbadminModel.Store.PM_TimeSheets" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PM_Types" EntityType="synergydbadminModel.Store.PM_Types" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TableData" EntityType="synergydbadminModel.Store.TableData" store:Type="Tables" store:Schema="dbo" store:Name="TableData">
+            <DefiningQuery>SELECT 
+      [TableData].[ID] AS [ID], 
+      [TableData].[Project] AS [Project], 
+      [TableData].[Resource] AS [Resource], 
+      [TableData].[Week] AS [Week], 
+      [TableData].[Hours] AS [Hours]
+      FROM [dbo].[TableData] AS [TableData]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UM_Designation" EntityType="synergydbadminModel.Store.UM_Designation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UM_Permission" EntityType="synergydbadminModel.Store.UM_Permission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UM_RolePermission" EntityType="synergydbadminModel.Store.UM_RolePermission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UM_Roles" EntityType="synergydbadminModel.Store.UM_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UM_RoleScreenFunctions" EntityType="synergydbadminModel.Store.UM_RoleScreenFunctions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UM_ScreenFunctions" EntityType="synergydbadminModel.Store.UM_ScreenFunctions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UM_Screens" EntityType="synergydbadminModel.Store.UM_Screens" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UM_UserRole" EntityType="synergydbadminModel.Store.UM_UserRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UM_Users" EntityType="synergydbadminModel.Store.UM_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserSkills" EntityType="synergydbadminModel.Store.UserSkills" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__aspnet_Me__Appli__15502E78" Association="synergydbadminModel.Store.FK__aspnet_Me__Appli__15502E78">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__UserI__164452B1" Association="synergydbadminModel.Store.FK__aspnet_Me__UserI__164452B1">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pa__Appli__46E78A0C" Association="synergydbadminModel.Store.FK__aspnet_Pa__Appli__46E78A0C">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__4CA06362" Association="synergydbadminModel.Store.FK__aspnet_Pe__PathI__4CA06362">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__5070F446" Association="synergydbadminModel.Store.FK__aspnet_Pe__PathI__5070F446">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__UserI__5165187F" Association="synergydbadminModel.Store.FK__aspnet_Pe__UserI__5165187F">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pr__UserI__2A4B4B5E" Association="synergydbadminModel.Store.FK__aspnet_Pr__UserI__2A4B4B5E">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Ro__Appli__33D4B598" Association="synergydbadminModel.Store.FK__aspnet_Ro__Appli__33D4B598">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__Appli__0519C6AF" Association="synergydbadminModel.Store.FK__aspnet_Us__Appli__0519C6AF">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__38996AB5" Association="synergydbadminModel.Store.FK__aspnet_Us__RoleI__38996AB5">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__UserI__37A5467C" Association="synergydbadminModel.Store.FK__aspnet_Us__UserI__37A5467C">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ActingRole_PM_Projects" Association="synergydbadminModel.Store.FK_PM_ActingRole_PM_Projects">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_ProjectActingRole" EntitySet="PM_ProjectActingRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectDocs_PM_Projects" Association="synergydbadminModel.Store.FK_PM_ProjectDocs_PM_Projects">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_ProjectDocs" EntitySet="PM_ProjectDocs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectResources_aspnet_Users" Association="synergydbadminModel.Store.FK_PM_ProjectResources_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="PM_ProjectResources" EntitySet="PM_ProjectResources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectResources_PM_ProjectRoles" Association="synergydbadminModel.Store.FK_PM_ProjectResources_PM_ProjectRoles">
+            <End Role="PM_ProjectRoles" EntitySet="PM_ProjectRoles" />
+            <End Role="PM_ProjectResources" EntitySet="PM_ProjectResources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectResources_PM_Projects" Association="synergydbadminModel.Store.FK_PM_ProjectResources_PM_Projects">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_ProjectResources" EntitySet="PM_ProjectResources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectRisks_PM_ProjectRisks" Association="synergydbadminModel.Store.FK_PM_ProjectRisks_PM_ProjectRisks">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_ProjectRisks" EntitySet="PM_ProjectRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_Projects_PM_Status" Association="synergydbadminModel.Store.FK_PM_Projects_PM_Status">
+            <End Role="PM_Status" EntitySet="PM_Status" />
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_Projects_PM_Types" Association="synergydbadminModel.Store.FK_PM_Projects_PM_Types">
+            <End Role="PM_Types" EntitySet="PM_Types" />
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectSkills_PM_Projects" Association="synergydbadminModel.Store.FK_PM_ProjectSkills_PM_Projects">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_ProjectSkills" EntitySet="PM_ProjectSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectSkills_PM_Skills" Association="synergydbadminModel.Store.FK_PM_ProjectSkills_PM_Skills">
+            <End Role="PM_Skills" EntitySet="PM_Skills" />
+            <End Role="PM_ProjectSkills" EntitySet="PM_ProjectSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_Tasks_PM_Constraints" Association="synergydbadminModel.Store.FK_PM_Tasks_PM_Constraints">
+            <End Role="PM_Constraints" EntitySet="PM_Constraints" />
+            <End Role="PM_Tasks" EntitySet="PM_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_Tasks_PM_Tasks" Association="synergydbadminModel.Store.FK_PM_Tasks_PM_Tasks">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_Tasks" EntitySet="PM_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_RolePermission_aspnet_Roles" Association="synergydbadminModel.Store.FK_UM_RolePermission_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_RolePermission_UM_Permission" Association="synergydbadminModel.Store.FK_UM_RolePermission_UM_Permission">
+            <End Role="UM_Permission" EntitySet="UM_Permission" />
+            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_RoleScreenFunctions_UM_Roles" Association="synergydbadminModel.Store.FK_UM_RoleScreenFunctions_UM_Roles">
+            <End Role="UM_Roles" EntitySet="UM_Roles" />
+            <End Role="UM_RoleScreenFunctions" EntitySet="UM_RoleScreenFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_UserRole_UM_Roles" Association="synergydbadminModel.Store.FK_UM_UserRole_UM_Roles">
+            <End Role="UM_Roles" EntitySet="UM_Roles" />
+            <End Role="UM_UserRole" EntitySet="UM_UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_UserRole_UM_Users" Association="synergydbadminModel.Store.FK_UM_UserRole_UM_Users">
+            <End Role="UM_Users" EntitySet="UM_Users" />
+            <End Role="UM_UserRole" EntitySet="UM_UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_UserSkills_PM_Skills" Association="synergydbadminModel.Store.FK_UM_UserSkills_PM_Skills">
+            <End Role="PM_Skills" EntitySet="PM_Skills" />
+            <End Role="UserSkills" EntitySet="UserSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_UserSkills_UM_Users" Association="synergydbadminModel.Store.FK_UM_UserSkills_UM_Users">
+            <End Role="UM_Users" EntitySet="UM_Users" />
+            <End Role="UserSkills" EntitySet="UserSkills" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Applications">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+        </EntityType>
+        <EntityType Name="aspnet_Paths">
+          <Key>
+            <PropertyRef Name="PathId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredPath" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_PersonalizationAllUsers">
+          <Key>
+            <PropertyRef Name="PathId" />
+          </Key>
+          <Property Name="PathId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PageSettings" Type="image" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_PersonalizationPerUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PathId" Type="uniqueidentifier" />
+          <Property Name="UserId" Type="uniqueidentifier" />
+          <Property Name="PageSettings" Type="image" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PropertyNames" Type="ntext" Nullable="false" />
+          <Property Name="PropertyValuesString" Type="ntext" Nullable="false" />
+          <Property Name="PropertyValuesBinary" Type="image" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_SchemaVersions">
+          <Key>
+            <PropertyRef Name="Feature" />
+            <PropertyRef Name="CompatibleSchemaVersion" />
+          </Key>
+          <Property Name="Feature" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="CompatibleSchemaVersion" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="IsCurrentVersion" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_WebEvent_Events">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="char" Nullable="false" MaxLength="32" />
+          <Property Name="EventTimeUtc" Type="datetime" Nullable="false" />
+          <Property Name="EventTime" Type="datetime" Nullable="false" />
+          <Property Name="EventType" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="EventSequence" Type="decimal" Nullable="false" Precision="19" />
+          <Property Name="EventOccurrence" Type="decimal" Nullable="false" Precision="19" />
+          <Property Name="EventCode" Type="int" Nullable="false" />
+          <Property Name="EventDetailCode" Type="int" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="1024" />
+          <Property Name="ApplicationPath" Type="nvarchar" MaxLength="256" />
+          <Property Name="ApplicationVirtualPath" Type="nvarchar" MaxLength="256" />
+          <Property Name="MachineName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="RequestUrl" Type="nvarchar" MaxLength="1024" />
+          <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
+          <Property Name="Details" Type="ntext" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'synergydbadmin.dbo.GanttBasic' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="GanttBasic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="T" Type="text" />
+          <Property Name="U" Type="text" />
+          <Property Name="S" Type="text" />
+          <Property Name="E" Type="text" />
+          <Property Name="C" Type="int" />
+          <Property Name="D" Type="text" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UL" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PM_Constraints">
+          <Key>
+            <PropertyRef Name="ConstraintId" />
+          </Key>
+          <Property Name="ConstraintId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ConstraintName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PM_ProjectActingRole">
+          <Key>
+            <PropertyRef Name="ProjectActingRoleId" />
+          </Key>
+          <Property Name="ProjectActingRoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="ProjectRoleId" Type="int" />
+        </EntityType>
+        <EntityType Name="PM_ProjectDocs">
+          <Key>
+            <PropertyRef Name="ProjectDocId" />
+          </Key>
+          <Property Name="ProjectDocId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="DocumentName" Type="varchar" MaxLength="100" />
+          <Property Name="URL" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="PM_ProjectResources">
+          <Key>
+            <PropertyRef Name="ProjectResorcesId" />
+          </Key>
+          <Property Name="ProjectResorcesId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectRoleId" Type="int" />
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="AllocatedStartDate" Type="datetime" Nullable="false" />
+          <Property Name="AllocatedEndDate" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Effort" Type="int" />
+        </EntityType>
+        <EntityType Name="PM_ProjectRisks">
+          <Key>
+            <PropertyRef Name="RiskId" />
+          </Key>
+          <Property Name="RiskId" Type="int" Nullable="false" />
+          <Property Name="ProjectId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectRisk" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="MitigationPlan" Type="varchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="PM_ProjectRoles">
+          <Key>
+            <PropertyRef Name="ProjectRoleId" />
+          </Key>
+          <Property Name="ProjectRoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleDescription" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="RoleName" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PM_Projects">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectTypeId" Type="int" Nullable="false" />
+          <Property Name="ProjectCode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ProjectName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ProjectStartDate" Type="datetime" Nullable="false" />
+          <Property Name="ProjectEndDate" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Description" Type="text" />
+        </EntityType>
+        <EntityType Name="PM_ProjectSkills">
+          <Key>
+            <PropertyRef Name="ProjectSkillId" />
+          </Key>
+          <Property Name="ProjectSkillId" Type="int" Nullable="false" />
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="SkillId" Type="int" />
+        </EntityType>
+        <EntityType Name="PM_Skills">
+          <Key>
+            <PropertyRef Name="SkillsId" />
+          </Key>
+          <Property Name="SkillsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Skill" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="PM_Status">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="int" Nullable="false" />
+          <Property Name="StatusCode" Type="varchar" MaxLength="10" />
+          <Property Name="StatusName" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="PM_TaskPrecissiord">
+          <Key>
+            <PropertyRef Name="TaskPrecissiorId" />
+          </Key>
+          <Property Name="TaskPrecissiorId" Type="int" Nullable="false" />
+          <Property Name="TaskId" Type="int" Nullable="false" />
+          <Property Name="TaskPrecissiordId" Type="int" Nullable="false" />
+          <Property Name="ParentTaskId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PM_Tasks">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectId" Type="int" />
+          <Property Name="TaskCode" Type="varchar" MaxLength="10" />
+          <Property Name="TaskName" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="ParentTaskId" Type="int" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" Nullable="false" />
+          <Property Name="ActualCompletionDate" Type="datetime" Nullable="false" />
+          <Property Name="ConstraintId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PM_TimeSheets">
+          <Key>
+            <PropertyRef Name="TimeSheetId" />
+          </Key>
+          <Property Name="TimeSheetId" Type="int" Nullable="false" />
+          <Property Name="WorkingDate" Type="datetime" />
+          <Property Name="WorkDescription" Type="varchar" MaxLength="200" />
+          <Property Name="WorkingType" Type="int" />
+          <Property Name="TimeSpent" Type="int" />
+        </EntityType>
+        <EntityType Name="PM_Types">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="int" Nullable="false" />
+          <Property Name="TypeName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'synergydbadmin.dbo.TableData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="TableData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Project" Type="nvarchar" MaxLength="500" />
+          <Property Name="Resource" Type="nvarchar" MaxLength="500" />
+          <Property Name="Week" Type="int" />
+          <Property Name="Hours" Type="int" />
+        </EntityType>
+        <EntityType Name="UM_Designation">
+          <Key>
+            <PropertyRef Name="DesignationId" />
+          </Key>
+          <Property Name="DesignationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Designation" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UM_Permission">
+          <Key>
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="PermissionId" Type="int" Nullable="false" />
+          <Property Name="Permission" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UM_RolePermission">
+          <Key>
+            <PropertyRef Name="RolePermissionId" />
+          </Key>
+          <Property Name="RolePermissionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="uniqueidentifier" />
+          <Property Name="PermissionId" Type="int" />
+        </EntityType>
+        <EntityType Name="UM_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedUser" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedUser" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UM_RoleScreenFunctions">
+          <Key>
+            <PropertyRef Name="RoleScreenFunctionId" />
+          </Key>
+          <Property Name="RoleScreenFunctionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="ScreenFunctionCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsGranted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedUser" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedUser" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UM_ScreenFunctions">
+          <Key>
+            <PropertyRef Name="ScreenFunctionCode" />
+          </Key>
+          <Property Name="ScreenFunctionCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ScreenId" Type="int" Nullable="false" />
+          <Property Name="FunctionName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="FunctionorderID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UM_Screens">
+          <Key>
+            <PropertyRef Name="ScreenId" />
+          </Key>
+          <Property Name="ScreenId" Type="int" Nullable="false" />
+          <Property Name="Screen" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="URL" Type="nvarchar" MaxLength="100" />
+          <Property Name="ScreenParentId" Type="int" Nullable="false" />
+          <Property Name="IsMenu" Type="bit" Nullable="false" />
+          <Property Name="ShowOnMenu" Type="bit" Nullable="false" />
+          <Property Name="IsEnable" Type="bit" Nullable="false" />
+          <Property Name="ScreenOrderId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UM_UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedUser" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedUser" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UM_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Initials" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="Nic" Type="nchar" MaxLength="10" />
+          <Property Name="PassportNo" Type="nchar" MaxLength="12" />
+          <Property Name="EmployeeNo" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="TelHome" Type="nchar" MaxLength="10" />
+          <Property Name="TelMobile" Type="nchar" MaxLength="10" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="EmployeeType" Type="int" />
+          <Property Name="CreatedUser" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedUser" Type="int" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsEnable" Type="bit" Nullable="false" />
+          <Property Name="DesignationId" Type="int" />
+        </EntityType>
+        <EntityType Name="UserSkills">
+          <Key>
+            <PropertyRef Name="UserSkillId" />
+          </Key>
+          <Property Name="UserSkillId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="SkillId" Type="int" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__Appli__15502E78">
+          <End Role="aspnet_Applications" Type="synergydbadminModel.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="synergydbadminModel.Store.aspnet_Membership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Me__UserI__164452B1">
+          <End Role="aspnet_Users" Type="synergydbadminModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="synergydbadminModel.Store.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pa__Appli__46E78A0C">
+          <End Role="aspnet_Applications" Type="synergydbadminModel.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Paths" Type="synergydbadminModel.Store.aspnet_Paths" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Paths">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__4CA06362">
+          <End Role="aspnet_Paths" Type="synergydbadminModel.Store.aspnet_Paths" Multiplicity="1" />
+          <End Role="aspnet_PersonalizationAllUsers" Type="synergydbadminModel.Store.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Paths">
+              <PropertyRef Name="PathId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationAllUsers">
+              <PropertyRef Name="PathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__5070F446">
+          <End Role="aspnet_Paths" Type="synergydbadminModel.Store.aspnet_Paths" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="synergydbadminModel.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Paths">
+              <PropertyRef Name="PathId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationPerUser">
+              <PropertyRef Name="PathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__UserI__5165187F">
+          <End Role="aspnet_Users" Type="synergydbadminModel.Store.aspnet_Users" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="synergydbadminModel.Store.aspnet_PersonalizationPerUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationPerUser">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pr__UserI__2A4B4B5E">
+          <End Role="aspnet_Users" Type="synergydbadminModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Profile" Type="synergydbadminModel.Store.aspnet_Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Ro__Appli__33D4B598">
+          <End Role="aspnet_Applications" Type="synergydbadminModel.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Roles" Type="synergydbadminModel.Store.aspnet_Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Roles">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__Appli__0519C6AF">
+          <End Role="aspnet_Applications" Type="synergydbadminModel.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Users" Type="synergydbadminModel.Store.aspnet_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__38996AB5">
+          <End Role="aspnet_Roles" Type="synergydbadminModel.Store.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="synergydbadminModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__UserI__37A5467C">
+          <End Role="aspnet_Users" Type="synergydbadminModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="synergydbadminModel.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_ActingRole_PM_Projects">
+          <End Role="PM_Projects" Type="synergydbadminModel.Store.PM_Projects" Multiplicity="1" />
+          <End Role="PM_ProjectActingRole" Type="synergydbadminModel.Store.PM_ProjectActingRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Projects">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="PM_ProjectActingRole">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_ProjectDocs_PM_Projects">
+          <End Role="PM_Projects" Type="synergydbadminModel.Store.PM_Projects" Multiplicity="1" />
+          <End Role="PM_ProjectDocs" Type="synergydbadminModel.Store.PM_ProjectDocs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Projects">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="PM_ProjectDocs">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_ProjectResources_aspnet_Users">
+          <End Role="aspnet_Users" Type="synergydbadminModel.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="PM_ProjectResources" Type="synergydbadminModel.Store.PM_ProjectResources" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="PM_ProjectResources">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_ProjectResources_PM_ProjectRoles">
+          <End Role="PM_ProjectRoles" Type="synergydbadminModel.Store.PM_ProjectRoles" Multiplicity="0..1" />
+          <End Role="PM_ProjectResources" Type="synergydbadminModel.Store.PM_ProjectResources" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_ProjectRoles">
+              <PropertyRef Name="ProjectRoleId" />
+            </Principal>
+            <Dependent Role="PM_ProjectResources">
+              <PropertyRef Name="ProjectRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_ProjectResources_PM_Projects">
+          <End Role="PM_Projects" Type="synergydbadminModel.Store.PM_Projects" Multiplicity="1" />
+          <End Role="PM_ProjectResources" Type="synergydbadminModel.Store.PM_ProjectResources" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Projects">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="PM_ProjectResources">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_ProjectRisks_PM_ProjectRisks">
+          <End Role="PM_Projects" Type="synergydbadminModel.Store.PM_Projects" Multiplicity="1" />
+          <End Role="PM_ProjectRisks" Type="synergydbadminModel.Store.PM_ProjectRisks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Projects">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="PM_ProjectRisks">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_Projects_PM_Status">
+          <End Role="PM_Status" Type="synergydbadminModel.Store.PM_Status" Multiplicity="1" />
+          <End Role="PM_Projects" Type="synergydbadminModel.Store.PM_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="PM_Projects">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_Projects_PM_Types">
+          <End Role="PM_Types" Type="synergydbadminModel.Store.PM_Types" Multiplicity="1" />
+          <End Role="PM_Projects" Type="synergydbadminModel.Store.PM_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Types">
+              <PropertyRef Name="TypeId" />
+            </Principal>
+            <Dependent Role="PM_Projects">
+              <PropertyRef Name="ProjectTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_ProjectSkills_PM_Projects">
+          <End Role="PM_Projects" Type="synergydbadminModel.Store.PM_Projects" Multiplicity="1" />
+          <End Role="PM_ProjectSkills" Type="synergydbadminModel.Store.PM_ProjectSkills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Projects">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="PM_ProjectSkills">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_ProjectSkills_PM_Skills">
+          <End Role="PM_Skills" Type="synergydbadminModel.Store.PM_Skills" Multiplicity="0..1" />
+          <End Role="PM_ProjectSkills" Type="synergydbadminModel.Store.PM_ProjectSkills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Skills">
+              <PropertyRef Name="SkillsId" />
+            </Principal>
+            <Dependent Role="PM_ProjectSkills">
+              <PropertyRef Name="SkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_Tasks_PM_Constraints">
+          <End Role="PM_Constraints" Type="synergydbadminModel.Store.PM_Constraints" Multiplicity="1" />
+          <End Role="PM_Tasks" Type="synergydbadminModel.Store.PM_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Constraints">
+              <PropertyRef Name="ConstraintId" />
+            </Principal>
+            <Dependent Role="PM_Tasks">
+              <PropertyRef Name="ConstraintId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_Tasks_PM_Tasks">
+          <End Role="PM_Projects" Type="synergydbadminModel.Store.PM_Projects" Multiplicity="0..1" />
+          <End Role="PM_Tasks" Type="synergydbadminModel.Store.PM_Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Projects">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="PM_Tasks">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UM_RolePermission_aspnet_Roles">
+          <End Role="aspnet_Roles" Type="synergydbadminModel.Store.aspnet_Roles" Multiplicity="0..1" />
+          <End Role="UM_RolePermission" Type="synergydbadminModel.Store.UM_RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UM_RolePermission">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UM_RolePermission_UM_Permission">
+          <End Role="UM_Permission" Type="synergydbadminModel.Store.UM_Permission" Multiplicity="0..1" />
+          <End Role="UM_RolePermission" Type="synergydbadminModel.Store.UM_RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UM_Permission">
+              <PropertyRef Name="PermissionId" />
+            </Principal>
+            <Dependent Role="UM_RolePermission">
+              <PropertyRef Name="PermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UM_RoleScreenFunctions_UM_Roles">
+          <End Role="UM_Roles" Type="synergydbadminModel.Store.UM_Roles" Multiplicity="1" />
+          <End Role="UM_RoleScreenFunctions" Type="synergydbadminModel.Store.UM_RoleScreenFunctions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UM_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UM_RoleScreenFunctions">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UM_UserRole_UM_Roles">
+          <End Role="UM_Roles" Type="synergydbadminModel.Store.UM_Roles" Multiplicity="1" />
+          <End Role="UM_UserRole" Type="synergydbadminModel.Store.UM_UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UM_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UM_UserRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UM_UserRole_UM_Users">
+          <End Role="UM_Users" Type="synergydbadminModel.Store.UM_Users" Multiplicity="1" />
+          <End Role="UM_UserRole" Type="synergydbadminModel.Store.UM_UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UM_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UM_UserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UM_UserSkills_PM_Skills">
+          <End Role="PM_Skills" Type="synergydbadminModel.Store.PM_Skills" Multiplicity="0..1" />
+          <End Role="UserSkills" Type="synergydbadminModel.Store.UserSkills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PM_Skills">
+              <PropertyRef Name="SkillsId" />
+            </Principal>
+            <Dependent Role="UserSkills">
+              <PropertyRef Name="SkillId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UM_UserSkills_UM_Users">
+          <End Role="UM_Users" Type="synergydbadminModel.Store.UM_Users" Multiplicity="1" />
+          <End Role="UserSkills" Type="synergydbadminModel.Store.UserSkills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UM_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserSkills">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="synergydbadminModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="synergydbadminEntities">
+          <EntitySet Name="aspnet_Applications" EntityType="synergydbadminModel.aspnet_Applications" />
+          <EntitySet Name="aspnet_Membership" EntityType="synergydbadminModel.aspnet_Membership" />
+          <EntitySet Name="aspnet_Paths" EntityType="synergydbadminModel.aspnet_Paths" />
+          <EntitySet Name="aspnet_PersonalizationAllUsers" EntityType="synergydbadminModel.aspnet_PersonalizationAllUsers" />
+          <EntitySet Name="aspnet_PersonalizationPerUser" EntityType="synergydbadminModel.aspnet_PersonalizationPerUser" />
+          <EntitySet Name="aspnet_Profile" EntityType="synergydbadminModel.aspnet_Profile" />
+          <EntitySet Name="aspnet_Roles" EntityType="synergydbadminModel.aspnet_Roles" />
+          <EntitySet Name="aspnet_SchemaVersions" EntityType="synergydbadminModel.aspnet_SchemaVersions" />
+          <EntitySet Name="aspnet_Users" EntityType="synergydbadminModel.aspnet_Users" />
+          <EntitySet Name="aspnet_WebEvent_Events" EntityType="synergydbadminModel.aspnet_WebEvent_Events" />
+          <EntitySet Name="GanttBasic" EntityType="synergydbadminModel.GanttBasic" />
+          <EntitySet Name="PM_Constraints" EntityType="synergydbadminModel.PM_Constraints" />
+          <EntitySet Name="PM_ProjectActingRole" EntityType="synergydbadminModel.PM_ProjectActingRole" />
+          <EntitySet Name="PM_ProjectDocs" EntityType="synergydbadminModel.PM_ProjectDocs" />
+          <EntitySet Name="PM_ProjectResources" EntityType="synergydbadminModel.PM_ProjectResources" />
+          <EntitySet Name="PM_ProjectRisks" EntityType="synergydbadminModel.PM_ProjectRisks" />
+          <EntitySet Name="PM_ProjectRoles" EntityType="synergydbadminModel.PM_ProjectRoles" />
+          <EntitySet Name="PM_Projects" EntityType="synergydbadminModel.PM_Projects" />
+          <EntitySet Name="PM_ProjectSkills" EntityType="synergydbadminModel.PM_ProjectSkills" />
+          <EntitySet Name="PM_Skills" EntityType="synergydbadminModel.PM_Skills" />
+          <EntitySet Name="PM_Status" EntityType="synergydbadminModel.PM_Status" />
+          <EntitySet Name="PM_TaskPrecissiord" EntityType="synergydbadminModel.PM_TaskPrecissiord" />
+          <EntitySet Name="PM_Tasks" EntityType="synergydbadminModel.PM_Tasks" />
+          <EntitySet Name="PM_TimeSheets" EntityType="synergydbadminModel.PM_TimeSheets" />
+          <EntitySet Name="PM_Types" EntityType="synergydbadminModel.PM_Types" />
+          <EntitySet Name="TableData" EntityType="synergydbadminModel.TableData" />
+          <EntitySet Name="UM_Designation" EntityType="synergydbadminModel.UM_Designation" />
+          <EntitySet Name="UM_Permission" EntityType="synergydbadminModel.UM_Permission" />
+          <EntitySet Name="UM_RolePermission" EntityType="synergydbadminModel.UM_RolePermission" />
+          <EntitySet Name="UM_Roles" EntityType="synergydbadminModel.UM_Roles" />
+          <EntitySet Name="UM_RoleScreenFunctions" EntityType="synergydbadminModel.UM_RoleScreenFunctions" />
+          <EntitySet Name="UM_ScreenFunctions" EntityType="synergydbadminModel.UM_ScreenFunctions" />
+          <EntitySet Name="UM_Screens" EntityType="synergydbadminModel.UM_Screens" />
+          <EntitySet Name="UM_UserRole" EntityType="synergydbadminModel.UM_UserRole" />
+          <EntitySet Name="UM_Users" EntityType="synergydbadminModel.UM_Users" />
+          <EntitySet Name="UserSkills" EntityType="synergydbadminModel.UserSkills" />
+          <AssociationSet Name="FK__aspnet_Me__Appli__15502E78" Association="synergydbadminModel.FK__aspnet_Me__Appli__15502E78">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pa__Appli__46E78A0C" Association="synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Ro__Appli__33D4B598" Association="synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__Appli__0519C6AF" Association="synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__UserI__164452B1" Association="synergydbadminModel.FK__aspnet_Me__UserI__164452B1">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__4CA06362" Association="synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationAllUsers" EntitySet="aspnet_PersonalizationAllUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__PathI__5070F446" Association="synergydbadminModel.FK__aspnet_Pe__PathI__5070F446">
+            <End Role="aspnet_Paths" EntitySet="aspnet_Paths" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pe__UserI__5165187F" Association="synergydbadminModel.FK__aspnet_Pe__UserI__5165187F">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_PersonalizationPerUser" EntitySet="aspnet_PersonalizationPerUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Pr__UserI__2A4B4B5E" Association="synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Profile" EntitySet="aspnet_Profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_RolePermission_aspnet_Roles" Association="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectResources_aspnet_Users" Association="synergydbadminModel.FK_PM_ProjectResources_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="PM_ProjectResources" EntitySet="PM_ProjectResources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_Tasks_PM_Constraints" Association="synergydbadminModel.FK_PM_Tasks_PM_Constraints">
+            <End Role="PM_Constraints" EntitySet="PM_Constraints" />
+            <End Role="PM_Tasks" EntitySet="PM_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ActingRole_PM_Projects" Association="synergydbadminModel.FK_PM_ActingRole_PM_Projects">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_ProjectActingRole" EntitySet="PM_ProjectActingRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectDocs_PM_Projects" Association="synergydbadminModel.FK_PM_ProjectDocs_PM_Projects">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_ProjectDocs" EntitySet="PM_ProjectDocs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectResources_PM_ProjectRoles" Association="synergydbadminModel.FK_PM_ProjectResources_PM_ProjectRoles">
+            <End Role="PM_ProjectRoles" EntitySet="PM_ProjectRoles" />
+            <End Role="PM_ProjectResources" EntitySet="PM_ProjectResources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectResources_PM_Projects" Association="synergydbadminModel.FK_PM_ProjectResources_PM_Projects">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_ProjectResources" EntitySet="PM_ProjectResources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectRisks_PM_ProjectRisks" Association="synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_ProjectRisks" EntitySet="PM_ProjectRisks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_Projects_PM_Status" Association="synergydbadminModel.FK_PM_Projects_PM_Status">
+            <End Role="PM_Status" EntitySet="PM_Status" />
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_Projects_PM_Types" Association="synergydbadminModel.FK_PM_Projects_PM_Types">
+            <End Role="PM_Types" EntitySet="PM_Types" />
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectSkills_PM_Projects" Association="synergydbadminModel.FK_PM_ProjectSkills_PM_Projects">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_ProjectSkills" EntitySet="PM_ProjectSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_Tasks_PM_Tasks" Association="synergydbadminModel.FK_PM_Tasks_PM_Tasks">
+            <End Role="PM_Projects" EntitySet="PM_Projects" />
+            <End Role="PM_Tasks" EntitySet="PM_Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_ProjectSkills_PM_Skills" Association="synergydbadminModel.FK_PM_ProjectSkills_PM_Skills">
+            <End Role="PM_Skills" EntitySet="PM_Skills" />
+            <End Role="PM_ProjectSkills" EntitySet="PM_ProjectSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_UserSkills_PM_Skills" Association="synergydbadminModel.FK_UM_UserSkills_PM_Skills">
+            <End Role="PM_Skills" EntitySet="PM_Skills" />
+            <End Role="UserSkills" EntitySet="UserSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_RolePermission_UM_Permission" Association="synergydbadminModel.FK_UM_RolePermission_UM_Permission">
+            <End Role="UM_Permission" EntitySet="UM_Permission" />
+            <End Role="UM_RolePermission" EntitySet="UM_RolePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_RoleScreenFunctions_UM_Roles" Association="synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles">
+            <End Role="UM_Roles" EntitySet="UM_Roles" />
+            <End Role="UM_RoleScreenFunctions" EntitySet="UM_RoleScreenFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_UserRole_UM_Roles" Association="synergydbadminModel.FK_UM_UserRole_UM_Roles">
+            <End Role="UM_Roles" EntitySet="UM_Roles" />
+            <End Role="UM_UserRole" EntitySet="UM_UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_UserRole_UM_Users" Association="synergydbadminModel.FK_UM_UserRole_UM_Users">
+            <End Role="UM_Users" EntitySet="UM_Users" />
+            <End Role="UM_UserRole" EntitySet="UM_UserRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UM_UserSkills_UM_Users" Association="synergydbadminModel.FK_UM_UserSkills_UM_Users">
+            <End Role="UM_Users" EntitySet="UM_Users" />
+            <End Role="UserSkills" EntitySet="UserSkills" />
+          </AssociationSet>
+          <AssociationSet Name="aspnet_UsersInRoles" Association="synergydbadminModel.aspnet_UsersInRoles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Applications">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="synergydbadminModel.FK__aspnet_Me__Appli__15502E78" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C" FromRole="aspnet_Applications" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="aspnet_Users" Relationship="synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="MobilePIN" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredEmail" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="synergydbadminModel.FK__aspnet_Me__Appli__15502E78" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Users" Relationship="synergydbadminModel.FK__aspnet_Me__UserI__164452B1" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Paths">
+          <Key>
+            <PropertyRef Name="PathId" />
+          </Key>
+          <Property Name="PathId" Type="Guid" Nullable="false" />
+          <Property Name="Path" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredPath" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C" FromRole="aspnet_Paths" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_PersonalizationAllUsers" Relationship="synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationAllUsers" />
+          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="synergydbadminModel.FK__aspnet_Pe__PathI__5070F446" FromRole="aspnet_Paths" ToRole="aspnet_PersonalizationPerUser" />
+        </EntityType>
+        <EntityType Name="aspnet_PersonalizationAllUsers">
+          <Key>
+            <PropertyRef Name="PathId" />
+          </Key>
+          <Property Name="PathId" Type="Guid" Nullable="false" />
+          <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362" FromRole="aspnet_PersonalizationAllUsers" ToRole="aspnet_Paths" />
+        </EntityType>
+        <EntityType Name="aspnet_PersonalizationPerUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="PageSettings" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="aspnet_Paths" Relationship="synergydbadminModel.FK__aspnet_Pe__PathI__5070F446" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Paths" />
+          <NavigationProperty Name="aspnet_Users" Relationship="synergydbadminModel.FK__aspnet_Pe__UserI__5165187F" FromRole="aspnet_PersonalizationPerUser" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PropertyValuesString" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PropertyValuesBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="aspnet_Users" Relationship="synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E" FromRole="aspnet_Profile" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="UM_RolePermission" Relationship="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" FromRole="aspnet_Roles" ToRole="UM_RolePermission" />
+          <NavigationProperty Name="aspnet_Users" Relationship="synergydbadminModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_SchemaVersions">
+          <Key>
+            <PropertyRef Name="Feature" />
+            <PropertyRef Name="CompatibleSchemaVersion" />
+          </Key>
+          <Property Name="Feature" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="CompatibleSchemaVersion" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsCurrentVersion" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="MobileAlias" Type="String" MaxLength="16" Unicode="true" FixedLength="false" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="synergydbadminModel.FK__aspnet_Me__UserI__164452B1" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_PersonalizationPerUser" Relationship="synergydbadminModel.FK__aspnet_Pe__UserI__5165187F" FromRole="aspnet_Users" ToRole="aspnet_PersonalizationPerUser" />
+          <NavigationProperty Name="aspnet_Profile" Relationship="synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E" FromRole="aspnet_Users" ToRole="aspnet_Profile" />
+          <NavigationProperty Name="PM_ProjectResources" Relationship="synergydbadminModel.FK_PM_ProjectResources_aspnet_Users" FromRole="aspnet_Users" ToRole="PM_ProjectResources" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="synergydbadminModel.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+        </EntityType>
+        <EntityType Name="aspnet_WebEvent_Events">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="true" />
+          <Property Name="EventTimeUtc" Type="DateTime" Nullable="false" />
+          <Property Name="EventTime" Type="DateTime" Nullable="false" />
+          <Property Name="EventType" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="EventSequence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+          <Property Name="EventOccurrence" Type="Decimal" Nullable="false" Precision="19" Scale="0" />
+          <Property Name="EventCode" Type="Int32" Nullable="false" />
+          <Property Name="EventDetailCode" Type="Int32" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationPath" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationVirtualPath" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="MachineName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="RequestUrl" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="ExceptionType" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Details" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="GanttBasic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="T" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="U" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="S" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="E" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="C" Type="Int32" />
+          <Property Name="D" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="UL" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PM_Constraints">
+          <Key>
+            <PropertyRef Name="ConstraintId" />
+          </Key>
+          <Property Name="ConstraintId" Type="Int32" Nullable="false" />
+          <Property Name="ConstraintName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PM_Tasks" Relationship="synergydbadminModel.FK_PM_Tasks_PM_Constraints" FromRole="PM_Constraints" ToRole="PM_Tasks" />
+        </EntityType>
+        <EntityType Name="PM_ProjectActingRole">
+          <Key>
+            <PropertyRef Name="ProjectActingRoleId" />
+          </Key>
+          <Property Name="ProjectActingRoleId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectRoleId" Type="Int32" />
+          <NavigationProperty Name="PM_Projects" Relationship="synergydbadminModel.FK_PM_ActingRole_PM_Projects" FromRole="PM_ProjectActingRole" ToRole="PM_Projects" />
+        </EntityType>
+        <EntityType Name="PM_ProjectDocs">
+          <Key>
+            <PropertyRef Name="ProjectDocId" />
+          </Key>
+          <Property Name="ProjectDocId" Type="Int32" Nullable="false" />
+          <Property Name="DocumentName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="URL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PM_Projects" Relationship="synergydbadminModel.FK_PM_ProjectDocs_PM_Projects" FromRole="PM_ProjectDocs" ToRole="PM_Projects" />
+        </EntityType>
+        <EntityType Name="PM_ProjectResources">
+          <Key>
+            <PropertyRef Name="ProjectResorcesId" />
+          </Key>
+          <Property Name="ProjectResorcesId" Type="Int32" Nullable="false" />
+          <Property Name="AllocatedStartDate" Type="DateTime" Nullable="false" />
+          <Property Name="AllocatedEndDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="aspnet_Users" Relationship="synergydbadminModel.FK_PM_ProjectResources_aspnet_Users" FromRole="PM_ProjectResources" ToRole="aspnet_Users" />
+          <NavigationProperty Name="PM_ProjectRoles" Relationship="synergydbadminModel.FK_PM_ProjectResources_PM_ProjectRoles" FromRole="PM_ProjectResources" ToRole="PM_ProjectRoles" />
+          <NavigationProperty Name="PM_Projects" Relationship="synergydbadminModel.FK_PM_ProjectResources_PM_Projects" FromRole="PM_ProjectResources" ToRole="PM_Projects" />
+          <Property Name="Effort" Type="Int32" Nullable="true" /></EntityType>
+        <EntityType Name="PM_ProjectRisks">
+          <Key>
+            <PropertyRef Name="RiskId" />
+          </Key>
+          <Property Name="RiskId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectRisk" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="MitigationPlan" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PM_Projects" Relationship="synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks" FromRole="PM_ProjectRisks" ToRole="PM_Projects" />
+        </EntityType>
+        <EntityType Name="PM_ProjectRoles">
+          <Key>
+            <PropertyRef Name="ProjectRoleId" />
+          </Key>
+          <Property Name="ProjectRoleId" Type="Int32" Nullable="false" />
+          <Property Name="RoleDescription" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RoleName" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="PM_ProjectResources" Relationship="synergydbadminModel.FK_PM_ProjectResources_PM_ProjectRoles" FromRole="PM_ProjectRoles" ToRole="PM_ProjectResources" />
+        </EntityType>
+        <EntityType Name="PM_Projects">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectCode" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ProjectName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ProjectStartDate" Type="DateTime" Nullable="false" />
+          <Property Name="ProjectEndDate" Type="DateTime" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PM_ProjectActingRole" Relationship="synergydbadminModel.FK_PM_ActingRole_PM_Projects" FromRole="PM_Projects" ToRole="PM_ProjectActingRole" />
+          <NavigationProperty Name="PM_ProjectDocs" Relationship="synergydbadminModel.FK_PM_ProjectDocs_PM_Projects" FromRole="PM_Projects" ToRole="PM_ProjectDocs" />
+          <NavigationProperty Name="PM_ProjectResources" Relationship="synergydbadminModel.FK_PM_ProjectResources_PM_Projects" FromRole="PM_Projects" ToRole="PM_ProjectResources" />
+          <NavigationProperty Name="PM_ProjectRisks" Relationship="synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks" FromRole="PM_Projects" ToRole="PM_ProjectRisks" />
+          <NavigationProperty Name="PM_Status" Relationship="synergydbadminModel.FK_PM_Projects_PM_Status" FromRole="PM_Projects" ToRole="PM_Status" />
+          <NavigationProperty Name="PM_Types" Relationship="synergydbadminModel.FK_PM_Projects_PM_Types" FromRole="PM_Projects" ToRole="PM_Types" />
+          <NavigationProperty Name="PM_ProjectSkills" Relationship="synergydbadminModel.FK_PM_ProjectSkills_PM_Projects" FromRole="PM_Projects" ToRole="PM_ProjectSkills" />
+          <NavigationProperty Name="PM_Tasks" Relationship="synergydbadminModel.FK_PM_Tasks_PM_Tasks" FromRole="PM_Projects" ToRole="PM_Tasks" />
+        </EntityType>
+        <EntityType Name="PM_ProjectSkills">
+          <Key>
+            <PropertyRef Name="ProjectSkillId" />
+          </Key>
+          <Property Name="ProjectSkillId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PM_Projects" Relationship="synergydbadminModel.FK_PM_ProjectSkills_PM_Projects" FromRole="PM_ProjectSkills" ToRole="PM_Projects" />
+          <NavigationProperty Name="PM_Skills" Relationship="synergydbadminModel.FK_PM_ProjectSkills_PM_Skills" FromRole="PM_ProjectSkills" ToRole="PM_Skills" />
+        </EntityType>
+        <EntityType Name="PM_Skills">
+          <Key>
+            <PropertyRef Name="SkillsId" />
+          </Key>
+          <Property Name="SkillsId" Type="Int32" Nullable="false" />
+          <Property Name="Skill" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PM_ProjectSkills" Relationship="synergydbadminModel.FK_PM_ProjectSkills_PM_Skills" FromRole="PM_Skills" ToRole="PM_ProjectSkills" />
+          <NavigationProperty Name="UserSkills" Relationship="synergydbadminModel.FK_UM_UserSkills_PM_Skills" FromRole="PM_Skills" ToRole="UserSkills" />
+        </EntityType>
+        <EntityType Name="PM_Status">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <Property Name="StatusCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="StatusName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PM_Projects" Relationship="synergydbadminModel.FK_PM_Projects_PM_Status" FromRole="PM_Status" ToRole="PM_Projects" />
+        </EntityType>
+        <EntityType Name="PM_TaskPrecissiord">
+          <Key>
+            <PropertyRef Name="TaskPrecissiorId" />
+          </Key>
+          <Property Name="TaskPrecissiorId" Type="Int32" Nullable="false" />
+          <Property Name="TaskId" Type="Int32" Nullable="false" />
+          <Property Name="TaskPrecissiordId" Type="Int32" Nullable="false" />
+          <Property Name="ParentTaskId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PM_Tasks">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="Int32" Nullable="false" />
+          <Property Name="TaskCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="TaskName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ParentTaskId" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" />
+          <Property Name="ActualCompletionDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="PM_Constraints" Relationship="synergydbadminModel.FK_PM_Tasks_PM_Constraints" FromRole="PM_Tasks" ToRole="PM_Constraints" />
+          <NavigationProperty Name="PM_Projects" Relationship="synergydbadminModel.FK_PM_Tasks_PM_Tasks" FromRole="PM_Tasks" ToRole="PM_Projects" />
+        </EntityType>
+        <EntityType Name="PM_TimeSheets">
+          <Key>
+            <PropertyRef Name="TimeSheetId" />
+          </Key>
+          <Property Name="TimeSheetId" Type="Int32" Nullable="false" />
+          <Property Name="WorkingDate" Type="DateTime" />
+          <Property Name="WorkDescription" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="WorkingType" Type="Int32" />
+          <Property Name="TimeSpent" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PM_Types">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="Int32" Nullable="false" />
+          <Property Name="TypeName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="PM_Projects" Relationship="synergydbadminModel.FK_PM_Projects_PM_Types" FromRole="PM_Types" ToRole="PM_Projects" />
+        </EntityType>
+        <EntityType Name="TableData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Project" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Resource" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Week" Type="Int32" />
+          <Property Name="Hours" Type="Int32" />
+        </EntityType>
+        <EntityType Name="UM_Designation">
+          <Key>
+            <PropertyRef Name="DesignationId" />
+          </Key>
+          <Property Name="DesignationId" Type="Int32" Nullable="false" />
+          <Property Name="Designation" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UM_Permission">
+          <Key>
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="PermissionId" Type="Int32" Nullable="false" />
+          <Property Name="Permission" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UM_RolePermission" Relationship="synergydbadminModel.FK_UM_RolePermission_UM_Permission" FromRole="UM_Permission" ToRole="UM_RolePermission" />
+        </EntityType>
+        <EntityType Name="UM_RolePermission">
+          <Key>
+            <PropertyRef Name="RolePermissionId" />
+          </Key>
+          <Property Name="RolePermissionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" FromRole="UM_RolePermission" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="UM_Permission" Relationship="synergydbadminModel.FK_UM_RolePermission_UM_Permission" FromRole="UM_RolePermission" ToRole="UM_Permission" />
+        </EntityType>
+        <EntityType Name="UM_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUser" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedUser" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" />
+          <NavigationProperty Name="UM_RoleScreenFunctions" Relationship="synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles" FromRole="UM_Roles" ToRole="UM_RoleScreenFunctions" />
+          <NavigationProperty Name="UM_UserRole" Relationship="synergydbadminModel.FK_UM_UserRole_UM_Roles" FromRole="UM_Roles" ToRole="UM_UserRole" />
+        </EntityType>
+        <EntityType Name="UM_RoleScreenFunctions">
+          <Key>
+            <PropertyRef Name="RoleScreenFunctionId" />
+          </Key>
+          <Property Name="RoleScreenFunctionId" Type="Int32" Nullable="false" />
+          <Property Name="ScreenFunctionCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsGranted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUser" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedUser" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" />
+          <NavigationProperty Name="UM_Roles" Relationship="synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles" FromRole="UM_RoleScreenFunctions" ToRole="UM_Roles" />
+        </EntityType>
+        <EntityType Name="UM_ScreenFunctions">
+          <Key>
+            <PropertyRef Name="ScreenFunctionCode" />
+          </Key>
+          <Property Name="ScreenFunctionCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ScreenId" Type="Int32" Nullable="false" />
+          <Property Name="FunctionName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="FunctionorderID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UM_Screens">
+          <Key>
+            <PropertyRef Name="ScreenId" />
+          </Key>
+          <Property Name="ScreenId" Type="Int32" Nullable="false" />
+          <Property Name="Screen" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="URL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ScreenParentId" Type="Int32" Nullable="false" />
+          <Property Name="IsMenu" Type="Boolean" Nullable="false" />
+          <Property Name="ShowOnMenu" Type="Boolean" Nullable="false" />
+          <Property Name="IsEnable" Type="Boolean" Nullable="false" />
+          <Property Name="ScreenOrderId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UM_UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUser" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedUser" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" />
+          <NavigationProperty Name="UM_Roles" Relationship="synergydbadminModel.FK_UM_UserRole_UM_Roles" FromRole="UM_UserRole" ToRole="UM_Roles" />
+          <NavigationProperty Name="UM_Users" Relationship="synergydbadminModel.FK_UM_UserRole_UM_Users" FromRole="UM_UserRole" ToRole="UM_Users" />
+        </EntityType>
+        <EntityType Name="UM_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Initials" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Nic" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="PassportNo" Type="String" MaxLength="12" Unicode="true" FixedLength="true" />
+          <Property Name="EmployeeNo" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="TelHome" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="TelMobile" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Email" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="EmployeeType" Type="Int32" />
+          <Property Name="CreatedUser" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedUser" Type="Int32" />
+          <Property Name="ModifiedDate" Type="DateTime" />
+          <Property Name="IsEnable" Type="Boolean" Nullable="false" />
+          <Property Name="DesignationId" Type="Int32" />
+          <NavigationProperty Name="UM_UserRole" Relationship="synergydbadminModel.FK_UM_UserRole_UM_Users" FromRole="UM_Users" ToRole="UM_UserRole" />
+          <NavigationProperty Name="UserSkills" Relationship="synergydbadminModel.FK_UM_UserSkills_UM_Users" FromRole="UM_Users" ToRole="UserSkills" />
+        </EntityType>
+        <EntityType Name="UserSkills">
+          <Key>
+            <PropertyRef Name="UserSkillId" />
+          </Key>
+          <Property Name="UserSkillId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PM_Skills" Relationship="synergydbadminModel.FK_UM_UserSkills_PM_Skills" FromRole="UserSkills" ToRole="PM_Skills" />
+          <NavigationProperty Name="UM_Users" Relationship="synergydbadminModel.FK_UM_UserSkills_UM_Users" FromRole="UserSkills" ToRole="UM_Users" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__Appli__15502E78">
+          <End Role="aspnet_Applications" Type="synergydbadminModel.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="synergydbadminModel.aspnet_Membership" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__aspnet_Pa__Appli__46E78A0C">
+          <End Role="aspnet_Applications" Type="synergydbadminModel.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Paths" Type="synergydbadminModel.aspnet_Paths" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__aspnet_Ro__Appli__33D4B598">
+          <End Role="aspnet_Applications" Type="synergydbadminModel.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Roles" Type="synergydbadminModel.aspnet_Roles" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__aspnet_Us__Appli__0519C6AF">
+          <End Role="aspnet_Applications" Type="synergydbadminModel.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Users" Type="synergydbadminModel.aspnet_Users" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__aspnet_Me__UserI__164452B1">
+          <End Role="aspnet_Users" Type="synergydbadminModel.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="synergydbadminModel.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__4CA06362">
+          <End Role="aspnet_Paths" Type="synergydbadminModel.aspnet_Paths" Multiplicity="1" />
+          <End Role="aspnet_PersonalizationAllUsers" Type="synergydbadminModel.aspnet_PersonalizationAllUsers" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Paths">
+              <PropertyRef Name="PathId" />
+            </Principal>
+            <Dependent Role="aspnet_PersonalizationAllUsers">
+              <PropertyRef Name="PathId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Pe__PathI__5070F446">
+          <End Role="aspnet_Paths" Type="synergydbadminModel.aspnet_Paths" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="synergydbadminModel.aspnet_PersonalizationPerUser" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__aspnet_Pe__UserI__5165187F">
+          <End Role="aspnet_Users" Type="synergydbadminModel.aspnet_Users" Multiplicity="0..1" />
+          <End Role="aspnet_PersonalizationPerUser" Type="synergydbadminModel.aspnet_PersonalizationPerUser" Multiplicity="*" />
+        </Association>
+        <Association Name="FK__aspnet_Pr__UserI__2A4B4B5E">
+          <End Role="aspnet_Users" Type="synergydbadminModel.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Profile" Type="synergydbadminModel.aspnet_Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Profile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UM_RolePermission_aspnet_Roles">
+          <End Role="aspnet_Roles" Type="synergydbadminModel.aspnet_Roles" Multiplicity="0..1" />
+          <End Role="UM_RolePermission" Type="synergydbadminModel.UM_RolePermission" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_ProjectResources_aspnet_Users">
+          <End Role="aspnet_Users" Type="synergydbadminModel.aspnet_Users" Multiplicity="1" />
+          <End Role="PM_ProjectResources" Type="synergydbadminModel.PM_ProjectResources" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_Tasks_PM_Constraints">
+          <End Role="PM_Constraints" Type="synergydbadminModel.PM_Constraints" Multiplicity="1" />
+          <End Role="PM_Tasks" Type="synergydbadminModel.PM_Tasks" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_ActingRole_PM_Projects">
+          <End Role="PM_Projects" Type="synergydbadminModel.PM_Projects" Multiplicity="1" />
+          <End Role="PM_ProjectActingRole" Type="synergydbadminModel.PM_ProjectActingRole" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_ProjectDocs_PM_Projects">
+          <End Role="PM_Projects" Type="synergydbadminModel.PM_Projects" Multiplicity="1" />
+          <End Role="PM_ProjectDocs" Type="synergydbadminModel.PM_ProjectDocs" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_ProjectResources_PM_ProjectRoles">
+          <End Role="PM_ProjectRoles" Type="synergydbadminModel.PM_ProjectRoles" Multiplicity="0..1" />
+          <End Role="PM_ProjectResources" Type="synergydbadminModel.PM_ProjectResources" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_ProjectResources_PM_Projects">
+          <End Role="PM_Projects" Type="synergydbadminModel.PM_Projects" Multiplicity="1" />
+          <End Role="PM_ProjectResources" Type="synergydbadminModel.PM_ProjectResources" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_ProjectRisks_PM_ProjectRisks">
+          <End Role="PM_Projects" Type="synergydbadminModel.PM_Projects" Multiplicity="1" />
+          <End Role="PM_ProjectRisks" Type="synergydbadminModel.PM_ProjectRisks" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_Projects_PM_Status">
+          <End Role="PM_Status" Type="synergydbadminModel.PM_Status" Multiplicity="1" />
+          <End Role="PM_Projects" Type="synergydbadminModel.PM_Projects" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_Projects_PM_Types">
+          <End Role="PM_Types" Type="synergydbadminModel.PM_Types" Multiplicity="1" />
+          <End Role="PM_Projects" Type="synergydbadminModel.PM_Projects" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_ProjectSkills_PM_Projects">
+          <End Role="PM_Projects" Type="synergydbadminModel.PM_Projects" Multiplicity="1" />
+          <End Role="PM_ProjectSkills" Type="synergydbadminModel.PM_ProjectSkills" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_Tasks_PM_Tasks">
+          <End Role="PM_Projects" Type="synergydbadminModel.PM_Projects" Multiplicity="0..1" />
+          <End Role="PM_Tasks" Type="synergydbadminModel.PM_Tasks" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PM_ProjectSkills_PM_Skills">
+          <End Role="PM_Skills" Type="synergydbadminModel.PM_Skills" Multiplicity="0..1" />
+          <End Role="PM_ProjectSkills" Type="synergydbadminModel.PM_ProjectSkills" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_UM_UserSkills_PM_Skills">
+          <End Role="PM_Skills" Type="synergydbadminModel.PM_Skills" Multiplicity="0..1" />
+          <End Role="UserSkills" Type="synergydbadminModel.UserSkills" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_UM_RolePermission_UM_Permission">
+          <End Role="UM_Permission" Type="synergydbadminModel.UM_Permission" Multiplicity="0..1" />
+          <End Role="UM_RolePermission" Type="synergydbadminModel.UM_RolePermission" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_UM_RoleScreenFunctions_UM_Roles">
+          <End Role="UM_Roles" Type="synergydbadminModel.UM_Roles" Multiplicity="1" />
+          <End Role="UM_RoleScreenFunctions" Type="synergydbadminModel.UM_RoleScreenFunctions" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_UM_UserRole_UM_Roles">
+          <End Role="UM_Roles" Type="synergydbadminModel.UM_Roles" Multiplicity="1" />
+          <End Role="UM_UserRole" Type="synergydbadminModel.UM_UserRole" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_UM_UserRole_UM_Users">
+          <End Role="UM_Users" Type="synergydbadminModel.UM_Users" Multiplicity="1" />
+          <End Role="UM_UserRole" Type="synergydbadminModel.UM_UserRole" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_UM_UserSkills_UM_Users">
+          <End Role="UM_Users" Type="synergydbadminModel.UM_Users" Multiplicity="1" />
+          <End Role="UserSkills" Type="synergydbadminModel.UserSkills" Multiplicity="*" />
+        </Association>
+        <Association Name="aspnet_UsersInRoles">
+          <End Role="aspnet_Roles" Type="synergydbadminModel.aspnet_Roles" Multiplicity="*" />
+          <End Role="aspnet_Users" Type="synergydbadminModel.aspnet_Users" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="synergydbadminModelStoreContainer" CdmEntityContainer="synergydbadminEntities">
+          <EntitySetMapping Name="aspnet_Applications">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.aspnet_Applications)">
+              <MappingFragment StoreEntitySet="aspnet_Applications">
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+                <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Membership">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.aspnet_Membership)">
+              <MappingFragment StoreEntitySet="aspnet_Membership">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Paths">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.aspnet_Paths)">
+              <MappingFragment StoreEntitySet="aspnet_Paths">
+                <ScalarProperty Name="PathId" ColumnName="PathId" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="LoweredPath" ColumnName="LoweredPath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_PersonalizationAllUsers">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.aspnet_PersonalizationAllUsers)">
+              <MappingFragment StoreEntitySet="aspnet_PersonalizationAllUsers">
+                <ScalarProperty Name="PathId" ColumnName="PathId" />
+                <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_PersonalizationPerUser">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.aspnet_PersonalizationPerUser)">
+              <MappingFragment StoreEntitySet="aspnet_PersonalizationPerUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PageSettings" ColumnName="PageSettings" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Profile">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.aspnet_Profile)">
+              <MappingFragment StoreEntitySet="aspnet_Profile">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+                <ScalarProperty Name="PropertyValuesString" ColumnName="PropertyValuesString" />
+                <ScalarProperty Name="PropertyValuesBinary" ColumnName="PropertyValuesBinary" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Roles">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.aspnet_Roles)">
+              <MappingFragment StoreEntitySet="aspnet_Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_SchemaVersions">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.aspnet_SchemaVersions)">
+              <MappingFragment StoreEntitySet="aspnet_SchemaVersions">
+                <ScalarProperty Name="Feature" ColumnName="Feature" />
+                <ScalarProperty Name="CompatibleSchemaVersion" ColumnName="CompatibleSchemaVersion" />
+                <ScalarProperty Name="IsCurrentVersion" ColumnName="IsCurrentVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Users">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.aspnet_Users)">
+              <MappingFragment StoreEntitySet="aspnet_Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_WebEvent_Events">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.aspnet_WebEvent_Events)">
+              <MappingFragment StoreEntitySet="aspnet_WebEvent_Events">
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="EventTimeUtc" ColumnName="EventTimeUtc" />
+                <ScalarProperty Name="EventTime" ColumnName="EventTime" />
+                <ScalarProperty Name="EventType" ColumnName="EventType" />
+                <ScalarProperty Name="EventSequence" ColumnName="EventSequence" />
+                <ScalarProperty Name="EventOccurrence" ColumnName="EventOccurrence" />
+                <ScalarProperty Name="EventCode" ColumnName="EventCode" />
+                <ScalarProperty Name="EventDetailCode" ColumnName="EventDetailCode" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="ApplicationPath" ColumnName="ApplicationPath" />
+                <ScalarProperty Name="ApplicationVirtualPath" ColumnName="ApplicationVirtualPath" />
+                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
+                <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GanttBasic">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.GanttBasic)">
+              <MappingFragment StoreEntitySet="GanttBasic">
+                <ScalarProperty Name="T" ColumnName="T" />
+                <ScalarProperty Name="U" ColumnName="U" />
+                <ScalarProperty Name="S" ColumnName="S" />
+                <ScalarProperty Name="E" ColumnName="E" />
+                <ScalarProperty Name="C" ColumnName="C" />
+                <ScalarProperty Name="D" ColumnName="D" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="UL" ColumnName="UL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_Constraints">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_Constraints)">
+              <MappingFragment StoreEntitySet="PM_Constraints">
+                <ScalarProperty Name="ConstraintId" ColumnName="ConstraintId" />
+                <ScalarProperty Name="ConstraintName" ColumnName="ConstraintName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_ProjectActingRole">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_ProjectActingRole)">
+              <MappingFragment StoreEntitySet="PM_ProjectActingRole">
+                <ScalarProperty Name="ProjectActingRoleId" ColumnName="ProjectActingRoleId" />
+                <ScalarProperty Name="ProjectRoleId" ColumnName="ProjectRoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_ProjectDocs">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_ProjectDocs)">
+              <MappingFragment StoreEntitySet="PM_ProjectDocs">
+                <ScalarProperty Name="ProjectDocId" ColumnName="ProjectDocId" />
+                <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_ProjectResources">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_ProjectResources)">
+              <MappingFragment StoreEntitySet="PM_ProjectResources">
+                <ScalarProperty Name="Effort" ColumnName="Effort" />
+                <ScalarProperty Name="ProjectResorcesId" ColumnName="ProjectResorcesId" />
+                <ScalarProperty Name="AllocatedStartDate" ColumnName="AllocatedStartDate" />
+                <ScalarProperty Name="AllocatedEndDate" ColumnName="AllocatedEndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_ProjectRisks">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_ProjectRisks)">
+              <MappingFragment StoreEntitySet="PM_ProjectRisks">
+                <ScalarProperty Name="RiskId" ColumnName="RiskId" />
+                <ScalarProperty Name="ProjectRisk" ColumnName="ProjectRisk" />
+                <ScalarProperty Name="MitigationPlan" ColumnName="MitigationPlan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_ProjectRoles">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_ProjectRoles)">
+              <MappingFragment StoreEntitySet="PM_ProjectRoles">
+                <ScalarProperty Name="ProjectRoleId" ColumnName="ProjectRoleId" />
+                <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_Projects">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_Projects)">
+              <MappingFragment StoreEntitySet="PM_Projects">
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectStartDate" ColumnName="ProjectStartDate" />
+                <ScalarProperty Name="ProjectEndDate" ColumnName="ProjectEndDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_ProjectSkills">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_ProjectSkills)">
+              <MappingFragment StoreEntitySet="PM_ProjectSkills">
+                <ScalarProperty Name="ProjectSkillId" ColumnName="ProjectSkillId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_Skills">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_Skills)">
+              <MappingFragment StoreEntitySet="PM_Skills">
+                <ScalarProperty Name="SkillsId" ColumnName="SkillsId" />
+                <ScalarProperty Name="Skill" ColumnName="Skill" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_Status">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_Status)">
+              <MappingFragment StoreEntitySet="PM_Status">
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_TaskPrecissiord">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_TaskPrecissiord)">
+              <MappingFragment StoreEntitySet="PM_TaskPrecissiord">
+                <ScalarProperty Name="TaskPrecissiorId" ColumnName="TaskPrecissiorId" />
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+                <ScalarProperty Name="TaskPrecissiordId" ColumnName="TaskPrecissiordId" />
+                <ScalarProperty Name="ParentTaskId" ColumnName="ParentTaskId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_Tasks">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_Tasks)">
+              <MappingFragment StoreEntitySet="PM_Tasks">
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+                <ScalarProperty Name="TaskCode" ColumnName="TaskCode" />
+                <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ParentTaskId" ColumnName="ParentTaskId" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="ActualCompletionDate" ColumnName="ActualCompletionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_TimeSheets">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_TimeSheets)">
+              <MappingFragment StoreEntitySet="PM_TimeSheets">
+                <ScalarProperty Name="TimeSheetId" ColumnName="TimeSheetId" />
+                <ScalarProperty Name="WorkingDate" ColumnName="WorkingDate" />
+                <ScalarProperty Name="WorkDescription" ColumnName="WorkDescription" />
+                <ScalarProperty Name="WorkingType" ColumnName="WorkingType" />
+                <ScalarProperty Name="TimeSpent" ColumnName="TimeSpent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PM_Types">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.PM_Types)">
+              <MappingFragment StoreEntitySet="PM_Types">
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableData">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.TableData)">
+              <MappingFragment StoreEntitySet="TableData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="Resource" ColumnName="Resource" />
+                <ScalarProperty Name="Week" ColumnName="Week" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_Designation">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_Designation)">
+              <MappingFragment StoreEntitySet="UM_Designation">
+                <ScalarProperty Name="DesignationId" ColumnName="DesignationId" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_Permission">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_Permission)">
+              <MappingFragment StoreEntitySet="UM_Permission">
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+                <ScalarProperty Name="Permission" ColumnName="Permission" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_RolePermission">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_RolePermission)">
+              <MappingFragment StoreEntitySet="UM_RolePermission">
+                <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_Roles">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_Roles)">
+              <MappingFragment StoreEntitySet="UM_Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_RoleScreenFunctions">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_RoleScreenFunctions)">
+              <MappingFragment StoreEntitySet="UM_RoleScreenFunctions">
+                <ScalarProperty Name="RoleScreenFunctionId" ColumnName="RoleScreenFunctionId" />
+                <ScalarProperty Name="ScreenFunctionCode" ColumnName="ScreenFunctionCode" />
+                <ScalarProperty Name="IsGranted" ColumnName="IsGranted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_ScreenFunctions">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_ScreenFunctions)">
+              <MappingFragment StoreEntitySet="UM_ScreenFunctions">
+                <ScalarProperty Name="ScreenFunctionCode" ColumnName="ScreenFunctionCode" />
+                <ScalarProperty Name="ScreenId" ColumnName="ScreenId" />
+                <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="FunctionorderID" ColumnName="FunctionorderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_Screens">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_Screens)">
+              <MappingFragment StoreEntitySet="UM_Screens">
+                <ScalarProperty Name="ScreenId" ColumnName="ScreenId" />
+                <ScalarProperty Name="Screen" ColumnName="Screen" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="ScreenParentId" ColumnName="ScreenParentId" />
+                <ScalarProperty Name="IsMenu" ColumnName="IsMenu" />
+                <ScalarProperty Name="ShowOnMenu" ColumnName="ShowOnMenu" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="ScreenOrderId" ColumnName="ScreenOrderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_UserRole">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_UserRole)">
+              <MappingFragment StoreEntitySet="UM_UserRole">
+                <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_Users">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UM_Users)">
+              <MappingFragment StoreEntitySet="UM_Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Initials" ColumnName="Initials" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Nic" ColumnName="Nic" />
+                <ScalarProperty Name="PassportNo" ColumnName="PassportNo" />
+                <ScalarProperty Name="EmployeeNo" ColumnName="EmployeeNo" />
+                <ScalarProperty Name="TelHome" ColumnName="TelHome" />
+                <ScalarProperty Name="TelMobile" ColumnName="TelMobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+                <ScalarProperty Name="CreatedUser" ColumnName="CreatedUser" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedUser" ColumnName="ModifiedUser" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="DesignationId" ColumnName="DesignationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserSkills">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.UserSkills)">
+              <MappingFragment StoreEntitySet="UserSkills">
+                <ScalarProperty Name="UserSkillId" ColumnName="UserSkillId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK__aspnet_Me__Appli__15502E78" TypeName="synergydbadminModel.FK__aspnet_Me__Appli__15502E78" StoreEntitySet="aspnet_Membership">
+            <EndProperty Name="aspnet_Applications">
+              <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Membership">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__aspnet_Pa__Appli__46E78A0C" TypeName="synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C" StoreEntitySet="aspnet_Paths">
+            <EndProperty Name="aspnet_Applications">
+              <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Paths">
+              <ScalarProperty Name="PathId" ColumnName="PathId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__aspnet_Ro__Appli__33D4B598" TypeName="synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598" StoreEntitySet="aspnet_Roles">
+            <EndProperty Name="aspnet_Applications">
+              <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__aspnet_Us__Appli__0519C6AF" TypeName="synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF" StoreEntitySet="aspnet_Users">
+            <EndProperty Name="aspnet_Applications">
+              <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__aspnet_Me__UserI__164452B1" TypeName="synergydbadminModel.FK__aspnet_Me__UserI__164452B1" StoreEntitySet="aspnet_Membership">
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Membership">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__aspnet_Pe__PathI__4CA06362" TypeName="synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362" StoreEntitySet="aspnet_PersonalizationAllUsers">
+            <EndProperty Name="aspnet_Paths">
+              <ScalarProperty Name="PathId" ColumnName="PathId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_PersonalizationAllUsers">
+              <ScalarProperty Name="PathId" ColumnName="PathId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__aspnet_Pe__PathI__5070F446" TypeName="synergydbadminModel.FK__aspnet_Pe__PathI__5070F446" StoreEntitySet="aspnet_PersonalizationPerUser">
+            <EndProperty Name="aspnet_Paths">
+              <ScalarProperty Name="PathId" ColumnName="PathId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_PersonalizationPerUser">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+            <Condition ColumnName="PathId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__aspnet_Pe__UserI__5165187F" TypeName="synergydbadminModel.FK__aspnet_Pe__UserI__5165187F" StoreEntitySet="aspnet_PersonalizationPerUser">
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_PersonalizationPerUser">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+            <Condition ColumnName="UserId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK__aspnet_Pr__UserI__2A4B4B5E" TypeName="synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E" StoreEntitySet="aspnet_Profile">
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Profile">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UM_RolePermission_aspnet_Roles" TypeName="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" StoreEntitySet="UM_RolePermission">
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="UM_RolePermission">
+              <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" />
+            </EndProperty>
+            <Condition ColumnName="RoleId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_ProjectResources_aspnet_Users" TypeName="synergydbadminModel.FK_PM_ProjectResources_aspnet_Users" StoreEntitySet="PM_ProjectResources">
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="PM_ProjectResources">
+              <ScalarProperty Name="ProjectResorcesId" ColumnName="ProjectResorcesId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_Tasks_PM_Constraints" TypeName="synergydbadminModel.FK_PM_Tasks_PM_Constraints" StoreEntitySet="PM_Tasks">
+            <EndProperty Name="PM_Constraints">
+              <ScalarProperty Name="ConstraintId" ColumnName="ConstraintId" />
+            </EndProperty>
+            <EndProperty Name="PM_Tasks">
+              <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_ActingRole_PM_Projects" TypeName="synergydbadminModel.FK_PM_ActingRole_PM_Projects" StoreEntitySet="PM_ProjectActingRole">
+            <EndProperty Name="PM_Projects">
+              <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+            </EndProperty>
+            <EndProperty Name="PM_ProjectActingRole">
+              <ScalarProperty Name="ProjectActingRoleId" ColumnName="ProjectActingRoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_ProjectDocs_PM_Projects" TypeName="synergydbadminModel.FK_PM_ProjectDocs_PM_Projects" StoreEntitySet="PM_ProjectDocs">
+            <EndProperty Name="PM_Projects">
+              <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+            </EndProperty>
+            <EndProperty Name="PM_ProjectDocs">
+              <ScalarProperty Name="ProjectDocId" ColumnName="ProjectDocId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_ProjectResources_PM_ProjectRoles" TypeName="synergydbadminModel.FK_PM_ProjectResources_PM_ProjectRoles" StoreEntitySet="PM_ProjectResources">
+            <EndProperty Name="PM_ProjectRoles">
+              <ScalarProperty Name="ProjectRoleId" ColumnName="ProjectRoleId" />
+            </EndProperty>
+            <EndProperty Name="PM_ProjectResources">
+              <ScalarProperty Name="ProjectResorcesId" ColumnName="ProjectResorcesId" />
+            </EndProperty>
+            <Condition ColumnName="ProjectRoleId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_ProjectResources_PM_Projects" TypeName="synergydbadminModel.FK_PM_ProjectResources_PM_Projects" StoreEntitySet="PM_ProjectResources">
+            <EndProperty Name="PM_Projects">
+              <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+            </EndProperty>
+            <EndProperty Name="PM_ProjectResources">
+              <ScalarProperty Name="ProjectResorcesId" ColumnName="ProjectResorcesId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_ProjectRisks_PM_ProjectRisks" TypeName="synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks" StoreEntitySet="PM_ProjectRisks">
+            <EndProperty Name="PM_Projects">
+              <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+            </EndProperty>
+            <EndProperty Name="PM_ProjectRisks">
+              <ScalarProperty Name="RiskId" ColumnName="RiskId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_Projects_PM_Status" TypeName="synergydbadminModel.FK_PM_Projects_PM_Status" StoreEntitySet="PM_Projects">
+            <EndProperty Name="PM_Status">
+              <ScalarProperty Name="StatusId" ColumnName="Status" />
+            </EndProperty>
+            <EndProperty Name="PM_Projects">
+              <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_Projects_PM_Types" TypeName="synergydbadminModel.FK_PM_Projects_PM_Types" StoreEntitySet="PM_Projects">
+            <EndProperty Name="PM_Types">
+              <ScalarProperty Name="TypeId" ColumnName="ProjectTypeId" />
+            </EndProperty>
+            <EndProperty Name="PM_Projects">
+              <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_ProjectSkills_PM_Projects" TypeName="synergydbadminModel.FK_PM_ProjectSkills_PM_Projects" StoreEntitySet="PM_ProjectSkills">
+            <EndProperty Name="PM_Projects">
+              <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+            </EndProperty>
+            <EndProperty Name="PM_ProjectSkills">
+              <ScalarProperty Name="ProjectSkillId" ColumnName="ProjectSkillId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_Tasks_PM_Tasks" TypeName="synergydbadminModel.FK_PM_Tasks_PM_Tasks" StoreEntitySet="PM_Tasks">
+            <EndProperty Name="PM_Projects">
+              <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+            </EndProperty>
+            <EndProperty Name="PM_Tasks">
+              <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+            </EndProperty>
+            <Condition ColumnName="ProjectId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PM_ProjectSkills_PM_Skills" TypeName="synergydbadminModel.FK_PM_ProjectSkills_PM_Skills" StoreEntitySet="PM_ProjectSkills">
+            <EndProperty Name="PM_Skills">
+              <ScalarProperty Name="SkillsId" ColumnName="SkillId" />
+            </EndProperty>
+            <EndProperty Name="PM_ProjectSkills">
+              <ScalarProperty Name="ProjectSkillId" ColumnName="ProjectSkillId" />
+            </EndProperty>
+            <Condition ColumnName="SkillId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UM_UserSkills_PM_Skills" TypeName="synergydbadminModel.FK_UM_UserSkills_PM_Skills" StoreEntitySet="UserSkills">
+            <EndProperty Name="PM_Skills">
+              <ScalarProperty Name="SkillsId" ColumnName="SkillId" />
+            </EndProperty>
+            <EndProperty Name="UserSkills">
+              <ScalarProperty Name="UserSkillId" ColumnName="UserSkillId" />
+            </EndProperty>
+            <Condition ColumnName="SkillId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UM_RolePermission_UM_Permission" TypeName="synergydbadminModel.FK_UM_RolePermission_UM_Permission" StoreEntitySet="UM_RolePermission">
+            <EndProperty Name="UM_Permission">
+              <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+            </EndProperty>
+            <EndProperty Name="UM_RolePermission">
+              <ScalarProperty Name="RolePermissionId" ColumnName="RolePermissionId" />
+            </EndProperty>
+            <Condition ColumnName="PermissionId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UM_RoleScreenFunctions_UM_Roles" TypeName="synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles" StoreEntitySet="UM_RoleScreenFunctions">
+            <EndProperty Name="UM_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="UM_RoleScreenFunctions">
+              <ScalarProperty Name="RoleScreenFunctionId" ColumnName="RoleScreenFunctionId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UM_UserRole_UM_Roles" TypeName="synergydbadminModel.FK_UM_UserRole_UM_Roles" StoreEntitySet="UM_UserRole">
+            <EndProperty Name="UM_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="UM_UserRole">
+              <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UM_UserRole_UM_Users" TypeName="synergydbadminModel.FK_UM_UserRole_UM_Users" StoreEntitySet="UM_UserRole">
+            <EndProperty Name="UM_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="UM_UserRole">
+              <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UM_UserSkills_UM_Users" TypeName="synergydbadminModel.FK_UM_UserSkills_UM_Users" StoreEntitySet="UserSkills">
+            <EndProperty Name="UM_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="UserSkills">
+              <ScalarProperty Name="UserSkillId" ColumnName="UserSkillId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="synergydbadminModel.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="SynergyModel">
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Applications" Width="1.5" PointX="3.75" PointY="20.25" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Membership" Width="1.5" PointX="11.25" PointY="17.875" Height="5.2494108072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Paths" Width="1.5" PointX="6" PointY="25.375" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="8.25" PointY="25.625" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="8.25" PointY="21.875" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Profile" Width="1.5" PointX="8.25" PointY="18.875" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Roles" Width="1.5" PointX="3.75" PointY="17.125" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="2" Height="1.59568359375" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_Users" Width="1.5" PointX="6" PointY="18.25" Height="3.3263964843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.aspnet_WebEvent_Events" Width="1.5" PointX="2.75" PointY="2" Height="3.90330078125" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.GanttBasic" Width="1.5" PointX="10.75" PointY="11" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_Constraints" Width="1.5" PointX="6" PointY="22.875" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_ProjectActingRole" Width="1.5" PointX="5.25" PointY="7.25" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_ProjectDocs" Width="1.5" PointX="5.25" PointY="12" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_ProjectResources" Width="1.5" PointX="8.25" PointY="6.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_ProjectRisks" Width="1.5" PointX="5.25" PointY="14.5" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_ProjectRoles" Width="1.5" PointX="6" PointY="3.5" Height="1.7879850260416679" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_Projects" Width="1.5" PointX="3" PointY="8.75" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_ProjectSkills" Width="1.5" PointX="8.25" PointY="9.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_Skills" Width="1.5" PointX="6" PointY="0.75" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_Status" Width="1.5" PointX="0.75" PointY="6.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_TaskPrecissiord" Width="1.5" PointX="12.75" PointY="2" Height="1.7879850260416672" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_Tasks" Width="1.5" PointX="8.25" PointY="12.125" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_TimeSheets" Width="1.5" PointX="0.75" PointY="14" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.PM_Types" Width="1.5" PointX="0.75" PointY="9.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.TableData" Width="1.5" PointX="12.75" PointY="11" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_Designation" Width="1.5" PointX="12.75" PointY="14" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_Permission" Width="1.5" PointX="6.75" PointY="28.5" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_RolePermission" Width="1.5" PointX="9" PointY="16.5" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_Roles" Width="1.5" PointX="10.75" PointY="4" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_RoleScreenFunctions" Width="1.5" PointX="13" PointY="7.25" Height="2.7494921875000014" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_ScreenFunctions" Width="1.5" PointX="14.75" PointY="2" Height="1.9802864583333333" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_Screens" Width="1.5" PointX="14.75" PointY="11" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_UserRole" Width="1.5" PointX="14" PointY="19.125" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UM_Users" Width="1.5" PointX="6" PointY="31.625" Height="5.2494108072916639" IsExpanded="true" />
+        <EntityTypeShape EntityType="synergydbadminModel.UserSkills" Width="1.5" PointX="8.25" PointY="0.875" Height="1.5956835937500002" IsExpanded="true" />
+        <AssociationConnector Association="synergydbadminModel.FK__aspnet_Me__Appli__15502E78" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="21.7256982421875" />
+          <ConnectorPoint PointX="6.666666666666667" PointY="21.7256982421875" />
+          <ConnectorPoint PointX="6.833333333333333" PointY="21.7256982421875" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="21.7256982421875" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="21.7256982421875" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="21.7256982421875" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="21.7256982421875" />
+          <ConnectorPoint PointX="11.25" PointY="21.7256982421875" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="22.807190755208332" />
+          <ConnectorPoint PointX="4.5" PointY="26.4612939453125" />
+          <ConnectorPoint PointX="6" PointY="26.4612939453125" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK__aspnet_Ro__Appli__33D4B598" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="20.25" />
+          <ConnectorPoint PointX="4.5" PointY="19.489889322916667" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="20.9131982421875" />
+          <ConnectorPoint PointX="6" PointY="20.9131982421875" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK__aspnet_Me__UserI__164452B1" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="18.53125" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="18.53125" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="18.53125" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="18.53125" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="18.53125" />
+          <ConnectorPoint PointX="11.25" PointY="18.53125" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="26.518992513020834" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="26.518992513020834" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="26.518992513020834" />
+          <ConnectorPoint PointX="8.0104166666666661" PointY="26.518992513020834" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="26.518992513020834" />
+          <ConnectorPoint PointX="8.25" PointY="26.518992513020834" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pe__PathI__5070F446" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="25.915744256510415" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="25.915744256510415" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="25.915744256510415" />
+          <ConnectorPoint PointX="7.875" PointY="25.915744256510415" />
+          <ConnectorPoint PointX="7.875" PointY="22.865143229166666" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="22.865143229166666" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="22.865143229166666" />
+          <ConnectorPoint PointX="8.25" PointY="22.865143229166666" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pe__UserI__5165187F" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="21.576396484375003" />
+          <ConnectorPoint PointX="6.75" PointY="22.625" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="22.625" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="22.625" />
+          <ConnectorPoint PointX="7.75" PointY="22.625" />
+          <ConnectorPoint PointX="7.75" PointY="22.338819614583336" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="22.338819614583336" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="22.338819614583336" />
+          <ConnectorPoint PointX="8.25" PointY="22.338819614583336" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="19.9612939453125" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="19.9612939453125" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="19.9612939453125" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="19.9612939453125" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="19.9612939453125" />
+          <ConnectorPoint PointX="8.25" PointY="19.9612939453125" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="17.610341796875" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="17.610341796875" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="17.610341796875" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="17.610341796875" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="17.610341796875" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="17.610341796875" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="17.610341796875" />
+          <ConnectorPoint PointX="9" PointY="17.610341796875" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectResources_aspnet_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.15625" PointY="18.25" />
+          <ConnectorPoint PointX="7.15625" PointY="6.84375" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="6.8437499999999991" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="6.84375" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="6.8437499999999991" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="6.84375" />
+          <ConnectorPoint PointX="8.25" PointY="6.84375" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_Tasks_PM_Constraints" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="23.672841796875" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="23.672841796875" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="23.672841796875" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="23.672841796875" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="23.672841796875" />
+          <ConnectorPoint PointX="8" PointY="23.672841796875" />
+          <ConnectorPoint PointX="8" PointY="13.595896809895834" />
+          <ConnectorPoint PointX="8.25" PointY="13.595896809895834" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_ActingRole_PM_Projects" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="8.75" />
+          <ConnectorPoint PointX="3.75" PointY="7.9999995" />
+          <ConnectorPoint PointX="4.0729191666666669" PointY="7.9999994999999995" />
+          <ConnectorPoint PointX="4.2395858333333329" PointY="7.9999995" />
+          <ConnectorPoint PointX="5.25" PointY="7.9999995" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectDocs_PM_Projects" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="12.230499674479166" />
+          <ConnectorPoint PointX="5.25" PointY="12.230499674479166" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectResources_PM_ProjectRoles" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.328125" PointY="5.2879850260416674" />
+          <ConnectorPoint PointX="7.328125" PointY="6.6406225" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="6.6406224999999992" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="6.6406225" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="6.6406224999999992" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="6.6406225" />
+          <ConnectorPoint PointX="8.25" PointY="6.6406225" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectResources_PM_Projects" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.1562525" PointY="8.75" />
+          <ConnectorPoint PointX="4.1562525" PointY="7.0468775" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="7.046877499999999" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="7.0468775" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="7.046877499999999" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="7.0468775" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="7.046877499999999" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="7.0468775" />
+          <ConnectorPoint PointX="8.25" PointY="7.0468775" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="12.460999348958332" />
+          <ConnectorPoint PointX="3.75" PointY="15.393992513020834" />
+          <ConnectorPoint PointX="5.25" PointY="15.393992513020834" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_Projects_PM_Status" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.5234385" />
+          <ConnectorPoint PointX="3.3437475" PointY="7.5234385" />
+          <ConnectorPoint PointX="3.3437475" PointY="8.75" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_Projects_PM_Types" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="10.672841796875" />
+          <ConnectorPoint PointX="3" PointY="10.672841796875" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectSkills_PM_Projects" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.672841796875" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="10.672841796875" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="10.672841796875" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="10.672841796875" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="10.672841796875" />
+          <ConnectorPoint PointX="8.25" PointY="10.672841796875" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_Tasks_PM_Tasks" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.1562525" PointY="12.460999348958332" />
+          <ConnectorPoint PointX="4.1562525" PointY="14.143992513020834" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="14.143992513020834" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="14.143992513020834" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="14.143992513020834" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="14.143992513020834" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="14.143992513020834" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="14.143992513020834" />
+          <ConnectorPoint PointX="8.25" PointY="14.143992513020834" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectSkills_PM_Skills" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="1.6439925130208333" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="1.6439925130208326" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="1.6439925130208333" />
+          <ConnectorPoint PointX="7.875" PointY="1.6439925130208333" />
+          <ConnectorPoint PointX="7.875" PointY="10.2426688984375" />
+          <ConnectorPoint PointX="8.25" PointY="10.2426688984375" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_UM_UserSkills_PM_Skills" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="2.1198380533854166" />
+          <ConnectorPoint PointX="7.541666666666667" PointY="2.1198380533854162" />
+          <ConnectorPoint PointX="7.708333333333333" PointY="2.1198380533854166" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="2.1198380533854162" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="2.1198380533854166" />
+          <ConnectorPoint PointX="8.25" PointY="2.1198380533854166" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_UM_RolePermission_UM_Permission" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.09375" PointY="28.5" />
+          <ConnectorPoint PointX="8.09375" PointY="17.0239183984375" />
+          <ConnectorPoint PointX="9" PointY="17.0239183984375" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.25" PointY="5.37474609375" />
+          <ConnectorPoint PointX="13.75" PointY="5.37474609375" />
+          <ConnectorPoint PointX="13.75" PointY="7.25" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_UM_UserRole_UM_Roles" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.25" PointY="6.093371640625" />
+          <ConnectorPoint PointX="13.666666666666666" PointY="6.0933716406249987" />
+          <ConnectorPoint PointX="13.833333333333334" PointY="6.093371640625" />
+          <ConnectorPoint PointX="14.625" PointY="6.093371640625" />
+          <ConnectorPoint PointX="14.625" PointY="19.125" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_UM_UserRole_UM_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="34.249705403645834" />
+          <ConnectorPoint PointX="14.75" PointY="34.249705403645834" />
+          <ConnectorPoint PointX="14.75" PointY="21.682190755208332" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.FK_UM_UserSkills_UM_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="31.625" />
+          <ConnectorPoint PointX="6.75" PointY="30.345683593750003" />
+          <ConnectorPoint PointX="8.5" PointY="30.345683593750003" />
+          <ConnectorPoint PointX="8.5" PointY="27.662985026041667" />
+          <ConnectorPoint PointX="8.1770833333333339" PointY="27.662985026041667" />
+          <ConnectorPoint PointX="8.0104166666666661" PointY="27.662985026041667" />
+          <ConnectorPoint PointX="7.625" PointY="27.662985026041667" />
+          <ConnectorPoint PointX="7.625" PointY="1.4661670266927085" />
+          <ConnectorPoint PointX="8.25" PointY="1.4661670266927085" /></AssociationConnector>
+        <AssociationConnector Association="synergydbadminModel.aspnet_UsersInRoles" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="18.869944661458334" />
+          <ConnectorPoint PointX="6" PointY="18.869944661458334" /></AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
