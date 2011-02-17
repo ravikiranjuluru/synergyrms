@@ -259,6 +259,21 @@
                                                                             </tr>
                                                                             <tr>
                                                                                 <td style="width: 165px">
+                                                                                    View Project
+                                                                                </td>
+                                                                                <td>
+                                                                                    <%if (permissionList[1])
+                                                          { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="Checkbox1" name="chkProAdd">
+                                                                                    <%}
+                                                          else
+                                                          { %>
+                                                                                    <input type="checkbox" class="checkBox" id="Checkbox2" name="chkProAdd">
+                                                                                    <%} %>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="width: 165px">
                                                                                     Edit Project
                                                                                 </td>
                                                                                 <td>
