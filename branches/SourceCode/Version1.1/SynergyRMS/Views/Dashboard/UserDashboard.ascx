@@ -271,11 +271,13 @@
                                                                                { %>
                                                                                 <tr id="Tr12">
                                                                                     <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img17" title="Click for more information" />
+                                                                                        <%--<img src="../../Content/images/common/cross.gif" id="Img17" title="Click for more information" />--%>
                                                                                     </td>
                                                                                    <td>
+                                                                                   
                                                                                         <a id="A13" title="Click here to Create a Project Status Report" href="../Report/Index">
-                                                                                            Create a Project Status Report</a>
+                                                                                          <img src="../../Content/images/common/ReportsMain.jpg" id="Img4" 
+                                                                                            title="Click for more information" />  Reports</a>
                                                                                     </td>
                                                                                 </tr>
                                                                                <%   } %>
@@ -659,6 +661,10 @@
                                                             {
                                                                 height: 40px;
                                                                 width: 40px;
+                                                            }
+                                                            #Img4
+                                                            {
+                                                                width: 42px;
                                                             }
                                                             </style>
                                                         <table style="padding-left: 10px; width: 100%;">

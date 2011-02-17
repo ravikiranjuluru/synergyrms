@@ -101,6 +101,8 @@
     <script type="text/javascript" language="javascript" src="<%= ResolveUrl("~") %>Scripts/Datatable/jquery.dataTables.js"></script>
 <!-- Jquery datatable -->
   
+  <
+  
    
        <!-- mac doc menu-->
 <%--    <link rel="Stylesheet" type="text/css" href="../../Content/Macdoc/macdoc.css" />
@@ -152,6 +154,16 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    
+     
+ 
+  <%-- <link href="../../Content/jquery-ui.css" rel="stylesheet" type="text/css"/>--%>
+<%--    <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery-ui.min.js"></script>
+     <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery.min.js"></script>--%>
+    
+
+    
+    
    <!-- end -->
 
 
