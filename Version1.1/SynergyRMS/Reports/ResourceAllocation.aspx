@@ -7,19 +7,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title></title>
-</head>
+  <%--  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>--%>
+  
+    <link href="../Content/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" language="javascript" src="../Scripts/Calander/jquery.min.js"></script>
+   <script type="text/javascript"  language="javascript" src="../Scripts/Calander/jquery-ui.min.js"></script>
+    
+  <link rel="stylesheet" href="../Content/common/styles.css" type="text/css"/>
+   
+<%--   <link rel="stylesheet" media="screen" type="text/css" href="../Content/datepicker.css" />
+<script type="text/javascript" src="../Scripts/Calander/datepicker.js"></script>--%>
 
-    <script type="text/javascript">
+ 
+ 
+       <script type="text/javascript">
 
-        
-        $(document).ready(function() {
-        $("#TextBox1").datepicker();
-        });
-        $(document).ready(function() {
-        $("#projectenddate").datepicker();
-        });
+
+           $(document).ready(function() {
+           $("#txtStartDate").datepicker();
+           });
+           $(document).ready(function() {
+           $("#txtEndDate").datepicker();
+           });
 
     </script>
+    
+</head>
+
+    
 <body>
     <form id="form1" runat="server">
     <div>
@@ -29,8 +46,7 @@
                     &nbsp;</td>
                 <td>
                  
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                </td>
+                    &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
@@ -38,8 +54,29 @@
                 <td>
                     &nbsp;</td>
                 <td>
-                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                 
+                    <asp:Label ID="lblStartDate" runat="server" Font-Bold="True" Text="From Date :"></asp:Label>
                 </td>
+                <td>
+                 
+                    <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    <asp:Label ID="lblEndDate" runat="server" Font-Bold="True" Text="To Date :"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtEndDate" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
@@ -47,11 +84,11 @@
                 <td>
                     &nbsp;</td>
                 <td>
-                    <asp:Button ID="btnViewReport" runat="server" Text="ViewReport" 
+                    &nbsp;</td>
+                <td>
+                    <asp:Button ID="btnViewReport" runat="server" Text="View Report" 
                         onclick="btnViewReport_Click" />
                 </td>
-                <td>
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td>
@@ -62,6 +99,8 @@
                     &nbsp;</td>
             </tr>
             <tr>
+                <td>
+                    &nbsp;</td>
                 <td>
                     &nbsp;</td>
                 <td>
@@ -76,8 +115,6 @@
                     </rsweb:ReportViewer>
                     
                 </td>
-                <td>
-                    &nbsp;</td>
             </tr>
             <tr>
                 <td>
@@ -95,9 +132,9 @@
                         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
                         TypeName="SynergyRMS.Reports.ResourceAllocationdsTableAdapters.R_GetResourceAllocationsByPeriodTableAdapter">
                         <SelectParameters>
-                            <asp:ControlParameter ControlID="TextBox1" Name="startdate" PropertyName="Text" 
+                            <asp:ControlParameter ControlID="txtStartDate" Name="startdate" PropertyName="Text" 
                                 Type="DateTime" />
-                            <asp:ControlParameter ControlID="TextBox2" Name="enddate" PropertyName="Text" 
+                            <asp:ControlParameter ControlID="txtEndDate" Name="enddate" PropertyName="Text" 
                                 Type="DateTime" />
                         </SelectParameters>
                     </asp:ObjectDataSource>

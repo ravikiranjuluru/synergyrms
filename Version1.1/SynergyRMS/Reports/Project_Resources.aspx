@@ -25,7 +25,8 @@
                 <td>
                     &nbsp;</td>
                 <td>
-                    <asp:Label ID="lblSelect" runat="server" Text="Select Project"></asp:Label>
+                    <asp:Label ID="lblSelect" runat="server" Text="Select Project :" 
+                        Font-Bold="True"></asp:Label>
                 </td>
                 <td>
                     <asp:DropDownList ID="ddlProjects" runat="server" DataTextField="ProjectName" DataValueField="ProjectId">

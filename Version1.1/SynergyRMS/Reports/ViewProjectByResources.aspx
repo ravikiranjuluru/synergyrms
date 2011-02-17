@@ -23,7 +23,8 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lblUser" runat="server" Text="Select Resource"></asp:Label>
+                    <asp:Label ID="lblUser" runat="server" Text="Select Resource :" 
+                        Font-Bold="True"></asp:Label>
                 </td>
                 <td>
                     <asp:DropDownList ID="ddlUser" runat="server" DataSourceID="ResourceSource" DataTextField="FullName" DataValueField="UserId">
@@ -48,8 +49,22 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                  <%--  <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
+                        SelectMethod="GetData" 
+                        TypeName="SynergyRMS.ViewProjectByResourceTableAdapters.R_GetProjectsByResourcesIdTableAdapter">
+                    </asp:ObjectDataSource>--%>
+                </td>
+                <td>
+                 <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
                         Font-Size="8pt" Height="400px" Width="650px">
                         <LocalReport ReportPath="Reports\ViewProjectByResource.rdlc">
                             <DataSources>
@@ -60,13 +75,10 @@
                             </DataSources>
                         </LocalReport>
                     </rsweb:ReportViewer>
-                  <%--  <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
-                        SelectMethod="GetData" 
-                        TypeName="SynergyRMS.ViewProjectByResourceTableAdapters.R_GetProjectsByResourcesIdTableAdapter">
-                    </asp:ObjectDataSource>--%>
                 </td>
                 <td>
-                    &nbsp;</td>
+                   
+                  </td>
             </tr>
             <tr>
                 <td>
