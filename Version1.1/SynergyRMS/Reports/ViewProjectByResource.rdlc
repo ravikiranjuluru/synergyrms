@@ -313,7 +313,7 @@
                         <Textbox Name="textbox17">
                           <rd:DefaultName>textbox17</rd:DefaultName>
                           <Style>
-                            <BackgroundColor>DarkGray</BackgroundColor>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <TextAlign>Center</TextAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -330,7 +330,7 @@
                         <Textbox Name="textbox25">
                           <rd:DefaultName>textbox25</rd:DefaultName>
                           <Style>
-                            <BackgroundColor>DarkGray</BackgroundColor>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <TextAlign>Center</TextAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -347,7 +347,7 @@
                         <Textbox Name="textbox26">
                           <rd:DefaultName>textbox26</rd:DefaultName>
                           <Style>
-                            <BackgroundColor>DarkGray</BackgroundColor>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <TextAlign>Center</TextAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -364,7 +364,7 @@
                         <Textbox Name="textbox12">
                           <rd:DefaultName>textbox12</rd:DefaultName>
                           <Style>
-                            <BackgroundColor>DarkGray</BackgroundColor>
+                            <BackgroundColor>LightGrey</BackgroundColor>
                             <TextAlign>Center</TextAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
