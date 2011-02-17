@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
+<%@ Import Namespace="SynergyRMS.Models" %>
 <table class="pageTitle" width="100%" border="0" cellpadding="0" cellspacing="0">
         <tbody>
             <tr>
@@ -66,7 +67,8 @@
    
     <table align="center" width="95%">
     <%var isAdmin = false;
-      isAdmin = HttpContext.Current.User.IsInRole("Admin");  
+      isAdmin = HttpContext.Current.User.IsInRole("Admin");
+      var currentusername = HttpContext.Current.User.Identity.Name.ToString();
          %>
           <%if (isAdmin)
             { %>
@@ -224,17 +226,22 @@
                                                                     <td style="padding-left: 10px;">
                                                                         <table id="Table1" style="width: 100%;">
                                                                              <tbody>
+                                                                               <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addProject))
+                                                                                 { %>
                                                                                 <tr id="Tr8">
                                                                                     <td padding-left="6px" width="5%">
-                                                                                        <a id="A8" href="javascript:__doPostBack('ctl02$icon_AddProject','')">&nbsp;</a></td>
+                                                                                        <a id="A8" href="#">&nbsp;</a></td>
                                                                                     <td>
-                                                                                        <a id="A8" href="javascript:__doPostBack('ctl02$icon_AddProject','')">
+                                                                                        <a id="A8" href="#">
                                                                                             
                                                                                             </a><a id="A9" title="Click here to Add a New Project" href="../Project/NewProject"><img src="../../Content/images/common/newproject.png" id="Img13" 
                                                                                             title="Click for more information">New Project</a>
                                                                                     </td>
                                                                                 </tr>
+                                                                                <%} %>
                                                                                
+                                                                               <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewProject))
+                                                                                 { %>
                                                                                 <tr id="Tr9">
                                                                                     <td padding-left="6px" width="5%">
                                                                                         
@@ -245,6 +252,9 @@
                                                                                             title="Click for more information" />View Projects</a>
                                                                                     </td>
                                                                                 </tr>
+                                                                                <%} %>
+                                                                                <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewProjectSchedule))
+                                                                                  { %>
                                                                                  <tr id="Tr2">
                                                                                     <td padding-left="6px" width="5%">
                                                                                         
@@ -255,15 +265,9 @@
                                                                                             title="Click for more information" />Project Schedule</a>
                                                                                     </td>
                                                                                 </tr>
+                                                                                <%} %>
                                                                                 
-                                                                              <%--  <tr id="Tr11">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img16" title="Click for more information" />
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A12" title="Click here to Upload Documents" href="../Project/Docs">Upload Documents</a>
-                                                                                    </td>
-                                                                                </tr>--%>
+                                                                             
                                                                                 <%--<tr id="Tr12">
                                                                                     <td padding-left="6px" width="5%">
                                                                                         <img src="../../Content/images/common/cross.gif" id="Img17" title="Click for more information" />
@@ -350,7 +354,8 @@
                                                                     <td style="padding-left: 10px;">
                                                                         <table id="Table2" style="width: 100%;">
                                                                             <tbody>
-                                                                           
+                                                                            <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addRole))
+                                                                                 { %>
                                                                                 <tr id="Tr4">
                                                                                     <td padding-left="6px" width="5%">
                                                                                         
@@ -362,6 +367,9 @@
                                                                                         </a>
                                                                                     </td>
                                                                                 </tr>
+                                                                                <%} %>
+                                                                                <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addUser))
+                                                                                  { %>
                                                                                 <tr id="Tr5">
                                                                                     <td padding-left="6px" width="5%">
                                                                                         
@@ -371,15 +379,9 @@
                                                                                             title="Click for more information" />Users</a>
                                                                                     </td>
                                                                                 </tr>
-                                                                                <%--<tr id="Tr6">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img10" title="Click for more information" />
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A6" title="Click here to View an Existing Resources" href="../Resource/Resources">
-                                                                                            View an Existing Resource</a>
-                                                                                    </td>
-                                                                                </tr>--%>
+                                                                                <%} %>
+                                                                                <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewUserSchedule))
+                                                                                  { %>
                                                                                 <tr id="Tr7">
                                                                                     <td padding-left="6px" width="5%">
                                                                                        
@@ -390,6 +392,7 @@
                                                                                             View Resource Schedules</a>
                                                                                     </td>
                                                                                 </tr>
+                                                                                <%} %>
                                                                                 <tr id="Tr3">
                                                                                     <td padding-left="6px" width="5%">
                                                                                         &nbsp;
