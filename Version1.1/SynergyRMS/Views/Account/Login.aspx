@@ -208,6 +208,8 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
 	
 	
 
+<table width="100" align="center" ><tr align="center" valign="bottom"><td align="center" valign="bottom">
+
 
     <table width="200" style="height: 403px">
     <tr align="center" valign="top">
@@ -226,11 +228,11 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
                             <div>
                                 <p>
                                     Please enter your username and password.
-                                   <a href="/Account/Register" id="popup" style="text-decoration: none;" title="Register">
+                                 <%--  <a href="/Account/Register" id="popup" style="text-decoration: none;" title="Register">
                                    [Register]</a>                                   
                                  
                                     <%--<%= Html.ActionLink("Click Here", "Register", "Account")%>--%>
-                                    if you don't have an account.
+                                    if you don't have an account.--%>
                                 </p>
                                 <% using (Html.BeginForm("Login", "Account"))
                                        
@@ -303,7 +305,7 @@ Inherits="System.Web.Mvc.ViewPage<SynergyRMS.Models.LogOnModel>"%>
         </td>
     </tr>
     </table>
-  
+  </td></tr></table>
   
 </body>
 </html>
