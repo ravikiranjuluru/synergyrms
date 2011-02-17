@@ -21,15 +21,17 @@
       <Textbox Name="textbox1">
         <rd:DefaultName>textbox1</rd:DefaultName>
         <Top>0.125in</Top>
-        <Width>2.375in</Width>
+        <Width>3.25in</Width>
         <Style>
+          <BackgroundColor>WhiteSmoke</BackgroundColor>
+          <FontSize>14pt</FontSize>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <CanGrow>true</CanGrow>
-        <Left>2.125in</Left>
+        <Left>1.5in</Left>
         <Height>0.25in</Height>
         <Value>Resource Allocation Detail Report</Value>
       </Textbox>
