@@ -3,7 +3,7 @@
     
 <%@ Import Namespace="SynergyRMS.Controllers" %>
 <%@ Import Namespace="Microsoft.Web.Mvc"%>
-
+<%@ Import Namespace="SynergyRMS.Models" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
@@ -23,6 +23,7 @@
 <script type="text/javascript" language="javascript" src="<%= ResolveUrl("~") %>Scripts/Datatable/jquery.js"></script>
 <script type="text/javascript" language="javascript" src="<%= ResolveUrl("~") %>Scripts/Datatable/jquery.dataTables.js"></script>
     
+    <% var currentusername = HttpContext.Current.User.Identity.Name.ToString(); %>
     <div class="formContainer" id="masterpage_divMain">
         <div class="formHead" id="masterpage_divHead">
             <table width="100%" cellspacing="0" cellpadding="0" border="0" class="pageTitle">
@@ -170,8 +171,12 @@
                                         <th id="email" width="10%" align="left" class="tableColumnTitle">
                                             <a href="#">Email</a>
                                         </th>
+                                        
+                                         <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.editUser))
+                                           { %>
                                         <th id="edit" width="2%">
                                         </th>
+                                        <%} %>
                                         <th id="Delete" width="2%">
                                         </th>
                                     </tr>
@@ -196,11 +201,14 @@
                                         <td headers="email" class="oddrow-mdl" align="left" width="20%">
                                             <%= user.Email%>
                                         </td>
+                                        <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.editUser))
+                                          { %>
                                         <td headers="edit" class="evnrow-mdl" align="left" width="20%">
                                             <a class="link" href="#" onclick="lnkEditUser_onClick('<%= user.ProviderUserKey.ToString()%>');"
                                                 title="Edit User Roles"><strong><span class="text">Edit User</span></strong>
                                             </a>
                                         </td>
+                                        <%} %>
                                         <td headers="Delete" class="evnrow-mdl" align="left" width="2%">
                                             <a href="#"><strong></strong></a>
                                         </td>
