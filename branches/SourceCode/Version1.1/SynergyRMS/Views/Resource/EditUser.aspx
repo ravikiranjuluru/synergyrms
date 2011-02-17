@@ -27,9 +27,8 @@
             <tbody>
                 <tr>
                     <td valign="middle" align="right" class="formDetailDark">
-                        &nbsp;
-                    </td>
-                    <td valign="middle" align="left" style="width: 211px">
+                        
+                    
                         <% if ((ViewData["status"]) != null)
                            {
                                var status = ViewData["status"].ToString();
