@@ -1,8 +1,12 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
+<%@ Import Namespace="SynergyRMS.Models" %>
+
   <div id="divTabStrip" style="overflow: hidden;">
 
-      <%var isAdmin = false;
-        isAdmin = HttpContext.Current.User.IsInRole("Admin");  
+      <%
+        var isAdmin = false;
+        isAdmin = HttpContext.Current.User.IsInRole("Admin");
+        var currentusername = HttpContext.Current.User.Identity.Name.ToString();  
       %>
 
       <script type="text/javascript">
@@ -88,16 +92,22 @@
                                     
 
                                     </td>
+                                     <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewProject))
+                                       { %>
                                   <td id="DASHBOARD-PROJECT" class="item level1" onmouseenter="this.className += ' hover';"
                                       onmouseleave="this.className = this.className.replace(' hover', '');">
                                       <a class="link " href="../Project/EditProject"><span class="text ">Project</span></a>
                                   </td>
+                                  <%} %>
                                   <td id="Td2" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
                                       <a class="link " href="../Resource"><span class="text ">Resources</span> </a>
                                   </td>
+                                    <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewProjectSchedule))
+                                      { %>
                                   <td id="Td6" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
                                       <a class="link " href="../GridView/Index"><span class="text ">Scheduling</span></a>
                                   </td>
+                                  <%} %>
                                   <td id="Td6" class="item level1">
                                       &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                   </td>
