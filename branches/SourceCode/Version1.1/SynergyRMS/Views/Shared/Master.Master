@@ -128,45 +128,7 @@
 
        });
 
-//       $('#WindowContent-bing').AeroWindow({
-//           WindowTitle: 'Microsoft Bing - Web Search',
-//           WindowDesktopIconFile: '../../Content/images/icon/bing.png',
-//           WindowPositionTop: 'center',
-//           WindowPositionLeft: 'center',
-//           WindowStatus: 'closed',
-//           WindowOuterWidth: 750,
-//           WindowOuterHeight: 300
-//       });
 
-//       $('#WindowContent-links').AeroWindow({
-//           WindowTitle: 'Helpful Links',
-//           WindowDesktopIconFile: '../../Content/images/icon/book.png',
-//           WindowPositionTop: 'center',
-//           WindowPositionLeft: 'center',
-//           WindowStatus: 'closed',
-//           WindowOuterWidth: 800,
-//           WindowOuterHeight: 600
-//       });
-
-//       $('#WindowContent-facebook').AeroWindow({
-//           WindowTitle: 'Follow Us On Facebook',
-//           WindowDesktopIconFile: '../../Content/images/icon/facebook.png',
-//           WindowPositionTop: '100',
-//           WindowPositionLeft: '200',
-//           WindowStatus: 'closed',
-//           WindowOuterWidth: 481,
-//           WindowOuterHeight: 418
-//       });
-
-//       $('#WindowContent-demo').AeroWindow({
-//           WindowTitle: 'Windows UI Functionality Demonstration',
-//           WindowDesktopIconFile: '../../Content/images/icon/help.png',
-//           WindowPositionTop: 100,
-//           WindowPositionLeft: 150,
-//           WindowStatus: 'closed',
-//           WindowOuterWidth: 800,
-//           WindowOuterHeight: 200
-//       });
     </script>
     
 
