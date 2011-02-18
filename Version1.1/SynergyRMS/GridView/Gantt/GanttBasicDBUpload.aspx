@@ -36,6 +36,8 @@ try
       System.Xml.XmlNodeList Ch = X.GetElementsByTagName("Changes");
        List<PM_ProjectResources> resourceList = new List<PM_ProjectResources>();
 
+       string[] arrnameUname = null;
+       string nameUname = null;
                   string name = null;
                   string uname = null;
                   string role = null;
@@ -63,7 +65,10 @@ try
                   if (I.GetAttribute("Added") == "1")
                   {
                       isNew = true;;
-                       name = I.GetAttribute("N").ToString();
+                      nameUname = I.GetAttribute("N").ToString();
+                      arrnameUname = nameUname.Split(new char[]{'#'});
+                      name = arrnameUname[0].ToString();
+                      uname = arrnameUname[1].ToString();
                        role = I.GetAttribute("R").ToString();
                        sdate = DateTime.Now.ToString();
                       if (I.GetAttribute("S") != "")
@@ -121,12 +126,16 @@ try
                               string val = A.Value;
                               if (nameval == "N")
                               {                                  
-                                  name = val.ToString();
+                                  //name = val.ToString();
+                                  nameUname = val.ToString();                                 
+                                  arrnameUname = nameUname.Split(new char[] { '#' });
+                                  name = arrnameUname[0].ToString();
+                                  uname = arrnameUname[1].ToString();
                               }
-                              if (nameval == "U") 
-                              {   
-                                uname = val.ToString();
-                              }
+                              //if (nameval == "U") 
+                              //{   
+                              //  uname = val.ToString();
+                              //}
                               if (nameval == "R")
                               {
                                   role = val.ToString();

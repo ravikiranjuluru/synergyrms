@@ -1,6 +1,11 @@
 <%@ Page language="c#" Debug="true"%>
 <%@ Import Namespace="SynergyRMS.Models" %>
+<%@ Import Namespace="SynergyRMS.Controllers" %>
+
+  
+        
 <%
+    
 ///! Support file only, run GanttBasicDB.html instead !
 /// This file is used as Data_Url for TreeGrid
 /// It generates source data for TreeGrid from database
@@ -26,7 +31,7 @@ Response.Write("<Grid><Body><B>");
 while (R.Read())
 {
    Response.Write("<I id='" + R["id"].ToString() + "'"
-      + " T='" + R["T"].ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
+      + " T='" + R["T"].ToString().Replace("&", "&amp;"//).Replace("'", "&apos;").Replace("<", "&lt;") + "'"
       + " S='" + R["S"].ToString() + "'"
       + " E='" + R["E"].ToString() + "'"
       + " C='" + R["C"].ToString() + "'"
@@ -101,8 +106,9 @@ Conn.Close();
 
 
  MembershipUserCollection listUser=SynergyService.GetAssignedUsersByProjectId(projectid);
- string arruser = "";
+ string arruserfullname = "";
  string arruserusername = "";
+ 
  foreach (MembershipUser user in listUser)
     {
         var profile = new ProfileBase();
@@ -110,8 +116,9 @@ Conn.Close();
         string fname = profile.GetPropertyValue("FirstName").ToString();
         string lname = profile.GetPropertyValue("LastName").ToString();
         string name = fname + " " + lname;
-        arruser += "|" + name.Trim();
-        arruserusername += "|" + user.UserName.Trim();
+        //arruser += "|" + name.Trim();
+        //arruserusername += "|" + user.UserName.Trim();
+        arruserfullname += "|" + name.Trim() + "#" + user.UserName.Trim();
     }
  string arrrole = "|";
  List<PM_ProjectRoles> listRoles = SynergyService.GetAllProjectRoles();
@@ -122,15 +129,15 @@ Conn.Close();
  
  Response.Write("<Grid><Cfg id=\"GanttBasic\"/><Cfg NumberId=\"1\" IdChars=\"0123456789\"/>" +
  "<LeftCols>" +
- "<C Name=\"id\" Width=\"20\" Type=\"Int\"/>" +  
-  "<C Name=\"N\" Width=\"60\" Type=\"Enum\" Enum=\""+arruser+"\"/>" +
-  //"<C Name=\"U\" Width=\"50\" Type=\"Text\"/>" +  
-  "<C Name=\"U\" Width=\"50\" Type=\"Enum\" Enum=\"" + arruserusername + "\"/>" +
+ "<C Name=\"id\" Width=\"20\" Type=\"Int\"/>" +
+ "<C Name=\"N\" Width=\"110\" Type=\"Enum\" Enum=\"" + arruserfullname + "\"/>" +   
+  //"<C Name=\"U\" Width=\"50\" Type=\"Enum\" Enum=\"" + arruserusername + "\"/>" +
   "<C Name=\"R\" Width=\"60\" Type=\"Enum\" Enum=\"" + arrrole + "\"/>" +
   "<C Name=\"C\" Width=\"50\" Type=\"Int\" Format=\"##\\%;;0\\%\"/>" +
+  "<C Name=\"L\" Width=\"100\" Type=\"Html\" />" +
   "<C Name=\"S\" Width=\"60\" Type=\"Date\" Format=\"MMM dd\"/>" +
   "<C Name=\"E\" Width=\"60\" Type=\"Date\" Format=\"MMM dd\"/>" +
-  "<C Name=\"UL\" Width=\"50\" Type=\"Text\" CanEdit=\"0\" Button=\"Defaults\" Defaults=\"|*RowsColN*U\" Range=\"1\"/>"+
+  //"<C Name=\"UL\" Width=\"50\" Type=\"Text\" CanEdit=\"0\" Button=\"Defaults\" Defaults=\"|*RowsColN*U\" Range=\"1\"/>"+
   
  "</LeftCols>");
  Response.Write("<Body><B>");
@@ -156,8 +163,10 @@ Conn.Close();
      profile.Initialize(uname, true);
      string fname = profile.GetPropertyValue("FirstName").ToString();
      string lname = profile.GetPropertyValue("LastName").ToString();
-     string name = fname + " " + lname;
-
+     //string name = fname + " " + lname;
+     string fullname = fname + " " + lname+ "#" +uname;
+     string leaveUrl = "&lt;a class=\"link\" onclick=\"lnkViewLeave_onClick();\" href=\"../../Resource/ViewUserLeave\"&gt;View Leaves &lt;/a&gt;";
+      
      string role ="";
      if(resource.PM_ProjectRoles!=null)
      {
@@ -167,10 +176,12 @@ Conn.Close();
      DateTime startdate = resource.AllocatedStartDate;
      DateTime enddate = resource.AllocatedEndDate;
      Response.Write("<I id='" + id + "'"
-        + " N='" + name.ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
-        + " U='" + uname.ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
+        //+ " N='" + name.ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
+        //+ " U='" + uname.ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
+        + " N='" + fullname.ToString().Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
         + " R='" + role.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
         + " C='" + complete.ToString() + "'"
+        + " L='" + leaveUrl.ToString() + "'"
         + " S='" + startdate.ToString() + "'"
         + " E='" + enddate.ToString() + "'"
         + "/>");
