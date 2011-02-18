@@ -20,21 +20,21 @@
     <ReportItems>
       <Textbox Name="textbox1">
         <rd:DefaultName>textbox1</rd:DefaultName>
-        <Width>12.69841cm</Width>
+        <Width>8.16468cm</Width>
         <Style>
-          <FontSize>16pt</FontSize>
+          <FontSize>14pt</FontSize>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <CanGrow>true</CanGrow>
-        <Left>1.35913cm</Left>
+        <Left>3.1746cm</Left>
         <Height>0.75cm</Height>
         <Value>Resource Allocation Detail Report</Value>
       </Textbox>
     </ReportItems>
-    <Height>0.5in</Height>
+    <Height>0.375in</Height>
     <PrintOnLastPage>true</PrintOnLastPage>
   </PageHeader>
   <BottomMargin>1in</BottomMargin>
@@ -78,7 +78,7 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <Width>6.5in</Width>
+  <Width>6in</Width>
   <Body>
     <ReportItems>
       <Table Name="table1">
