@@ -41,7 +41,8 @@ namespace SynergyRMS.Controllers
             return View("Login");
         }
         
-        [HttpPost]
+        //[HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Login(LogOnModel model, string returnUrl)
         {
            
@@ -100,7 +101,8 @@ namespace SynergyRMS.Controllers
             return View();
         }
 
-        [HttpPost]
+        //[HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Register(RegisterModel model)
         {
             bool success = false;
@@ -141,7 +143,8 @@ namespace SynergyRMS.Controllers
         }
 
         [Authorize]
-        [HttpPost]
+        //[HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult ChangePassword(ChangePasswordModel model)
         {
             if (ModelState.IsValid)
