@@ -93,53 +93,122 @@ namespace SynergyRMS.Controllers
             {
                 
                 bool status = true;
-                if(form["addProject"] != null)
+                if (form["addProject"] != null)
                 {
                     tblpermission[SynergyConstents.addProject] = true;
+                }
+                else
+                {
+                    tblpermission[SynergyConstents.addProject] = false;
                 }
                 if (form["viewProject"] != null)
                 {
                     tblpermission[SynergyConstents.viewProject] = true;
                 }
+                else
+                {
+                    tblpermission[SynergyConstents.viewProject] = false;
+                }
                 if (form["editProject"] != null)
                 {
                     tblpermission[SynergyConstents.editProject] = true;
+                }
+                else
+                {
+                    tblpermission[SynergyConstents.editProject] = false;
                 }
                 if (form["deleteProject"] != null)
                 {
                     tblpermission[SynergyConstents.deleteProject] = true;
                 }
-                if (form["addTask"] != null)
+                else
                 {
-                    tblpermission[SynergyConstents.addTask] = true;
+                    tblpermission[SynergyConstents.deleteProject] = false;
                 }
-                if (form["editTask"] != null)
-                {
-                    tblpermission[SynergyConstents.editTask] = true;
-                }
-                if (form["deleteTask"] != null)
-                {
-                    tblpermission[SynergyConstents.deleteTask] = true;
-                }            
+
                 if (form["assignToProject"] != null)
                 {
                     tblpermission[SynergyConstents.assignToProject] = true;
                 }
+                else
+                {
+                    tblpermission[SynergyConstents.assignToProject] = false;
+                }
+                if (form["viewProjectSchedule"] != null)
+                {
+                    tblpermission[SynergyConstents.viewProjectSchedule] = true;
+                }
+                else
+                {
+                    tblpermission[SynergyConstents.viewProjectSchedule] = false;
+                }
+                if (form["viewProjectReports"] != null)
+                {
+                    tblpermission[SynergyConstents.viewProjectReports] = true;
+                }
+                else
+                {
+                    tblpermission[SynergyConstents.viewProjectReports] = false;
+                }
+
                 if (form["addUser"] != null)
                 {
                     tblpermission[SynergyConstents.addUser] = true;
+                }
+                else
+                {
+                    tblpermission[SynergyConstents.addUser] = false;
                 }
                 if (form["viewUser"] != null)
                 {
                     tblpermission[SynergyConstents.viewUser] = true;
                 }
+                else
+                {
+                    tblpermission[SynergyConstents.viewUser] = false;
+                }
                 if (form["editUser"] != null)
                 {
                     tblpermission[SynergyConstents.editUser] = true;
                 }
+                else
+                {
+                    tblpermission[SynergyConstents.editUser] = false;
+                }
                 if (form["deleteUser"] != null)
                 {
                     tblpermission[SynergyConstents.deleteUser] = true;
+                }
+                else
+                {
+                    tblpermission[SynergyConstents.deleteUser] = false;
+                }
+                if (form["viewUserSchedule"] != null)
+                {
+                    tblpermission[SynergyConstents.viewUserSchedule] = true;
+                }
+                else
+                {
+                    tblpermission[SynergyConstents.viewUserSchedule] = false;
+                }
+
+
+
+                if (form["addRole"] != null)
+                {
+                    tblpermission[SynergyConstents.addRole] = true;
+                }
+                else
+                {
+                    tblpermission[SynergyConstents.addRole] = false;
+                }
+                if (form["editRolePermission"] != null)
+                {
+                    tblpermission[SynergyConstents.editRolePermission] = true;
+                }
+                else
+                {
+                    tblpermission[SynergyConstents.editRolePermission] = false;
                 }
                 status= SynergyService.SaveRolePermissions(tblpermission, editrole);
                 
