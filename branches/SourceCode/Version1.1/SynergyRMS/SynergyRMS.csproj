@@ -415,7 +415,7 @@
     <Content Include="Views\Project\Index.aspx" />
     <Content Include="Views\Project\NewProject.aspx" />
     <Content Include="Views\Project\NewTask.aspx" />
-    <Content Include="Views\Report\Index.aspx" />
+    <Content Include="Views\Report\Index2.aspx" />
     <Content Include="Views\Resource\Department.aspx" />
     <Content Include="Views\Resource\Index.aspx" />
     <Content Include="Views\Resource\IndexInterestProjects.aspx" />
@@ -512,6 +512,7 @@
     <Content Include="Content\images\Startmenu\Dashboard.png" />
     <Content Include="Content\images\Startmenu\login.jpg" />
     <Content Include="Content\images\win7-desktop-bg.jpg" />
+    <Content Include="Content\jquery-ui.css" />
     <Content Include="GridView\Framework\Export.aspx" />
     <Content Include="GridView\Framework\TreeGridFramework.aspx" />
     <Content Include="GridView\Gantt\GanttBasicDBData.aspx" />
@@ -549,6 +550,9 @@
     <Content Include="GridView\Styles\Info.txt" />
     <Content Include="GridView\Styles\Page.png" />
     <Content Include="Models\App.Config" />
+    <Content Include="Reports\Test.htm" />
+    <Content Include="Scripts\aerowindow\jquery-AeroWindow.js" />
+    <Content Include="Scripts\aerowindow\jquery.easing.1.3.js" />
     <Content Include="Scripts\calndarview\colorpicker\colorpicker.js" />
     <Content Include="Scripts\calndarview\colorpicker\eye.js" />
     <Content Include="Scripts\calndarview\colorpicker\layout.js" />
@@ -578,12 +582,14 @@
     <Content Include="Views\GridView\Styles\Page.png" />
     <Content Include="Views\Project\AssignUsers.aspx" />
     <Content Include="Views\Project\EditProjectForm.aspx" />
+    <Content Include="Views\Report\Index.aspx" />
     <Content Include="Views\Resource\AssignRoles.aspx" />
     <Content Include="Views\Resource\AssignRolesPermissions.aspx" />
     <Content Include="Views\Resource\EditUser.aspx" />
     <Content Include="Views\Resource\RolePermission.aspx" />
     <Content Include="Views\Resource\ScheduleCalendar.aspx" />
     <Content Include="Views\Resource\ScheduleCalendarControl.ascx" />
+    <Content Include="Views\Shared\Master.Master.txt" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\SynergyModel.edmx">
@@ -609,7 +615,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55065</DevelopmentServerPort>
+          <DevelopmentServerPort>60932</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

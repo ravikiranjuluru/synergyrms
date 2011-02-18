@@ -538,6 +538,17 @@ DEMO CONTENT
   background: url(../../Content/images/Startmenu/Dashboard.png) no-repeat 2px 2px; 
 }
 
+/* reports windows*/
+#StartmenuItem_NewWindow_resource span, #StartmenuItem_NewWindow_resource span {
+  background: url(../../Content/images/Startmenu/Dashboard.png) no-repeat 2px 2px; 
+}
+#StartmenuItem_NewWindow_allocation span, #StartmenuItem_NewWindow_allocation span {
+  background: url(../../Content/images/Startmenu/Dashboard.png) no-repeat 2px 2px; 
+}
+#StartmenuItem_NewWindow_detail span, #StartmenuItem_NewWindow_detail span {
+  background: url(../../Content/images/Startmenu/Dashboard.png) no-repeat 2px 2px; 
+}
+
 
 
 #AD {
