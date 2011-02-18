@@ -413,7 +413,7 @@
                                                                                      <td>
                                                                                          <div id="Div1">
                                                                                              <div id="report2icon">
-                                                                                                 <a href="#" title="Click here to View Report">Resource Allocation Report</a>
+                                                                                                 <a href="#" title="Click here to View Report">Resource Projects Detail Report</a>
                                                                                              </div>
                                                                                          </div>
                                                                                         
@@ -426,7 +426,7 @@
                                                                                     <td>
                                                                                         <div id="Div3">
                                                                                             <div id="report3icon">
-                                                                                                <a href="#" title="Click here to View Report">Resource Detail Report</a>
+                                                                                                <a href="#" title="Click here to View Report">Resource Projects Report</a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </td>
@@ -439,7 +439,7 @@
                                                                                     <td>
                                                                                         <div id="Div4">
                                                                                             <div id="report4icon">
-                                                                                                <a href="#" title="Click here to View Report">Resource Allocation User Report</a>
+                                                                                                <a href="#" title="Click here to View Report">Resource Allocation Detail Report</a>
                                                                                             </div>
                                                                                         </div>
                                                                                     </td>
