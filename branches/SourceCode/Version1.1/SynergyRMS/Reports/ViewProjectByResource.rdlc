@@ -20,7 +20,7 @@
     <ReportItems>
       <Textbox Name="textbox1">
         <rd:DefaultName>textbox1</rd:DefaultName>
-        <Width>2.25in</Width>
+        <Width>2.625in</Width>
         <Style>
           <FontSize>14pt</FontSize>
           <PaddingLeft>2pt</PaddingLeft>
@@ -30,8 +30,8 @@
         </Style>
         <CanGrow>true</CanGrow>
         <Left>2.125in</Left>
-        <Height>0.25in</Height>
-        <Value>Resource  Detail Report</Value>
+        <Height>0.375in</Height>
+        <Value>Resource  Projects Report</Value>
       </Textbox>
     </ReportItems>
     <Height>0.5in</Height>
@@ -40,7 +40,6 @@
   <BottomMargin>1in</BottomMargin>
   <rd:ReportID>03feb520-4bce-4f3b-83ee-0d9da28e7be5</rd:ReportID>
   <DataSets>
-   
     <DataSet Name="ViewProjectByResourceds_R_GetProjectsByResourcesId">
       <Fields>
         <Field Name="ProjectId">

@@ -27,8 +27,6 @@ namespace SynergyRMS.Reports {
         
         private R_GetResourceAllocationsByPeriodDataTable tableR_GetResourceAllocationsByPeriod;
         
-        private R_GetResourceAllocationByUserIdForGivenPeriodDataTable tableR_GetResourceAllocationByUserIdForGivenPeriod;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -58,9 +56,6 @@ namespace SynergyRMS.Reports {
                 if ((ds.Tables["R_GetResourceAllocationsByPeriod"] != null)) {
                     base.Tables.Add(new R_GetResourceAllocationsByPeriodDataTable(ds.Tables["R_GetResourceAllocationsByPeriod"]));
                 }
-                if ((ds.Tables["R_GetResourceAllocationByUserIdForGivenPeriod"] != null)) {
-                    base.Tables.Add(new R_GetResourceAllocationByUserIdForGivenPeriodDataTable(ds.Tables["R_GetResourceAllocationByUserIdForGivenPeriod"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -85,15 +80,6 @@ namespace SynergyRMS.Reports {
         public R_GetResourceAllocationsByPeriodDataTable R_GetResourceAllocationsByPeriod {
             get {
                 return this.tableR_GetResourceAllocationsByPeriod;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public R_GetResourceAllocationByUserIdForGivenPeriodDataTable R_GetResourceAllocationByUserIdForGivenPeriod {
-            get {
-                return this.tableR_GetResourceAllocationByUserIdForGivenPeriod;
             }
         }
         
@@ -159,9 +145,6 @@ namespace SynergyRMS.Reports {
                 if ((ds.Tables["R_GetResourceAllocationsByPeriod"] != null)) {
                     base.Tables.Add(new R_GetResourceAllocationsByPeriodDataTable(ds.Tables["R_GetResourceAllocationsByPeriod"]));
                 }
-                if ((ds.Tables["R_GetResourceAllocationByUserIdForGivenPeriod"] != null)) {
-                    base.Tables.Add(new R_GetResourceAllocationByUserIdForGivenPeriodDataTable(ds.Tables["R_GetResourceAllocationByUserIdForGivenPeriod"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -198,12 +181,6 @@ namespace SynergyRMS.Reports {
                     this.tableR_GetResourceAllocationsByPeriod.InitVars();
                 }
             }
-            this.tableR_GetResourceAllocationByUserIdForGivenPeriod = ((R_GetResourceAllocationByUserIdForGivenPeriodDataTable)(base.Tables["R_GetResourceAllocationByUserIdForGivenPeriod"]));
-            if ((initTable == true)) {
-                if ((this.tableR_GetResourceAllocationByUserIdForGivenPeriod != null)) {
-                    this.tableR_GetResourceAllocationByUserIdForGivenPeriod.InitVars();
-                }
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -215,17 +192,10 @@ namespace SynergyRMS.Reports {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableR_GetResourceAllocationsByPeriod = new R_GetResourceAllocationsByPeriodDataTable();
             base.Tables.Add(this.tableR_GetResourceAllocationsByPeriod);
-            this.tableR_GetResourceAllocationByUserIdForGivenPeriod = new R_GetResourceAllocationByUserIdForGivenPeriodDataTable();
-            base.Tables.Add(this.tableR_GetResourceAllocationByUserIdForGivenPeriod);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private bool ShouldSerializeR_GetResourceAllocationsByPeriod() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private bool ShouldSerializeR_GetResourceAllocationByUserIdForGivenPeriod() {
             return false;
         }
         
@@ -283,8 +253,6 @@ namespace SynergyRMS.Reports {
         }
         
         public delegate void R_GetResourceAllocationsByPeriodRowChangeEventHandler(object sender, R_GetResourceAllocationsByPeriodRowChangeEvent e);
-        
-        public delegate void R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEventHandler(object sender, R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -609,282 +577,6 @@ namespace SynergyRMS.Reports {
         }
         
         /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class R_GetResourceAllocationByUserIdForGivenPeriodDataTable : global::System.Data.TypedTableBase<R_GetResourceAllocationByUserIdForGivenPeriodRow> {
-            
-            private global::System.Data.DataColumn columnstartDate;
-            
-            private global::System.Data.DataColumn columnendDate;
-            
-            private global::System.Data.DataColumn columndays;
-            
-            private global::System.Data.DataColumn columneffort;
-            
-            private global::System.Data.DataColumn columndescription;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetResourceAllocationByUserIdForGivenPeriodDataTable() {
-                this.TableName = "R_GetResourceAllocationByUserIdForGivenPeriod";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal R_GetResourceAllocationByUserIdForGivenPeriodDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected R_GetResourceAllocationByUserIdForGivenPeriodDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn startDateColumn {
-                get {
-                    return this.columnstartDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn endDateColumn {
-                get {
-                    return this.columnendDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn daysColumn {
-                get {
-                    return this.columndays;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn effortColumn {
-                get {
-                    return this.columneffort;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn descriptionColumn {
-                get {
-                    return this.columndescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetResourceAllocationByUserIdForGivenPeriodRow this[int index] {
-                get {
-                    return ((R_GetResourceAllocationByUserIdForGivenPeriodRow)(this.Rows[index]));
-                }
-            }
-            
-            public event R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEventHandler R_GetResourceAllocationByUserIdForGivenPeriodRowChanging;
-            
-            public event R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEventHandler R_GetResourceAllocationByUserIdForGivenPeriodRowChanged;
-            
-            public event R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEventHandler R_GetResourceAllocationByUserIdForGivenPeriodRowDeleting;
-            
-            public event R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEventHandler R_GetResourceAllocationByUserIdForGivenPeriodRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void AddR_GetResourceAllocationByUserIdForGivenPeriodRow(R_GetResourceAllocationByUserIdForGivenPeriodRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetResourceAllocationByUserIdForGivenPeriodRow AddR_GetResourceAllocationByUserIdForGivenPeriodRow(System.DateTime startDate, System.DateTime endDate, int days, int effort, string description) {
-                R_GetResourceAllocationByUserIdForGivenPeriodRow rowR_GetResourceAllocationByUserIdForGivenPeriodRow = ((R_GetResourceAllocationByUserIdForGivenPeriodRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        startDate,
-                        endDate,
-                        days,
-                        effort,
-                        description};
-                rowR_GetResourceAllocationByUserIdForGivenPeriodRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowR_GetResourceAllocationByUserIdForGivenPeriodRow);
-                return rowR_GetResourceAllocationByUserIdForGivenPeriodRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public override global::System.Data.DataTable Clone() {
-                R_GetResourceAllocationByUserIdForGivenPeriodDataTable cln = ((R_GetResourceAllocationByUserIdForGivenPeriodDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new R_GetResourceAllocationByUserIdForGivenPeriodDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal void InitVars() {
-                this.columnstartDate = base.Columns["startDate"];
-                this.columnendDate = base.Columns["endDate"];
-                this.columndays = base.Columns["days"];
-                this.columneffort = base.Columns["effort"];
-                this.columndescription = base.Columns["description"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            private void InitClass() {
-                this.columnstartDate = new global::System.Data.DataColumn("startDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnstartDate);
-                this.columnendDate = new global::System.Data.DataColumn("endDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnendDate);
-                this.columndays = new global::System.Data.DataColumn("days", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndays);
-                this.columneffort = new global::System.Data.DataColumn("effort", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columneffort);
-                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescription);
-                this.columndescription.MaxLength = 2000;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetResourceAllocationByUserIdForGivenPeriodRow NewR_GetResourceAllocationByUserIdForGivenPeriodRow() {
-                return ((R_GetResourceAllocationByUserIdForGivenPeriodRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new R_GetResourceAllocationByUserIdForGivenPeriodRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override global::System.Type GetRowType() {
-                return typeof(R_GetResourceAllocationByUserIdForGivenPeriodRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.R_GetResourceAllocationByUserIdForGivenPeriodRowChanged != null)) {
-                    this.R_GetResourceAllocationByUserIdForGivenPeriodRowChanged(this, new R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEvent(((R_GetResourceAllocationByUserIdForGivenPeriodRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.R_GetResourceAllocationByUserIdForGivenPeriodRowChanging != null)) {
-                    this.R_GetResourceAllocationByUserIdForGivenPeriodRowChanging(this, new R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEvent(((R_GetResourceAllocationByUserIdForGivenPeriodRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.R_GetResourceAllocationByUserIdForGivenPeriodRowDeleted != null)) {
-                    this.R_GetResourceAllocationByUserIdForGivenPeriodRowDeleted(this, new R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEvent(((R_GetResourceAllocationByUserIdForGivenPeriodRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.R_GetResourceAllocationByUserIdForGivenPeriodRowDeleting != null)) {
-                    this.R_GetResourceAllocationByUserIdForGivenPeriodRowDeleting(this, new R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEvent(((R_GetResourceAllocationByUserIdForGivenPeriodRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void RemoveR_GetResourceAllocationByUserIdForGivenPeriodRow(R_GetResourceAllocationByUserIdForGivenPeriodRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ResourceAllocationds ds = new ResourceAllocationds();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "R_GetResourceAllocationByUserIdForGivenPeriodDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
@@ -1092,151 +784,6 @@ namespace SynergyRMS.Reports {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public partial class R_GetResourceAllocationByUserIdForGivenPeriodRow : global::System.Data.DataRow {
-            
-            private R_GetResourceAllocationByUserIdForGivenPeriodDataTable tableR_GetResourceAllocationByUserIdForGivenPeriod;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal R_GetResourceAllocationByUserIdForGivenPeriodRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableR_GetResourceAllocationByUserIdForGivenPeriod = ((R_GetResourceAllocationByUserIdForGivenPeriodDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public System.DateTime startDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.startDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'startDate\' in table \'R_GetResourceAllocationByUserIdForGive" +
-                                "nPeriod\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.startDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public System.DateTime endDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.endDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'endDate\' in table \'R_GetResourceAllocationByUserIdForGivenP" +
-                                "eriod\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.endDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int days {
-                get {
-                    try {
-                        return ((int)(this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.daysColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'days\' in table \'R_GetResourceAllocationByUserIdForGivenPeri" +
-                                "od\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.daysColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int effort {
-                get {
-                    try {
-                        return ((int)(this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.effortColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'effort\' in table \'R_GetResourceAllocationByUserIdForGivenPe" +
-                                "riod\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.effortColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string description {
-                get {
-                    try {
-                        return ((string)(this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.descriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'description\' in table \'R_GetResourceAllocationByUserIdForGi" +
-                                "venPeriod\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.descriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsstartDateNull() {
-                return this.IsNull(this.tableR_GetResourceAllocationByUserIdForGivenPeriod.startDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetstartDateNull() {
-                this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.startDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsendDateNull() {
-                return this.IsNull(this.tableR_GetResourceAllocationByUserIdForGivenPeriod.endDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetendDateNull() {
-                this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.endDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsdaysNull() {
-                return this.IsNull(this.tableR_GetResourceAllocationByUserIdForGivenPeriod.daysColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetdaysNull() {
-                this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.daysColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IseffortNull() {
-                return this.IsNull(this.tableR_GetResourceAllocationByUserIdForGivenPeriod.effortColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SeteffortNull() {
-                this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.effortColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsdescriptionNull() {
-                return this.IsNull(this.tableR_GetResourceAllocationByUserIdForGivenPeriod.descriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetdescriptionNull() {
-                this[this.tableR_GetResourceAllocationByUserIdForGivenPeriod.descriptionColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
@@ -1254,37 +801,6 @@ namespace SynergyRMS.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public R_GetResourceAllocationsByPeriodRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public class R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEvent : global::System.EventArgs {
-            
-            private R_GetResourceAllocationByUserIdForGivenPeriodRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetResourceAllocationByUserIdForGivenPeriodRowChangeEvent(R_GetResourceAllocationByUserIdForGivenPeriodRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetResourceAllocationByUserIdForGivenPeriodRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1488,207 +1004,6 @@ namespace SynergyRMS.Reports.ResourceAllocationdsTableAdapters {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             ResourceAllocationds.R_GetResourceAllocationsByPeriodDataTable dataTable = new ResourceAllocationds.R_GetResourceAllocationsByPeriodDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class R_GetResourceAllocationByUserIdForGivenPeriodTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public R_GetResourceAllocationByUserIdForGivenPeriodTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "R_GetResourceAllocationByUserIdForGivenPeriod";
-            tableMapping.ColumnMappings.Add("startDate", "startDate");
-            tableMapping.ColumnMappings.Add("endDate", "endDate");
-            tableMapping.ColumnMappings.Add("days", "days");
-            tableMapping.ColumnMappings.Add("effort", "effort");
-            tableMapping.ColumnMappings.Add("description", "description");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["synergydbadminConnectionString"].ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.R_GetResourceAllocationByUserIdForGivenPeriod";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@startDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@endDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ResourceAllocationds.R_GetResourceAllocationByUserIdForGivenPeriodDataTable dataTable, string user, global::System.Nullable<global::System.DateTime> startDate, global::System.Nullable<global::System.DateTime> endDate) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((user == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(user));
-            }
-            if ((startDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(startDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((endDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(endDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ResourceAllocationds.R_GetResourceAllocationByUserIdForGivenPeriodDataTable GetData(string user, global::System.Nullable<global::System.DateTime> startDate, global::System.Nullable<global::System.DateTime> endDate) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((user == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(user));
-            }
-            if ((startDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(startDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((endDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(endDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            ResourceAllocationds.R_GetResourceAllocationByUserIdForGivenPeriodDataTable dataTable = new ResourceAllocationds.R_GetResourceAllocationByUserIdForGivenPeriodDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
