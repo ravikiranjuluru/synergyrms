@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
-
+<%@ Import Namespace="SynergyRMS.Models" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -175,8 +175,7 @@
        }
        .style2
        {
-           width: 180px;
-       }
+      }
     </style>
     
     
@@ -216,6 +215,12 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td height="5" class="style2">
+                                                                        &nbsp;</td>
+                                                                    <td height="5" width="100%" class="formDetailNoPadding">
+                                                                        &nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td height="5" class="style2">
                                                                         <img height="1" width="180" id="ctl00_phFormContent_ucFormHeader_img1" src="../../Content/images/common/space.gif">
                                                                     </td>
                                                                     <td height="5" width="100%" class="formDetailNoPadding">
@@ -235,136 +240,182 @@
                                                                 %>
                                                                                                                                 
                                                                 <tr>
-                                                                    <td valign="top" align="right" class="style2">
-                                                                        <label for="notes">
-                                                                        </label>
-                                                                        Select Permission:
-                                                                    </td>
-                                                                    <td valign="top" align="left" class="formDetail">
-                                                                        <table style="width: 100%">
-                                                                            <tr>
-                                                                                <td style="width: 165px">
-                                                                                    Add Project
-                                                                                </td>
-                                                                                <td>
-                                                                                    <%if (permissionList[0])
-                                                          { %>
-                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="chkProAdd" name="chkProAdd">
+                                                                    <td height="5" class="style2" colspan="2">
+                                                                       
+                                                                       <table width="100">
+                                                                       <tr align"center" valign"top">
+                                                                       <td align"center" valign"top">
+                                                                       <table style="width: 456px">
+                                                                       <tr align"center" valign"top">
+                                                                       <td>Add Project</td>
+                                                                       <td><%
+                                                                                    
+                                                                       
+                                                                               if ((((bool)permissionList.ContainsValue(SynergyConstents.addProject)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="addProject" name="addProject">
                                                                                     <%}
-                                                          else
-                                                          { %>
-                                                                                    <input type="checkbox" class="checkBox" id="chkProAdd" name="chkProAdd">
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="addProject" name="addProject">
+                                                                                    <%} %></td>
+                                                                       <td> Edit Project</td>
+                                                                       <td> <%if ((((bool)permissionList.ContainsValue(SynergyConstents.editProject)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="editProject" name="editProject">
+                                                                                    <%}
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="editProject" name="editProject">
+                                                                                    <%} %></td>
+                                                                       </tr>
+                                                                       
+                                                                       <tr align"center" valign"top">                                                                       
+                                                                       <td>View Project</td>
+                                                                       <td><%
+                                                                               
+                                                                               
+                                                                               if ((((bool)permissionList.ContainsValue(SynergyConstents.viewProject)) == null ? false : true))
+                                                                       
+                                                                                     { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="viewProject" name="viewProject">
+                                                                                    <%}
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="viewProject" name="viewProject">
+                                                                                    <%} %></td>
+                                                                       <td>Delete Project</td>
+                                                                       <td><%if ((((bool)permissionList.ContainsValue(SynergyConstents.deleteProject)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="deleteProject" name="deleteProject">
+                                                                                    <%}
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="deleteProject" name="deleteProject">
+                                                                                    <%} %></td>
+                                                                       </tr>
+                                                                       
+                                                                       <tr align"center" valign"top">
+                                                                       <td>Assign to project</td>
+                                                                       <td> <%if ((((bool)permissionList.ContainsValue(SynergyConstents.assignToProject)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="assignToProject" name="assignToProject">
+                                                                                    <%}
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="assignToProject" name="assignToProject">
                                                                                     <%} %>
                                                                                 </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td style="width: 165px">
-                                                                                    View Project
-                                                                                </td>
-                                                                                <td>
-                                                                                    <%if (permissionList[1])
-                                                          { %>
-                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="Checkbox1" name="chkProAdd">
+                                                                       <td>View Project Schedule</td>
+                                                                       <td>
+                                                                       <%if ((((bool)permissionList.ContainsValue(SynergyConstents.viewProjectSchedule)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="viewProjectSchedule" name="viewProjectSchedule">
                                                                                     <%}
-                                                          else
-                                                          { %>
-                                                                                    <input type="checkbox" class="checkBox" id="Checkbox2" name="chkProAdd">
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="viewProjectSchedule" name="viewProjectSchedule">
                                                                                     <%} %>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td style="width: 165px">
-                                                                                    Edit Project
-                                                                                </td>
-                                                                                <td>
-                                                                                    <%if (permissionList[1])
-                                                          { %>
-                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="chkProEdit" name="chkProEdit">
+                                                                       </td>
+                                                                       </tr>
+                                                                       
+                                                                       <tr align"center" valign"top">
+                                                                       <td>View Project Reports</td>
+                                                                       <td> <%
+                                                                       
+                                                                       if ((((bool)permissionList.ContainsValue(SynergyConstents.viewProjectReports)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="viewProjectReports" name="viewProjectReports">
                                                                                     <%}
-                                                          else
-                                                          { %>
-                                                                                    <input type="checkbox" class="checkBox" id="chkProEdit" name="chkProEdit">
-                                                                                    <%} %>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td style="width: 165px">
-                                                                                    Delete Project
-                                                                                </td>
-                                                                                <td>
-                                                                                    <%if (permissionList[2])
-                                                          { %>
-                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="chkProDelete" name="chkProDelete">
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="viewProjectReports" name="viewProjectReports">
+                                                                                    <%} %></td>
+                                                                       <td>Add new user</td>
+                                                                       <td><%if ((((bool)permissionList.ContainsValue(SynergyConstents.addUser)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="addUser" name="addUser">
                                                                                     <%}
-                                                          else
-                                                          { %>
-                                                                                    <input type="checkbox" class="checkBox" id="chkProDelete" name="chkProDelete">
-                                                                                    <%} %>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td style="width: 165px">
-                                                                                    Add new Task
-                                                                                </td>
-                                                                                <td>
-                                                                                    <%if (permissionList[3])
-                                                          { %>
-                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="chkTaskAdd" name="chkTaskAdd">
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="addUser" name="addUser">
+                                                                                    <%} %></td>
+                                                                       </tr>
+                                                                       
+                                                                       <tr align"center" valign"top">
+                                                                       <td>View User</td>
+                                                                       <td><%if ((((bool)permissionList.ContainsValue(SynergyConstents.viewUser)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="viewUser" name="viewUser">
                                                                                     <%}
-                                                          else
-                                                          { %>
-                                                                                    <input type="checkbox" class="checkBox" id="chkTaskAdd" name="chkTaskAdd">
-                                                                                    <%} %>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td style="width: 165px">
-                                                                                    Edit Task
-                                                                                </td>
-                                                                                <td>
-                                                                                    <%if (permissionList[4])
-                                                          { %>
-                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="chkTaskEdit" name="chkTaskEdit">
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="viewUser" name="viewUser">
+                                                                                    <%} %></td>
+                                                                       <td>Edit user</td>
+                                                                       <td><%if ((((bool)permissionList.ContainsValue(SynergyConstents.editUser)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="editUser" name="editUser">
                                                                                     <%}
-                                                          else
-                                                          { %>
-                                                                                    <input type="checkbox" class="checkBox" id="chkTaskEdit" name="chkTaskEdit">
-                                                                                    <%} %>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td style="width: 165px">
-                                                                                    Delete Task
-                                                                                </td>
-                                                                                <td>
-                                                                                    <%if (permissionList[5])
-                                                          { %>
-                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="chkTaskDelete" name="chkTaskDelete">
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="editUser" name="editUser">
+                                                                                    <%} %></td>
+                                                                       </tr>
+                                                                       
+                                                                       <tr align"center" valign"top">
+                                                                       <td>Delete user</td>
+                                                                       <td><%if ((((bool)permissionList.ContainsValue(SynergyConstents.deleteUser)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="deleteUser" name="deleteUser">
                                                                                     <%}
-                                                          else
-                                                          { %>
-                                                                                    <input type="checkbox" class="checkBox" id="chkTaskDelete" name="chkAssgnPro">
-                                                                                    <%} %>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td style="width: 165px">
-                                                                                    Assign to a Project
-                                                                                </td>
-                                                                                <td>
-                                                                                    <%if (permissionList[6])
-                                                          { %>
-                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="chkAssgnPro" name="chkAssgnPro">
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="deleteUser" name="deleteUser">
+                                                                                    <%} %></td>
+                                                                       <td>View User Schedule</td>
+                                                                       <td><%if ((((bool)permissionList.ContainsValue(SynergyConstents.viewUserSchedule)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="viewUserSchedule" name="viewUserSchedule">
                                                                                     <%}
-                                                          else
-                                                          { %>
-                                                                                    <input type="checkbox" class="checkBox" id="chkAssgnPro" name="chkAssgnPro">
-                                                                                    <%} %>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="viewUserSchedule" name="viewUserSchedule">
+                                                                                    <%} %></td>
+                                                                       </tr>
+                                                                       
+                                                                       <tr align"center" valign"top">
+                                                                       <td>Add Role</td>
+                                                                       <td><%if ((((bool)permissionList.ContainsValue(SynergyConstents.addRole)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="addRole" name="addRole">
+                                                                                    <%}
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="addRole" name="addRole">
+                                                                                    <%} %></td>
+                                                                       <td>Edit Role Permission</td>
+                                                                       <td><%if ((((bool)permissionList.ContainsValue(SynergyConstents.editRolePermission)) == null ? false : true))
+                                                                                      { %>
+                                                                                    <input type="checkbox" checked="checked" class="checkBox" id="editRolePermission" name="editRolePermission">
+                                                                                    <%}
+                                                                                      else
+                                                                                      { %>
+                                                                                    <input type="checkbox" class="checkBox" id="editRolePermission" name="editRolePermission">
+                                                                                    <%} %></td>
+                                                                       </tr>
+                                                                       
+                                                                      
+                                                                       
+                                                                       
+                                                                       </table>
+                                                                       </td>
+                                                                       </tr></table>
+                                                                        
+                                                                        </td>
                                                                 </tr>
+                                                                                                                                
+                                                              
                                                                 
                                                                 <tr>
                                                                     <td height="5" class="style2">
