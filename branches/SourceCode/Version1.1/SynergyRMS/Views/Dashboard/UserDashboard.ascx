@@ -66,122 +66,17 @@
     
    
     <table align="center" width="95%">
-    <%var isAdmin = false;
-      isAdmin = HttpContext.Current.User.IsInRole("Admin");
-      var currentusername = HttpContext.Current.User.Identity.Name.ToString();
-         %>
-          <%if (isAdmin)
-            { %>
+        <%
+            var isAdmin = false;
+            isAdmin = HttpContext.Current.User.IsInRole("Admin");
+            var currentusername = HttpContext.Current.User.Identity.Name.ToString();
+        %>
+         
+        <%--  <%if (isAdmin)
+            { %>--%>
         <tr>
             <td>
-                <!-- --------------------------------------------------------- -->
-            <%-- <div class="outer">
-                    <div class="boxtitle">
-                        <table style="background-color: white;">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img id="img12" src="../../Content/images/common/manage_projects.gif" alt="" />
-                                    </td>
-                                    <td>
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td id="td4" class="boxtitle" style="background-color: rgb(255, 255, 255); height: 24px;
-                                                        padding-left: 4px; padding-right: 5px;">
-                                                        Manage Projects
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="t">
-                        <div class="b">
-                            <div class="l">
-                                <div class="r">
-                                    <div class="bl">
-                                        <div class="br">
-                                            <div class="tl">
-                                                <div class="tr">
-                                                    <div class="content">
-                                                        <style type="text/css">
-                                                            </style>
-                                                        <table style="padding-left: 10px; width: 100%;">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td style="padding-left: 10px;">
-                                                                        <table id="Table3" style="width: 100%;">
-                                                                            <tbody>
-                                                                                <tr id="Tr8">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <a id="A8" href="javascript:__doPostBack('ctl02$icon_AddProject','')">
-                                                                                            
-                                                                                            <img src="../../Content/images/common/cross.gif" id="Img13" title="Click for more information">
-                                                                                        </a>
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A9" title="Click here to Add a New Project" href="../Project/NewProject">Add
-                                                                                            a New Project</a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                               
-                                                                                <tr id="Tr9">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img14" title="Click for more information" />
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A10" title="Click here to View an Existing Project" href="../Project/EditProject">
-                                                                                            View an Existing Project</a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                
-                                                                                <tr id="Tr11">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img16" title="Click for more information" />
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A12" title="Click here to Upload Documents" href="../Project/Docs">Upload Documents</a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr id="Tr12">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img17" title="Click for more information" />
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A13" title="Click here to Create a Project Status Report" href="../Report/Index">
-                                                                                            Create a Project Status Report</a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                 <tr id="Tr1">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        &nbsp;
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        
-                                                                                           &nbsp;
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>--%>
-             
+               
              
               <div class="outer">
                     <div class="boxtitle">
@@ -427,95 +322,10 @@
             </td>
         </tr>
         
-       <%-- <tr>
-            <td>
-                <!-- --------------------------------------------------------- -->
-                <div class="outer">
-                    <div class="boxtitle">
-                        <table style="background-color: white;">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img id="img3" src="../../Content/images/common/manage_timesheets.gif" alt="">
-                                    </td>
-                                    <td>
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td id="td2" class="BoxTitle" style="background-color: rgb(255, 255, 255); height: 24px;
-                                                        padding-left: 4px; padding-right: 5px;">
-                                                        Manage Timesheets
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="t">
-                        <div class="b">
-                            <div class="l">
-                                <div class="r">
-                                    <div class="bl">
-                                        <div class="br">
-                                            <div class="tl">
-                                                <div class="tr">
-                                                    <div class="content">
-                                                        <style type="text/css">
-                                                            </style>
-                                                        <table style="padding-left: 10px; width: 100%;">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td style="padding-left: 10px;">
-                                                                        <table id="Table1" style="width: 100%;">
-                                                                            <tbody>
-                                                                                <tr id="Tr1">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img4" title="Click for more information">
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A1" title="Click here to Enter Time" href="../Timesheets/Index">Enter Time</a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr id="Tr2">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        <img src="../../Content/images/common/cross.gif" id="Img5" title="Click for more information">
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        <a id="A2" title="Click here to Approve Timesheets" href="../Timesheets/Approve">Approve
-                                                                                            Timesheets</a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img src="../../Content/images/common/space.gif" height="2">
-                <!-- --------------------------------------------------------- -->
-            </td>
-            <td>
-                <!-- --------------------------------------------------------- -->
-                <!-- --------------------------------------------------------- -->
-            </td>
-        </tr>--%>
-         <%}
-            else
-            {%>
-          <tr>
+      
+        <%-- <%}else{%>--%>
+         
+          <%--<tr>
             <td>           
                 <!-- --------------------------------------------------------- -->
                 <div class="outer">
@@ -733,6 +543,6 @@
                     </div>
                 </div>
             </td>
-        </tr>
-         <%} %>
+        </tr>--%>
+        <%-- <%} %>--%>
     </table>
