@@ -553,6 +553,10 @@
     <Content Include="Reports\Test.htm" />
     <Content Include="Scripts\aerowindow\jquery-AeroWindow.js" />
     <Content Include="Scripts\aerowindow\jquery.easing.1.3.js" />
+    <Content Include="Scripts\Calander\datepicker.js" />
+    <Content Include="Scripts\Calander\jquery-ui.min.js" />
+    <Content Include="Scripts\Calander\jquery.js" />
+    <Content Include="Scripts\Calander\jquery.min.js" />
     <Content Include="Scripts\calndarview\colorpicker\colorpicker.js" />
     <Content Include="Scripts\calndarview\colorpicker\eye.js" />
     <Content Include="Scripts\calndarview\colorpicker\layout.js" />
