@@ -55,7 +55,7 @@
                     &nbsp;</td>
                 <td colspan="2">
                  
-                    &nbsp;Ressource Allocation Report&nbsp;</td>
+                    &nbsp;Resource Projects Detail Report&nbsp;</td>
             </tr>
             <tr>
                 <td>
