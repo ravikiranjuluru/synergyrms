@@ -15,6 +15,7 @@ Inherits="System.Web.Mvc.ViewUserControl" %>
          %>
 
 <div style="width: 100%; height: 520px;">
+      
  <%--<bdo debug="0" 
         layout_url="Gantt/GanttBasicDef.xml" 
         data_url="Gantt/GanttBasicDBData.aspx"
