@@ -31,7 +31,7 @@
         <CanGrow>true</CanGrow>
         <Left>1.35913cm</Left>
         <Height>0.75cm</Height>
-        <Value>Resource Allocation User Detail Report</Value>
+        <Value>Resource Allocation Detail Report</Value>
       </Textbox>
     </ReportItems>
     <Height>0.5in</Height>
