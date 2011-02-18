@@ -1,136 +1,234 @@
-<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
-
+<!--
+ *
+ * AeroWindow - jQuery Plugin (v3.5)
+ * Copyright 2010, Christian Goldbach
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * 
+ * Project Website:
+ * http://www.soyos.net/aerowindow-jquery.html
+ * http://www.soyos.net
+ *
+ *
+ *
+ * Requires Easing Plugin for Window Animations:
+ * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
+ *
+ * Date: 2010-06-09
+ *
+//-->
   <head>
-   <title>Synergy Resource Management System<asp:ContentPlaceHolder ID="TitleContent" runat="server" />
    
-   </title>
-      <link id="lnkFavIcon" rel="SHORTCUT ICON" href="<%= ResolveUrl("~") %>Content/images/icon/favicon.ico" />
-      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-      <link type="text/css" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
+   <title>Synergy Resource Management System</title>
+   <link id="lnkFavIcon" rel="SHORTCUT ICON" href="<%= ResolveUrl("~") %>Content/images/icon/favicon.ico" />
+ 
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>    
+    <link href="http://www.soyos.net/tl_files/demos/aero-window/css/AeroWindow.css?r=123" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="http://www.soyos.net/tl_files/demos/aero-window/js/jquery-1.4.2.min.js"></script> 
+    <script type="text/javascript" src="http://www.soyos.net/tl_files/demos/aero-window/js/jquery-ui-1.8.1.custom.min.js"></script> 
+    <script type="text/javascript" src="http://www.soyos.net/tl_files/demos/aero-window/js/jquery.easing.1.3.js"></script>         
+    <script type="text/javascript" src="http://www.soyos.net/tl_files/demos/aero-window/js/jquery-AeroWindow.js"></script>
+
+      
+     <%-- <link type="text/css" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
       <link type="text/css" href="<%= ResolveUrl("~") %>Content/AeroWindow.css" rel="stylesheet" />
       <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/jquery-1.4.2.min.js"></script>
       <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/jquery-ui-1.8.1.custom.min.js"></script>
       <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/jquery.easing.1.3.js"></script>
       <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/jquery-AeroWindow.js"></script>
-
-    <style>
-      * {
-        margin: 0px;
-        padding: 0px;
-      }
-      body {
-        background: url(../../Content/images/win7-desktop-bg.jpg);
-        font-family: arial;
-        overflow: hidden;
-      }
-      #LightboxTeaser {
-        position: absolute;
-        top: 50px;
-        right: 300px;
-        width: 350px;
-        -moz-border-radius: 5px;
-        background: white;
-        padding: 20px;
-        color: #222222
-      }
-      #LightboxTeaser a {
-        color: blue;
-      }
-      #LightboxTeaser img {
-        margin: 10px;
-        border: 0px;
-        float: left;
-      }
-      #LightboxTeaser p {
-        margin-bottom: 15px;
-      }
-    </style>
-  </head>
-  <body>
-  <table><tr><td>
-      <table>
-          <tr>
-              <td>
-                  <div id="WindowContent-Login">
-                      <iframe src="../Account/Login" width="100%" height="100%" style="border: 0px;" frameborder="0"  >
-                      </iframe>
-                  </div>
-              </td>
-          </tr>
-          <tr>
-              <td>
-                  <div id="WindowContent-Projects">
-                      <iframe src="../Project/NewProject" width="100%" height="100%" style="border: 0px;"
-                          frameborder="0"></iframe>
-                  </div>
-              </td>
-          </tr>
-          <tr>
-              <td>
-                  <div id="WindowContent-Dashboard">
-                      <iframe src="../Dashboard/Index" width="100%" height="100%" style="border: 0px;"
-                          frameborder="0"></iframe>
-                  </div>
-              </td>
-          </tr>
-      </table>
-  </td></tr></table>
-  
-
-    
-     
-      
-    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        
-    </asp:ContentPlaceHolder>
+      --%>
 
 
 
-
-    
-   <script type="text/javascript">
-       // Global Settings ------------------------------------------------------
-       var ShowTaskbar = true;
-
-       // Windows Configuration ------------------------------------------------
-       $('#WindowContent-Login').AeroWindow({
-           WindowTitle: 'Home',
-           WindowDesktopIconFile: '../../Content/images/common/home.png',
-           WindowPositionTop: 'center',
-           WindowPositionLeft: 'center',
-           WindowStatus: 'closed', //window
-           WindowOuterWidth: 900,
-           WindowOuterHeight: 500
-
-       });
-       $('#WindowContent-Dashboard').AeroWindow({
-           WindowTitle: 'Dashboard',
-           WindowDesktopIconFile: '../../Content/images/common/Dashboard.png',
-           WindowPositionTop: 'center',
-           WindowPositionLeft: 'center',
-           WindowStatus: 'closed',
-           WindowOuterWidth: 900,
-           WindowOuterHeight: 500
-
-       });
-       $('#WindowContent-Projects').AeroWindow({
-           WindowTitle: 'Projects',
-           WindowDesktopIconFile: '../../Content/images/common/Projects.png',
-           WindowPositionTop: 'center',
-           WindowPositionLeft: 'center',
-           WindowStatus: 'closed',
-           WindowOuterWidth: 900,
-           WindowOuterHeight: 500
-
-       });
-
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#Signin').AeroWindow({
+                WindowTitle: 'Sign In',
+                WindowPositionTop: 'center',
+                WindowPositionLeft: 'center',
+                WindowWidth: 600,
+                WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
+                WindowHeight: 500,
+                WindowAnimation: 'easeOutBounce'
+            });
+            
+            $('#Firefoxicon').click(function() {
+                $('#Firefoxapp').AeroWindow({
+                    WindowTitle: 'FireFox',
+                    WindowPositionTop: 'center',
+                    WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
+                    WindowPositionLeft: 'center',
+                    WindowWidth: 700,
+                    WindowHeight: 500,
+                    WindowAnimation: 'easeOutCubic'
+                });
+            });
+            $('#Home').click(function() {
+                $('#Homeapp').AeroWindow({
+                    WindowTitle: 'FireFox',
+                    WindowPositionTop: 'center',
+                    WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
+                    WindowPositionLeft: 'center',
+                    WindowWidth: 700,
+                    WindowHeight: 500,
+                    WindowAnimation: 'easeOutCubic'
+                });
+            });
+            $('#Projects').click(function() {
+            $('#Projectsapp').AeroWindow({
+                    WindowTitle: 'FireFox',
+                    WindowPositionTop: 'center',
+                    WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
+                    WindowPositionLeft: 'center',
+                    WindowWidth: 700,
+                    WindowHeight: 500,
+                    WindowAnimation: 'easeOutCubic'
+                });
+            });
+            $('#Dashboard').click(function() {
+            $('#Dashboardapp').AeroWindow({
+                    WindowTitle: 'FireFox',
+                    WindowPositionTop: 'center',
+                    WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
+                    WindowPositionLeft: 'center',
+                    WindowWidth: 700,
+                    WindowHeight: 500,
+                    WindowAnimation: 'easeOutCubic'
+                });
+            });
+        });
     </script>
     
+    
+ <style>
+      body {
+        /*background: #09368b url(win7-desktop-bg.jpg);*/
+        background: url(../../Content/images/win7-desktop-bg.jpg);
+      }
+      #iconContainer {
+        position: absolute;
+        top:      10px;
+        left:     5px;
+        width:    auto;
+        height:   auto;
+      }
+      #iconContainer div {
+        width:    70px;
+        height:   70px;
+        margin-bottom: 10px;
+      }
+      #soyos h2, #soyos h3, #soyos p, #soyos a, #soyos ul li {
+        font-family: arial;
+        color: white;
+      }
+      h3 {
+        margin: 0px;
+      }
+      ul {
+        margin: 0px; 
+        padding-left: 20px; 
+      }
+      ul li, #soyos a{
+        font-family: arial;
+        font-size: 10px;
+      }
+      #soyos a {
+      }
+    </style>
+   
+   
+    
+  </head>
+  <body>
+      <div style="position: absolute; right: 0px; bottom: 0px;">
+      </div>
+      <div style="position: absolute; left: 0px; top: 150px;">
+      </div>
+
+<%--<div id="soyos" style="position: absolute; top: 0px; right: 0px; padding: 10px; margin-left: 100px; height: 180px; width: 250px; background: black; border: 3px solid darkblue;">
+  <h3></h3>
+  <h2></h2>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div> --%>
+      <div id="iconContainer">
+          <table>
+              <tr>
+                  <td>
+                      <table>
+                          <tr>
+                              <td>
+                                  <div id="Firefoxicon">
+                                      <img src="http://www.soyos.net/tl_files/demos/aero-window/images/DesktopIcon-Firefox.png">
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div id="Home">
+                                      <img src="../../Content/images/common/home.png">
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div id="Dashboard">
+                                      <img src="../../Content/images/common/Dashboard.png">
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  <div id="Projects">
+                                     <img src="../../Content/images/common/Projects.png">
+                                  </div>
+                              </td>
+                          </tr>
+                      </table>
+                  </td>
+              </tr>
+          </table>
+      </div>
+             
+     
+    
+    <!-- Demo Aero Window  1 -->
+      <div id="Signin">
+         <iframe src="../Account/Login" width="100%" height="100%" style="border: 0px;" frameborder="0"></iframe>
+      <div id="Div1"></div>
+      </div>
+      
+      
+    <!-- Demo Aero Window - FireFox App -->
+    <div id="Firefoxapp" style="display: none;">
+      <iframe src="http://www.google.com/firefox" width="100%" height="100%" style="border: 0px;" frameborder="0"></iframe>
+      <div id="iframeHelper"></div>
+    </div>
+    <div id="Homeapp" style="display: none;">
+      <iframe src="../Account/Login" width="100%" height="100%" style="border: 0px;" frameborder="0"></iframe>
+      <div id="Div2"></div>
+    </div>
+    <div id="Projectsapp" style="display: none;">
+      <iframe src="../Project/NewProject" width="100%" height="100%" style="border: 0px;" frameborder="0"></iframe>
+      <div id="Div4"></div>
+    </div>
+    <div id="Dashboardapp" style="display: none;">
+      <iframe src="../Dashboard/Index" width="100%" height="100%" style="border: 0px;" frameborder="0"></iframe>
+      <div id="Div6"></div>
+    </div>
+    
+    
+   
+    
+       <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+    </asp:ContentPlaceHolder>
+    
+
 
   </body>  
 </html>
