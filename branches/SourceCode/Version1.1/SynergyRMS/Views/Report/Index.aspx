@@ -469,7 +469,7 @@
         </div>
     </div>
     <div id="report3app" style="display: none;">
-        <iframe src="../../Reports/Test.htm" width="100%" height="100%" style="border: 0px;"
+        <iframe src="../../Reports/ViewProjectByResources.aspx" width="100%" height="100%" style="border: 0px;"
             frameborder="0"></iframe>
         <div id="Div22">
         </div>

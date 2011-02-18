@@ -40,7 +40,8 @@
   <BottomMargin>1in</BottomMargin>
   <rd:ReportID>03feb520-4bce-4f3b-83ee-0d9da28e7be5</rd:ReportID>
   <DataSets>
-    <DataSet Name="ViewProjectByResource_R_GetProjectsByResourcesId">
+   
+    <DataSet Name="ViewProjectByResourceds_R_GetProjectsByResourcesId">
       <Fields>
         <Field Name="ProjectId">
           <DataField>ProjectId</DataField>
@@ -90,14 +91,14 @@
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <rd:DataSetInfo>
-        <rd:DataSetName>ViewProjectByResource</rd:DataSetName>
+        <rd:DataSetName>ViewProjectByResourceds</rd:DataSetName>
         <rd:TableName>R_GetProjectsByResourcesId</rd:TableName>
         <rd:TableAdapterName>R_GetProjectsByResourcesIdTableAdapter</rd:TableAdapterName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="ViewProjectByResource_R_GetResourceByResourceId">
+    <DataSet Name="ViewProjectByResourceds_R_GetResourceByResourceId">
       <Fields>
         <Field Name="firstname">
           <DataField>firstname</DataField>
@@ -119,7 +120,7 @@
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <rd:DataSetInfo>
-        <rd:DataSetName>ViewProjectByResource</rd:DataSetName>
+        <rd:DataSetName>ViewProjectByResourceds</rd:DataSetName>
         <rd:TableName>R_GetResourceByResourceId</rd:TableName>
         <rd:TableAdapterName>R_GetResourceByResourceIdTableAdapter</rd:TableAdapterName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
@@ -144,7 +145,7 @@
         <CanGrow>true</CanGrow>
         <Left>1.125in</Left>
         <Height>0.25in</Height>
-        <Value>=First(Fields!firstname.Value, "ViewProjectByResource_R_GetResourceByResourceId")+" "+First(Fields!lastname.Value, "ViewProjectByResource_R_GetResourceByResourceId")</Value>
+        <Value>=First(Fields!firstname.Value, "ViewProjectByResourceds_R_GetResourceByResourceId")+" "+First(Fields!lastname.Value, "ViewProjectByResourceds_R_GetResourceByResourceId")</Value>
       </Textbox>
       <Textbox Name="textbox15">
         <rd:DefaultName>textbox15</rd:DefaultName>
@@ -163,7 +164,7 @@
         <Value>Resource :</Value>
       </Textbox>
       <Table Name="table1">
-        <DataSetName>ViewProjectByResource_R_GetProjectsByResourcesId</DataSetName>
+        <DataSetName>ViewProjectByResourceds_R_GetProjectsByResourcesId</DataSetName>
         <Top>0.625in</Top>
         <TableGroups>
           <TableGroup>
@@ -699,8 +700,8 @@
                 </TableCell>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="textbox13">
-                      <rd:DefaultName>textbox13</rd:DefaultName>
+                    <Textbox Name="ProjectEndDate_1">
+                      <rd:DefaultName>ProjectEndDate_1</rd:DefaultName>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>

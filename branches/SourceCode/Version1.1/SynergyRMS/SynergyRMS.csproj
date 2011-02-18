@@ -125,6 +125,11 @@
       <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reports\ViewProjectByResource.Designer.cs" />
+    <Compile Include="Reports\ViewProjectByResourceds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewProjectByResourceds.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ViewProjectByResources.aspx.cs">
       <DependentUpon>ViewProjectByResources.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -664,16 +669,16 @@
     <None Include="Reports\ResourceAllocationds.xss">
       <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
     </None>
-    <None Include="Reports\ViewProjectByResource.xsc">
-      <DependentUpon>ViewProjectByResource.xsd</DependentUpon>
+    <None Include="Reports\ViewProjectByResourceds.xsc">
+      <DependentUpon>ViewProjectByResourceds.xsd</DependentUpon>
     </None>
-    <None Include="Reports\ViewProjectByResource.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ViewProjectByResource1.Designer.cs</LastGenOutput>
+    <None Include="Reports\ViewProjectByResourceds.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ViewProjectByResourceds.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Reports\ViewProjectByResource.xss">
-      <DependentUpon>ViewProjectByResource.xsd</DependentUpon>
+    <None Include="Reports\ViewProjectByResourceds.xss">
+      <DependentUpon>ViewProjectByResourceds.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
