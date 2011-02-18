@@ -38,7 +38,7 @@ namespace SynergyRMS
 
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+           // AreaRegistration.RegisterAllAreas();
 
             RegisterRoutes(RouteTable.Routes);
         }
