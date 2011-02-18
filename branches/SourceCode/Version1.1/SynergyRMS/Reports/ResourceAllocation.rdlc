@@ -20,17 +20,18 @@
     <ReportItems>
       <Image Name="image1">
         <Sizing>AutoSize</Sizing>
+        <Width>1.38542in</Width>
         <MIMEType>image/jpeg</MIMEType>
         <Source>Embedded</Source>
         <Style />
         <ZIndex>1</ZIndex>
-        <Left>4.875in</Left>
+        <Left>4.375in</Left>
         <Height>0.52083in</Height>
         <Value>synergysmall</Value>
       </Image>
       <Textbox Name="textbox1">
         <rd:DefaultName>textbox1</rd:DefaultName>
-        <Width>3in</Width>
+        <Width>2.875in</Width>
         <Style>
           <BackgroundColor>WhiteSmoke</BackgroundColor>
           <FontFamily>Times New Roman</FontFamily>
@@ -138,7 +139,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <Width>6.26042in</Width>
+  <Width>6in</Width>
   <Body>
     <ReportItems>
       <Table Name="table1">
@@ -481,7 +482,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value>=Fields!duration.Value</Value>
+                      <Value>=Fields!duration.Value+1</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
