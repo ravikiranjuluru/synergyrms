@@ -157,11 +157,7 @@
  <link href="../../Content/jquery-ui.css" rel="stylesheet" type="text/css"/>
    <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery-ui.min.js"></script>
      <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery.min.js"></script>--%>
-    
-
-    
-    
-   <!-- end -->
+  <!-- end -->
 
 
 
