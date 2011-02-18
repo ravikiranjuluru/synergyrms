@@ -693,7 +693,10 @@ namespace SynergyRMS.Controllers
 
 
 
-
+        public ActionResult ViewUserLeave()
+        {
+            return View("ViewUserLeave");
+        }  
 
         public ActionResult Resources()
         {
