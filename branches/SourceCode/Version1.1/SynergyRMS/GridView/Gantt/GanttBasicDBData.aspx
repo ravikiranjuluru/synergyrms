@@ -101,8 +101,8 @@ Conn.Close();
 
 
  MembershipUserCollection listUser=SynergyService.GetAssignedUsersByProjectId(projectid);
- string arruser = "|";
- string arruserusername = "|";
+ string arruser = "";
+ string arruserusername = "";
  foreach (MembershipUser user in listUser)
     {
         var profile = new ProfileBase();
@@ -110,26 +110,27 @@ Conn.Close();
         string fname = profile.GetPropertyValue("FirstName").ToString();
         string lname = profile.GetPropertyValue("LastName").ToString();
         string name = fname + " " + lname;
-        arruser = arruser.Trim() + name.Trim() + "|";
-        arruserusername = arruserusername.Trim() + user.UserName.Trim() + "|";
+        arruser += "|" + name.Trim();
+        arruserusername += "|" + user.UserName.Trim();
     }
  string arrrole = "|";
  List<PM_ProjectRoles> listRoles = SynergyService.GetAllProjectRoles();
  foreach (PM_ProjectRoles roles in listRoles)
  {
-     arrrole = arrrole.Trim()+ roles.RoleName.Trim() + "|";
+     arrrole += "|" + roles.RoleName.Trim();
  }
  
  Response.Write("<Grid><Cfg id=\"GanttBasic\"/><Cfg NumberId=\"1\" IdChars=\"0123456789\"/>" +
  "<LeftCols>" +
  "<C Name=\"id\" Width=\"20\" Type=\"Int\"/>" +  
-  "<C Name=\"N\" Width=\"60\" CanEdit=\"0\" Type=\"Enum\" Enum=\""+arruser+"\"/>" +
+  "<C Name=\"N\" Width=\"60\" Type=\"Enum\" Enum=\""+arruser+"\"/>" +
   //"<C Name=\"U\" Width=\"50\" Type=\"Text\"/>" +  
-  "<C Name=\"U\" Width=\"50\" CanEdit=\"0\" Type=\"Enum\" Enum=\"" + arruserusername + "\"/>" +
-  "<C Name=\"R\" Width=\"60\" CanEdit=\"0\" Type=\"Enum\" Enum=\"" + arrrole + "\"/>" +
+  "<C Name=\"U\" Width=\"50\" Type=\"Enum\" Enum=\"" + arruserusername + "\"/>" +
+  "<C Name=\"R\" Width=\"60\" Type=\"Enum\" Enum=\"" + arrrole + "\"/>" +
   "<C Name=\"C\" Width=\"50\" Type=\"Int\" Format=\"##\\%;;0\\%\"/>" +
   "<C Name=\"S\" Width=\"60\" Type=\"Date\" Format=\"MMM dd\"/>" +
   "<C Name=\"E\" Width=\"60\" Type=\"Date\" Format=\"MMM dd\"/>" +
+  "<C Name=\"UL\" Width=\"50\" Type=\"Text\" CanEdit=\"0\" Button=\"Defaults\" Defaults=\"|*RowsColN*U\" Range=\"1\"/>"+
   
  "</LeftCols>");
  Response.Write("<Body><B>");
