@@ -20,17 +20,18 @@
     <ReportItems>
       <Image Name="image1">
         <Sizing>AutoSize</Sizing>
+        <Width>1.38542in</Width>
         <MIMEType>image/jpeg</MIMEType>
         <Source>Embedded</Source>
         <Style />
         <ZIndex>1</ZIndex>
-        <Left>4.625in</Left>
+        <Left>4.375in</Left>
         <Height>0.52083in</Height>
         <Value>synergysmall</Value>
       </Image>
       <Textbox Name="textbox1">
         <rd:DefaultName>textbox1</rd:DefaultName>
-        <Width>6.98413cm</Width>
+        <Width>8.25397cm</Width>
         <Style>
           <FontFamily>Times New Roman</FontFamily>
           <FontSize>14pt</FontSize>
@@ -40,7 +41,7 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <CanGrow>true</CanGrow>
-        <Left>3.1746cm</Left>
+        <Left>1.90476cm</Left>
         <Height>0.75cm</Height>
         <Value>Resource Allocation Detail Report</Value>
       </Textbox>
@@ -120,7 +121,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <Width>6.01042in</Width>
+  <Width>5.875in</Width>
   <Body>
     <ReportItems>
       <Table Name="table1">
