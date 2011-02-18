@@ -33,6 +33,7 @@
         <rd:DefaultName>textbox10</rd:DefaultName>
         <Width>2.375in</Width>
         <Style>
+          <FontFamily>Times New Roman</FontFamily>
           <FontSize>14pt</FontSize>
           <TextAlign>Center</TextAlign>
           <PaddingLeft>2pt</PaddingLeft>
