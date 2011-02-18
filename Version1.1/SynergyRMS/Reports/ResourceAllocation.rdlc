@@ -33,7 +33,7 @@
         <CanGrow>true</CanGrow>
         <Left>1.5in</Left>
         <Height>0.25in</Height>
-        <Value>Resource Projects Detail Report  Report</Value>
+        <Value>Resource Projects Detail Report</Value>
       </Textbox>
     </ReportItems>
     <Height>0.625in</Height>
