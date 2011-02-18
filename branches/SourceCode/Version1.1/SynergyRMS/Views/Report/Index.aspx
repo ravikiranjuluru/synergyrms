@@ -513,7 +513,7 @@
          });
          $('#report2icon').click(function() {
          $('#report2app').AeroWindow({
-         WindowTitle: 'Resource Allocation Report',
+         WindowTitle: 'Resource Projects Detail Report ',
                  WindowPositionTop: 'center',
                  WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
                  WindowPositionLeft: 'center',
@@ -524,7 +524,7 @@
          });
          $('#report3icon').click(function() {
          $('#report3app').AeroWindow({
-         WindowTitle: 'Resource Detail Report',
+         WindowTitle: 'Resource Projects Report',
                  WindowPositionTop: 'center',
                  WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
                  WindowPositionLeft: 'center',
@@ -536,7 +536,7 @@
 
          $('#report4icon').click(function() {
              $('#report4app').AeroWindow({
-                 WindowTitle: 'Resource Allocation User Detail Report',
+                 WindowTitle: 'Resource Allocation Detail Report',
                  WindowPositionTop: 'center',
                  WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
                  WindowPositionLeft: 'center',

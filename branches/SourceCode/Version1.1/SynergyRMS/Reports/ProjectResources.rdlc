@@ -34,7 +34,7 @@
         <Value>Project Resources Report</Value>
       </Textbox>
     </ReportItems>
-    <Height>0.875in</Height>
+    <Height>0.5in</Height>
     <PrintOnLastPage>true</PrintOnLastPage>
   </PageHeader>
   <BottomMargin>1in</BottomMargin>
