@@ -194,9 +194,14 @@
                             <tbody>
                                 <tr>
                                     <td align="justify" valign="top" style="width:80%">
-                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="Refresh the Project List" onclick="window.location.reload( true );">
+                                        &nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td align="justify" valign="top" style="width:80%">
+                                     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="Refresh the Project List" onclick="window.location.reload( true );">
+                                  &nbsp;&nbsp;Refresh Project List&nbsp;&nbsp;
                                    <img src="../../Content/images/common/menuitem_rollback.gif"   
-                                    alt="Refresh the Project List" title="Refresh the Project List"/>Refresh Project List
+                                    alt="Refresh the Project List" title="Refresh the Project List"/>
                                     </a>
                                     </td>
                                 </tr>
