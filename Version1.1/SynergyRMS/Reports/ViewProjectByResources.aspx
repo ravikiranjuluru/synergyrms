@@ -85,9 +85,9 @@
                         <LocalReport ReportPath="Reports\ViewProjectByResource.rdlc">
                             <DataSources>
                                 <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" 
-                                    Name="ViewProjectByResource_R_GetProjectsByResourcesId" />
+                                    Name="ViewProjectByResourceds_R_GetProjectsByResourcesId" />
                                 <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" 
-                                    Name="ViewProjectByResource_R_GetResourceByResourceId" />
+                                    Name="ViewProjectByResourceds_R_GetResourceByResourceId" />
                             </DataSources>
                         </LocalReport>
                     </rsweb:ReportViewer>
@@ -101,7 +101,8 @@
                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
                         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
                         
-                        TypeName="SynergyRMS.Reports.ViewProjectByResourceTableAdapters.R_GetProjectsByResourcesIdTableAdapter">
+                        
+                        TypeName="SynergyRMS.Reports.ViewProjectByResourcedsTableAdapters.R_GetProjectsByResourcesIdTableAdapter">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="ddlUser" Name="ResourceId" 
                                 PropertyName="SelectedValue" Type="String" />
@@ -117,7 +118,8 @@
                 <td>
                     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
                         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
-                        TypeName="SynergyRMS.Reports.ViewProjectByResourceTableAdapters.R_GetResourceByResourceIdTableAdapter">
+                        
+                        TypeName="SynergyRMS.Reports.ViewProjectByResourcedsTableAdapters.R_GetResourceByResourceIdTableAdapter">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="ddlUser" Name="ResourceId" 
                                 PropertyName="SelectedValue" Type="String" />

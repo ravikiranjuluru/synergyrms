@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="ViewProjectByResource" targetNamespace="http://tempuri.org/ViewProjectByResource.xsd" xmlns:mstns="http://tempuri.org/ViewProjectByResource.xsd" xmlns="http://tempuri.org/ViewProjectByResource.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="ViewProjectByResourceds" targetNamespace="http://tempuri.org/ViewProjectByResourceds.xsd" xmlns:mstns="http://tempuri.org/ViewProjectByResourceds.xsd" xmlns="http://tempuri.org/ViewProjectByResourceds.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -61,7 +61,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ViewProjectByResource" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="ViewProjectByResource" msprop:Generator_UserDSName="ViewProjectByResource" msprop:EnableTableAdapterManager="true">
+  <xs:element name="ViewProjectByResourceds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="ViewProjectByResourceds" msprop:Generator_UserDSName="ViewProjectByResourceds" msprop:EnableTableAdapterManager="true">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="R_GetProjectsByResourcesId" msprop:Generator_UserTableName="R_GetProjectsByResourcesId" msprop:Generator_RowDeletedName="R_GetProjectsByResourcesIdRowDeleted" msprop:Generator_TableClassName="R_GetProjectsByResourcesIdDataTable" msprop:Generator_RowChangedName="R_GetProjectsByResourcesIdRowChanged" msprop:Generator_RowClassName="R_GetProjectsByResourcesIdRow" msprop:Generator_RowChangingName="R_GetProjectsByResourcesIdRowChanging" msprop:Generator_RowEvArgName="R_GetProjectsByResourcesIdRowChangeEvent" msprop:Generator_RowEvHandlerName="R_GetProjectsByResourcesIdRowChangeEventHandler" msprop:Generator_TablePropName="R_GetProjectsByResourcesId" msprop:Generator_TableVarName="tableR_GetProjectsByResourcesId" msprop:Generator_RowDeletingName="R_GetProjectsByResourcesIdRowDeleting">
@@ -133,6 +133,9 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:R_GetProjectsByResourcesId" />
+      <xs:field xpath="mstns:ProjectId" />
+    </xs:unique>
   </xs:element>
 </xs:schema>
