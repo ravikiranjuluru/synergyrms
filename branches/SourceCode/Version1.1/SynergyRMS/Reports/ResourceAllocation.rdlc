@@ -482,7 +482,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value>=Fields!duration.Value+1</Value>
+                      <Value>=Fields!duration.Value</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
