@@ -33,9 +33,7 @@
         <table style="width: 100%;">
             <tr>
                 <td colspan="2">
-                    &nbsp;
-                    Resource Allocation Individual Detail Report&nbsp;
-                </td>
+                                        &nbsp; Resource Allocation Detail Report</td>
                 <td>
                     &nbsp;
                 </td>

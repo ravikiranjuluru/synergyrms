@@ -28,10 +28,8 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
+                <td colspan="2">
+                    Resource Projects Report</td>
                 <td>
                     &nbsp;</td>
             </tr>
