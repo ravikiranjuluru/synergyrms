@@ -20,11 +20,12 @@
     <ReportItems>
       <Image Name="image1">
         <Sizing>AutoSize</Sizing>
+        <Width>1.38542in</Width>
         <MIMEType>image/jpeg</MIMEType>
         <Source>Embedded</Source>
         <Style />
         <ZIndex>1</ZIndex>
-        <Left>5.125in</Left>
+        <Left>4.875in</Left>
         <Height>0.52083in</Height>
         <Value>synergysmall</Value>
       </Image>
