@@ -120,10 +120,11 @@ namespace SynergyRMS.Controllers
                 project.ProjectEndDate = Convert.ToDateTime(form["projectenddate"]);
                 
                 project.PM_Types = SynergyService.GetProjectTypebyId(Convert.ToInt32(form["ddProTypes"].ToString()));
+                int proStatus = form["chckStatus"] == null ? 0 : 1;
                 if (form["chckStatus"] != null)
                 {
                     project.PM_Status = SynergyService.GetProjectStatusById(1);
-                    //project.PM_Status.StatusId = Convert.ToInt32(form["chckStatus"].ToString());
+                    project.PM_Status.StatusId = proStatus;
                 }
                  
                 SynergyService.UpdateProject(project);
