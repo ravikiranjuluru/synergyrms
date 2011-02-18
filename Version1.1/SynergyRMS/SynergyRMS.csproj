@@ -115,6 +115,18 @@
     <Compile Include="Reports\ResourceAllocation.aspx.designer.cs">
       <DependentUpon>ResourceAllocation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ResourceAllocationByUser.aspx.cs">
+      <DependentUpon>ResourceAllocationByUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocationByUser.aspx.designer.cs">
+      <DependentUpon>ResourceAllocationByUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocationByUserds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceAllocationByUserds.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ResourceAllocationds.cs">
       <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -124,7 +136,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reports\ViewProjectByResource.Designer.cs" />
     <Compile Include="Reports\ViewProjectByResourceds.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -594,6 +605,7 @@
     <Content Include="Models\App.Config" />
     <Content Include="Reports\Project_Resources.aspx" />
     <Content Include="Reports\ResourceAllocation.aspx" />
+    <Content Include="Reports\ResourceAllocationByUser.aspx" />
     <Content Include="Reports\Test.htm" />
     <Content Include="Reports\ViewProjectByResources.aspx" />
     <Content Include="Scripts\aerowindow\jquery-AeroWindow.js" />
@@ -658,6 +670,17 @@
     <None Include="Reports\ProjectResources.xss">
       <DependentUpon>ProjectResources.xsd</DependentUpon>
     </None>
+    <None Include="Reports\ResourceAllocationByUserds.xsc">
+      <DependentUpon>ResourceAllocationByUserds.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ResourceAllocationByUserds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResourceAllocationByUserds.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ResourceAllocationByUserds.xss">
+      <DependentUpon>ResourceAllocationByUserds.xsd</DependentUpon>
+    </None>
     <None Include="Reports\ResourceAllocationds.xsc">
       <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
     </None>
@@ -682,8 +705,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Reports\ProjectResources.rdlc" />
     <EmbeddedResource Include="Reports\ResourceAllocation.rdlc" />
+    <EmbeddedResource Include="Reports\ResourceAllocationByUser.rdlc" />
+    <EmbeddedResource Include="Reports\ResourceAllocationByUserForTheGivenPeriod.rdlc" />
     <EmbeddedResource Include="Reports\ViewProjectByResource.rdlc" />
   </ItemGroup>
   <ItemGroup>
@@ -704,7 +730,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>60932</DevelopmentServerPort>
+          <DevelopmentServerPort>1952</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -432,6 +432,20 @@
                                                                                     </td>
                                                                                 </tr>
                                                                                 
+                                                                                   <tr id="Tr4">
+                                                                                    <td padding-left="6px" width="5%">
+                                                                                        <img src="../../Content/images/common/cross.gif" id="Img5" title="Click for more information" />
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div id="Div4">
+                                                                                            <div id="report4icon">
+                                                                                                <a href="#" title="Click here to View Report">Resource Allocation User Report</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                
+                                                                                
                                                                                 
                                                                                
                                                                             </tbody>
@@ -474,6 +488,13 @@
         <div id="Div22">
         </div>
     </div>
+          <div id="report4app" style="display: none;">
+        <iframe src="../../Reports/ResourceAllocationByUser.aspx" width="100%" height="100%" style="border: 0px;"
+            frameborder="0"></iframe>
+        <div id="Div7">
+        </div>
+    </div>     
+              
                                                                                              
                                                                                              
                                                                                              
@@ -512,8 +533,18 @@
                  WindowAnimation: 'easeOutCubic'
              });
          });
-         
-        
+
+         $('#report4icon').click(function() {
+             $('#report4app').AeroWindow({
+                 WindowTitle: 'Resource Allocation User Detail Report',
+                 WindowPositionTop: 'center',
+                 WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
+                 WindowPositionLeft: 'center',
+                 WindowWidth: 700,
+                 WindowHeight: 500,
+                 WindowAnimation: 'easeOutCubic'
+             });
+         });
     </script>
     
 </body>
