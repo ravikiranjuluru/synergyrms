@@ -2,6 +2,14 @@
     Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery.min.js"></script>
+   <script type="text/javascript"  language="javascript" src="../../Scripts/Calander/jquery-ui.min.js"></script>
+    
+  <link rel="stylesheet" href="../Content/common/styles.css" type="text/css"/>
+  
+
     <div id="masterpage_divHead" class="formHead">
         <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tbody>
