@@ -86,11 +86,9 @@
                                   <td id="Td1" class="item level1">
                                       <a class="link " href="../Dashboard/Index"><span class="text ">Home</span> </a>
                                   </td>
-                                  <%if (isAdmin)
-                                    { %>
+                                <%--  <%if (isAdmin)
+                                    { %>--%>
                                     <td class="item level1" >
-                                    
-
                                     </td>
                                      <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewProject))
                                        { %>
@@ -99,29 +97,43 @@
                                       <a class="link " href="../Project/EditProject"><span class="text ">Project</span></a>
                                   </td>
                                   <%} %>
+                                  <td class="item level1" >
+                                    </td>
                                   <td id="Td2" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
                                       <a class="link " href="../Resource"><span class="text ">Resources</span> </a>
                                   </td>
+                                  <td class="item level1" >
+                                    </td>
                                     <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewProjectSchedule))
                                       { %>
                                   <td id="Td6" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
                                       <a class="link " href="../GridView/Index"><span class="text ">Scheduling</span></a>
                                   </td>
                                   <%} %>
-                                  <td id="Td6" class="item level1">
-                                      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                  <td class="item level1" >
+                                    </td>
+                                    <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewProjectReports))
+                                      { %>
+                                  <td id="Td4" class="item level1" onmouseenter="this.className += ' hover';" onmouseleave="this.className = this.className.replace(' hover', '');">
+                                      <a class="link " href="../Report"><span class="text ">Reports</span></a>
                                   </td>
-                                  <%}
+                                  <%} %>
+                                   <td class="item level1" >
+                                   &nbsp;&nbsp;
+                                    </td>
+                                    <td class="item level1" >
+                                    </td>
+                                 <%-- <%}
                                     else
-                                    {%>
-                                  <td id="DASHBOARD-MYWORK" class="item level1" onmouseenter="this.className += ' hover';"
+                                    {%>--%>
+                                 <%-- <td id="DASHBOARD-MYWORK" class="item level1" onmouseenter="this.className += ' hover';"
                                       onmouseleave="this.className = this.className.replace(' hover', '');">
                                       <a class="link " href="../MyWork"><span class="text ">My Work</span> </a>
                                   </td>
                                   <td id="Td4" class="item level1">
                                       &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-                                  </td>
-                                  <%} %>
+                                  </td>--%>
+                                 <%-- <%} %>--%>
                             
                                <%-- <td>
                                     <div id="menuDoc">
