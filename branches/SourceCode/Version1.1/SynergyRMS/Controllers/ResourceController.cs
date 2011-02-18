@@ -26,7 +26,9 @@ namespace SynergyRMS.Controllers
         {
             return View("Department");
         }
-        [HttpPost]
+        //[HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
+
         public ActionResult Department(FormCollection form)
         {
             try
@@ -80,7 +82,9 @@ namespace SynergyRMS.Controllers
             
             return View("RolePermission");
         }
-        [HttpPost]//save selected role permissions
+        //[HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
+        //save selected role permissions
         public ActionResult SetPermission(FormCollection form)//*
         {
             string editrole = form["hdnid"].ToString();
@@ -159,7 +163,8 @@ namespace SynergyRMS.Controllers
             ViewData["PermissionList"] = table;
             return View("RolePermission");
         }
-        [HttpPost]
+        //[HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Role(FormCollection form)//*create new role
         {
            try
@@ -468,7 +473,8 @@ namespace SynergyRMS.Controllers
             return arrpermission;
         }
 
-        [HttpPost]
+        //[HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult AddRole(FormCollection form)
         {
             try
@@ -520,7 +526,8 @@ namespace SynergyRMS.Controllers
             }
             return View("EditUser");
         }
-        [HttpPost]
+        //[HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult EditUser(FormCollection form)
         {
             string userkey = form["hdnid"].ToString();
@@ -636,7 +643,8 @@ namespace SynergyRMS.Controllers
             ViewData["Userlist"] = ddUserlist;
             return View();
         }
-        [HttpPost]
+       // [HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult ViewSchedule(FormCollection form)
         {
             string viewuserkey = form["ddUsersList"].ToString();

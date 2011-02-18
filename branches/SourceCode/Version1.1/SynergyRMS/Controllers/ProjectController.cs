@@ -48,7 +48,8 @@ namespace SynergyRMS.Controllers
         /// </summary>
         /// <param name="form">The form.</param>
         /// <returns></returns>
-        [HttpPost]
+        //[HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult NewProject(FormCollection form)
         {
             try
@@ -102,7 +103,9 @@ namespace SynergyRMS.Controllers
             ViewData["ProTypes"] = GetProjectTypes();
             return View("EditProjectForm");
         }
-        [HttpPost]
+
+        //[HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult EditProject(FormCollection form)
         {
             try
