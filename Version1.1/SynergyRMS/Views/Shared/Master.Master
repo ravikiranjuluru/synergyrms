@@ -23,7 +23,7 @@
    <title>Synergy Resource Management System</title>
    <link id="lnkFavIcon" rel="SHORTCUT ICON" href="<%= ResolveUrl("~") %>Content/images/icon/favicon.ico" />
  
- <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>    
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>    
     <link href="http://www.soyos.net/tl_files/demos/aero-window/css/AeroWindow.css?r=123" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="http://www.soyos.net/tl_files/demos/aero-window/js/jquery-1.4.2.min.js"></script> 
     <script type="text/javascript" src="http://www.soyos.net/tl_files/demos/aero-window/js/jquery-ui-1.8.1.custom.min.js"></script> 
