@@ -53,20 +53,10 @@
                 WindowAnimation: 'easeOutBounce'
             });
             
-            $('#Firefoxicon').click(function() {
-                $('#Firefoxapp').AeroWindow({
-                    WindowTitle: 'FireFox',
-                    WindowPositionTop: 'center',
-                    WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
-                    WindowPositionLeft: 'center',
-                    WindowWidth: 700,
-                    WindowHeight: 500,
-                    WindowAnimation: 'easeOutCubic'
-                });
-            });
+           
             $('#Home').click(function() {
                 $('#Homeapp').AeroWindow({
-                    WindowTitle: 'FireFox',
+                    WindowTitle: 'Synergy Home',
                     WindowPositionTop: 'center',
                     WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
                     WindowPositionLeft: 'center',
@@ -77,7 +67,7 @@
             });
             $('#Projects').click(function() {
             $('#Projectsapp').AeroWindow({
-                    WindowTitle: 'FireFox',
+                    WindowTitle: 'Projects',
                     WindowPositionTop: 'center',
                     WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
                     WindowPositionLeft: 'center',
@@ -88,7 +78,7 @@
             });
             $('#Dashboard').click(function() {
             $('#Dashboardapp').AeroWindow({
-                    WindowTitle: 'FireFox',
+                    WindowTitle: 'Dashboard',
                     WindowPositionTop: 'center',
                     WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
                     WindowPositionLeft: 'center',
@@ -160,31 +150,28 @@
               <tr>
                   <td>
                       <table>
-                          <tr>
-                              <td>
-                                  <div id="Firefoxicon">
-                                      <img src="http://www.soyos.net/tl_files/demos/aero-window/images/DesktopIcon-Firefox.png">
-                                  </div>
-                              </td>
-                          </tr>
+                          
                           <tr>
                               <td>
                                   <div id="Home">
-                                      <img src="../../Content/images/common/home.png">
+                                      <img src="../../Content/images/common/home.png" width="50">
+                                      <strong>Home</strong>
                                   </div>
                               </td>
                           </tr>
                           <tr>
                               <td>
                                   <div id="Dashboard">
-                                      <img src="../../Content/images/common/Dashboard.png">
+                                      <img src="../../Content/images/common/Dashboard.png" width="50">
+                                      <strong>Dashboard</strong>
                                   </div>
                               </td>
                           </tr>
                           <tr>
                               <td>
                                   <div id="Projects">
-                                     <img src="../../Content/images/common/Projects.png">
+                                     <img src="../../Content/images/common/Projects.png" width="50">
+                                     <strong style="text-align: center; background-position: center center">Projects</strong>
                                   </div>
                               </td>
                           </tr>
@@ -204,10 +191,7 @@
       
       
     <!-- Demo Aero Window - FireFox App -->
-    <div id="Firefoxapp" style="display: none;">
-      <iframe src="http://www.google.com/firefox" width="100%" height="100%" style="border: 0px;" frameborder="0"></iframe>
-      <div id="iframeHelper"></div>
-    </div>
+
     <div id="Homeapp" style="display: none;">
       <iframe src="../Account/Login" width="100%" height="100%" style="border: 0px;" frameborder="0"></iframe>
       <div id="Div2"></div>
