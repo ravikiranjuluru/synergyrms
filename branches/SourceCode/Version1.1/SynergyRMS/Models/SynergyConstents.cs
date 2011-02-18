@@ -13,13 +13,13 @@ namespace SynergyRMS.Models
         public const string deleteProject = "deleteProject";
         public const string viewProjectSchedule = "viewProjectSchedule";//new
         public const string viewProjectReports = "viewProjectReports";//new
-
+        public const string assignToProject = "assignToProject";
 
         public const string addTask = "addTask";
         public const string editTask = "editTask";
         public const string deleteTask = "deleteTask";
 
-        public const string assignToProject = "assignToProject";
+        
 
         public const string addUser = "addUser";
         public const string viewUser = "viewUser";
