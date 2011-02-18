@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Microsoft.Web.Mvc.dll</HintPath>
@@ -95,6 +96,42 @@
     </Compile>
     <Compile Include="Models\SynergyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\ProjectResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectResources.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Project_Resources.aspx.cs">
+      <DependentUpon>Project_Resources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Project_Resources.aspx.designer.cs">
+      <DependentUpon>Project_Resources.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocation.aspx.cs">
+      <DependentUpon>ResourceAllocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocation.aspx.designer.cs">
+      <DependentUpon>ResourceAllocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocationds.cs">
+      <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocationds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ViewProjectByResource.Designer.cs" />
+    <Compile Include="Reports\ViewProjectByResources.aspx.cs">
+      <DependentUpon>ViewProjectByResources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ViewProjectByResources.aspx.designer.cs">
+      <DependentUpon>ViewProjectByResources.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\AeroWindow.css" />
@@ -550,7 +587,10 @@
     <Content Include="GridView\Styles\Info.txt" />
     <Content Include="GridView\Styles\Page.png" />
     <Content Include="Models\App.Config" />
+    <Content Include="Reports\Project_Resources.aspx" />
+    <Content Include="Reports\ResourceAllocation.aspx" />
     <Content Include="Reports\Test.htm" />
+    <Content Include="Reports\ViewProjectByResources.aspx" />
     <Content Include="Scripts\aerowindow\jquery-AeroWindow.js" />
     <Content Include="Scripts\aerowindow\jquery.easing.1.3.js" />
     <Content Include="Scripts\Calander\datepicker.js" />
@@ -600,6 +640,46 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SynergyModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reports\ProjectResources.xsc">
+      <DependentUpon>ProjectResources.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ProjectResources.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ProjectResources.xss">
+      <DependentUpon>ProjectResources.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ResourceAllocationds.xsc">
+      <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ResourceAllocationds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResourceAllocationds.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ResourceAllocationds.xss">
+      <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ViewProjectByResource.xsc">
+      <DependentUpon>ViewProjectByResource.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ViewProjectByResource.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ViewProjectByResource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ViewProjectByResource.xss">
+      <DependentUpon>ViewProjectByResource.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\ProjectResources.rdlc" />
+    <EmbeddedResource Include="Reports\ResourceAllocation.rdlc" />
+    <EmbeddedResource Include="Reports\ViewProjectByResource.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GridView\GanttTree\" />

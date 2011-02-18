@@ -457,13 +457,13 @@
         </div>
     </div>
     <div id="report1app" style="display: none;">
-        <iframe src="../../Reports/Test.htm" width="100%" height="100%" style="border: 0px;"
+        <iframe src="../../Reports/Project_Resources.aspx" width="100%" height="100%" style="border: 0px;"
             frameborder="0"></iframe>
         <div id="Div18">
         </div>
     </div>
     <div id="report2app" style="display: none;">
-        <iframe src="../../Reports/Test.htm" width="100%" height="100%" style="border: 0px;"
+        <iframe src="../../Reports/ResourceAllocation.aspx" width="100%" height="100%" style="border: 0px;"
             frameborder="0"></iframe>
         <div id="Div20">
         </div>
