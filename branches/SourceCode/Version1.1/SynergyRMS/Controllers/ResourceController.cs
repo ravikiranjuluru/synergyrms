@@ -797,10 +797,7 @@ namespace SynergyRMS.Controllers
         {
             return View("ScheduleCalendar");
         }
-        public ActionResult Utilisation()
-        {
-            return View("ScheduleUtilisation");
-        }
+        
 
     }
 }
