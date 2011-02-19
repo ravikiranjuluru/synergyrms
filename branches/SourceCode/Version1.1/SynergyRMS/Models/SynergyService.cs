@@ -865,9 +865,38 @@ namespace SynergyRMS.Models
             }
             return false;
         }
-        public static List<PM_Projects> getUserProjects(string userKey)
+        public static List<PM_Projects> getUserProjects(string userkey)
         {
-            return GetAllProjects();
+            List<PM_ProjectResources> ProjectResList = null;
+            List<PM_Projects> ProjectList = new List<PM_Projects>();
+            PM_Projects objProject=null;
+            
+            MembershipUser edituser = Membership.GetUser(new Guid(userkey));
+
+
+            IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                                           where p.aspnet_Users.UserName == edituser.UserName
+                                                           select p;
+
+       
+
+            ProjectResList = projectQuery.ToList();
+
+            foreach (PM_ProjectResources objResources in ProjectResList)
+            {
+                PM_Projects project = new PM_Projects();
+
+               objProject=new PM_Projects();
+               objResources.PM_ProjectsReference.Load();
+
+               ProjectList.Add(objResources.PM_Projects);
+               
+                //objResources.UM_UsersReference.Load();
+                //int aa = single1.T_User.UserId;
+            }
+
+            return ProjectList;
+           
         }
 
         #endregion
