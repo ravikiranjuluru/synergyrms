@@ -437,7 +437,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value>=Fields!duration.Value</Value>
+                      <Value>=IIF(Fields!duration.Value="-1"," ",CStr(Fields!duration.Value+1) &amp; "Days")</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
