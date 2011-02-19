@@ -277,7 +277,7 @@
                                                                        <td>Add Project</td>
                                                                        <td><%
                                                                                     
-                                                                       
+                                                                       bool add = (bool)permissionList[SynergyConstents.addProject];
                                                                                //if ((((bool)permissionList.ContainsValue(SynergyConstents.addProject)) == null ? false : true))
                                                                                if ((bool)permissionList[SynergyConstents.addProject])
                                                                                       { %>
