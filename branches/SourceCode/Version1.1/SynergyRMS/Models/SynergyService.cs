@@ -684,9 +684,16 @@ namespace SynergyRMS.Models
         public static void DeletePermissions(string rolname)
         {
 
-            List<UM_Permission> activePermissions = GetUserpermissionsByRoleId(GetUserRoleIdByName(rolname).RoleId);
+            List<UM_RolePermission> permissions = null;
+            var userQuery = from p in GetSynegyRMSInstance().UM_RolePermission
+                            where p.aspnet_Roles.RoleName == rolname
+                            select p;
 
-            foreach (UM_Permission permission in activePermissions)
+            permissions = userQuery.ToList();
+
+            //List<UM_Permission> activePermissions = GetUserpermissionsByRoleId(GetUserRoleIdByName(rolname).RoleId);
+
+            foreach (UM_RolePermission permission in permissions)
             {
                 GetSynegyRMSInstance().DeleteObject(permission);
                 GetSynegyRMSInstance().SaveChanges();
@@ -886,10 +893,19 @@ namespace SynergyRMS.Models
                                           select p;
                 List<UM_RolePermission> permissionlist = rolepermissionQuery.ToList();
 
-                if (permissionlist.Count > 0)
+                foreach (UM_RolePermission p in permissionlist)
                 {
-                    return true;
+                    p.UM_PermissionReference.Load();
+
+                    if (p.UM_Permission.Permission == function)
+                    {
+                        return true;
+                    }
                 }
+
+                
+                    return false;
+                
             }
 
             catch
