@@ -25,7 +25,8 @@ namespace SynergyRMS.Reports
         protected void btnShow_Click(object sender, EventArgs e)
         {
 
-    
+            
+
             ReportViewer1.LocalReport.Refresh();
             this.ReportViewer1.ShowReportBody = true;
         }
