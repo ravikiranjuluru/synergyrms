@@ -4,6 +4,7 @@
   <div id="divTabStrip" style="overflow: hidden;">
 
       <%
+        
         var isAdmin = false;
         isAdmin = HttpContext.Current.User.IsInRole("Admin");
         var currentusername = HttpContext.Current.User.Identity.Name.ToString();  
