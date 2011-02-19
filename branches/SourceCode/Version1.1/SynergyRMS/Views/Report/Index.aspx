@@ -322,7 +322,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <img id="img1" src="../../Content/images/common/manage_projects.gif" alt="" />
+                                        <img id="img1" src="../../Content/images/common/reports_icon.gif" alt="" />
                                     </td>
                                     <td>
                                         <table>
