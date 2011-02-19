@@ -1,4 +1,6 @@
-<%@ Page language="c#" Debug="true"%><%
+<%@ Page language="c#" Debug="true"%>
+
+<%
 // -------------------------------------------------------------------------- 
 ///! Support file only, run Grid.html instead !
 /// This file is used as Layout_Url for TreeGrid
@@ -58,58 +60,52 @@ int Max = (int)R[1];
 string Cols = "", CSum = "", DRes = "", DDef = "";
 for (int i = Min; i <= Max; i++)
 {
-    string Week = "W" + i.ToString();
-    Cols += "<C Name='" + Week + "' Type='Float'/>"; // Column definitions
-    if (CSum != "") CSum += "+";
-    CSum += Week;                                   // Right fixed result column formula
-    DRes += Week + "Formula='sum()' ";              // Tree result row formulas
-    DDef += Week + "='0' ";                         // Default values for data rows
+    //string Week = "W" + i.ToString();
+    //Cols += "<C Name='" + Week + "' Type='Float'/>"; // Column definitions
+    //if (CSum != "") CSum += "+";
+    //CSum += Week;                                   // Right fixed result column formula
+    //DRes += Week + "Formula='sum()' ";              // Tree result row formulas
+    //DDef += Week + "='0' ";                         // Default values for data rows
 }
 // --------------------------------------------------------------------------
-%><?xml version="1.0"?>
-<Grid>
-   <Cfg id='ResourceGrid' MainCol='Project' MaxHeight='1' ShowDeleted="0" DateStrings='1' 
-      IdNames='Project' AppendId='1' FullId='1' IdChars='0123456789' NumberId='1' LastId='1' CaseSensitiveId='0'/>
-   <LeftCols>
-      <C Name='id' CanEdit='0'/>
-      <C Name='Project' Width='250' Type='Text'/>
-   </LeftCols>
-   <Cols><%=Cols%>
-   </Cols>
-   
-<%-- <RightCols>
-      <C Name='Sum' Width='50' Type='Float' Formula='<%=CSum%>' Format='0.##'/>
-   </RightCols>--%>
-   
-   <Def>
-      <D Name='R' Project='New resource' CDef='' AcceptDef='' <%=DDef%>/>
-      <D Name='Node' Project='New project' CDef='R' AcceptDef='R' Calculated='1' SumFormula='sum()' <%=DRes%> ProjectHtmlPrefix='&lt;B>' ProjectHtmlPostfix='&lt;/B>'/>
-   </Def>
-   
-   <Root CDef='Node' AcceptDef='Node' />
-   
-   <Header id='id (debug)' Project='Project / resource'/>
-  
-  <Foot>
-      <I Kind='Space' RelHeight='100'/>
-      <I Def='Node' Project='Total results' ProjectCanEdit='0'/>
-   </Foot>
-</Grid>
+%>
+
+<?xml version="1.0"?>
+
 <Grid>
   <Cfg id='Id4' MainCol='U' 
     FullId='1' IdNames='U' AppendId='1' 
     IdChars='0123456789' NumberId='1' 
     LastId='1' IdCompare='4'/>
   <LeftCols>
-    <C Name='id' CanEdit='0' 
-      Width='115'/>
+    <C Name='id' CanEdit='0' Width='1'/>
+    <C Name="C" BFormat="" Type="Int" Width="1" CanEdit='0'/> 
   </LeftCols>
   <Cols>
-    <C Name='U' Width='95'/>
-    <C Name='A' Width='30'/>
-  </Cols>
-  <Header id='Gen id' U='Unique' 
-    A='Tmp' CDef='Project'/>
+    <C Name='U' Width='120' CanEdit='0'/>    
+    <C Name="S" Width="80" Type="Date" Format="MM/dd/yyyy" CanEdit='0' /> 
+    <C Name="E" Width="75" Type="Date" Format="MM/dd/yyyy" CanEdit='0'/>
+    
+    
+     
+  
+     </Cols>
+     
+      <RightCols>
+       <C Name="G" Type="Gantt"
+         GanttStart="S" GanttEnd="E" GanttComplete="C" 
+         GanttUnits="d" GanttChartRound="w" GanttEdit="Main,Dependency"
+         GanttRight="1" 
+         GanttBackground="1/6/2008~1/6/2008 0:01" GanttBackgroundRepeat="w" 
+         GanttHeader1="w" GanttFormat1="dddddd MMMM yyyy"
+         GanttHeader2="d" GanttFormat2="ddddd"
+         />
+          </RightCols>
+     
+  
+  <Header id='id' U='User+Project' 
+     CDef='Project' S='StartDate' E='EndDate'/>
+     
   <Def>
     <D Name='Project' CDef='R' 
       U='New project' Spanned='1' 
@@ -120,15 +116,29 @@ for (int i = Min; i <= Max; i++)
   <Body>
     <B>
       <I U='Project1'>
-        <I U='David' A='V1-1'/>
-        <I U='Linda' A='V1-3'/>
-        <I U='Adam' A='V1-4'/>
+        <I U='David1'  S='02/10/2011' E='02/15/2011'/>
+        <I U='Linda1' />
+        <I U='Adam1' />
       </I>
       <I U='Project2'>
-        <I U='David' A='V2-1'/>
-        <I U='Jan' A='V2-2'/>
-        <I U='Linda' A='V2-3'/>
+        <I U='David2' />
+        <I U='Jan2' />
+        <I U='Linda2'/>
       </I>
     </B>
   </Body>
+  
+  <%--Cells="Correct,Save,Reload,Repaint,Print,ExportPDF,Export,Undo,Redo,Add,AddChild,Sort,Calc,ExpandAll,CollapseAll,ZoomIn,ZoomOut,ZoomFit,Columns,Cfg,Help,Debug,StyleTitle,StyleStandard,StyleLight,StyleOffice,StyleModern,StyleBorders,StyleRobust,StylePlain,StyleColors,Empty,Formula,Resize"--%>
+  
+  <Toolbar Styles='1' 
+        Cells='Reload,Print,ExportPDF,Export,Sort,Calc,ExpandAll,CollapseAll,ZoomIn,ZoomOut,ZoomFit'/>
+  <MenuCfg ShowDeleted='0' AutoSort='0' 
+           AutoUpdate='0' Separator1='0' 
+           MouseHover='1' ShowDrag='0' 
+           ShowPanel='1' ShowIcons='0'/>
+  <Panel Copy='0' Move='0' 
+        Select='0' Delete='0'/>
+
+
 </Grid>
+
