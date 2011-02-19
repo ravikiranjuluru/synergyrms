@@ -649,6 +649,12 @@ namespace SynergyRMS.Models
 
         }
 
+        public void DeletePermissions(UM_RolePermission role)
+        {
+            GetSynegyRMSInstance().DeleteObject(role);
+            GetSynegyRMSInstance().SaveChanges();
+        }
+
         /// <summary>
         /// Saves the role permissions.
         /// </summary>
@@ -667,6 +673,7 @@ namespace SynergyRMS.Models
                     GetSynegyRMSInstance().AddToUM_RolePermission(rolePermission);
                     GetSynegyRMSInstance().SaveChanges();
                 }
+      
             }
             return true;
         }
@@ -812,7 +819,27 @@ namespace SynergyRMS.Models
 
         public static bool isUserFunctionAllow(string username, string function)
         {
-            return true;
+
+            String[] roles = Roles.GetRolesForUser(username);
+
+            aspnet_Roles role;
+
+            var roleQuery = from p in GetSynegyRMSInstance().aspnet_Roles
+                            where p.RoleName == roles[0].ToString()
+                            select p;
+            role = roleQuery.First();
+
+            var rolepermissionQuery = from p in GetSynegyRMSInstance().UM_RolePermission
+                            where p.aspnet_Roles.RoleId == role.RoleId
+                            select p;
+            List < UM_RolePermission> permissionlist = rolepermissionQuery.ToList();
+
+            if (permissionlist.Count > 0)
+            {
+                return true;
+            }
+            
+            return false;
         }
         public static List<PM_Projects> getUserProjects(string userKey)
         {
