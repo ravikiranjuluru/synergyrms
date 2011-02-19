@@ -950,5 +950,24 @@ namespace SynergyRMS.Models
 
         #endregion
 
+        #region Max Allocation
+
+        //public static void ValidateMaxAllocation(string userkey)
+        //{
+
+        //    //IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
+        //    //                                               where p.aspnet_Users.UserName == edituser.UserName
+        //    //                                               select p;
+
+        //    MembershipUser edituser = Membership.GetUser(new Guid(userkey));
+
+        //    IQueryable<PM_MaxUserEfforts>maxUserEffortQuery = from m in GetSynegyRMSInstance().PM_MaxUserEfforts
+        //                                                      where m.aspnet_Users.UserName == userkey
+        //                                                      select m;
+       
+        //}
+
+
+        #endregion
     }
 }

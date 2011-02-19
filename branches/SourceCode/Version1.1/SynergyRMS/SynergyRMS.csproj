@@ -658,8 +658,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SynergyModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Reports\ProjectResources.xsc">
       <DependentUpon>ProjectResources.xsd</DependentUpon>
     </None>
