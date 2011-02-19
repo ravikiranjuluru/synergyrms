@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using System.Web.Profile;
 using SynergyRMS.Models;
 using System.Collections;
-using System.Web.Profile;
+
 
 namespace SynergyRMS.Controllers
 {
