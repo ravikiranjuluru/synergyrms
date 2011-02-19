@@ -14,7 +14,8 @@
                         {
                             background: url(../../Content/images/common/dot_top.gif) 0 0 repeat-x;
                             width: 100%;
-                        }
+             height: 273px;
+         }
                         .b
                         {
                             background: url(../../Content/images/common/dot_bottom.gif) 0 100% repeat-x;
@@ -48,7 +49,11 @@
                         {
                             position: relative;
                             padding-top: 20px;
-                        }
+             top: 0px;
+             left: 0px;
+             height: 291px;
+             width: 308px;
+         }
                         .boxtitle
                         {
                             position: absolute;
@@ -179,15 +184,7 @@
                                                                                  </tr>
                                                                                <%   } %>
                                                                                
-                                                                                 <tr id="Tr1">
-                                                                                    <td padding-left="6px" width="5%">
-                                                                                        &nbsp;
-                                                                                    </td>
-                                                                                    <td>
-                                                                                        
-                                                                                           &nbsp;
-                                                                                    </td>
-                                                                                </tr>
+                                                                                 
                                                                             </tbody>
                                                                         </table>
                                                                     </td>
@@ -307,6 +304,22 @@
                                                                                            &nbsp;
                                                                                     </td>
                                                                                 </tr>
+                                                                                <tr id="Tr6">
+                                                                                     <td padding-left="6px" width="5%">
+                                                                                         &nbsp;
+                                                                                     </td>
+                                                                                     <td>
+                                                                                         &nbsp;
+                                                                                     </td>
+                                                                                 </tr>
+                                                                                 <tr id="Tr10">
+                                                                                     <td padding-left="6px" width="5%">
+                                                                                         &nbsp;
+                                                                                     </td>
+                                                                                     <td>
+                                                                                         &nbsp;
+                                                                                     </td>
+                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>
                                                                     </td>
