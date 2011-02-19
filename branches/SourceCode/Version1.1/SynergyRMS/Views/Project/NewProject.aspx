@@ -1,15 +1,14 @@
-﻿<%@ Page Title="" UICulture="en" Culture="en-US"  Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
+﻿<%@ Page Title="" UICulture="en" Culture="en-US" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
     Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <link href="../../Content/jquery-ui.css" rel="stylesheet" type="text/css" />
 
-    <link href="../../Content/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery.min.js"></script>
-   <script type="text/javascript"  language="javascript" src="../../Scripts/Calander/jquery-ui.min.js"></script>
-    
-  <link rel="stylesheet" href="../Content/common/styles.css" type="text/css"/>
-  
 
+    <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="../Content/common/styles.css" type="text/css" />
     <div id="masterpage_divHead" class="formHead">
         <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tbody>
@@ -21,7 +20,6 @@
             </tbody>
         </table>
     </div>
-
 
     <script type="text/javascript">
 
@@ -60,7 +58,6 @@
                                                             <img src="../../Content/images/common/space.gif" id="ctl00_phTabstripHeader_tabMain_imgTabSpace0"
                                                                 width="1" height="1">
                                                         </td>
-                                                       
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -90,9 +87,8 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
-                     <% using (Html.BeginForm("NewProject", "Project"))
-                        { %>
+                        <% using (Html.BeginForm("NewProject", "Project"))
+                           { %>
                         <table id="masterPage_tblFormContentRoot" style="border-collapse: collapse;" border="0"
                             cellpadding="0" cellspacing="0" width="100%">
                             <tbody>
@@ -135,22 +131,20 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                         <label for="code">Code</label>Code:
+                                                        <label for="code">
+                                                            Code</label>Code:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="middle">
-                                                   
-                                                        <input name="txtCode" id="code" class="textBox"
-                                                            size="20" maxlength="20" type="text">
+                                                        <input name="txtCode" id="code" class="textBox" size="20" maxlength="20" type="text">
                                                     </td>
                                                 </tr>
-                                                 <tr>
+                                                <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                         <label for="txtprojectname">Please Enter Project name</label>Project Name:
+                                                        <label for="txtprojectname">
+                                                            Please Enter Project name</label>Project Name:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="middle">
-                                                   
-                                                        <input name="txtprojectname" id="txtprojectname" class="textBox"
-                                                           type="text" style="width: 253px">
+                                                        <input name="txtprojectname" id="txtprojectname" class="textBox" type="text" style="width: 253px">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -158,41 +152,45 @@
                                                         Description:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="middle">
-                                                      <%--  <input name="txtDescription" id="txtDescription"
+                                                        <%--  <input name="txtDescription" id="txtDescription"
                                                             class="textBox" size="70" maxlength="70" type="text">--%>
-                                                        <textarea id="txtDescription" name="txtDescription" cols="160" rows="10" class="textBox" >
-                                                        </textarea> 
+                                                        <textarea id="txtDescription" name="txtDescription" cols="160" rows="10" class="textBox">
+                                                        </textarea>
                                                     </td>
                                                 </tr>
-                                                
-                                               <%if (ViewData["ProTypes"]!= null){ %>
+                                                <%if (ViewData["ProTypes"] != null)
+                                                  { %>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="projectLevel"></label>Project Type:
+                                                        <label for="projectLevel">
+                                                        </label>
+                                                        Project Type:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
                                                         <%--<%=Html.DropDownList("ddProTypes", (SelectList)ViewData["ProTypes"], new { @class = "comboBox" })%>--%>
-                                                      <%=Html.DropDownList("ddProTypes", (SelectList)ViewData["ProTypes"], new { @class = "comboBox" })%>
+                                                        <%=Html.DropDownList("ddProTypes", (SelectList)ViewData["ProTypes"], new { @class = "comboBox" })%>
                                                     </td>
                                                 </tr>
                                                 <%} %>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                        <label for="projectstartdate">Start Date</label>Start Date:
+                                                        <label for="projectstartdate">
+                                                            Start Date</label>Start Date:
                                                     </td>
-                                                    <td class="formDetail" align="left" valign="top">  
-                                                        <input name="projectstartdate" id="projectstartdate"
-                                                            class="textBox" size="15" maxlength="4" type="text">&nbsp;
+                                                    <td class="formDetail" align="left" valign="top">
+                                                        <input name="projectstartdate" id="projectstartdate" class="textBox" size="15" maxlength="4"
+                                                            type="text">&nbsp;
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="formDetailDark" align="right" valign="middle">
-                                                       <label for="projectenddate">End Date</label> End Date:
+                                                        <label for="projectenddate">
+                                                            End Date</label>
+                                                        End Date:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="top">
-                                                      
-                                                        <input name="projectenddate" id="projectenddate"
-                                                            class="textBox" size="15" maxlength="4" type="text">&nbsp;
+                                                        <input name="projectenddate" id="projectenddate" class="textBox" size="15" maxlength="4"
+                                                            type="text">&nbsp;
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -221,10 +219,8 @@
                                             <tbody>
                                                 <tr>
                                                     <td align="left">
-                                                        <input name="btnSave" id="btnSave" class="button"
-                                                            value="Save" type="submit">
-                                                        <input name="btnClear" id="btnClear"
-                                                            class="button" value="Clear" type="button" onclick="javascript:history.go(-1)">
+                                                        <input name="btnSave" id="btnSave" class="button" value="Save" type="submit" onclick="return validateForm()">
+                                                        <input name="btnClear" id="btnClear" class="button" value="Clear" type="button" onclick="javascript:history.go(-1)">
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -234,17 +230,137 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <script language="javascript">
+
+                        function validateForm() {
+                            var a = document.forms[0]["code"].value
+
+                            if (a == null || a == "") {
+                                alert("Please enter Project Code");
+                                return false;
+                            }
+
+                            var b = document.forms[0]["txtprojectname"].value
+
+                            if (b == null || b == "") {
+                                alert("Please enter Project Name");
+                                return false;
+                            }
+
+                            var c = document.forms[0]["projectstartdate"].value
+
+                            if (c == null || c == "") {
+                                alert("Please select Project Start Date");
+                                return false;
+                            }
+                            else {
+                                if (isDate(c) == false) {
+                                    return false
+                                }
+                            }
+
+                            var d = document.forms[0]["projectenddate"].value
+
+                            if (d == null || d == "") {
+                                alert("Please select Project End Date");
+                                return false;
+                            }
+                            else {
+                                if (isDate(d) == false) {
+                                    return false
+                                }
+                            }
+                            return true
+                        }
+
+                        var dtCh = "/";
+                        var minYear = 1900;
+                        var maxYear = 2100;
+
+                        function isInteger(s) {
+                            var i;
+                            for (i = 0; i < s.length; i++) {
+                                var c = s.charAt(i);
+                                if (((c < "0") || (c > "9"))) return false;
+                            }
+                            return true;
+                        }
+
+                        function stripCharsInBag(s, bag) {
+                            var i;
+                            var returnString = "";
+                            for (i = 0; i < s.length; i++) {
+                                var c = s.charAt(i);
+                                if (bag.indexOf(c) == -1) returnString += c;
+                            }
+                            return returnString;
+                        }
+
+                        function daysInFebruary(year) {
+                            return (((year % 4 == 0) && ((!(year % 100 == 0)) || (year % 400 == 0))) ? 29 : 28);
+                        }
+                        function DaysArray(n) {
+                            for (var i = 1; i <= n; i++) {
+                                this[i] = 31
+                                if (i == 4 || i == 6 || i == 9 || i == 11) { this[i] = 30 }
+                                if (i == 2) { this[i] = 29 }
+                            }
+                            return this
+                        }
+
+                        function isDate(dtStr) {
+                            var daysInMonth = DaysArray(12)
+                            var pos1 = dtStr.indexOf(dtCh)
+                            var pos2 = dtStr.indexOf(dtCh, pos1 + 1)
+                            var strMonth = dtStr.substring(0, pos1)
+                            var strDay = dtStr.substring(pos1 + 1, pos2)
+                            var strYear = dtStr.substring(pos2 + 1)
+                            strYr = strYear
+                            if (strDay.charAt(0) == "0" && strDay.length > 1) strDay = strDay.substring(1)
+                            if (strMonth.charAt(0) == "0" && strMonth.length > 1) strMonth = strMonth.substring(1)
+                            for (var i = 1; i <= 3; i++) {
+                                if (strYr.charAt(0) == "0" && strYr.length > 1) strYr = strYr.substring(1)
+                            }
+                            month = parseInt(strMonth)
+                            day = parseInt(strDay)
+                            year = parseInt(strYr)
+                            if (pos1 == -1 || pos2 == -1) {
+                                alert("The date Format should be : MM/DD/YYYY")
+                                return false
+                            }
+                            if (strMonth.length < 1 || month < 1 || month > 12) {
+                                alert("Please enter a Valid Month")
+                                return false
+                            }
+                            if (strDay.length < 1 || day < 1 || day > 31 || (month == 2 && day > daysInFebruary(year)) || day > daysInMonth[month]) {
+                                alert("Please enter a Valid Day")
+                                return false
+                            }
+                            if (strYear.length != 4 || year == 0 || year < minYear || year > maxYear) {
+                                alert("Please enter a Valid 4 digit Year between " + minYear + " and " + maxYear)
+                                return false
+                            }
+                            if (dtStr.indexOf(dtCh, pos2 + 1) != -1 || isInteger(stripCharsInBag(dtStr, dtCh)) == false) {
+                                alert("Please enter a Valid Date")
+                                return false
+                            }
+                            return true
+                        }
+                    </script>
+
                     <%} %>
-                    
-                    <div style="padding-left: 10px; padding-right: 10px;"></div>
+                    <div style="padding-left: 10px; padding-right: 10px;">
+                    </div>
                 </td>
             </tr>
         </tbody>
     </table>
-    
+
     <script>
         function GoBack() {
             window.location(history - 1);
         }
     </script>
+
 </asp:Content>
