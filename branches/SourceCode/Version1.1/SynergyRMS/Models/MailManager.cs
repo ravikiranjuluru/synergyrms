@@ -9,7 +9,7 @@ namespace SynergyRMS.Models
 {
     public static class MailManager
     {
-        public enum messageFlag { AssignedProject, RemovedProject, UpdatedProject, ScheduledProject, AccountCreated };
+        public enum messageFlag { AssignedProject, RemovedProject, UpdatedProject, ScheduledProject, AccountCreated, AccountEdited };
 
         private const string appName = "Resource Management System";
         private const string appUrl = "http://www.rmssynergy.com/";
@@ -85,7 +85,7 @@ namespace SynergyRMS.Models
             mail.From = new MailAddress(adminMailAddress, appName);
             mail.To.Add(new MailAddress(toAdresses));
 
-            mail.CC.Add(new MailAddress("chandusliit@gmail.com"));// Temp
+            //mail.CC.Add(new MailAddress("chandusliit@gmail.com"));// Temp
             mail.Bcc.Add(new MailAddress("virath.liyanage@gmail.com"));// Temp
 
             mail.Subject = appName + " - Mail Notification";
@@ -121,12 +121,48 @@ namespace SynergyRMS.Models
             mail.From = new MailAddress(adminMailAddress, appName);
             mail.To.Add(new MailAddress(toAdresses));
 
-            mail.CC.Add(new MailAddress("chandusliit@gmail.com"));// Temp
+            //mail.CC.Add(new MailAddress("chandusliit@gmail.com"));// Temp
             mail.Bcc.Add(new MailAddress("virath.liyanage@gmail.com"));// Temp
 
             mail.Subject = appName + " - Mail Notification";
             mail.IsBodyHtml = true;
             mail.Body = MessageModifier(flag, projectResources);
+
+            try
+            {
+                smtpClient.Send(mail);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool SendMail(string toAdresses, messageFlag flag, List<string> ResourceInfo)
+        {
+            SetAdminValues();
+
+            SmtpClient smtpClient = new SmtpClient(adminMailServer, adminMailPort);
+
+            NetworkCredential networkCredential = new NetworkCredential(adminMailAddress, adminMailPassword);
+
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.EnableSsl = true;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = networkCredential;
+
+            MailMessage mail = new MailMessage();
+
+            mail.From = new MailAddress(adminMailAddress, appName);
+            mail.To.Add(new MailAddress(toAdresses));
+
+            //mail.CC.Add(new MailAddress("chandusliit@gmail.com"));// Temp
+            mail.Bcc.Add(new MailAddress("virath.liyanage@gmail.com"));// Temp
+
+            mail.Subject = appName + " - Mail Notification";
+            mail.IsBodyHtml = true;
+            mail.Body = MessageModifier(flag, ResourceInfo);
 
             try
             {
@@ -159,43 +195,7 @@ namespace SynergyRMS.Models
             return mailBody.ToString();
         }
 
-        public static bool SendMail(string toAdresses, messageFlag flag, System.Web.Mvc.FormCollection form)
-        {
-            SetAdminValues();
-
-            SmtpClient smtpClient = new SmtpClient(adminMailServer, adminMailPort);
-
-            NetworkCredential networkCredential = new NetworkCredential(adminMailAddress, adminMailPassword);
-
-            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtpClient.EnableSsl = true;
-            smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = networkCredential;
-
-            MailMessage mail = new MailMessage();
-
-            mail.From = new MailAddress(adminMailAddress, appName);
-            mail.To.Add(new MailAddress(toAdresses));
-
-            mail.CC.Add(new MailAddress("chandusliit@gmail.com"));// Temp
-            mail.Bcc.Add(new MailAddress("virath.liyanage@gmail.com"));// Temp
-
-            mail.Subject = appName + " - Mail Notification";
-            mail.IsBodyHtml = true;
-            mail.Body = MessageModifier(flag, form);
-
-            try
-            {
-                smtpClient.Send(mail);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        private static string MessageModifier(messageFlag flag, System.Web.Mvc.FormCollection form)
+        private static string MessageModifier(messageFlag flag, List<string> ResourceInfo)
         {
             setMessage(flag);
 
@@ -207,7 +207,7 @@ namespace SynergyRMS.Models
             mailBody.Append("</head>");
             mailBody.Append("<body>");
             mailBody.Append("<span>");
-            mailBody.Append("Dear " + form["FirstName"].ToString().ToUpper() + ", </br><h3>" + mailMessage + "</h3></br><div>User Name: " + form["txtusername"].ToString() + "</div></br><div>Password: " + form["txtpwd"].ToString() + "</div></br><div>E-mail Address: " + form["txtemail"].ToString() + "</div></br><div>Phone No: " + form["txtphone"].ToString() + "</div></br><div>Click to Visit the RMS: " + appUrl + "</div></br><div></div></br><div>Please note this is an auto genarated email.</div>");
+            mailBody.Append("Dear " + ResourceInfo[0].ToString().ToUpper() + ", </br><h3>" + mailMessage + "</h3></br><div>User Name: " + ResourceInfo[1].ToString() + "</div></br><div>Password: " + ResourceInfo[2].ToString() + "</div></br><div>E-mail Address: " + ResourceInfo[3].ToString() + "</div></br><div>Role: " + ResourceInfo[4].ToString() + "</div></br><div>Click to Visit the RMS: " + appUrl + "</div></br><div></div></br><div>Please note this is an auto genarated email.</div>");
             mailBody.Append("</span>");
             mailBody.Append("</body>");
             mailBody.Append("</html>");
@@ -261,6 +261,11 @@ namespace SynergyRMS.Models
             {
                 mailTitle = "Account Created";
                 mailMessage = "Your account has been Created";
+            }
+            else if (flag == messageFlag.AccountEdited)
+            {
+                mailTitle = "Account Updated";
+                mailMessage = "Your account has been Updated";
             }
             else
             {
