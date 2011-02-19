@@ -47,7 +47,7 @@ namespace SynergyRMS.Controllers
             }
             catch
             {
-            }            
+            }
             return View("Department");
         }
         #endregion Department
@@ -58,10 +58,10 @@ namespace SynergyRMS.Controllers
             string[] allroles = Roles.GetAllRoles();
             List<string> roleList = new List<string>();
             if (allroles.Length > 0)
-            {                
+            {
                 foreach (string role in allroles)
                     if (role != null)
-                        roleList.Add(role.ToString());                
+                        roleList.Add(role.ToString());
             }
             return new SelectList(roleList);
         }
@@ -73,11 +73,11 @@ namespace SynergyRMS.Controllers
         public ActionResult LoadRolePermission()//*
         {
             string role = Request.QueryString["role"].ToString();
-            
-            Hashtable table =  SynergyService.GetPermissionsByRoleName(role);
+
+            Hashtable table = SynergyService.GetPermissionsByRoleName(role);
             ViewData["EditRole"] = role;
             ViewData["PermissionList"] = table;
-            
+
             return View("RolePermission");
         }
         //[HttpPost]
@@ -89,9 +89,8 @@ namespace SynergyRMS.Controllers
             //Hashtable tblpermission = SynergyService.GetPermissionsByRoleName(editrole);
             Hashtable tblpermission = new Hashtable();
             try
-
             {
-                
+
                 bool status = true;
                 if (form["addProject"] != null)
                 {
@@ -210,13 +209,13 @@ namespace SynergyRMS.Controllers
                 {
                     tblpermission[SynergyConstents.editRolePermission] = false;
                 }
-                status= SynergyService.SaveRolePermissions(tblpermission, editrole);
-                
+                status = SynergyService.SaveRolePermissions(tblpermission, editrole);
+
                 if (status)
                 {
                     ViewData["status"] = "Success";
                     ViewData["msg"] = "New Role Permission Successfully Updated.";
-                    
+
                 }
                 else
                 {
@@ -236,10 +235,10 @@ namespace SynergyRMS.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Role(FormCollection form)//*create new role
         {
-           try
+            try
             {
                 bool status = true;
-                Roles.CreateRole(form["txtRole"].ToString());                
+                Roles.CreateRole(form["txtRole"].ToString());
                 if (status)
                 {
                     ViewData["status"] = "Success";
@@ -256,7 +255,7 @@ namespace SynergyRMS.Controllers
                 ViewData["status"] = "Error";
                 ViewData["msg"] = "Error in Role Creation.";
             }
-           ViewData["RoleList"] = GetAllRoles();
+            ViewData["RoleList"] = GetAllRoles();
             return View("Role");
         }
 
@@ -300,10 +299,20 @@ namespace SynergyRMS.Controllers
                     var profile = ProfileBase.Create(newuser.UserName);
                     profile.SetPropertyValue("FirstName", form["txtfirstname"].ToString());
                     profile.SetPropertyValue("LastName", form["txtlastname"].ToString());
-                    profile.SetPropertyValue("Phone", form["txtphone"].ToString());                   
+                    profile.SetPropertyValue("Phone", form["txtphone"].ToString());
                     profile.Save();
 
-                    SendNotificationWhenAccountCreated(newuser.Email);
+                    List<string> ResourceInfo = new List<string>();
+
+                    ResourceInfo.Add(form["txtfirstname"].ToString());
+                    ResourceInfo.Add(form["txtusername"].ToString());
+                    ResourceInfo.Add(form["txtpwd"].ToString());
+                    ResourceInfo.Add(form["txtemail"].ToString());
+                    ResourceInfo.Add(form["ddRoles"].ToString());
+
+                    SendNotificationWhenAccountCreated(newuser.Email, ResourceInfo);
+
+                    ResourceInfo = null;
 
                     ViewData["status"] = "Success";
                     ViewData["msg"] = "New User Successfully Created.";
@@ -315,8 +324,8 @@ namespace SynergyRMS.Controllers
                     //ViewData["msg"] = "Error in User Creation.";
                 }
 
-                          
-               
+
+
             }
             catch (MembershipCreateUserException ex)
             {
@@ -372,7 +381,7 @@ namespace SynergyRMS.Controllers
             }
             return userListReturn;
         }
-        
+
         //add role to user load all users
         public ActionResult AddRole()//*
         {
@@ -399,7 +408,7 @@ namespace SynergyRMS.Controllers
             return View("IndexRole", ViewData["Userlist"]);
         }
 
-        
+
         //edit seleceted user roles
         public ActionResult AssignRoles()//*
         {
@@ -410,7 +419,7 @@ namespace SynergyRMS.Controllers
                 if (userkey != null)
                 {
                     MembershipUser edituser = Membership.GetUser(new Guid(userkey));
-                    
+
                     if (edituser != null)
                     {
                         //var name = edituser.UserName;
@@ -433,7 +442,7 @@ namespace SynergyRMS.Controllers
         //assign new role to edit user
         public ActionResult AssignRoletoEditUser(FormCollection form)//*
         {
-            MembershipUser edituser= null;
+            MembershipUser edituser = null;
             try
             {
                 string userkey = form["hdnid"].ToString();
@@ -444,7 +453,7 @@ namespace SynergyRMS.Controllers
 
                     if (edituser != null)
                     {
-                        bool isAssigned = Roles.IsUserInRole(edituser.UserName,newrole);
+                        bool isAssigned = Roles.IsUserInRole(edituser.UserName, newrole);
                         if (isAssigned)
                         {
                             ViewData["status"] = "Error";
@@ -490,17 +499,17 @@ namespace SynergyRMS.Controllers
 
                 //if (i != null)
                 //{
-                    //var edituser = Membership.GetUser(new Guid(i));
+                //var edituser = Membership.GetUser(new Guid(i));
                 var edituser = Membership.GetUser("user");
-                    if (edituser != null)
-                    {
-                        var name = edituser.UserName;
-                        ViewData["EditUser"] = name;
-                        ViewData["PermissionList"] = GetUserRolePermissions(edituser.UserName);
-                       
-                    }
+                if (edituser != null)
+                {
+                    var name = edituser.UserName;
+                    ViewData["EditUser"] = name;
+                    ViewData["PermissionList"] = GetUserRolePermissions(edituser.UserName);
+
+                }
                 //}
-               
+
             }
             catch (Exception ex)
             {
@@ -509,18 +518,18 @@ namespace SynergyRMS.Controllers
 
             return View("IndexRole");
         }
-       
+
         public bool[] GetUserRolePermissions(string username)
         {
             bool[] arrpermission = new bool[7];
-            
-                arrpermission[0] = true; //project - add
-                arrpermission[1] = false; //project - edit
-                arrpermission[2] = false; //project - delete
-                arrpermission[3] = true; //task - add
-                arrpermission[4] = false; //task - edit
-                arrpermission[5] = false; //task - delete
-                arrpermission[6] = true; //assign to task
+
+            arrpermission[0] = true; //project - add
+            arrpermission[1] = false; //project - edit
+            arrpermission[2] = false; //project - delete
+            arrpermission[3] = true; //task - add
+            arrpermission[4] = false; //task - edit
+            arrpermission[5] = false; //task - delete
+            arrpermission[6] = true; //assign to task
 
             return arrpermission;
         }
@@ -547,7 +556,7 @@ namespace SynergyRMS.Controllers
             }
             catch
             {
-            }           
+            }
             return View("IndexRole");
         }
 
@@ -586,12 +595,12 @@ namespace SynergyRMS.Controllers
             MembershipUser edituser = Membership.GetUser(new Guid(userkey));
             try
             {
-                
+
                 if (userkey != null)
                 {
-                    
+
                     edituser.Email = form["txtemail"].ToString();
-                    
+
 
                     if (edituser != null)
                     {
@@ -612,7 +621,7 @@ namespace SynergyRMS.Controllers
                                         Roles.RemoveUserFromRole(edituser.UserName, removeRole);
                                     }
                                 }
-                                
+
                             }
 
                             Roles.AddUserToRole(edituser.UserName, selectRole);
@@ -622,6 +631,18 @@ namespace SynergyRMS.Controllers
                         profile.SetPropertyValue("LastName", form["txtlastname"].ToString());
                         profile.SetPropertyValue("Phone", form["txtphone"].ToString());
                         profile.Save();
+
+                        List<string> ResourceInfo = new List<string>();
+
+                        ResourceInfo.Add(form["txtfirstname"].ToString());
+                        ResourceInfo.Add(form["txtusername"].ToString());
+                        ResourceInfo.Add(form["txtpwd"].ToString());
+                        ResourceInfo.Add(form["txtemail"].ToString());
+                        ResourceInfo.Add(form["ddRoles"].ToString());
+
+                        SendNotificationWhenAccountUpdated(edituser.Email, ResourceInfo);
+
+                        ResourceInfo = null;
 
                         ViewData["EditUser"] = edituser;
 
@@ -643,7 +664,7 @@ namespace SynergyRMS.Controllers
             return View("EditUser");
         }
 
-        
+
 
         public ActionResult AssignRolesEditPermission()
         {
@@ -672,7 +693,7 @@ namespace SynergyRMS.Controllers
         public ActionResult Schedule()
         {
             MembershipUserCollection userList = Membership.GetAllUsers();
-            List<SelectListItem> itemsUser = new List<SelectListItem>();            
+            List<SelectListItem> itemsUser = new List<SelectListItem>();
             foreach (MembershipUser user in userList)
             {
                 if (!Roles.IsUserInRole(user.UserName, "Admin"))
@@ -683,7 +704,7 @@ namespace SynergyRMS.Controllers
                     string fname = userprofile.GetPropertyValue("FirstName").ToString();
                     string lname = userprofile.GetPropertyValue("LastName").ToString();
 
-                    string userkey = user.ProviderUserKey.ToString();                    
+                    string userkey = user.ProviderUserKey.ToString();
                     SelectListItem item = new SelectListItem();
                     item.Text = fname + " " + lname;
                     item.Value = userkey;
@@ -695,12 +716,12 @@ namespace SynergyRMS.Controllers
             ViewData["Userlist"] = ddUserlist;
             return View();
         }
-       // [HttpPost]
+        // [HttpPost]
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult ViewSchedule(FormCollection form)
         {
             string viewuserkey = form["ddUsersList"].ToString();
-            MembershipUserCollection userList = Membership.GetAllUsers();            
+            MembershipUserCollection userList = Membership.GetAllUsers();
             List<SelectListItem> itemsUser = new List<SelectListItem>();
             string ediusernamedisplay = "";
             foreach (MembershipUser user in userList)
@@ -719,10 +740,10 @@ namespace SynergyRMS.Controllers
                         ediusernamedisplay = fname + " " + lname;
                     }
                     SelectListItem item = new SelectListItem();
-                    item.Text = fname+" "+lname;
+                    item.Text = fname + " " + lname;
                     item.Value = userkey;
-                    itemsUser.Add(item);  
-  
+                    itemsUser.Add(item);
+
                 }
             }
             SelectList ddUserlist = new SelectList(itemsUser, "Value", "Text");
@@ -754,13 +775,13 @@ namespace SynergyRMS.Controllers
             return false;
         }
 
-        private static void SendNotificationWhenScheduling(string email)
+        private static void SendNotificationWhenScheduling(string email, List<string> ResourceInfo)
         {
             try
             {
                 if (AllowEmailNotifications())
                 {
-                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledProject);
+                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledProject, ResourceInfo);
                 }
             }
             catch
@@ -768,13 +789,27 @@ namespace SynergyRMS.Controllers
             }
         }
 
-        private static void SendNotificationWhenAccountCreated(string email)
+        private static void SendNotificationWhenAccountCreated(string email, List<string> ResourceInfo)
         {
             try
             {
                 if (AllowEmailNotifications())
                 {
-                    MailManager.SendMail(email, MailManager.messageFlag.AccountCreated);
+                    MailManager.SendMail(email, MailManager.messageFlag.AccountCreated, ResourceInfo);
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private static void SendNotificationWhenAccountUpdated(string email, List<string> ResourceInfo)
+        {
+            try
+            {
+                if (AllowEmailNotifications())
+                {
+                    MailManager.SendMail(email, MailManager.messageFlag.AccountEdited, ResourceInfo);
                 }
             }
             catch
@@ -787,17 +822,17 @@ namespace SynergyRMS.Controllers
         public ActionResult ViewUserLeave()
         {
             return View("ViewUserLeave");
-        }  
+        }
 
         public ActionResult Resources()
         {
             return View("ViewResources");
-        }       
+        }
         public ActionResult Calendar()
         {
             return View("ScheduleCalendar");
         }
-        
+
 
     }
 }
