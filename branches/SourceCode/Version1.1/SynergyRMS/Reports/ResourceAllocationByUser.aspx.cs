@@ -59,8 +59,15 @@ namespace SynergyRMS.Reports
             SynergyRMS.Reports.ResourceAllocationByUserds.R_GetResourceAllocationByUserIdForGivenPeriodDataTable outDataTable = outAdapter.GetData(resourceddl.SelectedValue.ToString(), Convert.ToDateTime(txtStartDate.Text), Convert.ToDateTime(txtEndDate.Text));
             ReportDataSource RepDS = new ReportDataSource("ResourceAllocationByUserds_R_GetResourceAllocationByUserIdForGivenPeriod", outDataTable);
 
-            this.ReportViewer1.LocalReport.DataSources.Add(RepDS);
 
+
+            SynergyRMS.Reports.ViewProjectByResourcedsTableAdapters.R_GetResourceByResourceIdTableAdapter resAdapter = new SynergyRMS.Reports.ViewProjectByResourcedsTableAdapters.R_GetResourceByResourceIdTableAdapter();
+            SynergyRMS.Reports.ViewProjectByResourceds.R_GetResourceByResourceIdDataTable resDataTable = resAdapter.GetData(resourceddl.SelectedValue.ToString());
+            ReportDataSource resDataDS = new ReportDataSource("ViewProjectByResourceds_R_GetResourceByResourceId", resDataTable);
+
+
+            this.ReportViewer1.LocalReport.DataSources.Add(RepDS);
+            this.ReportViewer1.LocalReport.DataSources.Add(resDataDS);
 
             this.ReportViewer1.ShowReportBody = true;
             //ReportViewer1.LocalReport.SetParameters(rPara);
