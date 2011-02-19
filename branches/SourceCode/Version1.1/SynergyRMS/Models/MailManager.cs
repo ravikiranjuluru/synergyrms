@@ -12,6 +12,7 @@ namespace SynergyRMS.Models
         public enum messageFlag { AssignedProject, RemovedProject, UpdatedProject, ScheduledProject, AccountCreated };
 
         private const string appName = "Resource Management System";
+        private const string appUrl = "http://www.rmssynergy.com/";
 
         private static string adminMailAddress;
         private static string adminMailPassword;
@@ -29,7 +30,7 @@ namespace SynergyRMS.Models
             adminMailPort = Convert.ToInt16(ConfigurationManager.AppSettings["adminMailPort"].ToString());
         }
 
-        public static bool SendMail(List<string> toAdresses, messageFlag flag)
+        public static bool SendMail(List<string> toAdresses, messageFlag flag, string projectName, string userName)
         {
             SetAdminValues();
 
@@ -66,7 +67,7 @@ namespace SynergyRMS.Models
             }
         }
 
-        public static bool SendMail(string toAdresses, messageFlag flag)
+        public static bool SendMail(string toAdresses, messageFlag flag, string projectName)
         {
             SetAdminValues();
 
@@ -84,6 +85,7 @@ namespace SynergyRMS.Models
             mail.From = new MailAddress(adminMailAddress, appName);
             mail.To.Add(new MailAddress(toAdresses));
 
+            mail.CC.Add(new MailAddress("chandusliit@gmail.com"));// Temp
             mail.Bcc.Add(new MailAddress("virath.liyanage@gmail.com"));// Temp
 
             mail.Subject = appName + " - Mail Notification";
@@ -101,6 +103,62 @@ namespace SynergyRMS.Models
             }
         }
 
+        public static bool SendMail(string toAdresses, messageFlag flag, PM_ProjectResources projectResources)
+        {
+            SetAdminValues();
+
+            SmtpClient smtpClient = new SmtpClient(adminMailServer, adminMailPort);
+
+            NetworkCredential networkCredential = new NetworkCredential(adminMailAddress, adminMailPassword);
+
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.EnableSsl = true;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = networkCredential;
+
+            MailMessage mail = new MailMessage();
+
+            mail.From = new MailAddress(adminMailAddress, appName);
+            mail.To.Add(new MailAddress(toAdresses));
+
+            mail.CC.Add(new MailAddress("chandusliit@gmail.com"));// Temp
+            mail.Bcc.Add(new MailAddress("virath.liyanage@gmail.com"));// Temp
+
+            mail.Subject = appName + " - Mail Notification";
+            mail.IsBodyHtml = true;
+            mail.Body = MessageModifier(flag, projectResources);
+
+            try
+            {
+                smtpClient.Send(mail);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private static string MessageModifier(messageFlag flag, PM_ProjectResources projectResources)
+        {
+            setMessage(flag);
+
+            StringBuilder mailBody = new StringBuilder();
+
+            mailBody.Append("<html>");
+            mailBody.Append("<head>");
+            mailBody.Append("<title>" + appName + " - " + mailTitle + "</title>");
+            mailBody.Append("</head>");
+            mailBody.Append("<body>");
+            mailBody.Append("<span>");
+            mailBody.Append("Dear " + projectResources.aspnet_Users.UserName.ToUpper() + ", </br><h3>" + mailMessage + "</h3></br><div>Project Name : " + projectResources.PM_Projects.ProjectName + "</div></br><div>Project Type : " + projectResources.PM_Projects.PM_Types.TypeName + "</div></br><div>Start Date: " + projectResources.PM_Projects.ProjectStartDate.ToShortDateString() + "</div></br><div>End Date: " + projectResources.PM_Projects.ProjectEndDate.ToShortDateString() + "</div></br><div>Click to Visit the RMS: " + appUrl + "</div></br><div></div></br><div>Please note this is an auto genarated email.</div>");
+            mailBody.Append("</span>");
+            mailBody.Append("</body>");
+            mailBody.Append("</html>");
+
+            return mailBody.ToString();
+        }
+
         private static string MessageModifier(messageFlag flag)
         {
             setMessage(flag);
@@ -113,7 +171,7 @@ namespace SynergyRMS.Models
             mailBody.Append("</head>");
             mailBody.Append("<body>");
             mailBody.Append("<span>");
-            mailBody.Append("Dear User, </br><h3>" + mailMessage + "</h3></br>Please note this is an auto genarated email.");
+            //mailBody.Append("Dear " + userName + " , </br><h3>" + mailMessage + "</h3></br>" + appUrl + "</br>Please note this is an auto genarated email.");
             mailBody.Append("</span>");
             mailBody.Append("</body>");
             mailBody.Append("</html>");
@@ -131,7 +189,7 @@ namespace SynergyRMS.Models
             else if (flag == messageFlag.RemovedProject)
             {
                 mailTitle = "Removed from the Project";
-                mailMessage = "You've been Removed from the current Project";
+                mailMessage = "You've been Removed from a Project";
             }
             else if (flag == messageFlag.UpdatedProject)
             {
