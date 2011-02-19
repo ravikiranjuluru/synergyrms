@@ -253,13 +253,13 @@
                                                                     <td style="padding-left: 10px;">
                                                                         <table id="Table2" style="width: 100%;">
                                                                             <tbody>
-<<<<<<< .mine
+
                                                                             <%
                                                                                 bool res = SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addRole);
                                                                             if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addRole))
-=======
-                                                                                <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addRole))
->>>>>>> .r518
+
+                                                                                //<%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addRole))
+
                                                                                  { %>
                                                                                 <tr id="Tr4">
                                                                                     <td padding-left="6px" width="5%">
