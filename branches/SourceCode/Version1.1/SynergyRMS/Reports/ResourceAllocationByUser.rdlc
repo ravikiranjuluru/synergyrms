@@ -120,13 +120,74 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="ViewProjectByResourceds_R_GetResourceByResourceId">
+      <Fields>
+        <Field Name="firstname">
+          <DataField>firstname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="lastname">
+          <DataField>lastname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="phone">
+          <DataField>phone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>synergydbadminConnectionString</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dbo.R_GetResourceByResourceId</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>ViewProjectByResourceds</rd:DataSetName>
+        <rd:TableName>R_GetResourceByResourceId</rd:TableName>
+        <rd:TableAdapterName>R_GetResourceByResourceIdTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
   <Width>5.875in</Width>
   <Body>
     <ReportItems>
+      <Textbox Name="firstname_1">
+        <rd:DefaultName>firstname_1</rd:DefaultName>
+        <Top>0.25in</Top>
+        <Width>2in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1.375in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!firstname.Value, "ViewProjectByResourceds_R_GetResourceByResourceId")+" "+First(Fields!lastname.Value, "ViewProjectByResourceds_R_GetResourceByResourceId")</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <Top>0.25in</Top>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Value>Resourcce :</Value>
+      </Textbox>
       <Table Name="table1">
         <DataSetName>ResourceAllocationByUserds_R_GetResourceAllocationByUserIdForGivenPeriod</DataSetName>
-        <Top>0.63492cm</Top>
+        <Top>1.90476cm</Top>
         <TableGroups>
           <TableGroup>
             <Grouping Name="table1_Group1">
@@ -424,7 +485,7 @@ CStr(Fields!effort.Value) &amp; "%")</Value>
         <Left>0.31746cm</Left>
       </Table>
     </ReportItems>
-    <Height>1.5in</Height>
+    <Height>2.125in</Height>
   </Body>
   <Language>en-US</Language>
   <PageFooter>
