@@ -824,29 +824,45 @@ namespace SynergyRMS.Models
             return user;
         }
 
-
-        public static bool isUserFunctionAllow(string username, string function)
+        public static aspnet_Roles GetRoleIdofTheUserByName(string username)
         {
-
             String[] roles = Roles.GetRolesForUser(username);
-
+            string roleName = roles[0];
             aspnet_Roles role;
 
             var roleQuery = from p in GetSynegyRMSInstance().aspnet_Roles
-                            where p.RoleName == roles[0].ToString()
+                            where p.RoleName == roleName
                             select p;
             role = roleQuery.First();
 
-            var rolepermissionQuery = from p in GetSynegyRMSInstance().UM_RolePermission
-                            where p.aspnet_Roles.RoleId == role.RoleId
-                            select p;
-            List < UM_RolePermission> permissionlist = rolepermissionQuery.ToList();
+            return role;
+        }
 
-            if (permissionlist.Count > 0)
+        public static bool isUserFunctionAllow(string username, string function)
+        {
+            if (username == "")
             {
-                return true;
+                return false;
             }
             
+            try
+            {
+                Guid roleId = GetRoleIdofTheUserByName(username).RoleId;
+
+                var rolepermissionQuery = from p in GetSynegyRMSInstance().UM_RolePermission
+                                          where p.aspnet_Roles.RoleId == roleId
+                                          select p;
+                List<UM_RolePermission> permissionlist = rolepermissionQuery.ToList();
+
+                if (permissionlist.Count > 0)
+                {
+                    return true;
+                }
+            }
+
+            catch
+            {
+            }
             return false;
         }
         public static List<PM_Projects> getUserProjects(string userKey)
