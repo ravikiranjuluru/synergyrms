@@ -30,6 +30,8 @@
   <!-- Column captions -->
    <!-- Shows count of incorrect dependencies and on click corrects them -->
    <Toolbar
+      
+      
       Formula="
          var a=ganttdependencyerrors();
          return a ? '&lt;span style=&quot;color:red;&quot;>&lt;b style=&quot;color:red&quot;>'+a+'&lt;/b> incorrect dependenc'+(a>1?'ies':'y')+'&lt;/span>'
