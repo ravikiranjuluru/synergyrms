@@ -13,7 +13,11 @@
     <form id="form1" runat="server">
     <div>
     
-        <table style="width:100%;">
+    
+    <table width="100%" align="center" >
+    <tr align="center" valign="top">
+    <td align="center" valign="top">
+     <table style="width:100%;">
             <tr>
                 <td>
                     &nbsp;</td>
@@ -115,6 +119,13 @@
                     &nbsp;</td>
             </tr>
         </table>
+    </td>
+    </tr>
+    
+    </table>
+    
+    
+       
     
     </div>
     </form>
