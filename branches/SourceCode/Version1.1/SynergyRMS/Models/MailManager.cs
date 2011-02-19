@@ -67,7 +67,7 @@ namespace SynergyRMS.Models
             }
         }
 
-        public static bool SendMail(string toAdresses, messageFlag flag, string projectName)
+        public static bool SendMail(string toAdresses, messageFlag flag)
         {
             SetAdminValues();
 
@@ -151,7 +151,63 @@ namespace SynergyRMS.Models
             mailBody.Append("</head>");
             mailBody.Append("<body>");
             mailBody.Append("<span>");
-            mailBody.Append("Dear " + projectResources.aspnet_Users.UserName.ToUpper() + ", </br><h3>" + mailMessage + "</h3></br><div>Project Name : " + projectResources.PM_Projects.ProjectName + "</div></br><div>Project Type : " + projectResources.PM_Projects.PM_Types.TypeName + "</div></br><div>Start Date: " + projectResources.PM_Projects.ProjectStartDate.ToShortDateString() + "</div></br><div>End Date: " + projectResources.PM_Projects.ProjectEndDate.ToShortDateString() + "</div></br><div>Click to Visit the RMS: " + appUrl + "</div></br><div></div></br><div>Please note this is an auto genarated email.</div>");
+            mailBody.Append("Dear " + projectResources.aspnet_Users.UserName.ToUpper() + ", </br><h3>" + mailMessage + "</h3></br><div>Project Name: " + projectResources.PM_Projects.ProjectName + "</div></br><div>Project Type: " + projectResources.PM_Projects.PM_Types.TypeName + "</div></br><div>Start Date: " + projectResources.PM_Projects.ProjectStartDate.ToShortDateString() + "</div></br><div>End Date: " + projectResources.PM_Projects.ProjectEndDate.ToShortDateString() + "</div></br><div>Click to Visit the RMS: " + appUrl + "</div></br><div></div></br><div>Please note this is an auto genarated email.</div>");
+            mailBody.Append("</span>");
+            mailBody.Append("</body>");
+            mailBody.Append("</html>");
+
+            return mailBody.ToString();
+        }
+
+        public static bool SendMail(string toAdresses, messageFlag flag, System.Web.Mvc.FormCollection form)
+        {
+            SetAdminValues();
+
+            SmtpClient smtpClient = new SmtpClient(adminMailServer, adminMailPort);
+
+            NetworkCredential networkCredential = new NetworkCredential(adminMailAddress, adminMailPassword);
+
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.EnableSsl = true;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = networkCredential;
+
+            MailMessage mail = new MailMessage();
+
+            mail.From = new MailAddress(adminMailAddress, appName);
+            mail.To.Add(new MailAddress(toAdresses));
+
+            mail.CC.Add(new MailAddress("chandusliit@gmail.com"));// Temp
+            mail.Bcc.Add(new MailAddress("virath.liyanage@gmail.com"));// Temp
+
+            mail.Subject = appName + " - Mail Notification";
+            mail.IsBodyHtml = true;
+            mail.Body = MessageModifier(flag, form);
+
+            try
+            {
+                smtpClient.Send(mail);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private static string MessageModifier(messageFlag flag, System.Web.Mvc.FormCollection form)
+        {
+            setMessage(flag);
+
+            StringBuilder mailBody = new StringBuilder();
+
+            mailBody.Append("<html>");
+            mailBody.Append("<head>");
+            mailBody.Append("<title>" + appName + " - " + mailTitle + "</title>");
+            mailBody.Append("</head>");
+            mailBody.Append("<body>");
+            mailBody.Append("<span>");
+            mailBody.Append("Dear " + form["FirstName"].ToString().ToUpper() + ", </br><h3>" + mailMessage + "</h3></br><div>User Name: " + form["txtusername"].ToString() + "</div></br><div>Password: " + form["txtpwd"].ToString() + "</div></br><div>E-mail Address: " + form["txtemail"].ToString() + "</div></br><div>Phone No: " + form["txtphone"].ToString() + "</div></br><div>Click to Visit the RMS: " + appUrl + "</div></br><div></div></br><div>Please note this is an auto genarated email.</div>");
             mailBody.Append("</span>");
             mailBody.Append("</body>");
             mailBody.Append("</html>");
