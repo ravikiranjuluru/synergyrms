@@ -30,10 +30,15 @@
 <body>
     <form id="form1" runat="server">
     <div>
+     <table width="100%" align="center" >
+    <tr align="center" valign="top">
+    <td align="center" valign="top">
+    
+    
         <table style="width: 100%;">
             <tr>
                 <td colspan="2">
-                                        &nbsp; Resource Allocation Detail Report</td>
+                                        &nbsp;</td>
                 <td>
                     &nbsp;
                 </td>
@@ -151,8 +156,9 @@
                 </td>
             </tr>
         </table>
-    
-    
+    </td>
+    </tr>
+    </table>
         &nbsp;<br />
         <br />
 &nbsp;<br />
