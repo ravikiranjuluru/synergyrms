@@ -653,6 +653,71 @@ namespace SynergyRMS.Models
             }
         }
 
+
+
+        /// <summary>
+        /// Gets all project resouces by given period.
+        /// </summary>
+        /// <param name="StartDate">The start date.</param>
+        /// <param name="EndDate">The end date.</param>
+        /// <returns></returns>
+        public static List<PM_ProjectResources> GetAllProjectResoucesByGivenPeriod(DateTime StartDate, DateTime EndDate)
+        {
+            try
+            {
+               
+                List<PM_ProjectResources> ResList = null;
+
+                IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                                               where ((p.AllocatedStartDate >= StartDate && p.AllocatedStartDate <= EndDate) || (p.AllocatedEndDate >= StartDate && p.AllocatedEndDate <= EndDate))
+                                                               select p;
+
+      
+                ResList = projectQuery.ToList();
+
+                foreach (PM_ProjectResources objResources in ResList)
+                {
+                    
+                    /*---- Check Date Max and Min Date Validation--------*/
+
+                    if (objResources.AllocatedStartDate < StartDate)
+                    {
+                        objResources.AllocatedStartDate = StartDate;
+                    }
+
+                    if (objResources.AllocatedEndDate > EndDate)
+                    {
+                        objResources.AllocatedEndDate= EndDate;
+                    }
+                        
+
+
+                    objResources.PM_ProjectsReference.Load();
+                    
+                    objResources.aspnet_UsersReference.Load();
+                   
+                    objResources.aspnet_Users.aspnet_MembershipReference.Load();
+                    
+                    objResources.aspnet_Users.aspnet_ProfileReference.Load();
+                    
+                    objResources.PM_ProjectRolesReference.Load();
+                   
+                    
+                    //objResources.UM_UsersReference.Load();
+                    //int aa = single1.T_User.UserId;
+                }
+
+                return ResList;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+
+
         #endregion
 
         #region User Methods
