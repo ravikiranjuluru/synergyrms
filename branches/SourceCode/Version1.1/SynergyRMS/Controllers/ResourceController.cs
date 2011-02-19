@@ -88,8 +88,10 @@ namespace SynergyRMS.Controllers
         public ActionResult SetPermission(FormCollection form)//*
         {
             string editrole = form["hdnid"].ToString();
-            Hashtable tblpermission = SynergyService.GetPermissionsByRoleName(editrole);
+            //Hashtable tblpermission = SynergyService.GetPermissionsByRoleName(editrole);
+            Hashtable tblpermission = new Hashtable();
             try
+
             {
                 
                 bool status = true;
@@ -253,6 +255,8 @@ namespace SynergyRMS.Controllers
             }
             catch
             {
+                ViewData["status"] = "Error";
+                ViewData["msg"] = "Error in Role Creation.";
             }
            ViewData["RoleList"] = GetAllRoles();
             return View("Role");
@@ -275,65 +279,7 @@ namespace SynergyRMS.Controllers
         }
         #endregion Role
 
-        #region permission
-       
-      
-        //[HttpPost]
-        //public ActionResult LoadPermission(FormCollection form)
-        //{
-        //    string[] allroles = Roles.GetAllRoles();
-
-        //    string selectedRole = form["ddRoles"].ToString();
-
-        //    if (allroles.Length > 0)
-        //    {
-        //        List<string> roleList = new List<string>();
-        //        roleList.Add(selectedRole);
-        //        foreach (string role in allroles)
-        //        {
-        //            if (role != null)
-        //            {
-        //                if (role != selectedRole)
-        //                {
-        //                    roleList.Add(role.ToString());
-        //                }
-        //            }
-        //        }
-        //        ViewData["PermissionList"] = loadPermissionForRole(selectedRole);
-        //        ViewData["RoleList"] = new SelectList(roleList);
-        //        ViewData["EditRole"] = selectedRole;
-        //    }
-        //    return View("RolePermission");
-        //}
-
-        //public bool[] loadPermissionForRole(string role)
-        //{
-        //    bool[] arrpermission = new bool[7];
-        //    if (role == "User")
-        //    {
-        //        arrpermission[0] = true; //project - add
-        //        arrpermission[1] = false; //project - edit
-        //        arrpermission[2] = false; //project - delete
-        //        arrpermission[3] = true; //task - add
-        //        arrpermission[4] = false; //task - edit
-        //        arrpermission[5] = false; //task - delete
-        //        arrpermission[6] = true; //assign to task
-        //    }
-        //    else if (role == "Admin")
-        //    {
-        //        arrpermission[0] = false; //project - add
-        //        arrpermission[1] = true; //project - edit
-        //        arrpermission[2] = true; //project - delete
-        //        arrpermission[3] = false; //task - add
-        //        arrpermission[4] = true; //task - edit
-        //        arrpermission[5] = true; //task - delete
-        //        arrpermission[6] = true; //assign to task
-        //    }
-
-        //    return arrpermission;
-        //}
-        
-        #endregion permission
+   
 
 
 
@@ -389,6 +335,49 @@ namespace SynergyRMS.Controllers
             ViewData["RoleList"] = GetAllRoles();
             return View("Index");
         }
+
+        //this functions return user list without admin usrs for dropdowns
+        public SelectList getAllNormalUsersforDropdown()
+        {
+            MembershipUserCollection userList = Membership.GetAllUsers();
+            List<SelectListItem> itemsUser = new List<SelectListItem>();
+            foreach (MembershipUser user in userList)
+            {
+                if (!Roles.IsUserInRole(user.UserName, "Admin"))
+                {
+
+                    var userprofile = new ProfileBase();
+                    userprofile.Initialize(user.UserName, true);
+                    string fname = userprofile.GetPropertyValue("FirstName").ToString();
+                    string lname = userprofile.GetPropertyValue("LastName").ToString();
+
+                    string userkey = user.ProviderUserKey.ToString();
+                    SelectListItem item = new SelectListItem();
+                    item.Text = fname + " " + lname;
+                    item.Value = userkey;
+                    itemsUser.Add(item);
+
+                }
+            }
+            SelectList ddUserlist = new SelectList(itemsUser, "Value", "Text");
+            return ddUserlist;
+        }
+
+        //this functions return user list without admin usrs by MembershipUserCollection
+        public MembershipUserCollection getAllNormalUsersDatatable()
+        {
+            MembershipUserCollection userList = Membership.GetAllUsers();
+            List<SelectListItem> itemsUser = new List<SelectListItem>();
+            MembershipUserCollection userListReturn = new MembershipUserCollection();
+            foreach (MembershipUser user in userList)
+            {
+                if (!Roles.IsUserInRole(user.UserName, "Admin"))
+                {
+                    userListReturn.Add(user);
+                }
+            }
+            return userListReturn;
+        }
         
         //add role to user load all users
         public ActionResult AddRole()//*
@@ -405,7 +394,7 @@ namespace SynergyRMS.Controllers
                 //        userlist.Add(u);
                 //}
                 //ViewData["Userlist"] = userlist;
-                MembershipUserCollection userlist = Membership.GetAllUsers();
+                MembershipUserCollection userlist = getAllNormalUsersDatatable();
                 ViewData["Userlist"] = userlist;
             }
             catch (Exception ex)
