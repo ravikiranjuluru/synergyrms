@@ -40,6 +40,11 @@
 <body>
     <form id="form1" runat="server">
     <div>
+    
+     <table width="100%" align="center" >
+    <tr align="center" valign="top">
+    <td align="center" valign="top">
+    
         <table style="width:100%;">
             <tr>
                 <td>
@@ -55,7 +60,7 @@
                     &nbsp;</td>
                 <td colspan="2">
                  
-                    &nbsp;Resource Projects Detail Report&nbsp;</td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td>
@@ -160,6 +165,11 @@
                     &nbsp;</td>
             </tr>
         </table>
+    </td>
+    </tr>
+    </table>
+    
+    
     
         
     
