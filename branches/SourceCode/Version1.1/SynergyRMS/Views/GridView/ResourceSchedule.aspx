@@ -248,7 +248,7 @@
                                     </tr>
                                     <tr>
                                         <td class="dashboardTabSpace">
-                                            <img height="1" width="5" id="Img3" src="../../Content/images/common/space.gif">
+                                            <img height="1" width="1" id="Img3" src="../../Content/images/common/space.gif">
                                         </td>
                                          <td nowrap="nowrap" class="dashboardTabSelected">
                                                 Scheduling
@@ -256,7 +256,7 @@
                                         <td class="dashboardTabSpace">
                                             <img height="1" width="1" id="Img4" src="../../Content/images/common/space.gif">
                                         </td>
-                                        <td nowrap="nowrap" onclick="__doPostBack('ctl00$ucTabStrip','Calendar')" onmouseout="this.className='dashboardTabOff';"
+                                       <%-- <td nowrap="nowrap" onclick="__doPostBack('ctl00$ucTabStrip','Calendar')" onmouseout="this.className='dashboardTabOff';"
                                             onmouseover="this.className='dashboardTabOn';" class="dashboardTabOff">
                                             <a href="../Resource/Calendar">Calendar</a>
                                             
@@ -267,7 +267,7 @@
                                         <td nowrap="nowrap" onclick="__doPostBack('ctl00$ucTabStrip','Utilisation')" onmouseout="this.className='dashboardTabOff';"
                                             onmouseover="this.className='dashboardTabOn';" class="dashboardTabOff">
                                             <a href="../Resource/Utilisation">Utilisation</a>
-                                        </td>
+                                        </td>--%>
                                         <td nowrap="nowrap" width="100%" valign="middle" align="left" class="dashboardTabTail">
                                             &nbsp;
                                         </td>
