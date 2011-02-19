@@ -1,62 +1,46 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
-<!--
- *
- * AeroWindow - jQuery Plugin (v3.5)
- * Copyright 2010, Christian Goldbach
- * Dual licensed under the MIT or GPL Version 2 licenses.
- * 
- * Project Website:
- * http://www.soyos.net/aerowindow-jquery.html
- * http://www.soyos.net
- *
- *
- *
- * Requires Easing Plugin for Window Animations:
- * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
- *
- * Date: 2010-06-09
- *
-//-->
+
   <head>
    
    <title>Synergy Resource Management System</title>
    <link id="lnkFavIcon" rel="SHORTCUT ICON" href="<%= ResolveUrl("~") %>Content/images/icon/favicon.ico" />
- 
+<%-- 
 <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>    
     <link href="http://www.soyos.net/tl_files/demos/aero-window/css/AeroWindow.css?r=123" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="http://www.soyos.net/tl_files/demos/aero-window/js/jquery-1.4.2.min.js"></script> 
     <script type="text/javascript" src="http://www.soyos.net/tl_files/demos/aero-window/js/jquery-ui-1.8.1.custom.min.js"></script> 
     <script type="text/javascript" src="http://www.soyos.net/tl_files/demos/aero-window/js/jquery.easing.1.3.js"></script>         
     <script type="text/javascript" src="http://www.soyos.net/tl_files/demos/aero-window/js/jquery-AeroWindow.js"></script>
-
+--%>
      
-     <%--<link type="text/css" href="<%= ResolveUrl("~") %>Content/jquery-ui.css" rel="stylesheet" />
+    <link type="text/css" href="<%= ResolveUrl("~") %>Content/jquery-ui.css" rel="stylesheet" />
       <link type="text/css" href="<%= ResolveUrl("~") %>Content/AeroWindow.css" rel="stylesheet" />
       <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/jquery-1.4.2.min.js"></script>
       <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/jquery-ui-1.8.1.custom.min.js"></script>
-      <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/jquery.easing.1.3.js"></script>
-      <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/jquery-AeroWindow.js"></script>
-     --%>
+      
+      <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/aerowindow/jquery.easing.1.3.js"></script>
+      <script type="text/javascript" src="<%= ResolveUrl("~") %>Scripts/aerowindow/jquery-AeroWindow.js"></script>
+    
 
 
 
     <script type="text/javascript">
         $(document).ready(function() {
             $('#Signin').AeroWindow({
-                WindowTitle: 'Sign In',
+            WindowTitle: 'Synergy Resource Management System',
                 WindowPositionTop: 'center',
                 WindowPositionLeft: 'center',
-                WindowWidth: 600,
+                WindowWidth: 500,
                 WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
-                WindowHeight: 500,
+                WindowHeight: 450,
                 WindowAnimation: 'easeOutBounce'
             });
             
            
             $('#Home').click(function() {
                 $('#Homeapp').AeroWindow({
-                    WindowTitle: 'Synergy Home',
+                WindowTitle: 'Synergy Resource Management System',
                     WindowPositionTop: 'center',
                     WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
                     WindowPositionLeft: 'center',
@@ -67,7 +51,7 @@
             });
             $('#Projects').click(function() {
             $('#Projectsapp').AeroWindow({
-                    WindowTitle: 'Projects',
+            WindowTitle: 'Synergy Resource Management System',
                     WindowPositionTop: 'center',
                     WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
                     WindowPositionLeft: 'center',
@@ -78,7 +62,7 @@
             });
             $('#Dashboard').click(function() {
             $('#Dashboardapp').AeroWindow({
-                    WindowTitle: 'Dashboard',
+            WindowTitle: 'Synergy Resource Management System',
                     WindowPositionTop: 'center',
                     WindowStatus: 'regular',     /* 'regular', 'maximized', 'minimized' */
                     WindowPositionLeft: 'center',
