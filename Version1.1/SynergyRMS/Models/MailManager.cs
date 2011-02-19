@@ -128,7 +128,7 @@ namespace SynergyRMS.Models
                 mailTitle = "Assigned to a New  Project";
                 mailMessage = "You've been Assigned to a new project";
             }
-            else if (flag == messageFlag.AssignedProject)
+            else if (flag == messageFlag.RemovedProject)
             {
                 mailTitle = "Removed from the Project";
                 mailMessage = "You've been Removed from the current Project";
