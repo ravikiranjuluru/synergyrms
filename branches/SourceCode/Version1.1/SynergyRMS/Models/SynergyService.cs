@@ -649,10 +649,16 @@ namespace SynergyRMS.Models
 
         }
 
-        public void DeletePermissions(UM_RolePermission role)
+        public static void DeletePermissions(string rolname)
         {
-            GetSynegyRMSInstance().DeleteObject(role);
-            GetSynegyRMSInstance().SaveChanges();
+
+            List<UM_Permission> activePermissions = GetUserpermissionsByRoleId(GetUserRoleIdByName(rolname).RoleId);
+
+            foreach (UM_Permission permission in activePermissions)
+            {
+                GetSynegyRMSInstance().DeleteObject(permission);
+                GetSynegyRMSInstance().SaveChanges();
+            }
         }
 
         /// <summary>
@@ -663,6 +669,8 @@ namespace SynergyRMS.Models
         /// <returns></returns>
         public static bool SaveRolePermissions(Hashtable permissionTable, String roleName)
         {
+
+            DeletePermissions(roleName);
             foreach (string permission in permissionTable.Keys)
             {
                 if ((bool)permissionTable[permission])
