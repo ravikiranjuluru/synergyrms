@@ -140,7 +140,7 @@
                             <tbody>
                                 <tr>
                                     <td align="left">
-                                        <input type="submit" value="Save" class="button" id="btnSave" name="btnSave">
+                                        <input type="submit" value="Save" class="button" id="btnSave" name="btnSave" onclick="return validateForm()">
                                     </td>
                                 </tr>
                             </tbody>
@@ -150,6 +150,82 @@
             </tbody>
         </table>
     </div>
+    
+    <script language="javascript">
+        function validateForm() {
+            var a = document.forms[0]["txtfirstname"].value
+
+            if (a == null || a == "") {
+                alert("Please enter First Name");
+                return false;
+            }
+
+            var b = document.forms[0]["txtlastname"].value
+
+            if (b == null || b == "") {
+                alert("Please enter Last Name");
+                return false;
+            }
+
+            var c = document.forms[0]["txtemail"].value
+
+            if (c == null || c == "") {
+                alert("Please enter Email Address");
+                return false;
+            }
+            else {
+                if (emailValidationCheck(c) == false) {
+                    emailID.value = ""
+                    return false
+                }
+            }
+
+            function emailValidationCheck(str) {
+
+                var at = "@"
+                var dot = "."
+                var lat = str.indexOf(at)
+                var lstr = str.length
+                var ldot = str.indexOf(dot)
+                if (str.indexOf(at) == -1) {
+                    alert("Invalid E-mail ID")
+                    return false
+                }
+
+                if (str.indexOf(at) == -1 || str.indexOf(at) == 0 || str.indexOf(at) == lstr) {
+                    alert("Invalid E-mail ID")
+                    return false
+                }
+
+                if (str.indexOf(dot) == -1 || str.indexOf(dot) == 0 || str.indexOf(dot) == lstr) {
+                    alert("Invalid E-mail ID")
+                    return false
+                }
+
+                if (str.indexOf(at, (lat + 1)) != -1) {
+                    alert("Invalid E-mail ID")
+                    return false
+                }
+
+                if (str.substring(lat - 1, lat) == dot || str.substring(lat + 1, lat + 2) == dot) {
+                    alert("Invalid E-mail ID")
+                    return false
+                }
+
+                if (str.indexOf(dot, (lat + 2)) == -1) {
+                    alert("Invalid E-mail ID")
+                    return false
+                }
+
+                if (str.indexOf(" ") != -1) {
+                    alert("Invalid E-mail ID")
+                    return false
+                }
+
+                return true
+            }
+        }
+    </script>
     
     <%}
       } %>
