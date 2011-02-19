@@ -14,7 +14,6 @@ namespace SynergyRMS.Controllers
 {
     public class ResourceController : Controller
     {
-        
 
         public ActionResult ViewTeam()
         {
@@ -52,7 +51,6 @@ namespace SynergyRMS.Controllers
             return View("Department");
         }
         #endregion Department
-
 
         #region Role
         private SelectList GetAllRoles()//*
@@ -279,11 +277,6 @@ namespace SynergyRMS.Controllers
         }
         #endregion Role
 
-   
-
-
-
-
         #region User
         public ActionResult Index()//*
         {
@@ -310,6 +303,7 @@ namespace SynergyRMS.Controllers
                     profile.SetPropertyValue("Phone", form["txtphone"].ToString());                   
                     profile.Save();
 
+                    SendNotificationWhenAccountCreated(newuser.Email);
 
                     ViewData["status"] = "Success";
                     ViewData["msg"] = "New User Successfully Created.";
@@ -749,7 +743,46 @@ namespace SynergyRMS.Controllers
         }
         #endregion User
 
+        #region Notification
 
+        private static bool AllowEmailNotifications()
+        {
+            if (System.Configuration.ConfigurationSettings.AppSettings["AllowEmailNotification"] == "True")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private static void SendNotificationWhenScheduling(string email)
+        {
+            try
+            {
+                if (AllowEmailNotifications())
+                {
+                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledProject);
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private static void SendNotificationWhenAccountCreated(string email)
+        {
+            try
+            {
+                if (AllowEmailNotifications())
+                {
+                    MailManager.SendMail(email, MailManager.messageFlag.AccountCreated);
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        #endregion Notification
 
         public ActionResult ViewUserLeave()
         {
@@ -768,9 +801,6 @@ namespace SynergyRMS.Controllers
         {
             return View("ScheduleUtilisation");
         }
-       
-
-       
 
     }
 }
