@@ -72,7 +72,7 @@ namespace SynergyRMS.Controllers
                 else
                 {
                     ViewData["status"] = "Error";
-                    ViewData["msg"] = "Error in new Project Creation.";
+                    ViewData["msg"] = "Error in Project Creation.";
                 }
             }
             catch
