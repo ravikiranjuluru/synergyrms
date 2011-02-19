@@ -439,39 +439,39 @@ namespace SynergyRMS.Models
             if (AllowEmailNotifications())
             {
                 resource.aspnet_Users.aspnet_MembershipReference.Load();
-                SendNotificationWhenAssignedToProject(resource.aspnet_Users.aspnet_Membership.Email);
+                SendNotificationWhenAssignedToProject(resource.aspnet_Users.aspnet_Membership.Email, resource);
             }
 
             return true;
         }
 
-        private static void SendNotificationWhenAssignedToProject(string email)
+        private static void SendNotificationWhenAssignedToProject(string email, PM_ProjectResources projectResources)
         {
             try
             {
-                MailManager.SendMail(email, MailManager.messageFlag.AssignedProject);
+                MailManager.SendMail(email, MailManager.messageFlag.AssignedProject, projectResources);
             }
             catch
             {
             }
         }
 
-        private static void SendNotificationWhenRemovedFromProject(string email)
+        private static void SendNotificationWhenRemovedFromProject(string email, PM_ProjectResources projectResources)
         {
             try
             {
-                MailManager.SendMail(email, MailManager.messageFlag.RemovedProject);
+                MailManager.SendMail(email, MailManager.messageFlag.RemovedProject, projectResources);
             }
             catch
             {
             }
         }
 
-        private static void SendNotificationWhenUpdatedProject(string email)
+        private static void SendNotificationWhenUpdatedProject(string email, PM_ProjectResources projectResources)
         {
             try
             {
-                MailManager.SendMail(email, MailManager.messageFlag.UpdatedProject);
+                MailManager.SendMail(email, MailManager.messageFlag.UpdatedProject, projectResources);
             }
             catch
             {
@@ -567,7 +567,7 @@ namespace SynergyRMS.Models
                 if (AllowEmailNotifications())
                 {
                     projectResources.aspnet_Users.aspnet_MembershipReference.Load();
-                    SendNotificationWhenRemovedFromProject(projectResources.aspnet_Users.aspnet_Membership.Email);
+                    SendNotificationWhenRemovedFromProject(projectResources.aspnet_Users.aspnet_Membership.Email, projectResources);
                 }
             }
             catch (Exception)
@@ -588,7 +588,7 @@ namespace SynergyRMS.Models
                 if (AllowEmailNotifications())
                 {
                     projectResources.aspnet_Users.aspnet_MembershipReference.Load();
-                    SendNotificationWhenUpdatedProject(projectResources.aspnet_Users.aspnet_Membership.Email);
+                    SendNotificationWhenUpdatedProject(projectResources.aspnet_Users.aspnet_Membership.Email, projectResources);
                 }
             }
             catch (Exception)
