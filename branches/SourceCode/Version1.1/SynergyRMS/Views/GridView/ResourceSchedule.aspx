@@ -433,7 +433,7 @@
               List<PM_ProjectResources> listResorce = (List<PM_ProjectResources>)ViewData["LoadResourceList"];
               if (listResorce.Count > 0)
               {
-                  ViewData["name"] = "chanaka";
+                  
                   %>
                 <%Html.RenderPartial("LoadSchedule", ViewData["LoadResourceList"]); %>
             <%}
