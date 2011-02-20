@@ -113,7 +113,7 @@ for (int i = Min; i <= Max; i++)
     <D Name='R' CDef='' U='Name' 
       A='New'/>
   </Def>
-  <%--<Body>
+  <Body>
     <B>
       <I U='Project1'>
         <I U='David1'  S='02/10/2011' E='02/15/2011'/>
@@ -126,7 +126,7 @@ for (int i = Min; i <= Max; i++)
         <I U='Linda2'/>
       </I>
     </B>
-  </Body>--%>
+  </Body>
   
   <%--Cells="Correct,Save,Reload,Repaint,Print,ExportPDF,Export,Undo,Redo,Add,AddChild,Sort,Calc,ExpandAll,CollapseAll,ZoomIn,ZoomOut,ZoomFit,Columns,Cfg,Help,Debug,StyleTitle,StyleStandard,StyleLight,StyleOffice,StyleModern,StyleBorders,StyleRobust,StylePlain,StyleColors,Empty,Formula,Resize"--%>
   
