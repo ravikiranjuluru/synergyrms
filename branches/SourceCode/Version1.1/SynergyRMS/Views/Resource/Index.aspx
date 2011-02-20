@@ -181,6 +181,15 @@
                                                     </tr>
                                                     <tr>
                                                         <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txtnic">
+                                                                NIC/Passport ID</label>NIC/Passport ID:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="text" maxlength="30" size="30" class="textBox" id="txtnic" name="txtnic">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
                                                             <label for="txtusername">
                                                                 User Name</label>User Name:
                                                         </td>
