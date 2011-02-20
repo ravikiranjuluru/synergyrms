@@ -3,9 +3,9 @@
 <%
     
     List<PM_ProjectResources> listProjectResources = new List<PM_ProjectResources>();
-    if (Session["LoadResourceList"] != null)
+    if (Session["LoadResourceListDisplay"] != null)
     {
-        listProjectResources = (List<PM_ProjectResources>)Session["LoadResourceList"];
+        listProjectResources = (List<PM_ProjectResources>)Session["LoadResourceListDisplay"];
     }
     
     
@@ -81,7 +81,7 @@
 
  
  
-    string proName = null, username = null, StartDate = "", EndDate="";
+    string proName = null, fullname ="",username = null, StartDate = "", EndDate="";
     string output = "";
  foreach (PM_ProjectResources projectResources in listProjectResources)
  {
@@ -91,7 +91,7 @@
      profile.Initialize(username, true);
      string fname = profile.GetPropertyValue("FirstName").ToString();
      string lname = profile.GetPropertyValue("LastName").ToString();
-     string fullname = fname + " " + lname;
+     fullname = fname + " " + lname;
      
      proName = projectResources.PM_Projects.ProjectName;
      StartDate = projectResources.AllocatedStartDate.ToString();
@@ -100,7 +100,7 @@
      string p1 = fullname;  // User name-Resource
      string r1 = proName;  // Project
 
-     if (p1 != proName)                // New project row
+     if (p1 != fullname)                // New project row
      {
          if (fullname != null) output += "/></I>";    // Ends previous project and resource rows
          fullname = p1; proName = null;
@@ -112,31 +112,30 @@
          proName = r1;
          output += "<I Project='" + proName.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "' ";
      }
-     output = output + "W" + StartDate + "='" + EndDate + "' "; // Week = Hours (like W42='17')
-     
-
+     output = output + "W" + StartDate + "='" + EndDate + "' "; // Week = Hours (like W42='17')     
  }
+ if (fullname != null) output += "/></I>";
 
- string Prj = null, Res = null, S = "";
- while (R.Read())
- {
-     string p = R[1].ToString();  // Project
-     string r = R[2].ToString();  // Resource
-     if (p != Prj)                // New project row
-     {
-         if (Prj != null) S += "/></I>";    // Ends previous project and resource rows
-         Prj = p; Res = null;
-         S += "<I Def='Node' Project='" + Prj.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'>";
-     }
-     if (r != Res)                  // New resource row
-     {
-         if (Res != null) S += "/>";     // Ends previous resource row
-         Res = r;
-         S += "<I Project='" + Res.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "' ";
-     }
-     S = S + "W" + R[3].ToString() + "='" + R[4].ToString() + "' "; // Week = Hours (like W42='17')
- }
-
+ //string Prj = null, Res = null, S = "";
+ //while (R.Read())
+ //{
+ //    string p = R[1].ToString();  // Project
+ //    string r = R[2].ToString();  // Resource
+ //    if (p != Prj)                // New project row
+ //    {
+ //        if (Prj != null) S += "/></I>";    // Ends previous project and resource rows
+ //        Prj = p; Res = null;
+ //        S += "<I Def='Node' Project='" + Prj.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'>";
+ //    }
+ //    if (r != Res)                  // New resource row
+ //    {
+ //        if (Res != null) S += "/>";     // Ends previous resource row
+ //        Res = r;
+ //        S += "<I Project='" + Res.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "' ";
+ //    }
+ //    S = S + "W" + R[3].ToString() + "='" + R[4].ToString() + "' "; // Week = Hours (like W42='17')
+ //}
+ //if (Prj != null) S += "/></I>";
     
     
  //while (R.Read())
@@ -158,14 +157,15 @@
  //    S = S + "W" + R[3].ToString() + "='" + R[4].ToString() + "' "; // Week = Hours (like W42='17')
  //}
 
- if (Prj != null) S += "/></I>";   // Ends previous project and resource rows
+ //if (Prj != null) S += "/></I>";   // Ends previous project and resource rows
 
                                          // --------------------------------------------------------------------------
 %><?xml version="1.0" ?>
 <Grid>
    <Body>
       <B>
-         <%=S%>
+         <%--<%=S%>--%>
+         <%=output%>
       </B>
    </Body>
 </Grid>
