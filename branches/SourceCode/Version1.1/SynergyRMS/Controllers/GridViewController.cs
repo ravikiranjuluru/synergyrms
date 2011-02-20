@@ -42,9 +42,38 @@ namespace SynergyRMS.Controllers
             //ViewData["ProjectList"] = GetAllProjects();
             return View("ResourceSchedule");
         }
-        [HttpPost]
-        public ActionResult Schedule(FormCollection form)
+
+       // [HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult ResourceSchedule(FormCollection form)
         {
+            try
+            {
+                string fromdate = form["fromdate"].ToString();
+                string todate = form["enddate"].ToString();
+
+                var sdate = form["fromdate"];
+                var edate = form["enddate"];
+
+                DateTime fromdate1 = Convert.ToDateTime(sdate);
+                DateTime fromdate2 = Convert.ToDateTime(edate);
+
+
+
+                ViewData["fromdate"] = fromdate;
+                ViewData["todate"] = todate;
+
+
+                List<PM_ProjectResources> listResorce = new List<PM_ProjectResources>();
+                listResorce = SynergyService.GetAllProjectResoucesByGivenPeriod(fromdate1, fromdate2);
+                
+                ViewData["LoadResourceList"] = listResorce;
+                   
+            }
+            catch
+            {
+                //throw;
+            }
             return View("ResourceSchedule");
         }
         //#endregion UserSchedule
