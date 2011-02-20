@@ -32,5 +32,16 @@ namespace EmployeeSystemEx.Properties {
                 return ((string)(this["EmployeeDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Employee.mdf;Integrated" +
+            " Security=True;User Instance=True")]
+        public string EmployeeConnectionString {
+            get {
+                return ((string)(this["EmployeeConnectionString"]));
+            }
+        }
     }
 }

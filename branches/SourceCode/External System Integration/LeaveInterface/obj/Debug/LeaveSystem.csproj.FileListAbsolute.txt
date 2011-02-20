@@ -7,3 +7,12 @@ F:\project\LeaveWeb\LeaveInterface\LeaveInterface\bin\Debug\LeaveAdapter.pdb
 F:\project\LeaveWeb\LeaveInterface\LeaveInterface\obj\Debug\ResolveAssemblyReference.cache
 F:\project\LeaveWeb\LeaveInterface\LeaveInterface\obj\Debug\LeaveSystemEx.dll
 F:\project\LeaveWeb\LeaveInterface\LeaveInterface\obj\Debug\LeaveSystemEx.pdb
+D:\synergyrms\SourceCode\External System Integration\LeaveInterface\bin\Debug\Model\LeaveDB.sdf
+D:\synergyrms\SourceCode\External System Integration\LeaveInterface\bin\Debug\LeaveSystemEx.dll.config
+D:\synergyrms\SourceCode\External System Integration\LeaveInterface\bin\Debug\LeaveSystemEx.dll
+D:\synergyrms\SourceCode\External System Integration\LeaveInterface\bin\Debug\LeaveSystemEx.pdb
+D:\synergyrms\SourceCode\External System Integration\LeaveInterface\bin\Debug\LeaveAdapter.dll
+D:\synergyrms\SourceCode\External System Integration\LeaveInterface\bin\Debug\LeaveAdapter.pdb
+D:\synergyrms\SourceCode\External System Integration\LeaveInterface\obj\Debug\ResolveAssemblyReference.cache
+D:\synergyrms\SourceCode\External System Integration\LeaveInterface\obj\Debug\LeaveSystemEx.dll
+D:\synergyrms\SourceCode\External System Integration\LeaveInterface\obj\Debug\LeaveSystemEx.pdb

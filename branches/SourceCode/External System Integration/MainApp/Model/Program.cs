@@ -13,9 +13,9 @@ namespace MainApp
         {
 
 
-            TestEmployeeSystem();
+           // TestEmployeeSystem();
 
-            //TestLeaveSystem();
+            TestLeaveSystem();
         }
 
         private static void TestEmployeeSystem()
