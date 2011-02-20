@@ -1022,7 +1022,8 @@ namespace SynergyRMS.Models
 
             double TotalEffort = 0;
             double Duration = 0;
-
+            double TotalCurrentEffort = 0;
+            double userEffort = 0;
 
             
             /*------------------Calculate Period------------------------*/
@@ -1033,7 +1034,7 @@ namespace SynergyRMS.Models
             /*-----------------Calculate MaximumUserEffort for Given User-----------*/
 
             List<PM_MaxUserEfforts> ListUserEfforts=null;
-            double userEffort = 0;
+           
             MembershipUser edituser = Membership.GetUser(new Guid(userkey));
 
             IQueryable<PM_MaxUserEfforts> maxUserEffortQuery = from m in GetSynegyRMSInstance().PM_MaxUserEfforts
@@ -1056,37 +1057,60 @@ namespace SynergyRMS.Models
 
             ResList = projectQuery.ToList();
 
-
             foreach (PM_ProjectResources objResources in ResList)
             {
                 DateTime startPeriod;
                 DateTime endPeriod;
+                double numOfDays = 0;
+                
 
+                if (objResources.AllocatedStartDate < startDate)
+                {
+                    startPeriod = startDate;
+                }
+                else
+                {
+                    startPeriod = objResources.AllocatedStartDate;
+                }
 
-                //if (objResources.AllocatedStartDate < startDate)
-                //{
-                //    objResources.AllocatedStartDate = startDate;
-                //}
-                //else
-                //{
+                if (objResources.AllocatedEndDate > endDate)
+                {
+                    endPeriod = endDate;
+                }
+                else
+                {
+                    endPeriod = objResources.AllocatedEndDate;
+                }
 
-                //}
+                TimeSpan tsPeriod = startPeriod.Subtract(endPeriod);
+                numOfDays = tsPeriod.TotalDays;
 
-                //if (objResources.AllocatedEndDate > EndDate)
-                //{
-                //    objResources.AllocatedEndDate = EndDate;
-                //}
-                        
-
-               
                 double projectEffort=Convert.ToDouble(objResources.Effort);
-                TotalEffort = TotalEffort + projectEffort;
+                TotalCurrentEffort = TotalCurrentEffort + projectEffort * numOfDays;
              
+               
                 //objResources.UM_UsersReference.Load();
                 //int aa = single1.T_User.UserId;
             }
 
-            TotalEffort = TotalEffort * Duration;
+
+            /*--------------------Total Required Allocation ---------------*/
+
+                  TotalEffort = TotalEffort * Duration;
+
+            /*-----------------------Check Allocation------------------ */
+
+                  double remEffort = TotalEffort - TotalCurrentEffort;
+
+                
+            /*--------------calculate remaining Effort----------------*/
+
+                  double noOfRemainingDays = remEffort / userEffort;
+
+
+
+            /*-----------------Fill Information -------------------*/
+
 
         }
 
