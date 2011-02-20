@@ -103,7 +103,7 @@ namespace SynergyRMS.Models
             }
         }
 
-        public static bool SendMail(string toAdresses, messageFlag flag, PM_ProjectResources projectResources)
+        public static bool SendMail(string toAdresses, messageFlag flag, PM_ProjectResources projectResources, List<string> cCAdresses)
         {
             SetAdminValues();
 
@@ -121,14 +121,9 @@ namespace SynergyRMS.Models
             mail.From = new MailAddress(adminMailAddress, appName);
             mail.To.Add(new MailAddress(toAdresses));
 
-            List<PM_ProjectResources> projectResourceList = SynergyService.GetAllProjectResoucesByProjectId(projectResources.PM_Projects.ProjectId);
-
-            foreach (PM_ProjectResources resource in projectResourceList)
+            for (int i = 0; i < (cCAdresses.Count); i++)
             {
-                string cCAdress = resource.aspnet_Users.aspnet_Membership.Email;
-
-                if (cCAdress != toAdresses)
-                    mail.CC.Add(new MailAddress(cCAdress));
+                mail.CC.Add(new MailAddress(cCAdresses[i].ToString()));
             }
 
             //mail.CC.Add(new MailAddress("chandusliit@gmail.com"));// Temp
