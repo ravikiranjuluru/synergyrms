@@ -252,6 +252,7 @@
                                                     <th id="email" width="10%" align="left" class="tableColumnTitle">
                                                         Email
                                                     </th>
+                                                    <th id="del" width="2%" class="tableColumnTitle"></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -273,6 +274,11 @@
                                                     </td>
                                                     <td headers="email" class="oddrow-mdl" align="left" width="20%">
                                                         <%= user.Email%>
+                                                    </td>
+                                                    <td headers="del" class="oddrow-mdl" align="left" width="20%">
+                                                    <strong>
+                                                    <%=Html.ActionLink("Delete from Project", "DeleteUserfromProject", "Project", new { uid = user.ProviderUserKey.ToString(), pid = project.ProjectId }, null)%> 
+                                                    </strong>
                                                     </td>
                                                 </tr>
                                                 <%} %>
@@ -394,11 +400,12 @@
                                             var parameters = user.ProviderUserKey.ToString();
                                             parameters = parameters + "," + project.ProjectId;
                                              %>
-                                             
+                                             <strong>
                                              <%=Html.ActionLink("Assign to Project", "AssignUsertoProject", "Project", new { uid = user.ProviderUserKey.ToString(), pid = project.ProjectId }, null)%> 
+                                           </strong>
                                            <%-- <%=Html.ActionLink("Assign to Project", "AssignUsertoProject", "Project", new { @id = project.ProjectId }, null)%> 
                                             <%= Html.ActionLink<ProjectController>(c => c.AssignUsertoProject(parameters), "linkText")%>
---%>
+                                            --%>
                                         </td>
                                         <td headers="Delete" class="evnrow-mdl" align="left" width="2%">
                                             <a href="#"><strong></strong></a>
