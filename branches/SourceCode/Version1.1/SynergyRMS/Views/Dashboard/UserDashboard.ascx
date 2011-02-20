@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
 <%@ Import Namespace="SynergyRMS.Models" %>
+
 <table class="pageTitle" width="100%" border="0" cellpadding="0" cellspacing="0">
     <tbody>
         <tr>
@@ -69,6 +70,7 @@
 </style>
 <table align="center" width="95%">
     <%
+        
         var isAdmin = false;
         isAdmin = HttpContext.Current.User.IsInRole("Admin");
         var currentusername = HttpContext.Current.User.Identity.Name.ToString();
