@@ -32,12 +32,12 @@ namespace SynergyRMS.Reports
 
             /*------Temp Methods---------*/
 
-            string userId = "1b93281e-b154-4762-adbf-7cbf6c751ba4";
-            DateTime startDate = Convert.ToDateTime(txtStartDate.Text);
-            DateTime endDate = Convert.ToDateTime(txtEndDate.Text);
+            //string userId = "1b93281e-b154-4762-adbf-7cbf6c751ba4";
+            //DateTime startDate = Convert.ToDateTime(txtStartDate.Text);
+            //DateTime endDate = Convert.ToDateTime(txtEndDate.Text);
 
 
-            SynergyService.ValidateMaxAllocation(userId, startDate, endDate, 50, 0);
+            //SynergyService.ValidateMaxAllocation(userId, startDate, endDate, 50, 0);
 
 
 
