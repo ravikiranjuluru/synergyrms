@@ -76,7 +76,7 @@
     <Compile Include="Service.cs" />
     <Compile Include="SynergyEmployeeManagement.cs.cs" />
     <Compile Include="SynergyLeaveManagement.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Model\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -111,10 +111,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EmployeeDB.sdf">
+    <Content Include="Model\Database1.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Model\EmployeeDB.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="LeaveDB.sdf">
+    <Content Include="Model\LeaveDB.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

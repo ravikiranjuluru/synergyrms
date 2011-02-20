@@ -11,36 +11,36 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
 
 // Original file name:
-// Generation date: 2/19/2011 12:57:42 AM
+// Generation date: 2/20/2011 5:55:33 PM
 namespace EmployeeSystemEx
 {
     
     /// <summary>
-    /// There are no comments for EmployeeDBEntities in the schema.
+    /// There are no comments for EmployeeEntities in the schema.
     /// </summary>
-    public partial class EmployeeDBEntities : global::System.Data.Objects.ObjectContext
+    public partial class EmployeeEntities : global::System.Data.Objects.ObjectContext
     {
         /// <summary>
-        /// Initializes a new EmployeeDBEntities object using the connection string found in the 'EmployeeDBEntities' section of the application configuration file.
+        /// Initializes a new EmployeeEntities object using the connection string found in the 'EmployeeEntities' section of the application configuration file.
         /// </summary>
-        public EmployeeDBEntities() : 
-                base("name=EmployeeDBEntities", "EmployeeDBEntities")
+        public EmployeeEntities() : 
+                base("name=EmployeeEntities", "EmployeeEntities")
         {
             this.OnContextCreated();
         }
         /// <summary>
-        /// Initialize a new EmployeeDBEntities object.
+        /// Initialize a new EmployeeEntities object.
         /// </summary>
-        public EmployeeDBEntities(string connectionString) : 
-                base(connectionString, "EmployeeDBEntities")
+        public EmployeeEntities(string connectionString) : 
+                base(connectionString, "EmployeeEntities")
         {
             this.OnContextCreated();
         }
         /// <summary>
-        /// Initialize a new EmployeeDBEntities object.
+        /// Initialize a new EmployeeEntities object.
         /// </summary>
-        public EmployeeDBEntities(global::System.Data.EntityClient.EntityConnection connection) : 
-                base(connection, "EmployeeDBEntities")
+        public EmployeeEntities(global::System.Data.EntityClient.EntityConnection connection) : 
+                base(connection, "EmployeeEntities")
         {
             this.OnContextCreated();
         }
@@ -69,12 +69,12 @@ namespace EmployeeSystemEx
         }
     }
     /// <summary>
-    /// There are no comments for EmployeeDBModel.Employee in the schema.
+    /// There are no comments for EmployeeModel.Employee in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="EmployeeDBModel", Name="Employee")]
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="EmployeeModel", Name="Employee")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
     [global::System.Serializable()]
     public partial class Employee : global::System.Data.Objects.DataClasses.EntityObject
@@ -83,12 +83,10 @@ namespace EmployeeSystemEx
         /// Create a new Employee object.
         /// </summary>
         /// <param name="id">Initial value of Id.</param>
-        /// <param name="nIC">Initial value of NIC.</param>
-        public static Employee CreateEmployee(int id, string nIC)
+        public static Employee CreateEmployee(int id)
         {
             Employee employee = new Employee();
             employee.Id = id;
-            employee.NIC = nIC;
             return employee;
         }
         /// <summary>
@@ -117,7 +115,7 @@ namespace EmployeeSystemEx
         /// <summary>
         /// There are no comments for Property NIC in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         public string NIC
         {
@@ -129,7 +127,7 @@ namespace EmployeeSystemEx
             {
                 this.OnNICChanging(value);
                 this.ReportPropertyChanging("NIC");
-                this._NIC = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this._NIC = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
                 this.ReportPropertyChanged("NIC");
                 this.OnNICChanged();
             }
@@ -184,29 +182,6 @@ namespace EmployeeSystemEx
         partial void OnAddressChanging(string value);
         partial void OnAddressChanged();
         /// <summary>
-        /// There are no comments for Property Phone in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string Phone
-        {
-            get
-            {
-                return this._Phone;
-            }
-            set
-            {
-                this.OnPhoneChanging(value);
-                this.ReportPropertyChanging("Phone");
-                this._Phone = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("Phone");
-                this.OnPhoneChanged();
-            }
-        }
-        private string _Phone;
-        partial void OnPhoneChanging(string value);
-        partial void OnPhoneChanged();
-        /// <summary>
         /// There are no comments for Property FirstName in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
@@ -252,5 +227,28 @@ namespace EmployeeSystemEx
         private string _LastName;
         partial void OnLastNameChanging(string value);
         partial void OnLastNameChanged();
+        /// <summary>
+        /// There are no comments for Property Phone in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Phone
+        {
+            get
+            {
+                return this._Phone;
+            }
+            set
+            {
+                this.OnPhoneChanging(value);
+                this.ReportPropertyChanging("Phone");
+                this._Phone = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("Phone");
+                this.OnPhoneChanged();
+            }
+        }
+        private string _Phone;
+        partial void OnPhoneChanging(string value);
+        partial void OnPhoneChanged();
     }
 }
