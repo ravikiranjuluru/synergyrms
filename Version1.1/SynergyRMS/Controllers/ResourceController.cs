@@ -8,6 +8,8 @@ using System.Web.UI.WebControls;
 using System.Web.Profile;
 using SynergyRMS.Models;
 using System.Collections;
+using EmployeeAdapter;
+//using EmployeeSystemEx;
 
 
 namespace SynergyRMS.Controllers
@@ -286,7 +288,7 @@ namespace SynergyRMS.Controllers
         {
             try
             {
-                bool status = true;
+                //bool status = true;
 
                 MembershipCreateStatus createStatus;
                 var newuser = Membership.CreateUser(form["txtusername"].ToString(), form["txtpwd"].ToString(),
@@ -314,6 +316,24 @@ namespace SynergyRMS.Controllers
 
                     ResourceInfo = null;
 
+                    if (!SynergyService.IsEmployeeSystemExternal())
+                    {
+                        try
+                        {
+                            EM_Employee employee = new EM_Employee();
+                            employee.Email = form["txtemail"].ToString();
+                            employee.ExternalId = form["txtnic"].ToString();
+                            employee.FirstName = form["txtfirstname"].ToString();
+                            employee.LastName = form["txtfirstname"].ToString();
+                            employee.Phone = form["txtphone"].ToString();
+                            employee.aspnet_Users = SynergyService.GetUserByName(newuser.UserName);
+                            SynergyService.SaveEmployee(employee);
+                            
+                        }
+                        catch
+                        {
+                        }
+                    }
                     ViewData["status"] = "Success";
                     ViewData["msg"] = "New User Successfully Created.";
                 }
@@ -400,7 +420,7 @@ namespace SynergyRMS.Controllers
                 MembershipUserCollection userlist = getAllNormalUsersDatatable();
                 ViewData["Userlist"] = userlist;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return RedirectToAction("Index", "Dashboard");
             }
@@ -432,7 +452,7 @@ namespace SynergyRMS.Controllers
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return RedirectToAction("AddRole", "Resource");
             }
@@ -472,7 +492,7 @@ namespace SynergyRMS.Controllers
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 //return RedirectToAction("AddRole", "Resource");
             }
@@ -511,7 +531,7 @@ namespace SynergyRMS.Controllers
                 //}
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return RedirectToAction("Index", "Dashboard");
             }
@@ -575,13 +595,25 @@ namespace SynergyRMS.Controllers
                     if (edituser != null)
                     {
                         //var name = edituser.UserName;
+                        string NIC=string.Empty;
+                        try
+                        {
+                            Guid userId = new Guid(userkey);
+                            EmployeeEntity entity = SynergyService.GetEmployeeEntity(SynergyService.GetUserById(userId).UserName);
+
+                            NIC= entity.ExternalId;
+                        }
+                        catch
+                        {
+                        }
+                        ViewData["NIC"] = NIC;
                         ViewData["EditUser"] = edituser;
                         ViewData["RoleList"] = GetAllRoles();
                     }
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return RedirectToAction("AddRole", "Resource");
             }
@@ -653,7 +685,7 @@ namespace SynergyRMS.Controllers
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 ViewData["status"] = "Error";
                 ViewData["msg"] = "Error in User information update.";
@@ -682,7 +714,7 @@ namespace SynergyRMS.Controllers
                     ViewData["PermissionList"] = GetUserRolePermissions(edituser.UserName);
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return RedirectToAction("AssignRoles", "Resource");
             }
@@ -807,6 +839,9 @@ namespace SynergyRMS.Controllers
 
         public ActionResult ViewUserLeave()
         {
+            
+            
+            
             return View("ViewUserLeave");
         }
 

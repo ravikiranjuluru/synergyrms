@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="synergydbadminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="synergydbadminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityContainer Name="synergydbadminModelStoreContainer">
           <EntitySet Name="aspnet_Applications" EntityType="synergydbadminModel.Store.aspnet_Applications" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="aspnet_Membership" EntityType="synergydbadminModel.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
@@ -17,6 +17,7 @@
           <EntitySet Name="aspnet_Users" EntityType="synergydbadminModel.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="aspnet_UsersInRoles" EntityType="synergydbadminModel.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="aspnet_WebEvent_Events" EntityType="synergydbadminModel.Store.aspnet_WebEvent_Events" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EM_Employee" EntityType="synergydbadminModel.Store.EM_Employee" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="GanttBasic" EntityType="synergydbadminModel.Store.GanttBasic" store:Type="Tables" store:Schema="dbo" store:Name="GanttBasic">
             <DefiningQuery>SELECT 
       [GanttBasic].[T] AS [T], 
@@ -111,6 +112,10 @@
           <AssociationSet Name="FK__aspnet_Us__UserI__37A5467C" Association="synergydbadminModel.Store.FK__aspnet_Us__UserI__37A5467C">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
             <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EM_Employee_aspnet_Users" Association="synergydbadminModel.Store.FK_EM_Employee_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="EM_Employee" EntitySet="EM_Employee" />
           </AssociationSet>
           <AssociationSet Name="FK_LM_EmployeeLeave_aspnet_Users" Association="synergydbadminModel.Store.FK_LM_EmployeeLeave_aspnet_Users">
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
@@ -343,6 +348,18 @@
           <Property Name="RequestUrl" Type="nvarchar" MaxLength="1024" />
           <Property Name="ExceptionType" Type="nvarchar" MaxLength="256" />
           <Property Name="Details" Type="ntext" />
+        </EntityType>
+        <EntityType Name="EM_Employee">
+          <Key>
+            <PropertyRef Name="ExternalId" />
+          </Key>
+          <Property Name="ExternalId" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="uniqueidentifier" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6002: The table/view 'synergydbadmin.dbo.GanttBasic' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
@@ -801,6 +818,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_EM_Employee_aspnet_Users">
+          <End Role="aspnet_Users" Type="synergydbadminModel.Store.aspnet_Users" Multiplicity="0..1" />
+          <End Role="EM_Employee" Type="synergydbadminModel.Store.EM_Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="EM_Employee">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_LM_EmployeeLeave_aspnet_Users">
           <End Role="aspnet_Users" Type="synergydbadminModel.Store.aspnet_Users" Multiplicity="0..1" />
           <End Role="LM_EmployeeLeave" Type="synergydbadminModel.Store.LM_EmployeeLeave" Multiplicity="*" />
@@ -1101,8 +1130,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="synergydbadminModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
@@ -1289,7 +1317,10 @@
             <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
             <End Role="aspnet_Users" EntitySet="aspnet_Users" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="EM_Employee" EntityType="synergydbadminModel.EM_Employee" />
+          <AssociationSet Name="FK_EM_Employee_aspnet_Users" Association="synergydbadminModel.FK_EM_Employee_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="EM_Employee" EntitySet="EM_Employee" /></AssociationSet></EntityContainer>
         <EntityType Name="aspnet_Applications">
           <Key>
             <PropertyRef Name="ApplicationId" />
@@ -1413,7 +1444,7 @@
           <NavigationProperty Name="PM_UserLeaves" Relationship="synergydbadminModel.FK_PM_UserLeaves_aspnet_Users" FromRole="aspnet_Users" ToRole="PM_UserLeaves" />
           <NavigationProperty Name="UM_ExternalId" Relationship="synergydbadminModel.FK_UM_ExternalId_aspnet_Users" FromRole="aspnet_Users" ToRole="UM_ExternalId" />
           <NavigationProperty Name="aspnet_Roles" Relationship="synergydbadminModel.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
-        </EntityType>
+          <NavigationProperty Name="EM_Employee" Relationship="synergydbadminModel.FK_EM_Employee_aspnet_Users" FromRole="aspnet_Users" ToRole="EM_Employee" /></EntityType>
         <EntityType Name="aspnet_WebEvent_Events">
           <Key>
             <PropertyRef Name="EventId" />
@@ -1935,7 +1966,19 @@
           <End Role="aspnet_Roles" Type="synergydbadminModel.aspnet_Roles" Multiplicity="*" />
           <End Role="aspnet_Users" Type="synergydbadminModel.aspnet_Users" Multiplicity="*" />
         </Association>
-      </Schema>
+        <EntityType Name="EM_Employee">
+          <Key>
+            <PropertyRef Name="ExternalId" /></Key>
+          <Property Name="ExternalId" Type="String" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="true" />
+          <Property Name="LastName" Type="String" Nullable="true" />
+          <Property Name="Email" Type="String" Nullable="true" />
+          <Property Name="Phone" Type="String" Nullable="true" />
+          <Property Name="Address" Type="String" Nullable="true" />
+          <NavigationProperty Name="aspnet_Users" Relationship="synergydbadminModel.FK_EM_Employee_aspnet_Users" FromRole="EM_Employee" ToRole="aspnet_Users" /></EntityType>
+        <Association Name="FK_EM_Employee_aspnet_Users">
+          <End Type="synergydbadminModel.aspnet_Users" Role="aspnet_Users" Multiplicity="0..1" />
+          <End Type="synergydbadminModel.EM_Employee" Role="EM_Employee" Multiplicity="*" /></Association></Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -2684,7 +2727,21 @@
               <ScalarProperty Name="UserId" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="EM_Employee">
+            <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.EM_Employee)">
+              <MappingFragment StoreEntitySet="EM_Employee">
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ExternalId" ColumnName="ExternalId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_EM_Employee_aspnet_Users" TypeName="synergydbadminModel.FK_EM_Employee_aspnet_Users" StoreEntitySet="EM_Employee">
+            <EndProperty Name="EM_Employee">
+              <ScalarProperty Name="ExternalId" ColumnName="ExternalId" /></EndProperty>
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" /></EndProperty>
+            <Condition ColumnName="UserId" IsNull="false" /></AssociationSetMapping></EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -2746,17 +2803,19 @@
         <EntityTypeShape EntityType="synergydbadminModel.UM_Users" Width="1.5" PointX="0.75" PointY="9.625" Height="4.5505582682291674" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.UserSkills" Width="1.5" PointX="3" PointY="3.625" Height="1.4279589843749996" IsExpanded="true" />
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Me__Appli__15502E78" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="18.749695638020832" />
-          <ConnectorPoint PointX="1.5" PointY="20.35843994140625" />
-          <ConnectorPoint PointX="5.916666666666667" PointY="20.35843994140625" />
-          <ConnectorPoint PointX="6.083333333333333" PointY="20.35843994140625" />
-          <ConnectorPoint PointX="8.5104141666666653" PointY="20.35843994140625" />
-          <ConnectorPoint PointX="8.6770808333333331" PointY="20.35843994140625" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="20.35843994140625" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="20.35843994140625" />
-          <ConnectorPoint PointX="9.3229191666666669" PointY="20.35843994140625" />
-          <ConnectorPoint PointX="9.4895858333333347" PointY="20.35843994140625" />
-          <ConnectorPoint PointX="10.5" PointY="20.35843994140625" /></AssociationConnector>
+          <ConnectorPoint PointX="1.5" PointY="19.057190755208335" />
+          <ConnectorPoint PointX="1.5" PointY="20.987407226562503" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="20.987407226562503" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="20.987407226562503" />
+          <ConnectorPoint PointX="8.5104141666666653" PointY="20.987407226562503" />
+          <ConnectorPoint PointX="8.6770808333333331" PointY="20.987407226562503" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="20.987407226562503" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="20.987407226562503" />
+          <ConnectorPoint PointX="9.3229191666666669" PointY="20.987407226562503" />
+          <ConnectorPoint PointX="9.4895858333333347" PointY="20.987407226562503" />
+          <ConnectorPoint PointX="9.5260454166666673" PointY="20.987407226562503" />
+          <ConnectorPoint PointX="9.6927120833333351" PointY="20.987407226562503" />
+          <ConnectorPoint PointX="10.5" PointY="20.987407226562503" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pa__Appli__46E78A0C" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="16.835500488281248" />
           <ConnectorPoint PointX="3" PointY="16.835500488281248" /></AssociationConnector>
@@ -2764,11 +2823,11 @@
           <ConnectorPoint PointX="2.25" PointY="18.312347819010416" />
           <ConnectorPoint PointX="3" PointY="18.312347819010416" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Us__Appli__0519C6AF" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="17.523000488281248" />
-          <ConnectorPoint PointX="8.25" PointY="17.523000488281248" /></AssociationConnector>
+          <ConnectorPoint PointX="2.25" PointY="17.6487939453125" />
+          <ConnectorPoint PointX="8.25" PointY="17.6487939453125" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Me__UserI__164452B1" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="18.239410807291666" />
-          <ConnectorPoint PointX="10.5" PointY="18.239410807291666" /></AssociationConnector>
+          <ConnectorPoint PointX="9.75" PointY="18.6151025390625" />
+          <ConnectorPoint PointX="10.5" PointY="18.6151025390625" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pe__PathI__4CA06362" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="16.171153157552084" />
           <ConnectorPoint PointX="5.25" PointY="16.171153157552084" /></AssociationConnector>
@@ -2778,47 +2837,56 @@
           <ConnectorPoint PointX="5.25" PointY="13.128326822916666" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pe__UserI__5165187F" ManuallyRouted="false">
           <ConnectorPoint PointX="9.53125" PointY="16.375" />
-          <ConnectorPoint PointX="9.53125" PointY="12.71875" />
-          <ConnectorPoint PointX="6.75" PointY="12.71875" /></AssociationConnector>
+          <ConnectorPoint PointX="9.53125" PointY="12.703125" />
+          <ConnectorPoint PointX="6.75" PointY="12.703125" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK__aspnet_Pr__UserI__2A4B4B5E" ManuallyRouted="false">
-          <ConnectorPoint PointX="9" PointY="20.103821614583332" />
-          <ConnectorPoint PointX="9" PointY="27.710500488281252" />
-          <ConnectorPoint PointX="10.5" PointY="27.710500488281252" /></AssociationConnector>
+          <ConnectorPoint PointX="9" PointY="20.855205078125003" />
+          <ConnectorPoint PointX="9" PointY="27.8362939453125" />
+          <ConnectorPoint PointX="9.5260454166666673" PointY="27.8362939453125" />
+          <ConnectorPoint PointX="9.6927120833333351" PointY="27.8362939453125" />
+          <ConnectorPoint PointX="10.5" PointY="27.8362939453125" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_UM_RolePermission_aspnet_Roles" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="18.9639794921875" />
           <ConnectorPoint PointX="5.25" PointY="18.9639794921875" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_LM_EmployeeLeave_aspnet_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="8.859373" PointY="16.375" />
-          <ConnectorPoint PointX="8.859373" PointY="15.75" />
+          <ConnectorPoint PointX="8.78905925" PointY="16.375" />
+          <ConnectorPoint PointX="8.78905925" PointY="15.75" />
           <ConnectorPoint PointX="9.3072891666666653" PointY="15.749999999999998" />
           <ConnectorPoint PointX="9.7864633333333355" PointY="15.75" />
           <ConnectorPoint PointX="12.791666666666666" PointY="15.75" />
           <ConnectorPoint PointX="12.958333333333334" PointY="15.75" />
           <ConnectorPoint PointX="13.125" PointY="15.75" />
-          <ConnectorPoint PointX="13.125" PointY="18.171153157552084" />
-          <ConnectorPoint PointX="13.5" PointY="18.171153157552084" /></AssociationConnector>
+          <ConnectorPoint PointX="13.125" PointY="17.959555598551432" />
+          <ConnectorPoint PointX="13.5" PointY="17.959555598551432" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_LM_ExternalId_aspnet_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.6718775" PointY="16.375" />
-          <ConnectorPoint PointX="9.6718775" PointY="13.15625" />
+          <ConnectorPoint PointX="9.3906225" PointY="16.375" />
+          <ConnectorPoint PointX="9.3906225" PointY="13.15625" />
+          <ConnectorPoint PointX="9.4479166666666661" PointY="13.15625" />
+          <ConnectorPoint PointX="9.6145833333333339" PointY="13.15625" />
+          <ConnectorPoint PointX="9.6197966666666677" PointY="13.15625" />
+          <ConnectorPoint PointX="9.7864633333333355" PointY="13.15625" />
           <ConnectorPoint PointX="10.5" PointY="13.15625" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_MaxUserEfforts_PM_MaxUserEfforts" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.4062525" PointY="20.103821614583332" />
-          <ConnectorPoint PointX="9.4062525" PointY="22.8389794921875" />
-          <ConnectorPoint PointX="10.5" PointY="22.8389794921875" /></AssociationConnector>
+          <ConnectorPoint PointX="9.4062525" PointY="20.855205078125003" />
+          <ConnectorPoint PointX="9.4062525" PointY="22.922841796875" />
+          <ConnectorPoint PointX="9.5260454166666673" PointY="22.922841796875" />
+          <ConnectorPoint PointX="9.6927120833333351" PointY="22.922841796875" />
+          <ConnectorPoint PointX="10.5" PointY="22.922841796875" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectResources_aspnet_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.3906225" PointY="16.375" />
-          <ConnectorPoint PointX="9.3906225" PointY="15.327403157552084" />
-          <ConnectorPoint PointX="9.4479166666666661" PointY="15.327403157552082" />
-          <ConnectorPoint PointX="9.7864633333333355" PointY="15.327403157552084" />
-          <ConnectorPoint PointX="12.791666666666666" PointY="15.327403157552084" />
-          <ConnectorPoint PointX="12.958333333333334" PointY="15.327403157552084" />
-          <ConnectorPoint PointX="13.5" PointY="15.327403157552084" /></AssociationConnector>
+          <ConnectorPoint PointX="9.6718775" PointY="16.375" />
+          <ConnectorPoint PointX="9.6718775" PointY="15.425242513020834" />
+          <ConnectorPoint PointX="12.791666666666666" PointY="15.425242513020834" />
+          <ConnectorPoint PointX="12.958333333333334" PointY="15.425242513020834" />
+          <ConnectorPoint PointX="13.5" PointY="15.425242513020834" />
+          </AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_UserLeaves_aspnet_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="8.5937475" PointY="20.103821614583332" />
-          <ConnectorPoint PointX="8.5937475" PointY="24.9639794921875" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="24.9639794921875" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="24.9639794921875" />
-          <ConnectorPoint PointX="10.5" PointY="24.9639794921875" /></AssociationConnector>
+          <ConnectorPoint PointX="8.5937475" PointY="20.855205078125003" />
+          <ConnectorPoint PointX="8.5937475" PointY="25.047841796875" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="25.047841796875" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="25.047841796875" />
+          <ConnectorPoint PointX="9.5260454166666673" PointY="25.047841796875" />
+          <ConnectorPoint PointX="9.6927120833333351" PointY="25.047841796875" />
+          <ConnectorPoint PointX="10.5" PointY="25.047841796875" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_UM_ExternalId_aspnet_Users" ManuallyRouted="false">
           <ConnectorPoint PointX="9.7031300000000016" PointY="16.375" />
           <ConnectorPoint PointX="9.7031300000000016" PointY="10.15625" />
@@ -2857,12 +2925,12 @@
           <ConnectorPoint PointX="13" PointY="14.460250452799478" />
           <ConnectorPoint PointX="13.5" PointY="14.460250452799478" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_ProjectRisks_PM_ProjectRisks" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.75" PointY="3.5276929055989585" />
-          <ConnectorPoint PointX="12.875" PointY="3.5276929055989585" />
-          <ConnectorPoint PointX="12.875" PointY="20.921153157552084" />
-          <ConnectorPoint PointX="13.041666666666666" PointY="20.921153157552084" />
-          <ConnectorPoint PointX="13.208333333333334" PointY="20.921153157552084" />
-          <ConnectorPoint PointX="13.5" PointY="20.921153157552084" /></AssociationConnector>
+          <ConnectorPoint PointX="12.75" PointY="6.0429926804163951" />
+          <ConnectorPoint PointX="12.875" PointY="6.0429926804163951" />
+          <ConnectorPoint PointX="12.875" PointY="21.018992513020834" />
+          <ConnectorPoint PointX="13.041666666666666" PointY="21.018992513020834" />
+          <ConnectorPoint PointX="13.208333333333334" PointY="21.018992513020834" />
+          <ConnectorPoint PointX="13.5" PointY="21.018992513020834" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_PM_Projects_PM_Status" ManuallyRouted="false">
           <ConnectorPoint PointX="10.5" PointY="5.3053898111979167" />
           <ConnectorPoint PointX="11.25" PointY="5.3053898111979167" /></AssociationConnector>
@@ -2895,9 +2963,9 @@
           <ConnectorPoint PointX="2.8333333333333335" PointY="4.7370560709635416" />
           <ConnectorPoint PointX="3" PointY="4.7370560709635416" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_UM_RolePermission_UM_Permission" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="21.9639794921875" />
-          <ConnectorPoint PointX="6" PointY="21.9639794921875" />
-          <ConnectorPoint PointX="6" PointY="19.677958984375003" /></AssociationConnector>
+          <ConnectorPoint PointX="4.5" PointY="22.047841796875" />
+          <ConnectorPoint PointX="6" PointY="22.047841796875" />
+          <ConnectorPoint PointX="6" PointY="19.84568359375" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.FK_UM_RoleScreenFunctions_UM_Roles" ManuallyRouted="false">
           <ConnectorPoint PointX="15.15625" PointY="10.53904296875" />
           <ConnectorPoint PointX="15.15625" PointY="11.34375" />
@@ -2932,7 +3000,14 @@
           <ConnectorPoint PointX="4.40625" PointY="12.070447649739585" />
           <ConnectorPoint PointX="4.40625" PointY="5.052958984375" /></AssociationConnector>
         <AssociationConnector Association="synergydbadminModel.aspnet_UsersInRoles" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="18.03125" />
-          <ConnectorPoint PointX="8.25" PointY="18.03125" /></AssociationConnector></Diagram></edmx:Diagrams>
+          <ConnectorPoint PointX="4.5" PointY="20.074036458333332" />
+          <ConnectorPoint PointX="5.916666666666667" PointY="20.074036458333332" />
+          <ConnectorPoint PointX="6.083333333333333" PointY="20.074036458333332" />
+          <ConnectorPoint PointX="8.25" PointY="20.074036458333332" /></AssociationConnector>
+        <EntityTypeShape EntityType="synergydbadminModel.EM_Employee" Width="1.5" PointX="10.5" PointY="33.375" Height="2.3648893229166674" />
+        <AssociationConnector Association="synergydbadminModel.FK_EM_Employee_aspnet_Users" >
+          <ConnectorPoint PointX="9.6093787500000012" PointY="20.855205078125003" />
+          <ConnectorPoint PointX="9.6093787500000012" PointY="34.557444661458334" />
+          <ConnectorPoint PointX="10.5" PointY="34.557444661458334" /></AssociationConnector></Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
