@@ -445,6 +445,11 @@ namespace SynergyRMS.Models
             return true;
         }
 
+        public static bool DeleteAssignUsersfromProject(int projectId, Guid userId)
+        {
+            return true;
+        }
+
         private static void SendNotificationWhenAssignedToProject(string email, PM_ProjectResources projectResources)
         {
             try
