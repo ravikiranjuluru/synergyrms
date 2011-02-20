@@ -96,6 +96,16 @@
                                         id="txtusername" name="txtusername" disabled="disabled" value="<%=edituser.UserName%>">
                                     </td>
                                 </tr>
+                                 <tr>
+                                    <td valign="middle" align="right" class="formDetailDark">
+                                        NIC:
+                                    </td>
+                                    <td valign="middle" align="left" class="formDetail">
+                                        <input type="text" maxlength="30" size="30" class="textBox" id="Text1" 
+                                        value="<%=ViewData["NIC"]==null?"":ViewData["NIC"].ToString()%>" name="txtphone" disabled="disabled">
+                                    </td>
+                                </tr>
+                                
                                 <tr>
                                     <td valign="middle" align="right" class="formDetailDark">
                                         Role:

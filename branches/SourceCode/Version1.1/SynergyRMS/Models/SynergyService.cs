@@ -5,6 +5,8 @@ using System.Text;
 using System.Collections;
 using System.Web.Security;
 using System.Configuration;
+using EmployeeAdapter;
+//using EmployeeSystemEx;
 namespace SynergyRMS.Models
 {
     /// <summary>
@@ -20,7 +22,7 @@ namespace SynergyRMS.Models
         /// Gets the synegy RMS instance.
         /// </summary>
         /// <returns></returns>
-        private static synergydbadminEntities GetSynegyRMSInstance()
+        public static synergydbadminEntities GetSynegyRMSInstance()
         {
             if (_synergyRMSEntities == null)
             {
@@ -242,7 +244,7 @@ namespace SynergyRMS.Models
             {
                 return GetSynegyRMSInstance().PM_Types.ToList();
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 throw;
             }
@@ -809,11 +811,29 @@ namespace SynergyRMS.Models
             return user;
         }
 
+        /// <summary>
+        /// Saves the user.
+        /// </summary>
+        /// <param name="user">The user.</param>
         public static void SaveUser(aspnet_Users user)
         {
             try
             {
                 GetSynegyRMSInstance().AddToaspnet_Users(user);
+                GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        public static void SaveEmployee(EM_Employee  employee)
+        {
+            try
+            { 
+                GetSynegyRMSInstance().AddToEM_Employee(employee);
                 GetSynegyRMSInstance().SaveChanges();
             }
             catch (Exception)
@@ -919,7 +939,7 @@ namespace SynergyRMS.Models
                     permissionList.Add(permissionRole.UM_Permission);
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -968,7 +988,7 @@ namespace SynergyRMS.Models
                                                             select p;
                 return permissionQuery.ToList();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -1305,5 +1325,100 @@ namespace SynergyRMS.Models
 
 
         #endregion
+
+        #region Employee Management
+        /// <summary>
+        /// Gets the employee.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public static EM_Employee GetEmployee(Guid name)
+        {
+            //aspnet_Users user = null;
+          
+            var userQuery = from p in GetSynegyRMSInstance().EM_Employee
+                            where p.aspnet_Users.UserId == name
+                            select p;
+
+            return userQuery.First();
+        }
+        /// <summary>
+        /// Gets the employee external id.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public static string GetEmployeeExternalId(Guid name)
+        {
+            //aspnet_Users user = null;
+            var userQuery = from p in GetSynegyRMSInstance().UM_ExternalId
+                            where p.aspnet_Users.UserId == name
+                            select p;
+
+            return userQuery.First().ExternalId;
+        }
+
+        /// <summary>
+        /// Gets the employee entity.
+        /// </summary>
+        /// <param name="username">The username.</param>
+        /// <returns></returns>
+        public static EmployeeEntity GetEmployeeEntity(string username)
+        {
+            EmployeeEntity entity = new EmployeeEntity();
+            if (IsEmployeeSystemExternal())
+            {
+                ExternalEmployeeManagement empl = new ExternalEmployeeManagement();
+                entity.username = username;
+
+                entity = empl.GetEmployeeInfo(entity);
+            }
+            else
+            {
+                SynergyEmployeeManagement emp = new SynergyEmployeeManagement();
+                entity.username = username;
+                entity = emp.GetEmployeeInfo(entity);
+
+            }
+            return entity;
+        }
+
+        /// <summary>
+        /// Determines whether [is leave system external].
+        /// </summary>
+        /// <returns>
+        /// 	<c>true</c> if [is leave system external]; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsLeaveSystemExternal()
+        {
+            if (ConfigurationSettings.AppSettings["LeaveSystem"].ToString() == "External")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Determines whether [is employee system external].
+        /// </summary>
+        /// <returns>
+        /// 	<c>true</c> if [is employee system external]; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsEmployeeSystemExternal()
+        {
+            if (ConfigurationSettings.AppSettings["EmployeeSystem"].ToString() == "External")
+            {
+                return true;
+            }
+            return false;
+        }
+        //public static EmployeeEntities GetEmployeeDBInstance()
+        //{
+
+        //    EmployeeEntities DbEntity = new EmployeeEntities();
+     
+        //    return DbEntity;
+        //}
+        #endregion
+
     }
 }
