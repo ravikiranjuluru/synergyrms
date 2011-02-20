@@ -1,4 +1,14 @@
-<%@ Page language="c#" Debug="true"%><%
+<%@ Page language="c#" Debug="true"%>
+<%@ Import Namespace="SynergyRMS.Models" %>
+<%
+    
+    List<PM_ProjectResources> listResorce = new  List<PM_ProjectResources>();
+    if (Session["LoadResourceList"] != null)
+    {
+        listResorce = (List<PM_ProjectResources>)Session["LoadResourceList"];
+    }
+    
+    
 ///! Support file only, run Grid.html instead !
 /// This file is used as Data_Url for TreeGrid
 /// It generates source data for TreeGrid from database
@@ -70,28 +80,49 @@
  System.Data.SqlClient.SqlDataReader R = Cmd.ExecuteReader();
 
  string Prj = null, Res = null, S = "";
+    
+    
+    
 
  while (R.Read())
  {
      string p = R[1].ToString();  // Project
      string r = R[2].ToString();  // Resource
-
      if (p != Prj)                // New project row
      {
          if (Prj != null) S += "/></I>";    // Ends previous project and resource rows
          Prj = p; Res = null;
          S += "<I Def='Node' Project='" + Prj.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'>";
      }
-
      if (r != Res)                  // New resource row
      {
          if (Res != null) S += "/>";     // Ends previous resource row
          Res = r;
          S += "<I Project='" + Res.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "' ";
      }
-
      S = S + "W" + R[3].ToString() + "='" + R[4].ToString() + "' "; // Week = Hours (like W42='17')
  }
+
+    
+    
+ //while (R.Read())
+ //{
+ //    string p = R[1].ToString();  // Project
+ //    string r = R[2].ToString();  // Resource
+ //    if (p != Prj)                // New project row
+ //    {
+ //        if (Prj != null) S += "/></I>";    // Ends previous project and resource rows
+ //        Prj = p; Res = null;
+ //        S += "<I Def='Node' Project='" + Prj.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'>";
+ //    }
+ //    if (r != Res)                  // New resource row
+ //    {
+ //        if (Res != null) S += "/>";     // Ends previous resource row
+ //        Res = r;
+ //        S += "<I Project='" + Res.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "' ";
+ //    }
+ //    S = S + "W" + R[3].ToString() + "='" + R[4].ToString() + "' "; // Week = Hours (like W42='17')
+ //}
 
  if (Prj != null) S += "/></I>";   // Ends previous project and resource rows
 
