@@ -1,7 +1,35 @@
-﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" MasterPageFile="~/Views/Shared/MasterDashboard.Master"%>
+﻿<%--<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" 
+MasterPageFile="~/Views/Shared/MasterDashboard.Master"%>
     <%@ Import Namespace="SynergyRMS.Models" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/Datatable/demo_page.css"
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">--%>
+  <%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
+<%@ Import Namespace="SynergyRMS.Models" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Gantt</title>
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Site.css" type="text/css"/>
+
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/WebResorce.css" type="text/css"/>
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SkinStyle.css" type="text/css"/>
+
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/styles.css" type="text/css"/>
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/sitenavigation.css" type="text/css"/>   
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/ScrollableTable.css" type="text/css" />
+<link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/Grid.css" type="text/css"/>
+<link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/popup.css" type="text/css"/>
+
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/jquery-ui-1.7.2.custom.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Controls.css" type="text/css"/>
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Editor.css" type="text/css"/>
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/CalendarElement.css" type="text/css"/>
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SchedulingElement.css" type="text/css"/>
+<link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/directentrygrid.css" type="text/css"/>
+   
+   
+   <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/Datatable/demo_page.css"
         type="text/css" />
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/Datatable/demo_table.css"
         type="text/css" />
@@ -10,6 +38,123 @@
 
     <script type="text/javascript" language="javascript" src="<%= ResolveUrl("~") %>Scripts/Datatable/jquery.dataTables.js"></script>
 
+</head>
+<body>
+ <script type="text/javascript">
+
+
+     function ags_main_doShowPopup(url) {
+         url += url.contains('?') ? '&' : '?';
+         url += 'WindowMode=1';
+         AECWinPopup.open(url, 850, 500, popupCallback, '', false);
+     }
+
+     function lnkMyAccount_onClick() {
+         AECWinPopup.open('ags_myaccount.aspx?WindowMode=1', 800, 500, popupCallback, '', false);
+     }
+
+     function lnkLogin_onClick() {
+         AECWinPopup.open('/Account/Login', 409, 307, popupCallback, '', false);
+     }
+     function lnkRegister_onClick() {
+         AECWinPopup.open('/Account/Register', 450, 350, popupCallback, '', false);
+     }
+
+     function lnkpwdChange_onClick() {
+         AECWinPopup.open('/Account/ChangePassword', 500, 480, popupCallback, '', false);
+     }
+
+     function lnkNewTask_onClick() {
+         AECWinPopup.open('/Project/Task', 600, 350, popupCallback, '', false);
+     }
+     function lnkAssignTask_onClick() {
+         AECWinPopup.open('/Project/Assign', 600, 350, popupCallback, '', false);
+     }
+
+     function lnkDocUpload_onClick() {
+         AECWinPopup.open('/Project/DocUpload', 700, 900, popupCallback, '', false);
+     }
+
+     function popupCallback(context, returnValue) {
+     }
+
+     function openPage(pageUrl) {
+         //window.frames['mainFrame'].location.href = pageUrl;
+     }
+
+     function radMenu_onItemClick(sender, args) {
+         if (args.Item.Items.length == 0) {
+             if (args.Item.LinkElement) {
+                 //                      if (args.Item.LinkElement.target == 'mainFrame' && args.Item.LinkElement.href.length > 0) {
+                 //                          WebForm_DoCallback('__Page', args.Item.LinkElement.href, callbackHandler, null, null, true);
+                 //                      }
+             }
+             sender.Close();
+         }
+     }
+
+     function callbackHandler() {
+         //do nothing
+     }
+     addEvent(window, 'load', window_onLoad);
+     addEvent(window, 'resize', window_onResize);
+
+
+     function window_onLoad() {
+         if (document.getElementById('mnuMySettings')) {
+             document.getElementById('mnuMySettings').style.position = 'relative';
+         }
+         window_onResize();
+
+         //openPage('/ags_gettingstarted.aspx?Code=GETTINGSTARTED');
+         //openPage('/Account/Login');
+
+         if (document.getElementById('snTabbedUI')) {
+             window.siteNavigation.doResize(document.getElementById('snTabbedUI'));
+         }
+     }
+
+
+     function window_onResize() {
+         if (document.getElementById("divTabStrip")) {
+             document.getElementById("divTabStrip").style.width = document.documentElement.clientWidth - getAbsoluteLeft(getParentNode(document.getElementById("divTabStrip"))) + 'px';
+         }
+         //document.getElementById('mainFrame').style.height = Math.max(100, document.documentElement.clientHeight - document.getElementById('mainFrame').offsetTop) + 'px';
+     }
+
+  
+    </script> 
+    
+ <style type="text/css">
+        .layout_header
+        {
+            background: #10385A url(../../Content/images/common/ag_app_header.png) no-repeat;
+            color: #A49D99;
+            padding: 5px 0px 0px 0px;
+            border-bottom: solid 3px #EFEFEF;
+        }
+        .layout_header_util a, .layout_header_util a:hover
+        {
+            color: #FFFFFF;
+        }
+        .style1
+        {
+            /*height: 110px;*/
+        }
+         .boxTitle
+        {
+            font-size: 14px;
+            font-family: Myriad Pro, "Lucida Grande" , "Lucida Sans Unicode" ,Trebuchet MS,Arial;
+            line-height: 1.6em;
+            letter-spacing: 0px;
+            font-weight: 700;
+            color: #333333;
+            padding-bottom: 3px;
+            padding-top: 0px;
+        }
+    </style>  
+    
+    
     <style type="text/css">
         .t
         {
@@ -151,9 +296,10 @@
                             <tbody>
                                 <tr>
                                     <td align="justify" valign="top" style="width:80%">
-                                       <strong>
+                                      <%-- <strong>
                                        <a href="#" onclick="history.go(-1)">Back</a>
-                                       </strong></td>
+                                       </strong>--%>
+                                       </td>
                                 </tr>
                                 <tr>
                                     <td align="justify" valign="top" style="width:80%">
@@ -303,5 +449,9 @@ foreach (PM_Projects project in (List<PM_Projects>)ViewData["ProjectList"])
             });
         });
     </script>
+    
+    
+<%--</asp:Content>--%>
 
-</asp:Content>
+</body>
+</html>
