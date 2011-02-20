@@ -132,7 +132,7 @@ namespace SynergyRMS.Controllers
                 ViewData["msg"] = "Project Successfully Updated.";
                 ViewData["EditProject"] = project;
             }
-            catch(Exception ee)
+            catch(Exception)
             {
                 ViewData["status"] = "Error";
                 ViewData["msg"] = "Error in Project Update.";
@@ -202,7 +202,7 @@ namespace SynergyRMS.Controllers
                     ViewData["msg"] = "Error in User Assigned.";
                 }
             }
-            catch (Exception ee)
+            catch (Exception )
             {
                 ViewData["status"] = "Error";
                 ViewData["msg"] = "Error in User Assigned.";
