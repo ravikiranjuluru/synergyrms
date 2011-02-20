@@ -1017,20 +1017,65 @@ namespace SynergyRMS.Models
 
         #region Max Allocation
 
-        //public static void ValidateMaxAllocation(string userkey)
-        //{
+        public static void ValidateMaxAllocation(string userkey, DateTime startDate, DateTime endDate, int inputEffort)
+        {
 
-        //    //IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
-        //    //                                               where p.aspnet_Users.UserName == edituser.UserName
-        //    //                                               select p;
+            double TotalEffort = 0;
+            double Duration = 0;
 
-        //    MembershipUser edituser = Membership.GetUser(new Guid(userkey));
 
-        //    IQueryable<PM_MaxUserEfforts>maxUserEffortQuery = from m in GetSynegyRMSInstance().PM_MaxUserEfforts
-        //                                                      where m.aspnet_Users.UserName == userkey
-        //                                                      select m;
-       
-        //}
+            
+            /*------------------Calculate Period------------------------*/
+
+            TimeSpan tsDuration = startDate.Subtract(endDate);
+            Duration = tsDuration.TotalDays;
+
+            /*-----------------Calculate MaximumUserEffort for Given User-----------*/
+
+            List<PM_MaxUserEfforts> ListUserEfforts=null;
+            double userEffort = 0;
+            MembershipUser edituser = Membership.GetUser(new Guid(userkey));
+
+            IQueryable<PM_MaxUserEfforts> maxUserEffortQuery = from m in GetSynegyRMSInstance().PM_MaxUserEfforts
+                                                               where m.aspnet_Users.UserName == userkey
+                                                               select m;
+
+
+            ListUserEfforts = maxUserEffortQuery.ToList();
+            userEffort =Convert.ToDouble(ListUserEfforts[0].MaxEffort);
+            userEffort = userEffort * Duration;
+
+            /*----------------------Calculate Current Allocation-------------------------*/
+
+            List<PM_ProjectResources> ResList = null;
+            
+            IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                                           where ((p.aspnet_Users.UserName==edituser.UserName) && ((p.AllocatedStartDate >= startDate && p.AllocatedStartDate <= endDate) || (p.AllocatedEndDate >= startDate && p.AllocatedEndDate <= endDate)))
+                                                           select p;
+
+
+            ResList = projectQuery.ToList();
+
+
+            foreach (PM_ProjectResources objResources in ResList)
+            {
+                DateTime startPeriod;
+                DateTime endPeriod;
+
+                //if (startDate > objResources.AllocatedStartDate)
+                //{
+                //    startPeriod=
+                //}
+                double projectEffort=Convert.ToDouble(objResources.Effort);
+                TotalEffort = TotalEffort + projectEffort;
+             
+                //objResources.UM_UsersReference.Load();
+                //int aa = single1.T_User.UserId;
+            }
+
+            TotalEffort = TotalEffort * Duration;
+
+        }
 
 
         #endregion
