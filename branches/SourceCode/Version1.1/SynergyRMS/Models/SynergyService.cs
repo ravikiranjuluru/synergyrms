@@ -25,15 +25,15 @@ namespace SynergyRMS.Models
             if (_synergyRMSEntities == null)
             {
                 _synergyRMSEntities = new synergydbadminEntities();
-            } 
-            
+            }
+
             return _synergyRMSEntities;
         }
-        
+
         #endregion
-       
-        #region Projects Methods     
-       
+
+        #region Projects Methods
+
         /// <summary>
         /// Saves the project.
         /// </summary>
@@ -60,7 +60,7 @@ namespace SynergyRMS.Models
         {
             try
             {
-               return  GetSynegyRMSInstance().PM_Projects.ToList();
+                return GetSynegyRMSInstance().PM_Projects.ToList();
             }
             catch (Exception)
             {
@@ -79,8 +79,8 @@ namespace SynergyRMS.Models
             {
                 PM_Projects selectedproject = null;
                 var projectQuery = from p in GetSynegyRMSInstance().PM_Projects
-                                                       where p.ProjectId == projectId
-                                                       select p;
+                                   where p.ProjectId == projectId
+                                   select p;
 
                 selectedproject = projectQuery.First();
                 //List<PM_Projects> selectedprojects = projectQuery.ToList();
@@ -103,7 +103,7 @@ namespace SynergyRMS.Models
         /// </summary>
         /// <param name="project">The project.</param>
         public static void UpdateProject(PM_Projects project)
-        {     
+        {
             try
             {
                 int rowsAffected = GetSynegyRMSInstance().SaveChanges();
@@ -189,7 +189,7 @@ namespace SynergyRMS.Models
             PM_Status projectStatus = null;
             var projectStatusQuery = from p in GetSynegyRMSInstance().PM_Status
                                      where p.StatusId == statusId
-                                    select p;
+                                     select p;
 
             projectStatus = projectStatusQuery.First();
             return projectStatus;
@@ -299,7 +299,7 @@ namespace SynergyRMS.Models
                 PM_Skills selectedSkill = null;
                 var skillQuery = from s in GetSynegyRMSInstance().PM_Skills
                                  where s.SkillsId == skillId
-                                       select s;
+                                 select s;
 
                 selectedSkill = skillQuery.First();
 
@@ -408,10 +408,10 @@ namespace SynergyRMS.Models
         {
             PM_ProjectRoles projectRole = null;
             var projectRoleQuery = from p in GetSynegyRMSInstance().PM_ProjectRoles
-                                     where p.RoleName== name
-                                     select p;
+                                   where p.RoleName == name
+                                   select p;
 
-            projectRole= projectRoleQuery.First();
+            projectRole = projectRoleQuery.First();
             return projectRole;
         }
 
@@ -449,7 +449,7 @@ namespace SynergyRMS.Models
         {
             try
             {
-                MailManager.SendMail(email, MailManager.messageFlag.AssignedProject, projectResources);
+                MailManager.SendMail(email, MailManager.messageFlag.AssignedProject, projectResources, GetAllProjectResoucesEmailIdsByProjectId(projectResources.PM_Projects.ProjectId,email));
             }
             catch
             {
@@ -460,7 +460,7 @@ namespace SynergyRMS.Models
         {
             try
             {
-                MailManager.SendMail(email, MailManager.messageFlag.RemovedProject, projectResources);
+                MailManager.SendMail(email, MailManager.messageFlag.RemovedProject, projectResources, GetAllProjectResoucesEmailIdsByProjectId(projectResources.PM_Projects.ProjectId, email));
             }
             catch
             {
@@ -471,7 +471,7 @@ namespace SynergyRMS.Models
         {
             try
             {
-                MailManager.SendMail(email, MailManager.messageFlag.UpdatedProject, projectResources);
+                MailManager.SendMail(email, MailManager.messageFlag.UpdatedProject, projectResources, GetAllProjectResoucesEmailIdsByProjectId(projectResources.PM_Projects.ProjectId, email));
             }
             catch
             {
@@ -484,7 +484,7 @@ namespace SynergyRMS.Models
             {
                 if (AllowEmailNotifications())
                 {
-                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledAssigned, projectResources);
+                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledAssigned, projectResources, GetAllProjectResoucesEmailIdsByProjectId(projectResources.PM_Projects.ProjectId, email));
                 }
             }
             catch
@@ -498,7 +498,7 @@ namespace SynergyRMS.Models
             {
                 if (AllowEmailNotifications())
                 {
-                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledDelete, projectResources);
+                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledDelete, projectResources, GetAllProjectResoucesEmailIdsByProjectId(projectResources.PM_Projects.ProjectId, email));
                 }
             }
             catch
@@ -512,13 +512,30 @@ namespace SynergyRMS.Models
             {
                 if (AllowEmailNotifications())
                 {
-                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledUpdate, projectResources);
+                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledUpdate, projectResources, GetAllProjectResoucesEmailIdsByProjectId(projectResources.PM_Projects.ProjectId, email));
                 }
             }
             catch
             {
             }
         }
+
+
+        private static List<string> GetAllProjectResoucesEmailIdsByProjectId(int projectID, string email)
+        {
+            List<PM_ProjectResources> projectResourceList = GetAllProjectResoucesByProjectId(projectID);
+            List<string> cCAdresses = new List<string>();
+
+            foreach (PM_ProjectResources resource in projectResourceList)
+            {
+                string cCAddress = resource.aspnet_Users.aspnet_Membership.Email;
+                if (email != cCAddress)
+                    cCAdresses.Add(cCAddress);
+            }
+
+            return cCAdresses;
+        }
+        
         private static bool AllowEmailNotifications()
         {
             if (ConfigurationSettings.AppSettings["AllowEmailNotification"] == "True")
@@ -537,8 +554,8 @@ namespace SynergyRMS.Models
         {
             PM_ProjectResources Resouce = null;
             var ResouceQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
-                            where p.ProjectResorcesId == id
-                            select p;
+                               where p.ProjectResorcesId == id
+                               select p;
 
             Resouce = ResouceQuery.First();
             return Resouce;
@@ -555,10 +572,10 @@ namespace SynergyRMS.Models
             try
             {
                 PM_Projects project = SynergyService.GetProjectbyProjectId(1);
-                List<PM_ProjectResources>     resourcelist=  project.PM_ProjectResources.ToList();
+                List<PM_ProjectResources> resourcelist = project.PM_ProjectResources.ToList();
 
                 foreach (PM_ProjectResources r in resourcelist)
-                {                   
+                {
                     GetSynegyRMSInstance().DeleteObject(r);
                     GetSynegyRMSInstance().SaveChanges();
 
@@ -573,7 +590,7 @@ namespace SynergyRMS.Models
 
                     SendNotificationAssignedScheduling(resource.aspnet_Users.aspnet_Membership.Email, resource);
                 }
- 
+
             }
             catch (Exception)
             {
@@ -588,7 +605,7 @@ namespace SynergyRMS.Models
         public static void SaveProjectResources(PM_ProjectResources projectResources)
         {
             try
-            {             
+            {
                 GetSynegyRMSInstance().AddToPM_ProjectResources(projectResources);
                 GetSynegyRMSInstance().SaveChanges();
 
@@ -658,7 +675,7 @@ namespace SynergyRMS.Models
                 userList.Clear();
                 userList.Add(Membership.GetUser(resource.aspnet_Users.UserName));
             }
-          
+
             return userList;
         }
 
@@ -671,14 +688,14 @@ namespace SynergyRMS.Models
         {
             try
             {
-               //PM_Projects project= GetProjectbyProjectId(projectId);
-                List <PM_ProjectResources>  ResList= null;
+                //PM_Projects project= GetProjectbyProjectId(projectId);
+                List<PM_ProjectResources> ResList = null;
 
                 IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
-                                   where p.PM_Projects.ProjectId== projectId
-                                   select p;
+                                                               where p.PM_Projects.ProjectId == projectId
+                                                               select p;
 
-                ResList= projectQuery.ToList();
+                ResList = projectQuery.ToList();
 
                 foreach (PM_ProjectResources objResources in ResList)
                 {
@@ -711,19 +728,19 @@ namespace SynergyRMS.Models
         {
             try
             {
-               
+
                 List<PM_ProjectResources> ResList = null;
 
                 IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
                                                                where ((p.AllocatedStartDate >= StartDate && p.AllocatedStartDate <= EndDate) || (p.AllocatedEndDate >= StartDate && p.AllocatedEndDate <= EndDate))
                                                                select p;
 
-      
+
                 ResList = projectQuery.ToList();
 
                 foreach (PM_ProjectResources objResources in ResList)
                 {
-                    
+
                     /*---- Check Date Max and Min Date Validation--------*/
 
                     if (objResources.AllocatedStartDate < StartDate)
@@ -733,22 +750,22 @@ namespace SynergyRMS.Models
 
                     if (objResources.AllocatedEndDate > EndDate)
                     {
-                        objResources.AllocatedEndDate= EndDate;
+                        objResources.AllocatedEndDate = EndDate;
                     }
-                        
+
 
 
                     objResources.PM_ProjectsReference.Load();
-                    
+
                     objResources.aspnet_UsersReference.Load();
-                   
+
                     objResources.aspnet_Users.aspnet_MembershipReference.Load();
-                    
+
                     objResources.aspnet_Users.aspnet_ProfileReference.Load();
-                    
+
                     objResources.PM_ProjectRolesReference.Load();
-                   
-                    
+
+
                     //objResources.UM_UsersReference.Load();
                     //int aa = single1.T_User.UserId;
                 }
@@ -770,12 +787,12 @@ namespace SynergyRMS.Models
 
         public static aspnet_Users GetUserByName(string name)
         {
-            aspnet_Users  user = null;
+            aspnet_Users user = null;
             var userQuery = from p in GetSynegyRMSInstance().aspnet_Users
-                                     where p.UserName ==name
-                                     select p;
+                            where p.UserName == name
+                            select p;
 
-            user= userQuery.First();
+            user = userQuery.First();
             return user;
         }
 
@@ -832,7 +849,7 @@ namespace SynergyRMS.Models
                     GetSynegyRMSInstance().AddToUM_RolePermission(rolePermission);
                     GetSynegyRMSInstance().SaveChanges();
                 }
-      
+
             }
             return true;
         }
@@ -844,16 +861,16 @@ namespace SynergyRMS.Models
         /// <returns></returns>
         public static Hashtable GetPermissionsByRoleName(string roleName)
         {
-            List<UM_Permission> allPermissions=GetAllPermissions();
-            List<UM_Permission> activePermissions= GetUserpermissionsByRoleId( GetUserRoleIdByName(roleName).RoleId);          
-            
+            List<UM_Permission> allPermissions = GetAllPermissions();
+            List<UM_Permission> activePermissions = GetUserpermissionsByRoleId(GetUserRoleIdByName(roleName).RoleId);
+
             Hashtable permissionTable = new Hashtable();
             foreach (UM_Permission Permission in allPermissions)
             {
                 UM_Permission result = activePermissions.Find(
                  delegate(UM_Permission p)
                  {
-                     return p.PermissionId==Permission.PermissionId;
+                     return p.PermissionId == Permission.PermissionId;
                  }
                  );
 
@@ -878,10 +895,10 @@ namespace SynergyRMS.Models
             List<UM_Permission> permissionList = new List<UM_Permission>();
             try
             {
-                List<UM_RolePermission> permissionRoleList = null;              
+                List<UM_RolePermission> permissionRoleList = null;
                 IQueryable<UM_RolePermission> permissionQuery = from p in GetSynegyRMSInstance().UM_RolePermission
-                                                            where p.aspnet_Roles.RoleId == roleId
-                                                               select p;
+                                                                where p.aspnet_Roles.RoleId == roleId
+                                                                select p;
                 permissionRoleList = permissionQuery.ToList();
                 foreach (UM_RolePermission permissionRole in permissionRoleList)
                 {
@@ -903,10 +920,10 @@ namespace SynergyRMS.Models
         /// <returns></returns>
         public static UM_Permission GetPermissionByName(string Permission)
         {
-                IQueryable<UM_Permission> permissionQuery = from p in GetSynegyRMSInstance().UM_Permission
-                                                                where p.Permission == Permission
-                                                                select p;
-                return permissionQuery.First();         
+            IQueryable<UM_Permission> permissionQuery = from p in GetSynegyRMSInstance().UM_Permission
+                                                        where p.Permission == Permission
+                                                        select p;
+            return permissionQuery.First();
         }
         /// <summary>
         /// Saves the role permissions.
@@ -935,8 +952,8 @@ namespace SynergyRMS.Models
             try
             {
                 IQueryable<UM_Permission> permissionQuery = from p in GetSynegyRMSInstance().UM_Permission
-                                                                select p;
-                return  permissionQuery.ToList();               
+                                                            select p;
+                return permissionQuery.ToList();
             }
             catch (Exception ex)
             {
@@ -955,7 +972,7 @@ namespace SynergyRMS.Models
             aspnet_Roles role = null;
             var roleQuery = from p in GetSynegyRMSInstance().aspnet_Roles
                             where p.RoleName == roleName
-                                     select p;
+                            select p;
             role = roleQuery.First();
             return role;
         }
@@ -995,7 +1012,7 @@ namespace SynergyRMS.Models
             {
                 return false;
             }
-            
+
             try
             {
                 Guid roleId = GetRoleIdofTheUserByName(username).RoleId;
@@ -1015,9 +1032,9 @@ namespace SynergyRMS.Models
                     }
                 }
 
-                
-                    return false;
-                
+
+                return false;
+
             }
 
             catch
@@ -1029,8 +1046,8 @@ namespace SynergyRMS.Models
         {
             List<PM_ProjectResources> ProjectResList = null;
             List<PM_Projects> ProjectList = new List<PM_Projects>();
-            PM_Projects objProject=null;
-            
+            PM_Projects objProject = null;
+
             MembershipUser edituser = Membership.GetUser(new Guid(userkey));
 
 
@@ -1038,7 +1055,7 @@ namespace SynergyRMS.Models
                                                            where p.aspnet_Users.UserName == edituser.UserName
                                                            select p;
 
-       
+
 
             ProjectResList = projectQuery.ToList();
 
@@ -1046,17 +1063,17 @@ namespace SynergyRMS.Models
             {
                 PM_Projects project = new PM_Projects();
 
-               objProject=new PM_Projects();
-               objResources.PM_ProjectsReference.Load();
+                objProject = new PM_Projects();
+                objResources.PM_ProjectsReference.Load();
 
-               ProjectList.Add(objResources.PM_Projects);
-               
+                ProjectList.Add(objResources.PM_Projects);
+
                 //objResources.UM_UsersReference.Load();
                 //int aa = single1.T_User.UserId;
             }
 
             return ProjectList;
-           
+
         }
 
         #endregion
@@ -1082,8 +1099,8 @@ namespace SynergyRMS.Models
 
             /*-----------------Calculate MaximumUserEffort for Given User-----------*/
 
-            List<PM_MaxUserEfforts> ListUserEfforts=null;
-           
+            List<PM_MaxUserEfforts> ListUserEfforts = null;
+
             MembershipUser edituser = Membership.GetUser(new Guid(userkey));
 
             IQueryable<PM_MaxUserEfforts> maxUserEffortQuery = from m in GetSynegyRMSInstance().PM_MaxUserEfforts
@@ -1116,7 +1133,7 @@ namespace SynergyRMS.Models
                 /*------------- Updated New Project Resource---------------------------*/
 
                 IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
-                                                               where ((p.aspnet_Users.UserName == edituser.UserName) && (p.ProjectResorcesId !=projectResourceId) &&  ((p.AllocatedStartDate >= startDate && p.AllocatedStartDate <= endDate) || (p.AllocatedEndDate >= startDate && p.AllocatedEndDate <= endDate)))
+                                                               where ((p.aspnet_Users.UserName == edituser.UserName) && (p.ProjectResorcesId != projectResourceId) && ((p.AllocatedStartDate >= startDate && p.AllocatedStartDate <= endDate) || (p.AllocatedEndDate >= startDate && p.AllocatedEndDate <= endDate)))
                                                                select p;
                 ResList = projectQuery.ToList();
             }
@@ -1184,35 +1201,35 @@ namespace SynergyRMS.Models
             /*-----------------------Check Allocation----------------------------- */
 
             RemEffort = TotalEffort - TotalCurrentEffort;
-    
+
             /*----------------------Calculate requested Effort------------------------*/
 
-               UserRequestdEffort = inputEffort * Duration;
+            UserRequestdEffort = inputEffort * Duration;
 
             /*--------------calculate Remaining Effort----------------*/
 
-               UserEffort effortObj = new UserEffort();
+            UserEffort effortObj = new UserEffort();
 
-               if (RemEffort > UserRequestdEffort)
-               {
-                   NoOfRemainingDays = RemEffort / UserMaxEffort;
+            if (RemEffort > UserRequestdEffort)
+            {
+                NoOfRemainingDays = RemEffort / UserMaxEffort;
 
-                   /*-----------------Fill Information -------------------*/
+                /*-----------------Fill Information -------------------*/
 
-                   effortObj.RemEffort = NoOfRemainingDays;
-                   effortObj.IsCanAllocated = true;
-                   effortObj.CustomeMessge = "Allocation Is Done";
+                effortObj.RemEffort = NoOfRemainingDays;
+                effortObj.IsCanAllocated = true;
+                effortObj.CustomeMessge = "Allocation Is Done";
 
-               }
-               else
-               {
-                   effortObj.RemEffort = 0;
-                   effortObj.IsCanAllocated = false;
-                   effortObj.CustomeMessge = "Maximum Allocation Excedded";
-               }
+            }
+            else
+            {
+                effortObj.RemEffort = 0;
+                effortObj.IsCanAllocated = false;
+                effortObj.CustomeMessge = "Maximum Allocation Excedded";
+            }
 
-         
-                  return effortObj;
+
+            return effortObj;
         }
 
 
