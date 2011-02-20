@@ -775,20 +775,6 @@ namespace SynergyRMS.Controllers
             return false;
         }
 
-        private static void SendNotificationWhenScheduling(string email, List<string> ResourceInfo)
-        {
-            try
-            {
-                if (AllowEmailNotifications())
-                {
-                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledProject, ResourceInfo);
-                }
-            }
-            catch
-            {
-            }
-        }
-
         private static void SendNotificationWhenAccountCreated(string email, List<string> ResourceInfo)
         {
             try
