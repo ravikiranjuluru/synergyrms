@@ -478,6 +478,47 @@ namespace SynergyRMS.Models
             }
         }
 
+        private static void SendNotificationAssignedScheduling(string email, PM_ProjectResources projectResources)
+        {
+            try
+            {
+                if (AllowEmailNotifications())
+                {
+                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledAssigned, projectResources);
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private static void SendNotificationDeleteScheduling(string email, PM_ProjectResources projectResources)
+        {
+            try
+            {
+                if (AllowEmailNotifications())
+                {
+                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledDelete, projectResources);
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private static void SendNotificationUpdateScheduling(string email, PM_ProjectResources projectResources)
+        {
+            try
+            {
+                if (AllowEmailNotifications())
+                {
+                    MailManager.SendMail(email, MailManager.messageFlag.ScheduledUpdate, projectResources);
+                }
+            }
+            catch
+            {
+            }
+        }
         private static bool AllowEmailNotifications()
         {
             if (ConfigurationSettings.AppSettings["AllowEmailNotification"] == "True")
@@ -520,6 +561,8 @@ namespace SynergyRMS.Models
                 {                   
                     GetSynegyRMSInstance().DeleteObject(r);
                     GetSynegyRMSInstance().SaveChanges();
+
+                    SendNotificationDeleteScheduling(r.aspnet_Users.aspnet_Membership.Email, r);
                 }
 
                 foreach (PM_ProjectResources resource in projectResources)
@@ -527,9 +570,10 @@ namespace SynergyRMS.Models
 
                     GetSynegyRMSInstance().AddToPM_ProjectResources(resource);
                     GetSynegyRMSInstance().SaveChanges();
-                }
 
-               
+                    SendNotificationAssignedScheduling(resource.aspnet_Users.aspnet_Membership.Email, resource);
+                }
+ 
             }
             catch (Exception)
             {
@@ -547,6 +591,8 @@ namespace SynergyRMS.Models
             {             
                 GetSynegyRMSInstance().AddToPM_ProjectResources(projectResources);
                 GetSynegyRMSInstance().SaveChanges();
+
+                SendNotificationUpdateScheduling(projectResources.aspnet_Users.aspnet_Membership.Email, projectResources);
             }
             catch (Exception)
             {
