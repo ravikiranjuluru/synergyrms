@@ -2,10 +2,10 @@
 <%@ Import Namespace="SynergyRMS.Models" %>
 <%
     
-    List<PM_ProjectResources> listResorce = new  List<PM_ProjectResources>();
+    List<PM_ProjectResources> listProjectResources = new List<PM_ProjectResources>();
     if (Session["LoadResourceList"] != null)
     {
-        listResorce = (List<PM_ProjectResources>)Session["LoadResourceList"];
+        listProjectResources = (List<PM_ProjectResources>)Session["LoadResourceList"];
     }
     
     
@@ -79,11 +79,45 @@
  Cmd.CommandText = "SELECT * FROM TableData WHERE Week>0 AND Week<53 ORDER BY Project,Resource";
  System.Data.SqlClient.SqlDataReader R = Cmd.ExecuteReader();
 
- string Prj = null, Res = null, S = "";
-    
-    
-    
+ 
+ 
+    string proName = null, username = null, StartDate = "", EndDate="";
+    string output = "";
+ foreach (PM_ProjectResources projectResources in listProjectResources)
+ {
+     
+     username = projectResources.aspnet_Users.UserName;
+     var profile = new ProfileBase();
+     profile.Initialize(username, true);
+     string fname = profile.GetPropertyValue("FirstName").ToString();
+     string lname = profile.GetPropertyValue("LastName").ToString();
+     string fullname = fname + " " + lname;
+     
+     proName = projectResources.PM_Projects.ProjectName;
+     StartDate = projectResources.AllocatedStartDate.ToString();
+     EndDate = projectResources.AllocatedEndDate.ToString();
 
+     string p1 = fullname;  // User name-Resource
+     string r1 = proName;  // Project
+
+     if (p1 != proName)                // New project row
+     {
+         if (fullname != null) output += "/></I>";    // Ends previous project and resource rows
+         fullname = p1; proName = null;
+         output += "<I Def='Node' Project='" + fullname.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'>";
+     }
+     if (r1 != proName)                  // New resource row
+     {
+         if (proName != null) output += "/>";     // Ends previous resource row
+         proName = r1;
+         output += "<I Project='" + proName.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "' ";
+     }
+     output = output + "W" + StartDate + "='" + EndDate + "' "; // Week = Hours (like W42='17')
+     
+
+ }
+
+ string Prj = null, Res = null, S = "";
  while (R.Read())
  {
      string p = R[1].ToString();  // Project
@@ -131,7 +165,7 @@
 <Grid>
    <Body>
       <B>
-         <%--<%=S%>--%>
+         <%=S%>
       </B>
    </Body>
 </Grid>
