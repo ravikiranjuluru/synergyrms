@@ -1,0 +1,5 @@
+F:\project\LeaveWeb\LeaveInterface\LeaveAdapter\bin\Debug\LeaveAdapter.dll
+F:\project\LeaveWeb\LeaveInterface\LeaveAdapter\bin\Debug\LeaveAdapter.pdb
+F:\project\LeaveWeb\LeaveInterface\LeaveAdapter\obj\Debug\ResolveAssemblyReference.cache
+F:\project\LeaveWeb\LeaveInterface\LeaveAdapter\obj\Debug\LeaveAdapter.dll
+F:\project\LeaveWeb\LeaveInterface\LeaveAdapter\obj\Debug\LeaveAdapter.pdb

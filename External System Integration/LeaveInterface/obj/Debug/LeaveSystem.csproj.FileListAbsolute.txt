@@ -1,0 +1,9 @@
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\bin\Debug\LeaveDB.sdf
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\bin\Debug\LeaveSystemEx.dll.config
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\bin\Debug\LeaveSystemEx.dll
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\bin\Debug\LeaveSystemEx.pdb
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\bin\Debug\LeaveAdapter.dll
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\bin\Debug\LeaveAdapter.pdb
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\obj\Debug\ResolveAssemblyReference.cache
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\obj\Debug\LeaveSystemEx.dll
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\obj\Debug\LeaveSystemEx.pdb

@@ -1,0 +1,7 @@
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\bin\Debug\LeaveInterface.exe.config
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\bin\Debug\LeaveDB.sdf
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\bin\Debug\LeaveInterface.exe
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\bin\Debug\LeaveInterface.pdb
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\obj\Debug\ResolveAssemblyReference.cache
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\obj\Debug\LeaveInterface.exe
+F:\project\LeaveWeb\LeaveInterface\LeaveInterface\obj\Debug\LeaveInterface.pdb
