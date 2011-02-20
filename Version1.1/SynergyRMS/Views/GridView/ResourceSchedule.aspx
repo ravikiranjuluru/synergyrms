@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
-
+<%@ Import Namespace="SynergyRMS.Models" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -8,12 +8,18 @@
    <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/Site.css" type="text/css"/>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/WebResorce.css" type="text/css"/>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/SkinStyle.css" type="text/css"/>
-    <link rel="stylesheet" href="../../Content/common/styles.css" type="text/css"/>
+    <%--<link rel="stylesheet" href="../../Content/common/styles.css" type="text/css"/>--%>
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/sitenavigation.css" type="text/css"/>   
     <link rel="stylesheet" href="<%= ResolveUrl("~") %>Content/common/ScrollableTable.css" type="text/css" />
     <link rel="Stylesheet" href="<%= ResolveUrl("~") %>Content/common/Grid.css" type="text/css"/>
 
+<link href="../../Content/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../../Content/common/styles.css" type="text/css" />
+<script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery-ui.min.js"></script>
 
+ 
+   
 </head>
 <body>
 
@@ -120,6 +126,21 @@
         }
     </style>
   
+  
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $("#fromdate").datepicker();
+        });
+        $(document).ready(function() {
+            $("#enddate").datepicker();
+        });
+
+    </script>
+       
+    
  <table class="layout_header" border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td align="left" valign="middle" rowspan="2" style="padding-bottom: 5px;">
@@ -310,22 +331,26 @@
                                                 <tr>
                                                     <td align="left" valign="middle">
                                                         <!-- Toolbar Content Goes Here -->
+                                                        
+                                                       
                                                         <table border="0">
                                                             <tbody>
                                                                 <tr>
+                                                                  <% using (Html.BeginForm("ResourceSchedule", "GridView"))
+                                                               {%>
                                                                     <td style="white-space: nowrap;" align="left">
-                                                                        User:
-                                                                        <select name="ctl00$phFormContent$cboProjectLevel" id="Select2" class="comboBox">
-                                                                            <option value="Select" selected="selected">Select</option>
-                                                                            <option value="Project1">User 1</option>
-                                                                            <option value="Project2">User 2</option>
-                                                                            <option value="Project3">User 3</option>
-                                                                        </select>
-                                                                        <%--<%=Html.DropDownList("feedbackcategory", (SelectList)ViewData["SectorList"], new { @class = "frmInputElements" })%>--%>
+                                                                        Select Date Range: &nbsp;&nbsp;&nbsp;From date:
+                                                                        <input name="fromdate" id="fromdate" class="textBox" size="15" maxlength="4" type="text" />
+                                                                        &nbsp;&nbsp;&nbsp;To date:
+                                                                        <input name="enddate" id="enddate" class="textBox" size="15" maxlength="4" type="text" />
+                                                                        &nbsp;
+                                                                        
+                                                                            
                                                                     </td>
                                                                     <td align="left">
                                                                         <input type="submit" value="View" class="button" id="Submit1" name="btnView">
                                                                     </td>
+                                                                    <%}%>
                                                                     <td>
                                                                         &nbsp;
                                                                     </td>
@@ -338,6 +363,7 @@
                                                                 </tr>
                                                             </tbody>
                                                         </table>
+                                                             
                                                     </td>
                                                     <td style="padding-right: 0px;" align="right" valign="middle">
                                                         <table border="0px" cellpadding="0" cellspacing="1">
@@ -374,9 +400,21 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        &nbsp;
-                                    </td>
+                                <% string fromdate = "";
+                                   string todate = "";%>
+                                   <%if (ViewData["fromdate"] != null)
+                                     {
+                                         //PM_Projects project = (PM_Projects)ViewData["LoadSchedule"];
+                                         //ViewData["LoadProject"] = project;
+
+                                          fromdate = ViewData["fromdate"].ToString();
+                                          todate = ViewData["todate"].ToString();
+                                         
+                      %>
+                    <td class="formDetail">
+                        Loading schedule for period from:&nbsp;<%= fromdate%>&nbsp;to &nbsp;<%=todate%>
+                    </td>
+                    <%} %>
                                 </tr>
                             </tbody>
                         </table>
@@ -387,8 +425,26 @@
         </table>
         <%--<%Html.RenderPartial("LoadSchedule"); %>--%>
     </div>
+    
+    
     <p style="text-align:justify">
-<%Html.RenderPartial("LoadSchedule"); %>
+        <%if (ViewData["LoadResourceList"] != null)
+          {
+              List<PM_ProjectResources> listResorce = (List<PM_ProjectResources>)ViewData["LoadResourceList"];
+              if (listResorce.Count > 0)
+              {
+                  ViewData["name"] = "chanaka";
+                  %>
+                <%Html.RenderPartial("LoadSchedule", ViewData["LoadResourceList"]); %>
+            <%}
+              else
+              { %>
+            <td class="formDetail">
+                        Currently no resource schedule found for the period from:&nbsp;<%= fromdate%>&nbsp;to &nbsp;<%=todate%>
+                    </td>
+            <%}
+
+          }%>
     </p>
     
                 
