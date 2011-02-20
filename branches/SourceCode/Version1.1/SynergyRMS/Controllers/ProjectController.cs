@@ -222,6 +222,45 @@ namespace SynergyRMS.Controllers
            
             return View("AssignUsers");
         }
+
+
+        public ActionResult DeleteUserfromProject(string uid, string pid)
+        {
+            MembershipUser user = Membership.GetUser(new Guid(uid));
+            int projectid = Convert.ToInt32(pid);
+            try
+            {
+                if (SynergyService.DeleteAssignUsersfromProject(projectid, new Guid(uid)))
+                {
+                    ViewData["status"] = "Success";
+                    ViewData["msg"] = "User Successfully Deleted.";
+                }
+                else
+                {
+                    ViewData["status"] = "Error";
+                    ViewData["msg"] = "Error in User delete.";
+                }
+            }
+            catch (Exception ee)
+            {
+                ViewData["status"] = "Error";
+                ViewData["msg"] = "Error in User delete.";
+            }
+            PM_Projects project = SynergyService.GetProjectbyProjectId(projectid);
+            ViewData["EditProject"] = project;
+            MembershipUserCollection currentuserList = SynergyService.GetAssignedUsersByProjectId(projectid);
+            if (currentuserList.Count > 0)
+            {
+                ViewData["CurrentUserList"] = currentuserList;
+            }
+            MembershipUserCollection RemainuserList = GetAllUsers(currentuserList);
+            if (RemainuserList.Count > 0)
+            {
+                ViewData["Userlist"] = RemainuserList;
+            }
+
+            return View("AssignUsers");
+        }
         #endregion EditProject
 
         #region unused methods
