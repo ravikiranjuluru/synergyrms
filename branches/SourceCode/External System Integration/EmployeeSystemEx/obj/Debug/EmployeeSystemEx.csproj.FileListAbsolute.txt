@@ -1,0 +1,9 @@
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeDB.sdf
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeSystemEx.dll.config
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeSystemEx.dll
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeSystemEx.pdb
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\obj\Debug\ResolveAssemblyReference.cache
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\obj\Debug\EmployeeSystemEx.dll
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\obj\Debug\EmployeeSystemEx.pdb
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeAdapter.dll
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeAdapter.pdb
