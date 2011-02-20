@@ -159,14 +159,19 @@ Conn.Close();
      string id = resource.ProjectResorcesId.ToString();
      
      string uname = resource.aspnet_Users.UserName;
+     string userkey = resource.aspnet_Users.UserId.ToString();
      var profile = new ProfileBase();
      profile.Initialize(uname, true);
      string fname = profile.GetPropertyValue("FirstName").ToString();
      string lname = profile.GetPropertyValue("LastName").ToString();
      //string name = fname + " " + lname;
      string fullname = fname + " " + lname+ "#" +uname;
-     string leaveUrl = "&lt;a class=\"link\" onclick=\"lnkViewLeave_onClick();\" href=\"../../Resource/ViewUserLeave\"&gt;View Leaves &lt;/a&gt;";
-      
+     //string leaveUrl = "&lt;a class=\"link\" onclick=\"lnkViewLeave_onClick();\" href=\"../../Resource/ViewUserLeave\"&gt;View Leaves &lt;/a&gt;";
+     string leaveUrl = "&lt;a class=\"link\" onclick=\"window.open(&apos;../../Resource/ViewUserLeave?id=" + userkey + "&apos;,&apos;mywindow&apos;,&apos;width=700,height=500,left=0,top=100,location=no,screenX=100,screenY=100&apos;)\" href=\"#\" &gt;View Leaves &lt;/a&gt;";
+          
+
+     //onclick=\"window.open('../../Resource/ViewUserLeave','mywindow','width=400,height=200,left=0,top=100,screenX=0,screenY=100')\"
+     //'&lt;input type=\"button\" value=\"press\" onclick=\"alert(&apos;Html col button&apos;)\" &gt;'
      string role ="";
      if(resource.PM_ProjectRoles!=null)
      {
@@ -182,6 +187,7 @@ Conn.Close();
         + " R='" + role.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'"
         + " C='" + complete.ToString() + "'"
         + " L='" + leaveUrl.ToString() + "'"
+        //+ " L='&lt;input type=\"button\" value=\"press\" onclick=\"alert(&apos;Html col button&apos;)\" &gt;'"
         + " S='" + startdate.ToString() + "'"
         + " E='" + enddate.ToString() + "'"
         + "/>");
