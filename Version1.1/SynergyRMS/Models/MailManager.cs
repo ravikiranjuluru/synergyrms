@@ -121,6 +121,16 @@ namespace SynergyRMS.Models
             mail.From = new MailAddress(adminMailAddress, appName);
             mail.To.Add(new MailAddress(toAdresses));
 
+            List<PM_ProjectResources> projectResourceList = SynergyService.GetAllProjectResoucesByProjectId(projectResources.PM_Projects.ProjectId);
+
+            foreach (PM_ProjectResources resource in projectResourceList)
+            {
+                string cCAdress = resource.aspnet_Users.aspnet_Membership.Email;
+
+                if (cCAdress != toAdresses)
+                    mail.CC.Add(new MailAddress(cCAdress));
+            }
+
             //mail.CC.Add(new MailAddress("chandusliit@gmail.com"));// Temp
             mail.Bcc.Add(new MailAddress("virath.liyanage@gmail.com"));// Temp
 
