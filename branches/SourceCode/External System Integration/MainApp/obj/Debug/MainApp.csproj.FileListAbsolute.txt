@@ -1,0 +1,12 @@
+F:\project\LeaveWeb\LeaveInterface\MainApp\bin\Debug\EmployeeDB.sdf
+F:\project\LeaveWeb\LeaveInterface\MainApp\bin\Debug\LeaveDB.sdf
+F:\project\LeaveWeb\LeaveInterface\MainApp\bin\Debug\MainApp.exe.config
+F:\project\LeaveWeb\LeaveInterface\MainApp\bin\Debug\MainApp.exe
+F:\project\LeaveWeb\LeaveInterface\MainApp\bin\Debug\MainApp.pdb
+F:\project\LeaveWeb\LeaveInterface\MainApp\bin\Debug\EmployeeAdapter.dll
+F:\project\LeaveWeb\LeaveInterface\MainApp\bin\Debug\LeaveAdapter.dll
+F:\project\LeaveWeb\LeaveInterface\MainApp\bin\Debug\EmployeeAdapter.pdb
+F:\project\LeaveWeb\LeaveInterface\MainApp\bin\Debug\LeaveAdapter.pdb
+F:\project\LeaveWeb\LeaveInterface\MainApp\obj\Debug\ResolveAssemblyReference.cache
+F:\project\LeaveWeb\LeaveInterface\MainApp\obj\Debug\MainApp.exe
+F:\project\LeaveWeb\LeaveInterface\MainApp\obj\Debug\MainApp.pdb
