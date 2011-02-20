@@ -1063,7 +1063,7 @@ namespace SynergyRMS.Models
 
         #region Max Allocation
 
-        public static UserEffort ValidateMaxAllocation(string userkey, DateTime startDate, DateTime endDate, int inputEffort)
+        public static UserEffort ValidateMaxAllocation(string userkey, DateTime startDate, DateTime endDate, int inputEffort, int projectResourceId)
         {
 
             double TotalEffort = 0;
@@ -1098,48 +1098,82 @@ namespace SynergyRMS.Models
             /*----------------------Calculate Current Allocation-------------------------*/
 
             List<PM_ProjectResources> ResList = null;
-            
-            IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
-                                                           where ((p.aspnet_Users.UserName==edituser.UserName) && ((p.AllocatedStartDate >= startDate && p.AllocatedStartDate <= endDate) || (p.AllocatedEndDate >= startDate && p.AllocatedEndDate <= endDate)))
-                                                           select p;
 
-
-            ResList = projectQuery.ToList();
-
-            foreach (PM_ProjectResources objResources in ResList)
+            if (projectResourceId == 0)
             {
-                DateTime startPeriod;
-                DateTime endPeriod;
-                double numOfDays = 0;
-                
 
-                if (objResources.AllocatedStartDate < startDate)
+                /*------------- Addded New Project Resource---------------------------*/
+
+                IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                                               where ((p.aspnet_Users.UserName == edituser.UserName) && ((p.AllocatedStartDate >= startDate && p.AllocatedStartDate <= endDate) || (p.AllocatedEndDate >= startDate && p.AllocatedEndDate <= endDate)))
+                                                               select p;
+                ResList = projectQuery.ToList();
+            }
+            else
+            {
+
+
+                /*------------- Updated New Project Resource---------------------------*/
+
+                IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                                               where ((p.aspnet_Users.UserName == edituser.UserName) && (p.ProjectResorcesId !=projectResourceId) &&  ((p.AllocatedStartDate >= startDate && p.AllocatedStartDate <= endDate) || (p.AllocatedEndDate >= startDate && p.AllocatedEndDate <= endDate)))
+                                                               select p;
+                ResList = projectQuery.ToList();
+            }
+
+
+            if (ResList != null)
+            {
+                if (ResList.Count > 0)
                 {
-                    startPeriod = startDate;
+
+                    foreach (PM_ProjectResources objResources in ResList)
+                    {
+                        DateTime startPeriod;
+                        DateTime endPeriod;
+                        double numOfDays = 0;
+
+
+                        if (objResources.AllocatedStartDate < startDate)
+                        {
+                            startPeriod = startDate;
+                        }
+                        else
+                        {
+                            startPeriod = objResources.AllocatedStartDate;
+                        }
+
+                        if (objResources.AllocatedEndDate > endDate)
+                        {
+                            endPeriod = endDate;
+                        }
+                        else
+                        {
+                            endPeriod = objResources.AllocatedEndDate;
+                        }
+
+                        TimeSpan tsPeriod = startPeriod.Subtract(endPeriod);
+                        numOfDays = tsPeriod.TotalDays;
+
+                        double projectEffort = Convert.ToDouble(objResources.Effort);
+                        TotalCurrentEffort = TotalCurrentEffort + projectEffort * numOfDays;
+
+
+                        //objResources.UM_UsersReference.Load();
+                        //int aa = single1.T_User.UserId;
+                    }
                 }
                 else
                 {
-                    startPeriod = objResources.AllocatedStartDate;
+                    /*-----Current Allocation is 0 for the Given period--------*/
+                    TotalCurrentEffort = 0;
                 }
+            }
 
-                if (objResources.AllocatedEndDate > endDate)
-                {
-                    endPeriod = endDate;
-                }
-                else
-                {
-                    endPeriod = objResources.AllocatedEndDate;
-                }
-
-                TimeSpan tsPeriod = startPeriod.Subtract(endPeriod);
-                numOfDays = tsPeriod.TotalDays;
-
-                double projectEffort=Convert.ToDouble(objResources.Effort);
-                TotalCurrentEffort = TotalCurrentEffort + projectEffort * numOfDays;
-             
-               
-                //objResources.UM_UsersReference.Load();
-                //int aa = single1.T_User.UserId;
+            else
+            {
+                /*-----Current Allocation is 0 for the Given period--------*/
+                TotalCurrentEffort = 0;
             }
 
 
