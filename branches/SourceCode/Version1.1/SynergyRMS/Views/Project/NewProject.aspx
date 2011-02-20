@@ -271,7 +271,22 @@
                                     return false
                                 }
                             }
+
+                            if (isDateGreaterThanEndDate(c, d) == false) {
+                                return false
+                            }
+
                             return true
+                        }
+
+                        function isDateGreaterThanEndDate(dtStr, dtEnd) {
+                            var StartDate = dtStr
+                            var EndDate = dtEnd
+
+                            if (StartDate > EndDate) {
+                                alert("Start Date should not be greater than End Date")
+                                return false
+                            }
                         }
 
                         var dtCh = "/";
