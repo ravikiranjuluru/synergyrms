@@ -1017,15 +1017,18 @@ namespace SynergyRMS.Models
 
         #region Max Allocation
 
-        public static void ValidateMaxAllocation(string userkey, DateTime startDate, DateTime endDate, int inputEffort)
+        public static UserEffort ValidateMaxAllocation(string userkey, DateTime startDate, DateTime endDate, int inputEffort)
         {
 
             double TotalEffort = 0;
             double Duration = 0;
             double TotalCurrentEffort = 0;
-            double userEffort = 0;
+            double UserEffort = 0;
+            double UserMaxEffort = 0;
+            double RemEffort = 0;
+            double UserRequestdEffort = 0;
+            double NoOfRemainingDays = 0;
 
-            
             /*------------------Calculate Period------------------------*/
 
             TimeSpan tsDuration = startDate.Subtract(endDate);
@@ -1043,8 +1046,8 @@ namespace SynergyRMS.Models
 
 
             ListUserEfforts = maxUserEffortQuery.ToList();
-            userEffort =Convert.ToDouble(ListUserEfforts[0].MaxEffort);
-            userEffort = userEffort * Duration;
+            UserMaxEffort = Convert.ToDouble(ListUserEfforts[0].MaxEffort);
+            UserEffort = UserMaxEffort * Duration;
 
             /*----------------------Calculate Current Allocation-------------------------*/
 
@@ -1094,24 +1097,42 @@ namespace SynergyRMS.Models
             }
 
 
-            /*--------------------Total Required Allocation ---------------*/
+            /*--------------------Total  Effort For the given period ---------------*/
 
-                  TotalEffort = TotalEffort * Duration;
+            TotalEffort = UserMaxEffort * Duration;
 
-            /*-----------------------Check Allocation------------------ */
+            /*-----------------------Check Allocation----------------------------- */
 
-                  double remEffort = TotalEffort - TotalCurrentEffort;
+            RemEffort = TotalEffort - TotalCurrentEffort;
+    
+            /*----------------------Calculate requested Effort------------------------*/
 
-                
-            /*--------------calculate remaining Effort----------------*/
+               UserRequestdEffort = inputEffort * Duration;
 
-                  double noOfRemainingDays = remEffort / userEffort;
+            /*--------------calculate Remaining Effort----------------*/
 
+               UserEffort effortObj = new UserEffort();
 
+               if (RemEffort > UserRequestdEffort)
+               {
+                   NoOfRemainingDays = RemEffort / UserMaxEffort;
 
-            /*-----------------Fill Information -------------------*/
+                   /*-----------------Fill Information -------------------*/
 
+                   effortObj.RemEffort = NoOfRemainingDays;
+                   effortObj.IsCanAllocated = true;
+                   effortObj.CustomeMessge = "Allocation Is Done";
 
+               }
+               else
+               {
+                   effortObj.RemEffort = 0;
+                   effortObj.IsCanAllocated = false;
+                   effortObj.CustomeMessge = "Maximum Allocation Excedded";
+               }
+
+         
+                  return effortObj;
         }
 
 
