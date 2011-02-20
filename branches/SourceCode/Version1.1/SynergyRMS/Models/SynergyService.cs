@@ -1062,10 +1062,23 @@ namespace SynergyRMS.Models
                 DateTime startPeriod;
                 DateTime endPeriod;
 
-                //if (startDate > objResources.AllocatedStartDate)
+
+                //if (objResources.AllocatedStartDate < startDate)
                 //{
-                //    startPeriod=
+                //    objResources.AllocatedStartDate = startDate;
                 //}
+                //else
+                //{
+
+                //}
+
+                //if (objResources.AllocatedEndDate > EndDate)
+                //{
+                //    objResources.AllocatedEndDate = EndDate;
+                //}
+                        
+
+               
                 double projectEffort=Convert.ToDouble(objResources.Effort);
                 TotalEffort = TotalEffort + projectEffort;
              
