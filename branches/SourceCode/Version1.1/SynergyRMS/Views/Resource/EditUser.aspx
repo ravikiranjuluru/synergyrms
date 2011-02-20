@@ -175,7 +175,6 @@
             }
             else {
                 if (emailValidationCheck(c) == false) {
-                    emailID.value = ""
                     return false
                 }
             }
