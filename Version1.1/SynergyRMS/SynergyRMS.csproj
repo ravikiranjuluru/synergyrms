@@ -456,9 +456,6 @@
     <Content Include="Views\Dashboard\Index.aspx" />
     <Content Include="Views\Dashboard\UserDashboard.ascx" />
     <Content Include="Views\Home\Home.aspx" />
-    <Content Include="Views\MyWork\Documents.aspx" />
-    <Content Include="Views\MyWork\Index.aspx" />
-    <Content Include="Views\MyWork\Projects.aspx" />
     <Content Include="Views\Project\AssignTask.aspx" />
     <Content Include="Views\Project\Docs.aspx" />
     <Content Include="Views\Project\DocUpload.aspx" />
@@ -468,7 +465,6 @@
     <Content Include="Views\Project\Index.aspx" />
     <Content Include="Views\Project\NewProject.aspx" />
     <Content Include="Views\Project\NewTask.aspx" />
-    <Content Include="Views\Report\Index2.aspx" />
     <Content Include="Views\Resource\Department.aspx" />
     <Content Include="Views\Resource\Index.aspx" />
     <Content Include="Views\Resource\IndexInterestProjects.aspx" />
@@ -476,15 +472,11 @@
     <Content Include="Views\Resource\IndexSkills.aspx" />
     <Content Include="Views\Resource\Role.aspx" />
     <Content Include="Views\Resource\Schedule.aspx" />
-    <Content Include="Views\Resource\ScheduleUtilisation.aspx" />
     <Content Include="Views\Resource\Test.aspx" />
     <Content Include="Views\Resource\ViewResources.aspx" />
     <Content Include="Views\Resource\ViewTeam.aspx" />
     <Content Include="Views\Shared\MasterDashboard.Master" />
     <Content Include="Views\Shared\Menu.ascx" />
-    <Content Include="Views\Shared\menubackup.txt" />
-    <Content Include="Views\Timesheets\Approve.aspx" />
-    <Content Include="Views\Timesheets\Index.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Microsoft.Web.Mvc.dll" />
@@ -552,12 +544,14 @@
     <Content Include="Content\calndarview\jquery-ui\smoothness\jquery-ui-1.8.1.custom.css" />
     <Content Include="Content\Datatable\demo_page.css" />
     <Content Include="Content\Datatable\demo_table.css" />
+    <Content Include="Content\datepicker.css" />
     <Content Include="Content\images\common\bar_chart_add.png" />
     <Content Include="Content\images\common\Dashboard.png" />
     <Content Include="Content\images\common\home.png" />
     <Content Include="Content\images\common\newproject.png" />
     <Content Include="Content\images\common\Note.png" />
     <Content Include="Content\images\common\Projects.png" />
+    <Content Include="Content\images\common\ReportsMain.jpg" />
     <Content Include="Content\images\common\reports_icon.gif" />
     <Content Include="Content\images\common\role.png" />
     <Content Include="Content\images\common\schedule.jpg" />
@@ -634,6 +628,7 @@
     <Content Include="Scripts\Datatable\jquery.dataTables.js" />
     <Content Include="Scripts\Datatable\jquery.js" />
     <Content Include="Scripts\HTMLPage1.htm" />
+    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Views\GridView\Gantt.aspx" />
     <Content Include="Views\GridView\Load.ascx" />
     <Content Include="Views\GridView\LoadSchedule.ascx" />
@@ -651,6 +646,7 @@
     <Content Include="Views\Resource\RolePermission.aspx" />
     <Content Include="Views\Resource\ScheduleCalendar.aspx" />
     <Content Include="Views\Resource\ScheduleCalendarControl.ascx" />
+    <Content Include="Views\Resource\ViewUserLeave.aspx" />
     <Content Include="Views\Shared\Master.Master.txt" />
   </ItemGroup>
   <ItemGroup>
