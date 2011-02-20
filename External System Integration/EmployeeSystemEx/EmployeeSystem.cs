@@ -8,16 +8,16 @@ namespace EmployeeSystemEx
 {
    public  class EmployeeSystem
     {
-       private EmployeeDBEntities DbEntity;
+       private EmployeeEntities DbEntity;
        /// <summary>
        /// Gets the employee DB instance.
        /// </summary>
        /// <returns></returns>
-       private EmployeeDBEntities GetEmployeeDBInstance()
+       private EmployeeEntities GetEmployeeDBInstance()
        {
            if (DbEntity == null)
            {
-               DbEntity = new EmployeeDBEntities();
+               DbEntity = new EmployeeEntities();
            }
            return DbEntity;
        }
@@ -30,17 +30,17 @@ namespace EmployeeSystemEx
        public EmployeeEntity GetEmployeeInfo(string NIC)
        {
            EmployeeEntity employee = null;
-           try
-           {
+           //try
+           //{
                var employeeQuery = from E in GetEmployeeDBInstance().Employee
                                         
                                         select E;
                employee =AssembleEntity( employeeQuery.First());             
-           }
-           catch(Exception ex)
-           {
+           //}
+           //catch(Exception ex)
+           //{
 
-           }
+           //}
            return employee;
        }
 

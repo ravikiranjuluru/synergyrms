@@ -10,3 +10,16 @@ F:\project\LeaveWeb\LeaveInterface\MainApp\bin\Debug\LeaveAdapter.pdb
 F:\project\LeaveWeb\LeaveInterface\MainApp\obj\Debug\ResolveAssemblyReference.cache
 F:\project\LeaveWeb\LeaveInterface\MainApp\obj\Debug\MainApp.exe
 F:\project\LeaveWeb\LeaveInterface\MainApp\obj\Debug\MainApp.pdb
+D:\synergyrms\SourceCode\External System Integration\MainApp\bin\Debug\MainApp.exe.config
+D:\synergyrms\SourceCode\External System Integration\MainApp\obj\Debug\MainApp.exe
+D:\synergyrms\SourceCode\External System Integration\MainApp\obj\Debug\MainApp.pdb
+D:\synergyrms\SourceCode\External System Integration\MainApp\bin\Debug\MainApp.exe
+D:\synergyrms\SourceCode\External System Integration\MainApp\bin\Debug\MainApp.pdb
+D:\synergyrms\SourceCode\External System Integration\MainApp\bin\Debug\EmployeeAdapter.dll
+D:\synergyrms\SourceCode\External System Integration\MainApp\bin\Debug\LeaveAdapter.dll
+D:\synergyrms\SourceCode\External System Integration\MainApp\bin\Debug\EmployeeAdapter.pdb
+D:\synergyrms\SourceCode\External System Integration\MainApp\bin\Debug\LeaveAdapter.pdb
+D:\synergyrms\SourceCode\External System Integration\MainApp\obj\Debug\ResolveAssemblyReference.cache
+D:\synergyrms\SourceCode\External System Integration\MainApp\bin\Debug\Model\EmployeeDB.sdf
+D:\synergyrms\SourceCode\External System Integration\MainApp\bin\Debug\Model\LeaveDB.sdf
+D:\synergyrms\SourceCode\External System Integration\MainApp\bin\Debug\Model\Database1.sdf
