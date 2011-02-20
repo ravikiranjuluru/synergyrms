@@ -355,8 +355,9 @@
                     <td class="formDetail">
                         Loading schedule for project:&nbsp;<%=project.ProjectName %>
                     </td>
+                    <%} %>
                 </tr>
-                            <%} %>
+                            
                         </tbody>
                     </table>
                     <!-- Place Content That you want to appear between the Toolbar and the Tab Strip Here  -->
