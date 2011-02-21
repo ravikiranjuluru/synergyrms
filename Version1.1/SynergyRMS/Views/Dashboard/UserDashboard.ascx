@@ -278,7 +278,8 @@
                                                                                 <td>
                                                                                     <a id="A2" title="Click here to Add a New Resource" 
                                                                                     href="../GridView/Schedule">
-                                                                                        ResourceSchedule</a>
+                                                                                    <img src="../../Content/images/common/schedule.jpg" id="Img1" title="Click for more information" />
+                                                                                        Resource Schedule</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr id="Tr6">
