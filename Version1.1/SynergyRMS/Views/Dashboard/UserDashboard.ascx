@@ -272,7 +272,7 @@
                                                                             </tr>
                                                                             <%} %>
                                                                             
-                                                                            <%--<tr id="Tr3">
+                                                                           <tr id="Tr3">
                                                                                 <td padding-left="6px" width="5%">
                                                                                     &nbsp;
                                                                                 </td>
@@ -280,9 +280,9 @@
                                                                                     <a id="A2" title="Click here to Add a New Resource" 
                                                                                     href="../GridView/Schedule">
                                                                                     <img src="../../Content/images/common/schedule.jpg" id="Img1" title="Click for more information" />
-                                                                                        Resource Schedule</a>
+                                                                                        Resource Allocation Schedule</a>
                                                                                 </td>
-                                                                            </tr>--%>
+                                                                            </tr>
                                                                             
                                                                             <tr id="Tr6">
                                                                                 <td padding-left="6px" width="5%">
