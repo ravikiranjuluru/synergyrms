@@ -336,8 +336,8 @@
                                                         <table border="0">
                                                             <tbody>
                                                                 <tr>
-                                                                  <% using (Html.BeginForm("ResourceSchedule", "GridView"))
-                                                               {%>
+                                                                <%--  <% using (Html.BeginForm("ResourceSchedule", "GridView"))
+                                                               {%>--%>
                                                                     <td style="white-space: nowrap;" align="left">
                                                                         Select Date Range: &nbsp;&nbsp;&nbsp;From date:
                                                                         <input name="fromdate" id="fromdate" class="textBox" size="15" maxlength="4" type="text" />
@@ -350,7 +350,7 @@
                                                                     <td align="left">
                                                                         <input type="submit" value="View" class="button" id="Submit1" name="btnView">
                                                                     </td>
-                                                                    <%}%>
+                                                                   <%-- <%}%>--%>
                                                                     <td>
                                                                         &nbsp;
                                                                     </td>
@@ -432,10 +432,10 @@
           {
               List<PM_ProjectResources> listResorce = (List<PM_ProjectResources>)ViewData["LoadResourceList"];
               if (listResorce.Count > 0)
-              {
-                  
-                  %>
-                <%Html.RenderPartial("LoadSchedule", ViewData["LoadResourceList"]); %>
+              { %>
+              
+               <%-- <%Html.RenderPartial("LoadSchedule", ViewData["LoadResourceList"]); %>--%>
+                
             <%}
               else
               { %>
