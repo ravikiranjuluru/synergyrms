@@ -271,7 +271,8 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <%} %>
-                                                                            <tr id="Tr3">
+                                                                            
+                                                                            <%--<tr id="Tr3">
                                                                                 <td padding-left="6px" width="5%">
                                                                                     &nbsp;
                                                                                 </td>
@@ -281,7 +282,8 @@
                                                                                     <img src="../../Content/images/common/schedule.jpg" id="Img1" title="Click for more information" />
                                                                                         Resource Schedule</a>
                                                                                 </td>
-                                                                            </tr>
+                                                                            </tr>--%>
+                                                                            
                                                                             <tr id="Tr6">
                                                                                 <td padding-left="6px" width="5%">
                                                                                     &nbsp;
