@@ -814,10 +814,8 @@ namespace SynergyRMS.Models
                     }
                 }
 
-                ResList = projectQuery.ToList();
                
-
-
+              
                 foreach (PM_ProjectResources objResources in ResList)
                 {
 
