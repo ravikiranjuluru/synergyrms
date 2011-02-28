@@ -768,33 +768,42 @@ namespace SynergyRMS.Models
         /// <param name="StartDate">The start date.</param>
         /// <param name="EndDate">The end date.</param>
         /// <returns></returns>
-        public static List<PM_ProjectResources> GetAllProjectResoucesByGivenPeriod(DateTime StartDate, DateTime EndDate)
+        public static List<PM_ProjectResources> GetAllProjectResoucesByGivenPeriod(DateTime startDate, DateTime endDate)
         {
             try
             {
 
-                List<PM_ProjectResources> ResList = null;
+            
+                List<PM_ProjectResources> ResList = new List<PM_ProjectResources>();
+          
+
+                Hashtable HTResource = new Hashtable();
+
 
                 IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
-                                                               where ((p.AllocatedStartDate >= StartDate && p.AllocatedStartDate <= EndDate) || (p.AllocatedEndDate >= StartDate && p.AllocatedEndDate <= EndDate))
+                                                               where ((p.AllocatedStartDate >= startDate && p.AllocatedStartDate <= endDate) || (p.AllocatedEndDate >= startDate && p.AllocatedEndDate <= endDate))
                                                                select p;
 
 
+
+
                 ResList = projectQuery.ToList();
+               
+
 
                 foreach (PM_ProjectResources objResources in ResList)
                 {
 
                     /*---- Check Date Max and Min Date Validation--------*/
 
-                    if (objResources.AllocatedStartDate < StartDate)
+                    if (objResources.AllocatedStartDate < startDate)
                     {
-                        objResources.AllocatedStartDate = StartDate;
+                        objResources.AllocatedStartDate = startDate;
                     }
 
-                    if (objResources.AllocatedEndDate > EndDate)
+                    if (objResources.AllocatedEndDate > endDate)
                     {
-                        objResources.AllocatedEndDate = EndDate;
+                        objResources.AllocatedEndDate = endDate;
                     }
 
 
