@@ -230,7 +230,7 @@ namespace SynergyRMS.Controllers
             int projectid = Convert.ToInt32(pid);
             try
             {
-                if (SynergyService.DeleteAssignUsersfromProject(projectid, new Guid(uid)))
+                if (SynergyService.DeleteAssignUsersfromProject(projectid, user.UserName))
                 {
                     ViewData["status"] = "Success";
                     ViewData["msg"] = "User Successfully Deleted.";
