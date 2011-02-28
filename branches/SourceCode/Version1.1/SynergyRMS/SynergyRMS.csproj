@@ -107,10 +107,13 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ExternalEmployeeManagement.cs" />
+    <Compile Include="Models\ExternalLeaveManagement.cs" />
     <Compile Include="Models\IEmployeeManagement.cs" />
+    <Compile Include="Models\ILeaveManagement.cs" />
     <Compile Include="Models\MailManager.cs" />
     <Compile Include="Models\SynergyConstents.cs" />
     <Compile Include="Models\SynergyEmployeeManagement.cs.cs" />
+    <Compile Include="Models\SynergyLeaveManagement.cs" />
     <Compile Include="Models\SynergyModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -508,6 +511,11 @@
     <Content Include="App_Data\Employee_log.ldf">
       <DependentUpon>Employee.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\LeaveDB.mdf">
+    </Content>
+    <Content Include="App_Data\LeaveDB_log.ldf">
+      <DependentUpon>LeaveDB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Microsoft.Web.Mvc.dll" />
     <Content Include="Content\calndarview\colorpicker\colorpicker.css" />
     <Content Include="Content\calndarview\colorpicker\images\blank.gif" />
@@ -629,6 +637,7 @@
     <Content Include="GridView\Styles\Examples.css" />
     <Content Include="GridView\Styles\Info.txt" />
     <Content Include="GridView\Styles\Page.png" />
+    <Content Include="LeaveSystemEx.dll" />
     <Content Include="Models\App.Config" />
     <Content Include="Reports\Project_Resources.aspx" />
     <Content Include="Reports\ResourceAllocation.aspx" />
@@ -686,6 +695,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SynergyModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="LeaveSystemEx.dll.config" />
     <None Include="Reports\ProjectResources.xsc">
       <DependentUpon>ProjectResources.xsd</DependentUpon>
     </None>
@@ -742,6 +752,10 @@
     <ProjectReference Include="..\..\External System Integration\EmployeeAdapter\EmployeeAdapter.csproj">
       <Project>{B566F19A-E157-4285-81F7-5B66ACC82786}</Project>
       <Name>EmployeeAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\External System Integration\LeaveAdapter\LeaveAdapter.csproj">
+      <Project>{C50E7D92-ECEF-448D-8D7B-29D3BEF8C38F}</Project>
+      <Name>LeaveAdapter</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
