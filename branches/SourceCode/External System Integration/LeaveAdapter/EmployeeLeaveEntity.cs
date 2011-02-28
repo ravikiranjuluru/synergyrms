@@ -13,5 +13,6 @@ namespace LeaveAdapter
        public DateTime leaveDate { get; set; }
        public DateTime startDate { get; set; }
        public DateTime endDate { get; set; }
+       public string description { get; set; }
     }
 }
