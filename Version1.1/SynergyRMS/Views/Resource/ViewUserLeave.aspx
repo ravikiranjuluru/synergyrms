@@ -4,6 +4,7 @@ MasterPageFile="~/Views/Shared/MasterDashboard.Master"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">--%>
   <%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
 <%@ Import Namespace="SynergyRMS.Models" %>
+<%@ Import Namespace="LeaveAdapter" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
@@ -353,11 +354,13 @@ MasterPageFile="~/Views/Shared/MasterDashboard.Master"%>
         </tr>
     </thead>
     <tbody>
-<%--        <%
-foreach (PM_Projects project in (List<PM_Projects>)ViewData["ProjectList"])
+        <%
+        int y=0;
+foreach (EmployeeLeaveEntity leave in (List<EmployeeLeaveEntity>)ViewData["UserLeave"])
 {
 
-        %>--%>
+
+        %>
         <tr>
             <td headers="pcode" class="oddrow-mdl" align="left" height="12" 
                 style="width: 10%">
@@ -373,15 +376,15 @@ foreach (PM_Projects project in (List<PM_Projects>)ViewData["ProjectList"])
                
             </td>
             <td headers="psdate" class="oddrow-mdl" align="left" style="width: 15%">
-                <%--<%=String.Format("{0:ddd, MMM d, yyyy}", project.ProjectStartDate.Date)%>--%>
+                <%=String.Format("{0:ddd, MMM d, yyyy}", leave.leaveDate.Date)%>
             </td>
             <td headers="pedate" class="oddrow-mdl" align="left" style="width: 15%">
-                <%--<%= String.Format("{0:ddd, MMM d, yyyy}",project.ProjectEndDate.Date)%>--%>
+               <%= leave.description%>
             </td>
             
       
         </tr>
-       <%-- <%} %>--%>
+        <%} %>
     </tbody>
 </table>
                                       
