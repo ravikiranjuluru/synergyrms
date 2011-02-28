@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SynergyRMS.Models;
+using System.Web.Security;
 
 namespace SynergyRMS.Reports
 {
@@ -37,9 +38,13 @@ namespace SynergyRMS.Reports
             DateTime endDate = Convert.ToDateTime(txtEndDate.Text);
 
 
-            SynergyService.ValidateMaxAllocation(userId, startDate, endDate, 40, 0);
+            //SynergyService.MaxAllocationValidation(userId, startDate, endDate, 60, 0);
 
+           // SynergyService.DeleteAssignUsersfromProject(20, "jeevantha");
+          // List<PM_ProjectResources> aa=   SynergyService.GetAllProjectResoucesByGivenPeriod(startDate, endDate);
 
+         //   MembershipUserCollection aa = SynergyService.GetAssignedUsersByProjectId(1);
+           // int bb = aa.Count;
 
 
             /*---------------------------*/
