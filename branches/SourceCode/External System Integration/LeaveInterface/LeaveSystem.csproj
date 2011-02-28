@@ -69,12 +69,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LeaveSystem.cs" />
-    <Compile Include="Model\LeaveDB.Designer.cs">
+    <Compile Include="LeaveDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LeaveDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="LeaveSystem.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -116,7 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Model\LeaveDB.edmx">
+    <EntityDeploy Include="LeaveDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LeaveDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
@@ -132,13 +133,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\LeaveDB.mdf">
+    <Content Include="LeaveDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Model\LeaveDB_log.ldf">
+    <Content Include="LeaveDB_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LeaveDB.mdf</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
