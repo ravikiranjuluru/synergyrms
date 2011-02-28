@@ -9,6 +9,7 @@ using System.Web.Profile;
 using SynergyRMS.Models;
 using System.Collections;
 using EmployeeAdapter;
+using LeaveAdapter;
 //using EmployeeSystemEx;
 
 
@@ -839,9 +840,10 @@ namespace SynergyRMS.Controllers
 
         public ActionResult ViewUserLeave()
         {
-            
-            
-            
+
+            Guid guid = new Guid(Request.QueryString["id"]);
+            List<EmployeeLeaveEntity> leaveEntityList = SynergyService.GetEmployeeleave(guid);
+            ViewData["UserLeave"] = leaveEntityList;
             return View("ViewUserLeave");
         }
 
