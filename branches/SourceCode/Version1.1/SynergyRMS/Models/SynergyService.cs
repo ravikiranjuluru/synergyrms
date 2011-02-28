@@ -716,7 +716,7 @@ namespace SynergyRMS.Models
             foreach (PM_ProjectResources resource in projectResourceList)
             {
                 resource.aspnet_UsersReference.Load();
-                userList.Clear();
+               
                 userList.Add(Membership.GetUser(resource.aspnet_Users.UserName));
             }
 
