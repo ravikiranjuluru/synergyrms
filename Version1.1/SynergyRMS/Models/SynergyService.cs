@@ -775,7 +775,8 @@ namespace SynergyRMS.Models
 
             
                 List<PM_ProjectResources> ResList = new List<PM_ProjectResources>();
-          
+                List<PM_ProjectResources> ResourceList = null;
+                List<PM_ProjectResources> ResourceList2 = null;
 
                 Hashtable HTResource = new Hashtable();
 
@@ -786,6 +787,32 @@ namespace SynergyRMS.Models
 
 
 
+                IQueryable<PM_ProjectResources> projectQuery2 = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                                                where ((p.AllocatedStartDate <= startDate && p.AllocatedEndDate >= startDate) || (p.AllocatedStartDate <= endDate && p.AllocatedEndDate >= endDate))
+                                                                select p;
+
+
+                ResourceList = projectQuery.ToList();
+
+                ResourceList2 = projectQuery2.ToList();
+
+                foreach (PM_ProjectResources resorcesObj in ResourceList)
+                {
+
+                    ResList.Add(resorcesObj);
+                    HTResource.Add(resorcesObj.ProjectResorcesId, 0);
+                }
+
+
+                foreach (PM_ProjectResources resorcesObj in ResourceList2)
+                {
+
+
+                    if (!HTResource.Contains(resorcesObj.ProjectResorcesId))
+                    {
+                        ResList.Add(resorcesObj);
+                    }
+                }
 
                 ResList = projectQuery.ToList();
                
