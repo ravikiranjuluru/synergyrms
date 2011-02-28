@@ -1387,7 +1387,7 @@ namespace SynergyRMS.Models
         }
 
 
-        public static UserEffort MaxAllocationValidation(string userkey, DateTime startDate, DateTime endDate, int inputEffort, int projectResourceId)
+        public static UserEffort MaxAllocationValidation(string userName, DateTime startDate, DateTime endDate, int inputEffort, int projectResourceId)
         {
 
             double TotalEffort = 0;
@@ -1409,7 +1409,8 @@ namespace SynergyRMS.Models
 
             List<PM_MaxUserEfforts> ListUserEfforts = null;
 
-            MembershipUser edituser = Membership.GetUser(new Guid(userkey));
+            //MembershipUser edituser = Membership.GetUser(new Guid(userkey));
+            MembershipUser edituser = Membership.GetUser(userName);
 
             IQueryable<PM_MaxUserEfforts> maxUserEffortQuery = from m in GetSynegyRMSInstance().PM_MaxUserEfforts
                                                                where m.aspnet_Users.UserName == edituser.UserName
