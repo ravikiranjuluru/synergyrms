@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using LeaveAdapter;
-using LeaveSystemEx.Model;
+
 namespace LeaveSystemEx
 {
   public   class LeaveSystem
@@ -38,7 +38,8 @@ namespace LeaveSystemEx
           try
           {
               var employeeLeaveQuery = from l in GetLeaveDBEntity().EmployeeLeaves
-                                       where ((l.Date >= startDate) &&(l.Date <= endDate))
+                                       //where ((l.Date >= startDate) &&(l.Date <= endDate))
+                                       //where l.EmployeeId == userid
                               select l;
 
                 leaves = employeeLeaveQuery.ToList();
