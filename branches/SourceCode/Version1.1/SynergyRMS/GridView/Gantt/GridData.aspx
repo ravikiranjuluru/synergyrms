@@ -83,6 +83,7 @@
  
     string proName = null, fullname ="",username = null, StartDate = "", EndDate="";
     string output = "";
+    string res = null, prj = null;
  foreach (PM_ProjectResources projectResources in listProjectResources)
  {
      
@@ -94,27 +95,31 @@
      fullname = fname + " " + lname;
      
      proName = projectResources.PM_Projects.ProjectName;
-     StartDate = projectResources.AllocatedStartDate.ToString();
-     EndDate = projectResources.AllocatedEndDate.ToString();
+     //StartDate = projectResources.AllocatedStartDate.ToString();
+     //EndDate = projectResources.AllocatedEndDate.ToString();
+     StartDate = String.Format("{0:MM/dd/yyyy}", projectResources.AllocatedStartDate); 
+     EndDate = String.Format("{0:MM/dd/yyyy}",projectResources.AllocatedEndDate);
 
      string p1 = fullname;  // User name-Resource
      string r1 = proName;  // Project
-
-     if (p1 != fullname)                // New project row
+     
+     if (p1 != res)                // New project row
      {
-         if (fullname != null) output += "/></I>";    // Ends previous project and resource rows
-         fullname = p1; proName = null;
-         output += "<I Def='Node' Project='" + fullname.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'>";
+         if (res != null) output += "/></I>";    // Ends previous project and resource rows
+         res = p1; prj = null;
+         output += "<I Def='Node' U='" + res.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "'>";
      }
-     if (r1 != proName)                  // New resource row
+     if (r1 != prj)                  // New resource row
      {
-         if (proName != null) output += "/>";     // Ends previous resource row
-         proName = r1;
-         output += "<I Project='" + proName.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "' ";
+         if (prj != null) output += "/>";     // Ends previous resource row
+         prj = r1;
+         output += "<I U='" + prj.Replace("&", "&amp;").Replace("'", "&apos;").Replace("<", "&lt;") + "' ";
      }
-     output = output + "W" + StartDate + "='" + EndDate + "' "; // Week = Hours (like W42='17')     
+     //output = output + "S" + StartDate + "='" + EndDate + "' "; 
+     //output = output + "S='02/10/2011' E='02/15/2011' ";  
+     output = output + "S='" + StartDate + "' E='" + EndDate + "' ";  
  }
- if (fullname != null) output += "/></I>";
+ if (res != null) output += "/></I>";
 
  //string Prj = null, Res = null, S = "";
  //while (R.Read())
