@@ -447,10 +447,7 @@ namespace SynergyRMS.Models
             return true;
         }
 
-        public static bool DeleteAssignUsersfromProject(int projectId, Guid userId)
-        {
-            return true;
-        }
+      
 
         private static void SendNotificationWhenAssignedToProject(string email, PM_ProjectResources projectResources)
         {
@@ -653,6 +650,38 @@ namespace SynergyRMS.Models
                 throw;
             }
         }
+
+
+        public static bool DeleteAssignUsersfromProject(int projectId, string username)
+        {
+
+            try
+            {
+                List<PM_ProjectResources> projectResources = null;
+                var resourcesQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                     where p.PM_Projects.ProjectId == projectId && p.aspnet_Users.UserName == username
+                                select p;
+
+                projectResources = resourcesQuery.ToList();
+
+
+                foreach (PM_ProjectResources projectRes in projectResources)
+                {
+                    GetSynegyRMSInstance().DeleteObject(projectRes);
+                    GetSynegyRMSInstance().SaveChanges();
+                }
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return false;
+        }
+
+
         /// <summary>
         /// Updates the project resources.
         /// </summary>
