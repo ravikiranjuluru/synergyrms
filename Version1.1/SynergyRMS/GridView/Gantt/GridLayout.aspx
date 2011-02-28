@@ -113,9 +113,9 @@ for (int i = Min; i <= Max; i++)
     <D Name='R' CDef='' U='Name' 
       A='New'/>
   </Def>
-  <Body>
-    <B>
-      <I U='Project1'>
+ <Body>
+     <B>
+     <%--<I U='Project1'>
         <I U='David1'  S='02/10/2011' E='02/15/2011'/>
         <I U='Linda1' />
         <I U='Adam1' />
@@ -124,7 +124,7 @@ for (int i = Min; i <= Max; i++)
         <I U='David2' />
         <I U='Jan2' />
         <I U='Linda2'/>
-      </I>
+      </I>--%>
     </B>
   </Body>
   
