@@ -32,6 +32,8 @@ try
    
    // --- Save data to database ---
    string XML = Request["Data"];
+   bool isError = false;
+    string Errormsg = "";
    if (XML != "" && XML != null)
    {
       System.Xml.XmlDocument X = new System.Xml.XmlDocument();
@@ -107,7 +109,16 @@ try
                        {
                            resource.Effort = Convert.ToInt32(complete);
                        }
-                       SynergyService.SaveProjectResources(resource);
+                       UserEffort usrEffortSave = SynergyService.MaxAllocationValidation(uname, Convert.ToDateTime(sdate), Convert.ToDateTime(edate), Convert.ToInt32(complete), 0);
+                       if (usrEffortSave.IsCanAllocated)
+                       {
+                           SynergyService.SaveProjectResources(resource);
+                       }
+                       else
+                       {
+                           isError = true;
+                           Errormsg = usrEffortSave.CustomeMessge;
+                       }
                       //    //SQL = "INSERT INTO GanttBasic(id,T,U,UL,S,E,C) VALUES("
                       //    //   + id + ","
                       //    //   + "'" + I.GetAttribute("N").Replace("'", "''") + "',"
@@ -188,7 +199,18 @@ try
                       {
                           resource.Effort =Convert.ToInt32(complete);
                       }
-                      SynergyService.UpdateProjectResources(resource);
+                      UserEffort usrEffortUpdate = SynergyService.MaxAllocationValidation(uname, Convert.ToDateTime(sdate), Convert.ToDateTime(edate), Convert.ToInt32(complete), Convert.ToInt32(id));
+                      if (usrEffortUpdate.IsCanAllocated)
+                      {
+                          SynergyService.UpdateProjectResources(resource);
+                      }
+                      else
+                      {
+                          isError = true;
+                          Errormsg = usrEffortUpdate.CustomeMessge;
+                      }
+                      
+                     
                       
                       
                       //    SQL = SQL.TrimEnd(",".ToCharArray()); // Last comma away
@@ -279,7 +301,15 @@ try
       //   }
          
       //}
-      Response.Write("<Grid><IO Result='0'/></Grid>");
+      if (isError)
+      {
+          Response.Write("<Grid><IO Result=\"-1\" Message=\"" + Errormsg + ":&#x0a;&#x0a;" + Errormsg.Replace("&", "&amp;").Replace("<", "&lt;").Replace("\"", "&quot;") + "\"/></Grid>");
+      }
+      else
+      {
+          Response.Write("<Grid><IO Result='0'/></Grid>");
+      }
+      
    }
    // ---   
    Conn.Close();      
