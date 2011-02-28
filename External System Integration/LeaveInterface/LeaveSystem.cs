@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using LeaveAdapter;
+using LeaveSystemEx.Model;
 namespace LeaveSystemEx
 {
   public   class LeaveSystem
@@ -58,7 +59,7 @@ namespace LeaveSystemEx
 
 
 
-      private static EmployeeLeaveEntity AssembleEntity(EmployeeLeaves employee)
+      private static EmployeeLeaveEntity AssembleEntity(EmployeeLeaves  employee)
       {
           EmployeeLeaveEntity entity = new EmployeeLeaveEntity();
 
