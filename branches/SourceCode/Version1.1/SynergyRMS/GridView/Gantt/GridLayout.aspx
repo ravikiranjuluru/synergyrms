@@ -83,13 +83,9 @@ for (int i = Min; i <= Max; i++)
   </LeftCols>
   <Cols>
     <C Name='U' Width='120' CanEdit='0'/>    
-    <C Name="S" Width="80" Type="Date" Format="MM/dd/yyyy" CanEdit='0' /> 
+    <C Name="S" Width="75" Type="Date" Format="MM/dd/yyyy" CanEdit='0' /> 
     <C Name="E" Width="75" Type="Date" Format="MM/dd/yyyy" CanEdit='0'/>
-    
-    
-     
-  
-     </Cols>
+  </Cols>
      
       <RightCols>
        <C Name="G" Type="Gantt"
