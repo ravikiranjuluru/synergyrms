@@ -4,33 +4,33 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="LeaveDBModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="LeaveDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityContainer Name="LeaveDBModelStoreContainer">
-          <EntitySet Name="EmployeeLeaves" EntityType="LeaveDBModel.Store.EmployeeLeaves" store:Type="Tables" />
-          <EntitySet Name="LeaveTypes" EntityType="LeaveDBModel.Store.LeaveTypes" store:Type="Tables" />
-          <AssociationSet Name="fk_LeaveTypes" Association="LeaveDBModel.Store.fk_LeaveTypes">
+          <EntitySet Name="EmployeeLeaves" EntityType="LeaveDBModel.Store.EmployeeLeaves" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LeaveTypes" EntityType="LeaveDBModel.Store.LeaveTypes" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_EmployeeLeaves_LeaveTypes" Association="LeaveDBModel.Store.FK_EmployeeLeaves_LeaveTypes">
             <End Role="LeaveTypes" EntitySet="LeaveTypes" />
             <End Role="EmployeeLeaves" EntitySet="EmployeeLeaves" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="EmployeeLeaves">
           <Key>
-            <PropertyRef Name="EmployeeLeaveId" />
+            <PropertyRef Name="EmployeeleaveId" />
           </Key>
-          <Property Name="EmployeeLeaveId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="EmployeeId" Type="nvarchar" MaxLength="100" />
-          <Property Name="LeaveTypeId" Type="int" />
+          <Property Name="EmployeeleaveId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="nvarchar" MaxLength="50" />
           <Property Name="Date" Type="datetime" />
+          <Property Name="LeaveTypeId" Type="int" />
         </EntityType>
         <EntityType Name="LeaveTypes">
           <Key>
             <PropertyRef Name="LeaveTypeId" />
           </Key>
           <Property Name="LeaveTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="LeaveType" Type="nvarchar" MaxLength="100" />
-          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="LeaveType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="fk_LeaveTypes">
+        <Association Name="FK_EmployeeLeaves_LeaveTypes">
           <End Role="LeaveTypes" Type="LeaveDBModel.Store.LeaveTypes" Multiplicity="0..1" />
           <End Role="EmployeeLeaves" Type="LeaveDBModel.Store.EmployeeLeaves" Multiplicity="*" />
           <ReferentialConstraint>
@@ -49,24 +49,25 @@
         <EntityContainer Name="LeaveDBEntities">
           <EntitySet Name="LeaveTypes" EntityType="LeaveDBModel.LeaveTypes" />
           <EntitySet Name="EmployeeLeaves" EntityType="LeaveDBModel.EmployeeLeaves" />
-          <AssociationSet Name="fk_LeaveTypes" Association="LeaveDBModel.fk_LeaveTypes">
+          <AssociationSet Name="FK_EmployeeLeaves_LeaveTypes" Association="LeaveDBModel.FK_EmployeeLeaves_LeaveTypes">
             <End Role="LeaveTypes" EntitySet="LeaveTypes" />
             <End Role="EmployeeLeaves" EntitySet="EmployeeLeaves" /></AssociationSet></EntityContainer>
         <EntityType Name="LeaveTypes">
           <Key>
-            <PropertyRef Name="LeaveTypeId" /></Key>
+            <PropertyRef Name="LeaveTypeId" />
+          </Key>
           <Property Name="LeaveTypeId" Type="Int32" Nullable="false" />
-          <Property Name="LeaveType" Type="String" Nullable="true" />
-          <Property Name="Description" Type="String" Nullable="true" />
-          <NavigationProperty Name="EmployeeLeaves" Relationship="LeaveDBModel.fk_LeaveTypes" FromRole="LeaveTypes" ToRole="EmployeeLeaves" /></EntityType>
+          <Property Name="LeaveType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="EmployeeLeaves" Relationship="LeaveDBModel.FK_EmployeeLeaves_LeaveTypes" FromRole="LeaveTypes" ToRole="EmployeeLeaves" /></EntityType>
         <EntityType Name="EmployeeLeaves">
           <Key>
-            <PropertyRef Name="EmployeeLeaveId" /></Key>
-          <Property Name="EmployeeLeaveId" Type="Int32" Nullable="false" />
+            <PropertyRef Name="EmployeeleaveId" /></Key>
+          <Property Name="EmployeeleaveId" Type="Int32" Nullable="false" />
           <Property Name="EmployeeId" Type="String" Nullable="true" />
           <Property Name="Date" Type="DateTime" Nullable="true" />
-          <NavigationProperty Name="LeaveTypes" Relationship="LeaveDBModel.fk_LeaveTypes" FromRole="EmployeeLeaves" ToRole="LeaveTypes" /></EntityType>
-        <Association Name="fk_LeaveTypes">
+          <NavigationProperty Name="LeaveTypes" Relationship="LeaveDBModel.FK_EmployeeLeaves_LeaveTypes" FromRole="EmployeeLeaves" ToRole="LeaveTypes" /></EntityType>
+        <Association Name="FK_EmployeeLeaves_LeaveTypes">
           <End Type="LeaveDBModel.LeaveTypes" Role="LeaveTypes" Multiplicity="0..1" />
           <End Type="LeaveDBModel.EmployeeLeaves" Role="EmployeeLeaves" Multiplicity="*" /></Association></Schema>
     </edmx:ConceptualModels>
@@ -77,18 +78,21 @@
           <EntitySetMapping Name="LeaveTypes">
             <EntityTypeMapping TypeName="IsTypeOf(LeaveDBModel.LeaveTypes)">
               <MappingFragment StoreEntitySet="LeaveTypes">
-                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LeaveTypeId" ColumnName="LeaveTypeId" />
                 <ScalarProperty Name="LeaveType" ColumnName="LeaveType" />
-                <ScalarProperty Name="LeaveTypeId" ColumnName="LeaveTypeId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="EmployeeLeaves">
             <EntityTypeMapping TypeName="IsTypeOf(LeaveDBModel.EmployeeLeaves)">
               <MappingFragment StoreEntitySet="EmployeeLeaves">
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
-                <ScalarProperty Name="EmployeeLeaveId" ColumnName="EmployeeLeaveId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <AssociationSetMapping Name="fk_LeaveTypes" TypeName="LeaveDBModel.fk_LeaveTypes" StoreEntitySet="EmployeeLeaves">
+                <ScalarProperty Name="EmployeeleaveId" ColumnName="EmployeeleaveId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_EmployeeLeaves_LeaveTypes" TypeName="LeaveDBModel.FK_EmployeeLeaves_LeaveTypes" StoreEntitySet="EmployeeLeaves">
             <EndProperty Name="EmployeeLeaves">
-              <ScalarProperty Name="EmployeeLeaveId" ColumnName="EmployeeLeaveId" /></EndProperty>
+              <ScalarProperty Name="EmployeeleaveId" ColumnName="EmployeeleaveId" /></EndProperty>
             <EndProperty Name="LeaveTypes">
               <ScalarProperty Name="LeaveTypeId" ColumnName="LeaveTypeId" /></EndProperty>
             <Condition ColumnName="LeaveTypeId" IsNull="false" /></AssociationSetMapping></EntityContainerMapping>
@@ -109,12 +113,11 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="LeaveModel">
-        <EntityTypeShape EntityType="LeaveDBModel.LeaveTypes" Width="1.5" PointX="2.25" PointY="0.625" Height="1.787985026041667" />
-        <EntityTypeShape EntityType="LeaveDBModel.EmployeeLeaves" Width="1.5" PointX="4.5" PointY="4" Height="1.7879850260416674" />
-        <AssociationConnector Association="LeaveDBModel.fk_LeaveTypes" >
-          <ConnectorPoint PointX="3" PointY="2.412985026041667" />
-          <ConnectorPoint PointX="3" PointY="4.8939925130208337" />
-          <ConnectorPoint PointX="4.5" PointY="4.8939925130208337" /></AssociationConnector></Diagram></edmx:Diagrams>
+      <Diagram Name="LeaveDB">
+        <EntityTypeShape EntityType="LeaveDBModel.LeaveTypes" Width="1.5" PointX="0.75" PointY="0.875" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeaveDBModel.EmployeeLeaves" Width="1.5" PointX="3" PointY="0.875" Height="1.787985026041667" />
+        <AssociationConnector Association="LeaveDBModel.FK_EmployeeLeaves_LeaveTypes" >
+          <ConnectorPoint PointX="2.25" PointY="1.7689925130208335" />
+          <ConnectorPoint PointX="3" PointY="1.7689925130208335" /></AssociationConnector></Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

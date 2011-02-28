@@ -9,11 +9,11 @@
 //------------------------------------------------------------------------------
 
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("LeaveDBModel", "fk_LeaveTypes", "LeaveTypes", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LeaveSystemEx.LeaveTypes), "EmployeeLeaves", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LeaveSystemEx.EmployeeLeaves))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("LeaveDBModel", "FK_EmployeeLeaves_LeaveTypes", "LeaveTypes", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LeaveSystemEx.Model.LeaveTypes), "EmployeeLeaves", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LeaveSystemEx.Model.EmployeeLeaves))]
 
 // Original file name:
-// Generation date: 2/17/2011 11:30:31 PM
-namespace LeaveSystemEx
+// Generation date: 2/28/2011 8:17:46 PM
+namespace LeaveSystemEx.Model
 {
     
     /// <summary>
@@ -184,7 +184,7 @@ namespace LeaveSystemEx
         /// <summary>
         /// There are no comments for EmployeeLeaves in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("LeaveDBModel", "fk_LeaveTypes", "EmployeeLeaves")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("LeaveDBModel", "FK_EmployeeLeaves_LeaveTypes", "EmployeeLeaves")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -192,13 +192,13 @@ namespace LeaveSystemEx
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<EmployeeLeaves>("LeaveDBModel.fk_LeaveTypes", "EmployeeLeaves");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<EmployeeLeaves>("LeaveDBModel.FK_EmployeeLeaves_LeaveTypes", "EmployeeLeaves");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<EmployeeLeaves>("LeaveDBModel.fk_LeaveTypes", "EmployeeLeaves", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<EmployeeLeaves>("LeaveDBModel.FK_EmployeeLeaves_LeaveTypes", "EmployeeLeaves", value);
                 }
             }
         }
@@ -207,7 +207,7 @@ namespace LeaveSystemEx
     /// There are no comments for LeaveDBModel.EmployeeLeaves in the schema.
     /// </summary>
     /// <KeyProperties>
-    /// EmployeeLeaveId
+    /// EmployeeleaveId
     /// </KeyProperties>
     [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="LeaveDBModel", Name="EmployeeLeaves")]
     [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
@@ -217,36 +217,36 @@ namespace LeaveSystemEx
         /// <summary>
         /// Create a new EmployeeLeaves object.
         /// </summary>
-        /// <param name="employeeLeaveId">Initial value of EmployeeLeaveId.</param>
-        public static EmployeeLeaves CreateEmployeeLeaves(int employeeLeaveId)
+        /// <param name="employeeleaveId">Initial value of EmployeeleaveId.</param>
+        public static EmployeeLeaves CreateEmployeeLeaves(int employeeleaveId)
         {
             EmployeeLeaves employeeLeaves = new EmployeeLeaves();
-            employeeLeaves.EmployeeLeaveId = employeeLeaveId;
+            employeeLeaves.EmployeeleaveId = employeeleaveId;
             return employeeLeaves;
         }
         /// <summary>
-        /// There are no comments for Property EmployeeLeaveId in the schema.
+        /// There are no comments for Property EmployeeleaveId in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public int EmployeeLeaveId
+        public int EmployeeleaveId
         {
             get
             {
-                return this._EmployeeLeaveId;
+                return this._EmployeeleaveId;
             }
             set
             {
-                this.OnEmployeeLeaveIdChanging(value);
-                this.ReportPropertyChanging("EmployeeLeaveId");
-                this._EmployeeLeaveId = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("EmployeeLeaveId");
-                this.OnEmployeeLeaveIdChanged();
+                this.OnEmployeeleaveIdChanging(value);
+                this.ReportPropertyChanging("EmployeeleaveId");
+                this._EmployeeleaveId = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("EmployeeleaveId");
+                this.OnEmployeeleaveIdChanged();
             }
         }
-        private int _EmployeeLeaveId;
-        partial void OnEmployeeLeaveIdChanging(int value);
-        partial void OnEmployeeLeaveIdChanged();
+        private int _EmployeeleaveId;
+        partial void OnEmployeeleaveIdChanging(int value);
+        partial void OnEmployeeleaveIdChanged();
         /// <summary>
         /// There are no comments for Property EmployeeId in the schema.
         /// </summary>
@@ -296,7 +296,7 @@ namespace LeaveSystemEx
         /// <summary>
         /// There are no comments for LeaveTypes in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("LeaveDBModel", "fk_LeaveTypes", "LeaveTypes")]
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("LeaveDBModel", "FK_EmployeeLeaves_LeaveTypes", "LeaveTypes")]
         [global::System.Xml.Serialization.XmlIgnoreAttribute()]
         [global::System.Xml.Serialization.SoapIgnoreAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
@@ -304,11 +304,11 @@ namespace LeaveSystemEx
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<LeaveTypes>("LeaveDBModel.fk_LeaveTypes", "LeaveTypes").Value;
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<LeaveTypes>("LeaveDBModel.FK_EmployeeLeaves_LeaveTypes", "LeaveTypes").Value;
             }
             set
             {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<LeaveTypes>("LeaveDBModel.fk_LeaveTypes", "LeaveTypes").Value = value;
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<LeaveTypes>("LeaveDBModel.FK_EmployeeLeaves_LeaveTypes", "LeaveTypes").Value = value;
             }
         }
         /// <summary>
@@ -320,13 +320,13 @@ namespace LeaveSystemEx
         {
             get
             {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<LeaveTypes>("LeaveDBModel.fk_LeaveTypes", "LeaveTypes");
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<LeaveTypes>("LeaveDBModel.FK_EmployeeLeaves_LeaveTypes", "LeaveTypes");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<LeaveTypes>("LeaveDBModel.fk_LeaveTypes", "LeaveTypes", value);
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<LeaveTypes>("LeaveDBModel.FK_EmployeeLeaves_LeaveTypes", "LeaveTypes", value);
                 }
             }
         }
