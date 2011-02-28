@@ -6,6 +6,7 @@ using System.Collections;
 using System.Web.Security;
 using System.Configuration;
 using EmployeeAdapter;
+using LeaveAdapter;
 //using EmployeeSystemEx;
 namespace SynergyRMS.Models
 {
@@ -1667,5 +1668,41 @@ namespace SynergyRMS.Models
         //}
         #endregion
 
+
+        #region Leave Management
+
+        public static List<EmployeeLeaveEntity> GetEmployeeleave(Guid username)
+        {
+            List<EmployeeLeaveEntity> entityList = new List<EmployeeLeaveEntity>();
+            if (IsLeaveSystemExternal())
+            {
+                ExternalLeaveManagement leaveMgmt = new ExternalLeaveManagement();
+                entityList= leaveMgmt.GetEmployeeLeaveList(username);
+
+
+            }
+            else
+            {
+                SynergyLeaveManagement leaveManagement = new SynergyLeaveManagement();
+                entityList=leaveManagement.GetEmployeeLeaveList(username);
+
+            }
+            return entityList;
+        }
+
+
+      
+
+        public static List< LM_EmployeeLeave> GetEmployeeLeaveList(Guid name)
+        {
+            //aspnet_Users user = null;
+
+            var userQuery = from p in GetSynegyRMSInstance().LM_EmployeeLeave
+                            where p.aspnet_Users.UserId == name
+                            select p;
+
+            return userQuery.ToList(); ;
+        }
+        #endregion
     }
 }
