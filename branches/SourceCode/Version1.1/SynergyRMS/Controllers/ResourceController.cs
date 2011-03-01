@@ -697,6 +697,33 @@ namespace SynergyRMS.Controllers
             return View("EditUser");
         }
 
+        public ActionResult PasswordReset(string id)
+        {
+            
+            MembershipUser edituser = Membership.GetUser(new Guid(id));
+            try
+            {
+
+                if (edituser != null)
+                {
+                    string newpwd = edituser.ResetPassword();
+                    ViewData["resetpwd"] = newpwd;
+                    ViewData["status"] = "Success";
+                    ViewData["msg"] = "Password reset.";
+                }
+            }
+            catch (Exception)
+            {
+                ViewData["status"] = "Error";
+                ViewData["msg"] = "Error in User information update.";
+                
+            }
+            
+            ViewData["EditUser"] = edituser;
+            ViewData["RoleList"] = GetAllRoles();
+            return View("EditUser");
+        }
+
 
 
         public ActionResult AssignRolesEditPermission()
