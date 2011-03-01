@@ -19,7 +19,8 @@
           </Key>
           <Property Name="EmployeeleaveId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="EmployeeId" Type="nvarchar" MaxLength="50" />
-          <Property Name="Date" Type="datetime" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
           <Property Name="LeaveTypeId" Type="int" />
         </EntityType>
         <EntityType Name="LeaveTypes">
@@ -61,7 +62,8 @@
           </Key>
           <Property Name="EmployeeleaveId" Type="Int32" Nullable="false" />
           <Property Name="EmployeeId" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Date" Type="DateTime" />
+          <Property Name="StartDate" Type="DateTime" />
+          <Property Name="EndDate" Type="DateTime" />
           <NavigationProperty Name="LeaveTypes" Relationship="LeaveDBModel.FK_EmployeeLeaves_LeaveTypes" FromRole="EmployeeLeaves" ToRole="LeaveTypes" />
         </EntityType>
         <EntityType Name="LeaveTypes">
@@ -88,7 +90,8 @@
               <MappingFragment StoreEntitySet="EmployeeLeaves">
                 <ScalarProperty Name="EmployeeleaveId" ColumnName="EmployeeleaveId" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -129,10 +132,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram Name="LeaveDB">
-        <EntityTypeShape EntityType="LeaveDBModel.EmployeeLeaves" Width="1.5" PointX="3" PointY="0.875" Height="1.787985026041667" IsExpanded="true" />
-        <EntityTypeShape EntityType="LeaveDBModel.LeaveTypes" Width="1.5" PointX="0.75" PointY="0.875" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeaveDBModel.EmployeeLeaves" Width="1.5" PointX="3" PointY="0.875" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeaveDBModel.LeaveTypes" Width="1.5" PointX="0.75" PointY="1" Height="1.7879850260416668" IsExpanded="true" />
         <AssociationConnector Association="LeaveDBModel.FK_EmployeeLeaves_LeaveTypes" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="1.7689925130208335" />
-          <ConnectorPoint PointX="3" PointY="1.7689925130208335" /></AssociationConnector></Diagram></edmx:Diagrams>
+          <ConnectorPoint PointX="2.25" PointY="1.8939925130208333" />
+          <ConnectorPoint PointX="3" PointY="1.8939925130208333" /></AssociationConnector></Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
