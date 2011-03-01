@@ -12,7 +12,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("LeaveDBModel", "FK_EmployeeLeaves_LeaveTypes", "LeaveTypes", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LeaveSystemEx.LeaveTypes), "EmployeeLeaves", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LeaveSystemEx.EmployeeLeaves))]
 
 // Original file name:
-// Generation date: 3/1/2011 1:30:10 AM
+// Generation date: 3/1/2011 7:45:25 PM
 namespace LeaveSystemEx
 {
     
@@ -159,28 +159,51 @@ namespace LeaveSystemEx
         partial void OnEmployeeIdChanging(string value);
         partial void OnEmployeeIdChanged();
         /// <summary>
-        /// There are no comments for Property Date in the schema.
+        /// There are no comments for Property StartDate in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Nullable<global::System.DateTime> Date
+        public global::System.Nullable<global::System.DateTime> StartDate
         {
             get
             {
-                return this._Date;
+                return this._StartDate;
             }
             set
             {
-                this.OnDateChanging(value);
-                this.ReportPropertyChanging("Date");
-                this._Date = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("Date");
-                this.OnDateChanged();
+                this.OnStartDateChanging(value);
+                this.ReportPropertyChanging("StartDate");
+                this._StartDate = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("StartDate");
+                this.OnStartDateChanged();
             }
         }
-        private global::System.Nullable<global::System.DateTime> _Date;
-        partial void OnDateChanging(global::System.Nullable<global::System.DateTime> value);
-        partial void OnDateChanged();
+        private global::System.Nullable<global::System.DateTime> _StartDate;
+        partial void OnStartDateChanging(global::System.Nullable<global::System.DateTime> value);
+        partial void OnStartDateChanged();
+        /// <summary>
+        /// There are no comments for Property EndDate in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Nullable<global::System.DateTime> EndDate
+        {
+            get
+            {
+                return this._EndDate;
+            }
+            set
+            {
+                this.OnEndDateChanging(value);
+                this.ReportPropertyChanging("EndDate");
+                this._EndDate = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("EndDate");
+                this.OnEndDateChanged();
+            }
+        }
+        private global::System.Nullable<global::System.DateTime> _EndDate;
+        partial void OnEndDateChanging(global::System.Nullable<global::System.DateTime> value);
+        partial void OnEndDateChanged();
         /// <summary>
         /// There are no comments for LeaveTypes in the schema.
         /// </summary>
