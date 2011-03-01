@@ -39,7 +39,7 @@ namespace LeaveSystemEx
           {
               var employeeLeaveQuery = from l in GetLeaveDBEntity().EmployeeLeaves
                                        //where ((l.Date >= startDate) &&(l.Date <= endDate))
-                                       //where l.EmployeeId == userid
+                                       where l.EmployeeId == userid
                               select l;
 
                 leaves = employeeLeaveQuery.ToList();
@@ -64,7 +64,10 @@ namespace LeaveSystemEx
       {
           EmployeeLeaveEntity entity = new EmployeeLeaveEntity();
 
-          entity.leaveDate= (DateTime) employee.Date;
+          entity.startDate = (DateTime)employee.StartDate == null ? DateTime.Now : (DateTime)employee.StartDate;
+          entity.endDate = (DateTime)employee.EndDate == null ? DateTime.Now : (DateTime)employee.EndDate;
+            employee.LeaveTypesReference.Load();
+            entity.description = employee.LeaveTypes.Description;
           //entity. = employee.Email == null ? "" : employee.Email;
           //entity.ExternalId = employee.NIC == null ? "" : employee.NIC;
           //entity.FirstName = employee.FirstName == null ? "" : employee.FirstName;
