@@ -665,17 +665,17 @@ namespace SynergyRMS.Controllers
                         profile.SetPropertyValue("Phone", form["txtphone"].ToString());
                         profile.Save();
 
-                        List<string> ResourceInfo = new List<string>();
+                        //List<string> ResourceInfo = new List<string>();
 
-                        ResourceInfo.Add(form["txtfirstname"].ToString());
-                        ResourceInfo.Add(form["txtusername"].ToString());
-                        ResourceInfo.Add(form["txtpwd"].ToString());
-                        ResourceInfo.Add(form["txtemail"].ToString());
-                        ResourceInfo.Add(form["ddRoles"].ToString());
+                        //ResourceInfo.Add(form["txtfirstname"].ToString());
+                        //ResourceInfo.Add(edituser.UserName);
+                        //ResourceInfo.Add(form["txtpwd"].ToString());
+                        //ResourceInfo.Add(form["txtemail"].ToString());
+                        //ResourceInfo.Add(form["ddRoles"].ToString());
 
-                        SendNotificationWhenAccountUpdated(edituser.Email, ResourceInfo);
+                        //SendNotificationWhenAccountUpdated(edituser.Email, ResourceInfo);
 
-                        ResourceInfo = null;
+                        //ResourceInfo = null;
 
                         ViewData["EditUser"] = edituser;
 
