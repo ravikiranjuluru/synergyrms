@@ -1,4 +1,4 @@
-<%@ Page language="c#" Debug="true"%>
+   <%@ Page language="c#" Debug="true"%>
 <%@ Import Namespace ="SynergyRMS.Models" %>
 <script language="c#" runat="server">
 /// Uses new ASP.NET style scripting with event Page_Load, uses OleDbDataReader and OleDbCommand to access database
