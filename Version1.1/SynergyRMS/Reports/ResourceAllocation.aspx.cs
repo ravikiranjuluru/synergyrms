@@ -38,7 +38,7 @@ namespace SynergyRMS.Reports
             DateTime endDate = Convert.ToDateTime(txtEndDate.Text);
 
 
-            //SynergyService.MaxAllocationValidation(userId, startDate, endDate, 60, 0);
+           // SynergyService.MaxAllocationValidation(userId, startDate, endDate, 60, 0);
 
            // SynergyService.DeleteAssignUsersfromProject(20, "jeevantha");
           // List<PM_ProjectResources> aa=   SynergyService.GetAllProjectResoucesByGivenPeriod(startDate, endDate);
