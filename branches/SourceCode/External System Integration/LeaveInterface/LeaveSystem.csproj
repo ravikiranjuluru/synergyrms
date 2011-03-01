@@ -74,6 +74,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LeaveDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="LeaveDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeaveDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LeaveSystem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,6 +126,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LeaveDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="LeaveDBDataSet.xsc">
+      <DependentUpon>LeaveDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LeaveDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LeaveDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LeaveDBDataSet.xss">
+      <DependentUpon>LeaveDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -137,8 +153,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="LeaveDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>LeaveDB.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
