@@ -717,8 +717,14 @@ namespace SynergyRMS.Models
             foreach (PM_ProjectResources resource in projectResourceList)
             {
                 resource.aspnet_UsersReference.Load();
-               
-                userList.Add(Membership.GetUser(resource.aspnet_Users.UserName));
+                try
+                {
+                    userList.Add(Membership.GetUser(resource.aspnet_Users.UserName));
+                }
+                catch
+                {
+
+                }
             }
 
             return userList;
@@ -738,7 +744,7 @@ namespace SynergyRMS.Models
 
                 IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
                                                                where p.PM_Projects.ProjectId == projectId
-                                                               select p;
+                                                               select  p;
 
                 ResList = projectQuery.ToList();
 
