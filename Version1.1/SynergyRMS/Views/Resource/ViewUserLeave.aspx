@@ -373,13 +373,13 @@ foreach (EmployeeLeaveEntity leave in (List<EmployeeLeaveEntity>)ViewData["UserL
                 
                 </td>
             <td headers="pdesc" class="oddrow-mdl" align="left" style="width: 22%">
-               
+                 <%= leave.description    %>
             </td>
             <td headers="psdate" class="oddrow-mdl" align="left" style="width: 15%">
-                <%=String.Format("{0:ddd, MMM d, yyyy}", leave.leaveDate.Date)%>
+                <%=String.Format("{0:ddd, MMM d, yyyy}", leave.startDate.Date)%>
             </td>
             <td headers="pedate" class="oddrow-mdl" align="left" style="width: 15%">
-               <%= leave.description%>
+               <%= String.Format("{0:ddd, MMM d, yyyy}", leave.endDate.Date)    %>
             </td>
             
       
