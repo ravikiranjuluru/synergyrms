@@ -37,7 +37,19 @@
                         <% if (status == "Success")
                            { %>
                         <div id="msgsuccess" class="success-msg">
-                            <%= msg%></div>
+                            <% if (ViewData["resetpwd"] != null)
+                               {
+                                   var pwd = ViewData["resetpwd"].ToString();
+                                   %>
+                            User new password is <strong><%=pwd%></strong>
+                            <%}
+                               else
+                               {%>
+                            <%= msg%>
+                            
+                            <%} %>
+                            
+                            </div>
                         <%} %>
                         <% if (status == "Error")
                            { %>
@@ -121,7 +133,7 @@
                                         Reset Password:
                                     </td>
                                     <td valign="middle" align="left" class="formDetail">
-                                         <%=Html.ActionLink("Reset Password", "ResetPassword", "Resource", new { @id = edituser.UserName }, null)%>   
+                                         <%=Html.ActionLink("Reset Password", "PasswordReset", "Resource", new { @id = edituser.ProviderUserKey }, null)%>   
                                     </td>
                                 </tr>
                                
