@@ -19,8 +19,12 @@
                MembershipUser edituser = (MembershipUser)ViewData["EditUser"];
                ProfileCommon Userprofile = Profile.GetProfile(edituser.UserName);
                string userkey = edituser.ProviderUserKey.ToString();
+               
+               
+               
                 %>
                 <input type="hidden" name="hdnid" value="<%=userkey%>">
+              
     <div class="formBody" id="masterpage_divBody">
         <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border-collapse: collapse;"
             id="masterPage_tblFormContentRoot">
@@ -113,8 +117,9 @@
                                         NIC:
                                     </td>
                                     <td valign="middle" align="left" class="formDetail">
-                                        <input type="text" maxlength="30" size="30" class="textBox" id="Text1" 
-                                        value="<%=ViewData["NIC"]==null?"":ViewData["NIC"].ToString()%>" name="txtphone" disabled="disabled">
+                                        <input type="text" maxlength="30" size="30" class="textBox" id="txtnic" 
+                                        value="<%=ViewData["NIC"]==null?"":ViewData["NIC"].ToString()%>" name="txtnic" disabled="disabled">
+                                          <input type="hidden" name="hdnic" value="<%=ViewData["NIC"]==null?"":ViewData["NIC"].ToString()%>">
                                     </td>
                                 </tr>
                                 
@@ -126,6 +131,29 @@
                                        <%=Html.DropDownList("ddRoles", (SelectList)ViewData["RoleList"],new { @class = "comboBox" })%> 
                                     </td>
                                 </tr>
+                                    <tr>
+                                    <td valign="middle" align="right" class="formDetailDark">
+                                        Department:
+                                    </td>
+                                    <td valign="middle" align="left" class="formDetail">
+                                     <%if (ViewData["DepartmentList"] != null)
+                                                          { %>
+                                                            <%=Html.DropDownList("ddlDepartments", (SelectList)ViewData["DepartmentList"], new { @class = "comboBox" })%> 
+                                                            
+                                                            <%}
+                                                          else
+                                                          {
+                                                              var name = "";
+                                                          }
+                                                              %>
+                                                            
+                                    
+                                    
+                                    </td>
+                                </tr>
+                                
+                                
+                                
                                 <tr>
                                     <td valign="middle" align="right" class="formDetailDark">
                                         <label for="txtpwd">
