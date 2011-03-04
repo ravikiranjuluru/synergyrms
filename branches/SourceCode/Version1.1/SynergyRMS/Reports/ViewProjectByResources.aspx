@@ -31,25 +31,11 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td colspan="2">
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td>
+                <td align="left">
                     <asp:Label ID="lblUser" runat="server" Text="Select Resource :" 
                         Font-Bold="True"></asp:Label>
-                &nbsp;</td>
-                <td>
+              </td>
+                <td align="left">
                     <asp:DropDownList ID="ddlUser" runat="server" DataSourceID="ResourceSource" DataTextField="FullName" DataValueField="UserId">
                    
                     </asp:DropDownList>
@@ -58,9 +44,17 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
+                <td align="left">
+                    &nbsp;</td>
+                <td align="left">
                     &nbsp;</td>
                 <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td align="left">
                     <asp:Button ID="btnViewReport" runat="server" onclick="btnViewReport_Click" 
                         Text="View Report" />
                     <asp:SqlDataSource ID="ResourceSource" runat="server" 
@@ -80,13 +74,8 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
-                  <%--  <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" 
-                        SelectMethod="GetData" 
-                        TypeName="SynergyRMS.ViewProjectByResourceTableAdapters.R_GetProjectsByResourcesIdTableAdapter">
-                    </asp:ObjectDataSource>--%>
-                </td>
-                <td>
+               
+                <td colspan="2" align="center">
                  <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
                         Font-Size="8pt" Height="400px" Width="650px">
                         <LocalReport ReportPath="Reports\ViewProjectByResource.rdlc">
