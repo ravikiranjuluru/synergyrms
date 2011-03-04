@@ -314,6 +314,8 @@ namespace SynergyRMS.Reports {
             
             private global::System.Data.DataColumn columnRoleDescription;
             
+            private global::System.Data.DataColumn columnDepartmentName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public R_GetProjectResourcesByProjectIdDataTable() {
                 this.TableName = "R_GetProjectResourcesByProjectId";
@@ -415,6 +417,13 @@ namespace SynergyRMS.Reports {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn DepartmentNameColumn {
+                get {
+                    return this.columnDepartmentName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -443,7 +452,7 @@ namespace SynergyRMS.Reports {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectResourcesByProjectIdRow AddR_GetProjectResourcesByProjectIdRow(string ProjectName, System.Guid UserId, System.DateTime AllocatedStartDate, System.DateTime AllocatedEndDate, int Effort, string firstname, string lastname, string phone, string RoleDescription) {
+            public R_GetProjectResourcesByProjectIdRow AddR_GetProjectResourcesByProjectIdRow(string ProjectName, System.Guid UserId, System.DateTime AllocatedStartDate, System.DateTime AllocatedEndDate, int Effort, string firstname, string lastname, string phone, string RoleDescription, string DepartmentName) {
                 R_GetProjectResourcesByProjectIdRow rowR_GetProjectResourcesByProjectIdRow = ((R_GetProjectResourcesByProjectIdRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -455,7 +464,8 @@ namespace SynergyRMS.Reports {
                         firstname,
                         lastname,
                         phone,
-                        RoleDescription};
+                        RoleDescription,
+                        DepartmentName};
                 rowR_GetProjectResourcesByProjectIdRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowR_GetProjectResourcesByProjectIdRow);
                 return rowR_GetProjectResourcesByProjectIdRow;
@@ -485,6 +495,7 @@ namespace SynergyRMS.Reports {
                 this.columnlastname = base.Columns["lastname"];
                 this.columnphone = base.Columns["phone"];
                 this.columnRoleDescription = base.Columns["RoleDescription"];
+                this.columnDepartmentName = base.Columns["DepartmentName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -509,6 +520,8 @@ namespace SynergyRMS.Reports {
                 base.Columns.Add(this.columnphone);
                 this.columnRoleDescription = new global::System.Data.DataColumn("RoleDescription", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRoleDescription);
+                this.columnDepartmentName = new global::System.Data.DataColumn("DepartmentName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartmentName);
                 this.columnProjectId.AutoIncrement = true;
                 this.columnProjectId.AutoIncrementSeed = -1;
                 this.columnProjectId.AutoIncrementStep = -1;
@@ -526,6 +539,8 @@ namespace SynergyRMS.Reports {
                 this.columnphone.ReadOnly = true;
                 this.columnphone.MaxLength = 200;
                 this.columnRoleDescription.MaxLength = 50;
+                this.columnDepartmentName.AllowDBNull = false;
+                this.columnDepartmentName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1116,6 +1131,16 @@ namespace SynergyRMS.Reports {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string DepartmentName {
+                get {
+                    return ((string)(this[this.tableR_GetProjectResourcesByProjectId.DepartmentNameColumn]));
+                }
+                set {
+                    this[this.tableR_GetProjectResourcesByProjectId.DepartmentNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsEffortNull() {
                 return this.IsNull(this.tableR_GetProjectResourcesByProjectId.EffortColumn);
             }
@@ -1467,6 +1492,7 @@ namespace SynergyRMS.Reports.ProjectResourcesTableAdapters {
             tableMapping.ColumnMappings.Add("lastname", "lastname");
             tableMapping.ColumnMappings.Add("phone", "phone");
             tableMapping.ColumnMappings.Add("RoleDescription", "RoleDescription");
+            tableMapping.ColumnMappings.Add("DepartmentName", "DepartmentName");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
