@@ -755,6 +755,7 @@ namespace SynergyRMS.Models
                     objResources.aspnet_Users.aspnet_MembershipReference.Load();
                     objResources.aspnet_Users.aspnet_ProfileReference.Load();
                     objResources.PM_ProjectRolesReference.Load();
+                   
                     //objResources.UM_UsersReference.Load();
                     //int aa = single1.T_User.UserId;
                 }
@@ -1665,6 +1666,20 @@ namespace SynergyRMS.Models
             }
             return false;
         }
+
+
+        public static void UpdateEmployee(EM_Employee employess)
+        {
+            try
+            {
+                int rowsAffected = GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         //public static EmployeeEntities GetEmployeeDBInstance()
         //{
 
@@ -1673,7 +1688,6 @@ namespace SynergyRMS.Models
         //    return DbEntity;
         //}
         #endregion
-
 
         #region Leave Management
 
@@ -1710,5 +1724,79 @@ namespace SynergyRMS.Models
             return userQuery.ToList(); ;
         }
         #endregion
+
+        #region Departments
+
+
+        public static List<EM_Departments> GetDepartmentList()
+        {
+            try
+            {
+                return GetSynegyRMSInstance().EM_Departments.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+
+        public static EM_Departments GetDepartmentbyId(int deptId)
+        {
+            try
+            {
+                EM_Departments selectedDept = null;
+                var DeptQuery = from d in GetSynegyRMSInstance().EM_Departments
+                                       where d.DepartmentId==deptId
+                                       select d;
+
+                selectedDept = DeptQuery.First();
+
+                return selectedDept;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static void SaveDepartment(EM_Departments department)
+        {
+            try
+            {
+                GetSynegyRMSInstance().AddToEM_Departments(department);
+               GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        public static EM_Employee GetEmployeebyEmpId(string empId)
+        {
+            try
+            {
+                EM_Employee selectedemp = null;
+                var empQuery = from p in GetSynegyRMSInstance().EM_Employee
+                               where p.ExternalId == empId
+                                   select p;
+
+                selectedemp = empQuery.First();
+
+                return selectedemp;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+
+        #endregion
+
     }
 }
