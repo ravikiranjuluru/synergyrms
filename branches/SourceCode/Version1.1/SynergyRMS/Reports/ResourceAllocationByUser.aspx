@@ -26,6 +26,11 @@
            });
 
     </script>
+    <style type="text/css">
+        .style1
+        {
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -44,7 +49,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="style1">
                     &nbsp;
                 </td>
                 <td>
@@ -55,10 +60,10 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;<asp:Label ID="Label1" runat="server" Text="Resource"></asp:Label>
+                <td align="left">
+                   <asp:Label ID="Label1" runat="server" Text="Resource"></asp:Label>
                 </td>
-                <td>
+                <td align="left">
                     <asp:DropDownList ID="resourceddl" runat="server" DataSourceID="ResourceSource" DataTextField="FullName" DataValueField="UserId" >
            
         </asp:DropDownList>
@@ -68,9 +73,9 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td align="left">
                     &nbsp;</td>
-                <td>
+                <td align="left">
                     <asp:SqlDataSource ID="ResourceSource" runat="server" 
                         ConnectionString="<%$ ConnectionStrings:synergydbadminConnectionString %>" 
                         SelectCommand="R_LoadAllUsers" SelectCommandType="StoredProcedure">
@@ -80,17 +85,17 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
+                <td align="left">
                     <asp:Label ID="lblFramDate" runat="server" Text="From Date :"></asp:Label>
                 </td>
-                <td>
+                <td align="left"> 
                     <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
                 </td>
                 <td>
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
+                <td class="style1">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -98,17 +103,17 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
+                <td align="left">
                     <asp:Label ID="lblToDate" runat="server" Text="To Date :"></asp:Label>
                 </td>
-                <td>
+                <td align="left">
                     <asp:TextBox ID="txtEndDate" runat="server"></asp:TextBox>
                 </td>
                 <td>
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
+                <td class="style1">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -116,9 +121,9 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
+                <td class="style1">
                     &nbsp;</td>
-                <td>
+                <td align="left">
         <asp:Button ID="Viewbtn" runat="server" onclick="Viewbtn_Click" 
             Text="View Report" />
                 </td>
@@ -126,7 +131,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
+                <td class="style1">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -134,7 +139,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
+                <td class="style1">
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
@@ -142,9 +147,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
-                <td colspan="2">
+                <td  colspan="3">
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
                         Font-Size="8pt" Height="400px" Width="650px">
             <LocalReport ReportPath="Reports\ResourceAllocationByUser.rdlc">
