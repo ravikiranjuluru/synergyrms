@@ -105,6 +105,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Leave\LeaveManagement.aspx.cs">
+      <DependentUpon>LeaveManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Leave\LeaveManagement.aspx.designer.cs">
+      <DependentUpon>LeaveManagement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ExternalEmployeeManagement.cs" />
     <Compile Include="Models\ExternalLeaveManagement.cs" />
@@ -692,6 +699,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LeaveSystemEx.dll.config" />
+    <Content Include="Leave\LeaveManagement.aspx" />
     <EntityDeploy Include="Models\SynergyModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SynergyModel.Designer.cs</LastGenOutput>
