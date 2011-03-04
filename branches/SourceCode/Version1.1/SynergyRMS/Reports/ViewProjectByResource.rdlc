@@ -154,6 +154,10 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
           <DataField>phone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="DepartmentName">
+          <DataField>DepartmentName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>synergydbadminConnectionString</DataSourceName>
@@ -173,6 +177,38 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
   <Width>6.51042in</Width>
   <Body>
     <ReportItems>
+      <Textbox Name="DepartmentName">
+        <rd:DefaultName>DepartmentName</rd:DefaultName>
+        <Top>0.5in</Top>
+        <Width>2.625in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1.125in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!DepartmentName.Value, "ViewProjectByResourceds_R_GetResourceByResourceId")</Value>
+      </Textbox>
+      <Textbox Name="textbox7">
+        <rd:DefaultName>textbox7</rd:DefaultName>
+        <Top>0.5in</Top>
+        <Width>0.875in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Value>Department :</Value>
+      </Textbox>
       <Textbox Name="firstname_1">
         <rd:DefaultName>firstname_1</rd:DefaultName>
         <Top>0.125in</Top>
@@ -207,7 +243,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
       </Textbox>
       <Table Name="table1">
         <DataSetName>ViewProjectByResourceds_R_GetProjectsByResourcesId</DataSetName>
-        <Top>0.625in</Top>
+        <Top>0.875in</Top>
         <TableGroups>
           <TableGroup>
             <Grouping Name="table1_Group1">
@@ -819,7 +855,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
         <Left>0.125in</Left>
       </Table>
     </ReportItems>
-    <Height>2.5in</Height>
+    <Height>2.625in</Height>
   </Body>
   <Language>en-US</Language>
   <PageFooter>
