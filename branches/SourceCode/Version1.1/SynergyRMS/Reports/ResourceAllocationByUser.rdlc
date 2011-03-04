@@ -134,6 +134,10 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
           <DataField>phone</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="DepartmentName">
+          <DataField>DepartmentName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>synergydbadminConnectionString</DataSourceName>
@@ -153,6 +157,38 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
   <Width>5.875in</Width>
   <Body>
     <ReportItems>
+      <Textbox Name="DepartmentName">
+        <rd:DefaultName>DepartmentName</rd:DefaultName>
+        <Top>0.625in</Top>
+        <Width>2in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1.375in</Left>
+        <Height>0.25in</Height>
+        <Value>=First(Fields!DepartmentName.Value, "ViewProjectByResourceds_R_GetResourceByResourceId")</Value>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <rd:DefaultName>textbox4</rd:DefaultName>
+        <Top>0.625in</Top>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Value>Department :</Value>
+      </Textbox>
       <Textbox Name="firstname_1">
         <rd:DefaultName>firstname_1</rd:DefaultName>
         <Top>0.25in</Top>
@@ -187,7 +223,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
       </Textbox>
       <Table Name="table1">
         <DataSetName>ResourceAllocationByUserds_R_GetResourceAllocationByUserIdForGivenPeriod</DataSetName>
-        <Top>1.90476cm</Top>
+        <Top>2.85714cm</Top>
         <TableGroups>
           <TableGroup>
             <Grouping Name="table1_Group1">
@@ -485,7 +521,7 @@ CStr(Fields!effort.Value) &amp; "%")</Value>
         <Left>0.31746cm</Left>
       </Table>
     </ReportItems>
-    <Height>2.125in</Height>
+    <Height>2.25in</Height>
   </Body>
   <Language>en-US</Language>
   <PageFooter>
