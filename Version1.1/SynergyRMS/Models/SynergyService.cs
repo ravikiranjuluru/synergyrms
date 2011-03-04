@@ -1710,7 +1710,10 @@ namespace SynergyRMS.Models
             return entityList;
         }
 
+        public static void AddLeave(Guid useId, DateTime from, DateTime toDate)
+        {
 
+        }
       
 
         public static List< LM_EmployeeLeave> GetEmployeeLeaveList(Guid name)
