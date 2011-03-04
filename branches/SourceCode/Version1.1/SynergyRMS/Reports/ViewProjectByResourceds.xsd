@@ -53,6 +53,7 @@
               <Mapping SourceColumn="firstname" DataSetColumn="firstname" />
               <Mapping SourceColumn="lastname" DataSetColumn="lastname" />
               <Mapping SourceColumn="phone" DataSetColumn="phone" />
+              <Mapping SourceColumn="DepartmentName" DataSetColumn="DepartmentName" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -61,40 +62,40 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ViewProjectByResourceds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="ViewProjectByResourceds" msprop:Generator_UserDSName="ViewProjectByResourceds" msprop:EnableTableAdapterManager="true">
+  <xs:element name="ViewProjectByResourceds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ViewProjectByResourceds" msprop:Generator_DataSetName="ViewProjectByResourceds" msprop:EnableTableAdapterManager="true">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="R_GetProjectsByResourcesId" msprop:Generator_UserTableName="R_GetProjectsByResourcesId" msprop:Generator_RowDeletedName="R_GetProjectsByResourcesIdRowDeleted" msprop:Generator_TableClassName="R_GetProjectsByResourcesIdDataTable" msprop:Generator_RowChangedName="R_GetProjectsByResourcesIdRowChanged" msprop:Generator_RowClassName="R_GetProjectsByResourcesIdRow" msprop:Generator_RowChangingName="R_GetProjectsByResourcesIdRowChanging" msprop:Generator_RowEvArgName="R_GetProjectsByResourcesIdRowChangeEvent" msprop:Generator_RowEvHandlerName="R_GetProjectsByResourcesIdRowChangeEventHandler" msprop:Generator_TablePropName="R_GetProjectsByResourcesId" msprop:Generator_TableVarName="tableR_GetProjectsByResourcesId" msprop:Generator_RowDeletingName="R_GetProjectsByResourcesIdRowDeleting">
+        <xs:element name="R_GetProjectsByResourcesId" msprop:Generator_UserTableName="R_GetProjectsByResourcesId" msprop:Generator_RowDeletedName="R_GetProjectsByResourcesIdRowDeleted" msprop:Generator_RowChangedName="R_GetProjectsByResourcesIdRowChanged" msprop:Generator_RowClassName="R_GetProjectsByResourcesIdRow" msprop:Generator_RowChangingName="R_GetProjectsByResourcesIdRowChanging" msprop:Generator_RowEvArgName="R_GetProjectsByResourcesIdRowChangeEvent" msprop:Generator_RowEvHandlerName="R_GetProjectsByResourcesIdRowChangeEventHandler" msprop:Generator_TableClassName="R_GetProjectsByResourcesIdDataTable" msprop:Generator_TableVarName="tableR_GetProjectsByResourcesId" msprop:Generator_RowDeletingName="R_GetProjectsByResourcesIdRowDeleting" msprop:Generator_TablePropName="R_GetProjectsByResourcesId">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ProjectId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ProjectId" msprop:Generator_ColumnPropNameInRow="ProjectId" msprop:Generator_ColumnVarNameInTable="columnProjectId" msprop:Generator_ColumnPropNameInTable="ProjectIdColumn" type="xs:int" />
-              <xs:element name="ProjectCode" msprop:Generator_UserColumnName="ProjectCode" msprop:Generator_ColumnPropNameInRow="ProjectCode" msprop:Generator_ColumnVarNameInTable="columnProjectCode" msprop:Generator_ColumnPropNameInTable="ProjectCodeColumn">
+              <xs:element name="ProjectId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ProjectId" msprop:Generator_ColumnVarNameInTable="columnProjectId" msprop:Generator_ColumnPropNameInRow="ProjectId" msprop:Generator_ColumnPropNameInTable="ProjectIdColumn" type="xs:int" />
+              <xs:element name="ProjectCode" msprop:Generator_UserColumnName="ProjectCode" msprop:Generator_ColumnVarNameInTable="columnProjectCode" msprop:Generator_ColumnPropNameInRow="ProjectCode" msprop:Generator_ColumnPropNameInTable="ProjectCodeColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ProjectName" msprop:Generator_UserColumnName="ProjectName" msprop:Generator_ColumnPropNameInRow="ProjectName" msprop:Generator_ColumnVarNameInTable="columnProjectName" msprop:Generator_ColumnPropNameInTable="ProjectNameColumn">
+              <xs:element name="ProjectName" msprop:Generator_UserColumnName="ProjectName" msprop:Generator_ColumnVarNameInTable="columnProjectName" msprop:Generator_ColumnPropNameInRow="ProjectName" msprop:Generator_ColumnPropNameInTable="ProjectNameColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ProjectStartDate" msprop:Generator_UserColumnName="ProjectStartDate" msprop:Generator_ColumnPropNameInRow="ProjectStartDate" msprop:Generator_ColumnVarNameInTable="columnProjectStartDate" msprop:Generator_ColumnPropNameInTable="ProjectStartDateColumn" type="xs:dateTime" />
-              <xs:element name="ProjectEndDate" msprop:Generator_UserColumnName="ProjectEndDate" msprop:Generator_ColumnPropNameInRow="ProjectEndDate" msprop:Generator_ColumnVarNameInTable="columnProjectEndDate" msprop:Generator_ColumnPropNameInTable="ProjectEndDateColumn" type="xs:dateTime" />
-              <xs:element name="AllocatedStartDate" msprop:Generator_UserColumnName="AllocatedStartDate" msprop:Generator_ColumnPropNameInRow="AllocatedStartDate" msprop:Generator_ColumnVarNameInTable="columnAllocatedStartDate" msprop:Generator_ColumnPropNameInTable="AllocatedStartDateColumn" type="xs:dateTime" />
-              <xs:element name="AllocatedEndDate" msprop:Generator_UserColumnName="AllocatedEndDate" msprop:Generator_ColumnPropNameInRow="AllocatedEndDate" msprop:Generator_ColumnVarNameInTable="columnAllocatedEndDate" msprop:Generator_ColumnPropNameInTable="AllocatedEndDateColumn" type="xs:dateTime" />
-              <xs:element name="Effort" msprop:Generator_UserColumnName="Effort" msprop:Generator_ColumnPropNameInRow="Effort" msprop:Generator_ColumnVarNameInTable="columnEffort" msprop:Generator_ColumnPropNameInTable="EffortColumn" type="xs:int" minOccurs="0" />
-              <xs:element name="RoleName" msprop:Generator_UserColumnName="RoleName" msprop:Generator_ColumnPropNameInRow="RoleName" msprop:Generator_ColumnVarNameInTable="columnRoleName" msprop:Generator_ColumnPropNameInTable="RoleNameColumn" minOccurs="0">
+              <xs:element name="ProjectStartDate" msprop:Generator_UserColumnName="ProjectStartDate" msprop:Generator_ColumnVarNameInTable="columnProjectStartDate" msprop:Generator_ColumnPropNameInRow="ProjectStartDate" msprop:Generator_ColumnPropNameInTable="ProjectStartDateColumn" type="xs:dateTime" />
+              <xs:element name="ProjectEndDate" msprop:Generator_UserColumnName="ProjectEndDate" msprop:Generator_ColumnVarNameInTable="columnProjectEndDate" msprop:Generator_ColumnPropNameInRow="ProjectEndDate" msprop:Generator_ColumnPropNameInTable="ProjectEndDateColumn" type="xs:dateTime" />
+              <xs:element name="AllocatedStartDate" msprop:Generator_UserColumnName="AllocatedStartDate" msprop:Generator_ColumnVarNameInTable="columnAllocatedStartDate" msprop:Generator_ColumnPropNameInRow="AllocatedStartDate" msprop:Generator_ColumnPropNameInTable="AllocatedStartDateColumn" type="xs:dateTime" />
+              <xs:element name="AllocatedEndDate" msprop:Generator_UserColumnName="AllocatedEndDate" msprop:Generator_ColumnVarNameInTable="columnAllocatedEndDate" msprop:Generator_ColumnPropNameInRow="AllocatedEndDate" msprop:Generator_ColumnPropNameInTable="AllocatedEndDateColumn" type="xs:dateTime" />
+              <xs:element name="Effort" msprop:Generator_UserColumnName="Effort" msprop:Generator_ColumnVarNameInTable="columnEffort" msprop:Generator_ColumnPropNameInRow="Effort" msprop:Generator_ColumnPropNameInTable="EffortColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="RoleName" msprop:Generator_UserColumnName="RoleName" msprop:Generator_ColumnVarNameInTable="columnRoleName" msprop:Generator_ColumnPropNameInRow="RoleName" msprop:Generator_ColumnPropNameInTable="RoleNameColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RoleDescription" msprop:Generator_UserColumnName="RoleDescription" msprop:Generator_ColumnPropNameInRow="RoleDescription" msprop:Generator_ColumnVarNameInTable="columnRoleDescription" msprop:Generator_ColumnPropNameInTable="RoleDescriptionColumn">
+              <xs:element name="RoleDescription" msprop:Generator_UserColumnName="RoleDescription" msprop:Generator_ColumnVarNameInTable="columnRoleDescription" msprop:Generator_ColumnPropNameInRow="RoleDescription" msprop:Generator_ColumnPropNameInTable="RoleDescriptionColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -104,27 +105,34 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="R_GetResourceByResourceId" msprop:Generator_UserTableName="R_GetResourceByResourceId" msprop:Generator_RowDeletedName="R_GetResourceByResourceIdRowDeleted" msprop:Generator_TableClassName="R_GetResourceByResourceIdDataTable" msprop:Generator_RowChangedName="R_GetResourceByResourceIdRowChanged" msprop:Generator_RowClassName="R_GetResourceByResourceIdRow" msprop:Generator_RowChangingName="R_GetResourceByResourceIdRowChanging" msprop:Generator_RowEvArgName="R_GetResourceByResourceIdRowChangeEvent" msprop:Generator_RowEvHandlerName="R_GetResourceByResourceIdRowChangeEventHandler" msprop:Generator_TablePropName="R_GetResourceByResourceId" msprop:Generator_TableVarName="tableR_GetResourceByResourceId" msprop:Generator_RowDeletingName="R_GetResourceByResourceIdRowDeleting">
+        <xs:element name="R_GetResourceByResourceId" msprop:Generator_UserTableName="R_GetResourceByResourceId" msprop:Generator_RowDeletedName="R_GetResourceByResourceIdRowDeleted" msprop:Generator_RowChangedName="R_GetResourceByResourceIdRowChanged" msprop:Generator_RowClassName="R_GetResourceByResourceIdRow" msprop:Generator_RowChangingName="R_GetResourceByResourceIdRowChanging" msprop:Generator_RowEvArgName="R_GetResourceByResourceIdRowChangeEvent" msprop:Generator_RowEvHandlerName="R_GetResourceByResourceIdRowChangeEventHandler" msprop:Generator_TableClassName="R_GetResourceByResourceIdDataTable" msprop:Generator_TableVarName="tableR_GetResourceByResourceId" msprop:Generator_RowDeletingName="R_GetResourceByResourceIdRowDeleting" msprop:Generator_TablePropName="R_GetResourceByResourceId">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="firstname" msdata:ReadOnly="true" msprop:Generator_UserColumnName="firstname" msprop:Generator_ColumnPropNameInRow="firstname" msprop:Generator_ColumnVarNameInTable="columnfirstname" msprop:Generator_ColumnPropNameInTable="firstnameColumn" minOccurs="0">
+              <xs:element name="firstname" msdata:ReadOnly="true" msprop:Generator_UserColumnName="firstname" msprop:Generator_ColumnVarNameInTable="columnfirstname" msprop:Generator_ColumnPropNameInRow="firstname" msprop:Generator_ColumnPropNameInTable="firstnameColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="lastname" msdata:ReadOnly="true" msprop:Generator_UserColumnName="lastname" msprop:Generator_ColumnPropNameInRow="lastname" msprop:Generator_ColumnVarNameInTable="columnlastname" msprop:Generator_ColumnPropNameInTable="lastnameColumn" minOccurs="0">
+              <xs:element name="lastname" msdata:ReadOnly="true" msprop:Generator_UserColumnName="lastname" msprop:Generator_ColumnVarNameInTable="columnlastname" msprop:Generator_ColumnPropNameInRow="lastname" msprop:Generator_ColumnPropNameInTable="lastnameColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="phone" msdata:ReadOnly="true" msprop:Generator_UserColumnName="phone" msprop:Generator_ColumnPropNameInRow="phone" msprop:Generator_ColumnVarNameInTable="columnphone" msprop:Generator_ColumnPropNameInTable="phoneColumn" minOccurs="0">
+              <xs:element name="phone" msdata:ReadOnly="true" msprop:Generator_UserColumnName="phone" msprop:Generator_ColumnVarNameInTable="columnphone" msprop:Generator_ColumnPropNameInRow="phone" msprop:Generator_ColumnPropNameInTable="phoneColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DepartmentName" msprop:Generator_UserColumnName="DepartmentName" msprop:Generator_ColumnPropNameInRow="DepartmentName" msprop:Generator_ColumnVarNameInTable="columnDepartmentName" msprop:Generator_ColumnPropNameInTable="DepartmentNameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -133,9 +141,9 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+    <!--<xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:R_GetProjectsByResourcesId" />
       <xs:field xpath="mstns:ProjectId" />
-    </xs:unique>
+    </xs:unique>-->
   </xs:element>
 </xs:schema>
