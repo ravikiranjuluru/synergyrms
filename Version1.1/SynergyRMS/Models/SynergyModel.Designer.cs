@@ -48,7 +48,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("synergydbadminModel", "aspnet_UsersInRoles", "aspnet_Roles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Roles), "aspnet_Users", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SynergyRMS.Models.aspnet_Users))]
 
 // Original file name:
-// Generation date: 3/1/2011 9:45:43 PM
+// Generation date: 3/4/2011 8:49:45 PM
 namespace SynergyRMS.Models
 {
     
@@ -4275,6 +4275,29 @@ namespace SynergyRMS.Models
         private global::System.Nullable<global::System.DateTime> _Date;
         partial void OnDateChanging(global::System.Nullable<global::System.DateTime> value);
         partial void OnDateChanged();
+        /// <summary>
+        /// There are no comments for Property Description in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description
+        {
+            get
+            {
+                return this._Description;
+            }
+            set
+            {
+                this.OnDescriptionChanging(value);
+                this.ReportPropertyChanging("Description");
+                this._Description = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("Description");
+                this.OnDescriptionChanged();
+            }
+        }
+        private string _Description;
+        partial void OnDescriptionChanging(string value);
+        partial void OnDescriptionChanged();
         /// <summary>
         /// There are no comments for aspnet_Users in the schema.
         /// </summary>
