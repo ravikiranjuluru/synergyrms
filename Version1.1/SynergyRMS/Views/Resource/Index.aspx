@@ -227,6 +227,28 @@
                                                             <%=Html.DropDownList("ddRoles", (SelectList)ViewData["RoleList"], new { @class = "comboBox" })%>
                                                         </td>
                                                     </tr>
+                                                    
+                                                     <tr>
+                                                        <td valign="middle" align="right" style="padding-top: 4px; padding-bottom: 4px;"
+                                                            class="formDetailDark" id="Td1">
+                                                            Department:
+                                                        </td>
+                                                        <td valign="middle" colspan="1" style="padding-top: 4px; padding-bottom: 4px;" class="formDetail">
+                                                        <%if (ViewData["DepartmentList"] != null)
+                                                          { %>
+                                                            <%=Html.DropDownList("ddlDepartments", (SelectList)ViewData["DepartmentList"], new { @class = "comboBox" })%> 
+                                                            
+                                                            <%}
+                                                          else
+                                                          {
+                                                              var name = "";
+                                                          }
+                                                              %>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
                                                             <img height="1" width="180" id="ctl00_phFormContent_ucFormFooter_img1" src="../../Content/images/common/space.gif">
