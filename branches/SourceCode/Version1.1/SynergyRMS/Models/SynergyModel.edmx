@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="synergydbadminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="synergydbadminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityContainer Name="synergydbadminModelStoreContainer">
           <EntitySet Name="aspnet_Applications" EntityType="synergydbadminModel.Store.aspnet_Applications" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="aspnet_Membership" EntityType="synergydbadminModel.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
@@ -399,6 +399,7 @@
           <Property Name="LeaveTypeId" Type="int" Nullable="false" />
           <Property Name="EmployeeId" Type="uniqueidentifier" />
           <Property Name="Date" Type="datetime" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="LM_ExternalId">
           <Key>
@@ -1156,8 +1157,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="synergydbadminModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
@@ -1543,7 +1543,7 @@
           <Property Name="Date" Type="DateTime" />
           <NavigationProperty Name="aspnet_Users" Relationship="synergydbadminModel.FK_LM_EmployeeLeave_aspnet_Users" FromRole="LM_EmployeeLeave" ToRole="aspnet_Users" />
           <NavigationProperty Name="LM_LeaveTypes" Relationship="synergydbadminModel.FK_LM_EmployeeLeave_LM_LeaveTypes" FromRole="LM_EmployeeLeave" ToRole="LM_LeaveTypes" />
-        </EntityType>
+          <Property Name="Description" Type="String" Nullable="true" /></EntityType>
         <EntityType Name="LM_ExternalId">
           <Key>
             <PropertyRef Name="externalId" />
@@ -2201,6 +2201,7 @@
           <EntitySetMapping Name="LM_EmployeeLeave">
             <EntityTypeMapping TypeName="IsTypeOf(synergydbadminModel.LM_EmployeeLeave)">
               <MappingFragment StoreEntitySet="LM_EmployeeLeave">
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="EmployeeLeaveId" ColumnName="EmployeeLeaveId" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
               </MappingFragment>
@@ -2837,7 +2838,7 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="SynergyModel">
+      <Diagram Name="SynergyModel" ZoomLevel="65">
         <EntityTypeShape EntityType="synergydbadminModel.aspnet_Applications" Width="1.5" PointX="0.75" PointY="16.875" Height="2.2496956380208317" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.aspnet_Membership" Width="1.5" PointX="10.5" PointY="16.375" Height="4.5505582682291674" IsExpanded="true" />
         <EntityTypeShape EntityType="synergydbadminModel.aspnet_Paths" Width="1.5" PointX="3" PointY="15.625" Height="1.9210009765625031" IsExpanded="true" />
