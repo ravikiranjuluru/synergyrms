@@ -126,6 +126,10 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
           <DataField>RoleDescription</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="DepartmentName">
+          <DataField>DepartmentName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>synergydbadminConnectionString</DataSourceName>
@@ -296,7 +300,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
       <Table Name="table1">
         <ZIndex>2</ZIndex>
         <DataSetName>ProjectResources_R_GetProjectResourcesByProjectId</DataSetName>
-        <Top>1.375in</Top>
+        <Top>1.5in</Top>
         <TableGroups>
           <TableGroup>
             <Grouping Name="table1_Group1">
@@ -324,6 +328,25 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                           </Style>
                           <CanGrow>true</CanGrow>
                           <Value>=Fields!firstname.Value+" "+Fields!lastname.Value</Value>
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="DepartmentName">
+                          <rd:DefaultName>DepartmentName</rd:DefaultName>
+                          <Style>
+                            <BackgroundColor>WhiteSmoke</BackgroundColor>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value>=Fields!DepartmentName.Value</Value>
                         </Textbox>
                       </ReportItems>
                     </TableCell>
@@ -404,7 +427,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                       </ReportItems>
                     </TableCell>
                   </TableCells>
-                  <Height>0.15625in</Height>
+                  <Height>0.13889in</Height>
                 </TableRow>
                 <TableRow>
                   <TableCells>
@@ -412,6 +435,24 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                       <ReportItems>
                         <Textbox Name="textbox23">
                           <rd:DefaultName>textbox23</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox36">
+                          <rd:DefaultName>textbox36</rd:DefaultName>
                           <Style>
                             <BorderStyle>
                               <Default>Solid</Default>
@@ -499,7 +540,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                       </ReportItems>
                     </TableCell>
                   </TableCells>
-                  <Height>0.1875in</Height>
+                  <Height>0.16667in</Height>
                 </TableRow>
               </TableRows>
             </Header>
@@ -511,6 +552,24 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                       <ReportItems>
                         <Textbox Name="textbox4">
                           <rd:DefaultName>textbox4</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox38">
+                          <rd:DefaultName>textbox38</rd:DefaultName>
                           <Style>
                             <BorderStyle>
                               <Default>Solid</Default>
@@ -598,7 +657,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                       </ReportItems>
                     </TableCell>
                   </TableCells>
-                  <Height>0.15625in</Height>
+                  <Height>0.13889in</Height>
                 </TableRow>
                 <TableRow>
                   <TableCells>
@@ -606,6 +665,24 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                       <ReportItems>
                         <Textbox Name="textbox15">
                           <rd:DefaultName>textbox15</rd:DefaultName>
+                          <Style>
+                            <BorderStyle>
+                              <Default>Solid</Default>
+                            </BorderStyle>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <Value />
+                        </Textbox>
+                      </ReportItems>
+                    </TableCell>
+                    <TableCell>
+                      <ReportItems>
+                        <Textbox Name="textbox39">
+                          <rd:DefaultName>textbox39</rd:DefaultName>
                           <Style>
                             <BorderStyle>
                               <Default>Solid</Default>
@@ -693,13 +770,13 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                       </ReportItems>
                     </TableCell>
                   </TableCells>
-                  <Height>0.15625in</Height>
+                  <Height>0.13889in</Height>
                 </TableRow>
               </TableRows>
             </Footer>
           </TableGroup>
         </TableGroups>
-        <Width>5.95455in</Width>
+        <Width>5.375in</Width>
         <Details>
           <TableRows>
             <TableRow>
@@ -708,6 +785,26 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                   <ReportItems>
                     <Textbox Name="textbox12">
                       <rd:DefaultName>textbox12</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox37">
+                      <rd:DefaultName>textbox37</rd:DefaultName>
                       <Style>
                         <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <BorderStyle>
@@ -812,7 +909,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                   </ReportItems>
                 </TableCell>
               </TableCells>
-              <Height>0.15625in</Height>
+              <Height>0.13889in</Height>
             </TableRow>
           </TableRows>
         </Details>
@@ -837,6 +934,26 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                       </Style>
                       <CanGrow>true</CanGrow>
                       <Value>Resource</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox34">
+                      <rd:DefaultName>textbox34</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>#e0e0e0</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>Department</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -921,28 +1038,31 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                   </ReportItems>
                 </TableCell>
               </TableCells>
-              <Height>0.15625in</Height>
+              <Height>0.13889in</Height>
             </TableRow>
           </TableRows>
         </Header>
         <TableColumns>
           <TableColumn>
-            <Width>2.00455in</Width>
+            <Width>1.16007in</Width>
           </TableColumn>
           <TableColumn>
-            <Width>1.625in</Width>
+            <Width>1.16007in</Width>
           </TableColumn>
           <TableColumn>
-            <Width>0.875in</Width>
+            <Width>1.25674in</Width>
           </TableColumn>
           <TableColumn>
-            <Width>0.875in</Width>
+            <Width>0.67671in</Width>
           </TableColumn>
           <TableColumn>
-            <Width>0.575in</Width>
+            <Width>0.67671in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.44469in</Width>
           </TableColumn>
         </TableColumns>
-        <Height>1.125in</Height>
+        <Height>1in</Height>
         <Footer>
           <TableRows>
             <TableRow>
@@ -951,6 +1071,24 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                   <ReportItems>
                     <Textbox Name="textbox8">
                       <rd:DefaultName>textbox8</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox40">
+                      <rd:DefaultName>textbox40</rd:DefaultName>
                       <Style>
                         <BorderStyle>
                           <Default>Solid</Default>
@@ -1038,7 +1176,7 @@ r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuve/de697917r3v3Xuv/2Q==
                   </ReportItems>
                 </TableCell>
               </TableCells>
-              <Height>0.15625in</Height>
+              <Height>0.13889in</Height>
             </TableRow>
           </TableRows>
         </Footer>
