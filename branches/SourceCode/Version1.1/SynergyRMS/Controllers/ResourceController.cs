@@ -68,6 +68,10 @@ namespace SynergyRMS.Controllers
             }
             return new SelectList(roleList);
         }
+
+    
+
+
         public ActionResult Role()//*
         {
             ViewData["RoleList"] = GetAllRoles();
@@ -259,6 +263,7 @@ namespace SynergyRMS.Controllers
                 ViewData["msg"] = "Error in Role Creation.";
             }
             ViewData["RoleList"] = GetAllRoles();
+          //  ViewData["DepartmentList"] = GetAllDepartments();
             return View("Role");
         }
 
@@ -283,6 +288,9 @@ namespace SynergyRMS.Controllers
         public ActionResult Index()//*
         {
             ViewData["RoleList"] = GetAllRoles();
+            ViewData["DepartmentList"] = GetDepartmentList();
+          
+
             return View();
         }
         public ActionResult NewUser(FormCollection form)//*
@@ -327,8 +335,12 @@ namespace SynergyRMS.Controllers
                             employee.FirstName = form["txtfirstname"].ToString();
                             employee.LastName = form["txtfirstname"].ToString();
                             employee.Phone = form["txtphone"].ToString();
+                            string departmentId = form["ddlDepartments"].ToString();    
+                           
                             employee.aspnet_Users = SynergyService.GetUserByName(newuser.UserName);
-                            SynergyService.SaveEmployee(employee);
+                            employee.EM_Departments = SynergyService.GetDepartmentbyId(Convert.ToInt32(departmentId));
+
+                            SynergyService.UpdateEmployee(employee);
                             
                         }
                         catch
@@ -344,9 +356,6 @@ namespace SynergyRMS.Controllers
                     ViewData["msg"] = createStatus.ToString();
                     //ViewData["msg"] = "Error in User Creation.";
                 }
-
-
-
             }
             catch (MembershipCreateUserException ex)
             {
@@ -357,7 +366,16 @@ namespace SynergyRMS.Controllers
             {
             }
             ViewData["RoleList"] = GetAllRoles();
+            ViewData["DepartmentList"] = GetDepartmentList();
             return View("Index");
+        }
+
+
+        private SelectList GetDepartmentList()
+        {
+            List<EM_Departments> allDeptTypes = SynergyService.GetDepartmentList();
+            SelectList list = new SelectList(allDeptTypes, "DepartmentId", "DepartmentName");
+            return list;
         }
 
         //this functions return user list without admin usrs for dropdowns
@@ -610,6 +628,7 @@ namespace SynergyRMS.Controllers
                         ViewData["NIC"] = NIC;
                         ViewData["EditUser"] = edituser;
                         ViewData["RoleList"] = GetAllRoles();
+                        ViewData["DepartmentList"] = GetDepartmentList();
                     }
                 }
 
@@ -667,16 +686,56 @@ namespace SynergyRMS.Controllers
 
                         //List<string> ResourceInfo = new List<string>();
 
+<<<<<<< .mine
+                        ResourceInfo.Add(form["txtfirstname"].ToString());
+                        //ResourceInfo.Add(form["txtusername"].ToString());
+                     
+                        ResourceInfo.Add(form["txtemail"].ToString());
+                        ResourceInfo.Add(form["ddRoles"].ToString());
+=======
                         //ResourceInfo.Add(form["txtfirstname"].ToString());
                         //ResourceInfo.Add(edituser.UserName);
                         //ResourceInfo.Add(form["txtpwd"].ToString());
                         //ResourceInfo.Add(form["txtemail"].ToString());
                         //ResourceInfo.Add(form["ddRoles"].ToString());
+>>>>>>> .r650
 
+<<<<<<< .mine
+
+
+                        SendNotificationWhenAccountUpdated(edituser.Email, ResourceInfo);
+=======
                         //SendNotificationWhenAccountUpdated(edituser.Email, ResourceInfo);
+>>>>>>> .r650
 
                         //ResourceInfo = null;
 
+                        if (!SynergyService.IsEmployeeSystemExternal())
+                        {
+                            try
+                            {
+                                string nic = form["hdnic"].ToString();
+
+                                EM_Employee employee = SynergyService.GetEmployeebyEmpId(nic);
+                                employee.Email = form["txtemail"].ToString();
+                                employee.FirstName = form["txtfirstname"].ToString();
+                                employee.LastName = form["txtlastname"].ToString();
+                                employee.Phone = form["txtphone"].ToString();
+                              
+                               
+                                string departmentId = form["ddlDepartments"].ToString();
+
+                                employee.aspnet_Users = SynergyService.GetUserByName(edituser.UserName);
+                                employee.EM_Departments = SynergyService.GetDepartmentbyId(Convert.ToInt32(departmentId));
+
+                                SynergyService.UpdateEmployee(employee);
+
+                            }
+                            catch
+                            {
+                            }
+                        }
+                    
                         ViewData["EditUser"] = edituser;
 
                         Membership.UpdateUser(edituser);
@@ -694,6 +753,7 @@ namespace SynergyRMS.Controllers
             }
             ViewData["EditUser"] = edituser;
             ViewData["RoleList"] = GetAllRoles();
+            ViewData["DepartmentList"] = GetDepartmentList();
             return View("EditUser");
         }
 
