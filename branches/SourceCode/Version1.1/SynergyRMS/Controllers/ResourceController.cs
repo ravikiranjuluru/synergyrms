@@ -684,29 +684,27 @@ namespace SynergyRMS.Controllers
                         profile.SetPropertyValue("Phone", form["txtphone"].ToString());
                         profile.Save();
 
-                        //List<string> ResourceInfo = new List<string>();
+                        List<string> ResourceInfo = new List<string>();
 
-<<<<<<< .mine
+
                         ResourceInfo.Add(form["txtfirstname"].ToString());
                         //ResourceInfo.Add(form["txtusername"].ToString());
                      
                         ResourceInfo.Add(form["txtemail"].ToString());
                         ResourceInfo.Add(form["ddRoles"].ToString());
-=======
+
                         //ResourceInfo.Add(form["txtfirstname"].ToString());
                         //ResourceInfo.Add(edituser.UserName);
                         //ResourceInfo.Add(form["txtpwd"].ToString());
                         //ResourceInfo.Add(form["txtemail"].ToString());
                         //ResourceInfo.Add(form["ddRoles"].ToString());
->>>>>>> .r650
 
-<<<<<<< .mine
 
 
                         SendNotificationWhenAccountUpdated(edituser.Email, ResourceInfo);
-=======
+
                         //SendNotificationWhenAccountUpdated(edituser.Email, ResourceInfo);
->>>>>>> .r650
+
 
                         //ResourceInfo = null;
 
