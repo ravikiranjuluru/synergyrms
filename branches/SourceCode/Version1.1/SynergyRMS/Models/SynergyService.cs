@@ -1801,5 +1801,11 @@ namespace SynergyRMS.Models
 
         #endregion
 
+        #region Settings
+
+       
+
+        #endregion
+
     }
 }
