@@ -9,7 +9,7 @@ namespace SynergyRMS.Models
     /// <summary>
     /// 
     /// </summary>
-   public class ExternalEmployeeManagement
+   public class ExternalEmployeeManagement: IEmployeeManagement
     {
 
         /// <summary>
