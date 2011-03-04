@@ -462,12 +462,6 @@ namespace SynergyRMS.Reports {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetProjectsByResourcesIdRow FindByProjectId(int ProjectId) {
-                return ((R_GetProjectsByResourcesIdRow)(this.Rows.Find(new object[] {
-                            ProjectId})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public override global::System.Data.DataTable Clone() {
                 R_GetProjectsByResourcesIdDataTable cln = ((R_GetProjectsByResourcesIdDataTable)(base.Clone()));
                 cln.InitVars();
@@ -515,14 +509,11 @@ namespace SynergyRMS.Reports {
                 base.Columns.Add(this.columnRoleName);
                 this.columnRoleDescription = new global::System.Data.DataColumn("RoleDescription", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRoleDescription);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnProjectId}, true));
                 this.columnProjectId.AutoIncrement = true;
                 this.columnProjectId.AutoIncrementSeed = -1;
                 this.columnProjectId.AutoIncrementStep = -1;
                 this.columnProjectId.AllowDBNull = false;
                 this.columnProjectId.ReadOnly = true;
-                this.columnProjectId.Unique = true;
                 this.columnProjectCode.AllowDBNull = false;
                 this.columnProjectCode.MaxLength = 10;
                 this.columnProjectName.AllowDBNull = false;
@@ -665,6 +656,8 @@ namespace SynergyRMS.Reports {
             
             private global::System.Data.DataColumn columnphone;
             
+            private global::System.Data.DataColumn columnDepartmentName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public R_GetResourceByResourceIdDataTable() {
                 this.TableName = "R_GetResourceByResourceId";
@@ -717,6 +710,13 @@ namespace SynergyRMS.Reports {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn DepartmentNameColumn {
+                get {
+                    return this.columnDepartmentName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -745,12 +745,13 @@ namespace SynergyRMS.Reports {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public R_GetResourceByResourceIdRow AddR_GetResourceByResourceIdRow(string firstname, string lastname, string phone) {
+            public R_GetResourceByResourceIdRow AddR_GetResourceByResourceIdRow(string firstname, string lastname, string phone, string DepartmentName) {
                 R_GetResourceByResourceIdRow rowR_GetResourceByResourceIdRow = ((R_GetResourceByResourceIdRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         firstname,
                         lastname,
-                        phone};
+                        phone,
+                        DepartmentName};
                 rowR_GetResourceByResourceIdRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowR_GetResourceByResourceIdRow);
                 return rowR_GetResourceByResourceIdRow;
@@ -773,6 +774,7 @@ namespace SynergyRMS.Reports {
                 this.columnfirstname = base.Columns["firstname"];
                 this.columnlastname = base.Columns["lastname"];
                 this.columnphone = base.Columns["phone"];
+                this.columnDepartmentName = base.Columns["DepartmentName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -783,12 +785,16 @@ namespace SynergyRMS.Reports {
                 base.Columns.Add(this.columnlastname);
                 this.columnphone = new global::System.Data.DataColumn("phone", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnphone);
+                this.columnDepartmentName = new global::System.Data.DataColumn("DepartmentName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartmentName);
                 this.columnfirstname.ReadOnly = true;
                 this.columnfirstname.MaxLength = 200;
                 this.columnlastname.ReadOnly = true;
                 this.columnlastname.MaxLength = 200;
                 this.columnphone.ReadOnly = true;
                 this.columnphone.MaxLength = 200;
+                this.columnDepartmentName.AllowDBNull = false;
+                this.columnDepartmentName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1107,6 +1113,16 @@ namespace SynergyRMS.Reports {
                 }
                 set {
                     this[this.tableR_GetResourceByResourceId.phoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string DepartmentName {
+                get {
+                    return ((string)(this[this.tableR_GetResourceByResourceId.DepartmentNameColumn]));
+                }
+                set {
+                    this[this.tableR_GetResourceByResourceId.DepartmentNameColumn] = value;
                 }
             }
             
@@ -1505,6 +1521,7 @@ namespace SynergyRMS.Reports.ViewProjectByResourcedsTableAdapters {
             tableMapping.ColumnMappings.Add("firstname", "firstname");
             tableMapping.ColumnMappings.Add("lastname", "lastname");
             tableMapping.ColumnMappings.Add("phone", "phone");
+            tableMapping.ColumnMappings.Add("DepartmentName", "DepartmentName");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
