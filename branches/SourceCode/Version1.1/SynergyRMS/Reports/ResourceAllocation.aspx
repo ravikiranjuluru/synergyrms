@@ -47,8 +47,7 @@
     
         <table style="width:100%;">
             <tr>
-                <td>
-                    &nbsp;</td>
+               
                 <td>
                  
                     &nbsp;</td>
@@ -63,8 +62,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
+               
                 <td>
                  
                     &nbsp;</td>
@@ -73,59 +71,53 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
+             
+                   
+                <td align="left">
                  
                     <asp:Label ID="lblStartDate" runat="server" Font-Bold="True" Text="From Date :"></asp:Label>
                 </td>
-                <td>
+                <td align="left">
                  
                     <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
+              
+                <td align="left">
                     <asp:Label ID="lblEndDate" runat="server" Font-Bold="True" Text="To Date :"></asp:Label>
                 </td>
-                <td>
+                <td align="left">
                     <asp:TextBox ID="txtEndDate" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
+             
                 <td>
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
             <tr>
+               
                 <td>
                     &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
+                <td align="left">
                     <asp:Button ID="btnViewReport" runat="server" Text="View Report" 
                         onclick="btnViewReport_Click" />
                 </td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
+               
                 <td>
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
+               
+            
+                <td colspan="2" align="center">
                     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
                         Font-Size="8pt" Height="400px" Width="650px">
                         <LocalReport ReportPath="Reports\ResourceAllocation.rdlc">
@@ -139,16 +131,14 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
+              
                 <td>
                     &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
             <tr>
-                <td>
-                    &nbsp;</td>
+                
                 <td>
                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
                         OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
