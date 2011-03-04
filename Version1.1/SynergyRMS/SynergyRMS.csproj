@@ -691,11 +691,11 @@
     <Content Include="Views\Shared\Master.Master.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LeaveSystemEx.dll.config" />
     <EntityDeploy Include="Models\SynergyModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SynergyModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="LeaveSystemEx.dll.config" />
     <None Include="Reports\ProjectResources.xsc">
       <DependentUpon>ProjectResources.xsd</DependentUpon>
     </None>
