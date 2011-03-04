@@ -1612,6 +1612,16 @@ namespace SynergyRMS.Models
             return userQuery.First().ExternalId;
         }
 
+        public static string GetEmployeeExternalIdByUserName(string username)
+        {
+            //aspnet_Users user = null;
+            var userQuery = from p in GetSynegyRMSInstance().UM_ExternalId
+                            where p.aspnet_Users.UserName == username
+                            select p;
+
+            return userQuery.First().ExternalId;
+        }
+
         /// <summary>
         /// Gets the employee entity.
         /// </summary>
@@ -1710,8 +1720,18 @@ namespace SynergyRMS.Models
             return entityList;
         }
 
-        public static void AddLeave(Guid useId, DateTime from, DateTime toDate)
+        public static void AddLeave(LM_EmployeeLeave employee)
         {
+
+            try
+            {
+                GetSynegyRMSInstance().AddToLM_EmployeeLeave(employee);
+                GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+            }
 
         }
       
@@ -1726,6 +1746,44 @@ namespace SynergyRMS.Models
 
             return userQuery.ToList(); ;
         }
+
+
+        public static List<LM_LeaveTypes> LoadAllLeaveTypes()
+        {
+            try
+            {
+                return GetSynegyRMSInstance().LM_LeaveTypes.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+        public static LM_LeaveTypes GetLeaveTypeById(int typeId)
+        {
+            try
+            {
+                LM_LeaveTypes selectedleaveTYpe= null;
+                var leaveQuery = from l in GetSynegyRMSInstance().LM_LeaveTypes
+                                 where l.LeaveTypeId == typeId
+                                   select l;
+
+                selectedleaveTYpe = leaveQuery.First();
+
+                return selectedleaveTYpe;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+
+
+
         #endregion
 
         #region Departments
