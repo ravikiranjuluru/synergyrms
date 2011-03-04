@@ -6,7 +6,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Resource Allocation Individual Detail Report</title>
+    <title>Resource Allocation Detail Reportt</title>
     
      <link href="../Content/jquery-ui.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" language="javascript" src="../Scripts/Calander/jquery.min.js"></script>
