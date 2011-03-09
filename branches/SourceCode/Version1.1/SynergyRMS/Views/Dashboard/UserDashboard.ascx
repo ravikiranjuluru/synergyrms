@@ -225,6 +225,10 @@
                                             <div class="tr">
                                                 <div class="content">
                                                     <style type="text/css">
+                                                        #Img5
+                                                        {
+                                                            width: 48px;
+                                                        }
                                                         </style>
                                                     <table style="padding-left: 10px; width: 100%;">
                                                         <tbody>
@@ -281,6 +285,17 @@
                                                                                     href="../GridView/Schedule">
                                                                                     <img src="../../Content/images/common/schedule.jpg" id="Img1" title="Click for more information" />
                                                                                         Resource Allocation Schedule</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            
+                                                                             <tr id="Tr1">
+                                                                                <td padding-left="6px" width="5%">
+                                                                                    &nbsp;
+                                                                                </td>
+                                                                                <td>
+                                                                                    <a id="A3" title="Click here to Add a  Leave" href="../../Leave/LeaveManagement.aspx">
+                                                                                    <img src="../../Content/images/common/Leave.jpg" id="Img5" title="Click for more information" />
+                                                                                        Leave Management</a>
                                                                                 </td>
                                                                             </tr>
                                                                             
