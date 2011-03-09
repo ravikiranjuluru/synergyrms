@@ -14,7 +14,7 @@
 
     <script type="text/javascript">
         $(function() {
-        $("#tooltip1,#tooltip2,#tooltip3,#tooltip5,#tooltip6,#tooltip7").tooltip({
+        $("#tooltip1,#tooltip2,#tooltip3,#tooltip5,#tooltip6,#tooltip7,#tooltip4,#tooltip8").tooltip({
                 track: true,
                 delay: 0,
                 showURL: false,
@@ -112,8 +112,8 @@
             { %>--%>
     <tr>
         <td>
-            <div class="outer">
-                <div class="boxtitle">
+            <div class="outer" >
+                <div class="boxtitle" >
                     <table style="background-color: white;">
                         <tbody>
                             <tr>
@@ -143,7 +143,7 @@
                                 <div class="bl">
                                     <div class="br">
                                         <div class="tl">
-                                            <div class="tr">
+                                            <div class="tr" style="height:250px">
                                                 <div class="content">
                                                     <style type="text/css">
                                                         </style>
@@ -229,8 +229,8 @@
         </td>
         <td>
             <!-- --------------------------------------------------------- -->
-            <div class="outer">
-                <div class="boxtitle">
+            <div class="outer" style="height:291px">
+                <div class="boxtitle" style="height:291px">
                     <table style="background-color: white;">
                         <tbody>
                             <tr>
@@ -260,14 +260,14 @@
                                 <div class="bl">
                                     <div class="br">
                                         <div class="tl">
-                                            <div class="tr">
+                                            <div class="tr" style="height:250px">
                                                 <div class="content">
-                                                    <style type="text/css">
+                                                   <%-- <style type="text/css">
                                                         #Img5
                                                         {
                                                             width: 48px;
                                                         }
-                                                        </style>
+                                                        </style>--%>
                                                     <table style="padding-left: 10px; width: 100%;">
                                                         <tbody>
                                                             <tr>
@@ -286,8 +286,7 @@
                                                                                 <td>
                                                                                     <a href="../Resource/Role">
                                                                                         <img src="../../Content/images/common/role.png" id="Img8" />
-                                                                                        <span id="tooltip5" title="Click here to Add a New Role">User Role </span>
-                                                                                        </a>
+                                                                                        <span id="tooltip5" title="Click here to Add a New Role">User Role </span></a>
                                                                                 </td>
                                                                             </tr>
                                                                             <%} %>
@@ -297,10 +296,9 @@
                                                                                 <td padding-left="6px" width="5%">
                                                                                 </td>
                                                                                 <td>
-                                                                                    <a id="A5"  href="../Resource">
-                                                                                        <img src="../../Content/images/common/users.jpg" id="Img9"  />
-                                                                                        <span id="tooltip6" title="Click here to Add a New Resource">Users</span>
-                                                                                        </a>
+                                                                                    <a id="A5" href="../Resource">
+                                                                                        <img src="../../Content/images/common/users.jpg" id="Img9" />
+                                                                                        <span id="tooltip6" title="Click here to Add a New Resource">Users</span> </a>
                                                                                 </td>
                                                                             </tr>
                                                                             <%--<%} %>--%>
