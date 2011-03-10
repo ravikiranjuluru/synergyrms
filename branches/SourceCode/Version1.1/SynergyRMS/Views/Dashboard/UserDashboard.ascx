@@ -298,16 +298,7 @@
                                                                                      </a>
                                                                                  </td>
                                                                             </tr>
-                                                                             <tr id="Tr1">
-                                                                                <td padding-left="6px" width="5%">
-                                                                                    &nbsp;
-                                                                                </td>
-                                                                                <td>
-                                                                                    <a id="A3" title="Click here to Add a  Leave" href="../../Leave/LeaveManagement.aspx">
-                                                                                    <img src="../../Content/images/common/Leave.jpg" id="Img5" title="Click for more information" />
-                                                                                        Leave Management</a>
-                                                                                </td>
-                                                                            </tr>
+                                                                             
                                                                             
                                                                             <tr id="Tr6">
                                                                                 <td padding-left="6px" width="5%">
