@@ -303,6 +303,11 @@ namespace SynergyRMS.Controllers
                 var newuser = Membership.CreateUser(form["txtusername"].ToString(), form["txtpwd"].ToString(),
                     form["txtemail"].ToString(), "PasswordQuestion", "PasswordQuestionAnswer", true, out createStatus);
 
+                PM_MaxUserEfforts userEffort = new PM_MaxUserEfforts();
+                userEffort.aspnet_Users = SynergyService.GetUserByName(newuser.UserName);
+                userEffort.MaxEffort =Convert.ToDecimal(form["txteffort"].ToString());
+                SynergyService.SaveUserEffort(userEffort);
+
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
@@ -615,12 +620,16 @@ namespace SynergyRMS.Controllers
                     {
                         //var name = edituser.UserName;
                         string NIC=string.Empty;
+                        PM_MaxUserEfforts userEffort=null;
                         try
                         {
                             Guid userId = new Guid(userkey);
                             EmployeeEntity entity = SynergyService.GetEmployeeEntity(SynergyService.GetUserById(userId).UserName);
 
                             NIC= entity.ExternalId;
+
+                             userEffort=SynergyService.GetUserEffortById(SynergyService.GetUserById(userId).UserName);
+                       
                         }
                         catch
                         {
@@ -629,6 +638,10 @@ namespace SynergyRMS.Controllers
                         ViewData["EditUser"] = edituser;
                         ViewData["RoleList"] = GetAllRoles();
                         ViewData["DepartmentList"] = GetDepartmentList();
+
+
+                        ViewData["Effort"] = userEffort.MaxEffort;
+
                     }
                 }
 
@@ -683,6 +696,13 @@ namespace SynergyRMS.Controllers
                         profile.SetPropertyValue("LastName", form["txtlastname"].ToString());
                         profile.SetPropertyValue("Phone", form["txtphone"].ToString());
                         profile.Save();
+
+
+
+                        PM_MaxUserEfforts userEffort = SynergyService.GetUserEffortById(edituser.UserName);
+                        userEffort.MaxEffort =Convert.ToDecimal(form["txteffort"].ToString());
+                        userEffort.aspnet_Users = SynergyService.GetUserByName(edituser.UserName);
+                        SynergyService.UpdateUserEffort(userEffort);
 
                         List<string> ResourceInfo = new List<string>();
 
