@@ -32,6 +32,13 @@ namespace SynergyRMS.Controllers
             SelectList list = new SelectList(allProTypes, "TypeId", "TypeName");
             return list;
         }
+        private SelectList GetProjectTypesWithSelectedValue(PM_Types defaultValue)
+        {
+            List<PM_Types> allProTypes = SynergyService.GetAllTypes();
+            SelectList list = new SelectList(allProTypes, "TypeId", "TypeName", defaultValue.TypeId);
+           
+            return list;
+        }
 
         /// <summary>
         /// ActionResult of the project.
@@ -99,8 +106,16 @@ namespace SynergyRMS.Controllers
         {
             int proid = Convert.ToInt32(Request.QueryString["id"]);
             PM_Projects project = SynergyService.GetProjectbyProjectId(proid);
+            
             ViewData["EditProject"] = project;
-            ViewData["ProTypes"] = GetProjectTypes();
+            if (project.PM_Types == null)
+            {
+                ViewData["ProTypes"] = GetProjectTypes();
+            }
+            else
+            {
+                ViewData["ProTypes"] = GetProjectTypesWithSelectedValue(project.PM_Types);
+            }
             return View("EditProjectForm");
         }
 
@@ -131,6 +146,14 @@ namespace SynergyRMS.Controllers
                 ViewData["status"] = "Success";
                 ViewData["msg"] = "Project Successfully Updated.";
                 ViewData["EditProject"] = project;
+                if (project.PM_Types == null)
+                {
+                    ViewData["ProTypes"] = GetProjectTypes();
+                }
+                else
+                {
+                    ViewData["ProTypes"] = GetProjectTypesWithSelectedValue(project.PM_Types);
+                }
             }
             catch(Exception)
             {
