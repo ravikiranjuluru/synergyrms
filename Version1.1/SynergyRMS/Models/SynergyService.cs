@@ -900,6 +900,23 @@ namespace SynergyRMS.Models
 
         }
 
+
+        public static void SaveUserEffort(PM_MaxUserEfforts userEffort)
+        {
+
+            try
+            {
+                GetSynegyRMSInstance().AddToPM_MaxUserEfforts(userEffort);
+                GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+
         public static void SaveEmployee(EM_Employee  employee)
         {
             try
@@ -913,6 +930,38 @@ namespace SynergyRMS.Models
             }
 
         }
+
+        public static void UpdateUserEffort(PM_MaxUserEfforts userEffort)
+        {
+            try
+            {
+                int rowsAffected = GetSynegyRMSInstance().SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static PM_MaxUserEfforts GetUserEffortById(string userName)
+        {
+            try
+            {
+                PM_MaxUserEfforts userEffort = null;
+                var userEffortQuery = from p in GetSynegyRMSInstance().PM_MaxUserEfforts
+                                      where p.aspnet_Users.UserName == userName
+                                       select p;
+
+                userEffort = userEffortQuery.First();
+
+                return userEffort;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
         public static void DeletePermissions(string rolname)
         {
