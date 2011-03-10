@@ -249,6 +249,19 @@
                                                     </tr>
                                                     
                                                     
+                                                     <tr>
+                                                        <td valign="middle" align="right" class="formDetailDark">
+                                                            <label for="txteffort">
+                                                                Effort</label>Effort:
+                                                        </td>
+                                                        <td valign="middle" align="left" class="formDetail">
+                                                            <input type="text" maxlength="30" size="30" class="textBox" id="txteffort" name="txteffort"> %
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    
+                                                    
+                                                    
                                                     <tr>
                                                         <td height="5" class="formDetailDarkNoPadding">
                                                             <img height="1" width="180" id="ctl00_phFormContent_ucFormFooter_img1" src="../../Content/images/common/space.gif">

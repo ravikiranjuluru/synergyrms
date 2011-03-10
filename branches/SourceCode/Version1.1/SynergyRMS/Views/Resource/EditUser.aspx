@@ -164,7 +164,17 @@
                                          <%=Html.ActionLink("Reset Password", "PasswordReset", "Resource", new { @id = edituser.ProviderUserKey }, null)%>   
                                     </td>
                                 </tr>
-                               
+                                
+                                <tr>
+                                    <td valign="middle" align="right" class="formDetailDark">
+                                        Effort:
+                                    </td>
+                                    <td valign="middle" align="left" class="formDetail">
+                                        <input type="text" maxlength="30" size="30" class="textBox" id="Text1" 
+                                        value="<%=ViewData["Effort"]==null?"":ViewData["Effort"].ToString()%>" name="txteffort">
+                                          
+                                    </td>
+                                </tr>
                              
                                 <tr>
                                     <td height="5" class="formDetailDarkNoPadding">
