@@ -2,39 +2,6 @@
 <%@ Import Namespace="SynergyRMS.Models" %>
 
 <table class="pageTitle" width="100%" border="0" cellpadding="0" cellspacing="0">
-
-<link rel="stylesheet" href="../../Content/tooltip/jquery.tooltip.css" />
-<link rel="stylesheet" href="../../Content/tooltip/screen.css" />
-
-<script src="../../Scripts/tooltip/jquery.js" type="text/javascript"></script>
-<script src="../../Scripts/tooltip/jquery.bgiframe.js" type="text/javascript"></script>
-<script src="../../Scripts/tooltip/jquery.dimensions.js" type="text/javascript"></script>
-<script src="../../Scripts/tooltip/jquery.tooltip.js" type="text/javascript"></script>
-<script src="../../Scripts/tooltip/chili-1.7.pack.js" type="text/javascript"></script>
-
-    <script type="text/javascript">
-        $(function() {
-        $("#tooltip1,#tooltip2,#tooltip3,#tooltip5,#tooltip6,#tooltip7,#tooltip4,#tooltip8").tooltip({
-                track: true,
-                delay: 0,
-                showURL: false,
-                fixPNG: true,
-                showBody: " - ",
-                extraClass: "pretty fancy",
-                top: -15,
-                left: 5
-            });
-//            $('#tooltip4,#tooltip8').tooltip({
-//                track: true,
-//                delay: 0,
-//                showURL: false,
-//                showBody: " - ",
-//                extraClass: "pretty",
-//                fixPNG: true,
-//                left: -120
-//            });
-        });
-    </script>
     <tbody>
         <tr>
             <td valign="middle" align="left">
@@ -112,8 +79,8 @@
             { %>--%>
     <tr>
         <td>
-            <div class="outer" >
-                <div class="boxtitle" >
+            <div class="outer">
+                <div class="boxtitle">
                     <table style="background-color: white;">
                         <tbody>
                             <tr>
@@ -143,7 +110,7 @@
                                 <div class="bl">
                                     <div class="br">
                                         <div class="tl">
-                                            <div class="tr" style="height:250px">
+                                            <div class="tr">
                                                 <div class="content">
                                                     <style type="text/css">
                                                         </style>
@@ -160,11 +127,9 @@
                                                                                     <a id="A8" href="#">&nbsp;</a>
                                                                                 </td>
                                                                                 <td>
-                                                                               
-                                                                                    <a id="A8" href="#"></a><a id="A9" href="../Project/NewProject">
-                                                                                        <img src="../../Content/images/common/newproject.png" id="Img13" >
-                                                                                         <span id="tooltip1" title="Click here to Add a New Project">New Project</span></a>
-                                                                                        
+                                                                                    <a id="A8" href="#"></a><a id="A9" title="Click here to Add a New Project" href="../Project/NewProject">
+                                                                                        <img src="../../Content/images/common/newproject.png" id="Img13" title="Click for more information">New
+                                                                                        Project</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <%} %>
@@ -174,10 +139,9 @@
                                                                                 <td padding-left="6px" width="5%">
                                                                                 </td>
                                                                                 <td>
-                                                                                    <a id="A10"  href="../Project/EditProject">
-                                                                                        <img src="../../Content/images/common/viewproject.png" id="Img14"  />
-                                                                                        <span id="tooltip2" title="Click here to View an Existing Project">View Projects</span>
-                                                                                        </a>
+                                                                                    <a id="A10" title="Click here to View an Existing Project" href="../Project/EditProject">
+                                                                                        <img src="../../Content/images/common/viewproject.png" id="Img14" title="Click for more information" />View
+                                                                                        Projects</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <%} %>
@@ -187,10 +151,9 @@
                                                                                 <td padding-left="6px" width="5%">
                                                                                 </td>
                                                                                 <td>
-                                                                                    <a id="A1"  href="../GridView/Index">
-                                                                                        <img src="../../Content/images/common/schedule.jpg" id="Img3" />
-                                                                                        <span id="tooltip3" title="Click here to View an Existing Project Schedule">Project Schedule</span>
-                                                                                        </a>
+                                                                                    <a id="A1" title="Click here to View an Existing Project" href="../GridView/Index">
+                                                                                        <img src="../../Content/images/common/schedule.jpg" id="Img3" title="Click for more information" />Project
+                                                                                        Schedule</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <%} %>
@@ -201,10 +164,9 @@
                                                                                     <%--<img src="../../Content/images/common/cross.gif" id="Img17" title="Click for more information" />--%>
                                                                                 </td>
                                                                                 <td>
-                                                                                    <a id="A13"  href="../Report/Index">
-                                                                                        <img src="../../Content/images/common/ReportsMain.jpg" id="Img4"  />
-                                                                                        <span id="tooltip4" title="Click here to Create a Project Status Report">Reports</span>
-                                                                                        </a>
+                                                                                    <a id="A13" title="Click here to Create a Project Status Report" href="../Report/Index">
+                                                                                        <img src="../../Content/images/common/ReportsMain.jpg" id="Img4" title="Click for more information" />
+                                                                                        Reports</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <%   } %>
@@ -229,8 +191,8 @@
         </td>
         <td>
             <!-- --------------------------------------------------------- -->
-            <div class="outer" style="height:291px">
-                <div class="boxtitle" style="height:291px">
+            <div class="outer">
+                <div class="boxtitle">
                     <table style="background-color: white;">
                         <tbody>
                             <tr>
@@ -260,14 +222,14 @@
                                 <div class="bl">
                                     <div class="br">
                                         <div class="tl">
-                                            <div class="tr" style="height:250px">
+                                            <div class="tr">
                                                 <div class="content">
-                                                   <%-- <style type="text/css">
+                                                    <style type="text/css">
                                                         #Img5
                                                         {
                                                             width: 48px;
                                                         }
-                                                        </style>--%>
+                                                        </style>
                                                     <table style="padding-left: 10px; width: 100%;">
                                                         <tbody>
                                                             <tr>
@@ -285,8 +247,8 @@
                                                                                 </td>
                                                                                 <td>
                                                                                     <a href="../Resource/Role">
-                                                                                        <img src="../../Content/images/common/role.png" id="Img8" />
-                                                                                        <span id="tooltip5" title="Click here to Add a New Role">User Role </span></a>
+                                                                                        <img src="../../Content/images/common/role.png" id="Img8" title="Click here to Add a New Role" />User
+                                                                                        Role </a>
                                                                                 </td>
                                                                             </tr>
                                                                             <%} %>
@@ -296,9 +258,8 @@
                                                                                 <td padding-left="6px" width="5%">
                                                                                 </td>
                                                                                 <td>
-                                                                                    <a id="A5" href="../Resource">
-                                                                                        <img src="../../Content/images/common/users.jpg" id="Img9" />
-                                                                                        <span id="tooltip6" title="Click here to Add a New Resource">Users</span> </a>
+                                                                                    <a id="A5" title="Click here to Add a New Resource" href="../Resource">
+                                                                                        <img src="../../Content/images/common/users.jpg" id="Img9" title="Click for more information" />Users</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <%--<%} %>--%>
@@ -308,10 +269,9 @@
                                                                                 <td padding-left="6px" width="5%">
                                                                                 </td>
                                                                                 <td>
-                                                                                    <a id="A7"  href="../Resource/Schedule">
-                                                                                        <img src="../../Content/images/common/schedule.jpg" id="Img11" />
-                                                                                        <span id="tooltip7" title="Click here to View Resources Schedules">View Resource Schedules</span>
-                                                                                        </a>
+                                                                                    <a id="A7" title="Click here to View Resources Schedules" href="../Resource/Schedule">
+                                                                                        <img src="../../Content/images/common/schedule.jpg" id="Img11" title="Click for more information" />
+                                                                                        View Resource Schedules</a>
                                                                                 </td>
                                                                             </tr>
                                                                             <%} %>
@@ -321,13 +281,23 @@
                                                                                     &nbsp;
                                                                                 </td>
                                                                                 <td>
-                                                                                    <a id="A2" href="../GridView/Schedule">
-                                                                                    <img src="../../Content/images/common/schedule.jpg" id="Img1"  />
-                                                                                        <span id="tooltip8" title="Click here to View Resource Allocation Schedule">Resource Allocation Schedule</span>
-                                                                                        </a>
+                                                                                    <a id="A2" title="Click here to Add a New Resource" 
+                                                                                    href="../GridView/Schedule">
+                                                                                    <img src="../../Content/images/common/schedule.jpg" id="Img1" title="Click for more information" />
+                                                                                        Resource Allocation Schedule</a>
                                                                                 </td>
                                                                             </tr>
-                                                                            
+                                                                             <tr id="Tr1">
+                                                                                 <td padding-left="6px" width="5%">
+                                                                                     &nbsp;
+                                                                                 </td>
+                                                                                 <td>
+                                                                                     <a id="A3" href="../../Leave/LeaveManagement.aspx">
+                                                                                         <img src="../../Content/images/common/Leave.jpg" id="Img5" />
+                                                                                         <span id="Span5" title="Click here to Add a  Leave">Leave Management </span>
+                                                                                     </a>
+                                                                                 </td>
+                                                                            </tr>
                                                                              <tr id="Tr1">
                                                                                 <td padding-left="6px" width="5%">
                                                                                     &nbsp;
