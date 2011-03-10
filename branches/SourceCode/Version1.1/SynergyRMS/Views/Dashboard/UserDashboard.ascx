@@ -110,7 +110,7 @@
                                 <div class="bl">
                                     <div class="br">
                                         <div class="tl">
-                                            <div class="tr">
+                                            <div class="tr" style="height:250px">
                                                 <div class="content">
                                                     <style type="text/css">
                                                         </style>
@@ -222,7 +222,7 @@
                                 <div class="bl">
                                     <div class="br">
                                         <div class="tl">
-                                            <div class="tr">
+                                            <div class="tr" style="height:250px">
                                                 <div class="content">
                                                     <style type="text/css">
                                                         #Img5
