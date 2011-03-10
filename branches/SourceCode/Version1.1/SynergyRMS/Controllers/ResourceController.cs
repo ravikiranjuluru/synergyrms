@@ -69,7 +69,19 @@ namespace SynergyRMS.Controllers
             return new SelectList(roleList);
         }
 
-    
+        private SelectList GetAllRoleswithUserSelectedValue(string username)//*
+        {
+            string[] allroles = Roles.GetAllRoles();
+            List<string> roleList = new List<string>();
+            if (allroles.Length > 0)
+            {
+                foreach (string role in allroles)
+                    if (role != null)
+                        roleList.Add(role.ToString());
+            }
+            string[] rolename = Roles.GetRolesForUser(username);
+            return new SelectList(roleList, rolename[0].ToString());
+        }
 
 
         public ActionResult Role()//*
@@ -382,6 +394,13 @@ namespace SynergyRMS.Controllers
             SelectList list = new SelectList(allDeptTypes, "DepartmentId", "DepartmentName");
             return list;
         }
+        private SelectList GetDepartmentListwithUserSelectedValue(string username)
+        {
+            List<EM_Departments> allDeptTypes = SynergyService.GetDepartmentList();
+            int selectdepid = 1;//SynergyService.GetDepartmentByUsername(username);
+            SelectList list = new SelectList(allDeptTypes, "DepartmentId", "DepartmentName", selectdepid);
+            return list;
+        }
 
         //this functions return user list without admin usrs for dropdowns
         public SelectList getAllNormalUsersforDropdown()
@@ -636,8 +655,10 @@ namespace SynergyRMS.Controllers
                         }
                         ViewData["NIC"] = NIC;
                         ViewData["EditUser"] = edituser;
-                        ViewData["RoleList"] = GetAllRoles();
-                        ViewData["DepartmentList"] = GetDepartmentList();
+                        //ViewData["RoleList"] = GetAllRoles();
+                        //ViewData["DepartmentList"] = GetDepartmentList();
+                        ViewData["RoleList"] = GetAllRoleswithUserSelectedValue(edituser.UserName);
+                        ViewData["DepartmentList"] = GetDepartmentListwithUserSelectedValue(edituser.UserName);
 
 
                         ViewData["Effort"] = userEffort.MaxEffort;
@@ -770,8 +791,10 @@ namespace SynergyRMS.Controllers
                 //return RedirectToAction("AddRole", "Resource");
             }
             ViewData["EditUser"] = edituser;
-            ViewData["RoleList"] = GetAllRoles();
-            ViewData["DepartmentList"] = GetDepartmentList();
+            //ViewData["RoleList"] = GetAllRoles();
+            //ViewData["DepartmentList"] = GetDepartmentList();
+            ViewData["RoleList"] = GetAllRoleswithUserSelectedValue(edituser.UserName);
+            ViewData["DepartmentList"] = GetDepartmentListwithUserSelectedValue(edituser.UserName);
             return View("EditUser");
         }
 
