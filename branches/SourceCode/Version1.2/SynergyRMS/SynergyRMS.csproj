@@ -757,11 +757,11 @@
     <EmbeddedResource Include="Reports\ViewProjectByResource.rdlc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\External System Integration\EmployeeAdapter\EmployeeAdapter.csproj">
+    <ProjectReference Include="..\External System Integration\EmployeeAdapter\EmployeeAdapter.csproj">
       <Project>{B566F19A-E157-4285-81F7-5B66ACC82786}</Project>
       <Name>EmployeeAdapter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\External System Integration\LeaveAdapter\LeaveAdapter.csproj">
+    <ProjectReference Include="..\External System Integration\LeaveAdapter\LeaveAdapter.csproj">
       <Project>{C50E7D92-ECEF-448D-8D7B-29D3BEF8C38F}</Project>
       <Name>LeaveAdapter</Name>
     </ProjectReference>
