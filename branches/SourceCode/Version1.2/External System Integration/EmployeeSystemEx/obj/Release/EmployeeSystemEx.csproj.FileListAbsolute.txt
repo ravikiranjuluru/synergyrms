@@ -1,0 +1,10 @@
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Release\Employee.mdf
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Release\Employee_log.ldf
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Release\EmployeeSystemEx.pdb
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Release\EmployeeAdapter.dll
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Release\EmployeeAdapter.pdb
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\obj\Release\ResolveAssemblyReference.cache
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\obj\Release\EmployeeSystemEx.pdb
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Release\EmployeeSystemEx.exe.config
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Release\EmployeeSystemEx.exe
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\obj\Release\EmployeeSystemEx.exe
