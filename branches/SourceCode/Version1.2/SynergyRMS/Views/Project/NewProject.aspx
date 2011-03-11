@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" UICulture="en" Culture="en-US" Language="C#" MasterPageFile="~/Views/Shared/MasterDashboard.Master"
     Inherits="System.Web.Mvc.ViewPage" %>
+    
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
  <link href="../../Content/jquery-ui.css" rel="stylesheet" type="text/css" />
@@ -7,13 +9,13 @@
     <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="../../Content/common/styles.css" type="text/css" />
     
-    
     <!-- form validations -->
 <script type="text/javascript" src="../../Scripts/validations/jquery-1.4.4.min.js"></script>
 <script type="text/javascript" src="../../Scripts/validations/jquery.bvalidator.js"></script>
-<link type="text/css" rel="stylesheet" href="../../Content/formValidate.css" />
-
+<%--<link type="text/css" rel="stylesheet" href="../../Content/formValidate.css" />--%>
 <!-- end form validations -->
+    
+
     <div id="masterpage_divHead" class="formHead">
         <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tbody>
@@ -25,7 +27,65 @@
             </tbody>
         </table>
     </div>
- <form id="form4" method="post">
+    
+    <style type="text/css">
+    /* invalid input */
+.bvalidator_invalid{
+	background-color: #FFFFAE;
+}
+
+/* error message */
+.bvalidator_errmsg {
+	background-color:#333;
+	font-size:10px;
+	border:1px solid #999;
+	color:#FFF;
+	display:none;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius-bottomleft:0;
+	-moz-border-radius-topleft:0;
+	-webkit-border-bottom-left-radius:0;
+	-webkit-border-top-left-radius:0;
+	-moz-box-shadow:0 0 6px #ddd;
+	-webkit-box-shadow:0 0 6px #ddd;
+	white-space:nowrap;
+	padding-top: 2px;
+	padding-right: 10px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	-moz-opacity:.90;
+	filter:alpha(opacity=90);
+	opacity:.90; 
+}
+
+/* close icon */
+.bvalidator_errmsg .bvalidator_close_icon {
+	margin-left: 5px;
+	margin-top: -2px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color:#F96;
+	cursor:pointer;
+}
+
+/* arrow */
+.bvalidator_errmsg em {
+	display:block;
+	border-color: #333 transparent transparent;
+	border-style: solid;
+	border-width: 10px 10px 0;
+	height: 0;
+	width: 0;
+	position:absolute;
+	bottom:-10px;
+	left:5px;
+}
+
+    </style>
+    
+<%-- <form id="form4" method="post">
                                         <p>
                                             Username:
                                             <input data-bvalidator="alphanum,required" type="text"/>
@@ -50,8 +110,9 @@
                                             <input value="Submit" type="submit"/>
                                             <input value="Reset" type="reset"/>
                                         </p>
- </form>
-    <script type="text/javascript">
+ </form>--%>
+ 
+ <script type="text/javascript">
 
 
         $(document).ready(function() {
@@ -124,7 +185,7 @@
                             </tbody>
                         </table>
                         
-                        <% using (Html.BeginForm("NewProject", "Project"))
+                        <% using (Html.BeginForm("NewProject", "Project", FormMethod.Post, new { id = "form4" }))
                            { %>
                         <table id="masterPage_tblFormContentRoot" style="border-collapse: collapse;" border="0"
                             cellpadding="0" cellspacing="0" width="100%">
@@ -184,7 +245,8 @@
                                                             Please Enter Project name</label>Project Name:
                                                     </td>
                                                     <td class="formDetail" align="left" valign="middle">
-                                                        <input name="txtprojectname" id="txtprojectname" class="textBox" type="text" style="width: 253px">
+                                                        <input name="txtprojectname" id="txtprojectname" class="textBox" data-bvalidator="alphanum,required"
+                                                        type="text" style="width: 253px">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -412,6 +474,7 @@
          return true
      }
                     </script>
+  
     <script>
         function GoBack() {
             window.location(history - 1);
