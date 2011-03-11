@@ -30,6 +30,8 @@ namespace SynergyRMS.Models
                 EmployeeLeaveEntity entity = new EmployeeLeaveEntity();
                 leave.LM_LeaveTypesReference.Load();
                 entity.leaveDate = (DateTime)leave.Date;
+                entity.startDate = (DateTime)leave.startdate;
+                entity.endDate =(DateTime)leave.enddate;
                 entity.description = leave.LM_LeaveTypes.Description;
                 leavelist.Add(entity);
             }

@@ -1653,12 +1653,25 @@ namespace SynergyRMS.Models
         /// <returns></returns>
         public static string GetEmployeeExternalId(Guid name)
         {
-            //aspnet_Users user = null;
-            var userQuery = from p in GetSynegyRMSInstance().UM_ExternalId
-                            where p.aspnet_Users.UserId == name
-                            select p;
+            string id = string.Empty;
+            try
+            {
+               
+                //aspnet_Users user = null;
+                var userQuery = from p in GetSynegyRMSInstance().UM_ExternalId
+                                where p.aspnet_Users.UserId == name
+                                select p;
+                if (userQuery != null)
+                {
+                    id = userQuery.First().ExternalId;
+                }
 
-            return userQuery.First().ExternalId;
+            }
+            catch
+            {
+
+            }
+            return id;
         }
 
         public static string GetEmployeeExternalIdByUserName(string username)
