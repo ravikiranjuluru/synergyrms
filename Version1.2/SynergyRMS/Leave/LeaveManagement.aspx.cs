@@ -42,8 +42,8 @@ namespace SynergyRMS.Leave
                   employeeLeave.Description = txtReason.Text.ToString();
 
                   List<LM_LeaveTypes> typeList = SynergyService.LoadAllLeaveTypes();
-                  // string userName = HttpContext.Current.User.Identity.Name;
-                  string userName = "chandu";
+                   string userName = HttpContext.Current.User.Identity.Name;
+                 
 
                   employeeLeave.aspnet_Users = SynergyService.GetUserByName(userName);
                   employeeLeave.LM_LeaveTypes = SynergyService.GetLeaveTypeById(Convert.ToInt32(ddlLeaveTypes.SelectedValue.ToString()));
