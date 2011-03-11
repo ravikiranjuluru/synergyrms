@@ -5,7 +5,7 @@
  <link href="../../Content/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery.min.js"></script>
     <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="../Content/common/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../../Content/common/styles.css" type="text/css" />
     
     
     <!-- form validations -->
