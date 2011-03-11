@@ -1,0 +1,58 @@
+﻿.tableDirectEntryGrid {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: x-small;  
+    border-top: solid 1px #999999; 
+    border-bottom: solid 1px #999999; 
+    border-left: solid 1px #DBDBDB;
+    border-right: solid 1px #DBDBDB;
+}
+
+.tableDirectEntryGrid thead tr td {
+    background-color: #ECECED;
+    border-bottom: solid 1px #999999;
+    border-left: solid 1px #DBDBDB;
+    color: #666666;	        
+    padding: 5px;
+}
+
+.tableDirectEntryGrid tbody tr td {
+    border-left: solid 1px #DBDBDB;
+    border-bottom: solid 1px #DBDBDB;
+}
+
+.tableDirectEntryGrid tbody tr:last-child td, .tableDirectEntryGrid tbody tr.lastChild td {
+    border-bottom: solid 0px #999999;
+}
+
+.tableDirectEntryGrid tbody tr td div {
+    height: 18px;
+    text-align: left;
+    vertical-align: middle;
+    border: solid 1px #FFFFFF;
+}
+
+.tableDirectEntryGrid tbody tr td div input, .tableDirectEntryGrid tbody tr td.disabled div input {
+    border: solid 0px #FF0000;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.tableDirectEntryGrid tbody tr td div input {
+    color: #555555;
+}
+
+.tableDirectEntryGrid tbody tr td.disabled div input {
+    color: #999999;
+}
+
+.tableDirectEntryGrid tfoot tr td {
+    background-color: #ECECED;
+    border-top: solid 1px #999999;
+    border-left: solid 1px #DBDBDB;
+    color: #666666;		        
+    padding: 4px 5px 4px 5px;
+}
+
+.tableDirectEntryGrid a {
+   outline: none;
+}

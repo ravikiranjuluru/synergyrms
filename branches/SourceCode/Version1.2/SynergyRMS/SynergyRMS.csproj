@@ -1,0 +1,797 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22423983-FCF4-4A00-B8F4-986A98866FBB}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SynergyRMS</RootNamespace>
+    <AssemblyName>SynergyRMS</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Data\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Data\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\GridViewController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MyWorkController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\ResourceController.cs" />
+    <Compile Include="Controllers\RouteRegistrar.cs" />
+    <Compile Include="Controllers\TimesheetsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Leave\LeaveManagement.aspx.cs">
+      <DependentUpon>LeaveManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Leave\LeaveManagement.aspx.designer.cs">
+      <DependentUpon>LeaveManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ExternalEmployeeManagement.cs" />
+    <Compile Include="Models\ExternalLeaveManagement.cs" />
+    <Compile Include="Models\IEmployeeManagement.cs" />
+    <Compile Include="Models\ILeaveManagement.cs" />
+    <Compile Include="Models\MailManager.cs" />
+    <Compile Include="Models\SynergyConstents.cs" />
+    <Compile Include="Models\SynergyEmployeeManagement.cs.cs" />
+    <Compile Include="Models\SynergyLeaveManagement.cs" />
+    <Compile Include="Models\SynergyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SynergyModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SynergyService.cs" />
+    <Compile Include="Models\UserEffort.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\ProjectResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectResources.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Project_Resources.aspx.cs">
+      <DependentUpon>Project_Resources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Project_Resources.aspx.designer.cs">
+      <DependentUpon>Project_Resources.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocation.aspx.cs">
+      <DependentUpon>ResourceAllocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocation.aspx.designer.cs">
+      <DependentUpon>ResourceAllocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocationByUser.aspx.cs">
+      <DependentUpon>ResourceAllocationByUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocationByUser.aspx.designer.cs">
+      <DependentUpon>ResourceAllocationByUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocationByUserds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceAllocationByUserds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocationds.cs">
+      <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ResourceAllocationds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ViewProjectByResourceds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewProjectByResourceds.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ViewProjectByResources.aspx.cs">
+      <DependentUpon>ViewProjectByResources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ViewProjectByResources.aspx.designer.cs">
+      <DependentUpon>ViewProjectByResources.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\AeroWindow.css" />
+    <Content Include="Content\common\Grid.css" />
+    <Content Include="Content\common\popup.css" />
+    <Content Include="Content\common\ScrollableTable.css" />
+    <Content Include="Content\common\sitenavigation.css" />
+    <Content Include="Content\common\SkinStyle.css" />
+    <Content Include="Content\common\styles.css" />
+    <Content Include="Content\common\toolbar.css" />
+    <Content Include="Content\common\WebResorce.css" />
+    <Content Include="Content\iFrameContent\StartmenuContent.html" />
+    <Content Include="Content\images\common\addAssignment.gif" />
+    <Content Include="Content\images\common\ag_app_header.png" />
+    <Content Include="Content\images\common\arrowdown_grey.gif" />
+    <Content Include="Content\images\common\arrowleft_grey.gif" />
+    <Content Include="Content\images\common\arrowleft_white.gif" />
+    <Content Include="Content\images\common\arrowright_grey.gif" />
+    <Content Include="Content\images\common\arrowright_white.gif" />
+    <Content Include="Content\images\common\atlanticglobal.png" />
+    <Content Include="Content\images\common\Backgrounds.gif" />
+    <Content Include="Content\images\common\bl.gif" />
+    <Content Include="Content\images\common\blog.gif" />
+    <Content Include="Content\images\common\br.gif" />
+    <Content Include="Content\images\common\Button.gif" />
+    <Content Include="Content\images\common\call_back_48.gif" />
+    <Content Include="Content\images\common\collapseTasks.gif" />
+    <Content Include="Content\images\common\complete.gif" />
+    <Content Include="Content\images\common\contact_details_48.gif" />
+    <Content Include="Content\images\common\cross.gif" />
+    <Content Include="Content\images\common\cross_collapse.gif" />
+    <Content Include="Content\images\common\currentperiod.gif" />
+    <Content Include="Content\images\common\delete.gif" />
+    <Content Include="Content\images\common\deleteAssignment.gif" />
+    <Content Include="Content\images\common\dot_bottom.gif" />
+    <Content Include="Content\images\common\dot_left.gif" />
+    <Content Include="Content\images\common\dot_right.gif" />
+    <Content Include="Content\images\common\dot_top.gif" />
+    <Content Include="Content\images\common\email_48.gif" />
+    <Content Include="Content\images\common\expandTasks.gif" />
+    <Content Include="Content\images\common\FastPanel1.gif" />
+    <Content Include="Content\images\common\favicon.ico" />
+    <Content Include="Content\images\common\forum.gif" />
+    <Content Include="Content\images\common\Gantt.gif" />
+    <Content Include="Content\images\common\gradient.png" />
+    <Content Include="Content\images\common\greenbutton_Left.png" />
+    <Content Include="Content\images\common\greenbutton_Middle.png" />
+    <Content Include="Content\images\common\greenbutton_Right.png" />
+    <Content Include="Content\images\common\hr.gif" />
+    <Content Include="Content\images\common\line_darkgrey.gif" />
+    <Content Include="Content\images\common\line_grey.gif" />
+    <Content Include="Content\images\common\loginbackground.png" />
+    <Content Include="Content\images\common\login_box_bottom.png" />
+    <Content Include="Content\images\common\login_box_middle.png" />
+    <Content Include="Content\images\common\login_box_top.png" />
+    <Content Include="Content\images\common\login_gradient.png" />
+    <Content Include="Content\images\common\logo.png" />
+    <Content Include="Content\images\common\manage_billing.gif" />
+    <Content Include="Content\images\common\manage_expenses.gif" />
+    <Content Include="Content\images\common\manage_projects.gif" />
+    <Content Include="Content\images\common\manage_resources.gif" />
+    <Content Include="Content\images\common\manage_timesheets.gif" />
+    <Content Include="Content\images\common\meniitem_mapassignments.gif" />
+    <Content Include="Content\images\common\menuitem_addrow.gif" />
+    <Content Include="Content\images\common\menuitem_checkin.gif" />
+    <Content Include="Content\images\common\menuitem_delete.gif" />
+    <Content Include="Content\images\common\menuitem_dropdown_inactive.gif" />
+    <Content Include="Content\images\common\menuitem_import.gif" />
+    <Content Include="Content\images\common\menuitem_indent.gif" />
+    <Content Include="Content\images\common\menuitem_insertrowabove.gif" />
+    <Content Include="Content\images\common\menuitem_insertrowbelow.gif" />
+    <Content Include="Content\images\common\menuitem_mapassignments.gif" />
+    <Content Include="Content\images\common\menuitem_mspexport.gif" />
+    <Content Include="Content\images\common\menuitem_mspimport.gif" />
+    <Content Include="Content\images\common\menuitem_outdent.gif" />
+    <Content Include="Content\images\common\menuitem_print.gif" />
+    <Content Include="Content\images\common\menuitem_printpreview.gif" />
+    <Content Include="Content\images\common\menuitem_rollback.gif" />
+    <Content Include="Content\images\common\menuitem_save.gif" />
+    <Content Include="Content\images\common\menuitem_selected.gif" />
+    <Content Include="Content\images\common\menuitem_windowconfig.gif" />
+    <Content Include="Content\images\common\menuitem_zoomin.gif" />
+    <Content Include="Content\images\common\menuitem_zoomout.gif" />
+    <Content Include="Content\images\common\movie.png" />
+    <Content Include="Content\images\common\myprojects.gif" />
+    <Content Include="Content\images\common\navstrip_configuration.gif" />
+    <Content Include="Content\images\common\navstrip_search.gif" />
+    <Content Include="Content\images\common\Panel.gif" />
+    <Content Include="Content\images\common\pick.gif" />
+    <Content Include="Content\images\common\refresh.gif" />
+    <Content Include="Content\images\common\resourcecentre.gif" />
+    <Content Include="Content\images\common\silver.png" />
+    <Content Include="Content\images\common\sitenavigation_menuarrow.gif" />
+    <Content Include="Content\images\common\sitenavigation_tabmenuarrow.gif" />
+    <Content Include="Content\images\common\space.gif" />
+    <Content Include="Content\images\common\tl.gif" />
+    <Content Include="Content\images\common\Toolbar.gif" />
+    <Content Include="Content\images\common\tr.gif" />
+    <Content Include="Content\images\common\tutorials_32.gif" />
+    <Content Include="Content\images\common\tutorials_48.gif" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclickedmouseout_bg.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclickedmouseout_bottom.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclickedmouseout_middle.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclickedmouseout_top.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclicked_bg.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclicked_bottom.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclicked_middle.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseoverclicked_top.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseover_bg.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseover_bottom.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseover_middle.png" />
+    <Content Include="Content\images\DesktopIconContainer\DesktopIconBackgroundMouseover_top.png" />
+    <Content Include="Content\images\ExternalLink.gif" />
+    <Content Include="Content\images\icon\bing.png" />
+    <Content Include="Content\images\icon\book.png" />
+    <Content Include="Content\images\icon\default.png" />
+    <Content Include="Content\images\icon\facebook.png" />
+    <Content Include="Content\images\icon\favicon.ico" />
+    <Content Include="Content\images\icon\firefox.png" />
+    <Content Include="Content\images\icon\google.png" />
+    <Content Include="Content\images\icon\help.png" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\Startmenu\minimizeWindows.png" />
+    <Content Include="Content\images\Startmenu\newWindow.png" />
+    <Content Include="Content\images\Startmenu\restoreWindows.png" />
+    <Content Include="Content\images\Startmenu\StartMenuBG.png" />
+    <Content Include="Content\images\Startmenu\StartmenuItemBG.gif" />
+    <Content Include="Content\images\Startmenu\taskbar-bg.png" />
+    <Content Include="Content\images\Startmenu\Taskbar_01.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_02.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_04.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_05.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_06.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_08.jpg" />
+    <Content Include="Content\images\Startmenu\Taskbar_09.jpg" />
+    <Content Include="Content\images\Startmenu\WindowGrid.png" />
+    <Content Include="Content\images\Startmenu\WindowOverlap.png" />
+    <Content Include="Content\images\Taskbar\StartButtonIcon.png" />
+    <Content Include="Content\images\Taskbar\taskbar-bg.png" />
+    <Content Include="Content\images\Taskbar\TaskbarItem.png" />
+    <Content Include="Content\images\Taskbar\TaskbarItemActive.png" />
+    <Content Include="Content\images\Taskbar\TaskbarItemActiveHover.png" />
+    <Content Include="Content\images\Taskbar\TaskbarItemHover.png" />
+    <Content Include="Content\images\Taskbar\TaskbarItemShowDesktop.png" />
+    <Content Include="Content\images\Taskbar\TaskbarPoints.png" />
+    <Content Include="Content\images\win7-desktop-bg3.jpg" />
+    <Content Include="Content\images\win7-desktop-green-bg.jpg" />
+    <Content Include="Content\images\WindowsAeroStyle\active\bl.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\bm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\br.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\lines.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\lm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\mm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\rm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\tl.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\tm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\active\tr.png" />
+    <Content Include="Content\images\WindowsAeroStyle\btn-close.png" />
+    <Content Include="Content\images\WindowsAeroStyle\btn-max.png" />
+    <Content Include="Content\images\WindowsAeroStyle\btn-min.png" />
+    <Content Include="Content\images\WindowsAeroStyle\btn-reg.png" />
+    <Content Include="Content\images\WindowsAeroStyle\empty.gif" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\bl.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\bm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\br.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\lines.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\lm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\mm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\rm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\tl.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\tm.png" />
+    <Content Include="Content\images\WindowsAeroStyle\inactive\tr.png" />
+    <Content Include="Content\images\WindowsAeroStyle\left.png" />
+    <Content Include="Content\images\WindowsAeroStyle\right.png" />
+    <Content Include="Content\images\WindowsAeroStyle\spacer.png" />
+    <Content Include="Content\jquery-ui-1.8.6.custom.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\common\com_dateinput.js" />
+    <Content Include="Scripts\common\com_menulist.js" />
+    <Content Include="Scripts\common\com_pickbox.js" />
+    <Content Include="Scripts\common\com_popupwindow.js" />
+    <Content Include="Scripts\common\com_sitenavigation.js" />
+    <Content Include="Scripts\common\com_tabstripheader.js" />
+    <Content Include="Scripts\common\dsh_dashboard.master.js" />
+    <Content Include="Scripts\common\GridE.js" />
+    <Content Include="Scripts\common\ProjectDashboard.js" />
+    <Content Include="Scripts\common\WebResorce.js" />
+    <Content Include="Scripts\common\xbLibrary.js" />
+    <Content Include="Scripts\common\xbOptionList.js" />
+    <Content Include="Scripts\common\xbScrollableTable.js" />
+    <Content Include="Scripts\common\xbSplitter.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-AeroWindow.js" />
+    <Content Include="Scripts\jquery-ui-1.8.1.custom.min.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.easing.compatibility.js" />
+    <Content Include="Scripts\oyos-Lightbox-Handler.js" />
+    <Content Include="Scripts\Soyos-Lightbox-Handler.js" />
+    <Content Include="Web.config" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.min-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.min-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Master.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\common\CalendarElement.css" />
+    <Content Include="Content\common\Controls.css" />
+    <Content Include="Content\common\directentrygrid.css" />
+    <Content Include="Content\common\Editor.css" />
+    <Content Include="Content\common\SchedulingElement.css" />
+    <Content Include="Content\images\common\blank.gif" />
+    <Content Include="Content\images\icon\addcalendaritem.gif" />
+    <Content Include="Content\images\icon\chevron_left.gif" />
+    <Content Include="Content\images\icon\chevron_right.gif" />
+    <Content Include="Content\images\icon\colour_key.gif" />
+    <Content Include="Content\images\icon\contract.gif" />
+    <Content Include="Content\images\icon\currentperiod.gif" />
+    <Content Include="Content\images\icon\deleteitem.gif" />
+    <Content Include="Content\images\icon\deletesmall.gif" />
+    <Content Include="Content\images\icon\dropdownarrow.gif" />
+    <Content Include="Content\images\icon\expand.gif" />
+    <Content Include="Content\images\icon\information_blue.gif" />
+    <Content Include="Content\images\icon\menudropdown_noborder.gif" />
+    <Content Include="Content\images\icon\menuitem_addrow_colour.gif" />
+    <Content Include="Content\images\icon\menuitem_config_colour.gif" />
+    <Content Include="Content\images\icon\menuitem_import.gif" />
+    <Content Include="Content\images\icon\menuitem_importtaskplanning.gif" />
+    <Content Include="Content\images\icon\menuitem_save_colour.gif" />
+    <Content Include="Content\images\icon\openitem.gif" />
+    <Content Include="Content\images\icon\removeitem.gif" />
+    <Content Include="Content\images\icon\search.gif" />
+    <Content Include="Content\images\icon\Sort-Icon.gif" />
+    <Content Include="Content\images\icon\Tbl-Bg-Grid.gif" />
+    <Content Include="Content\images\icon\Tbl-Bttm-Bg-Grid.gif" />
+    <Content Include="Content\images\icon\vistabuttongrey_dropdown_mouseover.gif" />
+    <Content Include="Content\images\messages\error.png" />
+    <Content Include="Content\images\messages\Info.png" />
+    <Content Include="Content\images\messages\success.png" />
+    <Content Include="Content\images\messages\warning.png" />
+    <Content Include="Content\images\popup\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\images\popup\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\images\popup\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\images\popup\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\images\popup\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\images\popup\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\images\popup\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\images\popup\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\images\popup\ui-icons_222222_256x240.png" />
+    <Content Include="Content\images\popup\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\images\popup\ui-icons_454545_256x240.png" />
+    <Content Include="Content\images\popup\ui-icons_888888_256x240.png" />
+    <Content Include="Content\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\jquery-ui-1.7.2.custom.css" />
+    <Content Include="Content\images\Macdoc\Addressbook.png" />
+    <Content Include="Content\images\Macdoc\DVD-Player.png" />
+    <Content Include="Content\images\Macdoc\eMail.png" />
+    <Content Include="Content\images\Macdoc\Instant_Messaging.png" />
+    <Content Include="Content\images\Macdoc\Safari.png" />
+    <Content Include="Content\images\Macdoc\Terminal.png" />
+    <Content Include="Content\Macdoc\spook.css" />
+    <Content Include="Content\Macdoc\spookSkin.css" />
+    <Content Include="Content\Macdoc\macdoc.css" />
+    <Content Include="Content\theme\ui.accordion.css" />
+    <Content Include="Content\theme\ui.all.css" />
+    <Content Include="Content\theme\ui.base.css" />
+    <Content Include="Content\theme\ui.core.css" />
+    <Content Include="Content\theme\ui.datepicker.css" />
+    <Content Include="Content\theme\ui.dialog.css" />
+    <Content Include="Content\theme\ui.progressbar.css" />
+    <Content Include="Content\theme\ui.resizable.css" />
+    <Content Include="Content\theme\ui.slider.css" />
+    <Content Include="Content\theme\ui.tabs.css" />
+    <Content Include="Content\theme\ui.theme.css" />
+    <Content Include="Scripts\common\jquery.js" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.7.2.custom.min.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\Macdoc\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\Macdoc\jquery.jqDock.min.js" />
+    <Content Include="Scripts\Macdoc\macdoc.js" />
+    <Content Include="Scripts\Macdoc\spook.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\Login.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Dashboard\Index.aspx" />
+    <Content Include="Views\Dashboard\UserDashboard.ascx" />
+    <Content Include="Views\Home\Home.aspx" />
+    <Content Include="Views\Project\AssignTask.aspx" />
+    <Content Include="Views\Project\Docs.aspx" />
+    <Content Include="Views\Project\DocUpload.aspx" />
+    <Content Include="Views\Project\DocUpload2.aspx" />
+    <Content Include="Views\Project\EditProject.aspx" />
+    <Content Include="Views\Project\FileUpload.aspx" />
+    <Content Include="Views\Project\Index.aspx" />
+    <Content Include="Views\Project\NewProject.aspx" />
+    <Content Include="Views\Project\NewTask.aspx" />
+    <Content Include="Views\Resource\Department.aspx" />
+    <Content Include="Views\Resource\Index.aspx" />
+    <Content Include="Views\Resource\IndexInterestProjects.aspx" />
+    <Content Include="Views\Resource\IndexRole.aspx" />
+    <Content Include="Views\Resource\IndexSkills.aspx" />
+    <Content Include="Views\Resource\Role.aspx" />
+    <Content Include="Views\Resource\Schedule.aspx" />
+    <Content Include="Views\Resource\Test.aspx" />
+    <Content Include="Views\Resource\ViewResources.aspx" />
+    <Content Include="Views\Resource\ViewTeam.aspx" />
+    <Content Include="Views\Shared\MasterDashboard.Master" />
+    <Content Include="Views\Shared\Menu.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Employee.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Employee_log.ldf">
+      <DependentUpon>Employee.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\LeaveDB.mdf">
+    </Content>
+    <Content Include="App_Data\LeaveDB_log.ldf">
+      <DependentUpon>LeaveDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Microsoft.Web.Mvc.dll" />
+    <Content Include="Content\calndarview\colorpicker\colorpicker.css" />
+    <Content Include="Content\calndarview\colorpicker\images\blank.gif" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_background.png" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_hex.png" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_hsb_b.png" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_hsb_h.png" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_hsb_s.png" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_indic.gif" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_overlay.png" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_rgb_b.png" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_rgb_g.png" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_rgb_r.png" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_select.gif" />
+    <Content Include="Content\calndarview\colorpicker\images\colorpicker_submit.png" />
+    <Content Include="Content\calndarview\colorpicker\images\custom_background.png" />
+    <Content Include="Content\calndarview\colorpicker\images\custom_hex.png" />
+    <Content Include="Content\calndarview\colorpicker\images\custom_hsb_b.png" />
+    <Content Include="Content\calndarview\colorpicker\images\custom_hsb_h.png" />
+    <Content Include="Content\calndarview\colorpicker\images\custom_hsb_s.png" />
+    <Content Include="Content\calndarview\colorpicker\images\custom_indic.gif" />
+    <Content Include="Content\calndarview\colorpicker\images\custom_rgb_b.png" />
+    <Content Include="Content\calndarview\colorpicker\images\custom_rgb_g.png" />
+    <Content Include="Content\calndarview\colorpicker\images\custom_rgb_r.png" />
+    <Content Include="Content\calndarview\colorpicker\images\custom_submit.png" />
+    <Content Include="Content\calndarview\colorpicker\images\select.png" />
+    <Content Include="Content\calndarview\colorpicker\images\select2.png" />
+    <Content Include="Content\calndarview\colorpicker\images\slider.png" />
+    <Content Include="Content\calndarview\colorpicker\layout.css" />
+    <Content Include="Content\calndarview\frontierCalendar\images\bw-tree.jpg" />
+    <Content Include="Content\calndarview\frontierCalendar\images\dayCellCurrentMonth.png" />
+    <Content Include="Content\calndarview\frontierCalendar\images\dayCellOtherMonth.png" />
+    <Content Include="Content\calndarview\frontierCalendar\images\dayCellToday.png" />
+    <Content Include="Content\calndarview\frontierCalendar\jquery-frontier-cal-1.3.2.css" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-icons_666666_256x240.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\calndarview\jquery-ui\flick\jquery-ui-1.8.2.custom.css" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\calndarview\jquery-ui\smoothness\jquery-ui-1.8.1.custom.css" />
+    <Content Include="Content\Datatable\demo_page.css" />
+    <Content Include="Content\Datatable\demo_table.css" />
+    <Content Include="Content\datepicker.css" />
+    <Content Include="Content\images\common\bar_chart_add.png" />
+    <Content Include="Content\images\common\Dashboard.png" />
+    <Content Include="Content\images\common\home.png" />
+    <Content Include="Content\images\common\newproject.png" />
+    <Content Include="Content\images\common\Note.png" />
+    <Content Include="Content\images\common\Projects.png" />
+    <Content Include="Content\images\common\ReportsMain.jpg" />
+    <Content Include="Content\images\common\reports_icon.gif" />
+    <Content Include="Content\images\common\role.png" />
+    <Content Include="Content\images\common\schedule.jpg" />
+    <Content Include="Content\images\common\users.jpg" />
+    <Content Include="Content\images\common\viewproject.png" />
+    <Content Include="Content\images\Startmenu\Dashboard.png" />
+    <Content Include="Content\images\Startmenu\login.jpg" />
+    <Content Include="Content\images\win7-desktop-bg" />
+    <Content Include="Content\images\win7-desktop-bg5.jpg" />
+    <Content Include="Content\images\win7-desktop-bg1.jpg" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="EmployeeSystemEx.dll" />
+    <Content Include="GridView\Framework\Export.aspx" />
+    <Content Include="GridView\Framework\TreeGridFramework.aspx" />
+    <Content Include="GridView\Gantt\GanttBasicDBData.aspx" />
+    <Content Include="GridView\Gantt\GanttBasicDBUpload.aspx" />
+    <Content Include="GridView\Gantt\GanttBasicDef.xml" />
+    <Content Include="GridView\Gantt\GridData.aspx" />
+    <Content Include="GridView\Gantt\GridLayout.aspx" />
+    <Content Include="GridView\Gantt\GridUpload.aspx" />
+    <Content Include="GridView\Grid\Defaults.xml" />
+    <Content Include="GridView\Grid\Ding.wav" />
+    <Content Include="GridView\Grid\Drag.cur" />
+    <Content Include="GridView\Grid\GridE.js" />
+    <Content Include="GridView\Grid\GridEOnDemand.js" />
+    <Content Include="GridView\Grid\Help.html" />
+    <Content Include="GridView\Grid\Modern\Backgrounds.gif" />
+    <Content Include="GridView\Grid\Modern\BackgroundsRight.gif" />
+    <Content Include="GridView\Grid\Modern\Button.gif" />
+    <Content Include="GridView\Grid\Modern\ButtonSpace.gif" />
+    <Content Include="GridView\Grid\Modern\FastPanel1.gif" />
+    <Content Include="GridView\Grid\Modern\FastPanel2.gif" />
+    <Content Include="GridView\Grid\Modern\Filter.gif" />
+    <Content Include="GridView\Grid\Modern\Gantt.gif" />
+    <Content Include="GridView\Grid\Modern\Grid.css" />
+    <Content Include="GridView\Grid\Modern\Menu.gif" />
+    <Content Include="GridView\Grid\Modern\Panel.gif" />
+    <Content Include="GridView\Grid\Modern\Sort.gif" />
+    <Content Include="GridView\Grid\Modern\Toolbar.gif" />
+    <Content Include="GridView\Grid\Modern\Toolbar.png" />
+    <Content Include="GridView\Grid\Modern\Tree.gif" />
+    <Content Include="GridView\Grid\Modern\TreeN.gif" />
+    <Content Include="GridView\Grid\NoDrag.cur" />
+    <Content Include="GridView\Grid\Text.xml" />
+    <Content Include="GridView\Styles\Box2.gif" />
+    <Content Include="GridView\Styles\Examples.css" />
+    <Content Include="GridView\Styles\Info.txt" />
+    <Content Include="GridView\Styles\Page.png" />
+    <Content Include="LeaveSystemEx.dll" />
+    <Content Include="Models\App.Config" />
+    <Content Include="Reports\Project_Resources.aspx" />
+    <Content Include="Reports\ResourceAllocation.aspx" />
+    <Content Include="Reports\ResourceAllocationByUser.aspx" />
+    <Content Include="Reports\Test.htm" />
+    <Content Include="Reports\ViewProjectByResources.aspx" />
+    <Content Include="Scripts\aerowindow\jquery-AeroWindow.js" />
+    <Content Include="Scripts\aerowindow\jquery.easing.1.3.js" />
+    <Content Include="Scripts\Calander\datepicker.js" />
+    <Content Include="Scripts\Calander\jquery-ui.min.js" />
+    <Content Include="Scripts\Calander\jquery.js" />
+    <Content Include="Scripts\Calander\jquery.min.js" />
+    <Content Include="Scripts\calndarview\colorpicker\colorpicker.js" />
+    <Content Include="Scripts\calndarview\colorpicker\eye.js" />
+    <Content Include="Scripts\calndarview\colorpicker\layout.js" />
+    <Content Include="Scripts\calndarview\colorpicker\utils.js" />
+    <Content Include="Scripts\calndarview\frontierCalendar\jquery-frontier-cal-1.3.2.js" />
+    <Content Include="Scripts\calndarview\frontierCalendar\jquery-frontier-cal-1.3.2.min.js" />
+    <Content Include="Scripts\calndarview\jquery-core\jquery-1.4.2-ie-fix.js" />
+    <Content Include="Scripts\calndarview\jquery-core\jquery-1.4.2-ie-fix.min.js" />
+    <Content Include="Scripts\calndarview\jquery-core\jquery-1.4.2.js" />
+    <Content Include="Scripts\calndarview\jquery-core\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\calndarview\jquery-qtip\jquery.qtip-1.0.0-rc3.min.js" />
+    <Content Include="Scripts\calndarview\jquery-qtip\jquery.qtip-1.0.js" />
+    <Content Include="Scripts\calndarview\jquery-qtip\jquery.qtip-1.0.min.js" />
+    <Content Include="Scripts\calndarview\jquery-ui\flick\jquery-ui-1.8.2.custom.min.js" />
+    <Content Include="Scripts\calndarview\jquery-ui\smoothness\jquery-ui-1.8.1.custom.min.js" />
+    <Content Include="Scripts\calndarview\lib\jshashtable-2.1.js" />
+    <Content Include="Scripts\Datatable\jquery.dataTables.js" />
+    <Content Include="Scripts\Datatable\jquery.js" />
+    <Content Include="Scripts\HTMLPage1.htm" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Views\GridView\Gantt.aspx" />
+    <Content Include="Views\GridView\Load.ascx" />
+    <Content Include="Views\GridView\LoadSchedule.ascx" />
+    <Content Include="Views\GridView\ResourceSchedule.aspx" />
+    <Content Include="Views\GridView\Styles\Box2.gif" />
+    <Content Include="Views\GridView\Styles\Examples.css" />
+    <Content Include="Views\GridView\Styles\Info.txt" />
+    <Content Include="Views\GridView\Styles\Page.png" />
+    <Content Include="Views\Project\AssignUsers.aspx" />
+    <Content Include="Views\Project\EditProjectForm.aspx" />
+    <Content Include="Views\Report\Index.aspx" />
+    <Content Include="Views\Resource\AssignRoles.aspx" />
+    <Content Include="Views\Resource\AssignRolesPermissions.aspx" />
+    <Content Include="Views\Resource\EditUser.aspx" />
+    <Content Include="Views\Resource\RolePermission.aspx" />
+    <Content Include="Views\Resource\ScheduleCalendar.aspx" />
+    <Content Include="Views\Resource\ScheduleCalendarControl.ascx" />
+    <Content Include="Views\Resource\ViewUserLeave.aspx" />
+    <Content Include="Views\Shared\Master.Master.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LeaveSystemEx.dll.config" />
+    <Content Include="Leave\LeaveManagement.aspx" />
+    <EntityDeploy Include="Models\SynergyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SynergyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Reports\ProjectResources.xsc">
+      <DependentUpon>ProjectResources.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ProjectResources.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ProjectResources.xss">
+      <DependentUpon>ProjectResources.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ResourceAllocationByUserds.xsc">
+      <DependentUpon>ResourceAllocationByUserds.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ResourceAllocationByUserds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResourceAllocationByUserds.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ResourceAllocationByUserds.xss">
+      <DependentUpon>ResourceAllocationByUserds.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ResourceAllocationds.xsc">
+      <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ResourceAllocationds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResourceAllocationds.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ResourceAllocationds.xss">
+      <DependentUpon>ResourceAllocationds.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ViewProjectByResourceds.xsc">
+      <DependentUpon>ViewProjectByResourceds.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ViewProjectByResourceds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ViewProjectByResourceds.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ViewProjectByResourceds.xss">
+      <DependentUpon>ViewProjectByResourceds.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\ProjectResources.rdlc" />
+    <EmbeddedResource Include="Reports\ResourceAllocation.rdlc" />
+    <EmbeddedResource Include="Reports\ResourceAllocationByUser.rdlc" />
+    <EmbeddedResource Include="Reports\ResourceAllocationByUserForTheGivenPeriod.rdlc" />
+    <EmbeddedResource Include="Reports\ViewProjectByResource.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\External System Integration\EmployeeAdapter\EmployeeAdapter.csproj">
+      <Project>{B566F19A-E157-4285-81F7-5B66ACC82786}</Project>
+      <Name>EmployeeAdapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\External System Integration\LeaveAdapter\LeaveAdapter.csproj">
+      <Project>{C50E7D92-ECEF-448D-8D7B-29D3BEF8C38F}</Project>
+      <Name>LeaveAdapter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1952</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
