@@ -2,13 +2,18 @@
     Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <link href="../../Content/jquery-ui.css" rel="stylesheet" type="text/css" />
-
+ <link href="../../Content/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery.min.js"></script>
-
     <script type="text/javascript" language="javascript" src="../../Scripts/Calander/jquery-ui.min.js"></script>
-
     <link rel="stylesheet" href="../Content/common/styles.css" type="text/css" />
+    
+    
+    <!-- form validations -->
+<script type="text/javascript" src="../../Scripts/validations/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../../Scripts/validations/jquery.bvalidator.js"></script>
+<link type="text/css" rel="stylesheet" href="../../Content/formValidate.css" />
+
+<!-- end form validations -->
     <div id="masterpage_divHead" class="formHead">
         <table class="pageTitle" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tbody>
@@ -20,7 +25,32 @@
             </tbody>
         </table>
     </div>
-
+ <form id="form4" method="post">
+                                        <p>
+                                            Username:
+                                            <input data-bvalidator="alphanum,required" type="text"/>
+                                        </p>
+                                        <p>
+                                            Password:
+                                            <input id="Password1" data-bvalidator="required" type="password"/>
+                                        </p>
+                                        <p>
+                                            Password again:
+                                            <input data-bvalidator="equalto[form6pass],required" type="password"/>
+                                        </p>
+                                        <p>
+                                            Enter Email:
+                                            <input data-bvalidator="required,email" type="text"/>
+                                        </p>
+                                        <p>
+                                            Date in format dd.mm.yyyy:<br>
+                                            <input data-bvalidator="date[dd/mm/yyyy],required" type="text"/>
+                                        </p>
+                                        <p>
+                                            <input value="Submit" type="submit"/>
+                                            <input value="Reset" type="reset"/>
+                                        </p>
+ </form>
     <script type="text/javascript">
 
 
@@ -31,6 +61,12 @@
             $("#projectenddate").datepicker();
         });
 
+    </script>
+    
+     <script type="text/javascript">
+         $(document).ready(function() {
+             $('#form4').bValidator();
+         });
     </script>
 
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -87,6 +123,7 @@
                                 </tr>
                             </tbody>
                         </table>
+                        
                         <% using (Html.BeginForm("NewProject", "Project"))
                            { %>
                         <table id="masterPage_tblFormContentRoot" style="border-collapse: collapse;" border="0"
@@ -94,6 +131,9 @@
                             <tbody>
                                 <tr>
                                     <td class="form">
+   
+    
+    
                                         <table class="formContent">
                                             <tbody>
                                                 <tr>
@@ -231,138 +271,7 @@
                         </table>
                     </div>
 
-                    <script language="javascript">
-
-                        function validateForm() {
-                            var a = document.forms[0]["code"].value
-
-                            if (a == null || a == "") {
-                                alert("Please enter Project Code");
-                                return false;
-                            }
-
-                            var b = document.forms[0]["txtprojectname"].value
-
-                            if (b == null || b == "") {
-                                alert("Please enter Project Name");
-                                return false;
-                            }
-
-                            var c = document.forms[0]["projectstartdate"].value
-
-                            if (c == null || c == "") {
-                                alert("Please select Project Start Date");
-                                return false;
-                            }
-                            else {
-                                if (isDate(c) == false) {
-                                    return false
-                                }
-                            }
-
-                            var d = document.forms[0]["projectenddate"].value
-
-                            if (d == null || d == "") {
-                                alert("Please select Project End Date");
-                                return false;
-                            }
-                            else {
-                                if (isDate(d) == false) {
-                                    return false
-                                }
-                            }
-
-                            if (isDateGreaterThanEndDate(c, d) == false) {
-                                return false
-                            }
-
-                            return true
-                        }
-
-                        function isDateGreaterThanEndDate(dtStr, dtEnd) {
-                            var StartDate = dtStr
-                            var EndDate = dtEnd
-
-                            if (StartDate > EndDate) {
-                                alert("Start Date should not be greater than End Date")
-                                return false
-                            }
-                        }
-
-                        var dtCh = "/";
-                        var minYear = 1900;
-                        var maxYear = 2100;
-
-                        function isInteger(s) {
-                            var i;
-                            for (i = 0; i < s.length; i++) {
-                                var c = s.charAt(i);
-                                if (((c < "0") || (c > "9"))) return false;
-                            }
-                            return true;
-                        }
-
-                        function stripCharsInBag(s, bag) {
-                            var i;
-                            var returnString = "";
-                            for (i = 0; i < s.length; i++) {
-                                var c = s.charAt(i);
-                                if (bag.indexOf(c) == -1) returnString += c;
-                            }
-                            return returnString;
-                        }
-
-                        function daysInFebruary(year) {
-                            return (((year % 4 == 0) && ((!(year % 100 == 0)) || (year % 400 == 0))) ? 29 : 28);
-                        }
-                        function DaysArray(n) {
-                            for (var i = 1; i <= n; i++) {
-                                this[i] = 31
-                                if (i == 4 || i == 6 || i == 9 || i == 11) { this[i] = 30 }
-                                if (i == 2) { this[i] = 29 }
-                            }
-                            return this
-                        }
-
-                        function isDate(dtStr) {
-                            var daysInMonth = DaysArray(12)
-                            var pos1 = dtStr.indexOf(dtCh)
-                            var pos2 = dtStr.indexOf(dtCh, pos1 + 1)
-                            var strMonth = dtStr.substring(0, pos1)
-                            var strDay = dtStr.substring(pos1 + 1, pos2)
-                            var strYear = dtStr.substring(pos2 + 1)
-                            strYr = strYear
-                            if (strDay.charAt(0) == "0" && strDay.length > 1) strDay = strDay.substring(1)
-                            if (strMonth.charAt(0) == "0" && strMonth.length > 1) strMonth = strMonth.substring(1)
-                            for (var i = 1; i <= 3; i++) {
-                                if (strYr.charAt(0) == "0" && strYr.length > 1) strYr = strYr.substring(1)
-                            }
-                            month = parseInt(strMonth)
-                            day = parseInt(strDay)
-                            year = parseInt(strYr)
-                            if (pos1 == -1 || pos2 == -1) {
-                                alert("The date Format should be : MM/DD/YYYY")
-                                return false
-                            }
-                            if (strMonth.length < 1 || month < 1 || month > 12) {
-                                alert("Please enter a Valid Month")
-                                return false
-                            }
-                            if (strDay.length < 1 || day < 1 || day > 31 || (month == 2 && day > daysInFebruary(year)) || day > daysInMonth[month]) {
-                                alert("Please enter a Valid Day")
-                                return false
-                            }
-                            if (strYear.length != 4 || year == 0 || year < minYear || year > maxYear) {
-                                alert("Please enter a Valid 4 digit Year between " + minYear + " and " + maxYear)
-                                return false
-                            }
-                            if (dtStr.indexOf(dtCh, pos2 + 1) != -1 || isInteger(stripCharsInBag(dtStr, dtCh)) == false) {
-                                alert("Please enter a Valid Date")
-                                return false
-                            }
-                            return true
-                        }
-                    </script>
+                   
 
                     <%} %>
                     <div style="padding-left: 10px; padding-right: 10px;">
@@ -371,7 +280,138 @@
             </tr>
         </tbody>
     </table>
+ <script language="javascript">
 
+     function validateForm() {
+         var a = document.forms[0]["code"].value
+
+         if (a == null || a == "") {
+             alert("Please enter Project Code");
+             return false;
+         }
+
+         var b = document.forms[0]["txtprojectname"].value
+
+         if (b == null || b == "") {
+             alert("Please enter Project Name");
+             return false;
+         }
+
+         var c = document.forms[0]["projectstartdate"].value
+
+         if (c == null || c == "") {
+             alert("Please select Project Start Date");
+             return false;
+         }
+         else {
+             if (isDate(c) == false) {
+                 return false
+             }
+         }
+
+         var d = document.forms[0]["projectenddate"].value
+
+         if (d == null || d == "") {
+             alert("Please select Project End Date");
+             return false;
+         }
+         else {
+             if (isDate(d) == false) {
+                 return false
+             }
+         }
+
+         if (isDateGreaterThanEndDate(c, d) == false) {
+             return false
+         }
+
+         return true
+     }
+
+     function isDateGreaterThanEndDate(dtStr, dtEnd) {
+         var StartDate = dtStr
+         var EndDate = dtEnd
+
+         if (StartDate > EndDate) {
+             alert("Start Date should not be greater than End Date")
+             return false
+         }
+     }
+
+     var dtCh = "/";
+     var minYear = 1900;
+     var maxYear = 2100;
+
+     function isInteger(s) {
+         var i;
+         for (i = 0; i < s.length; i++) {
+             var c = s.charAt(i);
+             if (((c < "0") || (c > "9"))) return false;
+         }
+         return true;
+     }
+
+     function stripCharsInBag(s, bag) {
+         var i;
+         var returnString = "";
+         for (i = 0; i < s.length; i++) {
+             var c = s.charAt(i);
+             if (bag.indexOf(c) == -1) returnString += c;
+         }
+         return returnString;
+     }
+
+     function daysInFebruary(year) {
+         return (((year % 4 == 0) && ((!(year % 100 == 0)) || (year % 400 == 0))) ? 29 : 28);
+     }
+     function DaysArray(n) {
+         for (var i = 1; i <= n; i++) {
+             this[i] = 31
+             if (i == 4 || i == 6 || i == 9 || i == 11) { this[i] = 30 }
+             if (i == 2) { this[i] = 29 }
+         }
+         return this
+     }
+
+     function isDate(dtStr) {
+         var daysInMonth = DaysArray(12)
+         var pos1 = dtStr.indexOf(dtCh)
+         var pos2 = dtStr.indexOf(dtCh, pos1 + 1)
+         var strMonth = dtStr.substring(0, pos1)
+         var strDay = dtStr.substring(pos1 + 1, pos2)
+         var strYear = dtStr.substring(pos2 + 1)
+         strYr = strYear
+         if (strDay.charAt(0) == "0" && strDay.length > 1) strDay = strDay.substring(1)
+         if (strMonth.charAt(0) == "0" && strMonth.length > 1) strMonth = strMonth.substring(1)
+         for (var i = 1; i <= 3; i++) {
+             if (strYr.charAt(0) == "0" && strYr.length > 1) strYr = strYr.substring(1)
+         }
+         month = parseInt(strMonth)
+         day = parseInt(strDay)
+         year = parseInt(strYr)
+         if (pos1 == -1 || pos2 == -1) {
+             alert("The date Format should be : MM/DD/YYYY")
+             return false
+         }
+         if (strMonth.length < 1 || month < 1 || month > 12) {
+             alert("Please enter a Valid Month")
+             return false
+         }
+         if (strDay.length < 1 || day < 1 || day > 31 || (month == 2 && day > daysInFebruary(year)) || day > daysInMonth[month]) {
+             alert("Please enter a Valid Day")
+             return false
+         }
+         if (strYear.length != 4 || year == 0 || year < minYear || year > maxYear) {
+             alert("Please enter a Valid 4 digit Year between " + minYear + " and " + maxYear)
+             return false
+         }
+         if (dtStr.indexOf(dtCh, pos2 + 1) != -1 || isInteger(stripCharsInBag(dtStr, dtCh)) == false) {
+             alert("Please enter a Valid Date")
+             return false
+         }
+         return true
+     }
+                    </script>
     <script>
         function GoBack() {
             window.location(history - 1);
