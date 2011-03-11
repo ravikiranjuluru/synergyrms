@@ -1454,7 +1454,9 @@ namespace SynergyRMS.Models
             double UserMaxEffort = 0;
             double RemEffort = 0;
             double UserRequestdEffort = 0;
-            double NoOfRemainingDays = 0;
+            string SelStartDate = null;
+            string SelEndDate = null;
+           
             Hashtable HTResource = new Hashtable();
 
             /*------------------Calculate Period------------------------*/
@@ -1465,25 +1467,47 @@ namespace SynergyRMS.Models
             /*-----------------Calculate MaximumUserEffort for Given User-----------*/
 
             List<PM_MaxUserEfforts> ListUserEfforts = null;
+            PM_ProjectResources projectRes = null;
+            MembershipUser edituser = null;
+            if (projectResourceId == 0)
+            {
+                 edituser = Membership.GetUser(userName);
 
-            //MembershipUser edituser = Membership.GetUser(new Guid(userkey));
-            MembershipUser edituser = Membership.GetUser(userName);
-
-            IQueryable<PM_MaxUserEfforts> maxUserEffortQuery = from m in GetSynegyRMSInstance().PM_MaxUserEfforts
-                                                               where m.aspnet_Users.UserName == edituser.UserName
-                                                               select m;
+                IQueryable<PM_MaxUserEfforts> maxUserEffortQuery = from m in GetSynegyRMSInstance().PM_MaxUserEfforts
+                                                                   where m.aspnet_Users.UserName == edituser.UserName
+                                                                   select m;
 
 
-            ListUserEfforts = maxUserEffortQuery.ToList();
-            UserMaxEffort = Convert.ToDouble(ListUserEfforts[0].MaxEffort);
-            UserEffort = UserMaxEffort;
+                ListUserEfforts = maxUserEffortQuery.ToList();
+                UserMaxEffort = Convert.ToDouble(ListUserEfforts[0].MaxEffort);
+                UserEffort = UserMaxEffort;
+
+             
+            }
+            else
+            {
+
+                projectRes = SynergyService.GetResouceById(projectResourceId);
+
+                edituser = Membership.GetUser(projectRes.aspnet_Users.UserName);
+
+                IQueryable<PM_MaxUserEfforts> maxUserEffortQuery = from m in GetSynegyRMSInstance().PM_MaxUserEfforts
+                                                                   where m.aspnet_Users.UserName == edituser.UserName
+                                                                   select m;
+
+
+                ListUserEfforts = maxUserEffortQuery.ToList();
+                UserMaxEffort = Convert.ToDouble(ListUserEfforts[0].MaxEffort);
+                UserEffort = UserMaxEffort;
+
+            }
 
             /*----------------------Calculate Current Allocation-------------------------*/
 
             List<PM_ProjectResources> ResList = new List<PM_ProjectResources>();
             List<PM_ProjectResources> ResourceList = null;
             List<PM_ProjectResources> ResourceList2 = null;
-
+          
 
 
             if (projectResourceId == 0)
@@ -1516,7 +1540,6 @@ namespace SynergyRMS.Models
                 foreach (PM_ProjectResources resorcesObj in ResourceList2)
                 {
 
-
                     if (!HTResource.Contains(resorcesObj.ProjectResorcesId))
                     {
                         ResList.Add(resorcesObj);
@@ -1528,35 +1551,76 @@ namespace SynergyRMS.Models
 
                 /*------------- Updated New Project Resource---------------------------*/
 
-
-                IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
-                                                               where ((p.aspnet_Users.UserName == edituser.UserName) && (p.ProjectResorcesId != projectResourceId) && ((p.AllocatedStartDate >= startDate && p.AllocatedStartDate <= endDate) || (p.AllocatedEndDate >= startDate && p.AllocatedEndDate <= endDate)))
-                                                               select p;
-
-
-                IQueryable<PM_ProjectResources> projectQuery2 = from p in GetSynegyRMSInstance().PM_ProjectResources
-                                                                where ((p.aspnet_Users.UserName == edituser.UserName) && (p.ProjectResorcesId != projectResourceId) && ((p.AllocatedStartDate <= startDate && p.AllocatedEndDate >= startDate) || (p.AllocatedStartDate <= endDate && p.AllocatedEndDate >= endDate)))
-                                                                select p;
-
-
-                ResourceList = projectQuery.ToList();
-
-                ResourceList2 = projectQuery2.ToList();
-
-                foreach (PM_ProjectResources resorcesObj in ResourceList)
+                SelStartDate = startDate.ToString().Substring(0,8);
+                SelEndDate = endDate.ToString().Substring(0,8);
+                if (SelStartDate == "1/1/0001" || SelEndDate == "1/1/0001")
                 {
-                    ResList.Add(resorcesObj);
-                    HTResource.Add(resorcesObj.ProjectResorcesId, 0);
-                }
+                    IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                                                   where ((p.aspnet_Users.UserName == edituser.UserName) && (p.ProjectResorcesId != projectResourceId) && ((p.AllocatedStartDate >= projectRes.AllocatedStartDate && p.AllocatedStartDate <= projectRes.AllocatedEndDate) || (p.AllocatedEndDate >= projectRes.AllocatedStartDate && p.AllocatedEndDate <= projectRes.AllocatedEndDate)))
+                                                                   select p;
 
 
-                foreach (PM_ProjectResources resorcesObj in ResourceList2)
-                {
-                    if (!HTResource.Contains(resorcesObj.ProjectResorcesId))
+                    IQueryable<PM_ProjectResources> projectQuery2 = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                                                    where ((p.aspnet_Users.UserName == edituser.UserName) && (p.ProjectResorcesId != projectResourceId) && ((p.AllocatedStartDate <= projectRes.AllocatedStartDate && p.AllocatedEndDate >= projectRes.AllocatedStartDate) || (p.AllocatedStartDate <= projectRes.AllocatedEndDate && p.AllocatedEndDate >= projectRes.AllocatedEndDate)))
+                                                                    select p;
+
+                    ResourceList = projectQuery.ToList();
+
+                    ResourceList2 = projectQuery2.ToList();
+
+                    foreach (PM_ProjectResources resorcesObj in ResourceList)
                     {
                         ResList.Add(resorcesObj);
+                        HTResource.Add(resorcesObj.ProjectResorcesId, 0);
                     }
+
+
+                    foreach (PM_ProjectResources resorcesObj in ResourceList2)
+                    {
+                        if (!HTResource.Contains(resorcesObj.ProjectResorcesId))
+                        {
+                            ResList.Add(resorcesObj);
+                        }
+                    }
+
                 }
+                else
+                {
+
+
+                    IQueryable<PM_ProjectResources> projectQuery = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                                                   where ((p.aspnet_Users.UserName == edituser.UserName) && (p.ProjectResorcesId != projectResourceId) && ((p.AllocatedStartDate >= startDate && p.AllocatedStartDate <= endDate) || (p.AllocatedEndDate >= startDate && p.AllocatedEndDate <= endDate)))
+                                                                   select p;
+
+
+                    IQueryable<PM_ProjectResources> projectQuery2 = from p in GetSynegyRMSInstance().PM_ProjectResources
+                                                                    where ((p.aspnet_Users.UserName == edituser.UserName) && (p.ProjectResorcesId != projectResourceId) && ((p.AllocatedStartDate <= startDate && p.AllocatedEndDate >= startDate) || (p.AllocatedStartDate <= endDate && p.AllocatedEndDate >= endDate)))
+                                                                    select p;
+
+                    ResourceList = projectQuery.ToList();
+
+                    ResourceList2 = projectQuery2.ToList();
+
+                    foreach (PM_ProjectResources resorcesObj in ResourceList)
+                    {
+                        ResList.Add(resorcesObj);
+                        HTResource.Add(resorcesObj.ProjectResorcesId, 0);
+                    }
+
+
+                    foreach (PM_ProjectResources resorcesObj in ResourceList2)
+                    {
+                        if (!HTResource.Contains(resorcesObj.ProjectResorcesId))
+                        {
+                            ResList.Add(resorcesObj);
+                        }
+                    }
+
+                   
+                }
+
+              
+
             }
 
 
