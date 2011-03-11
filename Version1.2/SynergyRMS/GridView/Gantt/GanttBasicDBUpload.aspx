@@ -14,21 +14,10 @@ try
    Response.AppendHeader("Cache-Control","max-age=1, must-revalidate");
    System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
 
-   // --- Database initialization ---
-   //string Path = System.IO.Path.GetDirectoryName(Context.Request.PhysicalPath);
-   //System.Data.OleDb.OleDbConnection Conn = new System.Data.OleDb.OleDbConnection("Data Source=\"" + Path + "\\..\\Database.mdb\";Mode=Share Deny None;Jet OLEDB:Global Partial Bulk Ops=2;Jet OLEDB:Registry Path=;Jet OLEDB:Database Locking Mode=1;Jet OLEDB:Engine Type=5;Provider=\"Microsoft.Jet.OLEDB.4.0\";Jet OLEDB:System database=;Jet OLEDB:SFP=False;persist security info=False;Extended Properties=;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:Encrypt Database=False;Jet OLEDB:Create System Database=False;Jet OLEDB:Don't Copy Locale on Compact=False;User ID=Admin;Jet OLEDB:Global Bulk Transactions=1");
+  //  string ConnString = "Data Source=sg2nwgdshsql003-floater.shr.prod.sin2.secureserver.net;initial catalog=synergydbadmin;user id=synergydbadmin;password=DBadmin123;persist security info=True;packet size=4096";
+   //System.Data.SqlClient.SqlConnection Conn = new System.Data.SqlClient.SqlConnection(ConnString);
    //Conn.Open();
-   //System.Data.OleDb.OleDbCommand Cmd = Conn.CreateCommand();
-   
-    
-    //string ConnString = "Data Source=AMALKA-PC\\SQLEXPRESS;initial catalog=synergydbadmin;user id=synergydbadmin;password=DBadmin123;persist security info=True;packet size=4096";
-
-   //string ConnString = "Data Source=AMALKA-PC\SQLEXPRESS;initial catalog=master;user id=mysite1;password=mysite1;persist security info=True;packet size=4096";
-   ////string ConnString = "Data Source=CHANAKADESKTOP;initial catalog=master;user id=mysite1;password=mysite1;persist security info=True;packet size=4096";
-   string ConnString = "Data Source=sg2nwgdshsql003-floater.shr.prod.sin2.secureserver.net;initial catalog=synergydbadmin;user id=synergydbadmin;password=DBadmin123;persist security info=True;packet size=4096";
-   System.Data.SqlClient.SqlConnection Conn = new System.Data.SqlClient.SqlConnection(ConnString);
-   Conn.Open();
-   System.Data.SqlClient.SqlCommand Cmd = Conn.CreateCommand();   
+   //System.Data.SqlClient.SqlCommand Cmd = Conn.CreateCommand();   
    
    // --- Save data to database ---
    string XML = Request["Data"];
@@ -54,13 +43,13 @@ try
           {
               string SQL = "";
               string id = I.GetAttribute("id");
-              bool isDelete = false;
-              bool isNew = false;
-              bool isUpdate = false;
+              //bool isDelete = false;
+              //bool isNew = false;
+              //bool isUpdate = false;
               if (I.GetAttribute("Deleted") == "1")
               {
                   //SQL = "DELETE FROM GanttBasic WHERE id=" + id;
-                  isDelete = true;
+                  //isDelete = true;
                   PM_ProjectResources resource=SynergyService.GetResouceById(Convert.ToInt32(id));
 
                   SynergyService.DeleteProjectResources(resource);
@@ -69,7 +58,7 @@ try
               else
                   if (I.GetAttribute("Added") == "1")
                   {
-                      isNew = true;;
+                      //isNew = true;;
                       nameUname = I.GetAttribute("N").ToString();
                       arrnameUname = nameUname.Split(new char[]{'#'});
                       name = arrnameUname[0].ToString();
@@ -129,7 +118,7 @@ try
                   }
                   else if (I.GetAttribute("Changed") == "1")
                   {
-                      isUpdate = true;
+                      //isUpdate = true;
                       //    SQL = "UPDATE GanttBasic SET ";
                       for (int idx = 0; idx < I.Attributes.Count; idx++)
                       {
@@ -216,91 +205,14 @@ try
                       //    SQL = SQL.TrimEnd(",".ToCharArray()); // Last comma away
                       //    SQL += " WHERE id=" + id;
                   }
-              if ((isDelete)||(isNew)||(isUpdate))
-              {
-                  //string updateDeleteRecordid = id;
-                  // name = I.GetAttribute("N").ToString();
-                  // uname = I.GetAttribute("U").ToString();
-                  // role = I.GetAttribute("R").ToString();
-                  // sdate = DateTime.Now;
-                  // edate = DateTime.Now;
-                  //if (I.GetAttribute("S") != "")
-                  //{
-                  //    sdate = Convert.ToDateTime(I.GetAttribute("S"));
-                  //}
-                  
-                  //if (I.GetAttribute("E") != "")
-                  //{
-                  //    edate = Convert.ToDateTime(I.GetAttribute("E"));
-                  //}
-                  //complete = (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C"));
-
-                  //PM_ProjectResources resource = new PM_ProjectResources();
-        
-                  //resource.aspnet_Users = SynergyService.GetUserByName(uname);
-                  //resource.AllocatedEndDate = Convert.ToDateTime(edate);
-                  //resource.AllocatedStartDate = Convert.ToDateTime(sdate);
-                  //resource.PM_ProjectRoles = SynergyService.GetProjectRoleByName(role);
-                  //resourceList.Add(resource);
-                  //SynergyService.SaveProjectResources(resource);
-              }
-              //if (SQL != "")
-              //{
-              //    Cmd.CommandText = SQL;
-              //    //Response.Write(SQL);
-              //    Cmd.ExecuteNonQuery();
-              //}
+             
 
           }
       
         
        
        
-      //if (Ch.Count > 0) foreach (System.Xml.XmlElement I in Ch[0])
-      //{
-      //   string SQL = "";
-      //   string id = I.GetAttribute("id");
-
-      //   if (I.GetAttribute("Deleted") == "1") SQL = "DELETE FROM GanttBasic WHERE id=" + id;
-      //   else if(I.GetAttribute("Added")=="1")
-      //   {
-      //      SQL = "INSERT INTO GanttBasic(id,T,U,UL,S,E,C) VALUES("
-      //         + id + ","
-      //         + "'" + I.GetAttribute("T").Replace("'","''") + "',"
-      //         + "'" + I.GetAttribute("U").Replace("'", "''") + "',"
-      //         + "'" + I.GetAttribute("UL").Replace("'", "''") + "',"
-      //         + "'" + I.GetAttribute("S") + "',"
-      //         + "'" + I.GetAttribute("E") + "',"
-      //         + (I.GetAttribute("C") == "" ? "0" : I.GetAttribute("C"))+ "')";
-      //   }
-      //   else if (I.GetAttribute("Changed") == "1")
-      //   {
-      //      SQL = "UPDATE GanttBasic SET ";
-      //      for(int idx=0;idx<I.Attributes.Count;idx++)
-      //      {
-      //         System.Xml.XmlAttribute A = I.Attributes[idx];
-      //         if (A!=null)
-      //         { 
-      //            string name = A.Name;
-      //            string val = A.Value;
-      //            if(name=="T") SQL += name + " = '" + val.Replace("'","''") + "',";
-      //            else if (name == "U") SQL += name + " = '" + val.Replace("'", "''") + "',";
-      //            else if (name == "UL") SQL += name + " = '" + val.Replace("'", "''") + "',";
-      //            else if (name == "C") SQL += name + " = " + val + ",";
-      //            else if (name == "S" || name == "E" || name == "D") SQL += name + " = '" + val + "',";
-      //         }
-      //      }
-      //      SQL = SQL.TrimEnd(",".ToCharArray()); // Last comma away
-      //      SQL += " WHERE id=" + id;
-      //   }
-      //   if (SQL != "")
-      //   {
-      //      Cmd.CommandText = SQL;
-      //      //Response.Write(SQL);
-      //      Cmd.ExecuteNonQuery();  
-      //   }
-         
-      //}
+      
       if (isError)
       {
           Response.Write("<Grid><IO Result=\"-1\" Message=\"" + Errormsg + ":&#x0a;&#x0a;" + Errormsg.Replace("&", "&amp;").Replace("<", "&lt;").Replace("\"", "&quot;") + "\"/></Grid>");
@@ -312,11 +224,11 @@ try
       
    }
    // ---   
-   Conn.Close();      
+      
    
 } catch(Exception E)
 {
-   Response.Write("<Grid><IO Result=\"-1\" Message=\"Error in TreeGrid example:&#x0a;&#x0a;"+E.Message.Replace("&","&amp;").Replace("<","&lt;").Replace("\"","&quot;")+"\"/></Grid>");
+    Response.Write("<Grid><IO Result=\"-1\" Message=\"Error in Project Schedule:&#x0a;&#x0a;" + E.Message.Replace("&", "&amp;").Replace("<", "&lt;").Replace("\"", "&quot;") + "\"/></Grid>");
 }
 }
 // -------------------------------------------------------------------------------------------------------------------------------
