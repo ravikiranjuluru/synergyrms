@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynergyRMS", "SynergyRMS.csproj", "{22423983-FCF4-4A00-B8F4-986A98866FBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{275EEED7-548F-4E5B-A8E0-BA4D4F0E5491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeAdapter", "..\..\External System Integration\EmployeeAdapter\EmployeeAdapter.csproj", "{B566F19A-E157-4285-81F7-5B66ACC82786}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeSystemEx", "..\..\External System Integration\EmployeeSystemEx\EmployeeSystemEx.csproj", "{4F3A6F77-0111-4F0A-9128-063D627CCDE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaveAdapter", "..\..\External System Integration\LeaveAdapter\LeaveAdapter.csproj", "{C50E7D92-ECEF-448D-8D7B-29D3BEF8C38F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaveSystem", "..\..\External System Integration\LeaveInterface\LeaveSystem.csproj", "{664DAAF9-4B9A-4C74-9492-FD603795C4A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22423983-FCF4-4A00-B8F4-986A98866FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22423983-FCF4-4A00-B8F4-986A98866FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22423983-FCF4-4A00-B8F4-986A98866FBB}.Debug|x86.ActiveCfg = Debug|x86
+		{22423983-FCF4-4A00-B8F4-986A98866FBB}.Debug|x86.Build.0 = Debug|x86
+		{22423983-FCF4-4A00-B8F4-986A98866FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22423983-FCF4-4A00-B8F4-986A98866FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22423983-FCF4-4A00-B8F4-986A98866FBB}.Release|x86.ActiveCfg = Release|x86
+		{22423983-FCF4-4A00-B8F4-986A98866FBB}.Release|x86.Build.0 = Release|x86
+		{B566F19A-E157-4285-81F7-5B66ACC82786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B566F19A-E157-4285-81F7-5B66ACC82786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B566F19A-E157-4285-81F7-5B66ACC82786}.Debug|x86.ActiveCfg = Debug|x86
+		{B566F19A-E157-4285-81F7-5B66ACC82786}.Debug|x86.Build.0 = Debug|x86
+		{B566F19A-E157-4285-81F7-5B66ACC82786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B566F19A-E157-4285-81F7-5B66ACC82786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B566F19A-E157-4285-81F7-5B66ACC82786}.Release|x86.ActiveCfg = Release|x86
+		{B566F19A-E157-4285-81F7-5B66ACC82786}.Release|x86.Build.0 = Release|x86
+		{4F3A6F77-0111-4F0A-9128-063D627CCDE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F3A6F77-0111-4F0A-9128-063D627CCDE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F3A6F77-0111-4F0A-9128-063D627CCDE1}.Debug|x86.ActiveCfg = Debug|x86
+		{4F3A6F77-0111-4F0A-9128-063D627CCDE1}.Debug|x86.Build.0 = Debug|x86
+		{4F3A6F77-0111-4F0A-9128-063D627CCDE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F3A6F77-0111-4F0A-9128-063D627CCDE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F3A6F77-0111-4F0A-9128-063D627CCDE1}.Release|x86.ActiveCfg = Release|x86
+		{4F3A6F77-0111-4F0A-9128-063D627CCDE1}.Release|x86.Build.0 = Release|x86
+		{C50E7D92-ECEF-448D-8D7B-29D3BEF8C38F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50E7D92-ECEF-448D-8D7B-29D3BEF8C38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50E7D92-ECEF-448D-8D7B-29D3BEF8C38F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C50E7D92-ECEF-448D-8D7B-29D3BEF8C38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50E7D92-ECEF-448D-8D7B-29D3BEF8C38F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C50E7D92-ECEF-448D-8D7B-29D3BEF8C38F}.Release|x86.ActiveCfg = Release|Any CPU
+		{664DAAF9-4B9A-4C74-9492-FD603795C4A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664DAAF9-4B9A-4C74-9492-FD603795C4A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664DAAF9-4B9A-4C74-9492-FD603795C4A9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{664DAAF9-4B9A-4C74-9492-FD603795C4A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664DAAF9-4B9A-4C74-9492-FD603795C4A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664DAAF9-4B9A-4C74-9492-FD603795C4A9}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,33 @@
+﻿/**************************************************************************************************************************************************
+													Atlantic Global Scrollable Table Style Sheet
+**************************************************************************************************************************************************/
+																								
+/* Ensure the Table resizes to accommodate the vertical scrollbar in IE 
+table.scrollableTable {
+	width: expression(getInnerWidth(this.parentNode) + 'px');
+}
+*/		
+																
+/* Enable scrolling on the TBODY in Mozilla */
+table.scrollableTable>tbody	{  
+	overflow-x: hidden;
+	overflow-y: auto; 			
+}
+
+/* Prevent Mozilla scrollbar from hiding cell content on right most cell */
+table.scrollableTable tr td:last-child {
+	padding-right: 16px;
+} 	
+
+/* Lock all rows in the THEAD in IE */
+table.scrollableTable thead tr {	
+	top: expression(this.parentNode.parentNode.parentNode.scrollTop + 'px');	
+	position: relative;
+}
+
+/* Lock all rows in the TFOOT in IE */
+table.scrollableTable tfoot tr {     
+	top: expression(this.parentNode.parentNode.parentNode.clientHeight + this.parentNode.parentNode.parentNode.scrollTop - this.parentNode.parentNode.offsetHeight + 'px');
+	position: relative;
+	overflow-x: hidden; 	
+}
