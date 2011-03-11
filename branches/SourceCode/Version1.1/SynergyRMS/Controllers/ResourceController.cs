@@ -317,6 +317,12 @@ namespace SynergyRMS.Controllers
 
                 PM_MaxUserEfforts userEffort = new PM_MaxUserEfforts();
                 userEffort.aspnet_Users = SynergyService.GetUserByName(newuser.UserName);
+
+                if (form["txteffort"].ToString() == "")
+                {
+                    userEffort.MaxEffort = 0;
+                }
+
                 userEffort.MaxEffort =Convert.ToDecimal(form["txteffort"].ToString());
                 SynergyService.SaveUserEffort(userEffort);
 
@@ -394,11 +400,11 @@ namespace SynergyRMS.Controllers
             SelectList list = new SelectList(allDeptTypes, "DepartmentId", "DepartmentName");
             return list;
         }
-        private SelectList GetDepartmentListwithUserSelectedValue(string username)
+        private SelectList GetDepartmentListwithUserSelectedValue(EM_Departments department)
         {
             List<EM_Departments> allDeptTypes = SynergyService.GetDepartmentList();
-            int selectdepid = 1;//SynergyService.GetDepartmentByUsername(username);
-            SelectList list = new SelectList(allDeptTypes, "DepartmentId", "DepartmentName", selectdepid);
+            //int selectdepid = 1;//SynergyService.GetDepartmentByUsername(username);
+            SelectList list = new SelectList(allDeptTypes, "DepartmentId", "DepartmentName", department.DepartmentId);
             return list;
         }
 
@@ -644,23 +650,27 @@ namespace SynergyRMS.Controllers
                         {
                             Guid userId = new Guid(userkey);
                             EmployeeEntity entity = SynergyService.GetEmployeeEntity(SynergyService.GetUserById(userId).UserName);
-
+                            
                             NIC= entity.ExternalId;
 
                              userEffort=SynergyService.GetUserEffortById(SynergyService.GetUserById(userId).UserName);
-                       
+                           
                         }
                         catch
                         {
                         }
+                        
                         ViewData["NIC"] = NIC;
                         ViewData["EditUser"] = edituser;
                         //ViewData["RoleList"] = GetAllRoles();
                         //ViewData["DepartmentList"] = GetDepartmentList();
                         ViewData["RoleList"] = GetAllRoleswithUserSelectedValue(edituser.UserName);
-                        ViewData["DepartmentList"] = GetDepartmentListwithUserSelectedValue(edituser.UserName);
 
+                        EM_Employee employee = SynergyService.GetEmployeebyEmpId(NIC);
+                    EM_Departments department = employee.EM_Departments;
+                    ViewData["DepartmentList"] = GetDepartmentListwithUserSelectedValue(department);
 
+                        
                         ViewData["Effort"] = userEffort.MaxEffort;
 
                     }
@@ -721,6 +731,13 @@ namespace SynergyRMS.Controllers
 
 
                         PM_MaxUserEfforts userEffort = SynergyService.GetUserEffortById(edituser.UserName);
+
+                        if (form["txteffort"].ToString() == "")
+                        {
+                            userEffort.MaxEffort = 0;
+                        }
+
+                        
                         userEffort.MaxEffort =Convert.ToDecimal(form["txteffort"].ToString());
                         userEffort.aspnet_Users = SynergyService.GetUserByName(edituser.UserName);
                         SynergyService.UpdateUserEffort(userEffort);
@@ -767,7 +784,10 @@ namespace SynergyRMS.Controllers
                                 employee.aspnet_Users = SynergyService.GetUserByName(edituser.UserName);
                                 employee.EM_Departments = SynergyService.GetDepartmentbyId(Convert.ToInt32(departmentId));
 
+                                
+
                                 SynergyService.UpdateEmployee(employee);
+                                ViewData["DepartmentList"] = GetDepartmentListwithUserSelectedValue(employee.EM_Departments);
 
                             }
                             catch
@@ -794,7 +814,7 @@ namespace SynergyRMS.Controllers
             //ViewData["RoleList"] = GetAllRoles();
             //ViewData["DepartmentList"] = GetDepartmentList();
             ViewData["RoleList"] = GetAllRoleswithUserSelectedValue(edituser.UserName);
-            ViewData["DepartmentList"] = GetDepartmentListwithUserSelectedValue(edituser.UserName);
+         
             return View("EditUser");
         }
 
