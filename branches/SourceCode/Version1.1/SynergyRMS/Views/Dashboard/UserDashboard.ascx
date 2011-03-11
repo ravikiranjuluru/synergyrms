@@ -590,21 +590,62 @@ legend
                    
                         <legend><img id="img7" src="../../Content/images/common/manage_projects.gif" alt="">&nbsp;Projects</legend>
                         
-                        <p>
-                            <label for="name">
-                                Name</label><input name="name" type="text" /></p>
-                        <p>
-                            <label for="company">
-                                Company</label><input name="company" type="text" /></p>
-                        <p>
-                            <label for="email">
-                                Email</label><input name="email" type="email" /></p>
-                        <p>
-                            <label for="telephone">
-                                Telephone</label><input name="telephone" type="tel" /></p>
-                        <p>
-                            <label for="website">
-                                Website</label><input name="website" type="url" value="http://" /></p>
+                        <p align="center">
+                        <table id="Table3" style="width: 100%;">
+                                                                        <tbody>
+                                                                            <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.addProject))
+                                                                              { %>
+                                                                            <tr id="Tr11">
+                                                                                <td padding-left="6px" width="5%">
+                                                                                    <a id="A4" href="#">&nbsp;</a>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <a id="A6" href="#"></a><a id="A11" title="Click here to Add a New Project" href="../Project/NewProject">
+                                                                                        <img src="../../Content/images/common/newproject.png" id="Img10" title="Click for more information">New
+                                                                                        Project</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <%} %>
+                                                                            <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewProject))
+                                                                              { %>
+                                                                            <tr id="Tr13">
+                                                                                <td padding-left="6px" width="5%">
+                                                                                </td>
+                                                                                <td>
+                                                                                    <a id="A12" title="Click here to View an Existing Project" href="../Project/EditProject">
+                                                                                        <img src="../../Content/images/common/viewproject.png" id="Img12" title="Click for more information" />View
+                                                                                        Projects</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <%} %>
+                                                                            <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewProjectSchedule))
+                                                                              { %>
+                                                                            <tr id="Tr14">
+                                                                                <td padding-left="6px" width="5%">
+                                                                                </td>
+                                                                                <td>
+                                                                                    <a id="A14" title="Click here to View an Existing Project" href="../GridView/Index">
+                                                                                        <img src="../../Content/images/common/schedule.jpg" id="Img15" title="Click for more information" />Project
+                                                                                        Schedule</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <%} %>
+                                                                            <%if (SynergyService.isUserFunctionAllow(currentusername, SynergyConstents.viewProjectReports))
+                                                                              { %>
+                                                                            <tr id="Tr15">
+                                                                                <td padding-left="6px" width="5%">
+                                                                                    <%--<img src="../../Content/images/common/cross.gif" id="Img17" title="Click for more information" />--%>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <a id="A15" title="Click here to Create a Project Status Report" href="../Report/Index">
+                                                                                        <img src="../../Content/images/common/ReportsMain.jpg" id="Img16" title="Click for more information" />
+                                                                                        Reports</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <%   } %>
+                                                                        </tbody>
+                                                                    </table>
+                        </p>
                     </fieldset>
                 </td>
                 <td align="center" valign="top" width="4%">
