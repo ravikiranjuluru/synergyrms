@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl" %>
 <%@ Import Namespace="SynergyRMS.Models" %>
 
+<%--<link rel="stylesheet" media="screen" href="../../Content/Dashboard.css" />--%>
+
 <table class="pageTitle" width="100%" border="0" cellpadding="0" cellspacing="0">
     <tbody>
         <tr>
@@ -10,6 +12,7 @@
     </tbody>
 </table>
 <style type="text/css">
+
     .t
     {
         background: url(../../Content/images/common/dot_top.gif) 0 0 repeat-x;
@@ -558,3 +561,82 @@
         </tr>--%>
     <%-- <%} %>--%>
 </table>
+
+<style type="text/css">
+fieldset  
+{
+    position: relative; padding: 10px; padding-top: 0; padding-top: 25px\9; 
+    margin-bottom: 30px; background: #F6F6F6; -webkit-border-radius: 8px; -moz-border-radius: 8px;
+     border-radius: 8px; background: -webkit-gradient(linear, left top, left bottom, from(#EFEFEF), to(#FFFFFF)); 
+     background: -moz-linear-gradient(center top, #EFEFEF, #FFFFFF 100%); 
+     box-shadow: 3px 3px 10px #ccc; -moz-box-shadow: 3px 3px 10px #ccc; -webkit-box-shadow: 3px 3px 10px #ccc 
+     }
+legend  
+{
+    padding: 6px 12px; position: absolute; left: 10px; 
+    top: -11px; background-color: #4F709F; color: white; -webkit-border-radius: 4px; -moz-border-radius: 4px; 
+    border-radius: 4px; box-shadow: 2px 2px 4px #888; -moz-box-shadow: 2px 2px 4px #888; 
+    -webkit-box-shadow: 2px 2px 4px #888; text-shadow: 1px 1px 1px #333 
+    }
+    </style>
+    <table width="90%" align="center">
+    <tr align="center" valign="top">
+    
+    <td align="center" valign="top">
+        <table width="100%">
+            <tr align="center" valign="top">
+                <td align="center" valign="top" width="48%">
+                    <fieldset style="width: 100%">
+                   
+                        <legend><img id="img7" src="../../Content/images/common/manage_projects.gif" alt="">&nbsp;Projects</legend>
+                        
+                        <p>
+                            <label for="name">
+                                Name</label><input name="name" type="text" /></p>
+                        <p>
+                            <label for="company">
+                                Company</label><input name="company" type="text" /></p>
+                        <p>
+                            <label for="email">
+                                Email</label><input name="email" type="email" /></p>
+                        <p>
+                            <label for="telephone">
+                                Telephone</label><input name="telephone" type="tel" /></p>
+                        <p>
+                            <label for="website">
+                                Website</label><input name="website" type="url" value="http://" /></p>
+                    </fieldset>
+                </td>
+                <td align="center" valign="top" width="4%">
+                &nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="center" valign="top" width="48%">
+                 <fieldset style="width: 100%">
+                        <legend>Projects</legend>
+                        <p>
+                            <label for="name">
+                                Name</label><input name="name" type="text" /></p>
+                        <p>
+                            <label for="company">
+                                Company</label><input name="company" type="text" /></p>
+                        <p>
+                            <label for="email">
+                                Email</label><input name="email" type="email" /></p>
+                        <p>
+                            <label for="telephone">
+                                Telephone</label><input name="telephone" type="tel" /></p>
+                        <p>
+                            <label for="website">
+                                Website</label><input name="website" type="url" value="http://" /></p>
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+         
+    </td>
+   
+     
+    </tr>
+    </table>
+    
+
