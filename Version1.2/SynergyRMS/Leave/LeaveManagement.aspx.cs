@@ -32,26 +32,40 @@ namespace SynergyRMS.Leave
               DateTime startDate = Convert.ToDateTime(txtStartDate.Text);
               DateTime endDate = Convert.ToDateTime(txtEndDate.Text);
 
-              TimeSpan span = endDate.Subtract(startDate);
-              int Days = Convert.ToInt32(span.TotalDays);
+              //TimeSpan span = endDate.Subtract(startDate);
+              //int Days = Convert.ToInt32(span.TotalDays);
 
-              for (int i = 0; i <= Days; i++)
-              {
-                  LM_EmployeeLeave employeeLeave = new LM_EmployeeLeave();
-                  employeeLeave.Date = startDate;
-                  employeeLeave.Description = txtReason.Text.ToString();
+              //for (int i = 0; i <= Days; i++)
+              //{
+              //    LM_EmployeeLeave employeeLeave = new LM_EmployeeLeave();
+              //    employeeLeave.Date = startDate;
+              //    employeeLeave.Description = txtReason.Text.ToString();
 
-                  List<LM_LeaveTypes> typeList = SynergyService.LoadAllLeaveTypes();
-                   string userName = HttpContext.Current.User.Identity.Name;
+              //    List<LM_LeaveTypes> typeList = SynergyService.LoadAllLeaveTypes();
+              //     string userName = HttpContext.Current.User.Identity.Name;
                  
 
-                  employeeLeave.aspnet_Users = SynergyService.GetUserByName(userName);
-                  employeeLeave.LM_LeaveTypes = SynergyService.GetLeaveTypeById(Convert.ToInt32(ddlLeaveTypes.SelectedValue.ToString()));
+              //    employeeLeave.aspnet_Users = SynergyService.GetUserByName(userName);
+              //    employeeLeave.LM_LeaveTypes = SynergyService.GetLeaveTypeById(Convert.ToInt32(ddlLeaveTypes.SelectedValue.ToString()));
 
-                  SynergyService.AddLeave(employeeLeave);
+              //    SynergyService.AddLeave(employeeLeave);
 
-                  startDate = startDate.AddDays(1);
-              }
+              //    startDate = startDate.AddDays(1);
+              //}
+
+              LM_EmployeeLeave employeeLeave = new LM_EmployeeLeave();
+              employeeLeave.Date = startDate;
+              employeeLeave.Description = txtReason.Text.ToString();
+
+              List<LM_LeaveTypes> typeList = SynergyService.LoadAllLeaveTypes();
+              string userName = HttpContext.Current.User.Identity.Name;
+
+
+              employeeLeave.aspnet_Users = SynergyService.GetUserByName(userName);
+              employeeLeave.LM_LeaveTypes = SynergyService.GetLeaveTypeById(Convert.ToInt32(ddlLeaveTypes.SelectedValue.ToString()));
+
+              SynergyService.AddLeave(employeeLeave);
+
                ClearScreen();
             }
             catch (Exception ex)
