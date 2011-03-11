@@ -1,0 +1,5 @@
+D:\synergyrms\SourceCode\External System Integration\LeaveAdapter\bin\Release\LeaveAdapter.dll
+D:\synergyrms\SourceCode\External System Integration\LeaveAdapter\bin\Release\LeaveAdapter.pdb
+D:\synergyrms\SourceCode\External System Integration\LeaveAdapter\obj\Release\ResolveAssemblyReference.cache
+D:\synergyrms\SourceCode\External System Integration\LeaveAdapter\obj\Release\LeaveAdapter.dll
+D:\synergyrms\SourceCode\External System Integration\LeaveAdapter\obj\Release\LeaveAdapter.pdb
