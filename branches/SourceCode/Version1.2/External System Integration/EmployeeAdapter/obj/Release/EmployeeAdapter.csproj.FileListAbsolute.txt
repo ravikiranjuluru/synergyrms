@@ -1,0 +1,5 @@
+D:\synergyrms\SourceCode\External System Integration\EmployeeAdapter\bin\Release\EmployeeAdapter.dll
+D:\synergyrms\SourceCode\External System Integration\EmployeeAdapter\bin\Release\EmployeeAdapter.pdb
+D:\synergyrms\SourceCode\External System Integration\EmployeeAdapter\obj\Release\ResolveAssemblyReference.cache
+D:\synergyrms\SourceCode\External System Integration\EmployeeAdapter\obj\Release\EmployeeAdapter.dll
+D:\synergyrms\SourceCode\External System Integration\EmployeeAdapter\obj\Release\EmployeeAdapter.pdb

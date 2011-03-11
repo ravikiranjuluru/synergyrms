@@ -1,0 +1,19 @@
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeDB.sdf
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeSystemEx.dll.config
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeSystemEx.dll
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeSystemEx.pdb
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\obj\Debug\ResolveAssemblyReference.cache
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\obj\Debug\EmployeeSystemEx.dll
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\obj\Debug\EmployeeSystemEx.pdb
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeAdapter.dll
+F:\project\LeaveWeb\LeaveInterface\EmployeeSystemEx\bin\Debug\EmployeeAdapter.pdb
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Debug\Employee.mdf
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Debug\Employee_log.ldf
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Debug\EmployeeSystemEx.pdb
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Debug\EmployeeAdapter.dll
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Debug\EmployeeAdapter.pdb
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\obj\Debug\ResolveAssemblyReference.cache
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\obj\Debug\EmployeeSystemEx.pdb
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Debug\EmployeeSystemEx.exe.config
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\bin\Debug\EmployeeSystemEx.exe
+D:\synergyrms\SourceCode\External System Integration\EmployeeSystemEx\obj\Debug\EmployeeSystemEx.exe

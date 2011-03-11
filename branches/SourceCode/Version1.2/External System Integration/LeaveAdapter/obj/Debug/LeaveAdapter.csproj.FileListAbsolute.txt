@@ -1,0 +1,10 @@
+F:\project\LeaveWeb\LeaveInterface\LeaveAdapter\bin\Debug\LeaveAdapter.dll
+F:\project\LeaveWeb\LeaveInterface\LeaveAdapter\bin\Debug\LeaveAdapter.pdb
+F:\project\LeaveWeb\LeaveInterface\LeaveAdapter\obj\Debug\ResolveAssemblyReference.cache
+F:\project\LeaveWeb\LeaveInterface\LeaveAdapter\obj\Debug\LeaveAdapter.dll
+F:\project\LeaveWeb\LeaveInterface\LeaveAdapter\obj\Debug\LeaveAdapter.pdb
+D:\synergyrms\SourceCode\External System Integration\LeaveAdapter\bin\Debug\LeaveAdapter.dll
+D:\synergyrms\SourceCode\External System Integration\LeaveAdapter\bin\Debug\LeaveAdapter.pdb
+D:\synergyrms\SourceCode\External System Integration\LeaveAdapter\obj\Debug\ResolveAssemblyReference.cache
+D:\synergyrms\SourceCode\External System Integration\LeaveAdapter\obj\Debug\LeaveAdapter.dll
+D:\synergyrms\SourceCode\External System Integration\LeaveAdapter\obj\Debug\LeaveAdapter.pdb
