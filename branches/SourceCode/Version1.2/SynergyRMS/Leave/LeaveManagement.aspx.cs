@@ -54,7 +54,9 @@ namespace SynergyRMS.Leave
               //}
 
               LM_EmployeeLeave employeeLeave = new LM_EmployeeLeave();
-              employeeLeave.Date = startDate;
+              employeeLeave.startdate = startDate;
+              employeeLeave.enddate = endDate;
+              employeeLeave.Date = DateTime.Today;
               employeeLeave.Description = txtReason.Text.ToString();
 
               List<LM_LeaveTypes> typeList = SynergyService.LoadAllLeaveTypes();
