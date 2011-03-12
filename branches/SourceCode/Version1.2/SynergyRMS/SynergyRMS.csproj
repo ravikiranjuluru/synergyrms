@@ -603,7 +603,6 @@
     <Content Include="Content\images\common\viewproject.png" />
     <Content Include="Content\images\Startmenu\Dashboard.png" />
     <Content Include="Content\images\Startmenu\login.jpg" />
-    <Content Include="Content\images\win7-desktop-bg" />
     <Content Include="Content\images\win7-desktop-bg5.jpg" />
     <Content Include="Content\images\win7-desktop-bg1.jpg" />
     <Content Include="Content\jquery-ui.css" />
@@ -698,6 +697,9 @@
     <Content Include="Views\Shared\Master.Master.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\win7-desktop-bg" />
+    <Content Include="Content\images\win7-desktop-bg.jpg" />
+    <Content Include="Content\images\win7-desktop-bg.png" />
     <Content Include="LeaveSystemEx.dll.config" />
     <Content Include="Leave\LeaveManagement.aspx" />
     <EntityDeploy Include="Models\SynergyModel.edmx">
