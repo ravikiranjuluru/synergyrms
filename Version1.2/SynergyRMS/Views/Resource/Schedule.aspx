@@ -30,8 +30,6 @@
                             <table cellspacing="0" cellpadding="0" border="0" id="Table2">
                                 <tbody>
                                     <tr>
-                                    </tr>
-                                    <tr>
                                         <td class="dashboardTabSpace">
                                             <img height="1" width="5" id="Img3" src="../../Content/images/common/space.gif">
                                         </td>
@@ -148,6 +146,23 @@
                                             </tbody>
                                         </table>
                                     </td>
+                                </tr>
+                               
+                                <tr>
+                                    <td align="center" style="width:70%" class="formDetail">
+                                        &nbsp;</td>
+                                </tr>
+                               
+                                <tr>
+                                    <td align="left" style="width:70%" class="formDetail">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <%if (ViewData["ViewUser"] != null)
+                                          {
+                                              var name = ViewData["ViewUser"].ToString(); 
+                                              %>
+                                        Loading schedule of <strong><%=name%></strong>
+                                        <%} %>
+                                        </td>
                                 </tr>
                                
                                 <tr>
