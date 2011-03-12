@@ -16,7 +16,7 @@
 %>
 
 
-    <bdo debug='1' 
+    <bdo debug='0' 
     layout_url="Gantt/GridLayout.aspx" 
     data_url="Gantt/GridData.aspx"
         upload_url="Gantt/GridUpload.aspx" 
