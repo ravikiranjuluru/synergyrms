@@ -243,12 +243,12 @@
                                                                     %>
                                                                     <% if (status == "Success")
                                                                        { %>
-                                                                    <div id="msgsuccess" class="success-msg" tyle="width:80%">
+                                                                    <div id="msgsuccess" class="success-msg"  style="width:50%;float:left;font-size:10px;">
                                                                         <%= msg%></div>
                                                                     <%} %>
                                                                     <% if (status == "Error")
                                                                        { %>
-                                                                    <div id="msgerror" class="error-msg" style="width: 80%">
+                                                                    <div id="msgerror" class="error-msg" style="width:50%;float:left;font-size:10px;">
                                                                         <%= msg%></div>
                                                                     <%} %>
                                                                     <%} %>
