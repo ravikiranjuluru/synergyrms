@@ -123,10 +123,11 @@ namespace SynergyRMS.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult EditProject(FormCollection form)
         {
+            int editproid = Convert.ToInt32(form["hdnid"].ToString());
+            PM_Projects project = SynergyService.GetProjectbyProjectId(editproid);
             try
             {
-                int editproid = Convert.ToInt32(form["hdnid"].ToString());
-                PM_Projects project = SynergyService.GetProjectbyProjectId(editproid);
+                
                 project.ProjectCode = form["txtCode"].ToString();
                 project.ProjectName = form["txtprojectname"].ToString();
                 project.Description = form["txtDescription"].ToString();
@@ -145,22 +146,23 @@ namespace SynergyRMS.Controllers
                 SynergyService.UpdateProject(project);
                 ViewData["status"] = "Success";
                 ViewData["msg"] = "Project Successfully Updated.";
-                ViewData["EditProject"] = project;
-                if (project.PM_Types == null)
-                {
-                    ViewData["ProTypes"] = GetProjectTypes();
-                }
-                else
-                {
-                    ViewData["ProTypes"] = GetProjectTypesWithSelectedValue(project.PM_Types);
-                }
+                //ViewData["EditProject"] = project;
+                
             }
             catch(Exception)
             {
                 ViewData["status"] = "Error";
                 ViewData["msg"] = "Error in Project Update.";
             }
-
+            ViewData["EditProject"] = project;
+            if (project.PM_Types == null)
+            {
+                ViewData["ProTypes"] = GetProjectTypes();
+            }
+            else
+            {
+                ViewData["ProTypes"] = GetProjectTypesWithSelectedValue(project.PM_Types);
+            }
 
             return View("EditProjectForm");
         }
