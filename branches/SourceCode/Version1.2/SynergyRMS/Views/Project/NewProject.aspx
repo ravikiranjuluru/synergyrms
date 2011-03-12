@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="../../Content/common/styles.css" type="text/css" />
     
     <!-- form validations -->
-<script type="text/javascript" src="../../Scripts/validations/jquery-1.4.4.min.js"></script>
+<%--<script type="text/javascript" src="../../Scripts/validations/jquery-1.4.4.min.js"></script>
 <script type="text/javascript" src="../../Scripts/validations/jquery.bvalidator.js"></script>
-<%--<link type="text/css" rel="stylesheet" href="../../Content/formValidate.css" />--%>
+<link type="text/css" rel="stylesheet" href="../../Content/formValidate.css" />--%>
 <!-- end form validations -->
     
 
@@ -28,7 +28,7 @@
         </table>
     </div>
     
-    <style type="text/css">
+ <%--   <style type="text/css">
     /* invalid input */
 .bvalidator_invalid{
 	background-color: #FFFFAE;
@@ -83,7 +83,7 @@
 	left:5px;
 }
 
-    </style>
+    </style>--%>
     
 <%-- <form id="form4" method="post">
                                         <p>
@@ -185,7 +185,7 @@
                             </tbody>
                         </table>
                         
-                        <% using (Html.BeginForm("NewProject", "Project", FormMethod.Post, new { id = "form4" }))
+                        <% using (Html.BeginForm("NewProject", "Project"))
                            { %>
                         <table id="masterPage_tblFormContentRoot" style="border-collapse: collapse;" border="0"
                             cellpadding="0" cellspacing="0" width="100%">
