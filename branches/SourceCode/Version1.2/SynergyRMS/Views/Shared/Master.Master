@@ -82,8 +82,8 @@
       }
       #iconContainer {
         position: absolute;
-        top:      10px;
-        left:     5px;
+        top:      231px;
+        left:     482px;
         width:    auto;
         height:   auto;
       }
@@ -133,7 +133,7 @@
           <table>
               <tr>
                   <td>
-                      <table>
+                      <table style="width: 244px">
                           
                           <tr>
                               <td>
