@@ -77,6 +77,15 @@ namespace SynergyRMS.Reports {
         protected global::System.Web.UI.WebControls.TextBox txtStartDate;
         
         /// <summary>
+        /// ReqStartDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqStartDate;
+        
+        /// <summary>
         /// lblToDate control.
         /// </summary>
         /// <remarks>
@@ -93,6 +102,15 @@ namespace SynergyRMS.Reports {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEndDate;
+        
+        /// <summary>
+        /// ReqToDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqToDate;
         
         /// <summary>
         /// Viewbtn control.

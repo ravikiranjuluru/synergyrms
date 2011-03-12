@@ -90,6 +90,8 @@
                 </td>
                 <td align="left"> 
                     <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ReqStartDate" runat="server" 
+                        ControlToValidate="txtStartDate" ErrorMessage="Please Select From Date"></asp:RequiredFieldValidator>
                 </td>
                 <td>
                     &nbsp;</td>
@@ -108,6 +110,8 @@
                 </td>
                 <td align="left">
                     <asp:TextBox ID="txtEndDate" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ReqToDate" runat="server" 
+                        ControlToValidate="txtEndDate" ErrorMessage="Please Select To Date"></asp:RequiredFieldValidator>
                 </td>
                 <td>
                     &nbsp;</td>
